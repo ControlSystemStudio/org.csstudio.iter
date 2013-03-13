@@ -11,16 +11,21 @@ import java.util.regex.Pattern;
 
 import org.csstudio.pvnames.IPVListProvider;
 import org.csstudio.pvnames.PVListResult;
+import org.csstudio.pvnames.PVNameHelper;
 
 public class DBPVListProvider implements IPVListProvider {
 
 	@Override
-	public PVListResult listPVs(Pattern pattern, int limit) {
+	public PVListResult listPVs(final String pattern, final int limit) {
 		PVListResult result = new PVListResult();
-		result.setCount(DBContextValueHolder.get().countPV(pattern));
-		for (String pv : DBContextValueHolder.get().findPV(pattern, limit))
+		Pattern p = PVNameHelper.convertToPattern(pattern);
+		result.setCount(DBContextValueHolder.get().countPV(p));
+		for (String pv : DBContextValueHolder.get().findPV(p, limit))
 			result.add(pv);
 		return result;
 	}
+
+	@Override
+	public void cancel() { }
 
 }
