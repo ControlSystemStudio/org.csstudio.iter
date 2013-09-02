@@ -1,9 +1,9 @@
-package org.csstudio.frib.startuphelper;
+package org.csstudio.startuphelper;
 
 import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
-	private static final String BUNDLE_NAME = "org.csstudio.frib.startuphelper.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "org.csstudio.startuphelper.messages"; //$NON-NLS-1$
 	public static String StartupAuthenticationHelper_Login;
 	public static String StartupAuthenticationHelper_LoginTip;
 	public static String StartupHelper_And;
