@@ -5,7 +5,7 @@
     <include_parent_macros>true</include_parent_macros>
   </macros>
   <wuid>-14a921ec:134b2495e46:-7f53</wuid>
-  <boy_version>3.2.9.codac_core_5_0b1</boy_version>
+  <boy_version>3.2.10.codac_core_4_3b1</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
   <height>1600</height>
@@ -13,7 +13,7 @@
   <snap_to_geometry>true</snap_to_geometry>
   <show_grid>true</show_grid>
   <background_color>
-    <color name="IO Background" red="255" green="255" blue="205" />
+    <color name="IO Background" red="200" green="200" blue="200" />
   </background_color>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
@@ -39,8 +39,8 @@
     <visible>true</visible>
     <wuid>736330a5:136ef967e53:-7829</wuid>
     <scripts />
-    <height>258</height>
-    <name>Amplifier Function</name>
+    <height>156</height>
+    <name>Penetration</name>
     <scale_options>
       <width_scalable>true</width_scalable>
       <height_scalable>true</height_scalable>
@@ -57,21 +57,21 @@
     <enabled>true</enabled>
     <widget_type>Grouping Container</widget_type>
     <font>
-      <opifont.name fontName="arial" height="10" style="0">IO Normal</opifont.name>
+      <opifont.name fontName="DejaVu Sans" height="16" style="0">IO Normal</opifont.name>
     </font>
-    <width>290</width>
+    <width>392</width>
     <border_style>13</border_style>
     <rules />
     <fc>false</fc>
-    <lock_children>true</lock_children>
+    <lock_children>false</lock_children>
     <border_width>2</border_width>
     <border_color>
-      <color name="IO Text Fg" red="0" green="32" blue="92" />
+      <color name="IO Text Fg" red="0" green="0" blue="0" />
     </border_color>
-    <y>15</y>
+    <y>10</y>
     <actions hook="false" hook_all="false" />
     <x>15</x>
-    <tooltip>Amplifier Function</tooltip>
+    <tooltip></tooltip>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <macros>
         <include_parent_macros>true</include_parent_macros>
@@ -79,8 +79,8 @@
       <visible>true</visible>
       <wuid>4982c4ba:136d02e386e:-7ee7</wuid>
       <scripts />
-      <height>56</height>
-      <name>Auxiliary Location</name>
+      <height>33</height>
+      <name>General Penetration</name>
       <scale_options>
         <width_scalable>true</width_scalable>
         <height_scalable>true</height_scalable>
@@ -92,21 +92,21 @@
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
       <background_color>
-        <color name="IO Background" red="255" green="255" blue="205" />
+        <color name="IO Background" red="200" green="200" blue="200" />
       </background_color>
       <enabled>true</enabled>
       <widget_type>Grouping Container</widget_type>
       <font>
-        <opifont.name fontName="arial" height="10" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans" height="16" style="0">IO Normal</opifont.name>
       </font>
-      <width>212</width>
+      <width>228</width>
       <border_style>0</border_style>
       <rules />
       <fc>false</fc>
       <lock_children>true</lock_children>
       <border_width>1</border_width>
       <border_color>
-        <color name="IO Border" red="215" green="215" blue="215" />
+        <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
       <y>0</y>
       <actions hook="false" hook_all="false" />
@@ -117,18 +117,18 @@
         <visible>true</visible>
         <auto_size>true</auto_size>
         <scripts />
-        <height>55</height>
+        <height>29</height>
         <data_type>0</data_type>
         <show_boolean_label>true</show_boolean_label>
         <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
         <off_label>OFF</off_label>
         <background_color>
-          <color name="IO Background" red="255" green="255" blue="205" />
+          <color name="IO Background" red="200" green="200" blue="200" />
         </background_color>
         <enabled>true</enabled>
         <widget_type>Boolean Symbol Image Monitor</widget_type>
         <font>
-          <opifont.name fontName="arial" height="10" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans" height="16" style="0">IO Normal</opifont.name>
         </font>
         <permutation_matrix>
           <row>
@@ -140,7 +140,7 @@
             <col>1.0</col>
           </row>
         </permutation_matrix>
-        <width>91</width>
+        <width>28</width>
         <border_style>0</border_style>
         <flip_vertical>false</flip_vertical>
         <pv_value />
@@ -148,16 +148,16 @@
         <bit>0</bit>
         <on_label>ON</on_label>
         <border_width>1</border_width>
-        <image_file>SymbolLibrary/SVG/Electronic/Amplifier/Amplifier.svg</image_file>
+        <image_file>SymbolLibrary/SVG/CivilEngineering/Penetration/TW General Penetration.svg</image_file>
         <crop_right>0</crop_right>
         <crop_left>0</crop_left>
         <wuid>4982c4ba:136d02e386e:-7fa0</wuid>
-        <boolean_label_position>7</boolean_label_position>
+        <boolean_label_position>5</boolean_label_position>
         <on_color>
           <color name="IO PV ON" red="0" green="0" blue="225" />
         </on_color>
         <stretch_to_fit>false</stretch_to_fit>
-        <name>Auxiliary Location</name>
+        <name>General Penetration</name>
         <scale_options>
           <width_scalable>true</width_scalable>
           <height_scalable>true</height_scalable>
@@ -168,7 +168,7 @@
         </off_color>
         <pv_name>sim://flipflop(3)</pv_name>
         <foreground_color>
-          <color name="IO InputPV Fg" red="0" green="32" blue="92" />
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <flip_horizontal>false</flip_horizontal>
@@ -176,7 +176,7 @@
         <rules />
         <degree>0</degree>
         <border_color>
-          <color name="IO Border" red="215" green="215" blue="215" />
+          <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <y>0</y>
         <actions hook="false" hook_all="false" />
@@ -190,8 +190,8 @@ $(pv_value)</tooltip>
         <wuid>4982c4ba:136d02e386e:-7f9d</wuid>
         <auto_size>true</auto_size>
         <scripts />
-        <height>13</height>
-        <name>Auxiliary Location</name>
+        <height>20</height>
+        <name>General Penetration</name>
         <scale_options>
           <width_scalable>true</width_scalable>
           <height_scalable>true</height_scalable>
@@ -200,30 +200,30 @@ $(pv_value)</tooltip>
         <transparent>true</transparent>
         <show_scrollbar>false</show_scrollbar>
         <background_color>
-          <color name="IO Background" red="255" green="255" blue="205" />
+          <color name="IO Background" red="200" green="200" blue="200" />
         </background_color>
         <foreground_color>
-          <color name="IO Text Fg" red="0" green="32" blue="92" />
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <widget_type>Label</widget_type>
         <enabled>false</enabled>
-        <text>Auxiliary Location</text>
+        <text>General Penetration</text>
         <font>
-          <opifont.name fontName="arial" height="10" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans" height="16" style="0">IO Normal</opifont.name>
         </font>
-        <width>81</width>
+        <width>168</width>
         <border_style>0</border_style>
         <rules />
         <border_width>1</border_width>
         <border_color>
-          <color name="IO Border" red="215" green="215" blue="215" />
+          <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <horizontal_alignment>0</horizontal_alignment>
         <actions hook="false" hook_all="false" />
-        <y>21</y>
+        <y>12</y>
         <wrap_words>true</wrap_words>
         <tooltip></tooltip>
-        <x>130</x>
+        <x>59</x>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -231,10 +231,10 @@ $(pv_value)</tooltip>
         <include_parent_macros>true</include_parent_macros>
       </macros>
       <visible>true</visible>
-      <wuid>4ec3745f:13ad9b06e0b:-7eec</wuid>
+      <wuid>-646f10c9:13a2bb630f6:-7bfd</wuid>
       <scripts />
-      <height>56</height>
-      <name>Amplifiers saturation clipping</name>
+      <height>33</height>
+      <name>Not cutting section</name>
       <scale_options>
         <width_scalable>true</width_scalable>
         <height_scalable>true</height_scalable>
@@ -246,23 +246,23 @@ $(pv_value)</tooltip>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
       <background_color>
-        <color name="IO Background" red="255" green="255" blue="205" />
+        <color name="IO Background" red="200" green="200" blue="200" />
       </background_color>
       <enabled>true</enabled>
       <widget_type>Grouping Container</widget_type>
       <font>
-        <opifont.name fontName="arial" height="10" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans" height="16" style="0">IO Normal</opifont.name>
       </font>
-      <width>263</width>
+      <width>221</width>
       <border_style>0</border_style>
       <rules />
       <fc>false</fc>
       <lock_children>true</lock_children>
       <border_width>1</border_width>
       <border_color>
-        <color name="IO Border" red="215" green="215" blue="215" />
+        <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
-      <y>56</y>
+      <y>41</y>
       <actions hook="false" hook_all="false" />
       <x>0</x>
       <tooltip></tooltip>
@@ -271,18 +271,18 @@ $(pv_value)</tooltip>
         <visible>true</visible>
         <auto_size>true</auto_size>
         <scripts />
-        <height>55</height>
+        <height>29</height>
         <data_type>0</data_type>
         <show_boolean_label>true</show_boolean_label>
         <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
         <off_label>OFF</off_label>
         <background_color>
-          <color name="IO Background" red="255" green="255" blue="205" />
+          <color name="IO Background" red="200" green="200" blue="200" />
         </background_color>
         <enabled>true</enabled>
         <widget_type>Boolean Symbol Image Monitor</widget_type>
         <font>
-          <opifont.name fontName="arial" height="10" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans" height="16" style="0">IO Normal</opifont.name>
         </font>
         <permutation_matrix>
           <row>
@@ -294,7 +294,7 @@ $(pv_value)</tooltip>
             <col>1.0</col>
           </row>
         </permutation_matrix>
-        <width>55</width>
+        <width>29</width>
         <border_style>0</border_style>
         <flip_vertical>false</flip_vertical>
         <pv_value />
@@ -302,16 +302,16 @@ $(pv_value)</tooltip>
         <bit>0</bit>
         <on_label>ON</on_label>
         <border_width>1</border_width>
-        <image_file>SymbolLibrary/SVG/Electronic/Amplifier/Amplifiers saturation clipping.svg</image_file>
+        <image_file>SymbolLibrary/SVG/CivilEngineering/Penetration/Not cutting section.svg</image_file>
         <crop_right>0</crop_right>
         <crop_left>0</crop_left>
         <wuid>4982c4ba:136d02e386e:-7fa0</wuid>
-        <boolean_label_position>9</boolean_label_position>
+        <boolean_label_position>5</boolean_label_position>
         <on_color>
           <color name="IO PV ON" red="0" green="0" blue="225" />
         </on_color>
         <stretch_to_fit>false</stretch_to_fit>
-        <name>Amplifiers saturation clipping</name>
+        <name>Not cutting section</name>
         <scale_options>
           <width_scalable>true</width_scalable>
           <height_scalable>true</height_scalable>
@@ -322,7 +322,7 @@ $(pv_value)</tooltip>
         </off_color>
         <pv_name>sim://flipflop(3)</pv_name>
         <foreground_color>
-          <color name="IO InputPV Fg" red="0" green="32" blue="92" />
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <flip_horizontal>false</flip_horizontal>
@@ -330,7 +330,7 @@ $(pv_value)</tooltip>
         <rules />
         <degree>0</degree>
         <border_color>
-          <color name="IO Border" red="215" green="215" blue="215" />
+          <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <y>0</y>
         <actions hook="false" hook_all="false" />
@@ -344,8 +344,8 @@ $(pv_value)</tooltip>
         <wuid>4982c4ba:136d02e386e:-7f9d</wuid>
         <auto_size>true</auto_size>
         <scripts />
-        <height>13</height>
-        <name>Amplifiers saturation clipping</name>
+        <height>20</height>
+        <name>Not cutting section</name>
         <scale_options>
           <width_scalable>true</width_scalable>
           <height_scalable>true</height_scalable>
@@ -354,30 +354,30 @@ $(pv_value)</tooltip>
         <transparent>true</transparent>
         <show_scrollbar>false</show_scrollbar>
         <background_color>
-          <color name="IO Background" red="255" green="255" blue="205" />
+          <color name="IO Background" red="200" green="200" blue="200" />
         </background_color>
         <foreground_color>
-          <color name="IO Text Fg" red="0" green="32" blue="92" />
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <widget_type>Label</widget_type>
         <enabled>false</enabled>
-        <text>Amplifiers saturation clipping</text>
+        <text>Not cutting section</text>
         <font>
-          <opifont.name fontName="arial" height="10" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans" height="16" style="0">IO Normal</opifont.name>
         </font>
-        <width>132</width>
+        <width>161</width>
         <border_style>0</border_style>
         <rules />
         <border_width>1</border_width>
         <border_color>
-          <color name="IO Border" red="215" green="215" blue="215" />
+          <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <horizontal_alignment>0</horizontal_alignment>
         <actions hook="false" hook_all="false" />
-        <y>21</y>
+        <y>12</y>
         <wrap_words>true</wrap_words>
         <tooltip></tooltip>
-        <x>130</x>
+        <x>59</x>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -385,10 +385,10 @@ $(pv_value)</tooltip>
         <include_parent_macros>true</include_parent_macros>
       </macros>
       <visible>true</visible>
-      <wuid>4ec3745f:13ad9b06e0b:-7ecc</wuid>
+      <wuid>-646f10c9:13a2bb630f6:-7bbb</wuid>
       <scripts />
-      <height>68</height>
-      <name>Amplifiers with two inputs</name>
+      <height>33</height>
+      <name>Cutting section Without connector</name>
       <scale_options>
         <width_scalable>true</width_scalable>
         <height_scalable>true</height_scalable>
@@ -400,23 +400,23 @@ $(pv_value)</tooltip>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
       <background_color>
-        <color name="IO Background" red="255" green="255" blue="205" />
+        <color name="IO Background" red="200" green="200" blue="200" />
       </background_color>
       <enabled>true</enabled>
       <widget_type>Grouping Container</widget_type>
       <font>
-        <opifont.name fontName="arial" height="10" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans" height="16" style="0">IO Normal</opifont.name>
       </font>
-      <width>249</width>
+      <width>351</width>
       <border_style>0</border_style>
       <rules />
       <fc>false</fc>
       <lock_children>true</lock_children>
       <border_width>1</border_width>
       <border_color>
-        <color name="IO Border" red="215" green="215" blue="215" />
+        <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
-      <y>112</y>
+      <y>82</y>
       <actions hook="false" hook_all="false" />
       <x>0</x>
       <tooltip></tooltip>
@@ -425,18 +425,18 @@ $(pv_value)</tooltip>
         <visible>true</visible>
         <auto_size>true</auto_size>
         <scripts />
-        <height>67</height>
+        <height>29</height>
         <data_type>0</data_type>
         <show_boolean_label>true</show_boolean_label>
         <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
         <off_label>OFF</off_label>
         <background_color>
-          <color name="IO Background" red="255" green="255" blue="205" />
+          <color name="IO Background" red="200" green="200" blue="200" />
         </background_color>
         <enabled>true</enabled>
         <widget_type>Boolean Symbol Image Monitor</widget_type>
         <font>
-          <opifont.name fontName="arial" height="10" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans" height="16" style="0">IO Normal</opifont.name>
         </font>
         <permutation_matrix>
           <row>
@@ -448,7 +448,7 @@ $(pv_value)</tooltip>
             <col>1.0</col>
           </row>
         </permutation_matrix>
-        <width>91</width>
+        <width>29</width>
         <border_style>0</border_style>
         <flip_vertical>false</flip_vertical>
         <pv_value />
@@ -456,16 +456,16 @@ $(pv_value)</tooltip>
         <bit>0</bit>
         <on_label>ON</on_label>
         <border_width>1</border_width>
-        <image_file>SymbolLibrary/SVG/Electronic/Amplifier/Amplifiers with two inputs.svg</image_file>
+        <image_file>SymbolLibrary/SVG/CivilEngineering/Penetration/Cutting section Without connector.svg</image_file>
         <crop_right>0</crop_right>
         <crop_left>0</crop_left>
         <wuid>4982c4ba:136d02e386e:-7fa0</wuid>
-        <boolean_label_position>9</boolean_label_position>
+        <boolean_label_position>5</boolean_label_position>
         <on_color>
           <color name="IO PV ON" red="0" green="0" blue="225" />
         </on_color>
         <stretch_to_fit>false</stretch_to_fit>
-        <name>Amplifiers with two inputs</name>
+        <name>Cutting section Without connector</name>
         <scale_options>
           <width_scalable>true</width_scalable>
           <height_scalable>true</height_scalable>
@@ -476,7 +476,7 @@ $(pv_value)</tooltip>
         </off_color>
         <pv_name>sim://flipflop(3)</pv_name>
         <foreground_color>
-          <color name="IO InputPV Fg" red="0" green="32" blue="92" />
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <flip_horizontal>false</flip_horizontal>
@@ -484,7 +484,7 @@ $(pv_value)</tooltip>
         <rules />
         <degree>0</degree>
         <border_color>
-          <color name="IO Border" red="215" green="215" blue="215" />
+          <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <y>0</y>
         <actions hook="false" hook_all="false" />
@@ -498,8 +498,8 @@ $(pv_value)</tooltip>
         <wuid>4982c4ba:136d02e386e:-7f9d</wuid>
         <auto_size>true</auto_size>
         <scripts />
-        <height>13</height>
-        <name>Amplifiers with two inputs</name>
+        <height>20</height>
+        <name>Cutting section Without connector</name>
         <scale_options>
           <width_scalable>true</width_scalable>
           <height_scalable>true</height_scalable>
@@ -508,184 +508,30 @@ $(pv_value)</tooltip>
         <transparent>true</transparent>
         <show_scrollbar>false</show_scrollbar>
         <background_color>
-          <color name="IO Background" red="255" green="255" blue="205" />
+          <color name="IO Background" red="200" green="200" blue="200" />
         </background_color>
         <foreground_color>
-          <color name="IO Text Fg" red="0" green="32" blue="92" />
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <widget_type>Label</widget_type>
         <enabled>false</enabled>
-        <text>Amplifiers with two inputs</text>
+        <text>Cutting section Without connector</text>
         <font>
-          <opifont.name fontName="arial" height="10" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans" height="16" style="0">IO Normal</opifont.name>
         </font>
-        <width>118</width>
+        <width>291</width>
         <border_style>0</border_style>
         <rules />
         <border_width>1</border_width>
         <border_color>
-          <color name="IO Border" red="215" green="215" blue="215" />
+          <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <horizontal_alignment>0</horizontal_alignment>
         <actions hook="false" hook_all="false" />
-        <y>21</y>
+        <y>12</y>
         <wrap_words>true</wrap_words>
         <tooltip></tooltip>
-        <x>130</x>
-      </widget>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-      <macros>
-        <include_parent_macros>true</include_parent_macros>
-      </macros>
-      <visible>true</visible>
-      <wuid>4ec3745f:13ad9b06e0b:-7e84</wuid>
-      <scripts />
-      <height>51</height>
-      <name>Phase shifter</name>
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <transparent>true</transparent>
-      <show_scrollbar>false</show_scrollbar>
-      <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
-      </foreground_color>
-      <background_color>
-        <color name="IO Background" red="255" green="255" blue="205" />
-      </background_color>
-      <enabled>true</enabled>
-      <widget_type>Grouping Container</widget_type>
-      <font>
-        <opifont.name fontName="arial" height="10" style="0">IO Normal</opifont.name>
-      </font>
-      <width>192</width>
-      <border_style>0</border_style>
-      <rules />
-      <fc>false</fc>
-      <lock_children>true</lock_children>
-      <border_width>1</border_width>
-      <border_color>
-        <color name="IO Border" red="215" green="215" blue="215" />
-      </border_color>
-      <y>180</y>
-      <actions hook="false" hook_all="false" />
-      <x>0</x>
-      <tooltip></tooltip>
-      <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-        <border_alarm_sensitive>true</border_alarm_sensitive>
-        <visible>true</visible>
-        <auto_size>true</auto_size>
-        <scripts />
-        <height>50</height>
-        <data_type>0</data_type>
-        <show_boolean_label>true</show_boolean_label>
-        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-        <off_label>OFF</off_label>
-        <background_color>
-          <color name="IO Background" red="255" green="255" blue="205" />
-        </background_color>
-        <enabled>true</enabled>
-        <widget_type>Boolean Symbol Image Monitor</widget_type>
-        <font>
-          <opifont.name fontName="arial" height="10" style="0">IO Normal</opifont.name>
-        </font>
-        <permutation_matrix>
-          <row>
-            <col>1.0</col>
-            <col>0.0</col>
-          </row>
-          <row>
-            <col>0.0</col>
-            <col>1.0</col>
-          </row>
-        </permutation_matrix>
-        <width>90</width>
-        <border_style>0</border_style>
-        <flip_vertical>false</flip_vertical>
-        <pv_value />
-        <crop_bottom>0</crop_bottom>
-        <bit>0</bit>
-        <on_label>ON</on_label>
-        <border_width>1</border_width>
-        <image_file>SymbolLibrary/SVG/Electronic/Amplifier/Phase shifter.svg</image_file>
-        <crop_right>0</crop_right>
-        <crop_left>0</crop_left>
-        <wuid>4982c4ba:136d02e386e:-7fa0</wuid>
-        <boolean_label_position>9</boolean_label_position>
-        <on_color>
-          <color name="IO PV ON" red="0" green="0" blue="225" />
-        </on_color>
-        <stretch_to_fit>false</stretch_to_fit>
-        <name>Phase shifter</name>
-        <scale_options>
-          <width_scalable>true</width_scalable>
-          <height_scalable>true</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <off_color>
-          <color name="IO PV OFF" red="77" green="77" blue="77" />
-        </off_color>
-        <pv_name>sim://flipflop(3)</pv_name>
-        <foreground_color>
-          <color name="IO InputPV Fg" red="0" green="32" blue="92" />
-        </foreground_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-        <flip_horizontal>false</flip_horizontal>
-        <crop_top>0</crop_top>
-        <rules />
-        <degree>0</degree>
-        <border_color>
-          <color name="IO Border" red="215" green="215" blue="215" />
-        </border_color>
-        <y>0</y>
-        <actions hook="false" hook_all="false" />
-        <x>0</x>
-        <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      </widget>
-      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-        <visible>true</visible>
-        <vertical_alignment>1</vertical_alignment>
-        <wuid>4982c4ba:136d02e386e:-7f9d</wuid>
-        <auto_size>true</auto_size>
-        <scripts />
-        <height>13</height>
-        <name>Phase shifter</name>
-        <scale_options>
-          <width_scalable>true</width_scalable>
-          <height_scalable>true</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <transparent>true</transparent>
-        <show_scrollbar>false</show_scrollbar>
-        <background_color>
-          <color name="IO Background" red="255" green="255" blue="205" />
-        </background_color>
-        <foreground_color>
-          <color name="IO Text Fg" red="0" green="32" blue="92" />
-        </foreground_color>
-        <widget_type>Label</widget_type>
-        <enabled>false</enabled>
-        <text>Phase shifter</text>
-        <font>
-          <opifont.name fontName="arial" height="10" style="0">IO Normal</opifont.name>
-        </font>
-        <width>61</width>
-        <border_style>0</border_style>
-        <rules />
-        <border_width>1</border_width>
-        <border_color>
-          <color name="IO Border" red="215" green="215" blue="215" />
-        </border_color>
-        <horizontal_alignment>0</horizontal_alignment>
-        <actions hook="false" hook_all="false" />
-        <y>21</y>
-        <wrap_words>true</wrap_words>
-        <tooltip></tooltip>
-        <x>130</x>
+        <x>59</x>
       </widget>
     </widget>
   </widget>
