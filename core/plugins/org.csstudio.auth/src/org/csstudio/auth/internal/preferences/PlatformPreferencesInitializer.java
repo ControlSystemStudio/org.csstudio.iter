@@ -44,7 +44,7 @@ public final class PlatformPreferencesInitializer extends
 	 */
 	@Override
 	public void initializeDefaultPreferences() {
-		IEclipsePreferences node = new DefaultScope()
+		IEclipsePreferences node = DefaultScope.INSTANCE
 				.getNode(AuthActivator.ID);
 
 		initializeSystemPropertyPreferences(node);

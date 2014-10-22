@@ -27,7 +27,6 @@ import java.util.Set;
 
 import org.csstudio.auth.internal.rightsmanagement.IRightsManagementListener;
 import org.csstudio.auth.internal.rightsmanagement.RightsManagementEvent;
-import org.csstudio.auth.internal.rightsmanagement.RightsManagementService;
 import org.csstudio.auth.internal.security.ActivateableList;
 import org.csstudio.auth.internal.security.NoActivationAdapterFoundException;
 import org.csstudio.auth.internal.usermanagement.IUserManagementListener;
@@ -76,12 +75,11 @@ public final class ActivationService implements IUserManagementListener,
 
 	/**
 	 * Constructor of this class. Registers this ActivationManagement as
-	 * UserManagementListener and RightsManagementListener
+	 * UserManagementListener.
 	 */
 	private ActivationService() {
 		_activatesMap = new HashMap<String, ActivateableList>();
 		SecurityFacade.getInstance().addUserManagementListener(this);
-		RightsManagementService.getInstance().addRightsManagementListener(this);
 	}
 
 	/**
@@ -234,11 +232,10 @@ public final class ActivationService implements IUserManagementListener,
 	/**
 	 * Disposes the current {@link ActivationService}. All registered objects
 	 * are removed and unregisters this {@link ActivationService} as 
-	 * UserManagementListener and RightsManagementListener
+	 * UserManagementListener.
 	 */
 	public void dispose() {
 		SecurityFacade.getInstance().removeUserManagementListener(this);
-		RightsManagementService.getInstance().removeListener(this);
 		_activatesMap.clear();
 		_instance = null;
 	}

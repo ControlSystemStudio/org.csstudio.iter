@@ -27,7 +27,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.csstudio.auth.internal.AuthActivator;
-import org.csstudio.auth.security.SecurityFacade;
 import org.eclipse.core.runtime.preferences.DefaultScope;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
@@ -165,7 +164,7 @@ public final class SystemPropertyPreferenceEntry {
 	 * @return the platform prefernces.
 	 */
     private static IEclipsePreferences getPlatformPreferences() {
-        return new InstanceScope().getNode(
+        return InstanceScope.INSTANCE.getNode(
                 AuthActivator.ID);
     }
     
@@ -175,7 +174,7 @@ public final class SystemPropertyPreferenceEntry {
      * @return the platform preference defaults.
      */
     private static IEclipsePreferences getDefaultPlatformPreferences() {
-    	return new DefaultScope().getNode(
+    	return DefaultScope.INSTANCE.getNode(
     			AuthActivator.ID);
     }
 }

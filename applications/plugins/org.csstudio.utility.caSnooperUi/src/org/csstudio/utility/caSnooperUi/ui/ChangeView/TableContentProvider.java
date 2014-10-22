@@ -21,6 +21,7 @@ class TableContentProvider implements IStructuredContentProvider {
 			final Object newInput) {
 	}
 
+	@SuppressWarnings("unchecked")
 	public Object[] getElements(Object inputElement) {
 		TableLabelProvider.resetCount();
 		ArrayList<ChannelStructure> tmp = (ArrayList<ChannelStructure>) inputElement;
