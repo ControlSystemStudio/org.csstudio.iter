@@ -26,7 +26,6 @@ public class SearchStringParserTest {
 	assertEquals("Failed to parse " + simpleText, expectedSimpleText,
 		searchParser(simpleText, defaultKey));
 
-	String text = "test with space";
 	Map<String, String> expectedText = new HashMap<String, String>();
 	expectedText.put("text", "test with space");
 	assertEquals("Failed to parse " + simpleText, expectedSimpleText,
