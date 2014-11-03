@@ -69,8 +69,8 @@ public class RecordDbParser {
 
 	public void printTree(CommonTree t, int indent) {
 		if (t != null) {
-			StringBuffer sb = new StringBuffer(indent);
-			if (t.getParent() == null && (sb != null && t.getText() != null)) {
+			StringBuilder sb = new StringBuilder(indent);
+			if (t.getParent() == null && t.getText() != null) {
 				System.out.println(sb.toString() + t.getText().toString());
 			}
 			for (int i = 0; i < indent; i++)
