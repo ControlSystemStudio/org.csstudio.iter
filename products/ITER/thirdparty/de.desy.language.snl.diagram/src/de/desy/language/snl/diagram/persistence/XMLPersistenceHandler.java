@@ -17,6 +17,7 @@ import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 import org.xml.sax.helpers.DefaultHandler;
 
+import de.desy.language.snl.diagram.model.ModelElement;
 import de.desy.language.snl.diagram.model.SNLDiagram;
 import de.desy.language.snl.diagram.model.SNLModel;
 import de.desy.language.snl.diagram.model.StateModel;
@@ -159,7 +160,7 @@ public class XMLPersistenceHandler implements IPersistenceHandler {
 		Element connectionElement = new Element(XMLConstant.CONNECTION
 				.getIdentifier());
 		connectionElement.setAttribute(XMLConstant.NAME.getIdentifier(),
-				connection.getPropertyValue(SNLModel.PARENT) + "."
+				connection.getPropertyValue(ModelElement.PARENT) + "."
 						+ sourceIdentifier + ".(" + connection.getIdentifier()
 						+ ")");
 		for (Point current : connection.getBendPoints()) {
@@ -232,7 +233,7 @@ public class XMLPersistenceHandler implements IPersistenceHandler {
 
 		Element stateElement = new Element(XMLConstant.STATE.getIdentifier());
 		stateElement.setAttribute(XMLConstant.NAME.getIdentifier(), model
-				.getPropertyValue(SNLModel.PARENT)
+				.getPropertyValue(ModelElement.PARENT)
 				+ "." + model.getIdentifier());
 		stateElement.setAttribute(XMLConstant.LOCATION_X.getIdentifier(),
 				String.valueOf(model.getLocation().x));
