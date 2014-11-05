@@ -299,6 +299,7 @@ public abstract class LanguageEditor extends TextEditor {
 					PreferenceConstants.MARGIN_PAINTER_COLOR
 							.getPreferenceStoreId(),
 					PreferenceConstants.MARGIN_COLUMNS.getPreferenceStoreId());
+			support.uninstall();
 			support.install(preferenceStore);
 		} else {
 			System.out
@@ -317,14 +318,13 @@ public abstract class LanguageEditor extends TextEditor {
 	 * processing.
 	 */
 	@Override
-	public final void dispose() {
+	public void dispose() {
+	    setPreferenceStore(null);
 		super.dispose();
-
 		UIEvent.HIGHLIGTHING_RULE_CHANGED.removeListener(this._uiListener);
 		UIEvent.TEXT_ATTRIBUTE_CHANGED.removeListener(this._uiListener);
 		UIEvent.HIGHLIGHTING_REFRESH_REQUEST
 				.removeListener(this._refreshListener);
-
 		this.doAdditionalDispose();
 	}
 

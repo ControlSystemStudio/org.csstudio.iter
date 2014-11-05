@@ -501,6 +501,13 @@ public class SNLEditor extends LanguageEditor {
         _preferenceStore = SNLUiActivator.getDefault().getPreferenceStore();
         _compilerOptionService = new CompilerOptionsService(_preferenceStore);
     }
+    
+    @Override
+    public void dispose() {
+        _preferenceStore = null;
+//        _compilerOptionService.
+        super.dispose();
+    }
 
     /**
      * {@inheritDoc}
