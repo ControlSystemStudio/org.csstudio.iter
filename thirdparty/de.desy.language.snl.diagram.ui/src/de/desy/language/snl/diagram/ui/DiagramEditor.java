@@ -258,27 +258,25 @@ public class DiagramEditor extends GraphicalEditor {
 		}
 		final IDocument document = _implicitDocumentProvider.getDocument(input);
 		if (document != null) {
-			IFile sourceResource = null;
+			IFile sourceRessource = null;
 			if (input instanceof FileEditorInput) {
-			    sourceResource = ((FileEditorInput) getEditorInput())
+				sourceRessource = ((FileEditorInput) getEditorInput())
 						.getFile();
 			}
 			final Node rootNode = this.getLanguageParser().parse(
-					document.get(), sourceResource, new NullProgressMonitor());
+					document.get(), sourceRessource, new NullProgressMonitor());
 
 			if (rootNode.hasChildren()) {
 				Map<String, StateLayoutData> stateData = new HashMap<String, StateLayoutData>();
 				Map<String, List<Point>> connectionData = new HashMap<String, List<Point>>();
-				if (sourceResource != null) {
-    				try {
-    					stateData = _persistenceHandler
-    							.loadStateLayoutData(sourceResource.getFullPath());
-    					connectionData = _persistenceHandler
-    							.loadConnectionLayoutData(sourceResource
-    									.getFullPath());
-    				} catch (Exception e) {
-    					e.printStackTrace();
-    				}
+				try {
+					stateData = _persistenceHandler
+							.loadStateLayoutData(sourceRessource.getFullPath());
+					connectionData = _persistenceHandler
+							.loadConnectionLayoutData(sourceRessource
+									.getFullPath());
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
 
 				diagram = DiagramCreator.getInstance().createDiagram(rootNode,

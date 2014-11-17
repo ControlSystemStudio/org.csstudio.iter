@@ -12,6 +12,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.ShortestPathConnectionRouter;
 import org.eclipse.draw2d.geometry.Rectangle;
+
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.LayerConstants;
@@ -22,7 +23,6 @@ import org.eclipse.gef.editpolicies.XYLayoutEditPolicy;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.CreateRequest;
 
-import de.desy.language.snl.diagram.model.SNLElement;
 import de.desy.language.snl.diagram.model.StateModel;
 import de.desy.language.snl.diagram.model.ModelElement;
 import de.desy.language.snl.diagram.model.StateSetModel;
@@ -132,8 +132,8 @@ class DiagramEditPart extends AbstractGraphicalEditPart implements
 		// these properties are fired when Shapes are added into or removed from
 		// the ShapeDiagram instance and must cause a call of refreshChildren()
 		// to update the diagram's contents.
-		if (SNLElement.CHILD_ADDED_PROP.equals(prop)
-				|| SNLElement.CHILD_REMOVED_PROP.equals(prop)) {
+		if (SNLDiagram.CHILD_ADDED_PROP.equals(prop)
+				|| SNLDiagram.CHILD_REMOVED_PROP.equals(prop)) {
 			refreshChildren();
 		}
 	}
