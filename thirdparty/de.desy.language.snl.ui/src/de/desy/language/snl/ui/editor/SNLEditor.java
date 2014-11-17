@@ -501,13 +501,6 @@ public class SNLEditor extends LanguageEditor {
         _preferenceStore = SNLUiActivator.getDefault().getPreferenceStore();
         _compilerOptionService = new CompilerOptionsService(_preferenceStore);
     }
-    
-    @Override
-    public void dispose() {
-        _preferenceStore = null;
-//        _compilerOptionService.
-        super.dispose();
-    }
 
     /**
      * {@inheritDoc}
@@ -618,6 +611,12 @@ public class SNLEditor extends LanguageEditor {
         }
 
         return error;
+    }
+    
+    @Override
+    public void dispose() {
+    	_preferenceStore = null;
+    	super.dispose();
     }
 
 //    private String extractFileName(IFile sourceRessource) {

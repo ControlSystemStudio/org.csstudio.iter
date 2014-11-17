@@ -319,12 +319,14 @@ public abstract class LanguageEditor extends TextEditor {
 	 */
 	@Override
 	public void dispose() {
-	    setPreferenceStore(null);
+		setPreferenceStore(null);
 		super.dispose();
+
 		UIEvent.HIGHLIGTHING_RULE_CHANGED.removeListener(this._uiListener);
 		UIEvent.TEXT_ATTRIBUTE_CHANGED.removeListener(this._uiListener);
 		UIEvent.HIGHLIGHTING_REFRESH_REQUEST
 				.removeListener(this._refreshListener);
+
 		this.doAdditionalDispose();
 	}
 

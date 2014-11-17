@@ -12,7 +12,6 @@ import org.eclipse.gef.editpolicies.RootComponentEditPolicy;
 
 import de.desy.language.snl.diagram.model.ModelElement;
 import de.desy.language.snl.diagram.model.SNLDiagram;
-import de.desy.language.snl.diagram.model.SNLElement;
 
 /**
  * TreeEditPart for a ShapesDiagram instance. This is used in the Outline View
@@ -112,12 +111,12 @@ class DiagramTreeEditPart extends AbstractTreeEditPart implements
 	 */
 	public void propertyChange(final PropertyChangeEvent evt) {
 		final String prop = evt.getPropertyName();
-		if (SNLElement.CHILD_ADDED_PROP.equals(prop)) {
+		if (SNLDiagram.CHILD_ADDED_PROP.equals(prop)) {
 			// add a child to this edit part
 			// causes an additional entry to appear in the tree of the outline
 			// view
 			addChild(createChild(evt.getNewValue()), -1);
-		} else if (SNLElement.CHILD_REMOVED_PROP.equals(prop)) {
+		} else if (SNLDiagram.CHILD_REMOVED_PROP.equals(prop)) {
 			// remove a child from this edit part
 			// causes the corresponding edit part to disappear from the tree in
 			// the outline view

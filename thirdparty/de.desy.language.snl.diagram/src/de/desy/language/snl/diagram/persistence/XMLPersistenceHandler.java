@@ -17,7 +17,6 @@ import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 import org.xml.sax.helpers.DefaultHandler;
 
-import de.desy.language.snl.diagram.model.ModelElement;
 import de.desy.language.snl.diagram.model.SNLDiagram;
 import de.desy.language.snl.diagram.model.SNLModel;
 import de.desy.language.snl.diagram.model.StateModel;
@@ -50,9 +49,11 @@ public class XMLPersistenceHandler implements IPersistenceHandler {
 
 		IPath layoutDataPath = getLayoutDataPath(originalFilePath);
 
-		try (FileOutputStream outputStream = new FileOutputStream(layoutDataPath
-					.toFile())) {
+		try  {
+			FileOutputStream outputStream = new FileOutputStream(layoutDataPath
+					.toFile());
 			outputter.output(diagramElement, outputStream);
+			outputStream.close();
 		} catch (Exception e) {
 			throw new Exception("Exception occurred while storing layout data",
 					e);
@@ -160,7 +161,7 @@ public class XMLPersistenceHandler implements IPersistenceHandler {
 		Element connectionElement = new Element(XMLConstant.CONNECTION
 				.getIdentifier());
 		connectionElement.setAttribute(XMLConstant.NAME.getIdentifier(),
-				connection.getPropertyValue(ModelElement.PARENT) + "."
+				connection.getPropertyValue(SNLModel.PARENT) + "."
 						+ sourceIdentifier + ".(" + connection.getIdentifier()
 						+ ")");
 		for (Point current : connection.getBendPoints()) {
@@ -233,7 +234,7 @@ public class XMLPersistenceHandler implements IPersistenceHandler {
 
 		Element stateElement = new Element(XMLConstant.STATE.getIdentifier());
 		stateElement.setAttribute(XMLConstant.NAME.getIdentifier(), model
-				.getPropertyValue(ModelElement.PARENT)
+				.getPropertyValue(SNLModel.PARENT)
 				+ "." + model.getIdentifier());
 		stateElement.setAttribute(XMLConstant.LOCATION_X.getIdentifier(),
 				String.valueOf(model.getLocation().x));
