@@ -11,6 +11,7 @@ import de.desy.language.editor.core.parser.Node;
 import de.desy.language.snl.diagram.model.ModelElement;
 import de.desy.language.snl.diagram.model.SNLDiagram;
 import de.desy.language.snl.diagram.model.SNLElement;
+import de.desy.language.snl.diagram.model.SNLModel;
 import de.desy.language.snl.diagram.model.StateModel;
 import de.desy.language.snl.diagram.model.StateSetModel;
 import de.desy.language.snl.diagram.model.WhenConnection;
@@ -99,7 +100,7 @@ public class DiagramCreator {
 				final StateModel state = new StateModel();
 				state.setStateNode(stateNode);
 
-				state.setPropertyValue(ModelElement.PARENT, parentModel
+				state.setPropertyValue(SNLModel.PARENT, parentModel
 						.getIdentifier());
 				String name = assembleMapKey(parentModel, state);
 				StateLayoutData data = stateData.get(name);
@@ -177,7 +178,7 @@ public class DiagramCreator {
 				final WhenConnection whenCon = new WhenConnection(stateModel,
 						destination);
 				whenCon.setWhenNode(when);
-				whenCon.setPropertyValue(ModelElement.PARENT, parentModel
+				whenCon.setPropertyValue(SNLModel.PARENT, parentModel
 						.getIdentifier());
 
 				String name = assembleMapKey(parentModel, stateModel).concat(
