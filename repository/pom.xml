@@ -50,7 +50,7 @@
                 <mkdir dir="${project.build.directory}/rootfiles"/>
                 <!-- Copy the files if they exist. If they don't no problem, they won't be included, which is standard for the official release -->
                 <copy verbose="false" todir="${project.build.directory}/rootfiles">
-                  <fileset dir="${project.build.directory}/../../../../../m-css-common/src/main/conf">
+                  <fileset dir="${project.build.directory}/../../../m-css-common/src/main/conf">
                     <include name="css.key"/>
                     <include name="secure_store.dat"/>
                   </fileset>
