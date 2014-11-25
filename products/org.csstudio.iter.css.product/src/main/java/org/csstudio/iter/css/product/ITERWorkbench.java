@@ -33,6 +33,7 @@ public class ITERWorkbench extends Workbench {
 	public Object beforeWorkbenchCreation(Display display,
 			IApplicationContext context, Map<String, Object> parameters) {
 		WorkbenchUtil.removeUnWantedLog();
+		WorkbenchUtil.setupSystemFonts();
 		return super.beforeWorkbenchCreation(display, context, parameters);
 	}
 	
