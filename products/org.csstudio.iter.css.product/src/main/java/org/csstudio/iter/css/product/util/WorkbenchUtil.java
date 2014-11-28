@@ -18,16 +18,21 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
+import org.csstudio.iter.css.product.Activator;
 import org.csstudio.iter.css.product.preferences.Preferences;
 import org.eclipse.core.commands.CommandManager;
 import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.core.commands.contexts.ContextManager;
 import org.eclipse.core.runtime.dynamichelpers.IExtensionChangeHandler;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jface.bindings.Binding;
 import org.eclipse.jface.bindings.BindingManager;
 import org.eclipse.jface.bindings.Scheme;
 import org.eclipse.jface.bindings.keys.KeyBinding;
 import org.eclipse.jface.bindings.keys.KeySequence;
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.swt.graphics.FontData;
 import org.eclipse.ui.IPerspectiveDescriptor;
 import org.eclipse.ui.IPerspectiveRegistry;
 import org.eclipse.ui.PlatformUI;
@@ -35,6 +40,8 @@ import org.eclipse.ui.keys.IBindingService;
 
 public class WorkbenchUtil {
 
+	private static final String APPLIED_SYSTEM_FONT = "appliedSystemFont";
+	
 	private static final String[] HIDE_MESSAGE_STARTS_WITH = new String[] {
 			"Keybinding conflicts occurred.  They may interfere with normal accelerator operation.",
 			"Invalid preference page path: XML Syntax",
@@ -233,5 +240,46 @@ public class WorkbenchUtil {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	/**
+	 * Force the default font for all those fonts that we know are not using the system font.
+	 * The method has to be called before the workbench is created to have any effect.
+	 */
+	public static void setupSystemFonts() {
+	    String s = Activator.getDefault().getPreferenceStore().getString(APPLIED_SYSTEM_FONT);
+	    FontData[] fd = JFaceResources.getDefaultFont().getFontData();
+	    String font = fd[0].toString();
+	    //apply the system font if the system font has never been applied 
+	    //yet or if it is different than the previously applied font 
+	    if (s == null || s.isEmpty() || !font.equals(s)) {
+    	    IEclipsePreferences sc = InstanceScope.INSTANCE.getNode("org.eclipse.ui.workbench");
+    	    String oldF = sc.get(JFaceResources.BANNER_FONT,"");
+    	    //only apply the new system font, if the font for that settings has not been changed by the user
+    	    if (oldF.equals(s)) {
+    	        sc.put(JFaceResources.BANNER_FONT, font);
+    	    }
+    	    oldF = sc.get(JFaceResources.DIALOG_FONT,"");
+    	    if (oldF.equals(s)) {
+    	        sc.put(JFaceResources.DIALOG_FONT, font);
+    	    }
+    	    oldF = sc.get(JFaceResources.TEXT_FONT,"");
+    	    if (oldF.equals(s)) {
+    	        sc.put(JFaceResources.TEXT_FONT, font);
+    	    }
+    	    oldF = sc.get(JFaceResources.HEADER_FONT,"");
+    	    if (oldF.equals(s)) {
+    	        sc.put(JFaceResources.HEADER_FONT, font);
+    	    }
+    	    oldF = sc.get("org.eclipse.ui.workbench.texteditor.blockSelectionModeFont","");
+    	    if (oldF.equals(s)) {
+    	        sc.put("org.eclipse.ui.workbench.texteditor.blockSelectionModeFont", font);
+    	    }
+    	    oldF = sc.get("org.eclipse.jface.consoleFont","");
+    	    if (oldF.equals(s)) {
+    	        sc.put("org.eclipse.jface.consoleFont", font);
+    	    }
+    	    Activator.getDefault().getPreferenceStore().setValue(APPLIED_SYSTEM_FONT, font);
+	    }
 	}
 }
