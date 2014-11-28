@@ -1,46 +1,80 @@
-# Modified Date: 05/04/2013
-# Alarm colors
-Major = 255,0,0
-Minor = 255,255,0
-Invalid = 200,100,200
-Disconnected = 200,100,200
+# HMI Design Guide Colors
 
-# Display widget colors
-IO Background = 255,255,205
+# Mimic Background: Light grey
+IO Background = 235, 235, 235
+
+# Text: Black
 IO Foreground = 0, 0, 0
+
+# Area Background: Mid grey
+IO Area Background = 221, 223, 229
+
+# Component States
+
+# 1 / On state Blue
+IO PV ON = 0, 0, 255
+
+# 0 / Off Dark Brown
+IO PV OFF = 149, 125, 71
+
+# Alarms
+
+# Invalid/Disconnected: White
+IO Invalid Level Alarm = 255, 255, 255
+
+# Major: Red
+IO High Level Alarm = 250,12,14
+
+# Minor: Yellow
+IO Medium Level Alarm = 255,255,0
+
+# No alarm: Green
+IO Normal Level Alarm = 0, 255, 0
+
+# Obsolete alarm colors
+Major = 250,12,14
+Minor = 255,255,0
+Invalid = 255, 255, 255
+Disconnected = 255, 255, 255
+
+# Display widget color: Light grey
 IO Grid = 215,215,215
 
-# Shape colors
-IO Border = 215,215,215
-IO Shape Fill= 188, 188, 188
-IO Line = 0, 32, 92
-IO Link = 0, 32, 92
+# Shape widget colors: Black and Dark grey
+IO Border = 0, 0, 0
+IO Shape Fill= 166, 166, 166
+IO Line = 0, 0, 0
+IO Link = 0, 0, 0
 
-# Label & Text colors
-IO Text Fg = 0, 32, 92
+# Label & Text colors: Black
+IO Text Fg = 0, 0, 0
 
-# Boolean Symbol colors
-IO PV ON = 0,0,225
-IO PV OFF = 77, 77, 77
+# PV field colors
 
-# PV colors
-IO InputPV Bg = 255,255,255 
-IO InputPV Fg = 0, 32, 92
-IO OutputPV Bg = 121, 123, 126
-IO OutputPV Fg = 255,255,255
+# Read-only field: Black on light grey
+IO InputPV Bg = 235, 235, 235 
+IO InputPV Fg = 0, 0, 0
 
-# Scaled widget colors
-IO Stick = 0, 32, 92
+# Entry field: Black on white
+IO OutputPV Bg = 255, 255, 255
+IO OutputPV Fg = 0, 0, 0
+
+# Scaled widget colors: Black
+IO Stick = 0, 0, 0
 
 # XY Graph Trace colors
-IO Trace 1 = 79,129,189 
-IO Trace 2 = 192,80,77
-IO Trace 3 = 119,147,60
-IO Trace 4 = 135,112,107
+IO Trace 1 = 21, 21, 196 
+IO Trace 2 = 242, 26, 26
+IO Trace 3 = 33, 179, 33
+IO Trace 4 = 0, 0, 0
+IO Trace 5 = 128, 0, 255
+IO Trace 6 = 255, 170, 0
+IO Trace 7 = 255, 0, 240
+IO Trace 8 = 243, 132, 132
 
-# StatusBar color
-IO StatusBar Bg = 0,75,125
-IO StatusBar Fg = 255,255,255
+# StatusBar color: Black on light grey
+IO StatusBar Bg = 235, 235, 235
+IO StatusBar Fg = 0, 0, 0
 
 # Button colors
 IO Button = 178, 178, 178
@@ -79,8 +113,8 @@ IO De energised Busbar = 128,128,128
 IO OK = 0,255,0
 IO Default = 255,0,0
 IO onGoing = 255,255,0
-IO Disconnected = 200,100,200
-IO Unselected = 255,255,255
+IO Disconnected = 255, 255, 255
+IO Unselected = 255, 255, 255
 IO POS Backgroung = 205, 216, 192
 IO POS State = 160, 180, 137
 IO TCS Backgroung = 182, 217, 228
