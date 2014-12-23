@@ -1248,7 +1248,7 @@ $(pv_value)</tooltip>
             <enabled>true</enabled>
             <wuid>2354bc43:149a9b9650b:e3e</wuid>
             <transparent>true</transparent>
-            <lock_children>true</lock_children>
+            <lock_children>false</lock_children>
             <scripts />
             <height>75</height>
             <border_width>1</border_width>
@@ -1295,118 +1295,6 @@ $(pv_value)</tooltip>
               <show_scale>false</show_scale>
               <scale_format>####</scale_format>
               <show_label>true</show_label>
-              <height>75</height>
-              <fill_color>
-                <color name="Major" red="250" green="12" blue="14" />
-              </fill_color>
-              <border_width>2</border_width>
-              <value_label_format></value_label_format>
-              <visible>true</visible>
-              <pv_name>loc://$(DID)_MaxArea1(0)</pv_name>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <widget_type>Progress Bar</widget_type>
-              <name>Area 1 Max</name>
-              <show_hi>false</show_hi>
-              <actions hook="false" hook_all="false" />
-              <show_lo>false</show_lo>
-              <border_style>0</border_style>
-              <show_lolo>false</show_lolo>
-              <show_minor_ticks>false</show_minor_ticks>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <show_markers>false</show_markers>
-              <color_hihi>
-                <color name="Major" red="250" green="12" blue="14" />
-              </color_hihi>
-              <origin>0.0</origin>
-              <show_hihi>false</show_hihi>
-              <log_scale>false</log_scale>
-              <enabled>true</enabled>
-              <wuid>2354bc43:149a9b9650b:e3f</wuid>
-              <indicator_mode>false</indicator_mode>
-              <level_hihi>90.0</level_hihi>
-              <origin_ignored>true</origin_ignored>
-              <color_hi>
-                <color name="Minor" red="255" green="255" blue="0" />
-              </color_hi>
-              <color_lo>
-                <color name="Minor" red="255" green="255" blue="0" />
-              </color_lo>
-              <scripts>
-                <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-                  <scriptName>updateMaximum</scriptName>
-                  <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-var m= widget.getMacroValue("MaxPower");
-if(m!=null)
-	widget.setPropertyValue("maximum",m);
-]]></scriptText>
-                  <pv trig="true">=1</pv>
-                </path>
-                <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-                  <scriptName>UpdateMaxValue</scriptName>
-                  <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-importPackage(Packages.org.csstudio.platform.data);
-
-var value = PVUtil.getDouble(pvs[1]);
-var max = PVUtil.getDouble(pvs[0]);
-
-if (value>max)
-    pvs[0].setValue(value);	
-]]></scriptText>
-                  <pv trig="true">loc://$(DID)_MaxArea1(0)</pv>
-                  <pv trig="true">UTIL-S15-BG91:MUT5-JT1</pv>
-                </path>
-              </scripts>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <fillcolor_alarm_sensitive>false</fillcolor_alarm_sensitive>
-              <color_fillbackground>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </color_fillbackground>
-              <major_tick_step_hint>50</major_tick_step_hint>
-              <level_hi>80.0</level_hi>
-              <transparent_background>true</transparent_background>
-              <level_lo>20.0</level_lo>
-              <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-              <limits_from_pv>false</limits_from_pv>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <level_lolo>10.0</level_lolo>
-              <width>200</width>
-              <x>0</x>
-              <y>0</y>
-              <maximum>100.0</maximum>
-              <color_lolo>
-                <color name="Major" red="250" green="12" blue="14" />
-              </color_lolo>
-              <foreground_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </foreground_color>
-              <minimum>0.0</minimum>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
-              </font>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.progressbar" version="1.0.0">
-              <alarm_pulsing>false</alarm_pulsing>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <rules />
-              <effect_3d>true</effect_3d>
-              <scale_font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
-              </scale_font>
-              <horizontal>true</horizontal>
-              <pv_value />
-              <show_scale>false</show_scale>
-              <scale_format>####</scale_format>
-              <show_label>true</show_label>
               <height>51</height>
               <fill_color>
                 <color name="Low" red="20" green="50" blue="202" />
@@ -1414,7 +1302,7 @@ $(pv_value)</tooltip>
               <border_width>2</border_width>
               <value_label_format></value_label_format>
               <visible>true</visible>
-              <pv_name>UTIL-S15-BG91:MUT5-JT1</pv_name>
+              <pv_name>sim://noise(298,320,0.1)</pv_name>
               <border_color>
                 <color name="IO Border" red="0" green="0" blue="0" />
               </border_color>
@@ -1499,7 +1387,7 @@ if(m!=null)
             <enabled>true</enabled>
             <wuid>2354bc43:149a9b9650b:e41</wuid>
             <transparent>true</transparent>
-            <lock_children>true</lock_children>
+            <lock_children>false</lock_children>
             <scripts />
             <height>75</height>
             <border_width>1</border_width>
@@ -1546,119 +1434,6 @@ $(pv_value)</tooltip>
               <show_scale>false</show_scale>
               <scale_format>####</scale_format>
               <show_label>true</show_label>
-              <height>75</height>
-              <fill_color>
-                <color name="Major" red="250" green="12" blue="14" />
-              </fill_color>
-              <border_width>2</border_width>
-              <value_label_format></value_label_format>
-              <visible>true</visible>
-              <pv_name>loc://$(DID)_MaxArea2(0)</pv_name>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <widget_type>Progress Bar</widget_type>
-              <name>Area 2 Max</name>
-              <show_hi>false</show_hi>
-              <actions hook="false" hook_all="false" />
-              <show_lo>false</show_lo>
-              <border_style>0</border_style>
-              <show_lolo>false</show_lolo>
-              <show_minor_ticks>false</show_minor_ticks>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <show_markers>false</show_markers>
-              <color_hihi>
-                <color name="Major" red="250" green="12" blue="14" />
-              </color_hihi>
-              <origin>0.0</origin>
-              <show_hihi>false</show_hihi>
-              <log_scale>false</log_scale>
-              <enabled>true</enabled>
-              <wuid>2354bc43:149a9b9650b:e42</wuid>
-              <indicator_mode>false</indicator_mode>
-              <level_hihi>90.0</level_hihi>
-              <origin_ignored>true</origin_ignored>
-              <color_hi>
-                <color name="Minor" red="255" green="255" blue="0" />
-              </color_hi>
-              <color_lo>
-                <color name="Minor" red="255" green="255" blue="0" />
-              </color_lo>
-              <scripts>
-                <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-                  <scriptName>updateMaximum</scriptName>
-                  <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-var m= widget.getMacroValue("MaxPower");
-if(m!=null)
-	widget.setPropertyValue("maximum",m);
-]]></scriptText>
-                  <pv trig="true">=1</pv>
-                </path>
-                <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-                  <scriptName>UpdateMaxValue</scriptName>
-                  <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-importPackage(Packages.org.csstudio.platform.data);
-
-var value = PVUtil.getDouble(pvs[1]);
-var max = PVUtil.getDouble(pvs[0]);
-
-if (value>max)
-    pvs[0].setValue(value);	
-
-]]></scriptText>
-                  <pv trig="true">loc://$(DID)_MaxArea2(0)</pv>
-                  <pv trig="true">UTIL-S15-BG92:MUT5-JT1</pv>
-                </path>
-              </scripts>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <fillcolor_alarm_sensitive>false</fillcolor_alarm_sensitive>
-              <color_fillbackground>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </color_fillbackground>
-              <major_tick_step_hint>50</major_tick_step_hint>
-              <level_hi>80.0</level_hi>
-              <transparent_background>true</transparent_background>
-              <level_lo>20.0</level_lo>
-              <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-              <limits_from_pv>false</limits_from_pv>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <level_lolo>10.0</level_lolo>
-              <width>200</width>
-              <x>0</x>
-              <y>0</y>
-              <maximum>100.0</maximum>
-              <color_lolo>
-                <color name="Major" red="250" green="12" blue="14" />
-              </color_lolo>
-              <foreground_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </foreground_color>
-              <minimum>0.0</minimum>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
-              </font>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.progressbar" version="1.0.0">
-              <alarm_pulsing>false</alarm_pulsing>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <rules />
-              <effect_3d>true</effect_3d>
-              <scale_font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
-              </scale_font>
-              <horizontal>true</horizontal>
-              <pv_value />
-              <show_scale>false</show_scale>
-              <scale_format>####</scale_format>
-              <show_label>true</show_label>
               <height>51</height>
               <fill_color>
                 <color name="Low" red="20" green="50" blue="202" />
@@ -1666,7 +1441,7 @@ $(pv_value)</tooltip>
               <border_width>2</border_width>
               <value_label_format></value_label_format>
               <visible>true</visible>
-              <pv_name>UTIL-S15-BG92:MUT5-JT1</pv_name>
+              <pv_name>sim://noise(99,117,0.1)</pv_name>
               <border_color>
                 <color name="IO Border" red="0" green="0" blue="0" />
               </border_color>
@@ -1751,7 +1526,7 @@ if(m!=null)
             <enabled>true</enabled>
             <wuid>2354bc43:149a9b9650b:e44</wuid>
             <transparent>true</transparent>
-            <lock_children>true</lock_children>
+            <lock_children>false</lock_children>
             <scripts />
             <height>75</height>
             <border_width>1</border_width>
@@ -1798,119 +1573,6 @@ $(pv_value)</tooltip>
               <show_scale>false</show_scale>
               <scale_format>####</scale_format>
               <show_label>true</show_label>
-              <height>75</height>
-              <fill_color>
-                <color name="Major" red="250" green="12" blue="14" />
-              </fill_color>
-              <border_width>2</border_width>
-              <value_label_format></value_label_format>
-              <visible>true</visible>
-              <pv_name>loc://$(DID)_MaxArea3(0)</pv_name>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <widget_type>Progress Bar</widget_type>
-              <name>Area 3 Max</name>
-              <show_hi>false</show_hi>
-              <actions hook="false" hook_all="false" />
-              <show_lo>false</show_lo>
-              <border_style>0</border_style>
-              <show_lolo>false</show_lolo>
-              <show_minor_ticks>false</show_minor_ticks>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <show_markers>false</show_markers>
-              <color_hihi>
-                <color name="Major" red="250" green="12" blue="14" />
-              </color_hihi>
-              <origin>0.0</origin>
-              <show_hihi>false</show_hihi>
-              <log_scale>false</log_scale>
-              <enabled>true</enabled>
-              <wuid>2354bc43:149a9b9650b:e45</wuid>
-              <indicator_mode>false</indicator_mode>
-              <level_hihi>90.0</level_hihi>
-              <origin_ignored>true</origin_ignored>
-              <color_hi>
-                <color name="Minor" red="255" green="255" blue="0" />
-              </color_hi>
-              <color_lo>
-                <color name="Minor" red="255" green="255" blue="0" />
-              </color_lo>
-              <scripts>
-                <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-                  <scriptName>updateMaximum</scriptName>
-                  <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-var m= widget.getMacroValue("MaxPower");
-if(m!=null)
-	widget.setPropertyValue("maximum",m);
-]]></scriptText>
-                  <pv trig="true">=1</pv>
-                </path>
-                <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-                  <scriptName>UpdateMaxValue</scriptName>
-                  <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-importPackage(Packages.org.csstudio.platform.data);
-
-var value = PVUtil.getDouble(pvs[1]);
-var max = PVUtil.getDouble(pvs[0]);
-
-if (value>max)
-    pvs[0].setValue(value);	
-
-]]></scriptText>
-                  <pv trig="true">loc://$(DID)_MaxArea3(0)</pv>
-                  <pv trig="true">UTIL-S15-BG07:MUT1-JT1</pv>
-                </path>
-              </scripts>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <fillcolor_alarm_sensitive>false</fillcolor_alarm_sensitive>
-              <color_fillbackground>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </color_fillbackground>
-              <major_tick_step_hint>50</major_tick_step_hint>
-              <level_hi>80.0</level_hi>
-              <transparent_background>true</transparent_background>
-              <level_lo>20.0</level_lo>
-              <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-              <limits_from_pv>false</limits_from_pv>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <level_lolo>10.0</level_lolo>
-              <width>200</width>
-              <x>0</x>
-              <y>0</y>
-              <maximum>100.0</maximum>
-              <color_lolo>
-                <color name="Major" red="250" green="12" blue="14" />
-              </color_lolo>
-              <foreground_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </foreground_color>
-              <minimum>0.0</minimum>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
-              </font>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.progressbar" version="1.0.0">
-              <alarm_pulsing>false</alarm_pulsing>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <rules />
-              <effect_3d>true</effect_3d>
-              <scale_font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
-              </scale_font>
-              <horizontal>true</horizontal>
-              <pv_value />
-              <show_scale>false</show_scale>
-              <scale_format>####</scale_format>
-              <show_label>true</show_label>
               <height>51</height>
               <fill_color>
                 <color name="Low" red="20" green="50" blue="202" />
@@ -1918,7 +1580,7 @@ $(pv_value)</tooltip>
               <border_width>2</border_width>
               <value_label_format></value_label_format>
               <visible>true</visible>
-              <pv_name>UTIL-S15-BG07:MUT1-JT1</pv_name>
+              <pv_name>sim://noise(47,55,0.1)</pv_name>
               <border_color>
                 <color name="IO Border" red="0" green="0" blue="0" />
               </border_color>
@@ -2003,7 +1665,7 @@ if(m!=null)
             <enabled>true</enabled>
             <wuid>2354bc43:149a9b9650b:e47</wuid>
             <transparent>true</transparent>
-            <lock_children>true</lock_children>
+            <lock_children>false</lock_children>
             <scripts />
             <height>75</height>
             <border_width>1</border_width>
@@ -2050,118 +1712,6 @@ $(pv_value)</tooltip>
               <show_scale>false</show_scale>
               <scale_format>####</scale_format>
               <show_label>true</show_label>
-              <height>75</height>
-              <fill_color>
-                <color name="Major" red="250" green="12" blue="14" />
-              </fill_color>
-              <border_width>2</border_width>
-              <value_label_format></value_label_format>
-              <visible>true</visible>
-              <pv_name>loc://$(DID)_MaxArea4(0)</pv_name>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <widget_type>Progress Bar</widget_type>
-              <name>Area 4 Max</name>
-              <show_hi>false</show_hi>
-              <actions hook="false" hook_all="false" />
-              <show_lo>false</show_lo>
-              <border_style>0</border_style>
-              <show_lolo>false</show_lolo>
-              <show_minor_ticks>false</show_minor_ticks>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <show_markers>false</show_markers>
-              <color_hihi>
-                <color name="Major" red="250" green="12" blue="14" />
-              </color_hihi>
-              <origin>0.0</origin>
-              <show_hihi>false</show_hihi>
-              <log_scale>false</log_scale>
-              <enabled>true</enabled>
-              <wuid>2354bc43:149a9b9650b:e48</wuid>
-              <indicator_mode>false</indicator_mode>
-              <level_hihi>90.0</level_hihi>
-              <origin_ignored>true</origin_ignored>
-              <color_hi>
-                <color name="Minor" red="255" green="255" blue="0" />
-              </color_hi>
-              <color_lo>
-                <color name="Minor" red="255" green="255" blue="0" />
-              </color_lo>
-              <scripts>
-                <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-                  <scriptName>updateMaximum</scriptName>
-                  <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-var m= widget.getMacroValue("MaxPower");
-if(m!=null)
-	widget.setPropertyValue("maximum",m);
-]]></scriptText>
-                  <pv trig="true">=1</pv>
-                </path>
-                <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-                  <scriptName>UpdateMaxValue</scriptName>
-                  <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-importPackage(Packages.org.csstudio.platform.data);
-
-var value = PVUtil.getDouble(pvs[1]);
-var max = PVUtil.getDouble(pvs[0]);
-
-if (value>max)
-    pvs[0].setValue(value);	
-]]></scriptText>
-                  <pv trig="true">loc://$(DID)_MaxArea4(0)</pv>
-                  <pv trig="true">='UTIL-S15-BG93:MUT1-JT1' + 'UTIL-S15-BG93:MUT2-JT1' + 'UTIL-S15-BG94:MUT1-JT1' + 'UTIL-S15-BG94:MUT2-JT1'</pv>
-                </path>
-              </scripts>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <fillcolor_alarm_sensitive>false</fillcolor_alarm_sensitive>
-              <color_fillbackground>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </color_fillbackground>
-              <major_tick_step_hint>50</major_tick_step_hint>
-              <level_hi>80.0</level_hi>
-              <transparent_background>true</transparent_background>
-              <level_lo>20.0</level_lo>
-              <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-              <limits_from_pv>false</limits_from_pv>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <level_lolo>10.0</level_lolo>
-              <width>200</width>
-              <x>0</x>
-              <y>0</y>
-              <maximum>100.0</maximum>
-              <color_lolo>
-                <color name="Major" red="250" green="12" blue="14" />
-              </color_lolo>
-              <foreground_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </foreground_color>
-              <minimum>0.0</minimum>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
-              </font>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.progressbar" version="1.0.0">
-              <alarm_pulsing>false</alarm_pulsing>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <rules />
-              <effect_3d>true</effect_3d>
-              <scale_font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
-              </scale_font>
-              <horizontal>true</horizontal>
-              <pv_value />
-              <show_scale>false</show_scale>
-              <scale_format>####</scale_format>
-              <show_label>true</show_label>
               <height>51</height>
               <fill_color>
                 <color name="Low" red="20" green="50" blue="202" />
@@ -2169,7 +1719,7 @@ $(pv_value)</tooltip>
               <border_width>2</border_width>
               <value_label_format></value_label_format>
               <visible>true</visible>
-              <pv_name>='UTIL-S15-BG93:MUT1-JT1' + 'UTIL-S15-BG93:MUT2-JT1' + 'UTIL-S15-BG94:MUT1-JT1' + 'UTIL-S15-BG94:MUT2-JT1'</pv_name>
+              <pv_name>sim://noise(498,620,0.1)</pv_name>
               <border_color>
                 <color name="IO Border" red="0" green="0" blue="0" />
               </border_color>
@@ -2254,7 +1804,7 @@ if(m!=null)
             <enabled>true</enabled>
             <wuid>2354bc43:149a9b9650b:e4a</wuid>
             <transparent>true</transparent>
-            <lock_children>true</lock_children>
+            <lock_children>false</lock_children>
             <scripts />
             <height>75</height>
             <border_width>1</border_width>
@@ -2301,118 +1851,6 @@ $(pv_value)</tooltip>
               <show_scale>false</show_scale>
               <scale_format>####</scale_format>
               <show_label>true</show_label>
-              <height>75</height>
-              <fill_color>
-                <color name="Major" red="250" green="12" blue="14" />
-              </fill_color>
-              <border_width>2</border_width>
-              <value_label_format></value_label_format>
-              <visible>true</visible>
-              <pv_name>loc://$(DID)_MaxArea5(0)</pv_name>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <widget_type>Progress Bar</widget_type>
-              <name>Area 5 Max</name>
-              <show_hi>false</show_hi>
-              <actions hook="false" hook_all="false" />
-              <show_lo>false</show_lo>
-              <border_style>0</border_style>
-              <show_lolo>false</show_lolo>
-              <show_minor_ticks>false</show_minor_ticks>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <show_markers>false</show_markers>
-              <color_hihi>
-                <color name="Major" red="250" green="12" blue="14" />
-              </color_hihi>
-              <origin>0.0</origin>
-              <show_hihi>false</show_hihi>
-              <log_scale>false</log_scale>
-              <enabled>true</enabled>
-              <wuid>2354bc43:149a9b9650b:e4b</wuid>
-              <indicator_mode>false</indicator_mode>
-              <level_hihi>90.0</level_hihi>
-              <origin_ignored>true</origin_ignored>
-              <color_hi>
-                <color name="Minor" red="255" green="255" blue="0" />
-              </color_hi>
-              <color_lo>
-                <color name="Minor" red="255" green="255" blue="0" />
-              </color_lo>
-              <scripts>
-                <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-                  <scriptName>updateMaximum</scriptName>
-                  <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-var m= widget.getMacroValue("MaxPower");
-if(m!=null)
-	widget.setPropertyValue("maximum",m);
-]]></scriptText>
-                  <pv trig="true">=1</pv>
-                </path>
-                <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-                  <scriptName>UpdateMaxValue</scriptName>
-                  <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-importPackage(Packages.org.csstudio.platform.data);
-
-var value = PVUtil.getDouble(pvs[1]);
-var max = PVUtil.getDouble(pvs[0]);
-
-if (value>max)
-    pvs[0].setValue(value);	
-]]></scriptText>
-                  <pv trig="true">loc://$(DID)_MaxArea5(0)</pv>
-                  <pv trig="true">UTIL-S15-AG91:MUT3-JT1</pv>
-                </path>
-              </scripts>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <fillcolor_alarm_sensitive>false</fillcolor_alarm_sensitive>
-              <color_fillbackground>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </color_fillbackground>
-              <major_tick_step_hint>50</major_tick_step_hint>
-              <level_hi>80.0</level_hi>
-              <transparent_background>true</transparent_background>
-              <level_lo>20.0</level_lo>
-              <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-              <limits_from_pv>false</limits_from_pv>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <level_lolo>10.0</level_lolo>
-              <width>200</width>
-              <x>0</x>
-              <y>0</y>
-              <maximum>100.0</maximum>
-              <color_lolo>
-                <color name="Major" red="250" green="12" blue="14" />
-              </color_lolo>
-              <foreground_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </foreground_color>
-              <minimum>0.0</minimum>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
-              </font>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.progressbar" version="1.0.0">
-              <alarm_pulsing>false</alarm_pulsing>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <rules />
-              <effect_3d>true</effect_3d>
-              <scale_font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
-              </scale_font>
-              <horizontal>true</horizontal>
-              <pv_value />
-              <show_scale>false</show_scale>
-              <scale_format>####</scale_format>
-              <show_label>true</show_label>
               <height>51</height>
               <fill_color>
                 <color name="Low" red="20" green="50" blue="202" />
@@ -2420,7 +1858,7 @@ $(pv_value)</tooltip>
               <border_width>2</border_width>
               <value_label_format></value_label_format>
               <visible>true</visible>
-              <pv_name>UTIL-S15-AG91:MUT3-JT1</pv_name>
+              <pv_name>sim://noise(243,285,0.1)</pv_name>
               <border_color>
                 <color name="IO Border" red="0" green="0" blue="0" />
               </border_color>
@@ -2505,7 +1943,7 @@ if(m!=null)
             <enabled>true</enabled>
             <wuid>2354bc43:149a9b9650b:e4d</wuid>
             <transparent>true</transparent>
-            <lock_children>true</lock_children>
+            <lock_children>false</lock_children>
             <scripts />
             <height>75</height>
             <border_width>1</border_width>
@@ -2552,118 +1990,6 @@ $(pv_value)</tooltip>
               <show_scale>false</show_scale>
               <scale_format>####</scale_format>
               <show_label>true</show_label>
-              <height>75</height>
-              <fill_color>
-                <color name="Major" red="250" green="12" blue="14" />
-              </fill_color>
-              <border_width>2</border_width>
-              <value_label_format></value_label_format>
-              <visible>true</visible>
-              <pv_name>loc://$(DID)_MaxArea6(0)</pv_name>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <widget_type>Progress Bar</widget_type>
-              <name>Area 6 Max</name>
-              <show_hi>false</show_hi>
-              <actions hook="false" hook_all="false" />
-              <show_lo>false</show_lo>
-              <border_style>0</border_style>
-              <show_lolo>false</show_lolo>
-              <show_minor_ticks>false</show_minor_ticks>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <show_markers>false</show_markers>
-              <color_hihi>
-                <color name="Major" red="250" green="12" blue="14" />
-              </color_hihi>
-              <origin>0.0</origin>
-              <show_hihi>false</show_hihi>
-              <log_scale>false</log_scale>
-              <enabled>true</enabled>
-              <wuid>2354bc43:149a9b9650b:e4e</wuid>
-              <indicator_mode>false</indicator_mode>
-              <level_hihi>90.0</level_hihi>
-              <origin_ignored>true</origin_ignored>
-              <color_hi>
-                <color name="Minor" red="255" green="255" blue="0" />
-              </color_hi>
-              <color_lo>
-                <color name="Minor" red="255" green="255" blue="0" />
-              </color_lo>
-              <scripts>
-                <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-                  <scriptName>updateMaximum</scriptName>
-                  <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-var m= widget.getMacroValue("MaxPower");
-if(m!=null)
-	widget.setPropertyValue("maximum",m);
-]]></scriptText>
-                  <pv trig="true">=1</pv>
-                </path>
-                <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-                  <scriptName>UpdateMaxValue</scriptName>
-                  <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-importPackage(Packages.org.csstudio.platform.data);
-
-var value = PVUtil.getDouble(pvs[1]);
-var max = PVUtil.getDouble(pvs[0]);
-
-if (value>max)
-    pvs[0].setValue(value);	
-]]></scriptText>
-                  <pv trig="true">loc://$(DID)_MaxArea6(0)</pv>
-                  <pv trig="true">UTIL-S15-AG92:MUT3-JT1</pv>
-                </path>
-              </scripts>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <fillcolor_alarm_sensitive>false</fillcolor_alarm_sensitive>
-              <color_fillbackground>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </color_fillbackground>
-              <major_tick_step_hint>50</major_tick_step_hint>
-              <level_hi>80.0</level_hi>
-              <transparent_background>true</transparent_background>
-              <level_lo>20.0</level_lo>
-              <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-              <limits_from_pv>false</limits_from_pv>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <level_lolo>10.0</level_lolo>
-              <width>200</width>
-              <x>0</x>
-              <y>0</y>
-              <maximum>100.0</maximum>
-              <color_lolo>
-                <color name="Major" red="250" green="12" blue="14" />
-              </color_lolo>
-              <foreground_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </foreground_color>
-              <minimum>0.0</minimum>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
-              </font>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.progressbar" version="1.0.0">
-              <alarm_pulsing>false</alarm_pulsing>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <rules />
-              <effect_3d>true</effect_3d>
-              <scale_font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
-              </scale_font>
-              <horizontal>true</horizontal>
-              <pv_value />
-              <show_scale>false</show_scale>
-              <scale_format>####</scale_format>
-              <show_label>true</show_label>
               <height>51</height>
               <fill_color>
                 <color name="Low" red="20" green="50" blue="202" />
@@ -2671,7 +1997,7 @@ $(pv_value)</tooltip>
               <border_width>2</border_width>
               <value_label_format></value_label_format>
               <visible>true</visible>
-              <pv_name>UTIL-S15-AG92:MUT3-JT1</pv_name>
+              <pv_name>sim://noise(445,493,0.1)</pv_name>
               <border_color>
                 <color name="IO Border" red="0" green="0" blue="0" />
               </border_color>
@@ -2756,7 +2082,7 @@ if(m!=null)
             <enabled>true</enabled>
             <wuid>2354bc43:149a9b9650b:e50</wuid>
             <transparent>true</transparent>
-            <lock_children>true</lock_children>
+            <lock_children>false</lock_children>
             <scripts />
             <height>75</height>
             <border_width>1</border_width>
@@ -2803,118 +2129,6 @@ $(pv_value)</tooltip>
               <show_scale>false</show_scale>
               <scale_format>####</scale_format>
               <show_label>true</show_label>
-              <height>73</height>
-              <fill_color>
-                <color name="Major" red="250" green="12" blue="14" />
-              </fill_color>
-              <border_width>2</border_width>
-              <value_label_format></value_label_format>
-              <visible>true</visible>
-              <pv_name>loc://$(DID)_MaxArea7(0)</pv_name>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <widget_type>Progress Bar</widget_type>
-              <name>Area 7 Max</name>
-              <show_hi>false</show_hi>
-              <actions hook="false" hook_all="false" />
-              <show_lo>false</show_lo>
-              <border_style>0</border_style>
-              <show_lolo>false</show_lolo>
-              <show_minor_ticks>false</show_minor_ticks>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <show_markers>false</show_markers>
-              <color_hihi>
-                <color name="Major" red="250" green="12" blue="14" />
-              </color_hihi>
-              <origin>0.0</origin>
-              <show_hihi>false</show_hihi>
-              <log_scale>false</log_scale>
-              <enabled>true</enabled>
-              <wuid>2354bc43:149a9b9650b:e51</wuid>
-              <indicator_mode>false</indicator_mode>
-              <level_hihi>90.0</level_hihi>
-              <origin_ignored>true</origin_ignored>
-              <color_hi>
-                <color name="Minor" red="255" green="255" blue="0" />
-              </color_hi>
-              <color_lo>
-                <color name="Minor" red="255" green="255" blue="0" />
-              </color_lo>
-              <scripts>
-                <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-                  <scriptName>updateMaximum</scriptName>
-                  <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-var m= widget.getMacroValue("MaxPower");
-if(m!=null)
-	widget.setPropertyValue("maximum",m);
-]]></scriptText>
-                  <pv trig="true">=1</pv>
-                </path>
-                <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-                  <scriptName>UpdateMaxValue</scriptName>
-                  <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-importPackage(Packages.org.csstudio.platform.data);
-
-var value = PVUtil.getDouble(pvs[1]);
-var max = PVUtil.getDouble(pvs[0]);
-
-if (value>max)
-    pvs[0].setValue(value);	
-]]></scriptText>
-                  <pv trig="true">loc://$(DID)_MaxArea7(0)</pv>
-                  <pv trig="true">='UTIL-S15-AG91:MUT1-JT1' + 'UTIL-S15-AG92:MUT1-JT1' - 'UTIL-S15-BG91:MUT5-JT1' - 'UTIL-S15-BG92:MUT5-JT1' - 'UTIL-S15-BG07:MUT1-JT1' - 'UTIL-S15-BG93:MUT1-JT1' - 'UTIL-S15-BG93:MUT2-JT1' - 'UTIL-S15-BG94:MUT1-JT1' - 'UTIL-S15-BG94:MUT2-JT1' - 'UTIL-S15-AG92:MUT3-JT1' - 'UTIL-S15-AG91:MUT3-JT1'</pv>
-                </path>
-              </scripts>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <fillcolor_alarm_sensitive>false</fillcolor_alarm_sensitive>
-              <color_fillbackground>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </color_fillbackground>
-              <major_tick_step_hint>50</major_tick_step_hint>
-              <level_hi>80.0</level_hi>
-              <transparent_background>true</transparent_background>
-              <level_lo>20.0</level_lo>
-              <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-              <limits_from_pv>false</limits_from_pv>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <level_lolo>10.0</level_lolo>
-              <width>197</width>
-              <x>0</x>
-              <y>0</y>
-              <maximum>100.0</maximum>
-              <color_lolo>
-                <color name="Major" red="250" green="12" blue="14" />
-              </color_lolo>
-              <foreground_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </foreground_color>
-              <minimum>0.0</minimum>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
-              </font>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.progressbar" version="1.0.0">
-              <alarm_pulsing>false</alarm_pulsing>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <rules />
-              <effect_3d>true</effect_3d>
-              <scale_font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
-              </scale_font>
-              <horizontal>true</horizontal>
-              <pv_value />
-              <show_scale>false</show_scale>
-              <scale_format>####</scale_format>
-              <show_label>true</show_label>
               <height>49</height>
               <fill_color>
                 <color name="Low" red="20" green="50" blue="202" />
@@ -2922,7 +2136,7 @@ $(pv_value)</tooltip>
               <border_width>2</border_width>
               <value_label_format></value_label_format>
               <visible>true</visible>
-              <pv_name>='UTIL-S15-AG91:MUT1-JT1' + 'UTIL-S15-AG92:MUT1-JT1' - 'UTIL-S15-BG91:MUT5-JT1' - 'UTIL-S15-BG92:MUT5-JT1' - 'UTIL-S15-BG07:MUT1-JT1' - 'UTIL-S15-BG93:MUT1-JT1' - 'UTIL-S15-BG93:MUT2-JT1' - 'UTIL-S15-BG94:MUT1-JT1' - 'UTIL-S15-BG94:MUT2-JT1' - 'UTIL-S15-AG92:MUT3-JT1' - 'UTIL-S15-AG91:MUT3-JT1'</pv_name>
+              <pv_name>sim://noise(237,276,0.1)</pv_name>
               <border_color>
                 <color name="IO Border" red="0" green="0" blue="0" />
               </border_color>
@@ -3108,7 +2322,7 @@ $(pv_value)</tooltip>
                 <keep_wh_ratio>false</keep_wh_ratio>
               </scale_options>
               <visible>true</visible>
-              <pv_name>='UTIL-S15-AG91:MUT1-JT1' + 'UTIL-S15-AG92:MUT1-JT1'</pv_name>
+              <pv_name>sim://noise(1885,2100,0.1)</pv_name>
               <vertical_alignment>1</vertical_alignment>
               <border_color>
                 <color name="IO Border" red="0" green="0" blue="0" />
