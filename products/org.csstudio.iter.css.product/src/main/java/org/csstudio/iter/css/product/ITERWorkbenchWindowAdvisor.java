@@ -47,8 +47,9 @@ public class ITERWorkbenchWindowAdvisor extends ApplicationWorkbenchWindowAdviso
 	public void postWindowOpen() {	
 		super.postWindowOpen();
 		WorkbenchWindow window = (WorkbenchWindow)getWindowConfigurer().getWindow();
+		
 		if (!toolbarWasVisible) {
-			//put a runnable on the display queue, so it gets updated the last, when the correc menu bar is set  
+			//put a runnable on the display queue, so it gets updated the last, when the correct menu bar is set  
 			window.getShell().getDisplay().asyncExec(() -> 
 			{
 				window.getShell().setMenuBar(null);
