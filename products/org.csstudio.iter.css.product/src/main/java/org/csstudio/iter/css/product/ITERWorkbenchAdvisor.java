@@ -10,7 +10,11 @@ package org.csstudio.iter.css.product;
 import org.csstudio.iter.css.product.util.WorkbenchUtil;
 import org.csstudio.startup.application.OpenDocumentEventProcessor;
 import org.csstudio.utility.product.ApplicationWorkbenchAdvisor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.ui.IMemento;
 import org.eclipse.ui.application.IWorkbenchConfigurer;
+import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
+import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 
 /**
  * 
@@ -37,6 +41,21 @@ public class ITERWorkbenchAdvisor extends ApplicationWorkbenchAdvisor {
 		WorkbenchUtil.unbindDuplicateBindings();
 		
 		
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see org.csstudio.utility.product.ApplicationWorkbenchAdvisor#createWorkbenchWindowAdvisor(org.eclipse.ui.application.IWorkbenchWindowConfigurer)
+	 */
+	@Override
+	public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(
+			IWorkbenchWindowConfigurer configurer) {
+		return new ITERWorkbenchWindowAdvisor(configurer);
+	}
+	
+	@Override
+	public IStatus restoreState(IMemento memento) {
+		return super.restoreState(memento);
 	}
 
 }
