@@ -1117,7 +1117,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <pv_name>loc://$(COMPONENT)_PMaxRan("150")</pv_name>
+            <pv_name>loc://$(COMPONENT)_PMaxRange(150)</pv_name>
             <vertical_alignment>1</vertical_alignment>
             <border_color>
               <color name="IO Border" red="0" green="0" blue="0" />
@@ -1251,7 +1251,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <pv_name>loc://$(COMPONENT)_PMinRange("0")</pv_name>
+            <pv_name>loc://$(COMPONENT)_PMinRange(0)</pv_name>
             <vertical_alignment>1</vertical_alignment>
             <border_color>
               <color name="IO Border" red="0" green="0" blue="0" />
@@ -1816,7 +1816,54 @@ $(trace_0_y_pv_value)</tooltip>
             <enabled>true</enabled>
             <wuid>-57352fd0:149859b9257:290</wuid>
             <next_focus>0</next_focus>
-            <scripts />
+            <scripts>
+              <path pathString="EmbeddedPy" checkConnect="true" sfe="true" seoe="false">
+                <scriptName>Input_Validation</scriptName>
+                <scriptText><![CDATA[from org.csstudio.opibuilder.scriptUtil import PVUtil
+from org.eclipse.jface.dialogs import MessageDialog
+
+request   = PVUtil.getDouble(pvs[0])
+limit_on  = PVUtil.getDouble(pvs[1])
+limit_off = PVUtil.getDouble(pvs[2])
+max_range = PVUtil.getDouble(pvs[3])
+min_range = PVUtil.getDouble(pvs[4])
+
+MessageDialog.openInformation(
+	None, "Input Limits", "Min " + str(min_range) + " Max " + str(max_range))
+
+
+# Check out of range input
+if request > max_range:
+	MessageDialog.openError(
+		None, "Input Validation Script", "Position request of " + str(request) + " is greater than Max Range of " + str(max_range))
+
+elif request == max_range:
+	MessageDialog.openWarning(
+		None, "Input Validation Script", "Position request of " + str(request) + " is equal to Max Range of " + str(max_range))
+
+elif request == min_range:
+	MessageDialog.openWarning(
+		None, "Input Validation Script", "Position request of " + str(request) + " is equal to Min Range of " + str(min_range))
+
+elif request < min_range:
+	MessageDialog.openError(
+		None, "Input Validation Script", "Position request of " + str(request) + " is smaller than Min Range of " + str(min_range))
+
+elif request >= limit_on:
+	MessageDialog.openInformation(
+		None, "Input Validation Script", "Position request of " + str(request) + " is greater or equal to the Limit ON of " + str(limit_on))
+
+elif request <= limit_off:
+	MessageDialog.openInformation(
+		None, "Input Validation Script", "Position request of " + str(request) + " is smaller or equal to the Limit OFF of " + str(limit_off))
+]]></scriptText>
+                <pv trig="true">loc://$(COMPONENT)_MPosR(52)</pv>
+                <pv trig="false">loc://$(COMPONENT)_PLiOn(100)</pv>
+                <pv trig="false">loc://$(COMPONENT)_PLiOff(50)</pv>
+                <pv trig="false">loc://$(COMPONENT)_PMaxRange(150)</pv>
+                <pv trig="false">loc://$(COMPONENT)_PMinRange(0)</pv>
+              </path>
+            </scripts>
             <border_alarm_sensitive>false</border_alarm_sensitive>
             <scale_options>
               <width_scalable>false</width_scalable>
