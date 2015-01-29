@@ -42,5 +42,5 @@ BOY resources and SymbolLibrary are currently in 4k mode!
    
    - read the instructions on the screen to navigate through the demo
    
- * Finally, you can copy Demo_SUP.opi and Demo_UTIL*.opi in your workspace to start your own development
+ * Finally, you can copy Demo_SUP.opi, Demo_UTIL*.opi and Linked_*.opi in your workspace to start your own development
  

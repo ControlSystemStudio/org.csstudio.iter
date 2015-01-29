@@ -23,7 +23,7 @@
   </background_color>
   <width>3830</width>
   <x>0</x>
-  <name>VDU Display Requirements</name>
+  <name>Faceplates Requirements</name>
   <grid_space>1</grid_space>
   <show_ruler>true</show_ruler>
   <y>0</y>
@@ -283,7 +283,7 @@
           <wuid>-ae3bbd7:148fa0f526e:-7f3f</wuid>
           <transparent>true</transparent>
           <auto_size>false</auto_size>
-          <text>VDU DISPLAY REQUIREMENTS</text>
+          <text>FACEPLATES REQUIREMENTS</text>
           <scripts />
           <height>98</height>
           <border_width>2</border_width>
@@ -1149,6 +1149,88 @@ $(pv_value)</tooltip>
           <tooltip></tooltip>
           <rules />
           <enabled>true</enabled>
+          <wuid>107a734f:149e1662949:-533f</wuid>
+          <transparent>true</transparent>
+          <lock_children>true</lock_children>
+          <scripts />
+          <height>1760</height>
+          <border_width>2</border_width>
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+          </macros>
+          <visible>true</visible>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <widget_type>Grouping Container</widget_type>
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <width>3236</width>
+          <x>0</x>
+          <name>Information Layer</name>
+          <y>0</y>
+          <foreground_color>
+            <color name="IO Foreground" red="0" green="0" blue="0" />
+          </foreground_color>
+          <actions hook="false" hook_all="false" />
+          <fc>false</fc>
+          <show_scrollbar>true</show_scrollbar>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+          <border_style>0</border_style>
+          <tooltip></tooltip>
+          <rules />
+          <enabled>true</enabled>
+          <wuid>107a734f:149e1662949:-533e</wuid>
+          <transparent>true</transparent>
+          <lock_children>false</lock_children>
+          <scripts />
+          <height>1760</height>
+          <border_width>2</border_width>
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+          </macros>
+          <visible>true</visible>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <widget_type>Grouping Container</widget_type>
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <width>3236</width>
+          <x>0</x>
+          <name>Priority Layer</name>
+          <y>0</y>
+          <foreground_color>
+            <color name="IO Foreground" red="0" green="0" blue="0" />
+          </foreground_color>
+          <actions hook="false" hook_all="false" />
+          <fc>false</fc>
+          <show_scrollbar>true</show_scrollbar>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+          <border_style>0</border_style>
+          <tooltip></tooltip>
+          <rules />
+          <enabled>true</enabled>
           <wuid>107a734f:149e1662949:-5341</wuid>
           <transparent>true</transparent>
           <lock_children>false</lock_children>
@@ -1193,15 +1275,17 @@ $(pv_value)</tooltip>
             <wuid>107a734f:149e1662949:-532a</wuid>
             <transparent>true</transparent>
             <auto_size>false</auto_size>
-            <text>The layout of VDU display canvas with its specific zones: status bar, auxiliaries statuses, mimic, alarm pane, control area and navigation pane have been presented.
+            <text>Each controllable component on a mimic will have a ‘faceplate’ to provide information about the component and options to control it and adjustable process variables.
 
-You can now explore the HMI Desing Guide using the navigation bar of this mockup to display the different requirements:
+- Faceplate sizes shall be fixed and not adjustable by the user - 575 x 943.
 
-1. General
+- Each component faceplate shall open within the mimic at a fixed position.
 
-2. Mimics
+- User shall not be able to move faceplates within mimics and windows.
 
-3. Faceplates</text>
+- Only one faceplate shall be on display at any given time.
+
+- A component’s faceplate shall only appear when a user clicks on a component.</text>
             <scripts />
             <height>1760</height>
             <border_width>2</border_width>
@@ -1233,88 +1317,6 @@ You can now explore the HMI Desing Guide using the navigation bar of this mockup
               <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
             </font>
           </widget>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <border_style>0</border_style>
-          <tooltip></tooltip>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>107a734f:149e1662949:-533f</wuid>
-          <transparent>true</transparent>
-          <lock_children>true</lock_children>
-          <scripts />
-          <height>1760</height>
-          <border_width>2</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <visible>true</visible>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Grouping Container</widget_type>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <width>3236</width>
-          <x>0</x>
-          <name>Information Layer</name>
-          <y>0</y>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="false" hook_all="false" />
-          <fc>false</fc>
-          <show_scrollbar>true</show_scrollbar>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-          </font>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <border_style>0</border_style>
-          <tooltip></tooltip>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>107a734f:149e1662949:-533e</wuid>
-          <transparent>true</transparent>
-          <lock_children>true</lock_children>
-          <scripts />
-          <height>1760</height>
-          <border_width>2</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <visible>true</visible>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Grouping Container</widget_type>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <width>3236</width>
-          <x>0</x>
-          <name>Priority Layer</name>
-          <y>0</y>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="false" hook_all="false" />
-          <fc>false</fc>
-          <show_scrollbar>true</show_scrollbar>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-          </font>
         </widget>
       </widget>
     </widget>
@@ -3002,7 +3004,56 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
                 <include_parent_macros>true</include_parent_macros>
               </macros>
               <replace>1</replace>
-              <description>Go to Level 0</description>
+              <description>Go to Level 1</description>
+            </action>
+          </actions>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          </font>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+          <toggle_button>false</toggle_button>
+          <border_style>6</border_style>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <tooltip>Go to level 1</tooltip>
+          <push_action_index>0</push_action_index>
+          <rules />
+          <enabled>true</enabled>
+          <wuid>107a734f:149e1662949:-5a77</wuid>
+          <pv_value />
+          <text>L1</text>
+          <scripts />
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <height>181</height>
+          <border_width>2</border_width>
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <image></image>
+          <visible>true</visible>
+          <pv_name></pv_name>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <widget_type>Action Button</widget_type>
+          <width>102</width>
+          <x>245</x>
+          <name>Go Level 1 Button</name>
+          <y>0</y>
+          <style>1</style>
+          <foreground_color>
+            <color name="IO Foreground" red="0" green="0" blue="0" />
+          </foreground_color>
+          <actions hook="true" hook_all="true">
+            <action type="OPEN_DISPLAY">
+              <path>Design_Guide_1_3.opi</path>
+              <macros>
+                <include_parent_macros>true</include_parent_macros>
+              </macros>
+              <replace>1</replace>
+              <description>Go to Up level</description>
             </action>
           </actions>
           <font>
@@ -3086,153 +3137,6 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
             <color name="IO Foreground" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
-          <toggle_button>false</toggle_button>
-          <border_style>5</border_style>
-          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-          <tooltip>Go to Level 2 section 1</tooltip>
-          <push_action_index>0</push_action_index>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>449e4f94:1499a5cd010:-448a</wuid>
-          <pv_value />
-          <text>General</text>
-          <scripts />
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <height>181</height>
-          <border_width>2</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <image></image>
-          <visible>true</visible>
-          <pv_name></pv_name>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Action Button</widget_type>
-          <width>247</width>
-          <x>0</x>
-          <name>Level 1</name>
-          <y>0</y>
-          <style>1</style>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="true" hook_all="true">
-            <action type="OPEN_DISPLAY">
-              <path>Design_Guide_1_1.opi</path>
-              <macros>
-                <include_parent_macros>true</include_parent_macros>
-              </macros>
-              <replace>1</replace>
-              <description>Go to Level 2 1</description>
-            </action>
-          </actions>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
-          <toggle_button>false</toggle_button>
-          <border_style>5</border_style>
-          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-          <tooltip>Go to Level 2 section 2</tooltip>
-          <push_action_index>0</push_action_index>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>449e4f94:1499a5cd010:-42b1</wuid>
-          <pv_value />
-          <text>Mimics</text>
-          <scripts />
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <height>181</height>
-          <border_width>2</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <image></image>
-          <visible>true</visible>
-          <pv_name></pv_name>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Action Button</widget_type>
-          <width>247</width>
-          <x>246</x>
-          <name>Level 2 2</name>
-          <y>0</y>
-          <style>1</style>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="true" hook_all="true">
-            <action type="OPEN_DISPLAY">
-              <path>Design_Guide_1_2.opi</path>
-              <macros>
-                <include_parent_macros>true</include_parent_macros>
-              </macros>
-              <replace>1</replace>
-              <description>Go to Level 2 2</description>
-            </action>
-          </actions>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
-          <toggle_button>false</toggle_button>
-          <border_style>5</border_style>
-          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-          <tooltip>Go to Level 2 section 2</tooltip>
-          <push_action_index>0</push_action_index>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>-2030679b:149c6fb04cf:-5310</wuid>
-          <pv_value />
-          <text>Faceplates</text>
-          <scripts />
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <height>181</height>
-          <border_width>2</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <image></image>
-          <visible>true</visible>
-          <pv_name></pv_name>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Action Button</widget_type>
-          <width>247</width>
-          <x>492</x>
-          <name>Level 2 3</name>
-          <y>0</y>
-          <style>1</style>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="true" hook_all="true">
-            <action type="OPEN_DISPLAY">
-              <path>Design_Guide_1_3.opi</path>
-              <macros>
-                <include_parent_macros>true</include_parent_macros>
-              </macros>
-              <replace>1</replace>
-              <description>Go to Level 2 2</description>
-            </action>
-          </actions>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
