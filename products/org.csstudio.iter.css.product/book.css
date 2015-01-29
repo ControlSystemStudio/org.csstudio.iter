@@ -4,7 +4,7 @@ a#samples img { background-image : url(intro/graphics/intro_icon_samples.gif); }
 
 P.Code {
 	display: block;
-	color: #4444CC;
+	color: #000080;
 }
 H6.CaptionFigColumn {
 	display: block;
@@ -25,12 +25,10 @@ UL.NavList {
 	margin-left: 1.5vw;
 }
 
-body, html { border: 0px }
-
 
 /* following font face declarations need to be removed for DBCS */
 
-body, h1, h2, h3, h4, h5, h6, p, table, td, caption, th, ul, ol, dl, li, dd, dt, pre, code, div, blockquote {
+body, h1, h2, h3, h4, h5, h6, p, table, th, td, caption, ul, ol, dl, li, dd, dt, pre, code, div, blockquote, a, strong, em, var, html {
 	font-family: "DejaVu Sans Mono", Verdana, sans-serif, monospace; 
 	font-size: 1vw;
 	font-weight: normal;
@@ -51,7 +49,8 @@ body, h1, h2, h3, h4, h5, h6, p, table, td, caption, th, ul, ol, dl, li, dd, dt,
 	html { font-size: 0.8vw }
 }
 
-h1           { font-size: 1.2vw; font-weight: bold;}	
+body, html   { border: 0px }
+h1           { font-size: 1.2vw; font-weight: bold; }	
 h2           { font-size: 1.1vw; font-weight: bold;}
 h3           { font-size: 1vw; font-weight: bold;}
 h4           { font-size: 1vw; font-weight: bold;; font-style: italic }
@@ -60,13 +59,13 @@ code         { font-size: 0.8vw; }
 a:link	     { color: #0000FF }
 a:hover	     { color: #000080 }
 a:visited    { text-decoration: underline }
-ul	     { margin-top: 0.5vw; margin-bottom: 0.5vw; }
-li	     { margin-top: 0.3vw; margin-bottom: 0.3vw; } 
+ul	     	 { margin-top: 0.5vw; margin-bottom: 0.5vw; }
+li	     	 { margin-top: 0.3vw; margin-bottom: 0.3vw; } 
 li p	     { margin-top: 0.3vw; margin-bottom: 0.3vw; }
-dt	     { font-weight: bold; }
+dt	     	 { font-weight: bold; }
 strong	     { font-weight: bold}
-em	     { font-style: italic}
-var	     { font-style: italic}
-div.revision { border-left-style: solid; border-left-width: thin; 
-				   border-left-color: #7B68EE; padding-left:5 }
-th	     { font-weight: bold }
+em	     	 { font-style: italic}
+var	     	 { font-style: italic}
+div.revision { border-left-style: solid; border-left-width: thin; border-left-color: #7B68EE; padding-left:5 }
+table 		 { border-collapse: collapse; width: 100% }
+table,th,td  { border: 1px solid black; text-align: left }
