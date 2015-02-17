@@ -54,7 +54,7 @@ public class ITERWorkbenchWindowAdvisor extends ApplicationWorkbenchWindowAdviso
 			{
 				window.getShell().setMenuBar(null);
 				CompactModeAction action = WorkbenchWindowService.getInstance().getCompactModeAction(window);
-				if (!action.isInCompactMode())
+				if (action != null && !action.isInCompactMode())
 					action.run();
 			});
 		}
