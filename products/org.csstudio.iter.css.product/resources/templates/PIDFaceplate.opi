@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.102.201411281405</boy_version>
+  <boy_version>4.0.102.201412231344</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -1058,7 +1058,7 @@ $(pv_value)</tooltip>
         <background_color>
           <color name="IO Area Background" red="221" green="223" blue="229" />
         </background_color>
-        <width>554</width>
+        <width>555</width>
         <x>5</x>
         <name>Parameters</name>
         <y>321</y>
@@ -1676,7 +1676,7 @@ $(trace_0_y_pv_value)</tooltip>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
-      <visible>true</visible>
+      <visible>false</visible>
       <border_color>
         <color red="0" green="128" blue="255" />
       </border_color>
@@ -1706,7 +1706,7 @@ $(trace_0_y_pv_value)</tooltip>
         <transparent>true</transparent>
         <lock_children>false</lock_children>
         <scripts />
-        <height>403</height>
+        <height>457</height>
         <border_width>1</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -1724,10 +1724,10 @@ $(trace_0_y_pv_value)</tooltip>
         <background_color>
           <color name="IO Area Background" red="221" green="223" blue="229" />
         </background_color>
-        <width>560</width>
-        <x>0</x>
+        <width>555</width>
+        <x>3</x>
         <name>PID New Parameters</name>
-        <y>25</y>
+        <y>50</y>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
@@ -1735,7 +1735,7 @@ $(trace_0_y_pv_value)</tooltip>
         <fc>false</fc>
         <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>
         <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
           <border_style>0</border_style>
@@ -1749,7 +1749,7 @@ $(trace_0_y_pv_value)</tooltip>
           <auto_size>true</auto_size>
           <text>New</text>
           <scripts />
-          <height>33</height>
+          <height>39</height>
           <border_width>2</border_width>
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -1766,7 +1766,7 @@ $(trace_0_y_pv_value)</tooltip>
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
-          <width>48</width>
+          <width>60</width>
           <x>58</x>
           <name>MPosR</name>
           <y>0</y>
@@ -1776,7 +1776,7 @@ $(trace_0_y_pv_value)</tooltip>
           <actions hook="false" hook_all="false" />
           <show_scrollbar>false</show_scrollbar>
           <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+            <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
           </font>
         </widget>
         <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
@@ -1827,7 +1827,7 @@ $(trace_0_y_pv_value)</tooltip>
           <password_input>false</password_input>
           <width>175</width>
           <x>58</x>
-          <y>45</y>
+          <y>64</y>
           <foreground_color>
             <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
           </foreground_color>
@@ -1847,7 +1847,7 @@ $(trace_0_y_pv_value)</tooltip>
           <auto_size>true</auto_size>
           <text>Current</text>
           <scripts />
-          <height>33</height>
+          <height>39</height>
           <border_width>2</border_width>
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -1864,7 +1864,7 @@ $(trace_0_y_pv_value)</tooltip>
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
-          <width>112</width>
+          <width>140</width>
           <x>291</x>
           <name>MPosRSt</name>
           <y>0</y>
@@ -1874,7 +1874,7 @@ $(trace_0_y_pv_value)</tooltip>
           <actions hook="false" hook_all="false" />
           <show_scrollbar>false</show_scrollbar>
           <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+            <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
           </font>
         </widget>
         <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
@@ -1963,7 +1963,7 @@ thread.start()
           <width>96</width>
           <x>291</x>
           <name>P</name>
-          <y>48</y>
+          <y>67</y>
           <foreground_color>
             <color name="IO InputPV Fg" red="0" green="0" blue="0" />
           </foreground_color>
@@ -2004,7 +2004,7 @@ thread.start()
           <width>16</width>
           <x>0</x>
           <name>P</name>
-          <y>48</y>
+          <y>67</y>
           <foreground_color>
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
@@ -2062,7 +2062,7 @@ thread.start()
           <password_input>false</password_input>
           <width>175</width>
           <x>58</x>
-          <y>112</y>
+          <y>131</y>
           <foreground_color>
             <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
           </foreground_color>
@@ -2156,7 +2156,7 @@ thread.start()
           <width>96</width>
           <x>291</x>
           <name>I</name>
-          <y>115</y>
+          <y>134</y>
           <foreground_color>
             <color name="IO InputPV Fg" red="0" green="0" blue="0" />
           </foreground_color>
@@ -2197,7 +2197,7 @@ thread.start()
           <width>16</width>
           <x>0</x>
           <name>I</name>
-          <y>115</y>
+          <y>134</y>
           <foreground_color>
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
@@ -2255,7 +2255,7 @@ thread.start()
           <password_input>false</password_input>
           <width>175</width>
           <x>58</x>
-          <y>181</y>
+          <y>200</y>
           <foreground_color>
             <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
           </foreground_color>
@@ -2349,7 +2349,7 @@ thread.start()
           <width>96</width>
           <x>291</x>
           <name>D</name>
-          <y>184</y>
+          <y>203</y>
           <foreground_color>
             <color name="IO InputPV Fg" red="0" green="0" blue="0" />
           </foreground_color>
@@ -2390,7 +2390,7 @@ thread.start()
           <width>16</width>
           <x>0</x>
           <name>D</name>
-          <y>184</y>
+          <y>203</y>
           <foreground_color>
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
@@ -2438,7 +2438,7 @@ if (confirm_ok == 1):
             </path>
           </scripts>
           <border_alarm_sensitive>false</border_alarm_sensitive>
-          <height>39</height>
+          <height>50</height>
           <border_width>2</border_width>
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -2452,10 +2452,10 @@ if (confirm_ok == 1):
             <color name="IO Border" red="0" green="0" blue="0" />
           </border_color>
           <widget_type>Action Button</widget_type>
-          <width>171</width>
+          <width>200</width>
           <x>144</x>
           <name>Submit</name>
-          <y>274</y>
+          <y>293</y>
           <style>1</style>
           <foreground_color>
             <color name="IO Foreground" red="0" green="0" blue="0" />
@@ -2677,7 +2677,7 @@ $(pv_value)</tooltip>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
-      <visible>false</visible>
+      <visible>true</visible>
       <border_color>
         <color red="0" green="128" blue="255" />
       </border_color>

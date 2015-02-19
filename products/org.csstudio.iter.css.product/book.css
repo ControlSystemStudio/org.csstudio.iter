@@ -1,0 +1,72 @@
+a#cssiter img { background-image : url(intro/graphics/css_intro_icon.gif); }
+a#iterlogo img { background-image : url(intro/graphics/ITERLogo_50x24.png); }
+a#samples img { background-image : url(intro/graphics/intro_icon_samples.gif); }
+
+P.Code {
+	display: block;
+	color: #000080;
+}
+H6.CaptionFigColumn {
+	display: block;
+	font-weight: bold;
+	font-style: Italic;
+}
+P.Note {
+	display: block;
+	font-style: Italic;
+}
+EM.UILabel {
+	font-weight: Bold;
+}
+EM.CodeName {
+	font-weight: Bold;
+}
+UL.NavList {
+	margin-left: 1.5vw;
+}
+
+
+/* following font face declarations need to be removed for DBCS */
+
+body, h1, h2, h3, h4, h5, h6, p, table, th, td, caption, ul, ol, dl, li, dd, dt, pre, code, div, blockquote, a, strong, em, var, html {
+	font-family: "DejaVu Sans Mono", Verdana, sans-serif, monospace; 
+	font-size: 1vw;
+	font-weight: normal;
+	font-style: normal;
+	margin: 1vw 1vw 1vw 1vw;
+	background: #EBEBEB;
+	color: #000000;
+	text-align: left;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+}
+
+
+/* end font face declarations */
+
+@media print {
+	html { font-size: 0.8vw }
+}
+
+body, html   { border: 0px }
+h1           { font-size: 1.2vw; font-weight: bold; }	
+h2           { font-size: 1.1vw; font-weight: bold;}
+h3           { font-size: 1vw; font-weight: bold;}
+h4           { font-size: 1vw; font-weight: bold;; font-style: italic }
+pre          { font-size: 0.8vw; }
+code         { font-size: 0.8vw; } 
+a		     { color: #0000EE; }
+a:visited    { color: #551a8b; }
+a:hover	     { color: #000080; text-decoration: underline; }
+a:active     { color: #0000EE; text-decoration: underline; }
+ul	     	 { margin-top: 0.5vw; margin-bottom: 0.5vw; }
+li	     	 { margin-top: 0.3vw; margin-bottom: 0.3vw; } 
+li p	     { margin-top: 0.3vw; margin-bottom: 0.3vw; }
+dt	     	 { font-weight: bold; }
+strong	     { font-weight: bold}
+em	     	 { font-style: italic}
+var	     	 { font-style: italic}
+div.revision { border-left-style: solid; border-left-width: thin; border-left-color: #7B68EE; padding-left:5 }
+table 		 { border-collapse: collapse; width: 100% }
+table,th,td  { border: 1px solid black; text-align: left }

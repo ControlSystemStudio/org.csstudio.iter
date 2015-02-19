@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.csstudio.iter.opibuilder.scaler.scaleopi"
+            nameFilter="*.opi"
+            objectClass="org.eclipse.core.resources.IResource">
+         <menu
+               id="org.csstudio.iter.opibuilder.scaler.menu"
+               label="Scale OPI">
+         </menu>
+         <action
+               class="org.csstudio.iter.opibuilder.scaler.ToHDScaleAction"
+               enablesFor="*"
+               id="org.csstudio.iter.opibuilder.scaler.toHDscaleAction"
+               label="4K to Full HD Scale"
+               menubarPath="org.csstudio.iter.opibuilder.scaler.menu/scale"
+               style="push"
+               tooltip="Scale 4K OPIs for a factor of 0.5">
+         </action>
+         <action
+               class="org.csstudio.iter.opibuilder.scaler.To4kScaleAction"
+               enablesFor="*"
+               id="org.csstudio.iter.opibuilder.scaler.to4kscaleAction"
+               label="Full HD to 4K Scale"
+               menubarPath="org.csstudio.iter.opibuilder.scaler.menu/scale"
+               style="push"
+               tooltip="Scale HD OPIs for a factor of 2.0">
+         </action>
+         <action
+               class="org.csstudio.iter.opibuilder.scaler.ScaleAction"
+               enablesFor="*"
+               id="org.csstudio.iter.opibuilder.scaler.scaleAction"
+               label="Custom Scale..."
+               menubarPath="org.csstudio.iter.opibuilder.scaler.menu/scale?after:org.csstudio.iter.opibuilder.scaler.toHDscaleAction"
+               style="push"
+               tooltip="Scale OPI dimensions for a specified factor">
+         </action>
+      </objectContribution>
+   </extension>
+   
+
+</plugin>
