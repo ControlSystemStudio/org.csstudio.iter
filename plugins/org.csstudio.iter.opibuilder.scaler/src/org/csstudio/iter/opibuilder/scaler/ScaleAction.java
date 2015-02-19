@@ -7,6 +7,9 @@
  ******************************************************************************/
 package org.csstudio.iter.opibuilder.scaler;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,8 +69,15 @@ public class ScaleAction implements IObjectActionDelegate {
                                 return Status.CANCEL_STATUS;
                             }
                             try {
+                                //create a backup file
+                                String bck = f.getLocation().toFile().getAbsolutePath();
+                                bck = bck.substring(0, bck.length() - 4) + "_bak.opi";
+                                File backup = new File(bck);
+                                Files.copy(f.getLocation().toFile().toPath(), backup.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                                //scale opi
                                 OPIScaler.scale(f.getLocation().toFile(), f.getLocation().toFile(), scale);
-                                f.refreshLocal(IResource.DEPTH_ZERO,monitor);
+                                //refresh the project to see the backup file as well
+                                f.getProject().refreshLocal(IResource.DEPTH_ONE, monitor);
                             } catch (Exception e) {
                                 errors.add(e.getMessage());
                             }
