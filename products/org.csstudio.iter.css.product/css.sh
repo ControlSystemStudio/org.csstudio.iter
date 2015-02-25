@@ -53,7 +53,7 @@ done
 if [ ${#OPEN_FILES[@]} -gt 0 ]; then
   USER_ARGS=("${USER_ARGS[@]}" "--launcher.openFile" "${OPEN_FILES[@]}")
 fi
-set -- -share_link /opt/codac/opi=CSS/opi,/opt/codac/examples=CSS/examples,/opt/codac/opi/boy/SymbolLibrary=CSS/SymbolLibrary "${USER_ARGS[@]}"
+set -- -share_link /opt/codac/opi=CSS/opi,/opt/codac/examples=CSS/examples,/opt/codac/opi/boy/SymbolLibrary=CSS/SymbolLibrary,/opt/codac/opi/boy/resources/templates=CSS/templates "${USER_ARGS[@]}"
 
 . ${CODAC_ROOT}/bin/codacenv
 . ${CODAC_ROOT}/bin/css-wrapper-script

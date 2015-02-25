@@ -12,7 +12,7 @@
 
 # Check parameters
 VERSION=$1
-BUILD_DIR="../../build"
+BUILD_DIR="../cs-studio/build"
 if [ -z "$VERSION" ]
 then 
   echo You must provide the product version \(e.g. \"prepare_release.sh 3.2.4\"\)
@@ -22,4 +22,3 @@ fi
 echo ::: Prepare splash :::
 java -jar $BUILD_DIR/ImageLabeler-1.0.jar $VERSION 462 53 ./products/org.csstudio.iter.css.product/splash-template.bmp ./products/org.csstudio.iter.css.product/splash.bmp
 echo ::: Change about dialog version :::
-echo 0=$VERSION > about.mappings

@@ -20,32 +20,17 @@ of the distribution package.
    </license>
 
    <includes
-         id="org.csstudio.iter.core.util.feature"
+         id="org.csstudio.iter.alarm.common.feature"
          version="0.0.0"/>
 
    <requires>
       <import plugin="org.junit" version="4.8.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.help"/>
-      <import plugin="org.csstudio.csdata" version="3.0.0" match="greaterOrEqual"/>
-      <import plugin="org.epics.util" version="0.1.0" match="greaterOrEqual"/>
-      <import plugin="org.epics.vtype" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.apputil" version="1.1.2" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.platform.utility.jms"/>
-      <import plugin="org.csstudio.platform.utility.rdb" version="1.6.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.logging" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.security" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.logging" version="0.0.1" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.security" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.apputil" version="3.0.1" match="greaterOrEqual"/>
       <import plugin="org.csstudio.alarm.beast" version="2.5.0" match="greaterOrEqual"/>
    </requires>
-
-   <plugin
-         id="org.csstudio.alarm.beast"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
    <plugin
          id="org.csstudio.alarm.beast.configtool"
@@ -62,4 +47,3 @@ of the distribution package.
          unpack="false"/>
 
 </feature>
-
