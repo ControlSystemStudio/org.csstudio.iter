@@ -24,4 +24,118 @@
     <module>org.csstudio.trends.databrowser2.rap.product</module>
     <module>org.csstudio.alarm.beast.ui.rap.product</module>
   </modules>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>${tycho-groupid}</groupId>
+          <artifactId>tycho-p2-director-plugin</artifactId>
+          <version>${tycho.version}</version>
+          <executions>
+            <execution>
+              <id>materialize-products</id>
+              <goals>
+                <goal>materialize-products</goal>
+                <goal>archive-products</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        
+        <!-- Remove javax.servlet and osgi.frameworkadd and add servletbridge extensionbundle to config.ini-->
+        <plugin>
+          <groupId>com.google.code.maven-replacer-plugin</groupId>
+          <artifactId>maven-replacer-plugin</artifactId>
+          <version>${replacer-version}</version>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+                <goal>replace</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <!-- The bundles.info is not used at the moment, but leave it here since it doesn't hurt anyone-->
+            <includes>
+              <include>target/products/${project.artifactId}/linux/gtk/x86_64/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info</include>
+              <include>target/products/${project.artifactId}/linux/gtk/x86_64/configuration/config.ini</include>
+            </includes>
+            <replacements>
+              <replacement>
+                <token>javax\.servlet.*false</token>
+                <value></value>
+              </replacement>
+              <replacement>
+                <token>reference\\:file\\:javax\.servlet[^@]*@.,</token>
+                <value></value>
+              </replacement>
+              <replacement>
+                <token>osgi.bundles=</token>
+                <value>osgi.bundles=org.eclipse.equinox.servletbridge.extensionbundle@start,</value>
+              </replacement>
+              <replacement>
+                <token>osgi\.framework=.*jar</token>
+                <value></value>
+              </replacement>
+            </replacements>
+            <regexFlags>
+              <regexFlag>CASE_INSENSITIVE</regexFlag>
+              <regexFlag>UNIX_LINES</regexFlag>
+            </regexFlags>
+          </configuration>
+        </plugin>
+        
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>${assembly-version}</version>
+          <configuration>
+            <descriptors>
+              <descriptor>../assembly.xml</descriptor>
+            </descriptors>
+            <!-- Configure the war's filename -->
+            <finalName>${war-file}</finalName>
+            <appendAssemblyId>false</appendAssemblyId>
+          </configuration>
+          <executions>
+            <execution>
+              <id>make-assembly</id>
+              <phase>package</phase>
+              <goals>
+                <goal>single</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.7</version>
+          <executions>
+            <execution>
+              <id>copy-wars</id>
+              <phase>verify</phase>
+              <configuration>
+                <failOnError>true</failOnError>
+                <target>
+                  <echo message="Copying product wars into target" />
+		  <mkdir dir="${project.build.directory}/../../wars"/>
+                  <copy verbose="false" todir="${project.build.directory}/../../wars">
+                    <fileset dir="${project.build.directory}">
+                      <include name="*.war" />
+                    </fileset>
+                  </copy>
+                </target>
+              </configuration>
+              <goals>
+                <goal>run</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>

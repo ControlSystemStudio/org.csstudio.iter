@@ -19,8 +19,11 @@ refer to the file ITER-LICENSE.TXT located in the top level directory
 of the distribution package.
    </license>
 
+   <includes
+         id="org.csstudio.iter.alarm.service.feature"
+         version="0.0.0"/>
+
    <requires>
-      <import plugin="org.csstudio.java" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime" version="3.4.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.logging" version="0.0.1" match="greaterOrEqual"/>
       <import plugin="org.csstudio.apputil" version="1.0.6" match="greaterOrEqual"/>
@@ -28,13 +31,6 @@ of the distribution package.
       <import plugin="org.csstudio.platform.utility.jms" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.junit" version="4.8.2" match="greaterOrEqual"/>
    </requires>
-
-   <plugin
-         id="org.csstudio.apputil"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
    <plugin
          id="org.csstudio.utility.jmssendcmd"
@@ -51,4 +47,3 @@ of the distribution package.
          unpack="false"/>
 
 </feature>
-

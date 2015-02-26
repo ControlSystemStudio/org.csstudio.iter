@@ -19,8 +19,11 @@ refer to the file ITER-LICENSE.TXT located in the top level directory
 of the distribution package.
    </license>
 
+   <includes
+         id="org.csstudio.iter.alarm.service.feature"
+         version="0.0.0"/>
+
    <requires>
-      <import plugin="org.csstudio.java" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.junit" version="4.8.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.csstudio.logging" version="0.0.1" match="greaterOrEqual"/>
@@ -30,16 +33,9 @@ of the distribution package.
       <import plugin="org.csstudio.apputil" version="1.1.4" match="greaterOrEqual"/>
       <import plugin="org.csstudio.security"/>
       <import plugin="org.eclipse.osgi.services"/>
-      <import plugin="org.eclipse.equinox.http.jetty"/>
-      <import plugin="javax.servlet" version="3.0.0" match="equivalent"/>
+      <import plugin="org.csstudio.platform.libs.jms"/>
+      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="greaterOrEqual"/>
    </requires>
-
-   <plugin
-         id="org.csstudio.apputil"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
    <plugin
          id="org.csstudio.logging.jms2rdb"
@@ -62,5 +58,81 @@ of the distribution package.
          version="0.0.0"
          unpack="false"/>
 
-</feature>
+   <plugin
+         id="javax.servlet"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
+   <plugin
+         id="org.csstudio.data"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.http.jetty"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.http.servlet"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jetty.continuation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jetty.http"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jetty.io"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jetty.security"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jetty.server"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jetty.servlet"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jetty.util"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
