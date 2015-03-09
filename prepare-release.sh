@@ -2,7 +2,7 @@
 
 
 #*******************************************************************************
-# * Copyright (c) 2010-2014 ITER Organization.
+# * Copyright (c) 2010-2015 ITER Organization.
 # * All rights reserved. This program and the accompanying materials
 # * are made available under the terms of the Eclipse Public License v1.0
 # * which accompanies this distribution, and is available at
@@ -21,4 +21,5 @@ fi
 
 echo ::: Prepare splash :::
 java -jar $BUILD_DIR/ImageLabeler-1.0.jar $VERSION 462 53 ./products/org.csstudio.iter.css.product/splash-template.bmp ./products/org.csstudio.iter.css.product/splash.bmp
-echo ::: Change about dialog version :::
+echo ::: Prepare products versions :::
+source change-version.sh
