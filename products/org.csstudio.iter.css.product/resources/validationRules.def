@@ -66,6 +66,7 @@ show_edit_range=RO
 show_grid=RW
 show_ruler=RW
 snap_to_geometry=RW
+frame_rate=RW
 
 #! SHAPE WIDGETS
 line_width=RW
@@ -113,7 +114,7 @@ flip_vertical=RW
 align_to_nearest_second=RW
 
 #! BOOLEAN WIDGETS
-data_type=WRITE
+data_type=RW
 bit=RW
 on_state=RW
 off_state=RW
@@ -140,6 +141,10 @@ led.off_color=RW
 #! IMAGE BOOLEAN INDICATOR
 on_image=WRITE
 off_image=WRITE
+
+#! SYMBOL WIDGET
+show_symbol_label=RW
+symbol_label_pos=RW
 
 #! BOOLEAN BUTTON
 square_button=RW
@@ -214,24 +219,149 @@ show_legend=RW
 show_plot_area_border=RO
 plot_area_background_color=RO
 axis_count=RW
-trace_count=WRITE
+trace_count=RW
 show_toolbar=RW
 trigger_pv=RW
-auto_scale=RW
-axis_color=RO
-axis_title=RW
-dash_grid_line=RW
-grid_color=RO
-left_bottom_side=RW
-time_format=RW
-title_font=RO
+axis_[0-4]_auto_scale=RW
+axis_[0-4]_auto_scale_threshold=RO
+axis_[0-4]_axis_color=RO
+axis_[0-4]_axis_title=RW
+axis_[0-4]_dash_grid_line=RO
+axis_[0-4]_grid_color=RO
+axis_[0-4]_left_bottom_side=RW
+axis_[0-4]_log_scale=RW
+axis_[0-4]_maximum=RW
+axis_[0-4]_minimum=RW
+axis_[0-4]_scale_font=RW
+axis_[0-4]_scale_format=RW
+axis_[0-4]_show_grid=RO
+axis_[0-4]_time_format=RW
+axis_[0-4]_title_font=RW
+axis_[0-4]_visible=RW
+axis_[0-4]_y_axis=RW
+trace_[0-20]_anti_alias=RO
+trace_[0-20]_buffer_size=RW
+trace_[0-20]_concatenate=RW
+trace_[0-20]_line_width=RO
+trace_[0-20]_name=RW
+trace_[0-20]_plot_mode=RW
+trace_[0-20]_point_size=RO
+trace_[0-20]_point_style=RW
+trace_[0-20]_trace_color=RW
+trace_[0-20]_trace_type=RW
+trace_[0-20]_update_delay=RW
+trace_[0-20]_update_mode=RW
+trace_[0-20]_visible=RW
+trace_[0-20]_x_axis_index=RW
+trace_[0-20]_x_pv=RW
+trace_[0-20]_y_axis_index=RW
+trace_[0-20]_y_pv=RW
 
 #! INTENSITY GRAPH
-
+data_height=RW
+data_width=RW
+color_map=RW
+show_ramp=RW
+graph_area_height=RW
+graph_area_width=RW
+horizon_profile_x_pv_name=RW
+horizon_profile_y_pv_name=RW
+vertical_profile_x_pv_name=RW
+vertical_profile_y_pv_name=RW
+pixel_info_pv_name=RW
+axis_[0-4]_show_minor_ticks=RW
+axis_[0-4]_major_tick_step_hint=RW
 
 #! BYTE MONITOR
+numBits=RW
+startBit=RW
+bitReverse=RW
+bytemonitor.on_color=RW
+bytemonitor.off_color=RW
 
+#! ACTION BUTTON
+style=RO
+image=RW
 
+#! MENU BUTTON
+label=RW
+actions_from_pv=RW
+
+#! TEXT INPUT
+multiline_input=RW
+selector_type=RW
+file_source=RW
+file_return_part=RW
+datetime_format=RW
+next_focus=RO
+show_native_border=RO
+read_only=RW
+show_h_scroll=RO
+show_v_scroll=RO
+
+#! SPINNER
+format=RW
+buttons_on_left=RW
+
+#! SCROLLBAR
+show_value_tip=RW
+bar_length=RW
+
+#! THUMB WHEEL
+show_buttons=RO
+integerDigits=RW
+decimalDigits=RW
+internalFrameColor=RO
+focusedFrameColor=RO
+internalFrameSize=RO
+
+#! CHECK BOX
+
+#! CHOICE WIDGETS
+items=RW
+items_from_pv=RW
+
+#! COMBO BOX
+
+#! RADIO BOX
+selected_color=RO
+
+#! CHOICE BUTTON
+
+#! TABLE
+editable=RW
+columns_count=RW
+column_headers=RW
+column_header_visible=RW
+default_content=RW
+
+#! WEB BROWSER
+url=WRITE
+
+#! ARRAY
+array_length=RW
+show_spinner=RO
+spinner_width=RO
+
+#! GROUPING CONTAINER
+lock_children=RW
+
+#! LINKING CONTAINER
+opi_file=WRITE
+group_name=RW
+zoom_to_fit=RO
+
+#! TAB CONTAINER
+tab_count=RW
+active_tab=RW
+horizontal_tabs=RW
+minimum_tab_height=RO
+icon_path=RW
+enabled=RW
+
+#! GRID LAYOUT
+fill_grids=RW
+grid_gap=RW
 
 font=RO
 gradient=RO
