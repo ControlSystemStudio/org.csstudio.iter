@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.102.201411281405</boy_version>
+  <boy_version>4.0.102.201503041229</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -70,7 +70,7 @@
     <fc>false</fc>
     <show_scrollbar>false</show_scrollbar>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <border_style>0</border_style>
@@ -110,7 +110,7 @@
       <fc>false</fc>
       <show_scrollbar>false</show_scrollbar>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
         <border_style>0</border_style>
@@ -138,22 +138,25 @@
         <widget_type>Label</widget_type>
         <wrap_words>false</wrap_words>
         <background_color>
-          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+          <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <width>100</width>
         <x>50</x>
         <name>CODAC Status</name>
         <y>1</y>
         <foreground_color>
-          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -202,7 +205,7 @@ $(pv_value)</tooltip>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>Not healthy</off_label>
       </widget>
@@ -245,7 +248,7 @@ $(pv_value)</tooltip>
       <fc>false</fc>
       <show_scrollbar>false</show_scrollbar>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
         <border_style>0</border_style>
@@ -273,16 +276,17 @@ $(pv_value)</tooltip>
         <widget_type>Label</widget_type>
         <wrap_words>false</wrap_words>
         <background_color>
-          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+          <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <width>160</width>
         <x>0</x>
         <name>Pulse ID</name>
         <y>1</y>
         <foreground_color>
-          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
@@ -325,7 +329,7 @@ $(pv_value)</tooltip>
         <wrap_words>false</wrap_words>
         <format_type>0</format_type>
         <background_color>
-          <color name="IO Background" red="235" green="235" blue="235" />
+          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
         </background_color>
         <width>120</width>
         <x>175</x>
@@ -378,7 +382,7 @@ $(pv_value)</tooltip>
       <fc>false</fc>
       <show_scrollbar>false</show_scrollbar>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
         <border_style>0</border_style>
@@ -406,22 +410,25 @@ $(pv_value)</tooltip>
         <widget_type>Label</widget_type>
         <wrap_words>false</wrap_words>
         <background_color>
-          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+          <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <width>60</width>
         <x>50</x>
         <name>CSS Status</name>
         <y>0</y>
         <foreground_color>
-          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -470,7 +477,7 @@ $(pv_value)</tooltip>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>Not healthy</off_label>
       </widget>
@@ -500,20 +507,20 @@ $(pv_value)</tooltip>
       </border_color>
       <widget_type>Grouping Container</widget_type>
       <background_color>
-        <color red="240" green="240" blue="240" />
+        <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
       <width>111</width>
       <x>200</x>
       <name>CIS</name>
       <y>50</y>
       <foreground_color>
-        <color red="192" green="192" blue="192" />
+        <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <fc>false</fc>
       <show_scrollbar>false</show_scrollbar>
       <font>
-        <opifont.name fontName="DejaVu LGC Sans Mono" height="26" style="0">Default</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
         <border_style>0</border_style>
@@ -541,22 +548,25 @@ $(pv_value)</tooltip>
         <widget_type>Label</widget_type>
         <wrap_words>false</wrap_words>
         <background_color>
-          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+          <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <width>60</width>
         <x>50</x>
         <name>CIS Status</name>
         <y>0</y>
         <foreground_color>
-          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -605,7 +615,7 @@ $(pv_value)</tooltip>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>Not healthy</off_label>
       </widget>
@@ -648,7 +658,7 @@ $(pv_value)</tooltip>
       <fc>false</fc>
       <show_scrollbar>false</show_scrollbar>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
         <border_style>0</border_style>
@@ -676,16 +686,17 @@ $(pv_value)</tooltip>
         <widget_type>Label</widget_type>
         <wrap_words>false</wrap_words>
         <background_color>
-          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+          <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <width>60</width>
         <x>98</x>
         <name>SUP</name>
         <y>0</y>
         <foreground_color>
-          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
@@ -728,7 +739,7 @@ $(pv_value)</tooltip>
         <wrap_words>false</wrap_words>
         <format_type>0</format_type>
         <background_color>
-          <color name="IO Background" red="235" green="235" blue="235" />
+          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
         </background_color>
         <width>60</width>
         <x>233</x>
@@ -781,7 +792,7 @@ $(pv_value)</tooltip>
       <fc>false</fc>
       <show_scrollbar>false</show_scrollbar>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
         <border_style>0</border_style>
@@ -809,22 +820,25 @@ $(pv_value)</tooltip>
         <widget_type>Label</widget_type>
         <wrap_words>false</wrap_words>
         <background_color>
-          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+          <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <width>60</width>
         <x>50</x>
         <name>CAS Status</name>
         <y>0</y>
         <foreground_color>
-          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>Control Access System (CAS)</tooltip>
         <rules />
         <effect_3d>true</effect_3d>
@@ -872,7 +886,7 @@ $(pv_value)</tooltip>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>Not healthy</off_label>
       </widget>

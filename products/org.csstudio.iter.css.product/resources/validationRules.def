@@ -72,7 +72,7 @@ frame_rate=RW
 line_width=RW
 line_style=RW
 line_color=RW
-fill_level=RO
+fill_level=RW
 horizontal_fill=RO
 anti_alias=RO
 transparent=RW
@@ -95,8 +95,9 @@ corner_width=RW
 
 #! LABEL
 text=RW
+label.font=RW
 auto_size=RW
-horizontal_alignment=RO
+horizontal_alignment=RW
 vertical_alignment=RO
 show_scrollbar=RO
 
@@ -239,23 +240,23 @@ axis_[0-4]_time_format=RW
 axis_[0-4]_title_font=RW
 axis_[0-4]_visible=RW
 axis_[0-4]_y_axis=RW
-trace_[0-20]_anti_alias=RO
-trace_[0-20]_buffer_size=RW
-trace_[0-20]_concatenate=RW
-trace_[0-20]_line_width=RO
-trace_[0-20]_name=RW
-trace_[0-20]_plot_mode=RW
-trace_[0-20]_point_size=RO
-trace_[0-20]_point_style=RW
-trace_[0-20]_trace_color=RW
-trace_[0-20]_trace_type=RW
-trace_[0-20]_update_delay=RW
-trace_[0-20]_update_mode=RW
-trace_[0-20]_visible=RW
-trace_[0-20]_x_axis_index=RW
-trace_[0-20]_x_pv=RW
-trace_[0-20]_y_axis_index=RW
-trace_[0-20]_y_pv=RW
+trace_[0-9]+_anti_alias=RO
+trace_[0-9]+_buffer_size=RW
+trace_[0-9]+_concatenate=RW
+trace_[0-9]+_line_width=RO
+trace_[0-9]+_name=RW
+trace_[0-9]+_plot_mode=RW
+trace_[0-9]+_point_size=RO
+trace_[0-9]+_point_style=RW
+trace_[0-9]+_trace_color=RW
+trace_[0-9]+_trace_type=RW
+trace_[0-9]+_update_delay=RW
+trace_[0-9]+_update_mode=RW
+trace_[0-9]+_visible=RW
+trace_[0-9]+_x_axis_index=RW
+trace_[0-9]+_x_pv=RW
+trace_[0-9]+_y_axis_index=RW
+trace_[0-9]+_y_pv=RW
 
 #! INTENSITY GRAPH
 data_height=RW
@@ -282,6 +283,8 @@ bytemonitor.off_color=RW
 #! ACTION BUTTON
 style=RO
 image=RW
+actionbutton.font=RW
+actionbutton.pv_name=RW
 
 #! MENU BUTTON
 label=RW
@@ -345,6 +348,9 @@ spinner_width=RO
 
 #! GROUPING CONTAINER
 lock_children=RW
+groupingContainer.border_style=RW
+groupingContainer.border_width=RW
+
 
 #! LINKING CONTAINER
 opi_file=WRITE

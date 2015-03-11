@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.102.201412231344</boy_version>
+  <boy_version>4.0.102.201503041229</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -68,9 +68,9 @@
     </foreground_color>
     <actions hook="false" hook_all="false" />
     <fc>false</fc>
-    <show_scrollbar>true</show_scrollbar>
+    <show_scrollbar>false</show_scrollbar>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <border_style>0</border_style>
@@ -110,7 +110,7 @@
       <fc>false</fc>
       <show_scrollbar>false</show_scrollbar>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
         <border_style>0</border_style>
@@ -149,7 +149,7 @@
         <fg_gradient_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </fg_gradient_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -163,7 +163,7 @@
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <line_color>
           <color name="IO Line" red="0" green="0" blue="0" />
@@ -171,6 +171,8 @@
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -224,7 +226,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -240,12 +242,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -299,7 +303,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -315,12 +319,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -374,7 +380,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -390,12 +396,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -449,7 +457,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -465,12 +473,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -524,7 +534,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -540,12 +550,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -599,7 +611,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -615,7 +627,7 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
@@ -658,7 +670,7 @@ $(pv_value)</tooltip>
         <line_style>0</line_style>
         <arrow_length>20</arrow_length>
         <widget_type>Polyline</widget_type>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -672,11 +684,13 @@ $(pv_value)</tooltip>
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -730,7 +744,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -746,12 +760,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -805,7 +821,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -821,12 +837,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -880,7 +898,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -896,12 +914,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -955,7 +975,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -971,12 +991,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -1030,7 +1052,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -1046,12 +1068,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -1105,7 +1129,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -1121,7 +1145,7 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
@@ -1164,7 +1188,7 @@ $(pv_value)</tooltip>
         <line_style>0</line_style>
         <arrow_length>20</arrow_length>
         <widget_type>Polyline</widget_type>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -1178,7 +1202,7 @@ $(pv_value)</tooltip>
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
@@ -1219,11 +1243,13 @@ $(pv_value)</tooltip>
         <actions hook="false" hook_all="false" />
         <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -1277,7 +1303,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -1293,12 +1319,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -1352,7 +1380,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -1368,12 +1396,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -1427,7 +1457,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -1443,12 +1473,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -1502,7 +1534,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -1518,12 +1550,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -1577,7 +1611,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -1593,12 +1627,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -1652,7 +1688,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -1668,7 +1704,7 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
@@ -1711,7 +1747,7 @@ $(pv_value)</tooltip>
         <line_style>0</line_style>
         <arrow_length>20</arrow_length>
         <widget_type>Polyline</widget_type>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -1725,7 +1761,7 @@ $(pv_value)</tooltip>
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
     </widget>
@@ -1767,7 +1803,7 @@ $(pv_value)</tooltip>
       <fc>false</fc>
       <show_scrollbar>false</show_scrollbar>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
         <border_style>0</border_style>
@@ -1806,7 +1842,7 @@ $(pv_value)</tooltip>
         <fg_gradient_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </fg_gradient_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -1828,7 +1864,7 @@ $(pv_value)</tooltip>
           </action>
         </actions>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <line_color>
           <color name="IO Line" red="0" green="0" blue="0" />
@@ -1872,11 +1908,13 @@ $(pv_value)</tooltip>
         <actions hook="false" hook_all="false" />
         <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -1930,7 +1968,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -1946,12 +1984,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -2005,7 +2045,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2021,12 +2061,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -2080,7 +2122,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2096,12 +2138,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -2155,7 +2199,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2171,12 +2215,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -2230,7 +2276,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2246,7 +2292,7 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
@@ -2289,7 +2335,7 @@ $(pv_value)</tooltip>
         <line_style>0</line_style>
         <arrow_length>20</arrow_length>
         <widget_type>Polyline</widget_type>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2303,11 +2349,13 @@ $(pv_value)</tooltip>
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -2361,7 +2409,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2377,12 +2425,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -2436,7 +2486,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2452,12 +2502,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -2511,7 +2563,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2527,12 +2579,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -2586,7 +2640,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2602,12 +2656,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -2661,7 +2717,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2677,7 +2733,7 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
@@ -2720,7 +2776,7 @@ $(pv_value)</tooltip>
         <line_style>0</line_style>
         <arrow_length>20</arrow_length>
         <widget_type>Polyline</widget_type>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2734,11 +2790,13 @@ $(pv_value)</tooltip>
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -2792,7 +2850,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2808,12 +2866,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -2867,7 +2927,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2883,12 +2943,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -2942,7 +3004,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2958,12 +3020,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -3017,7 +3081,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -3033,12 +3097,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -3092,7 +3158,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -3108,7 +3174,7 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
@@ -3151,7 +3217,7 @@ $(pv_value)</tooltip>
         <line_style>0</line_style>
         <arrow_length>20</arrow_length>
         <widget_type>Polyline</widget_type>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -3165,11 +3231,13 @@ $(pv_value)</tooltip>
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -3223,7 +3291,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -3239,12 +3307,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -3298,7 +3368,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -3314,12 +3384,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -3373,7 +3445,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -3389,12 +3461,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -3448,7 +3522,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -3464,12 +3538,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -3523,7 +3599,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -3539,7 +3615,7 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
@@ -3582,7 +3658,7 @@ $(pv_value)</tooltip>
         <line_style>0</line_style>
         <arrow_length>20</arrow_length>
         <widget_type>Polyline</widget_type>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -3596,7 +3672,7 @@ $(pv_value)</tooltip>
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
     </widget>
@@ -3638,7 +3714,7 @@ $(pv_value)</tooltip>
       <fc>false</fc>
       <show_scrollbar>false</show_scrollbar>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
         <border_style>0</border_style>
@@ -3677,7 +3753,7 @@ $(pv_value)</tooltip>
         <fg_gradient_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </fg_gradient_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -3691,7 +3767,7 @@ $(pv_value)</tooltip>
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <line_color>
           <color name="IO Line" red="0" green="0" blue="0" />
@@ -3735,11 +3811,13 @@ $(pv_value)</tooltip>
         <actions hook="false" hook_all="false" />
         <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -3793,7 +3871,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -3809,12 +3887,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -3868,7 +3948,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -3884,12 +3964,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -3943,7 +4025,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -3959,12 +4041,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -4018,7 +4102,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -4034,12 +4118,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -4093,7 +4179,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -4109,12 +4195,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -4168,7 +4256,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -4184,12 +4272,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -4243,7 +4333,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -4259,12 +4349,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -4318,7 +4410,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -4334,12 +4426,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -4393,7 +4487,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -4409,12 +4503,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -4468,7 +4564,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -4484,12 +4580,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -4543,7 +4641,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -4559,12 +4657,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -4618,7 +4718,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -4634,12 +4734,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -4693,7 +4795,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -4709,12 +4811,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -4768,7 +4872,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -4784,12 +4888,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -4843,7 +4949,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -4859,7 +4965,7 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
@@ -4902,11 +5008,13 @@ $(pv_value)</tooltip>
         <actions hook="false" hook_all="false" />
         <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -4960,7 +5068,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -4976,12 +5084,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -5035,7 +5145,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -5051,12 +5161,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -5110,7 +5222,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -5126,12 +5238,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -5193,7 +5307,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -5209,12 +5323,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -5268,7 +5384,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -5284,12 +5400,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -5343,7 +5461,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -5359,7 +5477,7 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
@@ -5388,20 +5506,20 @@ $(pv_value)</tooltip>
         </border_color>
         <widget_type>Grouping Container</widget_type>
         <background_color>
-          <color red="240" green="240" blue="240" />
+          <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <width>40</width>
         <x>2109</x>
         <name>Disconnecting Switch</name>
         <y>468</y>
         <foreground_color>
-          <color red="192" green="192" blue="192" />
+          <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <fc>false</fc>
         <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -5429,20 +5547,20 @@ $(pv_value)</tooltip>
         </border_color>
         <widget_type>Grouping Container</widget_type>
         <background_color>
-          <color red="240" green="240" blue="240" />
+          <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <width>40</width>
         <x>2231</x>
         <name>Disconnecting Switch</name>
         <y>468</y>
         <foreground_color>
-          <color red="192" green="192" blue="192" />
+          <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <fc>false</fc>
         <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -5470,20 +5588,20 @@ $(pv_value)</tooltip>
         </border_color>
         <widget_type>Grouping Container</widget_type>
         <background_color>
-          <color red="240" green="240" blue="240" />
+          <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <width>40</width>
         <x>2462</x>
         <name>Disconnecting Switch</name>
         <y>468</y>
         <foreground_color>
-          <color red="192" green="192" blue="192" />
+          <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <fc>false</fc>
         <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -5511,24 +5629,26 @@ $(pv_value)</tooltip>
         </border_color>
         <widget_type>Grouping Container</widget_type>
         <background_color>
-          <color red="240" green="240" blue="240" />
+          <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <width>40</width>
         <x>2571</x>
         <name>Disconnecting Switch</name>
         <y>486</y>
         <foreground_color>
-          <color red="192" green="192" blue="192" />
+          <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
         <fc>false</fc>
         <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -5582,7 +5702,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -5598,12 +5718,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -5657,7 +5779,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -5673,12 +5795,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -5732,7 +5856,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -5748,12 +5872,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -5807,7 +5933,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -5823,12 +5949,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -5882,7 +6010,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -5898,12 +6026,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -5957,7 +6087,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -5973,12 +6103,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -6032,7 +6164,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -6048,12 +6180,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -6107,7 +6241,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -6123,12 +6257,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -6182,7 +6318,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -6198,12 +6334,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -6257,7 +6395,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -6273,12 +6411,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -6332,7 +6472,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -6348,12 +6488,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -6407,7 +6549,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -6423,12 +6565,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -6482,7 +6626,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -6498,12 +6642,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -6557,7 +6703,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -6573,12 +6719,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -6632,7 +6780,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -6648,12 +6796,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -6707,7 +6857,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -6723,12 +6873,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -6782,7 +6934,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -6798,12 +6950,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -6857,7 +7011,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -6873,12 +7027,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -6932,7 +7088,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -6948,12 +7104,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -7007,7 +7165,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -7023,12 +7181,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -7082,7 +7242,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -7098,12 +7258,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -7157,7 +7319,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -7173,12 +7335,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -7232,7 +7396,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -7248,12 +7412,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -7307,7 +7473,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -7323,12 +7489,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -7382,7 +7550,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -7398,12 +7566,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -7457,7 +7627,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -7473,12 +7643,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -7532,7 +7704,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -7548,12 +7720,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -7607,7 +7781,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -7623,12 +7797,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -7682,7 +7858,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -7698,12 +7874,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -7757,7 +7935,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -7773,12 +7951,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -7832,7 +8012,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -7848,12 +8028,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -7907,7 +8089,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -7923,12 +8105,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -7982,7 +8166,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -7998,12 +8182,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -8057,7 +8243,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -8073,12 +8259,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -8132,7 +8320,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -8148,12 +8336,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -8207,7 +8397,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -8223,12 +8413,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -8282,7 +8474,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -8298,12 +8490,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -8357,7 +8551,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -8373,12 +8567,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -8432,7 +8628,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -8448,12 +8644,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -8507,7 +8705,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -8523,12 +8721,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -8582,7 +8782,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -8598,12 +8798,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -8657,7 +8859,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -8673,12 +8875,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -8732,7 +8936,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -8748,12 +8952,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -8807,7 +9013,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -8823,12 +9029,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -8882,7 +9090,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -8898,12 +9106,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -8957,7 +9167,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -8973,12 +9183,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -9032,7 +9244,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -9048,12 +9260,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -9107,7 +9321,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -9123,12 +9337,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -9182,7 +9398,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -9198,12 +9414,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -9257,7 +9475,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -9273,12 +9491,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -9332,7 +9552,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -9348,12 +9568,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -9407,7 +9629,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -9423,12 +9645,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -9482,7 +9706,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -9498,12 +9722,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -9557,7 +9783,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -9573,12 +9799,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -9632,7 +9860,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -9648,12 +9876,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -9707,7 +9937,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -9723,12 +9953,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -9782,7 +10014,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -9798,12 +10030,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -9857,7 +10091,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -9873,12 +10107,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -9932,7 +10168,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -9948,12 +10184,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -10007,7 +10245,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -10023,12 +10261,14 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -10082,7 +10322,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -10098,7 +10338,7 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>true</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
