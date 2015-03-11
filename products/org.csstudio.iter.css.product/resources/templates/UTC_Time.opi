@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.102.201411060748</boy_version>
+  <boy_version>4.0.102.201503041229</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -70,7 +70,7 @@
     <fc>false</fc>
     <show_scrollbar>false</show_scrollbar>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
     <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
       <border_style>0</border_style>
@@ -90,7 +90,7 @@ $(pv_value)</tooltip>
       <rotation_angle>0.0</rotation_angle>
       <scripts />
       <border_alarm_sensitive>false</border_alarm_sensitive>
-      <show_units>false</show_units>
+      <show_units>true</show_units>
       <height>98</height>
       <border_width>2</border_width>
       <scale_options>
@@ -104,7 +104,7 @@ $(pv_value)</tooltip>
       <border_color>
         <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
-      <precision_from_pv>false</precision_from_pv>
+      <precision_from_pv>true</precision_from_pv>
       <widget_type>Text Update</widget_type>
       <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <wrap_words>false</wrap_words>
@@ -117,7 +117,7 @@ $(pv_value)</tooltip>
       <name>UTC Time</name>
       <y>0</y>
       <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
+        <color name="IO InputPV Fg" red="0" green="0" blue="0" />
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <font>
@@ -177,7 +177,7 @@ $(pv_value)</tooltip>
       <stretch_to_fit>false</stretch_to_fit>
       <flip_vertical>false</flip_vertical>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
     </widget>
   </widget>
