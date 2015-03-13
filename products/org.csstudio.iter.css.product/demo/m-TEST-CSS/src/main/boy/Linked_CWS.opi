@@ -1,0 +1,2723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <show_close_button>true</show_close_button>
+  <rules />
+  <wuid>-14a921ec:134b2495e46:-7f53</wuid>
+  <show_grid>true</show_grid>
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <scripts />
+  <height>1760</height>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+  </macros>
+  <boy_version>4.0.102.201503121510</boy_version>
+  <show_edit_range>true</show_edit_range>
+  <widget_type>Display</widget_type>
+  <auto_scale_widgets>
+    <auto_scale_widgets>false</auto_scale_widgets>
+    <min_width>-1</min_width>
+    <min_height>-1</min_height>
+  </auto_scale_widgets>
+  <background_color>
+    <color name="IO Background" red="235" green="235" blue="235" />
+  </background_color>
+  <width>3236</width>
+  <x>0</x>
+  <name>MAIN DISPLAY AREA - MIMIC</name>
+  <grid_space>1</grid_space>
+  <show_ruler>true</show_ruler>
+  <y>0</y>
+  <snap_to_geometry>true</snap_to_geometry>
+  <foreground_color>
+    <color name="IO Grid" red="215" green="215" blue="215" />
+  </foreground_color>
+  <actions hook="false" hook_all="false" />
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>-28c93393:14b0cb4ebee:-617a</wuid>
+    <transparent>true</transparent>
+    <lock_children>false</lock_children>
+    <scripts />
+    <height>1760</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <border_color>
+      <color name="IO Border" red="0" green="0" blue="0" />
+    </border_color>
+    <widget_type>Grouping Container</widget_type>
+    <background_color>
+      <color name="IO Background" red="235" green="235" blue="235" />
+    </background_color>
+    <width>3236</width>
+    <x>0</x>
+    <name>MAIN DISPLAY AREA - MIMIC</name>
+    <y>0</y>
+    <foreground_color>
+      <color name="IO Foreground" red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <fc>false</fc>
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+    </font>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>13</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>-157ac05f:14c0e573b58:-7b33</wuid>
+      <transparent>true</transparent>
+      <lock_children>false</lock_children>
+      <scripts />
+      <height>256</height>
+      <border_width>1</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <width>339</width>
+      <x>2725</x>
+      <name>Simulation</name>
+      <y>180</y>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.radioBox" version="1.0.0">
+        <border_style>6</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b32</wuid>
+        <selected_color>
+          <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+        </selected_color>
+        <horizontal>false</horizontal>
+        <pv_value />
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>167</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <items_from_pv>true</items_from_pv>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:SIMULATION</pv_name>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Radio Box</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <width>250</width>
+        <x>0</x>
+        <name>Radio Box Template</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <items>
+          <s>Choice 1</s>
+          <s>Choice 2</s>
+          <s>Choice 3</s>
+        </items>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>13</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>-157ac05f:14c0e573b58:-7b31</wuid>
+      <transparent>true</transparent>
+      <lock_children>false</lock_children>
+      <scripts />
+      <height>339</height>
+      <border_width>1</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <width>651</width>
+      <x>113</x>
+      <name>Start Acquisition</name>
+      <y>115</y>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
+        <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules />
+        <effect_3d>true</effect_3d>
+        <bit>0</bit>
+        <pv_value />
+        <height>100</height>
+        <border_width>2</border_width>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:ACQ-STATE</pv_name>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>LED</widget_type>
+        <name>LED Template</name>
+        <actions hook="false" hook_all="false" />
+        <show_boolean_label>true</show_boolean_label>
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b30</wuid>
+        <on_color>
+          <color name="IO PV ON" red="0" green="0" blue="255" />
+        </on_color>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <on_label>ON</on_label>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <off_color>
+          <color name="IO PV OFF" red="149" green="125" blue="71" />
+        </off_color>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <square_led>false</square_led>
+        <width>100</width>
+        <x>215</x>
+        <data_type>0</data_type>
+        <y>66</y>
+        <foreground_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+        <off_label>OFF</off_label>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.BoolSwitch" version="1.0.0">
+        <toggle_button>true</toggle_button>
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <push_action_index>0</push_action_index>
+        <rules />
+        <effect_3d>true</effect_3d>
+        <bit>0</bit>
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b2f</wuid>
+        <on_color>
+          <color name="IO PV ON" red="0" green="0" blue="255" />
+        </on_color>
+        <show_confirm_dialog>1</show_confirm_dialog>
+        <password></password>
+        <pv_value />
+        <released_action_index>0</released_action_index>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>250</height>
+        <on_label>ON</on_label>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:START-ACQ</pv_name>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Boolean Switch</widget_type>
+        <off_color>
+          <color name="IO PV OFF" red="149" green="125" blue="71" />
+        </off_color>
+        <confirm_message>Are your sure you want to do this?</confirm_message>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <boolean_label_position>9</boolean_label_position>
+        <width>125</width>
+        <x>0</x>
+        <name>Boolean Switch Template</name>
+        <data_type>0</data_type>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <show_boolean_label>true</show_boolean_label>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+        <off_label>OFF</off_label>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
+        <toggle_button>true</toggle_button>
+        <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <push_action_index>0</push_action_index>
+        <rules />
+        <bit>0</bit>
+        <show_confirm_dialog>1</show_confirm_dialog>
+        <password></password>
+        <pv_value />
+        <released_action_index>0</released_action_index>
+        <auto_size>true</auto_size>
+        <image_file>SymbolLibrary/SVG/Electrical/Miscellaneous/Closing Push-Button On.svg</image_file>
+        <height>136</height>
+        <border_width>2</border_width>
+        <align_to_nearest_second>false</align_to_nearest_second>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:START-ACQ</pv_name>
+        <degree>0</degree>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Boolean Symbol Image Control</widget_type>
+        <confirm_message>Are your sure you want to do this?</confirm_message>
+        <flip_horizontal>false</flip_horizontal>
+        <permutation_matrix>
+          <row>
+            <col>1.0</col>
+            <col>0.0</col>
+          </row>
+          <row>
+            <col>0.0</col>
+            <col>1.0</col>
+          </row>
+        </permutation_matrix>
+        <name>Boolean Symbol Image Control Template</name>
+        <actions hook="false" hook_all="false" />
+        <show_boolean_label>true</show_boolean_label>
+        <flip_vertical>false</flip_vertical>
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <crop_left>0</crop_left>
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b2e</wuid>
+        <on_color>
+          <color name="IO PV ON" red="0" green="0" blue="255" />
+        </on_color>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <on_label>ON</on_label>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <crop_bottom>0</crop_bottom>
+        <no_animation>false</no_animation>
+        <off_color>
+          <color name="IO PV OFF" red="149" green="125" blue="71" />
+        </off_color>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <boolean_label_position>8</boolean_label_position>
+        <width>72</width>
+        <x>490</x>
+        <data_type>0</data_type>
+        <y>30</y>
+        <foreground_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <crop_top>0</crop_top>
+        <crop_right>0</crop_right>
+        <stretch_to_fit>false</stretch_to_fit>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+        <off_label>OFF</off_label>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>-157ac05f:14c0e573b58:-7b18</wuid>
+      <transparent>true</transparent>
+      <lock_children>true</lock_children>
+      <scripts />
+      <height>701</height>
+      <border_width>1</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <width>1001</width>
+      <x>663</x>
+      <name>AO Graph Group</name>
+      <y>465</y>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+        <border_style>0</border_style>
+        <tooltip></tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b17</wuid>
+        <transparent>true</transparent>
+        <auto_size>true</auto_size>
+        <text>Analogue I/O</text>
+        <scripts />
+        <height>44</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Label</widget_type>
+        <wrap_words>true</wrap_words>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <width>276</width>
+        <x>355</x>
+        <name>Label Template</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.xyGraph" version="1.0.0">
+        <axis_1_scale_format></axis_1_scale_format>
+        <trace_16_update_delay>100</trace_16_update_delay>
+        <trace_2_x_axis_index>0</trace_2_x_axis_index>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(trace_0_y_pv)
+$(trace_0_y_pv_value)</tooltip>
+        <trace_14_plot_mode>0</trace_14_plot_mode>
+        <trace_17_visible>true</trace_17_visible>
+        <trace_19_x_pv></trace_19_x_pv>
+        <trace_0_concatenate_data>true</trace_0_concatenate_data>
+        <trace_0_trace_type>5</trace_0_trace_type>
+        <trace_4_line_width>3</trace_4_line_width>
+        <trace_14_x_pv_value />
+        <trace_15_trace_type>0</trace_15_trace_type>
+        <trace_16_y_pv_value />
+        <axis_3_axis_color>
+          <color red="0" green="0" blue="0" />
+        </axis_3_axis_color>
+        <trace_12_y_pv></trace_12_y_pv>
+        <border_width>2</border_width>
+        <trace_11_anti_alias>true</trace_11_anti_alias>
+        <trace_6_update_delay>100</trace_6_update_delay>
+        <trace_18_anti_alias>true</trace_18_anti_alias>
+        <trace_3_point_size>4</trace_3_point_size>
+        <trace_7_update_delay>100</trace_7_update_delay>
+        <trace_1_x_axis_index>0</trace_1_x_axis_index>
+        <border_style>0</border_style>
+        <trace_17_update_delay>100</trace_17_update_delay>
+        <trace_8_point_size>4</trace_8_point_size>
+        <trace_10_buffer_size>100</trace_10_buffer_size>
+        <trace_8_anti_alias>true</trace_8_anti_alias>
+        <axis_0_grid_color>
+          <color name="IO Grid" red="215" green="215" blue="215" />
+        </axis_0_grid_color>
+        <trace_11_y_pv_value />
+        <axis_2_visible>true</axis_2_visible>
+        <trace_0_name>$(trace_0_y_pv)</trace_0_name>
+        <axis_2_minimum>0.0</axis_2_minimum>
+        <trace_0_update_mode>0</trace_0_update_mode>
+        <trace_1_x_pv></trace_1_x_pv>
+        <wuid>-157ac05f:14c0e573b58:-7b16</wuid>
+        <transparent>false</transparent>
+        <trace_1_update_mode>0</trace_1_update_mode>
+        <trace_19_x_pv_value />
+        <axis_0_title_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        </axis_0_title_font>
+        <trace_12_plot_mode>0</trace_12_plot_mode>
+        <trace_7_trace_type>0</trace_7_trace_type>
+        <trace_5_y_pv></trace_5_y_pv>
+        <trace_14_visible>true</trace_14_visible>
+        <trace_8_y_pv_value />
+        <trace_15_update_delay>100</trace_15_update_delay>
+        <trace_15_x_pv></trace_15_x_pv>
+        <trace_12_x_axis_index>0</trace_12_x_axis_index>
+        <trace_11_name>$(trace_11_y_pv)</trace_11_name>
+        <trace_7_update_mode>0</trace_7_update_mode>
+        <trace_18_y_axis_index>1</trace_18_y_axis_index>
+        <trace_11_point_size>4</trace_11_point_size>
+        <trace_6_plot_mode>0</trace_6_plot_mode>
+        <trace_8_update_mode>0</trace_8_update_mode>
+        <trace_10_trace_type>0</trace_10_trace_type>
+        <trace_9_update_mode>0</trace_9_update_mode>
+        <trace_2_update_mode>0</trace_2_update_mode>
+        <trace_5_trace_type>0</trace_5_trace_type>
+        <background_color>
+          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+        </background_color>
+        <trace_3_update_mode>0</trace_3_update_mode>
+        <trace_19_line_width>1</trace_19_line_width>
+        <trace_11_concatenate_data>true</trace_11_concatenate_data>
+        <x>0</x>
+        <trace_6_update_mode>0</trace_6_update_mode>
+        <y>75</y>
+        <trace_9_y_axis_index>1</trace_9_y_axis_index>
+        <trace_7_y_axis_index>1</trace_7_y_axis_index>
+        <trace_4_update_mode>0</trace_4_update_mode>
+        <trace_3_x_axis_index>0</trace_3_x_axis_index>
+        <trace_5_update_mode>0</trace_5_update_mode>
+        <trace_12_x_pv></trace_12_x_pv>
+        <axis_3_scale_format></axis_3_scale_format>
+        <trace_0_x_axis_index>0</trace_0_x_axis_index>
+        <trace_19_point_style>0</trace_19_point_style>
+        <axis_count>2</axis_count>
+        <trace_4_x_pv></trace_4_x_pv>
+        <trace_14_update_mode>0</trace_14_update_mode>
+        <trace_18_update_mode>0</trace_18_update_mode>
+        <trace_8_name>$(trace_8_y_pv)</trace_8_name>
+        <trace_3_y_pv_value />
+        <trace_13_point_size>4</trace_13_point_size>
+        <trace_13_point_style>0</trace_13_point_style>
+        <trace_1_point_size>4</trace_1_point_size>
+        <trace_1_anti_alias>true</trace_1_anti_alias>
+        <trace_16_update_mode>0</trace_16_update_mode>
+        <trace_18_name>$(trace_18_y_pv)</trace_18_name>
+        <trace_11_point_style>0</trace_11_point_style>
+        <trace_17_line_width>1</trace_17_line_width>
+        <trace_14_concatenate_data>true</trace_14_concatenate_data>
+        <pv_value />
+        <trace_9_y_pv></trace_9_y_pv>
+        <axis_2_grid_color>
+          <color red="200" green="200" blue="200" />
+        </axis_2_grid_color>
+        <trace_19_name>$(trace_19_y_pv)</trace_19_name>
+        <trace_10_update_mode>0</trace_10_update_mode>
+        <trace_12_update_mode>0</trace_12_update_mode>
+        <trace_10_plot_mode>0</trace_10_plot_mode>
+        <trace_0_buffer_size>100</trace_0_buffer_size>
+        <trace_2_buffer_size>100</trace_2_buffer_size>
+        <trace_9_update_delay>100</trace_9_update_delay>
+        <axis_1_maximum>100.0</axis_1_maximum>
+        <trace_5_update_delay>100</trace_5_update_delay>
+        <axis_0_scale_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="24" style="0">IO Scale 1</opifont.name>
+        </axis_0_scale_font>
+        <trigger_pv></trigger_pv>
+        <axis_3_show_grid>true</axis_3_show_grid>
+        <trace_4_update_delay>100</trace_4_update_delay>
+        <widget_type>XY Graph</widget_type>
+        <trace_16_y_pv></trace_16_y_pv>
+        <trace_2_line_width>3</trace_2_line_width>
+        <trace_4_plot_mode>0</trace_4_plot_mode>
+        <trace_3_concatenate_data>true</trace_3_concatenate_data>
+        <trace_15_buffer_size>100</trace_15_buffer_size>
+        <trace_4_x_pv_value />
+        <trace_15_point_style>0</trace_15_point_style>
+        <trace_11_buffer_size>100</trace_11_buffer_size>
+        <trace_13_buffer_size>100</trace_13_buffer_size>
+        <trace_13_trace_type>0</trace_13_trace_type>
+        <trace_17_point_style>0</trace_17_point_style>
+        <axis_1_axis_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </axis_1_axis_color>
+        <trace_8_update_delay>100</trace_8_update_delay>
+        <trace_15_y_pv></trace_15_y_pv>
+        <trace_16_plot_mode>0</trace_16_plot_mode>
+        <axis_0_scale_format></axis_0_scale_format>
+        <trace_11_x_pv></trace_11_x_pv>
+        <trace_6_line_width>3</trace_6_line_width>
+        <axis_1_log_scale>false</axis_1_log_scale>
+        <trace_5_anti_alias>true</trace_5_anti_alias>
+        <title>Signal GENERATED</title>
+        <trace_16_x_pv></trace_16_x_pv>
+        <trace_6_x_pv_value />
+        <trace_8_buffer_size>100</trace_8_buffer_size>
+        <trace_17_buffer_size>100</trace_17_buffer_size>
+        <trace_0_visible>true</trace_0_visible>
+        <trace_4_buffer_size>100</trace_4_buffer_size>
+        <trace_6_buffer_size>100</trace_6_buffer_size>
+        <trace_19_buffer_size>100</trace_19_buffer_size>
+        <trace_17_y_axis_index>1</trace_17_y_axis_index>
+        <trace_11_x_axis_index>0</trace_11_x_axis_index>
+        <trace_1_name>$(trace_1_y_pv)</trace_1_name>
+        <trace_17_trace_type>0</trace_17_trace_type>
+        <trace_3_anti_alias>true</trace_3_anti_alias>
+        <trace_1_y_pv_value />
+        <axis_2_auto_scale>true</axis_2_auto_scale>
+        <trace_4_y_pv></trace_4_y_pv>
+        <trace_15_x_axis_index>0</trace_15_x_axis_index>
+        <show_legend>true</show_legend>
+        <trace_3_visible>true</trace_3_visible>
+        <trace_6_y_axis_index>1</trace_6_y_axis_index>
+        <trace_8_x_pv_value />
+        <trace_5_x_pv></trace_5_x_pv>
+        <trace_4_x_axis_index>0</trace_4_x_axis_index>
+        <trace_7_name>$(trace_7_y_pv)</trace_7_name>
+        <trace_12_name>$(trace_12_y_pv)</trace_12_name>
+        <trace_6_x_axis_index>0</trace_6_x_axis_index>
+        <trace_12_trace_color>
+          <color red="21" green="21" blue="196" />
+        </trace_12_trace_color>
+        <trace_3_name>$(trace_3_y_pv)</trace_3_name>
+        <axis_0_axis_title>Time</axis_0_axis_title>
+        <axis_0_axis_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </axis_0_axis_color>
+        <trace_16_trace_color>
+          <color red="128" green="0" blue="255" />
+        </trace_16_trace_color>
+        <trace_14_y_axis_index>1</trace_14_y_axis_index>
+        <axis_2_scale_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">Default</opifont.name>
+        </axis_2_scale_font>
+        <trace_13_trace_color>
+          <color red="242" green="26" blue="26" />
+        </trace_13_trace_color>
+        <trace_17_trace_color>
+          <color red="255" green="170" blue="0" />
+        </trace_17_trace_color>
+        <trace_18_trace_type>0</trace_18_trace_type>
+        <axis_3_minimum>0.0</axis_3_minimum>
+        <trace_16_line_width>1</trace_16_line_width>
+        <trace_14_point_size>4</trace_14_point_size>
+        <trace_9_trace_type>0</trace_9_trace_type>
+        <trace_3_update_delay>100</trace_3_update_delay>
+        <trace_2_update_delay>100</trace_2_update_delay>
+        <trace_5_y_pv_value />
+        <axis_3_left_bottom_side>true</axis_3_left_bottom_side>
+        <trace_13_y_pv></trace_13_y_pv>
+        <trace_19_y_pv_value />
+        <trace_10_visible>true</trace_10_visible>
+        <trace_4_point_style>0</trace_4_point_style>
+        <trace_5_point_style>0</trace_5_point_style>
+        <trace_10_name>$(trace_10_y_pv)</trace_10_name>
+        <axis_0_dash_grid_line>true</axis_0_dash_grid_line>
+        <trace_0_point_style>1</trace_0_point_style>
+        <trace_1_point_style>0</trace_1_point_style>
+        <trace_6_anti_alias>true</trace_6_anti_alias>
+        <trace_15_line_width>1</trace_15_line_width>
+        <trace_19_update_delay>100</trace_19_update_delay>
+        <trace_5_x_axis_index>0</trace_5_x_axis_index>
+        <trace_5_name>$(trace_5_y_pv)</trace_5_name>
+        <trace_11_update_delay>100</trace_11_update_delay>
+        <trace_5_point_size>4</trace_5_point_size>
+        <trace_17_concatenate_data>true</trace_17_concatenate_data>
+        <trace_7_x_axis_index>0</trace_7_x_axis_index>
+        <trace_0_line_width>3</trace_0_line_width>
+        <trace_9_visible>true</trace_9_visible>
+        <trace_11_trace_type>0</trace_11_trace_type>
+        <axis_3_time_format>0</axis_3_time_format>
+        <trace_15_anti_alias>true</trace_15_anti_alias>
+        <trace_8_point_style>0</trace_8_point_style>
+        <trace_9_point_style>0</trace_9_point_style>
+        <trace_18_concatenate_data>true</trace_18_concatenate_data>
+        <axis_2_y_axis>true</axis_2_y_axis>
+        <trace_3_x_pv_value />
+        <axis_0_time_format>2</axis_0_time_format>
+        <trace_18_x_pv></trace_18_x_pv>
+        <axis_3_scale_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">Default</opifont.name>
+        </axis_3_scale_font>
+        <trace_count>1</trace_count>
+        <trace_14_x_axis_index>0</trace_14_x_axis_index>
+        <trace_11_y_pv></trace_11_y_pv>
+        <axis_1_show_grid>true</axis_1_show_grid>
+        <trace_14_anti_alias>true</trace_14_anti_alias>
+        <trace_6_point_size>4</trace_6_point_size>
+        <trace_14_y_pv_value />
+        <trace_17_update_mode>0</trace_17_update_mode>
+        <trace_18_update_delay>100</trace_18_update_delay>
+        <trace_18_y_pv></trace_18_y_pv>
+        <trace_8_y_pv></trace_8_y_pv>
+        <trace_18_plot_mode>0</trace_18_plot_mode>
+        <trace_11_visible>true</trace_11_visible>
+        <trace_10_update_delay>100</trace_10_update_delay>
+        <trace_12_point_style>0</trace_12_point_style>
+        <trace_3_x_pv></trace_3_x_pv>
+        <trace_13_x_pv></trace_13_x_pv>
+        <trace_13_update_mode>0</trace_13_update_mode>
+        <trace_16_y_axis_index>1</trace_16_y_axis_index>
+        <trace_2_trace_color>
+          <color red="33" green="179" blue="33" />
+        </trace_2_trace_color>
+        <trace_4_visible>true</trace_4_visible>
+        <axis_1_dash_grid_line>true</axis_1_dash_grid_line>
+        <trace_3_buffer_size>100</trace_3_buffer_size>
+        <trace_14_trace_type>0</trace_14_trace_type>
+        <trace_2_trace_type>0</trace_2_trace_type>
+        <trace_6_y_pv></trace_6_y_pv>
+        <trace_14_buffer_size>100</trace_14_buffer_size>
+        <trace_6_trace_color>
+          <color red="255" green="0" blue="240" />
+        </trace_6_trace_color>
+        <trace_8_concatenate_data>true</trace_8_concatenate_data>
+        <trace_16_point_style>0</trace_16_point_style>
+        <trace_18_y_pv_value />
+        <trace_6_y_pv_value />
+        <trace_3_line_width>3</trace_3_line_width>
+        <show_toolbar>false</show_toolbar>
+        <axis_0_visible>true</axis_0_visible>
+        <trace_15_name>$(trace_15_y_pv)</trace_15_name>
+        <trace_16_visible>true</trace_16_visible>
+        <axis_3_title_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="20" style="1">Default Bold</opifont.name>
+        </axis_3_title_font>
+        <trace_7_plot_mode>0</trace_7_plot_mode>
+        <trace_16_x_pv_value />
+        <axis_0_show_grid>true</axis_0_show_grid>
+        <trace_0_y_axis_index>1</trace_0_y_axis_index>
+        <trace_5_concatenate_data>true</trace_5_concatenate_data>
+        <trace_7_buffer_size>100</trace_7_buffer_size>
+        <trace_18_buffer_size>100</trace_18_buffer_size>
+        <trace_15_y_axis_index>1</trace_15_y_axis_index>
+        <trace_8_plot_mode>0</trace_8_plot_mode>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <trace_7_x_pv_value />
+        <trace_8_x_pv></trace_8_x_pv>
+        <trace_13_x_axis_index>0</trace_13_x_axis_index>
+        <trace_19_plot_mode>0</trace_19_plot_mode>
+        <trace_1_y_pv></trace_1_y_pv>
+        <trace_2_concatenate_data>true</trace_2_concatenate_data>
+        <trace_12_line_width>1</trace_12_line_width>
+        <axis_3_auto_scale>true</axis_3_auto_scale>
+        <trace_12_x_pv_value />
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <trace_2_y_pv_value />
+        <trace_7_line_width>3</trace_7_line_width>
+        <trace_18_point_size>4</trace_18_point_size>
+        <trace_2_anti_alias>true</trace_2_anti_alias>
+        <trace_8_y_axis_index>1</trace_8_y_axis_index>
+        <axis_0_maximum>100.0</axis_0_maximum>
+        <trace_9_concatenate_data>true</trace_9_concatenate_data>
+        <trace_5_x_pv_value />
+        <trace_9_plot_mode>0</trace_9_plot_mode>
+        <axis_3_dash_grid_line>true</axis_3_dash_grid_line>
+        <trace_13_name>$(trace_13_y_pv)</trace_13_name>
+        <trace_1_y_axis_index>1</trace_1_y_axis_index>
+        <trace_2_name>$(trace_2_y_pv)</trace_2_name>
+        <trace_15_plot_mode>0</trace_15_plot_mode>
+        <height>625</height>
+        <trace_15_concatenate_data>true</trace_15_concatenate_data>
+        <trace_2_visible>true</trace_2_visible>
+        <trigger_pv_value />
+        <axis_3_maximum>100.0</axis_3_maximum>
+        <trace_3_y_pv></trace_3_y_pv>
+        <trace_10_y_axis_index>1</trace_10_y_axis_index>
+        <trace_9_point_size>4</trace_9_point_size>
+        <trace_17_anti_alias>true</trace_17_anti_alias>
+        <trace_10_y_pv></trace_10_y_pv>
+        <axis_1_grid_color>
+          <color name="IO Grid" red="215" green="215" blue="215" />
+        </axis_1_grid_color>
+        <axis_3_axis_title>Secondary Axis (3)</axis_3_axis_title>
+        <trace_10_y_pv_value />
+        <actions hook="false" hook_all="false" />
+        <trace_2_point_size>4</trace_2_point_size>
+        <trace_4_concatenate_data>true</trace_4_concatenate_data>
+        <trace_18_line_width>1</trace_18_line_width>
+        <trace_17_y_pv_value />
+        <trace_9_x_axis_index>0</trace_9_x_axis_index>
+        <trace_7_y_pv_value />
+        <axis_2_axis_color>
+          <color red="0" green="0" blue="0" />
+        </axis_2_axis_color>
+        <trace_6_x_pv></trace_6_x_pv>
+        <trace_6_name>$(trace_6_y_pv)</trace_6_name>
+        <axis_3_auto_scale_threshold>0.0</axis_3_auto_scale_threshold>
+        <trace_12_point_size>4</trace_12_point_size>
+        <axis_3_y_axis>true</axis_3_y_axis>
+        <trace_12_anti_alias>true</trace_12_anti_alias>
+        <axis_0_log_scale>false</axis_0_log_scale>
+        <trace_0_x_pv_value />
+        <trace_6_trace_type>0</trace_6_trace_type>
+        <trace_15_y_pv_value />
+        <trace_9_anti_alias>true</trace_9_anti_alias>
+        <trace_14_y_pv></trace_14_y_pv>
+        <trace_18_x_axis_index>0</trace_18_x_axis_index>
+        <trace_17_name>$(trace_17_y_pv)</trace_17_name>
+        <trace_10_point_size>4</trace_10_point_size>
+        <trace_5_visible>true</trace_5_visible>
+        <trace_11_line_width>1</trace_11_line_width>
+        <trace_15_visible>true</trace_15_visible>
+        <trace_19_point_size>4</trace_19_point_size>
+        <axis_0_auto_scale_threshold>0.0</axis_0_auto_scale_threshold>
+        <rules />
+        <trace_8_trace_type>0</trace_8_trace_type>
+        <trace_9_y_pv_value />
+        <trace_5_plot_mode>0</trace_5_plot_mode>
+        <axis_1_visible>true</axis_1_visible>
+        <axis_2_show_grid>true</axis_2_show_grid>
+        <trace_8_x_axis_index>0</trace_8_x_axis_index>
+        <trace_3_y_axis_index>1</trace_3_y_axis_index>
+        <trace_0_update_delay>100</trace_0_update_delay>
+        <trace_19_anti_alias>true</trace_19_anti_alias>
+        <trace_1_concatenate_data>true</trace_1_concatenate_data>
+        <trace_12_y_pv_value />
+        <trace_1_trace_color>
+          <color red="242" green="26" blue="26" />
+        </trace_1_trace_color>
+        <trace_3_trace_color>
+          <color red="0" green="0" blue="0" />
+        </trace_3_trace_color>
+        <pv_name></pv_name>
+        <trace_15_x_pv_value />
+        <trace_17_plot_mode>0</trace_17_plot_mode>
+        <trace_5_trace_color>
+          <color red="255" green="170" blue="0" />
+        </trace_5_trace_color>
+        <axis_2_log_scale>false</axis_2_log_scale>
+        <trace_6_concatenate_data>true</trace_6_concatenate_data>
+        <trace_7_anti_alias>true</trace_7_anti_alias>
+        <trace_8_visible>true</trace_8_visible>
+        <trace_9_trace_color>
+          <color red="0" green="214" blue="255" />
+        </trace_9_trace_color>
+        <trace_10_anti_alias>true</trace_10_anti_alias>
+        <axis_2_auto_scale_threshold>0.0</axis_2_auto_scale_threshold>
+        <trace_7_trace_color>
+          <color red="243" green="132" blue="132" />
+        </trace_7_trace_color>
+        <trace_11_plot_mode>0</trace_11_plot_mode>
+        <name>XY Graph Template</name>
+        <trace_12_concatenate_data>true</trace_12_concatenate_data>
+        <trace_1_trace_type>0</trace_1_trace_type>
+        <trace_13_x_pv_value />
+        <axis_0_auto_scale>true</axis_0_auto_scale>
+        <axis_0_minimum>0.0</axis_0_minimum>
+        <trace_19_trace_type>0</trace_19_trace_type>
+        <trace_12_visible>true</trace_12_visible>
+        <trace_2_y_axis_index>1</trace_2_y_axis_index>
+        <trace_15_point_size>4</trace_15_point_size>
+        <trace_1_update_delay>100</trace_1_update_delay>
+        <axis_2_dash_grid_line>true</axis_2_dash_grid_line>
+        <trace_10_x_pv></trace_10_x_pv>
+        <trace_13_y_axis_index>1</trace_13_y_axis_index>
+        <axis_1_axis_title>Analog Input Temp</axis_1_axis_title>
+        <trace_13_line_width>1</trace_13_line_width>
+        <trace_17_x_pv></trace_17_x_pv>
+        <trace_11_x_pv_value />
+        <trace_17_point_size>4</trace_17_point_size>
+        <trace_8_line_width>1</trace_8_line_width>
+        <trace_19_x_axis_index>0</trace_19_x_axis_index>
+        <trace_12_trace_type>0</trace_12_trace_type>
+        <trace_10_trace_color>
+          <color red="114" green="40" blue="3" />
+        </trace_10_trace_color>
+        <trace_13_concatenate_data>true</trace_13_concatenate_data>
+        <trace_13_visible>true</trace_13_visible>
+        <trace_12_update_delay>100</trace_12_update_delay>
+        <trace_2_x_pv_value />
+        <trace_11_trace_color>
+          <color red="219" green="128" blue="4" />
+        </trace_11_trace_color>
+        <trace_14_trace_color>
+          <color red="33" green="179" blue="33" />
+        </trace_14_trace_color>
+        <trace_18_trace_color>
+          <color red="255" green="0" blue="240" />
+        </trace_18_trace_color>
+        <axis_1_auto_scale>true</axis_1_auto_scale>
+        <trace_1_line_width>3</trace_1_line_width>
+        <axis_3_visible>true</axis_3_visible>
+        <trace_3_trace_type>0</trace_3_trace_type>
+        <trace_2_y_pv></trace_2_y_pv>
+        <trace_15_trace_color>
+          <color red="0" green="0" blue="0" />
+        </trace_15_trace_color>
+        <trace_1_plot_mode>0</trace_1_plot_mode>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <trace_6_point_style>0</trace_6_point_style>
+        <trace_19_trace_color>
+          <color red="243" green="132" blue="132" />
+        </trace_19_trace_color>
+        <axis_2_title_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="20" style="1">Default Bold</opifont.name>
+        </axis_2_title_font>
+        <trace_9_x_pv></trace_9_x_pv>
+        <trace_17_x_pv_value />
+        <trace_3_point_style>0</trace_3_point_style>
+        <trace_0_y_pv>CWS-TCPH-F${xxx}:TEMP</trace_0_y_pv>
+        <trace_6_visible>true</trace_6_visible>
+        <trace_2_point_style>0</trace_2_point_style>
+        <trace_0_plot_mode>0</trace_0_plot_mode>
+        <trace_4_trace_type>0</trace_4_trace_type>
+        <trace_13_update_delay>100</trace_13_update_delay>
+        <trace_18_visible>true</trace_18_visible>
+        <enabled>true</enabled>
+        <trace_0_x_pv></trace_0_x_pv>
+        <trace_7_point_style>0</trace_7_point_style>
+        <axis_1_scale_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="24" style="0">IO Scale 1</opifont.name>
+        </axis_1_scale_font>
+        <axis_1_time_format>0</axis_1_time_format>
+        <axis_2_time_format>0</axis_2_time_format>
+        <axis_2_left_bottom_side>true</axis_2_left_bottom_side>
+        <trace_7_x_pv></trace_7_x_pv>
+        <trace_3_plot_mode>0</trace_3_plot_mode>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <axis_2_maximum>100.0</axis_2_maximum>
+        <trace_7_concatenate_data>true</trace_7_concatenate_data>
+        <trace_16_x_axis_index>0</trace_16_x_axis_index>
+        <trace_13_y_pv_value />
+        <trace_5_y_axis_index>1</trace_5_y_axis_index>
+        <show_plot_area_border>true</show_plot_area_border>
+        <width>1000</width>
+        <trace_14_name>$(trace_14_y_pv)</trace_14_name>
+        <trace_1_x_pv_value />
+        <trace_17_y_pv></trace_17_y_pv>
+        <trace_19_update_mode>0</trace_19_update_mode>
+        <trace_16_anti_alias>true</trace_16_anti_alias>
+        <trace_16_point_size>4</trace_16_point_size>
+        <trace_18_point_style>0</trace_18_point_style>
+        <trace_13_anti_alias>true</trace_13_anti_alias>
+        <axis_1_minimum>0.0</axis_1_minimum>
+        <trace_14_line_width>1</trace_14_line_width>
+        <trace_15_update_mode>0</trace_15_update_mode>
+        <title_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+        </title_font>
+        <trace_9_name>$(trace_9_y_pv)</trace_9_name>
+        <trace_4_anti_alias>true</trace_4_anti_alias>
+        <trace_7_point_size>4</trace_7_point_size>
+        <trace_12_y_axis_index>1</trace_12_y_axis_index>
+        <axis_3_log_scale>false</axis_3_log_scale>
+        <trace_0_y_pv_value />
+        <trace_1_visible>true</trace_1_visible>
+        <trace_10_point_style>0</trace_10_point_style>
+        <plot_area_background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </plot_area_background_color>
+        <trace_14_x_pv></trace_14_x_pv>
+        <trace_11_update_mode>0</trace_11_update_mode>
+        <trace_14_update_delay>100</trace_14_update_delay>
+        <trace_5_line_width>3</trace_5_line_width>
+        <trace_4_point_size>4</trace_4_point_size>
+        <trace_10_x_axis_index>0</trace_10_x_axis_index>
+        <axis_1_title_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        </axis_1_title_font>
+        <trace_18_x_pv_value />
+        <visible>true</visible>
+        <trace_10_concatenate_data>true</trace_10_concatenate_data>
+        <axis_2_axis_title>Secondary Axis (2)</axis_2_axis_title>
+        <trace_19_y_pv></trace_19_y_pv>
+        <trace_4_trace_color>
+          <color red="128" green="0" blue="255" />
+        </trace_4_trace_color>
+        <trace_1_buffer_size>100</trace_1_buffer_size>
+        <trace_19_visible>true</trace_19_visible>
+        <trace_14_point_style>0</trace_14_point_style>
+        <trace_12_buffer_size>100</trace_12_buffer_size>
+        <trace_8_trace_color>
+          <color red="0" green="255" blue="11" />
+        </trace_8_trace_color>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <axis_3_grid_color>
+          <color red="200" green="200" blue="200" />
+        </axis_3_grid_color>
+        <trace_10_x_pv_value />
+        <axis_2_scale_format></axis_2_scale_format>
+        <trace_11_y_axis_index>1</trace_11_y_axis_index>
+        <trace_16_buffer_size>100</trace_16_buffer_size>
+        <trace_9_line_width>1</trace_9_line_width>
+        <trace_16_name>$(trace_16_y_pv)</trace_16_name>
+        <trace_5_buffer_size>100</trace_5_buffer_size>
+        <trace_4_y_pv_value />
+        <scripts />
+        <trace_0_point_size>4</trace_0_point_size>
+        <trace_0_trace_color>
+          <color name="IO Trace 1" red="21" green="21" blue="196" />
+        </trace_0_trace_color>
+        <trace_0_anti_alias>true</trace_0_anti_alias>
+        <trace_4_name>$(trace_4_y_pv)</trace_4_name>
+        <axis_1_auto_scale_threshold>0.0</axis_1_auto_scale_threshold>
+        <trace_7_visible>true</trace_7_visible>
+        <trace_17_x_axis_index>0</trace_17_x_axis_index>
+        <trace_19_y_axis_index>1</trace_19_y_axis_index>
+        <trace_13_plot_mode>0</trace_13_plot_mode>
+        <trace_19_concatenate_data>true</trace_19_concatenate_data>
+        <trace_10_line_width>1</trace_10_line_width>
+        <trace_9_buffer_size>100</trace_9_buffer_size>
+        <trace_4_y_axis_index>1</trace_4_y_axis_index>
+        <trace_16_concatenate_data>true</trace_16_concatenate_data>
+        <trace_16_trace_type>0</trace_16_trace_type>
+        <trace_9_x_pv_value />
+        <trace_2_plot_mode>0</trace_2_plot_mode>
+        <trace_2_x_pv></trace_2_x_pv>
+        <trace_7_y_pv></trace_7_y_pv>
+        <foreground_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>13</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>-157ac05f:14c0e573b58:-7b15</wuid>
+      <transparent>true</transparent>
+      <lock_children>true</lock_children>
+      <scripts />
+      <height>501</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <width>389</width>
+      <x>2498</x>
+      <name>Alarm Severity</name>
+      <y>685</y>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.combo" version="1.0.0">
+        <border_style>6</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b14</wuid>
+        <pv_value />
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>45</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <items_from_pv>true</items_from_pv>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:TEMP.HHSV</pv_name>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Combo</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+        </background_color>
+        <width>300</width>
+        <x>0</x>
+        <name>Combo Box Template</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <items />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.combo" version="1.0.0">
+        <border_style>6</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b13</wuid>
+        <pv_value />
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>45</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <items_from_pv>true</items_from_pv>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:TEMP.HSV</pv_name>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Combo</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+        </background_color>
+        <width>300</width>
+        <x>0</x>
+        <name>Combo Box Template_1</name>
+        <y>120</y>
+        <foreground_color>
+          <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <items />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.combo" version="1.0.0">
+        <border_style>6</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b12</wuid>
+        <pv_value />
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>45</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <items_from_pv>true</items_from_pv>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:TEMP.LSV</pv_name>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Combo</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+        </background_color>
+        <width>300</width>
+        <x>0</x>
+        <name>Combo Box Template_2</name>
+        <y>240</y>
+        <foreground_color>
+          <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <items />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.combo" version="1.0.0">
+        <border_style>6</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b11</wuid>
+        <pv_value />
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>45</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <items_from_pv>true</items_from_pv>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:TEMP.LLSV</pv_name>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Combo</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+        </background_color>
+        <width>300</width>
+        <x>0</x>
+        <name>Combo Box Template_3</name>
+        <y>367</y>
+        <foreground_color>
+          <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <items />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>-157ac05f:14c0e573b58:-7b10</wuid>
+      <transparent>true</transparent>
+      <lock_children>true</lock_children>
+      <scripts />
+      <height>150</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <width>538</width>
+      <x>1862</x>
+      <name>Analog Grouping</name>
+      <y>525</y>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+        <border_style>0</border_style>
+        <tooltip></tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b0f</wuid>
+        <transparent>true</transparent>
+        <auto_size>true</auto_size>
+        <text>AO</text>
+        <scripts />
+        <height>39</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Label</widget_type>
+        <wrap_words>true</wrap_words>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <width>40</width>
+        <x>100</x>
+        <name>Label Template_2</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b0e</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>100</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:SIG-GENERATED</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <wrap_words>true</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+        </background_color>
+        <width>250</width>
+        <x>0</x>
+        <name>Text Update Template</name>
+        <y>50</y>
+        <foreground_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+        <border_style>0</border_style>
+        <tooltip></tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b0d</wuid>
+        <transparent>true</transparent>
+        <auto_size>true</auto_size>
+        <text>AI</text>
+        <scripts />
+        <height>39</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Label</widget_type>
+        <wrap_words>true</wrap_words>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <width>40</width>
+        <x>388</x>
+        <name>Label Template_9</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b0c</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>100</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:TEMP</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <wrap_words>true</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+        </background_color>
+        <width>250</width>
+        <x>288</x>
+        <name>Text Update Template_6</name>
+        <y>50</y>
+        <foreground_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>-157ac05f:14c0e573b58:-7b0b</wuid>
+      <transparent>true</transparent>
+      <lock_children>true</lock_children>
+      <scripts />
+      <height>100</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <width>640</width>
+      <x>1760</x>
+      <name>Analog Grouping_1</name>
+      <y>695</y>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b0a</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>100</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:SIG-GENERATED.HIHI</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <wrap_words>true</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+        </background_color>
+        <width>250</width>
+        <x>102</x>
+        <name>Text Update Template_1</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+        <border_style>0</border_style>
+        <tooltip></tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b09</wuid>
+        <transparent>true</transparent>
+        <auto_size>true</auto_size>
+        <text>HIHI</text>
+        <scripts />
+        <height>39</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Label</widget_type>
+        <wrap_words>true</wrap_words>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <width>80</width>
+        <x>0</x>
+        <name>Label Template_5</name>
+        <y>30</y>
+        <foreground_color>
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b08</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>100</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:TEMP.HIHI</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <wrap_words>true</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+        </background_color>
+        <width>250</width>
+        <x>390</x>
+        <name>Text Update Template_7</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>-157ac05f:14c0e573b58:-7b07</wuid>
+      <transparent>true</transparent>
+      <lock_children>true</lock_children>
+      <scripts />
+      <height>100</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <width>640</width>
+      <x>1760</x>
+      <name>Analog Grouping_2</name>
+      <y>815</y>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b06</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>100</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:SIG-GENERATED.HIGH</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <wrap_words>true</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+        </background_color>
+        <width>250</width>
+        <x>102</x>
+        <name>Text Update Template_2</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+        <border_style>0</border_style>
+        <tooltip></tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b05</wuid>
+        <transparent>true</transparent>
+        <auto_size>true</auto_size>
+        <text>HIGH</text>
+        <scripts />
+        <height>39</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Label</widget_type>
+        <wrap_words>true</wrap_words>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <width>80</width>
+        <x>0</x>
+        <name>Label Template_6</name>
+        <y>30</y>
+        <foreground_color>
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b04</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>100</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:TEMP.HIGH</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <wrap_words>true</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+        </background_color>
+        <width>250</width>
+        <x>390</x>
+        <name>Text Update Template_8</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>-157ac05f:14c0e573b58:-7b03</wuid>
+      <transparent>true</transparent>
+      <lock_children>true</lock_children>
+      <scripts />
+      <height>100</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <width>640</width>
+      <x>1760</x>
+      <name>Analog Grouping_3</name>
+      <y>935</y>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b02</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>100</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:SIG-GENERATED.LOW</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <wrap_words>true</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+        </background_color>
+        <width>250</width>
+        <x>102</x>
+        <name>Text Update Template_3</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+        <border_style>0</border_style>
+        <tooltip></tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b01</wuid>
+        <transparent>true</transparent>
+        <auto_size>true</auto_size>
+        <text>LOW</text>
+        <scripts />
+        <height>39</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Label</widget_type>
+        <wrap_words>true</wrap_words>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <width>60</width>
+        <x>0</x>
+        <name>Label Template_7</name>
+        <y>30</y>
+        <foreground_color>
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7b00</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>100</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:TEMP.LOW</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <wrap_words>true</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+        </background_color>
+        <width>250</width>
+        <x>390</x>
+        <name>Text Update Template_9</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>-157ac05f:14c0e573b58:-7aff</wuid>
+      <transparent>true</transparent>
+      <lock_children>true</lock_children>
+      <scripts />
+      <height>100</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <width>640</width>
+      <x>1760</x>
+      <name>Analog Grouping_4</name>
+      <y>1062</y>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7afe</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>100</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:SIG-GENERATED.LOLO</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <wrap_words>true</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+        </background_color>
+        <width>250</width>
+        <x>102</x>
+        <name>Text Update Template_4</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+        <border_style>0</border_style>
+        <tooltip></tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7afd</wuid>
+        <transparent>true</transparent>
+        <auto_size>true</auto_size>
+        <text>LOLO</text>
+        <scripts />
+        <height>39</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Label</widget_type>
+        <wrap_words>true</wrap_words>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <width>80</width>
+        <x>0</x>
+        <name>Label Template_8</name>
+        <y>30</y>
+        <foreground_color>
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-157ac05f:14c0e573b58:-7afc</wuid>
+        <transparent>false</transparent>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <text>######</text>
+        <rotation_angle>0.0</rotation_angle>
+        <scripts />
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <show_units>true</show_units>
+        <height>100</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name>CWS-TCPH-F${xxx}:TEMP.LOLO</pv_name>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Update</widget_type>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <wrap_words>true</wrap_words>
+        <format_type>0</format_type>
+        <background_color>
+          <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+        </background_color>
+        <width>250</width>
+        <x>390</x>
+        <name>Text Update Template_10</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>-7f2f2528:14c0e6d9dd3:-7d98</wuid>
+      <transparent>true</transparent>
+      <lock_children>false</lock_children>
+      <scripts />
+      <height>678</height>
+      <border_width>1</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <width>392</width>
+      <x>113</x>
+      <name>Analog Input Group</name>
+      <y>526</y>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+        <border_style>13</border_style>
+        <tooltip></tooltip>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-7f2f2528:14c0e6d9dd3:-7d97</wuid>
+        <transparent>true</transparent>
+        <lock_children>true</lock_children>
+        <scripts />
+        <height>151</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <visible>true</visible>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Grouping Container</widget_type>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <width>339</width>
+        <x>0</x>
+        <name>Amplitude</name>
+        <y>134</y>
+        <foreground_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <fc>false</fc>
+        <show_scrollbar>false</show_scrollbar>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+        </font>
+        <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+          <alarm_pulsing>false</alarm_pulsing>
+          <precision>0</precision>
+          <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          <horizontal_alignment>0</horizontal_alignment>
+          <rules />
+          <show_h_scroll>false</show_h_scroll>
+          <pv_value />
+          <auto_size>false</auto_size>
+          <read_only>false</read_only>
+          <text>######</text>
+          <rotation_angle>0.0</rotation_angle>
+          <show_units>true</show_units>
+          <height>62</height>
+          <multiline_input>false</multiline_input>
+          <border_width>1</border_width>
+          <visible>true</visible>
+          <pv_name>CWS-TCPH-F${xxx}:AMPL</pv_name>
+          <selector_type>0</selector_type>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <precision_from_pv>true</precision_from_pv>
+          <widget_type>Text Input</widget_type>
+          <confirm_message></confirm_message>
+          <name>Text Input Template</name>
+          <style>1</style>
+          <actions hook="false" hook_all="false" />
+          <border_style>1</border_style>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <show_native_border>false</show_native_border>
+          <enabled>true</enabled>
+          <wuid>-7f2f2528:14c0e6d9dd3:-7d96</wuid>
+          <transparent>false</transparent>
+          <next_focus>0</next_focus>
+          <scripts />
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <show_v_scroll>false</show_v_scroll>
+          <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+          <format_type>0</format_type>
+          <limits_from_pv>true</limits_from_pv>
+          <background_color>
+            <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+          </background_color>
+          <password_input>false</password_input>
+          <width>250</width>
+          <x>0</x>
+          <y>0</y>
+          <maximum>1.7976931348623157E308</maximum>
+          <foreground_color>
+            <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+          </foreground_color>
+          <minimum>-1.7976931348623157E308</minimum>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+        </widget>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+        <border_style>13</border_style>
+        <tooltip></tooltip>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-7f2f2528:14c0e6d9dd3:-7d95</wuid>
+        <transparent>true</transparent>
+        <lock_children>true</lock_children>
+        <scripts />
+        <height>151</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <visible>true</visible>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Grouping Container</widget_type>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <width>339</width>
+        <x>0</x>
+        <name>Frequency</name>
+        <y>285</y>
+        <foreground_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <fc>false</fc>
+        <show_scrollbar>false</show_scrollbar>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+        </font>
+        <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+          <alarm_pulsing>false</alarm_pulsing>
+          <precision>0</precision>
+          <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          <horizontal_alignment>0</horizontal_alignment>
+          <rules />
+          <show_h_scroll>false</show_h_scroll>
+          <pv_value />
+          <auto_size>false</auto_size>
+          <read_only>false</read_only>
+          <text>######</text>
+          <rotation_angle>0.0</rotation_angle>
+          <show_units>true</show_units>
+          <height>62</height>
+          <multiline_input>false</multiline_input>
+          <border_width>1</border_width>
+          <visible>true</visible>
+          <pv_name>CWS-TCPH-F${xxx}:FREQ</pv_name>
+          <selector_type>0</selector_type>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <precision_from_pv>true</precision_from_pv>
+          <widget_type>Text Input</widget_type>
+          <confirm_message></confirm_message>
+          <name>Text Input Template_1</name>
+          <style>1</style>
+          <actions hook="false" hook_all="false" />
+          <border_style>1</border_style>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <show_native_border>false</show_native_border>
+          <enabled>true</enabled>
+          <wuid>-7f2f2528:14c0e6d9dd3:-7d94</wuid>
+          <transparent>false</transparent>
+          <next_focus>0</next_focus>
+          <scripts />
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <show_v_scroll>false</show_v_scroll>
+          <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+          <format_type>0</format_type>
+          <limits_from_pv>true</limits_from_pv>
+          <background_color>
+            <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+          </background_color>
+          <password_input>false</password_input>
+          <width>250</width>
+          <x>0</x>
+          <y>0</y>
+          <maximum>1.7976931348623157E308</maximum>
+          <foreground_color>
+            <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+          </foreground_color>
+          <minimum>-1.7976931348623157E308</minimum>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+        </widget>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+        <border_style>13</border_style>
+        <tooltip></tooltip>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-7f2f2528:14c0e6d9dd3:-7d93</wuid>
+        <transparent>true</transparent>
+        <lock_children>true</lock_children>
+        <scripts />
+        <height>134</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <visible>true</visible>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Grouping Container</widget_type>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <width>389</width>
+        <x>0</x>
+        <name>Waveform Type</name>
+        <y>0</y>
+        <foreground_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <fc>false</fc>
+        <show_scrollbar>false</show_scrollbar>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+        </font>
+        <widget typeId="org.csstudio.opibuilder.widgets.combo" version="1.0.0">
+          <border_style>6</border_style>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <alarm_pulsing>false</alarm_pulsing>
+          <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          <rules />
+          <enabled>true</enabled>
+          <wuid>-7f2f2528:14c0e6d9dd3:-7d92</wuid>
+          <pv_value />
+          <scripts />
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <height>45</height>
+          <border_width>2</border_width>
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <items_from_pv>true</items_from_pv>
+          <visible>true</visible>
+          <pv_name>CWS-TCPH-F${xxx}:WAVEFORM-TYPE</pv_name>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <widget_type>Combo</widget_type>
+          <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+          <background_color>
+            <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+          </background_color>
+          <width>300</width>
+          <x>0</x>
+          <name>Combo Box Template</name>
+          <y>0</y>
+          <foreground_color>
+            <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+          </foreground_color>
+          <actions hook="false" hook_all="false" />
+          <items />
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+        </widget>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+        <border_style>13</border_style>
+        <tooltip></tooltip>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-7f2f2528:14c0e6d9dd3:-7d91</wuid>
+        <transparent>true</transparent>
+        <lock_children>false</lock_children>
+        <scripts />
+        <height>241</height>
+        <border_width>1</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <visible>true</visible>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Grouping Container</widget_type>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <width>391</width>
+        <x>0</x>
+        <name>Generator</name>
+        <y>436</y>
+        <foreground_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <fc>false</fc>
+        <show_scrollbar>false</show_scrollbar>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+        </font>
+        <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+          <border_style>0</border_style>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <alarm_pulsing>false</alarm_pulsing>
+          <precision>0</precision>
+          <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          <horizontal_alignment>0</horizontal_alignment>
+          <rules />
+          <enabled>true</enabled>
+          <wuid>-7f2f2528:14c0e6d9dd3:-7d90</wuid>
+          <transparent>false</transparent>
+          <pv_value />
+          <auto_size>false</auto_size>
+          <text>######</text>
+          <rotation_angle>0.0</rotation_angle>
+          <scripts />
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <show_units>true</show_units>
+          <height>65</height>
+          <border_width>2</border_width>
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <visible>true</visible>
+          <pv_name>CWS-TCPH-F${xxx}:GENERATOR-STATE</pv_name>
+          <vertical_alignment>1</vertical_alignment>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <precision_from_pv>true</precision_from_pv>
+          <widget_type>Text Update</widget_type>
+          <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+          <wrap_words>true</wrap_words>
+          <format_type>0</format_type>
+          <background_color>
+            <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+          </background_color>
+          <width>302</width>
+          <x>0</x>
+          <name>Text Update Template</name>
+          <y>0</y>
+          <foreground_color>
+            <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+          </foreground_color>
+          <actions hook="false" hook_all="false" />
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+          <border_style>0</border_style>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <alarm_pulsing>false</alarm_pulsing>
+          <precision>0</precision>
+          <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          <horizontal_alignment>0</horizontal_alignment>
+          <rules />
+          <enabled>true</enabled>
+          <wuid>-7f2f2528:14c0e6d9dd3:-7d8f</wuid>
+          <transparent>false</transparent>
+          <pv_value />
+          <auto_size>false</auto_size>
+          <text>######</text>
+          <rotation_angle>0.0</rotation_angle>
+          <scripts />
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <show_units>true</show_units>
+          <height>65</height>
+          <border_width>2</border_width>
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <visible>true</visible>
+          <pv_name>CWS-TCPH-F${xxx}:SIG-STATE</pv_name>
+          <vertical_alignment>1</vertical_alignment>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <precision_from_pv>true</precision_from_pv>
+          <widget_type>Text Update</widget_type>
+          <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+          <wrap_words>true</wrap_words>
+          <format_type>0</format_type>
+          <background_color>
+            <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+          </background_color>
+          <width>302</width>
+          <x>0</x>
+          <name>Text Update Template_1</name>
+          <y>87</y>
+          <foreground_color>
+            <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+          </foreground_color>
+          <actions hook="false" hook_all="false" />
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+        </widget>
+      </widget>
+    </widget>
+  </widget>
+</display>
