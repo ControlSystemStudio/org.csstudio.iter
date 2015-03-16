@@ -28,6 +28,7 @@
 	<pydev-site>http://update-production-pydev.s3.amazonaws.com/pydev/updates</pydev-site>
         <svn-site>http://subclipse.tigris.org/update_1.8.x</svn-site>
         <orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20140114142710/repository</orbit-site>
+	<efx-site>http://download.eclipse.org/efxclipse/runtime-nightly/site</efx-site>
     </properties>
 
     <groupId>org.csstudio</groupId>
@@ -123,6 +124,11 @@
         <repository>
             <id>orbit</id>
             <url>${orbit-site}</url>
+            <layout>p2</layout>
+        </repository>
+        <repository>
+            <id>efx</id>
+            <url>${efx-site}</url>
             <layout>p2</layout>
         </repository>
     </repositories>
