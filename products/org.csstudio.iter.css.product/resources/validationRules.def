@@ -16,6 +16,22 @@
 #! pv_name property is obligatory writable
 #! pv_name=WRITE
 
+# Writable color and font properties are checked against the color and font definition files.
+# The default value from the schema OPI can be overwritten but with a value from the definition file.
+
+# A list of acceptable values can be specified using rectangular brackets and separated by semicolon ;
+
+#! Example of the background color which can take only the default one from the schema OPI
+#! and another one
+#! background_color=RO [IO Area Background]
+
+# It is possible to remove deprecated rules and scripts inherited from previous schema OPI
+# using curly brackets and semicolon to separate the different items
+
+#! Example of deprecated rules to be removed for action button widget
+#! actionbutton.rules=RW {myDeprecatedRule1, myDeprecatedRule2}
+
+
 #! PROPERTIES COMMON TO ALL WIDGETS
 
 #! BASIC PROPERTIES
@@ -23,16 +39,27 @@ name=RW
 widget_type=RO
 
 #! PV WIDGETS PROPERTIES
+
+#! PV Name is required
 pv_name=WRITE
+#! except for:
 label.pv_name=RW
 xygraph.pv_name=RW
+arc.pv_name=RW
+polyline.pv_name=RW
+polygon.pv_name=RW
+rectangle.pv_name=RW
+roundedrectangle.pv_name=RW
+ellipse.pv_name=RW
+
 limits_from_pv=RO
+alarm_pulsing=RO
 border_alarm_sensitive=RO
 forecolor_alarm_sensitive=RO
 backcolor_alarm_sensitive=RO
 
 #! BEHAVIOUR PROPERTIES
-rules=RW
+rules=RW {BorderRule}
 scripts=RW
 actions=RW
 enabled=RW
@@ -44,9 +71,8 @@ border_style=RO
 border_width=RO
 
 #! DISPLAY PROPERTIES
-background_color=RO
-foreground_color=RO
-alarm_pulsing=RO
+background_color=WRITE [IO Area Background; IO Invalid Level Alarm; IO High Level Alarm; IO Medium Level Alarm; IO Normal Level Alarm]
+foreground_color=WRITE [IO Invalid Level Alarm; IO High Level Alarm; IO Medium Level Alarm; IO Normal Level Alarm; IO PV ON; IO PV OFF]
 alpha=RO
 tooltip=RW
 
@@ -71,7 +97,7 @@ frame_rate=RW
 #! SHAPE WIDGETS
 line_width=RW
 line_style=RW
-line_color=RW
+line_color=RO
 fill_level=RW
 horizontal_fill=RO
 anti_alias=RO
@@ -95,7 +121,7 @@ corner_width=RW
 
 #! LABEL
 text=RW
-label.font=RW
+label.font=WRITE [IO Title; IO SubTitle; IO Label bold; IO Scale]
 auto_size=RW
 horizontal_alignment=RW
 vertical_alignment=RO
@@ -136,8 +162,8 @@ password=RO
 
 #! LED
 square_led=RW
-led.on_color=RW
-led.off_color=RW
+led.on_color=WRITE [IO Invalid Level Alarm; IO High Level Alarm; IO Medium Level Alarm; IO Normal Level Alarm]
+led.off_color=WRITE [IO Invalid Level Alarm; IO High Level Alarm; IO Medium Level Alarm; IO Normal Level Alarm]
 
 #! IMAGE BOOLEAN INDICATOR
 on_image=WRITE
@@ -150,10 +176,11 @@ symbol_label_pos=RW
 #! BOOLEAN BUTTON
 square_button=RW
 show_led=RW
-boolbutton.on_color=RW
-boolbutton.off_color=RW
+boolbutton.on_color=WRITE [IO Invalid Level Alarm; IO High Level Alarm; IO Medium Level Alarm; IO Normal Level Alarm]
+boolbutton.off_color=WRITE [IO Invalid Level Alarm; IO High Level Alarm; IO Medium Level Alarm; IO Normal Level Alarm]
 
 #! TEXT UPDATE
+textupdate.font=WRITE [IO Title; IO SubTitle; IO Label bold; IO Output 1; IO Output 2]
 format_type=RW
 precision=RO
 precision_from_pv=RO
@@ -169,7 +196,7 @@ show_scale=RW
 show_minor_ticks=RW
 major_tick_step_hint=RW
 log_scale=RW
-scale_font=RO
+scale_font=WRITE [IO Scale; IO Scale 1; IO Scale 2; IO Scale 3]
 scale_format=RW
 value_label_format=RW
 transparent_background=RO
@@ -205,18 +232,18 @@ show_bulb=RW
 unit=RW
 
 #! SCALED SLIDER
-thumb_color=RW
+thumb_color=RO
 step_increment=RW
 page_increment=RW
 
 #! KNOB
-knob_color=RW
+knob_color=RO
 increment=RW
 show_value_label=RW
 
 #! XY GRAPH
 title=RW
-title_font=RW
+title_font=WRITE [IO Title; IO SubTitle; IO Label bold; IO Label]
 show_legend=RW
 show_plot_area_border=RO
 plot_area_background_color=RO
@@ -234,11 +261,11 @@ axis_[0-4]_left_bottom_side=RW
 axis_[0-4]_log_scale=RW
 axis_[0-4]_maximum=RW
 axis_[0-4]_minimum=RW
-axis_[0-4]_scale_font=RW
+axis_[0-4]_scale_font=WRITE [IO Scale; IO Scale 1; IO Scale 2; IO Scale 3]
 axis_[0-4]_scale_format=RW
 axis_[0-4]_show_grid=RO
 axis_[0-4]_time_format=RW
-axis_[0-4]_title_font=RW
+axis_[0-4]_title_font=WRITE [IO Title; IO SubTitle; IO Label bold; IO Label]
 axis_[0-4]_visible=RW
 axis_[0-4]_y_axis=RW
 trace_[0-9]+_anti_alias=RO
@@ -249,7 +276,7 @@ trace_[0-9]+_name=RW
 trace_[0-9]+_plot_mode=RW
 trace_[0-9]+_point_size=RO
 trace_[0-9]+_point_style=RW
-trace_[0-9]+_trace_color=RW
+trace_[0-9]+_trace_color=RO
 trace_[0-9]+_trace_type=RW
 trace_[0-9]+_update_delay=RW
 trace_[0-9]+_update_mode=RW
@@ -262,7 +289,7 @@ trace_[0-9]+_y_pv=RW
 #! INTENSITY GRAPH
 data_height=RW
 data_width=RW
-color_map=RW
+color_map=RO
 show_ramp=RW
 graph_area_height=RW
 graph_area_width=RW
@@ -278,13 +305,13 @@ axis_[0-4]_major_tick_step_hint=RW
 numBits=RW
 startBit=RW
 bitReverse=RW
-bytemonitor.on_color=RW
-bytemonitor.off_color=RW
+bytemonitor.on_color=WRITE [IO Invalid Level Alarm; IO High Level Alarm; IO Medium Level Alarm; IO Normal Level Alarm]
+bytemonitor.off_color=WRITE [IO Invalid Level Alarm; IO High Level Alarm; IO Medium Level Alarm; IO Normal Level Alarm]
 
 #! ACTION BUTTON
 style=RO
 image=RW
-actionbutton.font=RW
+actionbutton.font=WRITE [IO Title; IO SubTitle; IO Label bold; IO Label]
 actionbutton.pv_name=RW
 
 #! MENU BUTTON
@@ -292,6 +319,7 @@ label=RW
 actions_from_pv=RW
 
 #! TEXT INPUT
+textinput.font=WRITE [IO Title; IO SubTitle; IO Label bold; IO Label]
 multiline_input=RW
 selector_type=RW
 file_source=RW
