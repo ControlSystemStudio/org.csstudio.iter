@@ -627,7 +627,7 @@ $(pv_value)</tooltip>
               <enabled>true</enabled>
               <wuid>449e4f94:1499a5cd010:-29dc</wuid>
               <on_color>
-                <color name="No Alarm" red="0" green="255" blue="0" />
+                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <scripts />
               <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -638,7 +638,7 @@ $(pv_value)</tooltip>
                 <keep_wh_ratio>false</keep_wh_ratio>
               </scale_options>
               <off_color>
-                <color name="Minor" red="255" green="255" blue="0" />
+                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
               <background_color>
@@ -765,7 +765,7 @@ $(pv_value)</tooltip>
               <enabled>true</enabled>
               <wuid>449e4f94:1499a5cd010:-29d9</wuid>
               <on_color>
-                <color name="No Alarm" red="0" green="255" blue="0" />
+                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <scripts />
               <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -776,7 +776,7 @@ $(pv_value)</tooltip>
                 <keep_wh_ratio>false</keep_wh_ratio>
               </scale_options>
               <off_color>
-                <color name="Minor" red="255" green="255" blue="0" />
+                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
               <background_color>
@@ -903,7 +903,7 @@ $(pv_value)</tooltip>
               <enabled>true</enabled>
               <wuid>449e4f94:1499a5cd010:-29d6</wuid>
               <on_color>
-                <color name="No Alarm" red="0" green="255" blue="0" />
+                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <scripts />
               <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -914,7 +914,7 @@ $(pv_value)</tooltip>
                 <keep_wh_ratio>false</keep_wh_ratio>
               </scale_options>
               <off_color>
-                <color name="Minor" red="255" green="255" blue="0" />
+                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
               <background_color>
@@ -1041,7 +1041,7 @@ $(pv_value)</tooltip>
               <enabled>true</enabled>
               <wuid>449e4f94:1499a5cd010:-29d3</wuid>
               <on_color>
-                <color name="No Alarm" red="0" green="255" blue="0" />
+                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <scripts />
               <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1052,7 +1052,7 @@ $(pv_value)</tooltip>
                 <keep_wh_ratio>false</keep_wh_ratio>
               </scale_options>
               <off_color>
-                <color name="Minor" red="255" green="255" blue="0" />
+                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
               <background_color>
@@ -2212,22 +2212,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -2235,22 +2235,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -2315,22 +2315,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -2338,22 +2338,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -2463,22 +2463,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -2486,22 +2486,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -2566,22 +2566,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -2589,22 +2589,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -2714,22 +2714,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -2737,22 +2737,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -2817,22 +2817,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -2840,22 +2840,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -2965,22 +2965,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -2988,22 +2988,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3068,22 +3068,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3091,22 +3091,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3216,22 +3216,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3239,22 +3239,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3319,22 +3319,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3342,22 +3342,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3467,22 +3467,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3490,22 +3490,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3570,22 +3570,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3593,22 +3593,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3718,22 +3718,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3741,22 +3741,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3821,22 +3821,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3844,22 +3844,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3969,22 +3969,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -3992,22 +3992,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4072,22 +4072,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4095,22 +4095,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4220,22 +4220,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4243,22 +4243,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4323,22 +4323,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4346,22 +4346,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4471,22 +4471,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4494,22 +4494,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4574,22 +4574,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4597,22 +4597,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4722,22 +4722,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4745,22 +4745,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4825,22 +4825,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4848,22 +4848,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4973,22 +4973,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -4996,22 +4996,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5076,22 +5076,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5099,22 +5099,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5224,22 +5224,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5247,22 +5247,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5327,22 +5327,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5350,22 +5350,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5475,22 +5475,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5498,22 +5498,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5578,22 +5578,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5601,22 +5601,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5726,22 +5726,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5749,22 +5749,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5829,22 +5829,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5852,22 +5852,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -5977,22 +5977,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6000,22 +6000,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6080,22 +6080,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6103,22 +6103,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6228,22 +6228,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6251,22 +6251,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6331,22 +6331,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6354,22 +6354,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6479,22 +6479,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6502,22 +6502,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6582,22 +6582,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6605,22 +6605,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6730,22 +6730,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6753,22 +6753,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6833,22 +6833,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6856,22 +6856,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -6981,22 +6981,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -7004,22 +7004,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -7084,22 +7084,22 @@ $(pv_value)</tooltip>
               <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
@@ -7107,22 +7107,22 @@ $(pv_value)</tooltip>
               <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
                 <exp bool_exp="pvSev0==0">
                   <value>
-                    <color name="No Alarm" red="0" green="255" blue="0" />
+                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="Invalid" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
                   <value>
-                    <color name="Major" red="250" green="12" blue="14" />
+                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==2">
                   <value>
-                    <color name="Minor" red="255" green="255" blue="0" />
+                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
                   </value>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
