@@ -36,4 +36,9 @@ public class To4kScaleAction extends ToHDScaleAction {
     protected double getScale() {
         return 2.0;
     }
+    
+    @Override
+    protected String getScaleName() {
+        return "4k scale";
+    }
 }
