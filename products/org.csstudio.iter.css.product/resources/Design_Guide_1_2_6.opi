@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.102.201503101806</boy_version>
+  <boy_version>4.0.103.201503301159</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -200,7 +200,6 @@
           <rules />
           <enabled>true</enabled>
           <wuid>-57352fd0:149859b9257:-3092</wuid>
-          <auto_size>false</auto_size>
           <scripts />
           <height>98</height>
           <border_width>2</border_width>
@@ -212,6 +211,7 @@
           <macros>
             <include_parent_macros>true</include_parent_macros>
           </macros>
+          <resize_behaviour>0</resize_behaviour>
           <visible>true</visible>
           <group_name></group_name>
           <border_color>
@@ -221,7 +221,6 @@
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
-          <zoom_to_fit>true</zoom_to_fit>
           <width>1138</width>
           <x>0</x>
           <name>Linking Container Template</name>
@@ -405,7 +404,6 @@
           <rules />
           <enabled>true</enabled>
           <wuid>-57352fd0:149859b9257:-309c</wuid>
-          <auto_size>false</auto_size>
           <scripts />
           <height>98</height>
           <border_width>2</border_width>
@@ -417,6 +415,7 @@
           <macros>
             <include_parent_macros>true</include_parent_macros>
           </macros>
+          <resize_behaviour>0</resize_behaviour>
           <visible>true</visible>
           <group_name></group_name>
           <border_color>
@@ -426,7 +425,6 @@
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
-          <zoom_to_fit>true</zoom_to_fit>
           <width>573</width>
           <x>0</x>
           <name>Linking Container Template</name>
@@ -1173,6 +1171,13 @@ $(pv_value)</tooltip>
 
 
 
+
+
+
+
+
+
+
 A graph is a display that represents the variation of a variable in comparison with that of one or more other variables.  
 
 - Graphs shall convey enough information to allow the user to interpret the data without referring to additional information sources.
@@ -1227,7 +1232,7 @@ A graph is a display that represents the variation of a variable in comparison w
           <transparent>true</transparent>
           <lock_children>false</lock_children>
           <scripts />
-          <height>586</height>
+          <height>701</height>
           <border_width>1</border_width>
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -1245,8 +1250,8 @@ A graph is a display that represents the variation of a variable in comparison w
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
-          <width>2095</width>
-          <x>600</x>
+          <width>2701</width>
+          <x>200</x>
           <name>Table</name>
           <y>120</y>
           <foreground_color>
@@ -1270,7 +1275,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_19_x_pv></trace_19_x_pv>
             <trace_0_concatenate_data>true</trace_0_concatenate_data>
             <trace_0_trace_type>0</trace_0_trace_type>
-            <trace_4_line_width>3</trace_4_line_width>
+            <trace_4_line_width>1</trace_4_line_width>
             <trace_14_x_pv_value />
             <trace_15_trace_type>0</trace_15_trace_type>
             <trace_16_y_pv_value />
@@ -1299,12 +1304,12 @@ $(trace_0_y_pv_value)</tooltip>
             <axis_2_minimum>0.0</axis_2_minimum>
             <trace_0_update_mode>0</trace_0_update_mode>
             <trace_1_x_pv></trace_1_x_pv>
-            <wuid>-7451d5cb:14a622a4ef9:-6a19</wuid>
-            <transparent>false</transparent>
+            <wuid>-314af5c3:14c6e8af059:-2ce2</wuid>
+            <transparent>true</transparent>
             <trace_1_update_mode>0</trace_1_update_mode>
             <trace_19_x_pv_value />
             <axis_0_title_font>
-              <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">IO Scale</opifont.name>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
             </axis_0_title_font>
             <trace_12_plot_mode>0</trace_12_plot_mode>
             <trace_7_trace_type>0</trace_7_trace_type>
@@ -1379,7 +1384,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_4_update_delay>100</trace_4_update_delay>
             <widget_type>XY Graph</widget_type>
             <trace_16_y_pv></trace_16_y_pv>
-            <trace_2_line_width>3</trace_2_line_width>
+            <trace_2_line_width>1</trace_2_line_width>
             <trace_4_plot_mode>0</trace_4_plot_mode>
             <trace_3_concatenate_data>true</trace_3_concatenate_data>
             <trace_15_buffer_size>100</trace_15_buffer_size>
@@ -1397,10 +1402,10 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_16_plot_mode>0</trace_16_plot_mode>
             <axis_0_scale_format></axis_0_scale_format>
             <trace_11_x_pv></trace_11_x_pv>
-            <trace_6_line_width>3</trace_6_line_width>
+            <trace_6_line_width>1</trace_6_line_width>
             <axis_1_log_scale>false</axis_1_log_scale>
             <trace_5_anti_alias>true</trace_5_anti_alias>
-            <title>Signal x1</title>
+            <title>Signal x2</title>
             <trace_16_x_pv></trace_16_x_pv>
             <trace_6_x_pv_value />
             <trace_8_buffer_size>100</trace_8_buffer_size>
@@ -1418,7 +1423,7 @@ $(trace_0_y_pv_value)</tooltip>
             <axis_2_auto_scale>true</axis_2_auto_scale>
             <trace_4_y_pv></trace_4_y_pv>
             <trace_15_x_axis_index>0</trace_15_x_axis_index>
-            <show_legend>false</show_legend>
+            <show_legend>true</show_legend>
             <trace_3_visible>true</trace_3_visible>
             <trace_6_y_axis_index>1</trace_6_y_axis_index>
             <trace_8_x_pv_value />
@@ -1526,7 +1531,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_16_point_style>0</trace_16_point_style>
             <trace_18_y_pv_value />
             <trace_6_y_pv_value />
-            <trace_3_line_width>3</trace_3_line_width>
+            <trace_3_line_width>1</trace_3_line_width>
             <show_toolbar>false</show_toolbar>
             <axis_0_visible>true</axis_0_visible>
             <trace_15_name>$(trace_15_y_pv)</trace_15_name>
@@ -1559,7 +1564,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_12_x_pv_value />
             <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
             <trace_2_y_pv_value />
-            <trace_7_line_width>3</trace_7_line_width>
+            <trace_7_line_width>1</trace_7_line_width>
             <trace_18_point_size>4</trace_18_point_size>
             <trace_2_anti_alias>true</trace_2_anti_alias>
             <trace_8_y_axis_index>1</trace_8_y_axis_index>
@@ -1572,7 +1577,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_1_y_axis_index>1</trace_1_y_axis_index>
             <trace_2_name>$(trace_2_y_pv)</trace_2_name>
             <trace_15_plot_mode>0</trace_15_plot_mode>
-            <height>585</height>
+            <height>700</height>
             <trace_15_concatenate_data>true</trace_15_concatenate_data>
             <trace_2_visible>true</trace_2_visible>
             <trigger_pv_value />
@@ -1739,7 +1744,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_13_y_pv_value />
             <trace_5_y_axis_index>1</trace_5_y_axis_index>
             <show_plot_area_border>true</show_plot_area_border>
-            <width>698</width>
+            <width>900</width>
             <trace_14_name>$(trace_14_y_pv)</trace_14_name>
             <trace_1_x_pv_value />
             <trace_17_y_pv></trace_17_y_pv>
@@ -1768,11 +1773,11 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_14_x_pv></trace_14_x_pv>
             <trace_11_update_mode>0</trace_11_update_mode>
             <trace_14_update_delay>100</trace_14_update_delay>
-            <trace_5_line_width>3</trace_5_line_width>
+            <trace_5_line_width>1</trace_5_line_width>
             <trace_4_point_size>4</trace_4_point_size>
             <trace_10_x_axis_index>0</trace_10_x_axis_index>
             <axis_1_title_font>
-              <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">IO Scale</opifont.name>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
             </axis_1_title_font>
             <trace_18_x_pv_value />
             <visible>true</visible>
@@ -1868,12 +1873,12 @@ $(trace_0_y_pv_value)</tooltip>
             <axis_2_minimum>0.0</axis_2_minimum>
             <trace_0_update_mode>0</trace_0_update_mode>
             <trace_1_x_pv></trace_1_x_pv>
-            <wuid>-7451d5cb:14a622a4ef9:-6a18</wuid>
-            <transparent>false</transparent>
+            <wuid>-314af5c3:14c6e8af059:-2bfd</wuid>
+            <transparent>true</transparent>
             <trace_1_update_mode>0</trace_1_update_mode>
             <trace_19_x_pv_value />
             <axis_0_title_font>
-              <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">IO Scale</opifont.name>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
             </axis_0_title_font>
             <trace_12_plot_mode>0</trace_12_plot_mode>
             <trace_7_trace_type>0</trace_7_trace_type>
@@ -1899,7 +1904,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_3_update_mode>0</trace_3_update_mode>
             <trace_19_line_width>1</trace_19_line_width>
             <trace_11_concatenate_data>true</trace_11_concatenate_data>
-            <x>698</x>
+            <x>900</x>
             <trace_6_update_mode>0</trace_6_update_mode>
             <y>0</y>
             <trace_9_y_axis_index>1</trace_9_y_axis_index>
@@ -1966,10 +1971,10 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_16_plot_mode>0</trace_16_plot_mode>
             <axis_0_scale_format></axis_0_scale_format>
             <trace_11_x_pv></trace_11_x_pv>
-            <trace_6_line_width>3</trace_6_line_width>
+            <trace_6_line_width>1</trace_6_line_width>
             <axis_1_log_scale>false</axis_1_log_scale>
             <trace_5_anti_alias>true</trace_5_anti_alias>
-            <title>Signal x2</title>
+            <title>Signal x5</title>
             <trace_16_x_pv></trace_16_x_pv>
             <trace_6_x_pv_value />
             <trace_8_buffer_size>100</trace_8_buffer_size>
@@ -1985,9 +1990,9 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_3_anti_alias>true</trace_3_anti_alias>
             <trace_1_y_pv_value />
             <axis_2_auto_scale>true</axis_2_auto_scale>
-            <trace_4_y_pv></trace_4_y_pv>
+            <trace_4_y_pv>sim://noise(300,310,1)</trace_4_y_pv>
             <trace_15_x_axis_index>0</trace_15_x_axis_index>
-            <show_legend>false</show_legend>
+            <show_legend>true</show_legend>
             <trace_3_visible>true</trace_3_visible>
             <trace_6_y_axis_index>1</trace_6_y_axis_index>
             <trace_8_x_pv_value />
@@ -2059,7 +2064,7 @@ $(trace_0_y_pv_value)</tooltip>
             <axis_3_scale_font>
               <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">Default</opifont.name>
             </axis_3_scale_font>
-            <trace_count>2</trace_count>
+            <trace_count>5</trace_count>
             <trace_14_x_axis_index>0</trace_14_x_axis_index>
             <trace_11_y_pv></trace_11_y_pv>
             <axis_1_show_grid>true</axis_1_show_grid>
@@ -2079,7 +2084,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_13_update_mode>0</trace_13_update_mode>
             <trace_16_y_axis_index>1</trace_16_y_axis_index>
             <trace_2_trace_color>
-              <color red="33" green="179" blue="33" />
+              <color name="IO Trace 3" red="33" green="179" blue="33" />
             </trace_2_trace_color>
             <trace_4_visible>true</trace_4_visible>
             <axis_1_dash_grid_line>true</axis_1_dash_grid_line>
@@ -2128,7 +2133,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_12_x_pv_value />
             <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
             <trace_2_y_pv_value />
-            <trace_7_line_width>3</trace_7_line_width>
+            <trace_7_line_width>1</trace_7_line_width>
             <trace_18_point_size>4</trace_18_point_size>
             <trace_2_anti_alias>true</trace_2_anti_alias>
             <trace_8_y_axis_index>1</trace_8_y_axis_index>
@@ -2141,12 +2146,12 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_1_y_axis_index>1</trace_1_y_axis_index>
             <trace_2_name>$(trace_2_y_pv)</trace_2_name>
             <trace_15_plot_mode>0</trace_15_plot_mode>
-            <height>585</height>
+            <height>700</height>
             <trace_15_concatenate_data>true</trace_15_concatenate_data>
             <trace_2_visible>true</trace_2_visible>
             <trigger_pv_value />
             <axis_3_maximum>100.0</axis_3_maximum>
-            <trace_3_y_pv></trace_3_y_pv>
+            <trace_3_y_pv>sim://noise(400,410,1)</trace_3_y_pv>
             <trace_10_y_axis_index>1</trace_10_y_axis_index>
             <trace_9_point_size>4</trace_9_point_size>
             <trace_17_anti_alias>true</trace_17_anti_alias>
@@ -2199,10 +2204,10 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_1_concatenate_data>true</trace_1_concatenate_data>
             <trace_12_y_pv_value />
             <trace_1_trace_color>
-              <color name="IO Trace 4" red="0" green="0" blue="0" />
+              <color name="IO Trace 2" red="242" green="26" blue="26" />
             </trace_1_trace_color>
             <trace_3_trace_color>
-              <color red="0" green="0" blue="0" />
+              <color name="IO Trace 4" red="0" green="0" blue="0" />
             </trace_3_trace_color>
             <pv_name></pv_name>
             <trace_15_x_pv_value />
@@ -2265,7 +2270,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_1_line_width>3</trace_1_line_width>
             <axis_3_visible>true</axis_3_visible>
             <trace_3_trace_type>0</trace_3_trace_type>
-            <trace_2_y_pv></trace_2_y_pv>
+            <trace_2_y_pv>sim://noise(500,510,1)</trace_2_y_pv>
             <trace_15_trace_color>
               <color red="0" green="0" blue="0" />
             </trace_15_trace_color>
@@ -2283,7 +2288,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_9_x_pv></trace_9_x_pv>
             <trace_17_x_pv_value />
             <trace_3_point_style>0</trace_3_point_style>
-            <trace_0_y_pv>sim://noise(100,125,1)</trace_0_y_pv>
+            <trace_0_y_pv>sim://noise(700,710,1)</trace_0_y_pv>
             <trace_6_visible>true</trace_6_visible>
             <trace_2_point_style>0</trace_2_point_style>
             <trace_0_plot_mode>0</trace_0_plot_mode>
@@ -2308,7 +2313,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_13_y_pv_value />
             <trace_5_y_axis_index>1</trace_5_y_axis_index>
             <show_plot_area_border>true</show_plot_area_border>
-            <width>698</width>
+            <width>900</width>
             <trace_14_name>$(trace_14_y_pv)</trace_14_name>
             <trace_1_x_pv_value />
             <trace_17_y_pv></trace_17_y_pv>
@@ -2337,11 +2342,11 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_14_x_pv></trace_14_x_pv>
             <trace_11_update_mode>0</trace_11_update_mode>
             <trace_14_update_delay>100</trace_14_update_delay>
-            <trace_5_line_width>3</trace_5_line_width>
+            <trace_5_line_width>1</trace_5_line_width>
             <trace_4_point_size>4</trace_4_point_size>
             <trace_10_x_axis_index>0</trace_10_x_axis_index>
             <axis_1_title_font>
-              <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">IO Scale</opifont.name>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
             </axis_1_title_font>
             <trace_18_x_pv_value />
             <visible>true</visible>
@@ -2349,7 +2354,7 @@ $(trace_0_y_pv_value)</tooltip>
             <axis_2_axis_title>Secondary Axis (2)</axis_2_axis_title>
             <trace_19_y_pv></trace_19_y_pv>
             <trace_4_trace_color>
-              <color red="128" green="0" blue="255" />
+              <color name="IO Trace 5" red="128" green="0" blue="255" />
             </trace_4_trace_color>
             <trace_1_buffer_size>100</trace_1_buffer_size>
             <trace_19_visible>true</trace_19_visible>
@@ -2373,7 +2378,7 @@ $(trace_0_y_pv_value)</tooltip>
             <scripts />
             <trace_0_point_size>4</trace_0_point_size>
             <trace_0_trace_color>
-              <color name="IO Trace 3" red="33" green="179" blue="33" />
+              <color name="IO Trace 1" red="21" green="21" blue="196" />
             </trace_0_trace_color>
             <trace_0_anti_alias>true</trace_0_anti_alias>
             <trace_4_name>$(trace_4_y_pv)</trace_4_name>
@@ -2437,16 +2442,16 @@ $(trace_0_y_pv_value)</tooltip>
             <axis_2_minimum>0.0</axis_2_minimum>
             <trace_0_update_mode>0</trace_0_update_mode>
             <trace_1_x_pv></trace_1_x_pv>
-            <wuid>-7451d5cb:14a622a4ef9:-6a17</wuid>
-            <transparent>false</transparent>
+            <wuid>-314af5c3:14c6e8af059:-29d1</wuid>
+            <transparent>true</transparent>
             <trace_1_update_mode>0</trace_1_update_mode>
             <trace_19_x_pv_value />
             <axis_0_title_font>
-              <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">IO Scale</opifont.name>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
             </axis_0_title_font>
             <trace_12_plot_mode>0</trace_12_plot_mode>
             <trace_7_trace_type>0</trace_7_trace_type>
-            <trace_5_y_pv></trace_5_y_pv>
+            <trace_5_y_pv>sim://noise(60,62,1)</trace_5_y_pv>
             <trace_14_visible>true</trace_14_visible>
             <trace_8_y_pv_value />
             <trace_15_update_delay>100</trace_15_update_delay>
@@ -2468,7 +2473,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_3_update_mode>0</trace_3_update_mode>
             <trace_19_line_width>1</trace_19_line_width>
             <trace_11_concatenate_data>true</trace_11_concatenate_data>
-            <x>1396</x>
+            <x>1800</x>
             <trace_6_update_mode>0</trace_6_update_mode>
             <y>0</y>
             <trace_9_y_axis_index>1</trace_9_y_axis_index>
@@ -2538,7 +2543,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_6_line_width>3</trace_6_line_width>
             <axis_1_log_scale>false</axis_1_log_scale>
             <trace_5_anti_alias>true</trace_5_anti_alias>
-            <title>Signal x3</title>
+            <title>Signal x8</title>
             <trace_16_x_pv></trace_16_x_pv>
             <trace_6_x_pv_value />
             <trace_8_buffer_size>100</trace_8_buffer_size>
@@ -2554,9 +2559,9 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_3_anti_alias>true</trace_3_anti_alias>
             <trace_1_y_pv_value />
             <axis_2_auto_scale>true</axis_2_auto_scale>
-            <trace_4_y_pv></trace_4_y_pv>
+            <trace_4_y_pv>sim://noise(50,52,1)</trace_4_y_pv>
             <trace_15_x_axis_index>0</trace_15_x_axis_index>
-            <show_legend>false</show_legend>
+            <show_legend>true</show_legend>
             <trace_3_visible>true</trace_3_visible>
             <trace_6_y_axis_index>1</trace_6_y_axis_index>
             <trace_8_x_pv_value />
@@ -2628,7 +2633,7 @@ $(trace_0_y_pv_value)</tooltip>
             <axis_3_scale_font>
               <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">Default</opifont.name>
             </axis_3_scale_font>
-            <trace_count>2</trace_count>
+            <trace_count>8</trace_count>
             <trace_14_x_axis_index>0</trace_14_x_axis_index>
             <trace_11_y_pv></trace_11_y_pv>
             <axis_1_show_grid>true</axis_1_show_grid>
@@ -2648,17 +2653,17 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_13_update_mode>0</trace_13_update_mode>
             <trace_16_y_axis_index>1</trace_16_y_axis_index>
             <trace_2_trace_color>
-              <color red="33" green="179" blue="33" />
+              <color name="IO Trace 3" red="33" green="179" blue="33" />
             </trace_2_trace_color>
             <trace_4_visible>true</trace_4_visible>
             <axis_1_dash_grid_line>true</axis_1_dash_grid_line>
             <trace_3_buffer_size>100</trace_3_buffer_size>
             <trace_14_trace_type>0</trace_14_trace_type>
             <trace_2_trace_type>0</trace_2_trace_type>
-            <trace_6_y_pv></trace_6_y_pv>
+            <trace_6_y_pv>sim://noise(70,72,1)</trace_6_y_pv>
             <trace_14_buffer_size>100</trace_14_buffer_size>
             <trace_6_trace_color>
-              <color red="255" green="0" blue="240" />
+              <color name="IO Trace 7" red="255" green="0" blue="240" />
             </trace_6_trace_color>
             <trace_8_concatenate_data>true</trace_8_concatenate_data>
             <trace_16_point_style>0</trace_16_point_style>
@@ -2690,7 +2695,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_8_x_pv></trace_8_x_pv>
             <trace_13_x_axis_index>0</trace_13_x_axis_index>
             <trace_19_plot_mode>0</trace_19_plot_mode>
-            <trace_1_y_pv>sim://noise(-50,0,1)</trace_1_y_pv>
+            <trace_1_y_pv>sim://noise(20,22,1)</trace_1_y_pv>
             <trace_2_concatenate_data>true</trace_2_concatenate_data>
             <trace_12_line_width>1</trace_12_line_width>
             <axis_3_auto_scale>true</axis_3_auto_scale>
@@ -2710,12 +2715,12 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_1_y_axis_index>1</trace_1_y_axis_index>
             <trace_2_name>$(trace_2_y_pv)</trace_2_name>
             <trace_15_plot_mode>0</trace_15_plot_mode>
-            <height>585</height>
+            <height>700</height>
             <trace_15_concatenate_data>true</trace_15_concatenate_data>
             <trace_2_visible>true</trace_2_visible>
             <trigger_pv_value />
             <axis_3_maximum>100.0</axis_3_maximum>
-            <trace_3_y_pv></trace_3_y_pv>
+            <trace_3_y_pv>sim://noise(40,42,1)</trace_3_y_pv>
             <trace_10_y_axis_index>1</trace_10_y_axis_index>
             <trace_9_point_size>4</trace_9_point_size>
             <trace_17_anti_alias>true</trace_17_anti_alias>
@@ -2768,16 +2773,16 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_1_concatenate_data>true</trace_1_concatenate_data>
             <trace_12_y_pv_value />
             <trace_1_trace_color>
-              <color name="IO Trace 6" red="255" green="170" blue="0" />
+              <color name="IO Trace 2" red="242" green="26" blue="26" />
             </trace_1_trace_color>
             <trace_3_trace_color>
-              <color red="0" green="0" blue="0" />
+              <color name="IO Trace 4" red="0" green="0" blue="0" />
             </trace_3_trace_color>
             <pv_name></pv_name>
             <trace_15_x_pv_value />
             <trace_17_plot_mode>0</trace_17_plot_mode>
             <trace_5_trace_color>
-              <color red="255" green="170" blue="0" />
+              <color name="IO Trace 6" red="255" green="170" blue="0" />
             </trace_5_trace_color>
             <axis_2_log_scale>false</axis_2_log_scale>
             <trace_6_concatenate_data>true</trace_6_concatenate_data>
@@ -2789,7 +2794,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_10_anti_alias>true</trace_10_anti_alias>
             <axis_2_auto_scale_threshold>0.0</axis_2_auto_scale_threshold>
             <trace_7_trace_color>
-              <color red="243" green="132" blue="132" />
+              <color name="IO Trace 8" red="243" green="132" blue="132" />
             </trace_7_trace_color>
             <trace_11_plot_mode>0</trace_11_plot_mode>
             <name>XY Graph 3</name>
@@ -2834,7 +2839,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_1_line_width>3</trace_1_line_width>
             <axis_3_visible>true</axis_3_visible>
             <trace_3_trace_type>0</trace_3_trace_type>
-            <trace_2_y_pv></trace_2_y_pv>
+            <trace_2_y_pv>sim://noise(30,32,1)</trace_2_y_pv>
             <trace_15_trace_color>
               <color red="0" green="0" blue="0" />
             </trace_15_trace_color>
@@ -2852,7 +2857,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_9_x_pv></trace_9_x_pv>
             <trace_17_x_pv_value />
             <trace_3_point_style>0</trace_3_point_style>
-            <trace_0_y_pv>sim://noise(250,300,1)</trace_0_y_pv>
+            <trace_0_y_pv>sim://noise(10,12,1)</trace_0_y_pv>
             <trace_6_visible>true</trace_6_visible>
             <trace_2_point_style>0</trace_2_point_style>
             <trace_0_plot_mode>0</trace_0_plot_mode>
@@ -2877,7 +2882,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_13_y_pv_value />
             <trace_5_y_axis_index>1</trace_5_y_axis_index>
             <show_plot_area_border>true</show_plot_area_border>
-            <width>698</width>
+            <width>900</width>
             <trace_14_name>$(trace_14_y_pv)</trace_14_name>
             <trace_1_x_pv_value />
             <trace_17_y_pv></trace_17_y_pv>
@@ -2910,7 +2915,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_4_point_size>4</trace_4_point_size>
             <trace_10_x_axis_index>0</trace_10_x_axis_index>
             <axis_1_title_font>
-              <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">IO Scale</opifont.name>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
             </axis_1_title_font>
             <trace_18_x_pv_value />
             <visible>true</visible>
@@ -2918,7 +2923,7 @@ $(trace_0_y_pv_value)</tooltip>
             <axis_2_axis_title>Secondary Axis (2)</axis_2_axis_title>
             <trace_19_y_pv></trace_19_y_pv>
             <trace_4_trace_color>
-              <color red="128" green="0" blue="255" />
+              <color name="IO Trace 5" red="128" green="0" blue="255" />
             </trace_4_trace_color>
             <trace_1_buffer_size>100</trace_1_buffer_size>
             <trace_19_visible>true</trace_19_visible>
@@ -2942,7 +2947,7 @@ $(trace_0_y_pv_value)</tooltip>
             <scripts />
             <trace_0_point_size>4</trace_0_point_size>
             <trace_0_trace_color>
-              <color name="IO Trace 5" red="128" green="0" blue="255" />
+              <color name="IO Trace 1" red="21" green="21" blue="196" />
             </trace_0_trace_color>
             <trace_0_anti_alias>true</trace_0_anti_alias>
             <trace_4_name>$(trace_4_y_pv)</trace_4_name>
@@ -2960,7 +2965,7 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_9_x_pv_value />
             <trace_2_plot_mode>0</trace_2_plot_mode>
             <trace_2_x_pv></trace_2_x_pv>
-            <trace_7_y_pv></trace_7_y_pv>
+            <trace_7_y_pv>sim://noise(80,82,1)</trace_7_y_pv>
             <foreground_color>
               <color name="IO InputPV Fg" red="0" green="0" blue="0" />
             </foreground_color>
@@ -4443,7 +4448,6 @@ $(pv_value)</tooltip>
         <rules />
         <enabled>true</enabled>
         <wuid>-57352fd0:149859b9257:-18dd</wuid>
-        <auto_size>false</auto_size>
         <scripts>
           <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
             <scriptName>LoadFaceplate</scriptName>
@@ -4497,6 +4501,7 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
+        <resize_behaviour>0</resize_behaviour>
         <visible>true</visible>
         <group_name></group_name>
         <border_color>
@@ -4506,7 +4511,6 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
         <background_color>
           <color name="IO Area Background" red="221" green="223" blue="229" />
         </background_color>
-        <zoom_to_fit>true</zoom_to_fit>
         <width>575</width>
         <x>0</x>
         <name>Faceplate</name>
