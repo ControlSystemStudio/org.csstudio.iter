@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <navigation xmlns:xi="http://www.w3.org/2001/XInclude">
 	<CBS name="ITER" description="ITER Global Supervision" enabled="true" opi_file="../Demo_SUP.opi LEVEL=ITER" alarm_root="" >
-		<CBS name="BUIL" description="Buildings" enabled="true" opi_file="NavigationPane.opi LEVEL=ITER-BUIL" alarm_root="" deprecated="false" >
-			<CBS name="ACCS" description="Access Control" enabled="true" opi_file="NavigationPane.opi LEVEL=ITER-BUIL-ACCS" alarm_root="" deprecated="false" />
-			<CBS name="B11" description="Tokamak Building B11" enabled="true" opi_file="NavigationPane.opi LEVEL=ITER-BUIL-B11" alarm_root="" deprecated="false" >
-				<CBS name="BA" description="BA Distribution" enabled="true" opi_file="NavigationPane.opi LEVEL=ITER-BUIL-B11-BA" alarm_root="" deprecated="false" />
-				<CBS name="BS" description="Building Services" enabled="true" opi_file="NavigationPane.opi LEVEL=ITER-BUIL-B11-BS" alarm_root="" deprecated="false" />
-				<CBS name="CA" description="Compressed Air Distribution" enabled="true" opi_file="NavigationPane.opi LEVEL=ITER-BUIL-B11-CA" alarm_root="" deprecated="false" />
+		<CBS name="BUIL" description="Buildings" enabled="false" opi_file="" alarm_root="" deprecated="false" >
+			<CBS name="ACCS" description="Access Control" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="B11" description="Tokamak Building B11" enabled="false" opi_file="" alarm_root="" deprecated="false" >
+				<CBS name="BA" description="BA Distribution" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+				<CBS name="BS" description="Building Services" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+				<CBS name="CA" description="Compressed Air Distribution" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 			</CBS>			
 		</CBS>
 		<CBS name="CRST" description="Cryostat" enabled="false" opi_file="" alarm_root="" deprecated="false" />
@@ -44,18 +44,16 @@
 			<CBS name="LV2" description="Low Voltage Area 2" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 			<CBS name="RPC" description="Reactive Power Compensation and Harmonic Filter" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 			<CBS name="S15" description="15kV work site power" enabled="true" opi_file="../Demo_UTIL_S15.opi LEVEL=ITER-UTIL-S15 LOG=TEST2" alarm_root="">
-				<CBS name="AG07" description="Breathable Air" enabled="true" opi_file="../Demo_UTIL_S15_AG07.opi LEVEL=ITER-UTIL-S15-AG07" alarm_root="" deprecated="false" >
-					<xi:include href="../UTIL-S15-AG07.xml"/>				
-				</CBS>
-				<CBS name="AG91" description="Compressed Air" enabled="false" opi_file="" alarm_root="" deprecated="false" />
-				<CBS name="AG92" description="Demineralized Water Distribution System" enabled="false" opi_file="" alarm_root="" deprecated="false" />
-				<CBS name="AG93" description="Fire Protection Water" enabled="false" opi_file="" alarm_root="" deprecated="false" />
-				<CBS name="AG94" description="Helium Gas Distribution" enabled="false" opi_file="" alarm_root="" deprecated="false" />
-				<CBS name="BG07" description="SSEN High Voltage" enabled="false" opi_file="" alarm_root="" deprecated="false" />
-				<CBS name="BG91" description="Hot Water Distribution System" enabled="false" opi_file="" alarm_root="" deprecated="false" />
-				<CBS name="BG92" description="SSEN IP emergency power supply" enabled="false" opi_file="" alarm_root="" deprecated="false" />
-				<CBS name="BG93" description="Low Voltage Area 1" enabled="false" opi_file="" alarm_root="" deprecated="false" />
-				<CBS name="BG94" description="Low Voltage Area 2" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+				<xi:include href="../navigation/UTIL-S15-AG07.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-AG91.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-AG92.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-AG93.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-AG94.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-BG07.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-BG91.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-BG92.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-BG93.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-BG94.xml"> <xi:fallback /> </xi:include>
 			</CBS>
 			<CBS name="SPA" description="SSEPN emergency power supply system train-A" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 			<CBS name="SPB" description="SSEPN emergency power supply system train-B" enabled="false" opi_file="" alarm_root="" deprecated="false" />
