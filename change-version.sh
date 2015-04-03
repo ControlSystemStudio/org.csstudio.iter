@@ -19,21 +19,27 @@ fi
 function update() {
     product=$1
     product_file=$2
+    if [ "$3" = "0" ]; then
+      repository="repository"
+    else
+      repository="repository-rcp"
+    fi
     echo ::: Update ${product_file} :::
     sed -i "s|\(version=\"\)[^<>]*\(.qualifier\"\)|\1${ver}\2|" products/org.csstudio.iter.${product}.product/${product_file}.product
     sed -i "s|\(<version>\)[^<>]*\(-SNAPSHOT</version>\)|\1${ver}\2|" products/org.csstudio.iter.${product}.product/pom.xml
     sed -i "s|\(Bundle-Version: \)[^<>]*\(.qualifier\)|\1${ver}\2|" products/org.csstudio.iter.${product}.product/META-INF/MANIFEST.MF
-    sed -i "s|\(version=\"\)[^<>]*\(.qualifier\"\)|\1${ver}\2|" repository/org.csstudio.iter.product.${product}.product
+    sed -i "s|\(version=\"\)[^<>]*\(.qualifier\"\)|\1${ver}\2|" ${repository}/org.csstudio.iter.product.${product}.product
+#    sed -i "s|\(version=\"\)[^<>]*\(.qualifier\"\)|\1${ver}\2|" repository-rcp/org.csstudio.iter.product.${product}.product
 }
 
-update "alarm.beast.server" "alarm-server"
-update "alarm.beast.configtool" "alarm-configtool"
-update "alarm.beast.annunciator" "alarm-annunciator"
-update "alarm.beast.notifier" "alarm-notifier"
-update "archive.config.rdb" "archive-configtool"
-update "archive.engine" "archive-engine"
-update "css" "iter-css"
-update "jms2rdb" "jms2rdb"
-update "scan.server" "scan-server"
-update "utility.jmssendcmd" "jms-send"
+update "alarm.beast.server" "alarm-server" 0
+update "alarm.beast.configtool" "alarm-configtool" 0
+update "alarm.beast.annunciator" "alarm-annunciator" 1
+update "alarm.beast.notifier" "alarm-notifier" 1
+update "archive.config.rdb" "archive-configtool" 0
+update "archive.engine" "archive-engine" 0
+update "css" "iter-css" 1
+update "jms2rdb" "jms2rdb" 0
+update "scan.server" "scan-server" 1
+update "utility.jmssendcmd" "jms-send" 0
 

@@ -47,7 +47,7 @@ public class ToHDScaleAction extends ScaleAction {
                     error = true;
                 } else if (!isDimensionOK(dim)) {
                     MessageDialog.openError(parent, "Invalid OPI Scale", "OPI " + file.getName() + " appears to "
-                            + "be in Full HD scale already. Please select a different file and try again "
+                            + "be in " + getScaleName() + " already. Please select a different file and try again "
                             + "or choose a custom scale.");
                     return false;
                 }
@@ -63,6 +63,10 @@ public class ToHDScaleAction extends ScaleAction {
             }
         }
         return true;
+    }
+    
+    protected String getScaleName() {
+        return "Full HD scale";
     }
     
     /*
