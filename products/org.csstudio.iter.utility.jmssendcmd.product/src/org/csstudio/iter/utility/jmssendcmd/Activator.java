@@ -9,7 +9,10 @@ package org.csstudio.iter.utility.jmssendcmd;
 
 import java.util.logging.Logger;
 
-public class Activator {
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+
+public class Activator implements BundleActivator {
 
 	/** Plugin ID defined in MANIFEST.MF */
     final public static String ID = "org.csstudio.iter.utility.jmssendcmd";
@@ -21,4 +24,11 @@ public class Activator {
 		return logger;
 	}
 
+	@Override
+    public void start(BundleContext context) throws Exception {
+    }
+    
+    @Override
+    public void stop(BundleContext context) throws Exception {
+    }
 }
