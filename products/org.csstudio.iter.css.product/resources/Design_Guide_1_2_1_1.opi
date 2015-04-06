@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.102.201503121510</boy_version>
+  <boy_version>4.0.103.201503301159</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -188,7 +188,6 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -200,7 +199,6 @@
           <rules />
           <enabled>true</enabled>
           <wuid>-57352fd0:149859b9257:-3092</wuid>
-          <auto_size>false</auto_size>
           <scripts />
           <height>98</height>
           <border_width>2</border_width>
@@ -212,6 +210,7 @@
           <macros>
             <include_parent_macros>true</include_parent_macros>
           </macros>
+          <resize_behaviour>0</resize_behaviour>
           <visible>true</visible>
           <group_name></group_name>
           <border_color>
@@ -221,7 +220,6 @@
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
-          <zoom_to_fit>true</zoom_to_fit>
           <width>1138</width>
           <x>0</x>
           <name>Linking Container Template</name>
@@ -311,7 +309,6 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -393,7 +390,6 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -405,7 +401,6 @@
           <rules />
           <enabled>true</enabled>
           <wuid>-57352fd0:149859b9257:-309c</wuid>
-          <auto_size>false</auto_size>
           <scripts />
           <height>98</height>
           <border_width>2</border_width>
@@ -417,6 +412,7 @@
           <macros>
             <include_parent_macros>true</include_parent_macros>
           </macros>
+          <resize_behaviour>0</resize_behaviour>
           <visible>true</visible>
           <group_name></group_name>
           <border_color>
@@ -426,7 +422,6 @@
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
-          <zoom_to_fit>true</zoom_to_fit>
           <width>573</width>
           <x>0</x>
           <name>Linking Container Template</name>
@@ -603,8 +598,6 @@
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
-              <on_state></on_state>
-              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -741,8 +734,6 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
-              <on_state></on_state>
-              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -879,8 +870,6 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
-              <on_state></on_state>
-              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -1017,8 +1006,6 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
-              <on_state></on_state>
-              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -1458,8 +1445,6 @@ Medium Voltage Switchergear 02</text>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -1618,8 +1603,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -1778,8 +1761,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -2071,8 +2052,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -2364,8 +2343,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -2657,8 +2634,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -2950,8 +2925,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -3243,8 +3216,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -3536,8 +3507,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -3829,8 +3798,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -4122,8 +4089,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -4415,8 +4380,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -4708,8 +4671,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -5001,8 +4962,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -5294,8 +5253,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -5587,8 +5544,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -5880,8 +5835,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -6173,8 +6126,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -6466,8 +6417,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -6759,8 +6708,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -7052,8 +6999,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -7426,8 +7371,6 @@ $(pv_value)</tooltip>
                 </font>
                 <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                   <alarm_pulsing>false</alarm_pulsing>
-                  <on_state></on_state>
-                  <off_state></off_state>
                   <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                   <rules />
@@ -7503,8 +7446,6 @@ $(pv_value)</tooltip>
                 </widget>
                 <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                   <alarm_pulsing>false</alarm_pulsing>
-                  <on_state></on_state>
-                  <off_state></off_state>
                   <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                   <rules />
@@ -7703,8 +7644,6 @@ $(pv_value)</tooltip>
                 </font>
                 <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                   <alarm_pulsing>false</alarm_pulsing>
-                  <on_state></on_state>
-                  <off_state></off_state>
                   <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                   <rules />
@@ -7780,8 +7719,6 @@ $(pv_value)</tooltip>
                 </widget>
                 <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                   <alarm_pulsing>false</alarm_pulsing>
-                  <on_state></on_state>
-                  <off_state></off_state>
                   <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                   <rules />
@@ -7899,8 +7836,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -8192,8 +8127,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -8484,8 +8417,6 @@ $(pv_value)</tooltip>
                 </font>
                 <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                   <alarm_pulsing>false</alarm_pulsing>
-                  <on_state></on_state>
-                  <off_state></off_state>
                   <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                   <rules />
@@ -8561,8 +8492,6 @@ $(pv_value)</tooltip>
                 </widget>
                 <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                   <alarm_pulsing>false</alarm_pulsing>
-                  <on_state></on_state>
-                  <off_state></off_state>
                   <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                   <rules />
@@ -8638,8 +8567,6 @@ $(pv_value)</tooltip>
                 </widget>
                 <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                   <alarm_pulsing>false</alarm_pulsing>
-                  <on_state></on_state>
-                  <off_state></off_state>
                   <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                   <rules />
@@ -8840,8 +8767,6 @@ Dyn11</text>
                   </font>
                   <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                     <alarm_pulsing>false</alarm_pulsing>
-                    <on_state></on_state>
-                    <off_state></off_state>
                     <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                     <rules />
@@ -8917,8 +8842,6 @@ $(pv_value)</tooltip>
                   </widget>
                   <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                     <alarm_pulsing>false</alarm_pulsing>
-                    <on_state></on_state>
-                    <off_state></off_state>
                     <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                     <rules />
@@ -9078,8 +9001,6 @@ $(pv_value)</tooltip>
                 </font>
                 <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                   <alarm_pulsing>false</alarm_pulsing>
-                  <on_state></on_state>
-                  <off_state></off_state>
                   <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                   <rules />
@@ -9412,8 +9333,6 @@ $(pv_value)</tooltip>
                 </font>
                 <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                   <alarm_pulsing>false</alarm_pulsing>
-                  <on_state></on_state>
-                  <off_state></off_state>
                   <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                   <rules />
@@ -9489,8 +9408,6 @@ $(pv_value)</tooltip>
                 </widget>
                 <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                   <alarm_pulsing>false</alarm_pulsing>
-                  <on_state></on_state>
-                  <off_state></off_state>
                   <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                   <rules />
@@ -9566,8 +9483,6 @@ $(pv_value)</tooltip>
                 </widget>
                 <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                   <alarm_pulsing>false</alarm_pulsing>
-                  <on_state></on_state>
-                  <off_state></off_state>
                   <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                   <rules />
@@ -9768,8 +9683,6 @@ Dyn11</text>
                   </font>
                   <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                     <alarm_pulsing>false</alarm_pulsing>
-                    <on_state></on_state>
-                    <off_state></off_state>
                     <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                     <rules />
@@ -9845,8 +9758,6 @@ $(pv_value)</tooltip>
                   </widget>
                   <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                     <alarm_pulsing>false</alarm_pulsing>
-                    <on_state></on_state>
-                    <off_state></off_state>
                     <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                     <rules />
@@ -10007,8 +9918,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -10300,8 +10209,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -10593,8 +10500,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -10753,8 +10658,6 @@ CABLE INCOMER</text>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -11053,8 +10956,6 @@ Cooling Water Pumping Station</text>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -11212,8 +11113,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -11371,8 +11270,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -11530,8 +11427,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -11689,8 +11584,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -11848,8 +11741,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -12007,8 +11898,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -12166,8 +12055,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -12325,8 +12212,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -12624,8 +12509,6 @@ Hot Bassin &amp; Cooling Towers Station</text>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -12783,8 +12666,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -12942,8 +12823,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -13101,8 +12980,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -13260,8 +13137,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -13419,8 +13294,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -13578,8 +13451,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -13737,8 +13608,6 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
-                <on_state></on_state>
-                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -13943,7 +13812,6 @@ $(pv_value)</tooltip>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>
@@ -14030,8 +13898,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -14133,8 +13999,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -14281,8 +14145,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -14384,8 +14246,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -14532,8 +14392,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -14635,8 +14493,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -14783,8 +14639,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -14886,8 +14740,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -15034,8 +14886,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -15137,8 +14987,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -15321,7 +15169,6 @@ $(pv_value)</tooltip>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>
@@ -15333,7 +15180,6 @@ $(pv_value)</tooltip>
         <rules />
         <enabled>true</enabled>
         <wuid>-57352fd0:149859b9257:-18dd</wuid>
-        <auto_size>false</auto_size>
         <scripts>
           <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
             <scriptName>LoadFaceplate</scriptName>
@@ -15387,6 +15233,7 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
+        <resize_behaviour>0</resize_behaviour>
         <visible>true</visible>
         <group_name></group_name>
         <border_color>
@@ -15396,7 +15243,6 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
         <background_color>
           <color name="IO Area Background" red="221" green="223" blue="229" />
         </background_color>
-        <zoom_to_fit>true</zoom_to_fit>
         <width>575</width>
         <x>0</x>
         <name>Faceplate</name>
@@ -15450,17 +15296,16 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
       <font>
         <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-        <border_style>5</border_style>
+      <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+        <opi_file>templates/NavigationPane.opi</opi_file>
+        <border_style>0</border_style>
         <tooltip></tooltip>
         <rules />
         <enabled>true</enabled>
-        <wuid>-ae3bbd7:148fa0f526e:-7f0d</wuid>
-        <transparent>true</transparent>
-        <lock_children>false</lock_children>
+        <wuid>1d21fe4:14c756d8537:-3f2</wuid>
         <scripts />
-        <height>185</height>
-        <border_width>1</border_width>
+        <height>189</height>
+        <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
           <height_scalable>false</height_scalable>
@@ -15468,612 +15313,32 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
         </scale_options>
         <macros>
           <include_parent_macros>true</include_parent_macros>
+          <INPUT>Demo.xml</INPUT>
         </macros>
+        <resize_behaviour>3</resize_behaviour>
         <visible>true</visible>
+        <group_name></group_name>
         <border_color>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
-        <widget_type>Grouping Container</widget_type>
+        <widget_type>Linking Container</widget_type>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
-        <width>760</width>
+        <width>3241</width>
         <x>0</x>
-        <name>GENERAL NAVIGATION BAR</name>
+        <name>Navigation Pane</name>
         <y>0</y>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <fc>false</fc>
-        <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
-        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-          <border_style>0</border_style>
-          <tooltip>GENERAL NAVIGATION AREA</tooltip>
-          <horizontal_alignment>1</horizontal_alignment>
-          <rules />
-          <enabled>false</enabled>
-          <wuid>-57352fd0:149859b9257:-6eb3</wuid>
-          <transparent>true</transparent>
-          <auto_size>false</auto_size>
-          <text></text>
-          <scripts />
-          <height>181</height>
-          <border_width>2</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <visible>true</visible>
-          <vertical_alignment>1</vertical_alignment>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Label</widget_type>
-          <wrap_words>true</wrap_words>
-          <background_color>
-            <color name="IO Area Background" red="221" green="223" blue="229" />
-          </background_color>
-          <width>756</width>
-          <x>0</x>
-          <name>Comment</name>
-          <y>0</y>
-          <foreground_color>
-            <color name="IO Text Fg" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
-          <toggle_button>false</toggle_button>
-          <border_style>6</border_style>
-          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-          <alarm_pulsing>false</alarm_pulsing>
-          <tooltip>Go to the Main Overview</tooltip>
-          <push_action_index>0</push_action_index>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>-7451d5cb:14a5cd5be03:-3ce</wuid>
-          <pv_value />
-          <text>HOME</text>
-          <scripts />
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <height>181</height>
-          <border_width>2</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <image>templates/home.png</image>
-          <visible>true</visible>
-          <pv_name></pv_name>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Action Button</widget_type>
-          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-          <background_color>
-            <color red="240" green="240" blue="240" />
-          </background_color>
-          <width>246</width>
-          <x>0</x>
-          <name>Go Home Button</name>
-          <y>0</y>
-          <style>1</style>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="true" hook_all="true">
-            <action type="OPEN_DISPLAY">
-              <path>Design_Guide.opi</path>
-              <macros>
-                <include_parent_macros>true</include_parent_macros>
-              </macros>
-              <replace>1</replace>
-              <description>Go to Level 1</description>
-            </action>
-          </actions>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
-          <toggle_button>false</toggle_button>
-          <border_style>6</border_style>
-          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-          <alarm_pulsing>false</alarm_pulsing>
-          <tooltip>Go to level 2</tooltip>
-          <push_action_index>0</push_action_index>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>-7451d5cb:14a5cd5be03:-3cd</wuid>
-          <pv_value />
-          <text>L1</text>
-          <scripts />
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <height>181</height>
-          <border_width>2</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <image></image>
-          <visible>true</visible>
-          <pv_name></pv_name>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Action Button</widget_type>
-          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-          <background_color>
-            <color red="240" green="240" blue="240" />
-          </background_color>
-          <width>102</width>
-          <x>246</x>
-          <name>Go Level 2 Button</name>
-          <y>0</y>
-          <style>1</style>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="true" hook_all="true">
-            <action type="OPEN_DISPLAY">
-              <path>Design_Guide_1_2.opi</path>
-              <macros>
-                <include_parent_macros>true</include_parent_macros>
-              </macros>
-              <replace>1</replace>
-              <description>Go to level</description>
-            </action>
-          </actions>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
-          <toggle_button>false</toggle_button>
-          <border_style>6</border_style>
-          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-          <alarm_pulsing>false</alarm_pulsing>
-          <tooltip>Go to level 2</tooltip>
-          <push_action_index>0</push_action_index>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>-7451d5cb:14a5cd5be03:-3cc</wuid>
-          <pv_value />
-          <text>L2</text>
-          <scripts />
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <height>181</height>
-          <border_width>2</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <image></image>
-          <visible>true</visible>
-          <pv_name></pv_name>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Action Button</widget_type>
-          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-          <background_color>
-            <color red="240" green="240" blue="240" />
-          </background_color>
-          <width>102</width>
-          <x>348</x>
-          <name>Go Level 2 Button</name>
-          <y>0</y>
-          <style>1</style>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="true" hook_all="true">
-            <action type="OPEN_DISPLAY">
-              <path>Design_Guide_1_2_1.opi</path>
-              <macros>
-                <include_parent_macros>true</include_parent_macros>
-              </macros>
-              <replace>1</replace>
-              <description>Go to level</description>
-            </action>
-          </actions>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
-          <toggle_button>false</toggle_button>
-          <border_style>6</border_style>
-          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-          <alarm_pulsing>false</alarm_pulsing>
-          <tooltip>Go to level 3</tooltip>
-          <push_action_index>0</push_action_index>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>7dc994ca:14b12277eae:-7b49</wuid>
-          <pv_value />
-          <text>L3</text>
-          <scripts />
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <height>181</height>
-          <border_width>2</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <image></image>
-          <visible>true</visible>
-          <pv_name></pv_name>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Action Button</widget_type>
-          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-          <background_color>
-            <color red="240" green="240" blue="240" />
-          </background_color>
-          <width>102</width>
-          <x>449</x>
-          <name>Go Level 2 Button</name>
-          <y>0</y>
-          <style>1</style>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="true" hook_all="true">
-            <action type="OPEN_DISPLAY">
-              <path>Design_Guide_1_2_1_1.opi</path>
-              <macros>
-                <include_parent_macros>true</include_parent_macros>
-              </macros>
-              <replace>1</replace>
-              <description>Go to level</description>
-            </action>
-          </actions>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-        </widget>
-      </widget>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-        <border_style>5</border_style>
-        <tooltip></tooltip>
-        <rules />
-        <enabled>true</enabled>
-        <wuid>-ae3bbd7:148fa0f526e:-7f06</wuid>
-        <transparent>false</transparent>
-        <lock_children>false</lock_children>
-        <scripts />
-        <height>185</height>
-        <border_width>1</border_width>
-        <scale_options>
-          <width_scalable>false</width_scalable>
-          <height_scalable>false</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <macros>
-          <include_parent_macros>true</include_parent_macros>
-        </macros>
-        <visible>true</visible>
-        <border_color>
-          <color name="IO Border" red="0" green="0" blue="0" />
-        </border_color>
-        <widget_type>Grouping Container</widget_type>
-        <background_color>
-          <color name="IO Area Background" red="221" green="223" blue="229" />
-        </background_color>
-        <width>2477</width>
-        <x>760</x>
-        <name>MIMIC SPECIFIC - NAVIGATION AREA</name>
-        <y>0</y>
-        <foreground_color>
-          <color name="IO Foreground" red="0" green="0" blue="0" />
-        </foreground_color>
-        <actions hook="false" hook_all="false" />
-        <fc>false</fc>
-        <show_scrollbar>false</show_scrollbar>
-        <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-        </font>
-        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-          <border_style>0</border_style>
-          <tooltip>MIMIC SPECIFIC - NAVIGATION AREA</tooltip>
-          <horizontal_alignment>1</horizontal_alignment>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>333eae9e:14951f153e9:-5c66</wuid>
-          <transparent>true</transparent>
-          <auto_size>false</auto_size>
-          <text></text>
-          <scripts />
-          <height>181</height>
-          <border_width>2</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <visible>true</visible>
-          <vertical_alignment>1</vertical_alignment>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Label</widget_type>
-          <wrap_words>false</wrap_words>
-          <background_color>
-            <color name="IO Area Background" red="221" green="223" blue="229" />
-          </background_color>
-          <width>2473</width>
-          <x>0</x>
-          <name>Comment</name>
-          <y>0</y>
-          <foreground_color>
-            <color name="IO Text Fg" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-        </widget>
       </widget>
     </widget>
   </widget>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>BOTTOM</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6ebd</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f6c</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>BOTTOM</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6eba</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f66</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>BOTTOM</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6eb7</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f60</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>BOTTOM</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6eb4</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f5a</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>BOTTOM</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6f84</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f54</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>BOTTOM</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6eb1</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f4e</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>BOTTOM</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6eae</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f48</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>BOTTOM</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6ea8</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f42</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>BOTTOM</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6ea5</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f3c</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>TOP_LEFT</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6ea2</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f34</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>BOTTOM</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6e9f</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f30</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
   <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
     <line_width>2</line_width>
     <tgt_term>TOP</tgt_term>
@@ -16112,206 +15377,8 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
     <fill_arrow>true</fill_arrow>
     <router>0</router>
     <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6e99</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f24</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>BOTTOM</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6e96</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f1e</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>BOTTOM</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6e93</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f18</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>BOTTOM</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6f81</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6f12</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>LEFT</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6f09</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6ef6</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>RIGHT</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6f05</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6ef6</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>RIGHT</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6eea</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6ee9</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>RIGHT</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>LEFT</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6eee</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6ee9</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>TOP</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>RIGHT</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6edf</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6ede</src_wuid>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <line_width>2</line_width>
-    <tgt_term>RIGHT</tgt_term>
-    <arrows>0</arrows>
-    <tgt_path></tgt_path>
-    <src_term>LEFT</src_term>
-    <anti_alias>true</anti_alias>
-    <src_path></src_path>
-    <line_style>0</line_style>
-    <arrow_length>15</arrow_length>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-    <widget_type>connection</widget_type>
-    <points />
-    <fill_arrow>true</fill_arrow>
-    <router>0</router>
-    <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6ee3</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6ede</src_wuid>
+    <tgt_wuid>7dc994ca:14b12277eae:-6f84</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f54</src_wuid>
     <line_color>
       <color name="IO Link" red="0" green="0" blue="0" />
     </line_color>
@@ -16354,8 +15421,272 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
     <fill_arrow>true</fill_arrow>
     <router>0</router>
     <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6f78</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6ec3</src_wuid>
+    <tgt_wuid>7dc994ca:14b12277eae:-6f72</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6ec0</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>BOTTOM</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6e96</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f1e</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>LEFT</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6f09</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6ef6</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>BOTTOM</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6eb7</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f60</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>BOTTOM</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6f81</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f12</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>BOTTOM</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6eb4</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f5a</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>BOTTOM</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6eae</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f48</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>RIGHT</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>LEFT</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6eee</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6ee9</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>BOTTOM</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6e93</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f18</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>RIGHT</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>LEFT</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6ee3</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6ede</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>BOTTOM</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6e99</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f24</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>BOTTOM</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6eba</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f66</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>RIGHT</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6eea</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6ee9</src_wuid>
     <line_color>
       <color name="IO Link" red="0" green="0" blue="0" />
     </line_color>
@@ -16376,8 +15707,184 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
     <fill_arrow>true</fill_arrow>
     <router>0</router>
     <name>Connection Template</name>
-    <tgt_wuid>7dc994ca:14b12277eae:-6f72</tgt_wuid>
-    <src_wuid>7dc994ca:14b12277eae:-6ec0</src_wuid>
+    <tgt_wuid>7dc994ca:14b12277eae:-6f78</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6ec3</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>BOTTOM</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6ea8</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f42</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>RIGHT</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6f05</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6ef6</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>BOTTOM</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6e9f</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f30</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>TOP_LEFT</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6ea2</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f34</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>RIGHT</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6edf</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6ede</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>BOTTOM</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6ebd</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f6c</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>BOTTOM</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6ea5</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f3c</src_wuid>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <line_width>2</line_width>
+    <tgt_term>TOP</tgt_term>
+    <arrows>0</arrows>
+    <tgt_path></tgt_path>
+    <src_term>BOTTOM</src_term>
+    <anti_alias>true</anti_alias>
+    <src_path></src_path>
+    <line_style>0</line_style>
+    <arrow_length>15</arrow_length>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+    <widget_type>connection</widget_type>
+    <points />
+    <fill_arrow>true</fill_arrow>
+    <router>0</router>
+    <name>Connection Template</name>
+    <tgt_wuid>7dc994ca:14b12277eae:-6eb1</tgt_wuid>
+    <src_wuid>7dc994ca:14b12277eae:-6f4e</src_wuid>
     <line_color>
       <color name="IO Link" red="0" green="0" blue="0" />
     </line_color>

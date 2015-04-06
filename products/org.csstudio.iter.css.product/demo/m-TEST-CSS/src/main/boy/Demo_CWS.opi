@@ -12,7 +12,7 @@
     <TITLE>CS-STUDIO EXERCISE</TITLE>
     <xxx>xxx</xxx>
   </macros>
-  <boy_version>4.0.102.201503111342</boy_version>
+  <boy_version>4.0.103.201504030636</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -201,7 +201,6 @@
           <rules />
           <enabled>true</enabled>
           <wuid>-57352fd0:149859b9257:-3092</wuid>
-          <auto_size>false</auto_size>
           <scripts />
           <height>98</height>
           <border_width>2</border_width>
@@ -213,6 +212,7 @@
           <macros>
             <include_parent_macros>true</include_parent_macros>
           </macros>
+          <resize_behaviour>0</resize_behaviour>
           <visible>true</visible>
           <group_name></group_name>
           <border_color>
@@ -222,7 +222,6 @@
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
-          <zoom_to_fit>true</zoom_to_fit>
           <width>1138</width>
           <x>0</x>
           <name>Linking Container Template</name>
@@ -404,7 +403,6 @@
           <rules />
           <enabled>true</enabled>
           <wuid>-57352fd0:149859b9257:-309c</wuid>
-          <auto_size>false</auto_size>
           <scripts />
           <height>98</height>
           <border_width>2</border_width>
@@ -416,6 +414,7 @@
           <macros>
             <include_parent_macros>true</include_parent_macros>
           </macros>
+          <resize_behaviour>0</resize_behaviour>
           <visible>true</visible>
           <group_name></group_name>
           <border_color>
@@ -425,7 +424,6 @@
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
-          <zoom_to_fit>true</zoom_to_fit>
           <width>573</width>
           <x>0</x>
           <name>Linking Container Template</name>
@@ -527,7 +525,6 @@
           <rules />
           <enabled>true</enabled>
           <wuid>-28c93393:14b0cb4ebee:-5f3c</wuid>
-          <auto_size>false</auto_size>
           <scripts />
           <height>1760</height>
           <border_width>2</border_width>
@@ -539,6 +536,7 @@
           <macros>
             <include_parent_macros>true</include_parent_macros>
           </macros>
+          <resize_behaviour>0</resize_behaviour>
           <visible>true</visible>
           <group_name></group_name>
           <border_color>
@@ -548,7 +546,6 @@
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
-          <zoom_to_fit>true</zoom_to_fit>
           <width>3236</width>
           <x>0</x>
           <name>Linked OPI</name>
@@ -706,7 +703,7 @@ $(pv_value)</tooltip>
               <enabled>true</enabled>
               <wuid>449e4f94:1499a5cd010:-2b76</wuid>
               <on_color>
-                <color name="No Alarm" red="0" green="255" blue="0" />
+                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <scripts />
               <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -717,7 +714,7 @@ $(pv_value)</tooltip>
                 <keep_wh_ratio>false</keep_wh_ratio>
               </scale_options>
               <off_color>
-                <color name="Minor" red="255" green="255" blue="0" />
+                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
               <background_color>
@@ -842,7 +839,7 @@ $(pv_value)</tooltip>
               <enabled>true</enabled>
               <wuid>449e4f94:1499a5cd010:-2b73</wuid>
               <on_color>
-                <color name="No Alarm" red="0" green="255" blue="0" />
+                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <scripts />
               <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -853,7 +850,7 @@ $(pv_value)</tooltip>
                 <keep_wh_ratio>false</keep_wh_ratio>
               </scale_options>
               <off_color>
-                <color name="Minor" red="255" green="255" blue="0" />
+                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
               <background_color>
@@ -978,7 +975,7 @@ $(pv_value)</tooltip>
               <enabled>true</enabled>
               <wuid>449e4f94:1499a5cd010:-2b70</wuid>
               <on_color>
-                <color name="No Alarm" red="0" green="255" blue="0" />
+                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <scripts />
               <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -989,7 +986,7 @@ $(pv_value)</tooltip>
                 <keep_wh_ratio>false</keep_wh_ratio>
               </scale_options>
               <off_color>
-                <color name="Minor" red="255" green="255" blue="0" />
+                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
               <background_color>
@@ -1765,7 +1762,6 @@ $(pv_value)</tooltip>
         <rules />
         <enabled>true</enabled>
         <wuid>-57352fd0:149859b9257:-18dd</wuid>
-        <auto_size>false</auto_size>
         <scripts>
           <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
             <scriptName>LoadFaceplate</scriptName>
@@ -1819,6 +1815,7 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
+        <resize_behaviour>0</resize_behaviour>
         <visible>true</visible>
         <group_name></group_name>
         <border_color>
@@ -1828,7 +1825,6 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
         <background_color>
           <color name="IO Area Background" red="221" green="223" blue="229" />
         </background_color>
-        <zoom_to_fit>true</zoom_to_fit>
         <width>575</width>
         <x>0</x>
         <name>Faceplate</name>

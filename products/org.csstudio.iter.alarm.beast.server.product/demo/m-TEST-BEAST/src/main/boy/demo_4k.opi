@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.102.201412231344</boy_version>
+  <boy_version>4.0.103.201504030636</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -44,8 +44,8 @@
     <height>735</height>
     <border_width>1</border_width>
     <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <macros>
@@ -70,7 +70,7 @@
     <fc>false</fc>
     <show_scrollbar>false</show_scrollbar>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
     <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
       <border_style>0</border_style>
@@ -100,9 +100,9 @@ $(pv_value)</tooltip>
       <height>733</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>true</keep_wh_ratio>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
       <pv_name></pv_name>
@@ -113,7 +113,7 @@ $(pv_value)</tooltip>
       <line_style>0</line_style>
       <arrow_length>20</arrow_length>
       <widget_type>Polyline</widget_type>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
@@ -127,7 +127,7 @@ $(pv_value)</tooltip>
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
     </widget>
   </widget>
@@ -143,8 +143,8 @@ $(pv_value)</tooltip>
     <height>65</height>
     <border_width>1</border_width>
     <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <macros>
@@ -169,10 +169,10 @@ $(pv_value)</tooltip>
     <fc>false</fc>
     <show_scrollbar>false</show_scrollbar>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <border_style>1</border_style>
+      <border_style>0</border_style>
       <tooltip></tooltip>
       <horizontal_alignment>1</horizontal_alignment>
       <rules />
@@ -183,16 +183,16 @@ $(pv_value)</tooltip>
       <text>Pump Control System</text>
       <scripts />
       <height>62</height>
-      <border_width>1</border_width>
+      <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
       <border_color>
-        <color name="IO StatusBar Fg" red="0" green="0" blue="0" />
+        <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
       <widget_type>Label</widget_type>
       <wrap_words>true</wrap_words>
@@ -225,8 +225,8 @@ $(pv_value)</tooltip>
       <height>60</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <align_to_nearest_second>false</align_to_nearest_second>
@@ -265,40 +265,33 @@ $(pv_value)</tooltip>
       <stretch_to_fit>true</stretch_to_fit>
       <flip_vertical>false</flip_vertical>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-      <border_style>5</border_style>
+      <border_style>0</border_style>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <alarm_pulsing>false</alarm_pulsing>
       <precision>0</precision>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <horizontal_alignment>2</horizontal_alignment>
-      <rules>
-        <rule name="BorderRule" prop_id="border_style" out_exp="false">
-          <exp bool_exp="pv0==1">
-            <value>9</value>
-          </exp>
-          <pv trig="true">$(pv_name).SIMM</pv>
-        </rule>
-      </rules>
+      <rules />
       <enabled>true</enabled>
       <wuid>-75b7dbd8:13c39a78082:-7c3e</wuid>
-      <transparent>true</transparent>
+      <transparent>false</transparent>
       <pv_value />
       <auto_size>false</auto_size>
       <text>######</text>
       <rotation_angle>0.0</rotation_angle>
       <scripts />
-      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
       <show_units>true</show_units>
       <height>62</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
@@ -309,7 +302,7 @@ $(pv_value)</tooltip>
       </border_color>
       <precision_from_pv>true</precision_from_pv>
       <widget_type>Text Update</widget_type>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <wrap_words>true</wrap_words>
       <format_type>0</format_type>
       <background_color>
@@ -340,8 +333,8 @@ $(pv_value)</tooltip>
     <height>377</height>
     <border_width>1</border_width>
     <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <macros>
@@ -366,7 +359,7 @@ $(pv_value)</tooltip>
     <fc>false</fc>
     <show_scrollbar>false</show_scrollbar>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <border_style>0</border_style>
@@ -382,8 +375,8 @@ $(pv_value)</tooltip>
       <height>276</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
@@ -421,8 +414,8 @@ $(pv_value)</tooltip>
       <height>137</height>
       <border_width>1</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <macros>
@@ -447,20 +440,15 @@ $(pv_value)</tooltip>
       <fc>false</fc>
       <show_scrollbar>false</show_scrollbar>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-        <rules>
-          <rule name="BorderRule" prop_id="border_style" out_exp="false">
-            <exp bool_exp="pv0==1">
-              <value>9</value>
-            </exp>
-            <pv trig="true">$(pv_name).SIMM</pv>
-          </rule>
-        </rules>
+        <rules />
         <bit>0</bit>
         <pv_value />
         <auto_size>true</auto_size>
@@ -499,11 +487,11 @@ $(pv_value)</tooltip>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <scripts />
-        <border_alarm_sensitive>true</border_alarm_sensitive>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
         <on_label>WET</on_label>
         <scale_options>
-          <width_scalable>true</width_scalable>
-          <height_scalable>true</height_scalable>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <crop_bottom>0</crop_bottom>
@@ -511,7 +499,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -527,7 +515,7 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>DRY</off_label>
       </widget>
@@ -545,8 +533,8 @@ $(pv_value)</tooltip>
         <height>39</height>
         <border_width>2</border_width>
         <scale_options>
-          <width_scalable>true</width_scalable>
-          <height_scalable>true</height_scalable>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <visible>true</visible>
@@ -586,8 +574,8 @@ $(pv_value)</tooltip>
     <height>378</height>
     <border_width>1</border_width>
     <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <macros>
@@ -612,7 +600,7 @@ $(pv_value)</tooltip>
     <fc>false</fc>
     <show_scrollbar>false</show_scrollbar>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <border_style>0</border_style>
@@ -628,8 +616,8 @@ $(pv_value)</tooltip>
       <height>377</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
@@ -667,8 +655,8 @@ $(pv_value)</tooltip>
       <height>135</height>
       <border_width>1</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <macros>
@@ -693,20 +681,15 @@ $(pv_value)</tooltip>
       <fc>false</fc>
       <show_scrollbar>false</show_scrollbar>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-        <rules>
-          <rule name="BorderRule" prop_id="border_style" out_exp="false">
-            <exp bool_exp="pv0==1">
-              <value>9</value>
-            </exp>
-            <pv trig="true">$(pv_name).SIMM</pv>
-          </rule>
-        </rules>
+        <rules />
         <bit>0</bit>
         <pv_value />
         <auto_size>true</auto_size>
@@ -745,11 +728,11 @@ $(pv_value)</tooltip>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <scripts />
-        <border_alarm_sensitive>true</border_alarm_sensitive>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
         <on_label>WET</on_label>
         <scale_options>
-          <width_scalable>true</width_scalable>
-          <height_scalable>true</height_scalable>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <crop_bottom>0</crop_bottom>
@@ -757,7 +740,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -773,7 +756,7 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>DRY</off_label>
       </widget>
@@ -791,8 +774,8 @@ $(pv_value)</tooltip>
         <height>39</height>
         <border_width>2</border_width>
         <scale_options>
-          <width_scalable>true</width_scalable>
-          <height_scalable>true</height_scalable>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <visible>true</visible>
@@ -845,9 +828,9 @@ $(pv_value)</tooltip>
       <height>1</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>true</keep_wh_ratio>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
       <pv_name></pv_name>
@@ -858,7 +841,7 @@ $(pv_value)</tooltip>
       <line_style>0</line_style>
       <arrow_length>20</arrow_length>
       <widget_type>Polyline</widget_type>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
@@ -872,7 +855,7 @@ $(pv_value)</tooltip>
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
     </widget>
   </widget>
@@ -888,8 +871,8 @@ $(pv_value)</tooltip>
     <height>573</height>
     <border_width>1</border_width>
     <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <macros>
@@ -914,7 +897,7 @@ $(pv_value)</tooltip>
     <fc>false</fc>
     <show_scrollbar>false</show_scrollbar>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
     <widget typeId="org.csstudio.opibuilder.widgets.checkbox" version="1.0.0">
       <border_style>6</border_style>
@@ -922,28 +905,21 @@ $(pv_value)</tooltip>
       <alarm_pulsing>false</alarm_pulsing>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-      <rules>
-        <rule name="BorderRule" prop_id="border_style" out_exp="false">
-          <exp bool_exp="pv0==1">
-            <value>9</value>
-          </exp>
-          <pv trig="true">$(pv_name).SIMM</pv>
-        </rule>
-      </rules>
+      <rules />
       <bit>0</bit>
       <enabled>true</enabled>
       <wuid>4b8395de:13c62753cc4:-7f40</wuid>
       <selected_color>
-        <color red="77" green="77" blue="77" />
+        <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
       </selected_color>
       <pv_value />
       <auto_size>true</auto_size>
       <scripts />
-      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
       <height>42</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
+        <width_scalable>false</width_scalable>
         <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
@@ -954,7 +930,7 @@ $(pv_value)</tooltip>
       </border_color>
       <label>Failure of MID switch</label>
       <widget_type>Check Box</widget_type>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
@@ -967,7 +943,7 @@ $(pv_value)</tooltip>
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Input 1</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
@@ -984,8 +960,8 @@ $(pv_value)</tooltip>
       <height>377</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
@@ -1023,8 +999,8 @@ $(pv_value)</tooltip>
       <height>201</height>
       <border_width>1</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <macros>
@@ -1049,20 +1025,15 @@ $(pv_value)</tooltip>
       <fc>false</fc>
       <show_scrollbar>false</show_scrollbar>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-        <rules>
-          <rule name="BorderRule" prop_id="border_style" out_exp="false">
-            <exp bool_exp="pv0==1">
-              <value>9</value>
-            </exp>
-            <pv trig="true">$(pv_name).SIMM</pv>
-          </rule>
-        </rules>
+        <rules />
         <bit>0</bit>
         <pv_value />
         <auto_size>true</auto_size>
@@ -1101,11 +1072,11 @@ $(pv_value)</tooltip>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <scripts />
-        <border_alarm_sensitive>true</border_alarm_sensitive>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
         <on_label>WET</on_label>
         <scale_options>
-          <width_scalable>true</width_scalable>
-          <height_scalable>true</height_scalable>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <crop_bottom>0</crop_bottom>
@@ -1113,7 +1084,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -1129,7 +1100,7 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>DRY</off_label>
       </widget>
@@ -1147,8 +1118,8 @@ $(pv_value)</tooltip>
         <height>39</height>
         <border_width>2</border_width>
         <scale_options>
-          <width_scalable>true</width_scalable>
-          <height_scalable>true</height_scalable>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <visible>true</visible>
@@ -1191,13 +1162,13 @@ $(pv_value)</tooltip>
         <text>##</text>
         <rotation_angle>0.0</rotation_angle>
         <scripts />
-        <border_alarm_sensitive>true</border_alarm_sensitive>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
         <show_units>true</show_units>
         <height>50</height>
         <border_width>2</border_width>
         <scale_options>
-          <width_scalable>true</width_scalable>
-          <height_scalable>true</height_scalable>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <visible>true</visible>
@@ -1208,7 +1179,7 @@ $(pv_value)</tooltip>
         </border_color>
         <precision_from_pv>true</precision_from_pv>
         <widget_type>Text Update</widget_type>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <wrap_words>false</wrap_words>
         <format_type>0</format_type>
         <background_color>
@@ -1239,8 +1210,8 @@ $(pv_value)</tooltip>
       <height>245</height>
       <border_width>1</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <macros>
@@ -1265,20 +1236,15 @@ $(pv_value)</tooltip>
       <fc>false</fc>
       <show_scrollbar>false</show_scrollbar>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
+        <on_state></on_state>
+        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-        <rules>
-          <rule name="BorderRule" prop_id="border_style" out_exp="false">
-            <exp bool_exp="pv0==1">
-              <value>9</value>
-            </exp>
-            <pv trig="true">$(pv_name).SIMM</pv>
-          </rule>
-        </rules>
+        <rules />
         <bit>0</bit>
         <pv_value />
         <auto_size>true</auto_size>
@@ -1317,11 +1283,11 @@ $(pv_value)</tooltip>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <scripts />
-        <border_alarm_sensitive>true</border_alarm_sensitive>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
         <on_label>ON</on_label>
         <scale_options>
-          <width_scalable>true</width_scalable>
-          <height_scalable>true</height_scalable>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <crop_bottom>0</crop_bottom>
@@ -1329,7 +1295,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -1345,7 +1311,7 @@ $(pv_value)</tooltip>
         <crop_right>0</crop_right>
         <stretch_to_fit>false</stretch_to_fit>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <off_label>OFF</off_label>
       </widget>
@@ -1377,9 +1343,9 @@ $(pv_value)</tooltip>
       <height>184</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>true</keep_wh_ratio>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
       <pv_name></pv_name>
@@ -1390,7 +1356,7 @@ $(pv_value)</tooltip>
       <line_style>0</line_style>
       <arrow_length>20</arrow_length>
       <widget_type>Polyline</widget_type>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
@@ -1404,7 +1370,7 @@ $(pv_value)</tooltip>
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
     </widget>
   </widget>
@@ -1420,8 +1386,8 @@ $(pv_value)</tooltip>
     <height>1172</height>
     <border_width>1</border_width>
     <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <macros>
@@ -1446,10 +1412,12 @@ $(pv_value)</tooltip>
     <fc>false</fc>
     <show_scrollbar>false</show_scrollbar>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
     <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
       <alarm_pulsing>false</alarm_pulsing>
+      <on_state></on_state>
+      <off_state></off_state>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <rules />
@@ -1491,11 +1459,11 @@ $(pv_value)</tooltip>
         <color name="IO PV ON" red="0" green="0" blue="255" />
       </on_color>
       <scripts />
-      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
       <on_label>ON</on_label>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <crop_bottom>0</crop_bottom>
@@ -1503,7 +1471,7 @@ $(pv_value)</tooltip>
       <off_color>
         <color name="IO PV OFF" red="149" green="125" blue="71" />
       </off_color>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
@@ -1519,7 +1487,7 @@ $(pv_value)</tooltip>
       <crop_right>0</crop_right>
       <stretch_to_fit>true</stretch_to_fit>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
       <off_label>OFF</off_label>
     </widget>
@@ -1556,7 +1524,7 @@ $(pv_value)</tooltip>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <show_markers>true</show_markers>
       <color_hihi>
-        <color name="Major" red="250" green="12" blue="14" />
+        <color name="IO High Level Alarm" red="250" green="12" blue="14" />
       </color_hihi>
       <show_hihi>true</show_hihi>
       <log_scale>false</log_scale>
@@ -1564,16 +1532,16 @@ $(pv_value)</tooltip>
       <wuid>69dd0913:13c62176510:-7f97</wuid>
       <level_hihi>90.0</level_hihi>
       <color_hi>
-        <color name="Minor" red="255" green="255" blue="0" />
+        <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
       </color_hi>
       <color_lo>
-        <color name="Minor" red="255" green="255" blue="0" />
+        <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
       </color_lo>
       <scripts />
       <border_alarm_sensitive>false</border_alarm_sensitive>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <fillcolor_alarm_sensitive>false</fillcolor_alarm_sensitive>
@@ -1595,14 +1563,14 @@ $(pv_value)</tooltip>
       <y>325</y>
       <maximum>100.0</maximum>
       <color_lolo>
-        <color name="Major" red="250" green="12" blue="14" />
+        <color name="IO High Level Alarm" red="250" green="12" blue="14" />
       </color_lolo>
       <foreground_color>
         <color name="IO InputPV Fg" red="0" green="0" blue="0" />
       </foreground_color>
       <minimum>0.0</minimum>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
@@ -1622,13 +1590,13 @@ $(pv_value)</tooltip>
       <text>50.00 m3</text>
       <rotation_angle>0.0</rotation_angle>
       <scripts />
-      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
       <show_units>true</show_units>
       <height>92</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
@@ -1639,7 +1607,7 @@ $(pv_value)</tooltip>
       </border_color>
       <precision_from_pv>true</precision_from_pv>
       <widget_type>Text Update</widget_type>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <wrap_words>false</wrap_words>
       <format_type>0</format_type>
       <background_color>
@@ -1670,8 +1638,8 @@ $(pv_value)</tooltip>
     <height>113</height>
     <border_width>1</border_width>
     <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <macros>
@@ -1696,7 +1664,7 @@ $(pv_value)</tooltip>
     <fc>false</fc>
     <show_scrollbar>false</show_scrollbar>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <border_style>0</border_style>
@@ -1714,8 +1682,8 @@ carried out by the MID switch</text>
       <height>113</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
@@ -1754,8 +1722,8 @@ carried out by the MID switch</text>
     <height>315</height>
     <border_width>1</border_width>
     <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <macros>
@@ -1780,7 +1748,7 @@ carried out by the MID switch</text>
     <fc>false</fc>
     <show_scrollbar>false</show_scrollbar>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
     <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
       <border_style>0</border_style>
@@ -1804,8 +1772,8 @@ $(pv_value)</tooltip>
       <height>315</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
@@ -1820,7 +1788,7 @@ $(pv_value)</tooltip>
       <fg_gradient_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </fg_gradient_color>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
@@ -1834,14 +1802,14 @@ $(pv_value)</tooltip>
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
       <line_color>
         <color name="IO Line" red="0" green="0" blue="0" />
       </line_color>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <border_style>1</border_style>
+      <border_style>0</border_style>
       <tooltip></tooltip>
       <horizontal_alignment>1</horizontal_alignment>
       <rules />
@@ -1852,16 +1820,16 @@ $(pv_value)</tooltip>
       <text>Interlock</text>
       <scripts />
       <height>62</height>
-      <border_width>1</border_width>
+      <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
       <border_color>
-        <color name="IO StatusBar Fg" red="0" green="0" blue="0" />
+        <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
       <widget_type>Label</widget_type>
       <wrap_words>true</wrap_words>
@@ -1886,17 +1854,12 @@ $(pv_value)</tooltip>
       <border_style>0</border_style>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <alarm_pulsing>false</alarm_pulsing>
+      <on_state></on_state>
+      <off_state></off_state>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <push_action_index>0</push_action_index>
-      <rules>
-        <rule name="BorderRule" prop_id="border_style" out_exp="false">
-          <exp bool_exp="pv0==1">
-            <value>9</value>
-          </exp>
-          <pv trig="true">$(pv_name).SIMM</pv>
-        </rule>
-      </rules>
+      <rules />
       <effect_3d>true</effect_3d>
       <bit>0</bit>
       <enabled>true</enabled>
@@ -1911,14 +1874,14 @@ $(pv_value)</tooltip>
       <square_button>true</square_button>
       <show_led>true</show_led>
       <scripts />
-      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
       <height>110</height>
       <on_label>RESET</on_label>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>true</keep_wh_ratio>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
       <pv_name>TEST-BST0:TANK-MODE</pv_name>
@@ -1930,7 +1893,7 @@ $(pv_value)</tooltip>
         <color name="IO PV OFF" red="149" green="125" blue="71" />
       </off_color>
       <confirm_message>Do you want to reset the interlock?</confirm_message>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <background_color>
         <color name="IO Button" red="178" green="178" blue="178" />
       </background_color>
@@ -1953,12 +1916,14 @@ $(pv_value)</tooltip>
       </actions>
       <show_boolean_label>true</show_boolean_label>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
       <off_label>RESET</off_label>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
       <alarm_pulsing>false</alarm_pulsing>
+      <on_state></on_state>
+      <off_state></off_state>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <rules />
@@ -1984,12 +1949,12 @@ $(pv_value)</tooltip>
         <color name="IO Default" red="255" green="0" blue="0" />
       </on_color>
       <scripts />
-      <border_alarm_sensitive>true</border_alarm_sensitive>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
       <on_label>ON</on_label>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>true</keep_wh_ratio>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <off_color>
         <color name="IO OK" red="0" green="255" blue="0" />
@@ -2007,7 +1972,7 @@ $(pv_value)</tooltip>
         <color name="IO InputPV Fg" red="0" green="0" blue="0" />
       </foreground_color>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
       <off_label>OFF</off_label>
     </widget>
@@ -2025,8 +1990,8 @@ $(pv_value)</tooltip>
       <height>39</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
@@ -2065,8 +2030,8 @@ $(pv_value)</tooltip>
     <height>65</height>
     <border_width>1</border_width>
     <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <macros>
@@ -2091,10 +2056,10 @@ $(pv_value)</tooltip>
     <fc>false</fc>
     <show_scrollbar>false</show_scrollbar>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <border_style>1</border_style>
+      <border_style>0</border_style>
       <tooltip></tooltip>
       <horizontal_alignment>1</horizontal_alignment>
       <rules />
@@ -2105,16 +2070,16 @@ $(pv_value)</tooltip>
       <text>BEAST Alarm System Demo</text>
       <scripts />
       <height>62</height>
-      <border_width>1</border_width>
+      <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
       <border_color>
-        <color name="IO StatusBar Fg" red="0" green="0" blue="0" />
+        <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
       <widget_type>Label</widget_type>
       <wrap_words>true</wrap_words>
@@ -2147,8 +2112,8 @@ $(pv_value)</tooltip>
     <height>147</height>
     <border_width>1</border_width>
     <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <macros>
@@ -2173,7 +2138,7 @@ $(pv_value)</tooltip>
     <fc>false</fc>
     <show_scrollbar>false</show_scrollbar>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
     <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
       <border_style>0</border_style>
@@ -2211,9 +2176,9 @@ $(pv_value)</tooltip>
       <height>1</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>true</keep_wh_ratio>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
       <pv_name>TEST-BST0:PUMP</pv_name>
@@ -2224,7 +2189,7 @@ $(pv_value)</tooltip>
       <line_style>0</line_style>
       <arrow_length>20</arrow_length>
       <widget_type>Polyline</widget_type>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
@@ -2238,7 +2203,7 @@ $(pv_value)</tooltip>
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
@@ -2268,9 +2233,9 @@ $(pv_value)</tooltip>
       <height>86</height>
       <border_width>2</border_width>
       <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>true</keep_wh_ratio>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <visible>true</visible>
       <pv_name></pv_name>
@@ -2281,7 +2246,7 @@ $(pv_value)</tooltip>
       <line_style>0</line_style>
       <arrow_length>20</arrow_length>
       <widget_type>Polyline</widget_type>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
@@ -2295,13 +2260,13 @@ $(pv_value)</tooltip>
       </foreground_color>
       <actions hook="false" hook_all="false" />
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
     </widget>
   </widget>
   <widget typeId="org.csstudio.trends.databrowser.opiwidget" version="1.0.0">
     <show_value_labels>false</show_value_labels>
-    <border_style>1</border_style>
+    <border_style>0</border_style>
     <show_toolbar>false</show_toolbar>
     <tooltip></tooltip>
     <rules />
@@ -2310,10 +2275,10 @@ $(pv_value)</tooltip>
     <scripts />
     <height>602</height>
     <selection_value_pv></selection_value_pv>
-    <border_width>1</border_width>
+    <border_width>2</border_width>
     <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <macros>
@@ -2321,24 +2286,23 @@ $(pv_value)</tooltip>
     </macros>
     <visible>true</visible>
     <border_color>
-      <color red="0" green="128" blue="255" />
+      <color name="IO Border" red="0" green="0" blue="0" />
     </border_color>
     <widget_type>Data Browser</widget_type>
     <filename>../databrowser/tank-level.plt</filename>
     <background_color>
-      <color red="240" green="240" blue="240" />
+      <color name="IO InputPV Bg" red="235" green="235" blue="235" />
     </background_color>
     <width>827</width>
     <x>0</x>
     <name>Data Browser</name>
     <y>62</y>
-    <show_axis_trace>false</show_axis_trace>
     <foreground_color>
-      <color red="192" green="192" blue="192" />
+      <color name="IO InputPV Fg" red="0" green="0" blue="0" />
     </foreground_color>
     <actions hook="false" hook_all="false" />
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">IO Scale</opifont.name>
     </font>
   </widget>
 </display>
