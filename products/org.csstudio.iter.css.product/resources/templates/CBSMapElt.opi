@@ -6,7 +6,7 @@
   <show_grid>true</show_grid>
   <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
   <scripts />
-  <height>90</height>
+  <height>34</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
@@ -21,9 +21,9 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <width>123</width>
+  <width>3000</width>
   <x>0</x>
-  <name>Navigation Button Template</name>
+  <name>MAIN DISPLAY AREA - MIMIC</name>
   <grid_space>1</grid_space>
   <show_ruler>true</show_ruler>
   <y>0</y>
@@ -32,61 +32,53 @@
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
   <actions hook="false" hook_all="false" />
-  <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
-    <toggle_button>false</toggle_button>
-    <border_style>6</border_style>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <tooltip>${CBS}</tooltip>
-    <push_action_index>0</push_action_index>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip>Click to open ${CBS}</tooltip>
+    <horizontal_alignment>0</horizontal_alignment>
     <rules />
-    <enabled>false</enabled>
-    <wuid>-757f7dec:14bb5bc0470:-30a1</wuid>
-    <pv_value />
+    <enabled>true</enabled>
+    <wuid>-35b065ea:14bd987fea4:1931</wuid>
+    <transparent>false</transparent>
+    <auto_size>false</auto_size>
     <text>${CBS}</text>
     <scripts />
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <height>90</height>
+    <height>34</height>
     <border_width>2</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
       <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
-    <image></image>
     <visible>true</visible>
-    <pv_name></pv_name>
+    <vertical_alignment>1</vertical_alignment>
     <border_color>
       <color name="IO Border" red="0" green="0" blue="0" />
     </border_color>
-    <widget_type>Action Button</widget_type>
-    <width>123</width>
+    <widget_type>Label</widget_type>
+    <wrap_words>false</wrap_words>
+    <background_color>
+      <color name="IO Background" red="235" green="235" blue="235" />
+    </background_color>
+    <width>3000</width>
     <x>0</x>
     <name>${CBS}</name>
     <y>0</y>
-    <style>1</style>
     <foreground_color>
-      <color name="IO Foreground" red="0" green="0" blue="0" />
+      <color name="IO Text Fg" red="0" green="0" blue="0" />
     </foreground_color>
-    <actions hook="true" hook_all="false">
+    <actions hook="false" hook_all="true">
       <action type="OPEN_DISPLAY">
         <path>${OPI_FILE}.opi</path>
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
         <replace>1</replace>
-        <description>Go To</description>
-      </action>
-      <action type="OPEN_DISPLAY">
-        <path>CBSMap.opi</path>
-        <macros>
-          <include_parent_macros>true</include_parent_macros>
-        </macros>
-        <replace>1</replace>
-        <description>Display CBS Map</description>
+        <description></description>
       </action>
     </actions>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="12" style="0">IO Label</opifont.name>
     </font>
   </widget>
 </display>
