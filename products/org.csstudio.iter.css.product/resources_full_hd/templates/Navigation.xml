@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigation xmlns:xi="http://www.w3.org/2001/XInclude">
+	<CBS name="ITER" description="ITER Global Supervision" enabled="true" opi_file="../Demo_SUP.opi LEVEL=ITER" alarm_root="" >
+		<CBS name="BUIL" description="Buildings" enabled="false" opi_file="" alarm_root="" deprecated="false" >
+			<CBS name="ACCS" description="Access Control" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="B11" description="Tokamak Building B11" enabled="false" opi_file="" alarm_root="" deprecated="false" >
+				<CBS name="BA" description="BA Distribution" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+				<CBS name="BS" description="Building Services" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+				<CBS name="CA" description="Compressed Air Distribution" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			</CBS>			
+		</CBS>
+		<CBS name="CRST" description="Cryostat" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="CRYO" description="Cryogenics" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="CTRL" description="CODAC" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="CWS" description="WATER COOLING" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="D1" description="Diagnostic measurement systems for machine protection, plasma control, and physics exploitation" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="D2" description="Diagnostics engineering systems including electrical power, cooling water, air, gases, vacuum, temperatures" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="EC" description="Electron Cyclotron Heating and CD" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="FUEL" description="Fuelling and Glow Discharges" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="IC" description="Ion Cyclotron Heating and CD" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="MAG" description="Magnets" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="NB" description="Neutral Beam Heating and CD" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="PFCS" description="Plasma Facing Components" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="RAD" description="Radioactive Material Treatment" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="RH" description="Remote Handling" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="SAFE" description="Safety" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="TRIT" description="Tritium Plant" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="UTIL" description="Utilities" enabled="true" opi_file="../Demo_UTIL.opi LOG=TEST1 LEVEL=ITER-UTIL" alarm_root="" >
+			<CBS name="BA" description="Breathable Air" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="CA" description="Compressed Air" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="DW" description="Demineralized Water Distribution System" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="FW" description="Fire Protection Water" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="HE" description="Helium Gas Distribution" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="LV3" description="Low Voltage Area 3" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="MV" description="SSEN Medium Voltage" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="NG" description="Nitrogen Gas Distribution" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="PHV" description="High Voltage PPEN (400kV &amp; 66 kV)" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="PMV" description="High Voltage PPEN (22kV)" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="FW" description="Fire Protection Water" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="HV" description="SSEN High Voltage" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="HW" description="Hot Water Distribution System" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="IP" description="SSEN IP emergency power supply" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="LV1" description="Low Voltage Area 1" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="LV2" description="Low Voltage Area 2" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="RPC" description="Reactive Power Compensation and Harmonic Filter" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="S15" description="15kV work site power" enabled="true" opi_file="../Demo_UTIL_S15.opi LEVEL=ITER-UTIL-S15 LOG=TEST2" alarm_root="">
+				<xi:include href="../navigation/UTIL-S15-AG07.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-AG91.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-AG92.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-AG93.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-AG94.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-BG07.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-BG91.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-BG92.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-BG93.xml"> <xi:fallback /> </xi:include>
+				<xi:include href="../navigation/UTIL-S15-BG94.xml"> <xi:fallback /> </xi:include>
+			</CBS>
+			<CBS name="SPA" description="SSEPN emergency power supply system train-A" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+			<CBS name="SPB" description="SSEPN emergency power supply system train-B" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		</CBS>
+		<CBS name="VAC" description="Vacuum" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+		<CBS name="VV" description="Vacuum Vessel" enabled="false" opi_file="" alarm_root="" deprecated="false" />
+	</CBS>
+</navigation>
