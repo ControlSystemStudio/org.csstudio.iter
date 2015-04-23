@@ -231,7 +231,11 @@
              selected="true">
        </filter>
     </extension>
-    
-    
+    <extension
+          point="org.csstudio.alarm.beast.ui.alarmtable.customconfig">
+       <doubleClickHandler
+             class="org.csstudio.alarm.beast.ui.alarmtable.customconfig.OpenDisplayDoubleClickHandler">
+       </doubleClickHandler>
+    </extension>   
    
 </plugin>
