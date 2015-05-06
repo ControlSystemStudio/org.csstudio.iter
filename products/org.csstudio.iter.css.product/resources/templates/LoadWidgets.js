@@ -45,6 +45,8 @@ while (itr.hasNext())
 	widget.addChild(currentLabel);
 }
 
+widget.setPropertyValue("show_scrollbar", "true");
+
 function setSymbol(symbol, elt) {
 	symbol.setPropertyValue("name", elt.getAttributeValue("name"));
 	symbol.setPropertyValue("image_file", elt.getAttributeValue("image_file"));
