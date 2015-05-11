@@ -21,8 +21,13 @@ importPackage(Packages.java.lang)
 
 	// getting the input xml file path
 	var xml_input = widget.getMacroValue("INPUT");
+	// getting the navigation xml file from the user navigation folder
 	if (xml_input == null) {
-		xml_input = "Navigation.xml";
+		xml_input = "../navigation/Navigation.xml";
+		// getting the default navigation xml file from the templates
+		if (xml_input == null) {
+			xml_input = "Navigation.xml";
+		}
 	}
 	// loading XML document and getting the root element
 	// the result is a JDOM Element
