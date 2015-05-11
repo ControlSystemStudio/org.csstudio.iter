@@ -21,9 +21,11 @@ var widgets_xml = widget.getMacroValue("INPUT");
 // the result is a JDOM Element
 var root = FileUtil.loadXMLFile(widgets_xml, widget);
 
-var symbolModel = widget.getWidget("SymbolModel");
+var boolSymbolModel = widget.getWidget("BoolSymbolModel");
+var multiSymbolModel = widget.getWidget("MultiSymbolModel");
 var labelModel = widget.getWidget("LabelModel");
-var symbolWidgetXML = XMLUtil.widgetToXMLString(symbolModel.getWidgetModel(), false);
+var boolSymbolWidgetXML = XMLUtil.widgetToXMLString(boolSymbolModel.getWidgetModel(), false);
+var multiSymbolWidgetXML = XMLUtil.widgetToXMLString(multiSymbolModel.getWidgetModel(), false);
 var labelWidgetXML = XMLUtil.widgetToXMLString(labelModel.getWidgetModel(), false);
 
 var widgetsList = root.getChildren();
@@ -35,7 +37,12 @@ var currentLabel = null;
 while (itr.hasNext()) 
 {
 	var elt = itr.next();
-	currentSymbol = XMLUtil.fillWidgetsFromXMLString(symbolWidgetXML, null);
+	var statesCount = elt.getAttributeValue("statesCount");
+	if(statesCount <= 2) {
+		currentSymbol = XMLUtil.fillWidgetsFromXMLString(boolSymbolWidgetXML, null);
+	} else {
+		currentSymbol = XMLUtil.fillWidgetsFromXMLString(multiSymbolWidgetXML, null);
+	}
 	currentLabel = XMLUtil.fillWidgetsFromXMLString(labelWidgetXML, null);
 
 	setSymbol(currentSymbol, elt);
@@ -45,6 +52,8 @@ while (itr.hasNext())
 	widget.addChild(currentLabel);
 }
 
+widget.setPropertyValue("show_scrollbar", "true");
+
 function setSymbol(symbol, elt) {
 	symbol.setPropertyValue("name", elt.getAttributeValue("name"));
 	symbol.setPropertyValue("image_file", elt.getAttributeValue("image_file"));
@@ -52,6 +61,9 @@ function setSymbol(symbol, elt) {
 	symbol.setPropertyValue("width", elt.getAttributeValue("width"));
 	symbol.setPropertyValue("x", elt.getAttributeValue("x"));
 	symbol.setPropertyValue("y", elt.getAttributeValue("y"));
+	if(statesCount > 2) {
+		symbol.setPropertyValue("pv_name", "sim://ramp(0," + (statesCount-1) + ",1,1)");
+	}
 }
 
 function setLabel(label, elt) {
