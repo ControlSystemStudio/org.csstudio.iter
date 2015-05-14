@@ -41,9 +41,6 @@ public class ITERAuthorizationProvider extends
 			authorizations = new Authorizations(new HashSet<String>(0));
 		}
 
-		if (!user.getPrincipals().toString().contains("jbobnar")) {
-		    return new Authorizations(new HashSet<String>());
-		}
 		String[] defaultAuthList = Preferences.getDefaultAuthorization();
 		if (defaultAuthList == null || defaultAuthList.length == 0) {
 			return authorizations;
