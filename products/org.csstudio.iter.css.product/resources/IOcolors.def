@@ -19,23 +19,31 @@ IO PV OFF = 149, 125, 71
 
 # Alarms
 
-# Invalid/Disconnected: White
-IO Invalid Level Alarm = 255, 255, 255
+# Invalid/Disconnected: Magenta
+IO Invalid Level Alarm = 255, 0, 255
 
 # Major: Red
-IO High Level Alarm = 250,12,14
+IO High Level Alarm = 250, 12, 14
 
 # Minor: Yellow
-IO Medium Level Alarm = 255,255,0
+IO Medium Level Alarm = 255, 255, 0
 
 # No alarm: Green
 IO Normal Level Alarm = 0, 255, 0
 
+# Component states - symbol fill
+
+# running component state - dark grey
+IO Running Symbol Fill = 166, 166, 166
+
+# stopped component state - white
+IO Stopped Symbol Fill = 255, 255, 255
+
 # Obsolete alarm colors
-Major = 250,12,14
-Minor = 255,255,0
-Invalid = 255, 255, 255
-Disconnected = 255, 255, 255
+Major = 250, 12, 14
+Minor = 255, 255, 0
+Invalid = 255, 0, 255
+Disconnected = 255, 0, 255
 
 # Display widget color: Light grey
 IO Grid = 215,215,215
@@ -84,42 +92,10 @@ IO TextInactiveButton = 166,166,166
 # Label color
 IO Label = 0, 0, 0
 
-# Fluid Pipe colors
-# IO Cooling Water Pipe = 0,176,80
-# IO Helium Pipe = 0,176,240
-# IO Nitrogen Pipe = 255,195,0
-# IO Oil Pipe = 255,255,0
-# IO Secondary Circuit Pipe = 0,76,240
+# Electrical bus colors - very dark grey / mid grey
+IO Energised Busbar = 95, 95, 95
+IO De energised Busbar = 178, 178, 178
 
-IO SHe supply from LHe plant and primary loop supply = 0,0,255
-IO Liquid Helium = 51,102,255
-IO 4.8K ≈ vapor return to LHe plant and primary loop return = 0,204,255
-IO 80K Helium Supply = 255,153,204
-IO 100K Helium Return = 213,48,255
-IO 50K GHe = 204,204,255
-IO 300K GHe = 0,0,0
-IO Quench line = 0,255,0
-IO Relief header = 51,153,102
-IO 6-100K line = 255,153,0
-IO LN2 lines = 255,153,204
-IO Cold GN2 lines = 213,48,0
-IO Warm GN2 lines = 0,0,0
-
-# Electrical bus colors
-IO Energised Busbar = 255,0,0
-IO De energised Busbar = 128,128,128
- 
-# State colors
-IO OK = 0,255,0
-IO Default = 255,0,0
-IO onGoing = 255,255,0
-IO Disconnected = 255, 255, 255
-IO Unselected = 255, 255, 255
-IO POS Backgroung = 205, 216, 192
-IO POS State = 160, 180, 137
-IO TCS Backgroung = 182, 217, 228
-IO TCS State = 75, 172, 198
-IO STM Background = 227, 218, 179
-IO STM State = 197, 177, 137
-IO LTM Backgroung = 217, 193, 223
-IO LTM State = 171, 154, 192
+# Pipelines colors - very dark grey / mid grey
+IO Flow Pipeline = 95, 95, 95
+IO No Flow Pipeline = 178, 178, 178

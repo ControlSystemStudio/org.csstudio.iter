@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.102.201503121510</boy_version>
+  <boy_version>4.0.103.201504091501</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -41,7 +41,7 @@
     <transparent>true</transparent>
     <lock_children>false</lock_children>
     <scripts />
-    <height>80</height>
+    <height>102</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -59,10 +59,10 @@
     <background_color>
       <color name="IO Background" red="235" green="235" blue="235" />
     </background_color>
-    <width>426</width>
-    <x>10</x>
+    <width>451</width>
+    <x>19</x>
     <name>Graphics - Image widget</name>
-    <y>220</y>
+    <y>165</y>
     <foreground_color>
       <color name="IO Foreground" red="0" green="0" blue="0" />
     </foreground_color>
@@ -157,7 +157,7 @@
     <transparent>true</transparent>
     <lock_children>false</lock_children>
     <scripts />
-    <height>257</height>
+    <height>300</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -175,10 +175,10 @@
     <background_color>
       <color name="IO Background" red="235" green="235" blue="235" />
     </background_color>
-    <width>453</width>
+    <width>595</width>
     <x>470</x>
     <name>Monitors - Image Boolean Indicator widget</name>
-    <y>43</y>
+    <y>10</y>
     <foreground_color>
       <color name="IO Foreground" red="0" green="0" blue="0" />
     </foreground_color>
@@ -197,7 +197,7 @@
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>88</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -256,9 +256,9 @@ $(pv_value)</tooltip>
         <pv_value />
         <auto_size>true</auto_size>
         <scripts />
-        <on_image>pictures/animation/Motor 1.gif</on_image>
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <height>24</height>
+        <on_image>pictures/animation/PL General 1.svg</on_image>
+        <border_alarm_sensitive>true</border_alarm_sensitive>
+        <height>36</height>
         <on_label>ON</on_label>
         <border_width>2</border_width>
         <scale_options>
@@ -274,21 +274,21 @@ $(pv_value)</tooltip>
         </border_color>
         <no_animation>false</no_animation>
         <widget_type>Image Boolean Indicator</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <boolean_label_position>0</boolean_label_position>
-        <width>44</width>
+        <width>36</width>
         <x>165</x>
         <name>Animated Image</name>
         <data_type>0</data_type>
-        <y>0</y>
+        <y>7</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <off_image>pictures/animation/Motor 0.gif</off_image>
+        <off_image>pictures/animation/PL General 0.svg</off_image>
         <stretch_to_fit>false</stretch_to_fit>
         <show_boolean_label>false</show_boolean_label>
         <font>
@@ -313,7 +313,7 @@ $(pv_value)</tooltip>
         <text>######</text>
         <rotation_angle>0.0</rotation_angle>
         <scripts />
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>true</border_alarm_sensitive>
         <show_units>true</show_units>
         <height>17</height>
         <border_width>2</border_width>
@@ -330,7 +330,7 @@ $(pv_value)</tooltip>
         </border_color>
         <precision_from_pv>true</precision_from_pv>
         <widget_type>Text Update</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <wrap_words>false</wrap_words>
         <format_type>0</format_type>
         <background_color>
@@ -358,7 +358,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>88</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -379,7 +379,7 @@ $(pv_value)</tooltip>
       <width>426</width>
       <x>0</x>
       <name>Foreground Alarm Sensitive</name>
-      <y>75</y>
+      <y>88</y>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
@@ -391,7 +391,7 @@ $(pv_value)</tooltip>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.ImageBoolIndicator" version="1.0.0">
         <border_style>0</border_style>
-        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <alarm_pulsing>false</alarm_pulsing>
         <on_state></on_state>
         <off_state></off_state>
@@ -417,9 +417,9 @@ $(pv_value)</tooltip>
         <pv_value />
         <auto_size>true</auto_size>
         <scripts />
-        <on_image>pictures/animation/Motor 1.gif</on_image>
+        <on_image>pictures/animation/PL General 1.svg</on_image>
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <height>20</height>
+        <height>34</height>
         <on_label>ON</on_label>
         <border_width>2</border_width>
         <scale_options>
@@ -435,21 +435,21 @@ $(pv_value)</tooltip>
         </border_color>
         <no_animation>false</no_animation>
         <widget_type>Image Boolean Indicator</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <boolean_label_position>0</boolean_label_position>
-        <width>40</width>
+        <width>34</width>
         <x>165</x>
         <name>Animated Image</name>
         <data_type>0</data_type>
-        <y>0</y>
+        <y>7</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <off_image>pictures/animation/Motor 0.gif</off_image>
+        <off_image>pictures/animation/PL General 0.svg</off_image>
         <stretch_to_fit>false</stretch_to_fit>
         <show_boolean_label>false</show_boolean_label>
         <font>
@@ -459,7 +459,7 @@ $(pv_value)</tooltip>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
         <border_style>0</border_style>
-        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <alarm_pulsing>false</alarm_pulsing>
         <precision>0</precision>
         <tooltip>$(pv_name)
@@ -491,7 +491,7 @@ $(pv_value)</tooltip>
         </border_color>
         <precision_from_pv>true</precision_from_pv>
         <widget_type>Text Update</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <wrap_words>false</wrap_words>
         <format_type>0</format_type>
         <background_color>
@@ -519,7 +519,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>88</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -540,7 +540,7 @@ $(pv_value)</tooltip>
       <width>426</width>
       <x>0</x>
       <name>Background Alarm Sensitive</name>
-      <y>150</y>
+      <y>176</y>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
@@ -578,9 +578,9 @@ $(pv_value)</tooltip>
         <pv_value />
         <auto_size>true</auto_size>
         <scripts />
-        <on_image>pictures/animation/Motor 1.gif</on_image>
+        <on_image>pictures/animation/PL General 1.svg</on_image>
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <height>20</height>
+        <height>34</height>
         <on_label>ON</on_label>
         <border_width>2</border_width>
         <scale_options>
@@ -601,16 +601,16 @@ $(pv_value)</tooltip>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <boolean_label_position>0</boolean_label_position>
-        <width>40</width>
+        <width>34</width>
         <x>165</x>
         <name>Animated Image</name>
         <data_type>0</data_type>
-        <y>0</y>
+        <y>7</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <off_image>pictures/animation/Motor 0.gif</off_image>
+        <off_image>pictures/animation/PL General 0.svg</off_image>
         <stretch_to_fit>false</stretch_to_fit>
         <show_boolean_label>false</show_boolean_label>
         <font>
@@ -681,7 +681,7 @@ $(pv_value)</tooltip>
     <transparent>true</transparent>
     <lock_children>false</lock_children>
     <scripts />
-    <height>257</height>
+    <height>337</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -699,10 +699,10 @@ $(pv_value)</tooltip>
     <background_color>
       <color name="IO Background" red="235" green="235" blue="235" />
     </background_color>
-    <width>286</width>
-    <x>10</x>
+    <width>406</width>
+    <x>2</x>
     <name>Monitors - Boolean Symbol widget</name>
-    <y>300</y>
+    <y>324</y>
     <foreground_color>
       <color name="IO Foreground" red="0" green="0" blue="0" />
     </foreground_color>
@@ -721,7 +721,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>95</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -739,7 +739,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>256</width>
+      <width>345</width>
       <x>0</x>
       <name>Border Alarm Sensitive</name>
       <y>0</y>
@@ -816,7 +816,7 @@ $(pv_value)</tooltip>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <scripts />
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>true</border_alarm_sensitive>
         <on_label>Moving</on_label>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -828,7 +828,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -836,7 +836,7 @@ $(pv_value)</tooltip>
         <width>44</width>
         <x>165</x>
         <data_type>0</data_type>
-        <y>0</y>
+        <y>6</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
@@ -865,7 +865,7 @@ $(pv_value)</tooltip>
         <text>######</text>
         <rotation_angle>0.0</rotation_angle>
         <scripts />
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>true</border_alarm_sensitive>
         <show_units>true</show_units>
         <height>17</height>
         <border_width>2</border_width>
@@ -882,7 +882,7 @@ $(pv_value)</tooltip>
         </border_color>
         <precision_from_pv>true</precision_from_pv>
         <widget_type>Text Update</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <wrap_words>false</wrap_words>
         <format_type>0</format_type>
         <background_color>
@@ -910,7 +910,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>95</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -928,10 +928,10 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>256</width>
+      <width>345</width>
       <x>0</x>
       <name>Foreground Alarm Sensitive</name>
-      <y>75</y>
+      <y>95</y>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
@@ -971,7 +971,7 @@ $(pv_value)</tooltip>
         <pv_value />
         <auto_size>true</auto_size>
         <image_file>pictures/animation/Motor 1.gif</image_file>
-        <height>20</height>
+        <height>10</height>
         <border_width>2</border_width>
         <align_to_nearest_second>true</align_to_nearest_second>
         <visible>true</visible>
@@ -997,7 +997,7 @@ $(pv_value)</tooltip>
         <show_boolean_label>false</show_boolean_label>
         <flip_vertical>false</flip_vertical>
         <border_style>0</border_style>
-        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <crop_left>0</crop_left>
         <enabled>true</enabled>
         <wuid>36fc0fe8:146ed39a29d:-7681</wuid>
@@ -1017,15 +1017,15 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <boolean_label_position>0</boolean_label_position>
-        <width>40</width>
+        <width>20</width>
         <x>165</x>
         <data_type>0</data_type>
-        <y>0</y>
+        <y>7</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
@@ -1039,7 +1039,7 @@ $(pv_value)</tooltip>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
         <border_style>0</border_style>
-        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <alarm_pulsing>false</alarm_pulsing>
         <precision>0</precision>
         <tooltip>$(pv_name)
@@ -1071,7 +1071,7 @@ $(pv_value)</tooltip>
         </border_color>
         <precision_from_pv>true</precision_from_pv>
         <widget_type>Text Update</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <wrap_words>false</wrap_words>
         <format_type>0</format_type>
         <background_color>
@@ -1099,7 +1099,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>100</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1117,10 +1117,10 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>256</width>
+      <width>345</width>
       <x>0</x>
       <name>Background Alarm Sensitive</name>
-      <y>150</y>
+      <y>191</y>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
@@ -1214,7 +1214,7 @@ $(pv_value)</tooltip>
         <width>40</width>
         <x>165</x>
         <data_type>0</data_type>
-        <y>0</y>
+        <y>7</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
@@ -1280,161 +1280,6 @@ $(pv_value)</tooltip>
       </widget>
     </widget>
   </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-    <border_style>0</border_style>
-    <tooltip></tooltip>
-    <rules />
-    <enabled>true</enabled>
-    <wuid>36fc0fe8:146ed39a29d:-6d02</wuid>
-    <transparent>true</transparent>
-    <lock_children>false</lock_children>
-    <scripts />
-    <height>28</height>
-    <border_width>1</border_width>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <macros>
-      <include_parent_macros>true</include_parent_macros>
-    </macros>
-    <visible>true</visible>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Grouping Container</widget_type>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <width>372</width>
-    <x>37</x>
-    <name>Image File Selector</name>
-    <y>130</y>
-    <foreground_color>
-      <color name="IO Foreground" red="0" green="0" blue="0" />
-    </foreground_color>
-    <actions hook="false" hook_all="false" />
-    <fc>false</fc>
-    <show_scrollbar>false</show_scrollbar>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-    </font>
-    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
-      <alarm_pulsing>false</alarm_pulsing>
-      <precision>0</precision>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <horizontal_alignment>0</horizontal_alignment>
-      <rules />
-      <show_h_scroll>false</show_h_scroll>
-      <pv_value />
-      <auto_size>false</auto_size>
-      <read_only>false</read_only>
-      <text></text>
-      <rotation_angle>0.0</rotation_angle>
-      <show_units>true</show_units>
-      <height>27</height>
-      <multiline_input>false</multiline_input>
-      <border_width>1</border_width>
-      <visible>true</visible>
-      <pv_name>loc://$(DID)_image("pictures/animation/Motor 1.gif")</pv_name>
-      <selector_type>1</selector_type>
-      <border_color>
-        <color name="IO Border" red="0" green="0" blue="0" />
-      </border_color>
-      <precision_from_pv>true</precision_from_pv>
-      <widget_type>Text Input</widget_type>
-      <confirm_message></confirm_message>
-      <name>Image Choice</name>
-      <style>1</style>
-      <actions hook="false" hook_all="false" />
-      <border_style>1</border_style>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <show_native_border>false</show_native_border>
-      <enabled>true</enabled>
-      <wuid>36fc0fe8:146ed39a29d:-6ef7</wuid>
-      <transparent>false</transparent>
-      <next_focus>0</next_focus>
-      <scripts>
-        <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-          <scriptName>updatePVValue</scriptName>
-          <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-var m= widget.getMacroValue("animated_image");
-if(m!=null)
-	widget.getPV().setValue(m);
-]]></scriptText>
-          <pv trig="true">=1</pv>
-        </path>
-      </scripts>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <show_v_scroll>false</show_v_scroll>
-      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-      <format_type>0</format_type>
-      <limits_from_pv>true</limits_from_pv>
-      <background_color>
-        <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
-      </background_color>
-      <password_input>false</password_input>
-      <width>281</width>
-      <x>90</x>
-      <y>0</y>
-      <maximum>1.7976931348623157E308</maximum>
-      <foreground_color>
-        <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
-      </foreground_color>
-      <minimum>-1.7976931348623157E308</minimum>
-      <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-      </font>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <border_style>0</border_style>
-      <tooltip></tooltip>
-      <horizontal_alignment>0</horizontal_alignment>
-      <rules />
-      <enabled>false</enabled>
-      <wuid>36fc0fe8:146ed39a29d:-6ef6</wuid>
-      <transparent>true</transparent>
-      <auto_size>true</auto_size>
-      <text>Image Selector</text>
-      <scripts />
-      <height>13</height>
-      <border_width>2</border_width>
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <visible>true</visible>
-      <vertical_alignment>1</vertical_alignment>
-      <border_color>
-        <color name="IO Border" red="0" green="0" blue="0" />
-      </border_color>
-      <widget_type>Label</widget_type>
-      <wrap_words>true</wrap_words>
-      <background_color>
-        <color name="IO Background" red="235" green="235" blue="235" />
-      </background_color>
-      <width>71</width>
-      <x>0</x>
-      <name>Image Choice</name>
-      <y>7</y>
-      <foreground_color>
-        <color name="IO Text Fg" red="0" green="0" blue="0" />
-      </foreground_color>
-      <actions hook="false" hook_all="false" />
-      <show_scrollbar>false</show_scrollbar>
-      <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
-      </font>
-    </widget>
-  </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.Image" version="1.0.0">
     <border_style>0</border_style>
     <tooltip></tooltip>
@@ -1489,9 +1334,9 @@ if(m!=null)
       </row>
     </permutation_matrix>
     <width>116</width>
-    <x>10</x>
+    <x>45</x>
     <name>Image Template</name>
-    <y>10</y>
+    <y>30</y>
     <foreground_color>
       <color name="IO Foreground" red="0" green="0" blue="0" />
     </foreground_color>
@@ -1513,7 +1358,7 @@ if(m!=null)
     <transparent>true</transparent>
     <lock_children>false</lock_children>
     <scripts />
-    <height>257</height>
+    <height>337</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -1531,10 +1376,10 @@ if(m!=null)
     <background_color>
       <color name="IO Background" red="235" green="235" blue="235" />
     </background_color>
-    <width>286</width>
-    <x>470</x>
+    <width>450</width>
+    <x>735</x>
     <name>Monitors - MultiState Symbol widget</name>
-    <y>300</y>
+    <y>325</y>
     <foreground_color>
       <color name="IO Foreground" red="0" green="0" blue="0" />
     </foreground_color>
@@ -1553,7 +1398,7 @@ if(m!=null)
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>100</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1571,7 +1416,7 @@ if(m!=null)
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>256</width>
+      <width>345</width>
       <x>0</x>
       <name>Border Alarm Sensitive</name>
       <y>0</y>
@@ -1647,7 +1492,7 @@ $(pv_value)</tooltip>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <scripts />
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>true</border_alarm_sensitive>
         <scale_options>
           <width_scalable>false</width_scalable>
           <height_scalable>false</height_scalable>
@@ -1658,14 +1503,14 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <boolean_label_position>0</boolean_label_position>
         <width>44</width>
         <x>165</x>
-        <y>0</y>
+        <y>7</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
@@ -1693,7 +1538,7 @@ $(pv_value)</tooltip>
         <text>######</text>
         <rotation_angle>0.0</rotation_angle>
         <scripts />
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>true</border_alarm_sensitive>
         <show_units>true</show_units>
         <height>17</height>
         <border_width>2</border_width>
@@ -1710,7 +1555,7 @@ $(pv_value)</tooltip>
         </border_color>
         <precision_from_pv>true</precision_from_pv>
         <widget_type>Text Update</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <wrap_words>false</wrap_words>
         <format_type>0</format_type>
         <background_color>
@@ -1738,7 +1583,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>100</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1756,10 +1601,10 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>256</width>
+      <width>345</width>
       <x>0</x>
       <name>Foreground Alarm Sensitive</name>
-      <y>75</y>
+      <y>100</y>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
@@ -1824,7 +1669,7 @@ $(pv_value)</tooltip>
         <flip_vertical>false</flip_vertical>
         <show_boolean_label>false</show_boolean_label>
         <border_style>0</border_style>
-        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <crop_left>0</crop_left>
         <enabled>true</enabled>
         <wuid>36fc0fe8:146ed39a29d:-6602</wuid>
@@ -1843,14 +1688,14 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <boolean_label_position>0</boolean_label_position>
         <width>40</width>
         <x>165</x>
-        <y>0</y>
+        <y>7</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
@@ -1863,7 +1708,7 @@ $(pv_value)</tooltip>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
         <border_style>0</border_style>
-        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <alarm_pulsing>false</alarm_pulsing>
         <precision>0</precision>
         <tooltip>$(pv_name)
@@ -1895,7 +1740,7 @@ $(pv_value)</tooltip>
         </border_color>
         <precision_from_pv>true</precision_from_pv>
         <widget_type>Text Update</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <wrap_words>false</wrap_words>
         <format_type>0</format_type>
         <background_color>
@@ -1923,7 +1768,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>100</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1941,10 +1786,10 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>256</width>
+      <width>345</width>
       <x>0</x>
       <name>Background Alarm Sensitive</name>
-      <y>150</y>
+      <y>200</y>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
@@ -1981,7 +1826,7 @@ $(pv_value)</tooltip>
         <pv_value />
         <auto_size>true</auto_size>
         <image_file>pictures/animation/Motor 1.gif</image_file>
-        <height>20</height>
+        <height>10</height>
         <border_width>2</border_width>
         <items_from_pv>true</items_from_pv>
         <align_to_nearest_second>false</align_to_nearest_second>
@@ -2033,9 +1878,9 @@ $(pv_value)</tooltip>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <boolean_label_position>0</boolean_label_position>
-        <width>40</width>
+        <width>20</width>
         <x>165</x>
-        <y>0</y>
+        <y>7</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
@@ -2109,7 +1954,7 @@ $(pv_value)</tooltip>
     <transparent>true</transparent>
     <lock_children>false</lock_children>
     <scripts />
-    <height>257</height>
+    <height>337</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -2127,10 +1972,10 @@ $(pv_value)</tooltip>
     <background_color>
       <color name="IO Background" red="235" green="235" blue="235" />
     </background_color>
-    <width>286</width>
-    <x>10</x>
+    <width>406</width>
+    <x>2</x>
     <name>Controls - Boolean Symbol widget</name>
-    <y>557</y>
+    <y>661</y>
     <foreground_color>
       <color name="IO Foreground" red="0" green="0" blue="0" />
     </foreground_color>
@@ -2149,7 +1994,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>100</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2167,7 +2012,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>256</width>
+      <width>345</width>
       <x>0</x>
       <name>Border Alarm Sensitive</name>
       <y>0</y>
@@ -2250,7 +2095,7 @@ $(pv_value)</tooltip>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <scripts />
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>true</border_alarm_sensitive>
         <on_label>ON</on_label>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -2262,7 +2107,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2270,7 +2115,7 @@ $(pv_value)</tooltip>
         <width>44</width>
         <x>165</x>
         <data_type>0</data_type>
-        <y>0</y>
+        <y>6</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
@@ -2299,7 +2144,7 @@ $(pv_value)</tooltip>
         <text>######</text>
         <rotation_angle>0.0</rotation_angle>
         <scripts />
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>true</border_alarm_sensitive>
         <show_units>true</show_units>
         <height>17</height>
         <border_width>2</border_width>
@@ -2316,7 +2161,7 @@ $(pv_value)</tooltip>
         </border_color>
         <precision_from_pv>true</precision_from_pv>
         <widget_type>Text Update</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <wrap_words>false</wrap_words>
         <format_type>0</format_type>
         <background_color>
@@ -2344,7 +2189,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>100</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2362,10 +2207,10 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>256</width>
+      <width>345</width>
       <x>0</x>
       <name>Foreground Alarm Sensitive</name>
-      <y>75</y>
+      <y>100</y>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2437,7 +2282,7 @@ $(pv_value)</tooltip>
         <show_boolean_label>false</show_boolean_label>
         <flip_vertical>false</flip_vertical>
         <border_style>0</border_style>
-        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <crop_left>0</crop_left>
         <enabled>true</enabled>
         <wuid>36fc0fe8:146ed39a29d:-6511</wuid>
@@ -2457,7 +2302,7 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
@@ -2465,7 +2310,7 @@ $(pv_value)</tooltip>
         <width>40</width>
         <x>165</x>
         <data_type>0</data_type>
-        <y>0</y>
+        <y>7</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
@@ -2479,7 +2324,7 @@ $(pv_value)</tooltip>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
         <border_style>0</border_style>
-        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <alarm_pulsing>false</alarm_pulsing>
         <precision>0</precision>
         <tooltip>$(pv_name)
@@ -2511,7 +2356,7 @@ $(pv_value)</tooltip>
         </border_color>
         <precision_from_pv>true</precision_from_pv>
         <widget_type>Text Update</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <wrap_words>false</wrap_words>
         <format_type>0</format_type>
         <background_color>
@@ -2539,7 +2384,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>100</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2557,10 +2402,10 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>256</width>
+      <width>345</width>
       <x>0</x>
       <name>Background Alarm Sensitive</name>
-      <y>150</y>
+      <y>200</y>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
@@ -2605,7 +2450,7 @@ $(pv_value)</tooltip>
         <released_action_index>0</released_action_index>
         <auto_size>true</auto_size>
         <image_file>pictures/animation/Motor 1.gif</image_file>
-        <height>20</height>
+        <height>10</height>
         <border_width>2</border_width>
         <align_to_nearest_second>true</align_to_nearest_second>
         <visible>true</visible>
@@ -2657,10 +2502,10 @@ $(pv_value)</tooltip>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <boolean_label_position>0</boolean_label_position>
-        <width>40</width>
+        <width>20</width>
         <x>165</x>
         <data_type>0</data_type>
-        <y>0</y>
+        <y>7</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
@@ -2735,7 +2580,7 @@ $(pv_value)</tooltip>
     <transparent>true</transparent>
     <lock_children>false</lock_children>
     <scripts />
-    <height>257</height>
+    <height>337</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -2753,10 +2598,10 @@ $(pv_value)</tooltip>
     <background_color>
       <color name="IO Background" red="235" green="235" blue="235" />
     </background_color>
-    <width>286</width>
-    <x>470</x>
+    <width>450</width>
+    <x>735</x>
     <name>Controls - MultiState Symbol widget</name>
-    <y>557</y>
+    <y>662</y>
     <foreground_color>
       <color name="IO Foreground" red="0" green="0" blue="0" />
     </foreground_color>
@@ -2775,7 +2620,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>100</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2793,7 +2638,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>256</width>
+      <width>345</width>
       <x>0</x>
       <name>Border Alarm Sensitive</name>
       <y>0</y>
@@ -2841,7 +2686,7 @@ $(pv_value)</tooltip>
         <items_from_pv>true</items_from_pv>
         <align_to_nearest_second>false</align_to_nearest_second>
         <visible>true</visible>
-        <pv_name>TEST-BOY0:CMDSWITCH</pv_name>
+        <pv_name>TEST-BOY0:MBBO</pv_name>
         <degree>0</degree>
         <border_color>
           <color name="IO Border" red="0" green="0" blue="0" />
@@ -2873,7 +2718,7 @@ $(pv_value)</tooltip>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <scripts />
-        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_alarm_sensitive>true</border_alarm_sensitive>
         <scale_options>
           <width_scalable>false</width_scalable>
           <height_scalable>false</height_scalable>
@@ -2884,14 +2729,14 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <boolean_label_position>0</boolean_label_position>
         <width>44</width>
         <x>165</x>
-        <y>0</y>
+        <y>7</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
@@ -2902,43 +2747,33 @@ $(pv_value)</tooltip>
           <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
-      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-        <border_style>0</border_style>
+      <widget typeId="org.csstudio.opibuilder.widgets.combo" version="1.0.0">
+        <border_style>6</border_style>
         <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
         <alarm_pulsing>false</alarm_pulsing>
-        <precision>0</precision>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-        <horizontal_alignment>0</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
         <wuid>36fc0fe8:146ed39a29d:-61c5</wuid>
-        <transparent>false</transparent>
         <pv_value />
-        <auto_size>false</auto_size>
-        <text>######</text>
-        <rotation_angle>0.0</rotation_angle>
         <scripts />
-        <border_alarm_sensitive>false</border_alarm_sensitive>
-        <show_units>true</show_units>
-        <height>17</height>
+        <border_alarm_sensitive>true</border_alarm_sensitive>
+        <height>45</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
           <height_scalable>false</height_scalable>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
+        <items_from_pv>true</items_from_pv>
         <visible>true</visible>
-        <pv_name>TEST-BOY0:CMDSWITCH</pv_name>
-        <vertical_alignment>1</vertical_alignment>
+        <pv_name>TEST-BOY0:MBBO</pv_name>
         <border_color>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
-        <precision_from_pv>true</precision_from_pv>
-        <widget_type>Text Update</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-        <wrap_words>false</wrap_words>
-        <format_type>0</format_type>
+        <widget_type>Combo</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO InputPV Bg" red="235" green="235" blue="235" />
         </background_color>
@@ -2950,6 +2785,7 @@ $(pv_value)</tooltip>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
+        <items />
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
@@ -2964,7 +2800,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>100</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -2982,10 +2818,10 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>256</width>
+      <width>345</width>
       <x>0</x>
       <name>Foreground Alarm Sensitive</name>
-      <y>75</y>
+      <y>100</y>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3030,7 +2866,7 @@ $(pv_value)</tooltip>
         <items_from_pv>true</items_from_pv>
         <align_to_nearest_second>false</align_to_nearest_second>
         <visible>true</visible>
-        <pv_name>TEST-BOY0:CMDSWITCH</pv_name>
+        <pv_name>TEST-BOY0:MBBO</pv_name>
         <degree>0</degree>
         <border_color>
           <color name="IO Border" red="0" green="0" blue="0" />
@@ -3054,7 +2890,7 @@ $(pv_value)</tooltip>
         <flip_vertical>false</flip_vertical>
         <show_boolean_label>false</show_boolean_label>
         <border_style>0</border_style>
-        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <crop_left>0</crop_left>
         <enabled>true</enabled>
         <wuid>36fc0fe8:146ed39a29d:-61c3</wuid>
@@ -3073,14 +2909,14 @@ $(pv_value)</tooltip>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <boolean_label_position>0</boolean_label_position>
         <width>40</width>
         <x>165</x>
-        <y>0</y>
+        <y>7</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
@@ -3091,43 +2927,33 @@ $(pv_value)</tooltip>
           <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
-      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-        <border_style>0</border_style>
-        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <widget typeId="org.csstudio.opibuilder.widgets.combo" version="1.0.0">
+        <border_style>6</border_style>
+        <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
         <alarm_pulsing>false</alarm_pulsing>
-        <precision>0</precision>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-        <horizontal_alignment>0</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
         <wuid>36fc0fe8:146ed39a29d:-61c2</wuid>
-        <transparent>false</transparent>
         <pv_value />
-        <auto_size>false</auto_size>
-        <text>######</text>
-        <rotation_angle>0.0</rotation_angle>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <show_units>true</show_units>
-        <height>17</height>
+        <height>41</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
           <height_scalable>false</height_scalable>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
+        <items_from_pv>true</items_from_pv>
         <visible>true</visible>
-        <pv_name>TEST-BOY0:CMDSWITCH</pv_name>
-        <vertical_alignment>1</vertical_alignment>
+        <pv_name>TEST-BOY0:MBBO</pv_name>
         <border_color>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
-        <precision_from_pv>true</precision_from_pv>
-        <widget_type>Text Update</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-        <wrap_words>false</wrap_words>
-        <format_type>0</format_type>
+        <widget_type>Combo</widget_type>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO InputPV Bg" red="235" green="235" blue="235" />
         </background_color>
@@ -3139,6 +2965,7 @@ $(pv_value)</tooltip>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
+        <items />
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
@@ -3153,7 +2980,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>80</height>
+      <height>100</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -3171,10 +2998,10 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>256</width>
+      <width>345</width>
       <x>0</x>
       <name>Background Alarm Sensitive</name>
-      <y>150</y>
+      <y>200</y>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3214,12 +3041,12 @@ $(pv_value)</tooltip>
         <pv_value />
         <auto_size>true</auto_size>
         <image_file>pictures/animation/Motor 1.gif</image_file>
-        <height>20</height>
+        <height>10</height>
         <border_width>2</border_width>
         <items_from_pv>true</items_from_pv>
         <align_to_nearest_second>false</align_to_nearest_second>
         <visible>true</visible>
-        <pv_name>TEST-BOY0:CMDSWITCH</pv_name>
+        <pv_name>TEST-BOY0:MBBO</pv_name>
         <degree>0</degree>
         <border_color>
           <color name="IO Border" red="0" green="0" blue="0" />
@@ -3267,9 +3094,9 @@ $(pv_value)</tooltip>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <boolean_label_position>0</boolean_label_position>
-        <width>40</width>
+        <width>20</width>
         <x>165</x>
-        <y>0</y>
+        <y>7</y>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
@@ -3280,43 +3107,33 @@ $(pv_value)</tooltip>
           <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
-      <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-        <border_style>0</border_style>
+      <widget typeId="org.csstudio.opibuilder.widgets.combo" version="1.0.0">
+        <border_style>6</border_style>
         <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
         <alarm_pulsing>false</alarm_pulsing>
-        <precision>0</precision>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-        <horizontal_alignment>0</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
         <wuid>36fc0fe8:146ed39a29d:-61bf</wuid>
-        <transparent>false</transparent>
         <pv_value />
-        <auto_size>false</auto_size>
-        <text>######</text>
-        <rotation_angle>0.0</rotation_angle>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <show_units>true</show_units>
-        <height>17</height>
+        <height>41</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
           <height_scalable>false</height_scalable>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
+        <items_from_pv>true</items_from_pv>
         <visible>true</visible>
-        <pv_name>TEST-BOY0:CMDSWITCH</pv_name>
-        <vertical_alignment>1</vertical_alignment>
+        <pv_name>TEST-BOY0:MBBO</pv_name>
         <border_color>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
-        <precision_from_pv>true</precision_from_pv>
-        <widget_type>Text Update</widget_type>
+        <widget_type>Combo</widget_type>
         <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-        <wrap_words>false</wrap_words>
-        <format_type>0</format_type>
         <background_color>
           <color name="IO InputPV Bg" red="235" green="235" blue="235" />
         </background_color>
@@ -3328,6 +3145,7 @@ $(pv_value)</tooltip>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
+        <items />
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
@@ -3343,7 +3161,7 @@ $(pv_value)</tooltip>
     <transparent>true</transparent>
     <lock_children>false</lock_children>
     <scripts />
-    <height>147</height>
+    <height>178</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -3361,10 +3179,10 @@ $(pv_value)</tooltip>
     <background_color>
       <color name="IO Background" red="235" green="235" blue="235" />
     </background_color>
-    <width>162</width>
-    <x>295</x>
+    <width>295</width>
+    <x>420</x>
     <name>BI Severity Levels</name>
-    <y>361</y>
+    <y>409</y>
     <foreground_color>
       <color name="IO Foreground" red="0" green="0" blue="0" />
     </foreground_color>
@@ -3383,7 +3201,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>58</height>
+      <height>72</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -3401,7 +3219,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>131</width>
+      <width>253</width>
       <x>0</x>
       <name>BI - Zero Severity</name>
       <y>0</y>
@@ -3426,7 +3244,7 @@ $(pv_value)</tooltip>
         <pv_value />
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <height>29</height>
+        <height>45</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -3440,7 +3258,7 @@ $(pv_value)</tooltip>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <widget_type>Combo</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
         </background_color>
@@ -3467,7 +3285,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>58</height>
+      <height>72</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -3485,10 +3303,10 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>131</width>
+      <width>253</width>
       <x>0</x>
       <name>BI - One Severity</name>
-      <y>58</y>
+      <y>72</y>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
@@ -3510,7 +3328,7 @@ $(pv_value)</tooltip>
         <pv_value />
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <height>29</height>
+        <height>45</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -3524,7 +3342,7 @@ $(pv_value)</tooltip>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <widget_type>Combo</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
         </background_color>
@@ -3552,7 +3370,7 @@ $(pv_value)</tooltip>
     <transparent>true</transparent>
     <lock_children>false</lock_children>
     <scripts />
-    <height>147</height>
+    <height>158</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -3570,10 +3388,10 @@ $(pv_value)</tooltip>
     <background_color>
       <color name="IO Background" red="235" green="235" blue="235" />
     </background_color>
-    <width>162</width>
-    <x>295</x>
+    <width>295</width>
+    <x>420</x>
     <name>BO Severity Levels</name>
-    <y>618</y>
+    <y>751</y>
     <foreground_color>
       <color name="IO Foreground" red="0" green="0" blue="0" />
     </foreground_color>
@@ -3592,7 +3410,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>58</height>
+      <height>67</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -3610,7 +3428,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>131</width>
+      <width>253</width>
       <x>0</x>
       <name>BO - Zero Severity</name>
       <y>0</y>
@@ -3635,7 +3453,7 @@ $(pv_value)</tooltip>
         <pv_value />
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <height>29</height>
+        <height>45</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -3676,7 +3494,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>58</height>
+      <height>67</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -3694,7 +3512,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>131</width>
+      <width>253</width>
       <x>0</x>
       <name>BO - One Severity</name>
       <y>58</y>
@@ -3719,7 +3537,7 @@ $(pv_value)</tooltip>
         <pv_value />
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <height>29</height>
+        <height>45</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -3761,7 +3579,7 @@ $(pv_value)</tooltip>
     <transparent>true</transparent>
     <lock_children>false</lock_children>
     <scripts />
-    <height>263</height>
+    <height>285</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -3779,10 +3597,10 @@ $(pv_value)</tooltip>
     <background_color>
       <color name="IO Background" red="235" green="235" blue="235" />
     </background_color>
-    <width>186</width>
-    <x>755</x>
+    <width>322</width>
+    <x>1185</x>
     <name>MBBI Severity Levels</name>
-    <y>300</y>
+    <y>351</y>
     <foreground_color>
       <color name="IO Foreground" red="0" green="0" blue="0" />
     </foreground_color>
@@ -3801,7 +3619,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>58</height>
+      <height>67</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -3819,7 +3637,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>155</width>
+      <width>278</width>
       <x>0</x>
       <name>MBBI - Zero Severity</name>
       <y>0</y>
@@ -3844,7 +3662,7 @@ $(pv_value)</tooltip>
         <pv_value />
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <height>29</height>
+        <height>45</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -3858,7 +3676,7 @@ $(pv_value)</tooltip>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <widget_type>Combo</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
         </background_color>
@@ -3885,7 +3703,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>58</height>
+      <height>67</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -3903,7 +3721,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>155</width>
+      <width>278</width>
       <x>0</x>
       <name>MBBI - One Severity</name>
       <y>58</y>
@@ -3928,7 +3746,7 @@ $(pv_value)</tooltip>
         <pv_value />
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <height>29</height>
+        <height>45</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -3942,7 +3760,7 @@ $(pv_value)</tooltip>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <widget_type>Combo</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
         </background_color>
@@ -3969,7 +3787,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>58</height>
+      <height>67</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -3987,7 +3805,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>155</width>
+      <width>278</width>
       <x>0</x>
       <name>MBBI - Two Severity</name>
       <y>116</y>
@@ -4012,7 +3830,7 @@ $(pv_value)</tooltip>
         <pv_value />
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <height>29</height>
+        <height>45</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -4026,7 +3844,7 @@ $(pv_value)</tooltip>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <widget_type>Combo</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
         </background_color>
@@ -4053,7 +3871,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>58</height>
+      <height>67</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -4071,7 +3889,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>155</width>
+      <width>278</width>
       <x>0</x>
       <name>MBBI - Three Severity</name>
       <y>174</y>
@@ -4096,7 +3914,7 @@ $(pv_value)</tooltip>
         <pv_value />
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <height>29</height>
+        <height>45</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -4110,7 +3928,7 @@ $(pv_value)</tooltip>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <widget_type>Combo</widget_type>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
         </background_color>
@@ -4138,7 +3956,7 @@ $(pv_value)</tooltip>
     <transparent>true</transparent>
     <lock_children>false</lock_children>
     <scripts />
-    <height>205</height>
+    <height>227</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -4156,10 +3974,10 @@ $(pv_value)</tooltip>
     <background_color>
       <color name="IO Background" red="235" green="235" blue="235" />
     </background_color>
-    <width>186</width>
-    <x>755</x>
+    <width>322</width>
+    <x>1185</x>
     <name>MBBO Severity Levels</name>
-    <y>583</y>
+    <y>717</y>
     <foreground_color>
       <color name="IO Foreground" red="0" green="0" blue="0" />
     </foreground_color>
@@ -4178,7 +3996,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>58</height>
+      <height>67</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -4196,7 +4014,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>155</width>
+      <width>278</width>
       <x>0</x>
       <name>MBBO - Zero Severity</name>
       <y>0</y>
@@ -4221,7 +4039,7 @@ $(pv_value)</tooltip>
         <pv_value />
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <height>29</height>
+        <height>45</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -4262,7 +4080,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>58</height>
+      <height>67</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -4280,7 +4098,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>155</width>
+      <width>278</width>
       <x>0</x>
       <name>MBBO - One Severity</name>
       <y>58</y>
@@ -4305,7 +4123,7 @@ $(pv_value)</tooltip>
         <pv_value />
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <height>29</height>
+        <height>45</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -4346,7 +4164,7 @@ $(pv_value)</tooltip>
       <transparent>true</transparent>
       <lock_children>false</lock_children>
       <scripts />
-      <height>58</height>
+      <height>67</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -4364,7 +4182,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
-      <width>155</width>
+      <width>278</width>
       <x>0</x>
       <name>MBBO - Two Severity</name>
       <y>116</y>
@@ -4389,7 +4207,7 @@ $(pv_value)</tooltip>
         <pv_value />
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
-        <height>29</height>
+        <height>45</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -4457,7 +4275,7 @@ $(pv_value)</tooltip>
     <background_color>
       <color name="IO Background" red="235" green="235" blue="235" />
     </background_color>
-    <width>101</width>
+    <width>185</width>
     <x>205</x>
     <name>Check Box Template</name>
     <y>10</y>
@@ -4504,7 +4322,7 @@ $(pv_value)</tooltip>
     <background_color>
       <color name="IO Background" red="235" green="235" blue="235" />
     </background_color>
-    <width>181</width>
+    <width>265</width>
     <x>205</x>
     <name>Check Box Template_1</name>
     <y>50</y>
@@ -4515,5 +4333,160 @@ $(pv_value)</tooltip>
     <font>
       <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
     </font>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip></tooltip>
+    <rules />
+    <enabled>true</enabled>
+    <wuid>793a8982:14ce04ce4ae:-74d5</wuid>
+    <transparent>true</transparent>
+    <lock_children>false</lock_children>
+    <scripts />
+    <height>27</height>
+    <border_width>2</border_width>
+    <scale_options>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <border_color>
+      <color name="IO Border" red="0" green="0" blue="0" />
+    </border_color>
+    <widget_type>Grouping Container</widget_type>
+    <background_color>
+      <color name="IO Background" red="235" green="235" blue="235" />
+    </background_color>
+    <width>433</width>
+    <x>37</x>
+    <name>Image Selector</name>
+    <y>112</y>
+    <foreground_color>
+      <color name="IO Foreground" red="0" green="0" blue="0" />
+    </foreground_color>
+    <actions hook="false" hook_all="false" />
+    <fc>false</fc>
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+    </font>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <precision>0</precision>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <horizontal_alignment>0</horizontal_alignment>
+      <rules />
+      <show_h_scroll>false</show_h_scroll>
+      <pv_value />
+      <auto_size>false</auto_size>
+      <read_only>false</read_only>
+      <text></text>
+      <rotation_angle>0.0</rotation_angle>
+      <show_units>true</show_units>
+      <height>27</height>
+      <multiline_input>false</multiline_input>
+      <border_width>1</border_width>
+      <visible>true</visible>
+      <pv_name>loc://$(DID)_image("pictures/animation/PL General 0.svg")</pv_name>
+      <selector_type>1</selector_type>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <precision_from_pv>true</precision_from_pv>
+      <widget_type>Text Input</widget_type>
+      <confirm_message></confirm_message>
+      <name>Image Choice</name>
+      <style>0</style>
+      <actions hook="false" hook_all="false" />
+      <border_style>1</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <show_native_border>true</show_native_border>
+      <enabled>true</enabled>
+      <wuid>36fc0fe8:146ed39a29d:-6ef7</wuid>
+      <transparent>false</transparent>
+      <next_focus>0</next_focus>
+      <scripts>
+        <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
+          <scriptName>updatePVValue</scriptName>
+          <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
+var m= widget.getMacroValue("animated_image");
+if(m!=null)
+	widget.getPV().setValue(m);
+]]></scriptText>
+          <pv trig="true">=1</pv>
+        </path>
+      </scripts>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <show_v_scroll>false</show_v_scroll>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <format_type>0</format_type>
+      <limits_from_pv>true</limits_from_pv>
+      <background_color>
+        <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+      </background_color>
+      <password_input>false</password_input>
+      <width>310</width>
+      <x>123</x>
+      <y>0</y>
+      <maximum>Infinity</maximum>
+      <foreground_color>
+        <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+      </foreground_color>
+      <minimum>-Infinity</minimum>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip></tooltip>
+      <horizontal_alignment>0</horizontal_alignment>
+      <rules />
+      <enabled>false</enabled>
+      <wuid>36fc0fe8:146ed39a29d:-6ef6</wuid>
+      <transparent>true</transparent>
+      <auto_size>true</auto_size>
+      <text>Image Selector</text>
+      <scripts />
+      <height>33</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <widget_type>Label</widget_type>
+      <wrap_words>true</wrap_words>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <width>224</width>
+      <x>0</x>
+      <name>Image Choice</name>
+      <y>6</y>
+      <foreground_color>
+        <color name="IO Text Fg" red="0" green="0" blue="0" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+      </font>
+    </widget>
   </widget>
 </display>
