@@ -7,42 +7,42 @@ import de.desy.language.snl.parser.nodes.ProgramNode;
 
 /**
  * The specialized {@link IAdapterFactory} for {@link ProgramNode}s.
- * 
+ *
  * @author C1 WPS / KM, MZ
- * 
+ *
  */
 class ProgramNodeAdapterFactory implements IAdapterFactory {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@SuppressWarnings("rawtypes")
-	public Object getAdapter(final Object adaptableObject,
-			final Class adapterType) {
-		assert adaptableObject != null;
-		assert adapterType != null;
+    /**
+     * {@inheritDoc}
+     */
+    @SuppressWarnings("rawtypes")
+    public Object getAdapter(final Object adaptableObject,
+            final Class adapterType) {
+        assert adaptableObject != null;
+        assert adapterType != null;
 
-		if (adaptableObject instanceof ProgramNode) {
-			final ProgramNode node = (ProgramNode) adaptableObject;
+        if (adaptableObject instanceof ProgramNode) {
+            final ProgramNode node = (ProgramNode) adaptableObject;
 
-			if (adapterType == IWorkbenchAdapter.class) {
-				return new AbstractSNLWorkbenchAdapter<ProgramNode>(node) {
-					@Override
-					public String getImageName(final ProgramNode nodeToRender) {
-						return "program.gif";
-					}
-				};
-			}
-		}
-		return null;
-	}
+            if (adapterType == IWorkbenchAdapter.class) {
+                return new AbstractSNLWorkbenchAdapter<ProgramNode>(node) {
+                    @Override
+                    public String getImageName(final ProgramNode nodeToRender) {
+                        return "program.gif";
+                    }
+                };
+            }
+        }
+        return null;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@SuppressWarnings("rawtypes")
-	public Class[] getAdapterList() {
-		return new Class[] { ProgramNode.class };
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @SuppressWarnings("rawtypes")
+    public Class[] getAdapterList() {
+        return new Class[] { ProgramNode.class };
+    }
 
 }

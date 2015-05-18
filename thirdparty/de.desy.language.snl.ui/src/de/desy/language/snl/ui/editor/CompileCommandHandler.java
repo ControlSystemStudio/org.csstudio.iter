@@ -12,21 +12,21 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 public class CompileCommandHandler extends AbstractHandler implements IHandler {
 
-	public Object execute(ExecutionEvent event) throws ExecutionException {
+    public Object execute(ExecutionEvent event) throws ExecutionException {
 
-		IEditorPart editor = HandlerUtil.getActiveEditor(event);
-		if (editor instanceof SNLEditor) {
-			if (editor.isDirty()) {
-				MessageBox box = new MessageBox(editor.getSite().getShell(),
-						SWT.ICON_INFORMATION);
-				box.setText("Unsaved changes");
-				box.setMessage("There are unsaved changes.\nPlease save before compilation.");
-				box.open();
-			} else {
-				((SNLEditor)editor).compileFile(new NullProgressMonitor());
-			}
-		}
-		return null;
-	}
+        IEditorPart editor = HandlerUtil.getActiveEditor(event);
+        if (editor instanceof SNLEditor) {
+            if (editor.isDirty()) {
+                MessageBox box = new MessageBox(editor.getSite().getShell(),
+                        SWT.ICON_INFORMATION);
+                box.setText("Unsaved changes");
+                box.setMessage("There are unsaved changes.\nPlease save before compilation.");
+                box.open();
+            } else {
+                ((SNLEditor)editor).compileFile(new NullProgressMonitor());
+            }
+        }
+        return null;
+    }
 
 }

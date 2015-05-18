@@ -8,11 +8,9 @@ import de.desy.language.editor.ui.eventing.UIEvent;
 
 public class RefreshHandler extends AbstractHandler {
 
-	@Override
-	public Object execute(ExecutionEvent event) throws ExecutionException {
-		UIEvent.HIGHLIGHTING_REFRESH_REQUEST.triggerEvent();
-		return null;
-	}
-
-	
+    @Override
+    public Object execute(ExecutionEvent event) throws ExecutionException {
+        UIEvent.HIGHLIGHTING_REFRESH_REQUEST.triggerEvent();
+        return null;
+    }
 }

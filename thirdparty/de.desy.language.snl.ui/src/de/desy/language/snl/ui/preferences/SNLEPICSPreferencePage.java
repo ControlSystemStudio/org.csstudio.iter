@@ -16,56 +16,56 @@ import de.desy.language.snl.ui.SNLUiActivator;
  * A preference page to set the colors and the font-styles for highlighting.
  */
 public class SNLEPICSPreferencePage extends FieldEditorPreferencePage implements
-		IWorkbenchPreferencePage {
+        IWorkbenchPreferencePage {
 
-	public SNLEPICSPreferencePage() {
-		super(FieldEditorPreferencePage.GRID);
-		this.setMessage("Specifies compiler location and options.");
-		this.setPreferenceStore(SNLUiActivator.getDefault()
-				.getPreferenceStore());
-	}
+    public SNLEPICSPreferencePage() {
+        super(FieldEditorPreferencePage.GRID);
+        this.setMessage("Specifies compiler location and options.");
+        this.setPreferenceStore(SNLUiActivator.getDefault()
+                .getPreferenceStore());
+    }
 
-	@Override
-	protected void createFieldEditors() {
-		Group groupOfLocationElement = new Group(getFieldEditorParent(),
-				SWT.NONE);
-		groupOfLocationElement
-				.setText("Location of the EPICS environment (BASE-path)");
-		groupOfLocationElement.setLayoutData(new GridData(
-				GridData.FILL_HORIZONTAL));
-		this.addField(new DirectoryFieldEditor(SNLUiActivator.PLUGIN_ID
-				+ PreferenceConstants.EPICS_BASE_LOCATION_POST_FIX, "",
-				groupOfLocationElement));
-		
-		Group seqGroup = new Group(getFieldEditorParent(),
-				SWT.NONE);
-		seqGroup
-				.setText("Location of \"seq\" folder in the EPICS environment");
-		seqGroup.setLayoutData(new GridData(
-				GridData.FILL_HORIZONTAL));
-		this.addField(new DirectoryFieldEditor(SNLUiActivator.PLUGIN_ID
-				+ PreferenceConstants.EPICS_SEQ_LOCATION_POST_FIX, "",
-				seqGroup));
-		
-		Group scratchGroup = new Group(getFieldEditorParent(),
+    @Override
+    protected void createFieldEditors() {
+        Group groupOfLocationElement = new Group(getFieldEditorParent(),
                 SWT.NONE);
-		scratchGroup
+        groupOfLocationElement
+                .setText("Location of the EPICS environment (BASE-path)");
+        groupOfLocationElement.setLayoutData(new GridData(
+                GridData.FILL_HORIZONTAL));
+        this.addField(new DirectoryFieldEditor(SNLUiActivator.PLUGIN_ID
+                + PreferenceConstants.EPICS_BASE_LOCATION_POST_FIX, "",
+                groupOfLocationElement));
+
+        Group seqGroup = new Group(getFieldEditorParent(),
+                SWT.NONE);
+        seqGroup
+                .setText("Location of \"seq\" folder in the EPICS environment");
+        seqGroup.setLayoutData(new GridData(
+                GridData.FILL_HORIZONTAL));
+        this.addField(new DirectoryFieldEditor(SNLUiActivator.PLUGIN_ID
+                + PreferenceConstants.EPICS_SEQ_LOCATION_POST_FIX, "",
+                seqGroup));
+        
+        Group scratchGroup = new Group(getFieldEditorParent(),
+                SWT.NONE);
+        scratchGroup
                 .setText("Location of \"scratch\" folder in the EPICS environment");
-		scratchGroup.setLayoutData(new GridData(
+        scratchGroup.setLayoutData(new GridData(
                 GridData.FILL_HORIZONTAL));
         this.addField(new DirectoryFieldEditor(SNLUiActivator.PLUGIN_ID
                 + PreferenceConstants.EPICS_SCRATCH_LOCATION_POST_FIX, "",
                 scratchGroup));
-	}
+    }
 
-	@Override
-	protected void adjustGridLayout() {
-		final int numColumns = 1;
-		((GridLayout) this.getFieldEditorParent().getLayout()).numColumns = numColumns;
-	}
+    @Override
+    protected void adjustGridLayout() {
+        final int numColumns = 1;
+        ((GridLayout) this.getFieldEditorParent().getLayout()).numColumns = numColumns;
+    }
 
-	public void init(final IWorkbench workbench) {
-		// do nothing
-	}
+    public void init(final IWorkbench workbench) {
+        // do nothing
+    }
 
 }
