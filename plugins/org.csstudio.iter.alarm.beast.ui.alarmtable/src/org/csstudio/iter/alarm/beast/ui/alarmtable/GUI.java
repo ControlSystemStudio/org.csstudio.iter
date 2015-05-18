@@ -141,7 +141,7 @@ public class GUI implements AlarmClientModelListener {
 
     private AlarmTreeItem filterItemParent;
     
-    private final boolean blinkUnacknowledged = Preferences.isBlinkUnacknowledged();
+    private boolean blinkUnacknowledged;
     private final int blinkPeriod = Preferences.getBlinkingPeriod();
     
     /** GUI updates are throttled to reduce flicker */
@@ -451,7 +451,11 @@ public class GUI implements AlarmClientModelListener {
                 if (!active_table_viewer.getTable().isDisposed()) {
                     //because of lazy label provider refresh is faster than updating individual cells
                     active_table_viewer.refresh(); 
+                    if (acknowledged_table_viewer != null) {
+                        acknowledged_table_viewer.refresh();
+                    }
                     blink();
+                    
                 }
             });
         } else {
@@ -895,5 +899,18 @@ public class GUI implements AlarmClientModelListener {
     
     AlarmTreeItem getFilterItem() {
         return this.filterItemParent;
+    }
+    
+    void setBlinking(boolean blinking) {
+        this.blinkUnacknowledged = blinking;
+        if (this.blinkUnacknowledged) {
+            blink();
+        } else {
+            icon_provider.reset();
+            active_table_viewer.refresh(); 
+            if (acknowledged_table_viewer != null) {
+                acknowledged_table_viewer.refresh();
+            }
+        }
     }
 }

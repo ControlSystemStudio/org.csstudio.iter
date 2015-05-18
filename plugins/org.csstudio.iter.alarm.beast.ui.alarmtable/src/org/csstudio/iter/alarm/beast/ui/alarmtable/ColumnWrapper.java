@@ -89,7 +89,7 @@ public final class ColumnWrapper {
         ColumnWrapper[] wrappers = getNewWrappers();
         List<ColumnWrapper> list = new ArrayList<>(wrappers.length);
         for (String s : columns) {
-            String[] col = s.split(",");
+            String[] col = s.split("\\,",-1);
             String id = null;
             String name = null;
             int minWidth = -1; 
@@ -100,7 +100,7 @@ public final class ColumnWrapper {
                 weight = Integer.parseInt(col[2]);
                 if (col.length > 3) {
                     name = col[3];
-                }
+                } 
             }
             ColumnInfo info = ColumnInfo.valueOf(id);
             for (int i = 0; i < wrappers.length; i++) {
@@ -138,7 +138,7 @@ public final class ColumnWrapper {
         for (ColumnInfo ci : ColumnInfo.values()) {
             IMemento m = memento.getChild(ci.name());
             if (m == null) {
-                for (int i = 0; i < wrappers.length; i++) {
+                for (int i = wrappers.length-1; i >= -1; i--) {
                     if (wrappers[i] == null) {
                         wrappers[i] = new ColumnWrapper(ci,false);
                         break;

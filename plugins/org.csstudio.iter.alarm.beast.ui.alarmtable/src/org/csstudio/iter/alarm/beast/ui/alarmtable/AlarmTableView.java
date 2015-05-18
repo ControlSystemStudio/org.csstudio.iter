@@ -18,9 +18,11 @@ import org.csstudio.alarm.beast.client.AlarmTreeRoot;
 import org.csstudio.alarm.beast.ui.actions.AcknowledgeAction;
 import org.csstudio.alarm.beast.ui.actions.MaintenanceModeAction;
 import org.csstudio.alarm.beast.ui.clientmodel.AlarmClientModel;
+import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.BlinkingToggleAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.ColumnConfigureAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.LockTreeSelectionAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.NewTableAction;
+import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.ResetColumnsAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.SeparateCombineTablesAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.SynchronizeWithTreeAction;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
@@ -93,6 +95,8 @@ public class AlarmTableView extends ViewPart
     private boolean syncWithTree;
     /** Update the selected filter when the selection change or keep the previous item */
     private boolean lockTreeSelection;
+    /** Should severity icons blink or not */
+    private boolean blinkingIcons;
 
     private ColumnWrapper[] columns = ColumnWrapper.getNewWrappers();
 
@@ -164,6 +168,7 @@ public class AlarmTableView extends ViewPart
             this.combinedTables = Preferences.isCombinedAlarmTable();
             this.syncWithTree = Preferences.isSynchronizeWithTree();
             this.lockTreeSelection = Preferences.isLockTreeSelection();
+            this.blinkingIcons = Preferences.isBlinkUnacknowledged(); 
             this.columns = ColumnWrapper.fromSaveArray(Preferences.getColumns()); 
         } 
         else 
@@ -176,6 +181,9 @@ public class AlarmTableView extends ViewPart
             
             Boolean lockSelectionSet = memento.getBoolean(Preferences.ALARM_TABLE_LOCK_SELECTION);
             this.lockTreeSelection = lockSelectionSet == null ? Preferences.isLockTreeSelection() : lockSelectionSet; 
+            
+            Boolean blinkSet = memento.getBoolean(Preferences.ALARM_TABLE_BLINK_UNACKNOWLEDGED);
+            this.blinkingIcons = blinkSet == null ? Preferences.isBlinkUnacknowledged() : blinkSet;
           
             this.columns = ColumnWrapper.restoreColumns(memento.getChild(Preferences.ALARM_TABLE_COLUMN_SETTING));       
         } 
@@ -188,6 +196,7 @@ public class AlarmTableView extends ViewPart
         memento.putBoolean(Preferences.ALARM_TABLE_COMBINED_TABLES, combinedTables);
         memento.putBoolean(Preferences.ALARM_TABLE_SYNC_WITH_TREE, syncWithTree);
         memento.putBoolean(Preferences.ALARM_TABLE_LOCK_SELECTION, lockTreeSelection);
+        memento.putBoolean(Preferences.ALARM_TABLE_BLINK_UNACKNOWLEDGED, blinkingIcons);
         
         IMemento columnsMemento = memento.createChild(Preferences.ALARM_TABLE_COLUMN_SETTING);
         ColumnWrapper.saveColumns(columnsMemento, getUpdatedColumns());
@@ -229,12 +238,15 @@ public class AlarmTableView extends ViewPart
         toolbar.add(new Separator());
 
         final IMenuManager menu = getViewSite().getActionBars().getMenuManager();
+        menu.add(new NewTableAction(this));
+        menu.add(new Separator());
         menu.add(new SeparateCombineTablesAction(this, true, combinedTables));
         menu.add(new SeparateCombineTablesAction(this, false, !combinedTables));
         menu.add(new Separator());
         menu.add(new ColumnConfigureAction(this));
+        menu.add(new ResetColumnsAction(this));
         menu.add(new Separator());
-        menu.add(new NewTableAction(this));
+        menu.add(new BlinkingToggleAction(this, blinkingIcons));
     }
 
     private void selectFromTree(Object selection)
@@ -308,6 +320,7 @@ public class AlarmTableView extends ViewPart
             gui.dispose();
         }
         gui = new GUI(parent, model, getSite(), !combinedTables, columns, memento);
+        gui.setBlinking(blinkingIcons);
         selectFromTree(selectionService.getSelection(ALARM_TREE_ID));
     }
 
@@ -367,6 +380,19 @@ public class AlarmTableView extends ViewPart
     {
         this.lockTreeSelection = lock;
         selectFromTree(selectionService.getSelection(ALARM_TREE_ID));
+    }
+    
+    /**
+     * Enables or disables blinking of icons of the unacknowledged alarms.
+     * 
+     * @param blinking true if the icons should be blinking or false otherwise
+     */
+    public void setBlinkingIcons(boolean blinking)
+    {
+        this.blinkingIcons = blinking;
+        if (gui != null) {
+            gui.setBlinking(blinking);
+        }
     }
 
 }

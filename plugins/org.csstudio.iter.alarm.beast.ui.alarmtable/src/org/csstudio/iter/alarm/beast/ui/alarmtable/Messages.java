@@ -17,6 +17,8 @@ public class Messages extends NLS
     public static String ColumnConfigDescription;
     public static String ColumnConfigTitle;
     public static String ConfigureColumns;
+    public static String ResetColumns;
+    public static String ToggleBlinking;
     public static String SynchronizeWithTreeCheckedTT;
     public static String SynchronizeWithTreeUncheckedTT;
     public static String LockFilterCheckedTT;

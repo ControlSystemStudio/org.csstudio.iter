@@ -7,8 +7,13 @@
  ******************************************************************************/
 package org.csstudio.iter.css.product;
 
+import java.io.File;
+import java.net.URL;
+
 import org.csstudio.startup.application.Application;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.equinox.app.IApplicationContext;
+import org.eclipse.osgi.service.datalocation.Location;
 
 /**
  * 
@@ -21,7 +26,20 @@ import org.eclipse.equinox.app.IApplicationContext;
 public class ITERApplication extends Application {
 
     @Override
-    public Object start(IApplicationContext context) throws Exception {      
+    public Object start(IApplicationContext context) throws Exception {    
+        final String args[] = (String[]) context.getArguments().get("application.args");
+        for (String arg : args) {
+            if (arg.equals("-cleanWorkbench")) { 
+                Location loc = Platform.getInstanceLocation();
+                URL url = loc.getURL();
+                File file = new File(url.getFile());
+                file = new File(file, ".metadata");
+                file = new File(file, ".plugins");
+                file = new File(file, "org.eclipse.e4.workbench");
+                file = new File(file, "workbench.xmi");
+                file.delete();
+            }
+        }
         Object o = super.start(context);
         //Bugfix/workaround for org.apache.felix.gogo.shell.Activator, 
         //which prints InterruptedException if stopped before it was even started.
