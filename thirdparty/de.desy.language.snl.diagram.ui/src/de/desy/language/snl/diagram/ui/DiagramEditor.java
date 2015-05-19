@@ -266,7 +266,7 @@ public class DiagramEditor extends GraphicalEditor {
             final Node rootNode = this.getLanguageParser().parse(
                     document.get(), sourceRessource, new NullProgressMonitor());
 
-            if (rootNode.hasChildren()) {
+            if (rootNode.hasChildren() && sourceRessource != null) {
                 Map<String, StateLayoutData> stateData = new HashMap<String, StateLayoutData>();
                 Map<String, List<Point>> connectionData = new HashMap<String, List<Point>>();
                 try {
