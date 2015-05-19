@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="OPI Validation" uid="org.csstudio.iter.product.opivalidation.product" id="org.csstudio.opibuilder.validation.product" application="org.csstudio.opibuilder.validation.application" version="4.2.0" useFeatures="true" includeLaunchers="true">
+<product name="OPIValidation" uid="org.csstudio.iter.product.opivalidation.product" id="org.csstudio.opibuilder.validation.product" application="org.csstudio.opibuilder.validation.application" version="4.2.0.qualifier" useFeatures="true" includeLaunchers="true">
+
 
    <configIni use="default">
    </configIni>
@@ -11,15 +12,34 @@
       </vmArgsMac>
    </launcherArgs>
 
-   <launcher>
+   <windowImages/>
+
+
+   <launcher name="opivalidation">
       <solaris/>
       <win useIco="false">
          <bmp/>
       </win>
    </launcher>
 
+
    <vm>
    </vm>
+
+   <license>
+        <url>https://portal.iter.org/departments/CHD/CODAC/dev/Pages/trunk.aspx</url>
+        <text>
+   Copyright (c) : 2010-2015 ITER Organization,
+CS 90 046
+13067 St. Paul-lez-Durance Cedex
+France
+ 
+This product is part of ITER CODAC software.
+For the terms and conditions of redistribution or use of this software
+refer to the file ITER-LICENSE.TXT located in the top level directory
+of the distribution package.
+         </text>
+   </license>
 
    <plugins>
    </plugins>
