@@ -23,9 +23,8 @@
         <tycho-extras.version>0.22.0</tycho-extras.version>
         <tycho-groupid>org.eclipse.tycho</tycho-groupid>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jgit.dirtyWorkingTree>error</jgit.dirtyWorkingTree>
         <baselineMode>fail</baselineMode>
-	<pydev-site>http://update-production-pydev.s3.amazonaws.com/pydev/updates</pydev-site>
+	    <pydev-site>http://update-production-pydev.s3.amazonaws.com/pydev/updates</pydev-site>
         <svn-site>http://subclipse.tigris.org/update_1.8.x</svn-site>
         <orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20140114142710/repository</orbit-site>
         <efx-site>http://download.eclipse.org/efxclipse/runtime-released/1.2.0/site</efx-site>
@@ -135,7 +134,6 @@
 
   <modules>
     <module>plugins</module>
-    <module>thirdparty</module>
     <module>products</module>
     <module>features</module>
     <module>repository</module>
@@ -150,23 +148,6 @@
           <groupId>${tycho-groupid}</groupId>
           <artifactId>tycho-packaging-plugin</artifactId>
           <version>${tycho.version}</version>
-          <dependencies>
-            <dependency>
-              <groupId>${tycho-groupid}.extras</groupId>
-              <artifactId>tycho-buildtimestamp-jgit</artifactId>
-              <version>${tycho-extras.version}</version>
-            </dependency>
-          </dependencies>
-          <configuration>
-            <timestampProvider>jgit</timestampProvider>
-            <jgit.ignore>
-              pom.xml
-              .gitignore
-              *.target
-              .metadata
-            </jgit.ignore>
-            <jgit.dirtyWorkingTree>${jgit.dirtyWorkingTree}</jgit.dirtyWorkingTree>
-          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -239,11 +220,6 @@
         <groupId>${tycho-groupid}</groupId>
         <artifactId>tycho-packaging-plugin</artifactId>
         <version>${tycho.version}</version>
-        <configuration>
-            <timestampProvider>jgit</timestampProvider>
-            <jgit.dirtyWorkingTree>${jgit.dirtyWorkingTree}</jgit.dirtyWorkingTree>
-            <jgit.ignore>pom.xml</jgit.ignore>
-	</configuration>
       </plugin>
       <plugin>
         <groupId>${tycho-groupid}</groupId>
