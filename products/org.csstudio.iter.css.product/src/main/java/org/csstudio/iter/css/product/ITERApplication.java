@@ -7,7 +7,9 @@
  ******************************************************************************/
 package org.csstudio.iter.css.product;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.net.URL;
 
 import org.csstudio.startup.application.Application;
@@ -40,6 +42,31 @@ public class ITERApplication extends Application {
                 file.delete();
             }
         }
+        
+        Location loc = Platform.getInstanceLocation();
+        URL url = loc.getURL();
+        File file = new File(url.getFile());
+        file = new File(file, ".metadata");
+        file = new File(file, ".plugins");
+        file = new File(file, "org.eclipse.e4.workbench");
+        file = new File(file, "workbench.xmi");
+        if (file.exists()) {
+            boolean delete = false;
+            try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+                while(br.ready()) {
+                    String line = br.readLine();
+                    if (line != null && line.contains("org.csstudio.alarm.beast.ui.alarmtable")) {
+                        delete = true;
+                        break;
+                    }
+                }
+            }
+            if (delete) {
+                file.delete();
+            }
+            
+        }
+        //org.csstudio.alarm.beast.ui.alarmtable
         Object o = super.start(context);
         //Bugfix/workaround for org.apache.felix.gogo.shell.Activator, 
         //which prints InterruptedException if stopped before it was even started.
