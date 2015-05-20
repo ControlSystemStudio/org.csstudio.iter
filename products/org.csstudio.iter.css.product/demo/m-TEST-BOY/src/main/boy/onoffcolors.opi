@@ -9,7 +9,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.103.201504091501</boy_version>
+  <boy_version>4.0.103.201505180953</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -204,7 +204,7 @@
       <auto_size>true</auto_size>
       <image_file>pictures/ITERLogo_50x24.png</image_file>
       <scripts/>
-      <height>30</height>
+      <height>12</height>
       <border_width>2</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -234,7 +234,7 @@
           <col>1.0</col>
         </row>
       </permutation_matrix>
-      <width>62</width>
+      <width>25</width>
       <x>0</x>
       <name>Image Template</name>
       <y>1</y>
@@ -312,7 +312,7 @@ $(pv_value)</tooltip>
     <transparent>true</transparent>
     <lock_children>false</lock_children>
     <scripts/>
-    <height>188</height>
+    <height>208</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -333,7 +333,7 @@ $(pv_value)</tooltip>
     <width>375</width>
     <x>425</x>
     <name>Boolean Monitor</name>
-    <y>256</y>
+    <y>300</y>
     <foreground_color>
       <color blue="0" green="0" name="IO Foreground" red="0"/>
     </foreground_color>
@@ -354,9 +354,9 @@ $(pv_value)</tooltip>
               <color blue="255" green="0" name="IO PV ON" red="0"/>
             </value>
           </exp>
-          <exp bool_exp="pvStr0==&quot;White&quot;">
+          <exp bool_exp="pvStr0==&quot;Magenta&quot;">
             <value>
-              <color blue="255" green="255" name="Invalid" red="255"/>
+              <color blue="255" green="0" name="Invalid" red="255"/>
             </value>
           </exp>
           <exp bool_exp="pvStr0==&quot;Yellow&quot;">
@@ -364,7 +364,7 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="Minor" red="255"/>
             </value>
           </exp>
-          <pv trig="true">loc://oncolor(0)</pv>
+          <pv trig="true">loc://oncolor("Blue")</pv>
         </rule>
         <rule name="OffColor" out_exp="false" prop_id="off_color">
           <exp bool_exp="pvStr0==&quot;Grey&quot;">
@@ -382,7 +382,13 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
             </value>
           </exp>
-          <pv trig="true">loc://offcolor(0)</pv>
+          <pv trig="true">loc://offcolor("Grey")</pv>
+        </rule>
+        <rule name="image" out_exp="true" prop_id="image_file">
+          <exp bool_exp="true">
+            <value>pvStr0</value>
+          </exp>
+          <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv>
         </rule>
       </rules>
       <bit>0</bit>
@@ -412,7 +418,7 @@ $(pv_value)</tooltip>
       </permutation_matrix>
       <name>Boolean Symbol Image Monitor Template</name>
       <actions hook="false" hook_all="false"/>
-      <show_boolean_label>true</show_boolean_label>
+      <show_boolean_label>false</show_boolean_label>
       <flip_vertical>false</flip_vertical>
       <border_style>0</border_style>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
@@ -441,7 +447,7 @@ $(pv_value)</tooltip>
       </background_color>
       <boolean_label_position>5</boolean_label_position>
       <width>34</width>
-      <x>72</x>
+      <x>80</x>
       <data_type>0</data_type>
       <y>80</y>
       <foreground_color>
@@ -507,9 +513,9 @@ $(pv_value)</tooltip>
               <color blue="255" green="0" name="IO PV ON" red="0"/>
             </value>
           </exp>
-          <exp bool_exp="pvStr0==&quot;White&quot;">
+          <exp bool_exp="pvStr0==&quot;Magenta&quot;">
             <value>
-              <color blue="255" green="255" name="Invalid" red="255"/>
+              <color blue="255" green="0" name="Invalid" red="255"/>
             </value>
           </exp>
           <exp bool_exp="pvStr0==&quot;Yellow&quot;">
@@ -517,7 +523,7 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="Minor" red="255"/>
             </value>
           </exp>
-          <pv trig="true">loc://oncolor(0)</pv>
+          <pv trig="true">loc://oncolor("Blue")</pv>
         </rule>
         <rule name="OffColor" out_exp="false" prop_id="off_color">
           <exp bool_exp="pvStr0==&quot;Grey&quot;">
@@ -535,7 +541,13 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
             </value>
           </exp>
-          <pv trig="true">loc://offcolor(0)</pv>
+          <pv trig="true">loc://offcolor("Grey")</pv>
+        </rule>
+        <rule name="image" out_exp="true" prop_id="image_file">
+          <exp bool_exp="true">
+            <value>pvStr0</value>
+          </exp>
+          <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
         </rule>
       </rules>
       <bit>0</bit>
@@ -565,7 +577,7 @@ $(pv_value)</tooltip>
       </permutation_matrix>
       <name>Boolean Symbol Image Monitor Template_1</name>
       <actions hook="false" hook_all="false"/>
-      <show_boolean_label>true</show_boolean_label>
+      <show_boolean_label>false</show_boolean_label>
       <flip_vertical>false</flip_vertical>
       <border_style>0</border_style>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
@@ -594,9 +606,9 @@ $(pv_value)</tooltip>
       </background_color>
       <boolean_label_position>5</boolean_label_position>
       <width>32</width>
-      <x>263</x>
+      <x>240</x>
       <data_type>0</data_type>
-      <y>81</y>
+      <y>82</y>
       <foreground_color>
         <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
       </foreground_color>
@@ -637,9 +649,9 @@ $(pv_value)</tooltip>
         <color blue="235" green="235" name="IO Background" red="235"/>
       </background_color>
       <width>24</width>
-      <x>276</x>
+      <x>244</x>
       <name>Label Template_9</name>
-      <y>50</y>
+      <y>51</y>
       <foreground_color>
         <color blue="0" green="0" name="IO Text Fg" red="0"/>
       </foreground_color>
@@ -659,7 +671,7 @@ $(pv_value)</tooltip>
     <transparent>true</transparent>
     <lock_children>false</lock_children>
     <scripts/>
-    <height>188</height>
+    <height>208</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -680,7 +692,7 @@ $(pv_value)</tooltip>
     <width>375</width>
     <x>805</x>
     <name>Boolean Control</name>
-    <y>256</y>
+    <y>300</y>
     <foreground_color>
       <color blue="0" green="0" name="IO Foreground" red="0"/>
     </foreground_color>
@@ -760,9 +772,9 @@ $(pv_value)</tooltip>
         <color blue="235" green="235" name="IO Background" red="235"/>
       </background_color>
       <width>24</width>
-      <x>275</x>
+      <x>236</x>
       <name>Label Template_15</name>
-      <y>50</y>
+      <y>53</y>
       <foreground_color>
         <color blue="0" green="0" name="IO Text Fg" red="0"/>
       </foreground_color>
@@ -785,9 +797,9 @@ $(pv_value)</tooltip>
               <color blue="255" green="0" name="IO PV ON" red="0"/>
             </value>
           </exp>
-          <exp bool_exp="pvStr0==&quot;White&quot;">
+          <exp bool_exp="pvStr0==&quot;Magenta&quot;">
             <value>
-              <color blue="255" green="255" name="Invalid" red="255"/>
+              <color blue="255" green="0" name="Invalid" red="255"/>
             </value>
           </exp>
           <exp bool_exp="pvStr0==&quot;Yellow&quot;">
@@ -795,7 +807,7 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="Minor" red="255"/>
             </value>
           </exp>
-          <pv trig="true">loc://oncolor(0)</pv>
+          <pv trig="true">loc://oncolor("Blue")</pv>
         </rule>
         <rule name="OffColor" out_exp="false" prop_id="off_color">
           <exp bool_exp="pvStr0==&quot;Grey&quot;">
@@ -813,7 +825,13 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
             </value>
           </exp>
-          <pv trig="true">loc://offcolor(0)</pv>
+          <pv trig="true">loc://offcolor("Grey")</pv>
+        </rule>
+        <rule name="image" out_exp="true" prop_id="image_file">
+          <exp bool_exp="true">
+            <value>pvStr0</value>
+          </exp>
+          <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv>
         </rule>
       </rules>
       <bit>0</bit>
@@ -847,7 +865,7 @@ $(pv_value)</tooltip>
       </permutation_matrix>
       <name>Boolean Symbol Image Control Template</name>
       <actions hook="false" hook_all="false"/>
-      <show_boolean_label>true</show_boolean_label>
+      <show_boolean_label>false</show_boolean_label>
       <flip_vertical>false</flip_vertical>
       <border_style>0</border_style>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
@@ -876,7 +894,7 @@ $(pv_value)</tooltip>
       </background_color>
       <boolean_label_position>0</boolean_label_position>
       <width>34</width>
-      <x>79</x>
+      <x>88</x>
       <data_type>0</data_type>
       <y>78</y>
       <foreground_color>
@@ -903,9 +921,9 @@ $(pv_value)</tooltip>
               <color blue="255" green="0" name="IO PV ON" red="0"/>
             </value>
           </exp>
-          <exp bool_exp="pvStr0==&quot;White&quot;">
+          <exp bool_exp="pvStr0==&quot;Magenta&quot;">
             <value>
-              <color blue="255" green="255" name="Invalid" red="255"/>
+              <color blue="255" green="0" name="Invalid" red="255"/>
             </value>
           </exp>
           <exp bool_exp="pvStr0==&quot;Yellow&quot;">
@@ -913,7 +931,7 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="Minor" red="255"/>
             </value>
           </exp>
-          <pv trig="true">loc://oncolor(0)</pv>
+          <pv trig="true">loc://oncolor("Blue")</pv>
         </rule>
         <rule name="OffColor" out_exp="false" prop_id="off_color">
           <exp bool_exp="pvStr0==&quot;Grey&quot;">
@@ -931,7 +949,13 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
             </value>
           </exp>
-          <pv trig="true">loc://offcolor(0)</pv>
+          <pv trig="true">loc://offcolor("Grey")</pv>
+        </rule>
+        <rule name="image" out_exp="true" prop_id="image_file">
+          <exp bool_exp="true">
+            <value>pvStr0</value>
+          </exp>
+          <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
         </rule>
       </rules>
       <bit>0</bit>
@@ -965,7 +989,7 @@ $(pv_value)</tooltip>
       </permutation_matrix>
       <name>Boolean Symbol Image Control Template_1</name>
       <actions hook="false" hook_all="false"/>
-      <show_boolean_label>true</show_boolean_label>
+      <show_boolean_label>false</show_boolean_label>
       <flip_vertical>false</flip_vertical>
       <border_style>0</border_style>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
@@ -994,9 +1018,9 @@ $(pv_value)</tooltip>
       </background_color>
       <boolean_label_position>0</boolean_label_position>
       <width>32</width>
-      <x>263</x>
+      <x>232</x>
       <data_type>0</data_type>
-      <y>80</y>
+      <y>83</y>
       <foreground_color>
         <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
       </foreground_color>
@@ -1039,7 +1063,7 @@ $(pv_value)</tooltip>
     <width>375</width>
     <x>806</x>
     <name>MultiState Control</name>
-    <y>468</y>
+    <y>512</y>
     <foreground_color>
       <color blue="0" green="0" name="IO Foreground" red="0"/>
     </foreground_color>
@@ -1078,7 +1102,7 @@ $(pv_value)</tooltip>
         <color blue="235" green="235" name="IO Background" red="235"/>
       </background_color>
       <width>24</width>
-      <x>79</x>
+      <x>97</x>
       <name>Label Template_19</name>
       <y>45</y>
       <foreground_color>
@@ -1119,9 +1143,9 @@ $(pv_value)</tooltip>
         <color blue="235" green="235" name="IO Background" red="235"/>
       </background_color>
       <width>24</width>
-      <x>283</x>
+      <x>234</x>
       <name>Label Template_20</name>
-      <y>46</y>
+      <y>47</y>
       <foreground_color>
         <color blue="0" green="0" name="IO Text Fg" red="0"/>
       </foreground_color>
@@ -1143,9 +1167,9 @@ $(pv_value)</tooltip>
               <color blue="255" green="0" name="IO PV ON" red="0"/>
             </value>
           </exp>
-          <exp bool_exp="pvStr0==&quot;White&quot;">
+          <exp bool_exp="pvStr0==&quot;Magenta&quot;">
             <value>
-              <color blue="255" green="255" name="Invalid" red="255"/>
+              <color blue="255" green="0" name="Invalid" red="255"/>
             </value>
           </exp>
           <exp bool_exp="pvStr0==&quot;Yellow&quot;">
@@ -1153,7 +1177,7 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="Minor" red="255"/>
             </value>
           </exp>
-          <pv trig="true">loc://oncolor(0)</pv>
+          <pv trig="true">loc://oncolor("Blue")</pv>
         </rule>
         <rule name="OffColor" out_exp="false" prop_id="off_color">
           <exp bool_exp="pvStr0==&quot;Grey&quot;">
@@ -1171,7 +1195,13 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
             </value>
           </exp>
-          <pv trig="true">loc://offcolor(0)</pv>
+          <pv trig="true">loc://offcolor("Grey")</pv>
+        </rule>
+        <rule name="image" out_exp="true" prop_id="image_file">
+          <exp bool_exp="true">
+            <value>pvStr0</value>
+          </exp>
+          <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv>
         </rule>
       </rules>
       <show_confirm_dialog>false</show_confirm_dialog>
@@ -1206,7 +1236,7 @@ $(pv_value)</tooltip>
       <actions hook="false" hook_all="false"/>
       <items/>
       <flip_vertical>false</flip_vertical>
-      <show_boolean_label>true</show_boolean_label>
+      <show_boolean_label>false</show_boolean_label>
       <border_style>0</border_style>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <crop_left>0</crop_left>
@@ -1233,7 +1263,7 @@ $(pv_value)</tooltip>
       </background_color>
       <boolean_label_position>0</boolean_label_position>
       <width>34</width>
-      <x>72</x>
+      <x>92</x>
       <y>68</y>
       <foreground_color>
         <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
@@ -1257,9 +1287,9 @@ $(pv_value)</tooltip>
               <color blue="255" green="0" name="IO PV ON" red="0"/>
             </value>
           </exp>
-          <exp bool_exp="pvStr0==&quot;White&quot;">
+          <exp bool_exp="pvStr0==&quot;Magenta&quot;">
             <value>
-              <color blue="255" green="255" name="Invalid" red="255"/>
+              <color blue="255" green="0" name="Invalid" red="255"/>
             </value>
           </exp>
           <exp bool_exp="pvStr0==&quot;Yellow&quot;">
@@ -1267,7 +1297,7 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="Minor" red="255"/>
             </value>
           </exp>
-          <pv trig="true">loc://oncolor(0)</pv>
+          <pv trig="true">loc://oncolor("Blue")</pv>
         </rule>
         <rule name="OffColor" out_exp="false" prop_id="off_color">
           <exp bool_exp="pvStr0==&quot;Grey&quot;">
@@ -1285,14 +1315,20 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
             </value>
           </exp>
-          <pv trig="true">loc://offcolor(0)</pv>
+          <pv trig="true">loc://offcolor("Grey")</pv>
+        </rule>
+        <rule name="image" out_exp="true" prop_id="image_file">
+          <exp bool_exp="true">
+            <value>pvStr0</value>
+          </exp>
+          <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
         </rule>
       </rules>
       <show_confirm_dialog>false</show_confirm_dialog>
       <password/>
       <pv_value/>
       <auto_size>true</auto_size>
-      <image_file>SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/SM 3-Positions Switch 0.png</image_file>
+      <image_file>SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/SM 4-Positions Switch 0.png</image_file>
       <height>62</height>
       <border_width>2</border_width>
       <items_from_pv>true</items_from_pv>
@@ -1320,7 +1356,7 @@ $(pv_value)</tooltip>
       <actions hook="false" hook_all="false"/>
       <items/>
       <flip_vertical>false</flip_vertical>
-      <show_boolean_label>true</show_boolean_label>
+      <show_boolean_label>false</show_boolean_label>
       <border_style>0</border_style>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <crop_left>0</crop_left>
@@ -1347,8 +1383,8 @@ $(pv_value)</tooltip>
       </background_color>
       <boolean_label_position>0</boolean_label_position>
       <width>32</width>
-      <x>271</x>
-      <y>70</y>
+      <x>230</x>
+      <y>71</y>
       <foreground_color>
         <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
       </foreground_color>
@@ -1385,7 +1421,7 @@ $(pv_value)</tooltip>
         <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
       <widget_type>Combo</widget_type>
-      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <background_color>
         <color blue="255" green="255" name="IO OutputPV Bg" red="255"/>
       </background_color>
@@ -1432,7 +1468,7 @@ $(pv_value)</tooltip>
     <width>375</width>
     <x>425</x>
     <name>MultiState Monitor</name>
-    <y>468</y>
+    <y>512</y>
     <foreground_color>
       <color blue="0" green="0" name="IO Foreground" red="0"/>
     </foreground_color>
@@ -1453,9 +1489,9 @@ $(pv_value)</tooltip>
               <color blue="255" green="0" name="IO PV ON" red="0"/>
             </value>
           </exp>
-          <exp bool_exp="pvStr0==&quot;White&quot;">
+          <exp bool_exp="pvStr0==&quot;Magenta&quot;">
             <value>
-              <color blue="255" green="255" name="Invalid" red="255"/>
+              <color blue="255" green="0" name="Invalid" red="255"/>
             </value>
           </exp>
           <exp bool_exp="pvStr0==&quot;Yellow&quot;">
@@ -1463,7 +1499,7 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="Minor" red="255"/>
             </value>
           </exp>
-          <pv trig="true">loc://oncolor(0)</pv>
+          <pv trig="true">loc://oncolor("Blue")</pv>
         </rule>
         <rule name="OffColor" out_exp="false" prop_id="off_color">
           <exp bool_exp="pvStr0==&quot;Grey&quot;">
@@ -1481,7 +1517,13 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
             </value>
           </exp>
-          <pv trig="true">loc://offcolor(0)</pv>
+          <pv trig="true">loc://offcolor("Grey")</pv>
+        </rule>
+        <rule name="image" out_exp="true" prop_id="image_file">
+          <exp bool_exp="true">
+            <value>pvStr0</value>
+          </exp>
+          <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv>
         </rule>
       </rules>
       <pv_value/>
@@ -1513,7 +1555,7 @@ $(pv_value)</tooltip>
       <actions hook="false" hook_all="false"/>
       <items/>
       <flip_vertical>false</flip_vertical>
-      <show_boolean_label>true</show_boolean_label>
+      <show_boolean_label>false</show_boolean_label>
       <border_style>0</border_style>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <crop_left>0</crop_left>
@@ -1540,7 +1582,7 @@ $(pv_value)</tooltip>
       </background_color>
       <boolean_label_position>5</boolean_label_position>
       <width>34</width>
-      <x>72</x>
+      <x>80</x>
       <y>66</y>
       <foreground_color>
         <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
@@ -1622,9 +1664,9 @@ $(pv_value)</tooltip>
         <color blue="235" green="235" name="IO Background" red="235"/>
       </background_color>
       <width>24</width>
-      <x>290</x>
+      <x>244</x>
       <name>Label Template_11</name>
-      <y>42</y>
+      <y>44</y>
       <foreground_color>
         <color blue="0" green="0" name="IO Text Fg" red="0"/>
       </foreground_color>
@@ -1645,9 +1687,9 @@ $(pv_value)</tooltip>
               <color blue="255" green="0" name="IO PV ON" red="0"/>
             </value>
           </exp>
-          <exp bool_exp="pvStr0==&quot;White&quot;">
+          <exp bool_exp="pvStr0==&quot;Magenta&quot;">
             <value>
-              <color blue="255" green="255" name="Invalid" red="255"/>
+              <color blue="255" green="0" name="Invalid" red="255"/>
             </value>
           </exp>
           <exp bool_exp="pvStr0==&quot;Yellow&quot;">
@@ -1655,7 +1697,7 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="Minor" red="255"/>
             </value>
           </exp>
-          <pv trig="true">loc://oncolor(0)</pv>
+          <pv trig="true">loc://oncolor("Blue")</pv>
         </rule>
         <rule name="OffColor" out_exp="false" prop_id="off_color">
           <exp bool_exp="pvStr0==&quot;Grey&quot;">
@@ -1673,7 +1715,13 @@ $(pv_value)</tooltip>
               <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
             </value>
           </exp>
-          <pv trig="true">loc://offcolor(0)</pv>
+          <pv trig="true">loc://offcolor("Grey")</pv>
+        </rule>
+        <rule name="image" out_exp="true" prop_id="image_file">
+          <exp bool_exp="true">
+            <value>pvStr0</value>
+          </exp>
+          <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
         </rule>
       </rules>
       <pv_value/>
@@ -1705,7 +1753,7 @@ $(pv_value)</tooltip>
       <actions hook="false" hook_all="false"/>
       <items/>
       <flip_vertical>false</flip_vertical>
-      <show_boolean_label>true</show_boolean_label>
+      <show_boolean_label>false</show_boolean_label>
       <border_style>0</border_style>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <crop_left>0</crop_left>
@@ -1732,8 +1780,8 @@ $(pv_value)</tooltip>
       </background_color>
       <boolean_label_position>5</boolean_label_position>
       <width>32</width>
-      <x>277</x>
-      <y>67</y>
+      <x>240</x>
+      <y>70</y>
       <foreground_color>
         <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
       </foreground_color>
@@ -1811,7 +1859,7 @@ $(pv_value)</tooltip>
         <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
       <widget_type>Combo</widget_type>
-      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <background_color>
         <color blue="255" green="255" name="IO OutputPV Bg" red="255"/>
       </background_color>
@@ -1835,7 +1883,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <wuid>-68c915ee:13c42a069eb:-7c14</wuid>
     <transparent>true</transparent>
-    <lock_children>true</lock_children>
+    <lock_children>false</lock_children>
     <scripts/>
     <height>65</height>
     <border_width>1</border_width>
@@ -1856,9 +1904,9 @@ $(pv_value)</tooltip>
       <color blue="235" green="235" name="IO Background" red="235"/>
     </background_color>
     <width>530</width>
-    <x>510</x>
+    <x>512</x>
     <name>Choice</name>
-    <y>87</y>
+    <y>202</y>
     <foreground_color>
       <color blue="0" green="0" name="IO Foreground" red="0"/>
     </foreground_color>
@@ -1889,7 +1937,7 @@ $(pv_value)</tooltip>
       </scale_options>
       <items_from_pv>false</items_from_pv>
       <visible>true</visible>
-      <pv_name>loc://offcolor(0)</pv_name>
+      <pv_name>loc://offcolor("Grey")</pv_name>
       <border_color>
         <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
@@ -1977,7 +2025,7 @@ $(pv_value)</tooltip>
       </scale_options>
       <items_from_pv>false</items_from_pv>
       <visible>true</visible>
-      <pv_name>loc://oncolor(0)</pv_name>
+      <pv_name>loc://oncolor("Blue")</pv_name>
       <border_color>
         <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
@@ -1996,7 +2044,7 @@ $(pv_value)</tooltip>
       <actions hook="false" hook_all="false"/>
       <items>
         <s>Blue</s>
-        <s>White</s>
+        <s>Magenta</s>
         <s>Yellow</s>
       </items>
       <font>
@@ -2042,6 +2090,243 @@ $(pv_value)</tooltip>
       <show_scrollbar>false</show_scrollbar>
       <font>
         <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+      </font>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip/>
+    <rules/>
+    <enabled>true</enabled>
+    <wuid>42ad6f7:14d4d53c02a:-7eea</wuid>
+    <transparent>true</transparent>
+    <lock_children>false</lock_children>
+    <scripts/>
+    <height>92</height>
+    <border_width>2</border_width>
+    <scale_options>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <border_color>
+      <color blue="0" green="0" name="IO Border" red="0"/>
+    </border_color>
+    <widget_type>Grouping Container</widget_type>
+    <background_color>
+      <color blue="235" green="235" name="IO Background" red="235"/>
+    </background_color>
+    <width>892</width>
+    <x>347</x>
+    <name>Image Selector</name>
+    <y>80</y>
+    <foreground_color>
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
+    </foreground_color>
+    <actions hook="false" hook_all="false"/>
+    <fc>false</fc>
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+    </font>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip/>
+      <horizontal_alignment>0</horizontal_alignment>
+      <rules/>
+      <enabled>false</enabled>
+      <wuid>42ad6f7:14d4d53c02a:-7ee9</wuid>
+      <transparent>true</transparent>
+      <auto_size>true</auto_size>
+      <text>Select a PNG Image File</text>
+      <scripts/>
+      <height>19</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Label</widget_type>
+      <wrap_words>true</wrap_words>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <width>230</width>
+      <x>0</x>
+      <name>Image Selector</name>
+      <y>0</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO Text Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+      </font>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip/>
+      <horizontal_alignment>0</horizontal_alignment>
+      <rules/>
+      <enabled>false</enabled>
+      <wuid>42ad6f7:14d4d53c02a:-7ee8</wuid>
+      <transparent>true</transparent>
+      <auto_size>true</auto_size>
+      <text>Select a SVG Image File</text>
+      <scripts/>
+      <height>19</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Label</widget_type>
+      <wrap_words>true</wrap_words>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <width>230</width>
+      <x>0</x>
+      <name>Image Selector</name>
+      <y>50</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO Text Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+      </font>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <precision>0</precision>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <horizontal_alignment>0</horizontal_alignment>
+      <rules/>
+      <pv_value/>
+      <auto_size>false</auto_size>
+      <text>SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png</text>
+      <rotation_angle>0.0</rotation_angle>
+      <show_units>true</show_units>
+      <height>17</height>
+      <multiline_input>false</multiline_input>
+      <border_width>1</border_width>
+      <visible>true</visible>
+      <pv_name>loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv_name>
+      <selector_type>1</selector_type>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <precision_from_pv>true</precision_from_pv>
+      <widget_type>Text Input</widget_type>
+      <confirm_message/>
+      <name>Image Selector</name>
+      <style>0</style>
+      <actions hook="false" hook_all="false"/>
+      <border_style>1</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <file_source>0</file_source>
+      <enabled>true</enabled>
+      <wuid>42ad6f7:14d4d53c02a:-7ee7</wuid>
+      <transparent>false</transparent>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <file_return_part>0</file_return_part>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <format_type>0</format_type>
+      <limits_from_pv>true</limits_from_pv>
+      <background_color>
+        <color blue="255" green="255" name="IO OutputPV Bg" red="255"/>
+      </background_color>
+      <width>890</width>
+      <x>0</x>
+      <y>22</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO OutputPV Fg" red="0"/>
+      </foreground_color>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <precision>0</precision>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <horizontal_alignment>0</horizontal_alignment>
+      <rules/>
+      <pv_value/>
+      <auto_size>false</auto_size>
+      <text>SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg</text>
+      <rotation_angle>0.0</rotation_angle>
+      <show_units>true</show_units>
+      <height>17</height>
+      <multiline_input>false</multiline_input>
+      <border_width>1</border_width>
+      <visible>true</visible>
+      <pv_name>loc://svg("SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv_name>
+      <selector_type>1</selector_type>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <precision_from_pv>true</precision_from_pv>
+      <widget_type>Text Input</widget_type>
+      <confirm_message/>
+      <name>Image Selector</name>
+      <style>0</style>
+      <actions hook="false" hook_all="false"/>
+      <border_style>1</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <file_source>0</file_source>
+      <enabled>true</enabled>
+      <wuid>42ad6f7:14d4d53c02a:-7ee6</wuid>
+      <transparent>false</transparent>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <file_return_part>0</file_return_part>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <format_type>0</format_type>
+      <limits_from_pv>true</limits_from_pv>
+      <background_color>
+        <color blue="255" green="255" name="IO OutputPV Bg" red="255"/>
+      </background_color>
+      <width>890</width>
+      <x>0</x>
+      <y>75</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO OutputPV Fg" red="0"/>
+      </foreground_color>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
     </widget>
   </widget>
