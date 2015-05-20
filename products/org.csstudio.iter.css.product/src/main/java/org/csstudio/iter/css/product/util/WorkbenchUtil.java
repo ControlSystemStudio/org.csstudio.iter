@@ -223,7 +223,7 @@ public class WorkbenchUtil {
 		}
 
 		// Rebind OPI runner full screen command if it exists only one time
-		if (nbBinding == 1) {
+		if (nbBinding == 1 && opiFullScreenBinding != null) {
 			KeySequence triggerSequence = opiFullScreenBinding.getKeySequence();
 			String contextId = opiFullScreenBinding.getContextId();
 			String schemeId = opiFullScreenBinding.getSchemeId();

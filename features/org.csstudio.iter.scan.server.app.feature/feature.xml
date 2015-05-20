@@ -23,6 +23,22 @@ of the distribution package.
          id="org.csstudio.iter.core.util.feature"
          version="0.0.0"/>
 
+   <includes
+         id="org.eclipse.core.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.iter.test.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.scan.server.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.help"
+         version="0.0.0"/>
+
    <requires>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.epics.util" version="0.1.0" match="greaterOrEqual"/>
@@ -83,27 +99,6 @@ of the distribution package.
          version="0.0.0"/>
 
    <plugin
-         id="org.csstudio.scan.log"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.csstudio.scan.log.derby"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.csstudio.scan.server"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.csstudio.utility.httpd"
          download-size="0"
          install-size="0"
@@ -116,6 +111,13 @@ of the distribution package.
          install-size="0"
          version="0.0.0"
          fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.forms"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
          unpack="false"/>
 
 </feature>
