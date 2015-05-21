@@ -18,7 +18,6 @@ import org.csstudio.alarm.beast.client.AlarmTreeRoot;
 import org.csstudio.alarm.beast.ui.actions.AcknowledgeAction;
 import org.csstudio.alarm.beast.ui.actions.MaintenanceModeAction;
 import org.csstudio.alarm.beast.ui.clientmodel.AlarmClientModel;
-import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.BlinkingToggleAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.ColumnConfigureAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.LockTreeSelectionAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.NewTableAction;
@@ -163,12 +162,12 @@ public class AlarmTableView extends ViewPart
     
     private void applyPreferences() 
     {
+        this.blinkingIcons = Preferences.isBlinkUnacknowledged(); 
         if (memento == null)
         {
             this.combinedTables = Preferences.isCombinedAlarmTable();
             this.syncWithTree = Preferences.isSynchronizeWithTree();
             this.lockTreeSelection = Preferences.isLockTreeSelection();
-            this.blinkingIcons = Preferences.isBlinkUnacknowledged(); 
             this.columns = ColumnWrapper.fromSaveArray(Preferences.getColumns()); 
         } 
         else 
@@ -182,8 +181,8 @@ public class AlarmTableView extends ViewPart
             Boolean lockSelectionSet = memento.getBoolean(Preferences.ALARM_TABLE_LOCK_SELECTION);
             this.lockTreeSelection = lockSelectionSet == null ? Preferences.isLockTreeSelection() : lockSelectionSet; 
             
-            Boolean blinkSet = memento.getBoolean(Preferences.ALARM_TABLE_BLINK_UNACKNOWLEDGED);
-            this.blinkingIcons = blinkSet == null ? Preferences.isBlinkUnacknowledged() : blinkSet;
+//            Boolean blinkSet = memento.getBoolean(Preferences.ALARM_TABLE_BLINK_UNACKNOWLEDGED);
+//            this.blinkingIcons = blinkSet == null ? Preferences.isBlinkUnacknowledged() : blinkSet;
           
             this.columns = ColumnWrapper.restoreColumns(memento.getChild(Preferences.ALARM_TABLE_COLUMN_SETTING));       
         } 
@@ -196,7 +195,7 @@ public class AlarmTableView extends ViewPart
         memento.putBoolean(Preferences.ALARM_TABLE_COMBINED_TABLES, combinedTables);
         memento.putBoolean(Preferences.ALARM_TABLE_SYNC_WITH_TREE, syncWithTree);
         memento.putBoolean(Preferences.ALARM_TABLE_LOCK_SELECTION, lockTreeSelection);
-        memento.putBoolean(Preferences.ALARM_TABLE_BLINK_UNACKNOWLEDGED, blinkingIcons);
+//        memento.putBoolean(Preferences.ALARM_TABLE_BLINK_UNACKNOWLEDGED, blinkingIcons);
         
         IMemento columnsMemento = memento.createChild(Preferences.ALARM_TABLE_COLUMN_SETTING);
         ColumnWrapper.saveColumns(columnsMemento, getUpdatedColumns());
@@ -245,8 +244,9 @@ public class AlarmTableView extends ViewPart
         menu.add(new Separator());
         menu.add(new ColumnConfigureAction(this));
         menu.add(new ResetColumnsAction(this));
-        menu.add(new Separator());
-        menu.add(new BlinkingToggleAction(this, blinkingIcons));
+        //no need to allow users to enable 
+//        menu.add(new Separator());
+//        menu.add(new BlinkingToggleAction(this, blinkingIcons));
     }
 
     private void selectFromTree(Object selection)
