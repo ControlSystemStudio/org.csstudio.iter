@@ -52,8 +52,6 @@ function buildCBSMap(root, indent){
 		var linkingContainer = WidgetUtil.createWidgetModel("org.csstudio.opibuilder.widgets.linkingContainer");
 			
 		linkingContainer.setPropertyValue("opi_file", "CBSMapElt.opi");
-		linkingContainer.setPropertyValue("auto_size", false);
-		linkingContainer.setPropertyValue("zoom_to_fit", false);
 		linkingContainer.setPropertyValue("border_style", 0);
 
 		linkingContainer.setPropertyValue("height", resolution_4k ? 40 : 20);
