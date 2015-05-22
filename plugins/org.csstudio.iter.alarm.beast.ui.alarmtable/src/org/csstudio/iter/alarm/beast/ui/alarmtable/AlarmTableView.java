@@ -23,6 +23,7 @@ import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.LockTreeSelectionActi
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.NewTableAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.ResetColumnsAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.SeparateCombineTablesAction;
+import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.ShowFilterAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.SynchronizeWithTreeAction;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
@@ -57,8 +58,12 @@ import org.eclipse.ui.part.ViewPart;
  */
 public class AlarmTableView extends ViewPart
 {
+    /** Property ID for the synchronise with tree property change events */
+    public static final int PROP_SYNC_WITH_TREE = 555444;
+    /** Property ID for the lock tree selection property change events */
+    public static final int PROP_LOCK_TREE = 555445;
     
-    public static AtomicInteger secondaryId = new AtomicInteger(1);
+    private static AtomicInteger secondaryId = new AtomicInteger(1);
     
     /**
      * Return the next secondary id that has not been opened.
@@ -244,6 +249,8 @@ public class AlarmTableView extends ViewPart
         menu.add(new Separator());
         menu.add(new ColumnConfigureAction(this));
         menu.add(new ResetColumnsAction(this));
+        menu.add(new Separator());
+        menu.add(new ShowFilterAction(this));
         //no need to allow users to enable 
 //        menu.add(new Separator());
 //        menu.add(new BlinkingToggleAction(this, blinkingIcons));
@@ -260,9 +267,36 @@ public class AlarmTableView extends ViewPart
         {
             item = (AlarmTreeItem)selection;
         }
+        setFilterItem(item,false);
+    }
+    
+    /**
+     * Set the filter item by its path. The path is transformed to an actual item, which is then applied as the 
+     * filter item. If the item does not exist a null filter is applied.
+     * 
+     * @see AlarmTableView#setFilterItem(AlarmTreeItem)
+     * 
+     * @param path the path to filter on
+     */
+    public void setFilterItem(String path) {
+        AlarmTreeRoot root = model.getConfigTree().getRoot();
+        AlarmTreeItem item = root.getItemByPath(path);
+        setFilterItem(item,true);
+    }
+    
+    /**
+     * Set the filter item. Only the alarms that are descendants of the given item will be displayed in the table.
+     * The item must match the actual item from the shared model. A clone or a copy with the same path might result
+     * in strange behaviour.
+     * 
+     * @param item the item to filter on
+     * @param alwaysIfNotNull if true the item will be set as a filter even if the tree is locked
+     */
+    private void setFilterItem(AlarmTreeItem item, boolean alwaysIfNotNull) {
+        if (getFilterItem() == item) return;
         if (syncWithTree) 
         {
-            if (item != null && (!lockTreeSelection || gui.getFilterItem() == null))                 
+            if (item != null && (!lockTreeSelection || gui.getFilterItem() == null || alwaysIfNotNull))                 
                 gui.setFilterItem(item);    
             else if (!lockTreeSelection)
                 gui.setFilterItem(null);
@@ -282,8 +316,13 @@ public class AlarmTableView extends ViewPart
             setPartName(NLS.bind(Messages.AlarmTablePartName, item.getName()));
             setTitleToolTip(NLS.bind(Messages.AlarmTableTitleTT, item.getPathName()));
         }
-            
-        
+    }
+    
+    /**
+     * @return the currently applied filter item
+     */
+    public AlarmTreeItem getFilterItem() {
+        return gui.getFilterItem();
     }
 
     /**
@@ -366,6 +405,15 @@ public class AlarmTableView extends ViewPart
     {
         this.syncWithTree = syncWithTree;
         selectFromTree(selectionService.getSelection(ALARM_TREE_ID));
+        firePropertyChange(PROP_SYNC_WITH_TREE);
+    }
+    
+    /**
+     * @return true if the filter item is synchronised with alarm tree selection
+     */
+    public boolean isSynchAlarmsWithTreeSelection() 
+    {
+        return this.syncWithTree;
     }
 
     /**
@@ -380,6 +428,15 @@ public class AlarmTableView extends ViewPart
     {
         this.lockTreeSelection = lock;
         selectFromTree(selectionService.getSelection(ALARM_TREE_ID));
+        firePropertyChange(PROP_LOCK_TREE);
+    }
+    
+    /**
+     * @return true if the filter item is locked on some alarm tree item
+     */
+    public boolean isLockTreeSelection() 
+    {
+        return this.lockTreeSelection;
     }
     
     /**
@@ -393,6 +450,13 @@ public class AlarmTableView extends ViewPart
         if (gui != null) {
             gui.setBlinking(blinking);
         }
+    }
+    
+    /**
+     * @return the alarm client model used by this table
+     */
+    public AlarmClientModel getModel() {
+        return model;
     }
 
 }
