@@ -24,6 +24,10 @@ public class Messages extends NLS
     public static String LockFilterCheckedTT;
     public static String LockFilterUncheckedTT;
     public static String NewTableView;
+    public static String SelectFilter;
+    public static String SelectFilterDialogTitle;
+    public static String SelectFilterDialogMessage;
+    public static String SelectFilterItemNonExisting;
     public static String CurrentAlarmsFmt;
     public static String AcknowledgedAlarmsFmt;
     

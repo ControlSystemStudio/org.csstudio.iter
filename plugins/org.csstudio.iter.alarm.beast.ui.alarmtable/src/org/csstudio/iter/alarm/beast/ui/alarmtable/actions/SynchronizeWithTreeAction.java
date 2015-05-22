@@ -6,6 +6,7 @@ import org.csstudio.iter.alarm.beast.ui.alarmtable.Messages;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
+import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
@@ -17,7 +18,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
  *
  */
-public class SynchronizeWithTreeAction extends Action implements IPropertyChangeListener {
+public class SynchronizeWithTreeAction extends Action implements IPropertyChangeListener, IPropertyListener {
     private final AlarmTableView view;
     
     /**
@@ -33,6 +34,14 @@ public class SynchronizeWithTreeAction extends Action implements IPropertyChange
         setChecked(synchronize);
         addPropertyChangeListener(this);
         update();
+        this.view.addPropertyListener(this);
+    }
+    
+    @Override
+    public void propertyChanged(Object source, int propId) {
+        if (AlarmTableView.PROP_SYNC_WITH_TREE == propId) {
+            setChecked(view.isSynchAlarmsWithTreeSelection());
+        }
     }
     
     @Override

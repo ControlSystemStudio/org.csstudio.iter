@@ -430,11 +430,13 @@ public class GUI implements AlarmClientModelListener {
         for (int i = 0; i < order.length; i++) {
             ret[i] = columns[order[i]];
         }
+        int j = 0;
         for (int i = 0; i < columns.length; i++) {
             if (!columns[i].isVisible()) {
-                for (int j = 0; j < ret.length; j++) {
+                for (; j < ret.length; j++) {
                     if (ret[j] == null) {
                         ret[j] = columns[i];
+                        break;
                     }
                 }
             } 
@@ -450,8 +452,10 @@ public class GUI implements AlarmClientModelListener {
                 icon_provider.toggle();
                 if (!active_table_viewer.getTable().isDisposed()) {
                     //because of lazy label provider refresh is faster than updating individual cells
-                    active_table_viewer.refresh(); 
-                    if (acknowledged_table_viewer != null) {
+                    if (!active_table_viewer.isBusy()) {
+                        active_table_viewer.refresh();
+                    }
+                    if (acknowledged_table_viewer != null && !acknowledged_table_viewer.isBusy()) {
                         acknowledged_table_viewer.refresh();
                     }
                     blink();
@@ -825,6 +829,7 @@ public class GUI implements AlarmClientModelListener {
     }
 
     private void updateGUI() {
+        if (current_alarms.isDisposed()) return;
         AlarmTreePV[] rawAlarms = model.getActiveAlarms();
         AlarmTreePV[] alarms = filter(rawAlarms);
         if (filterItemParent == null || filterItemParent instanceof AlarmTreeRoot) {
