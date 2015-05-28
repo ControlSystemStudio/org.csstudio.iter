@@ -31,6 +31,33 @@ public class Messages extends NLS
     public static String CurrentAlarmsFmt;
     public static String AcknowledgedAlarmsFmt;
     
+    
+    public static String AcknowledgeColumnHeader;
+    public static String AcknowledgeColumnHeaderTooltip;
+    public static String AlarmIconColumnHeader;
+    public static String AlarmIconColumnHeaderTooltip;
+    public static String AlarmID;
+    public static String AlarmIDTooltip;
+    public static String AlarmPV;
+    public static String AlarmPVTooltip;
+    public static String AlarmDescription;
+    public static String AlarmDescriptionTooltip;
+    public static String AlarmTime;
+    public static String AlarmTimeTooltip;
+    public static String AlarmCurrentMessage;
+    public static String AlarmCurrentMessageTooltip; 
+    public static String AlarmCurrentSeverity;
+    public static String AlarmCurrentSeverityTooltip;
+    public static String AlarmSeverity;
+    public static String AlarmSeverityTooltip;
+    public static String AlarmMessage;
+    public static String AlarmMessageTooltip;
+    public static String AlarmValue;
+    public static String AlarmValueTooltip;
+    public static String AlarmAction;
+    public static String AlarmActionTooltip;
+    
+    
 	static
 	{
 		// initialize resource bundle

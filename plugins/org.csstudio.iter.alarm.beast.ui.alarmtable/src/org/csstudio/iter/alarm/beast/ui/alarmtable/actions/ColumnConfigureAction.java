@@ -27,10 +27,11 @@ public class ColumnConfigureAction extends Action {
     @Override
     public void run() {
         ColumnWrapper[] columns = view.getUpdatedColumns();
-        ColumnConfigurer configurer = new ColumnConfigurer(view.getViewSite().getShell(), columns);
+        String timeFormat = view.getTimeFormat();
+        ColumnConfigurer configurer = new ColumnConfigurer(view.getViewSite().getShell(), columns, timeFormat);
         if (configurer.open() == IDialogConstants.OK_ID) {
-            columns = configurer.getColumns();
-            view.setColumns(columns);
+            view.setColumns(configurer.getColumns());
+            view.setTimeFormat(configurer.getTimeFormat());
         }
     }
 }
