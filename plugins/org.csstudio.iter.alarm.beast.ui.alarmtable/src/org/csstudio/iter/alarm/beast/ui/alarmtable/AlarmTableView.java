@@ -55,7 +55,7 @@ import org.eclipse.ui.part.ViewPart;
 
 /**
  * Eclipse View for the alarm table.
- * 
+ *
  * @author Kay Kasemir
  * @author Jaka Bobnar - Combined/split alarm tables, configurable columns
  */
@@ -73,7 +73,7 @@ public class AlarmTableView extends ViewPart {
      * @return part
      */
     public static String newSecondaryID(IViewPart part) {
-        while (part.getSite().getPage().findViewReference(part.getSite().getId(), 
+        while (part.getSite().getPage().findViewReference(part.getSite().getId(),
                 String.valueOf(secondaryId.get())) != null) {
             secondaryId.incrementAndGet();
         }
@@ -181,6 +181,7 @@ public class AlarmTableView extends ViewPart {
         setFilterItem(null); //this will initialize the title
 
         selectionService.addSelectionListener(ALARM_TREE_ID, new ISelectionListener() {
+            @Override
             public void selectionChanged(MPart part, Object selection) {
                 updateSelection();
             }
@@ -289,9 +290,9 @@ public class AlarmTableView extends ViewPart {
     /**
      * Set the filter item by its path. The path is transformed to an actual item, which is then applied as the filter
      * item. If the item does not exist a null filter is applied.
-     * 
+     *
      * @see AlarmTableView#setFilterItem(AlarmTreeItem)
-     * 
+     *
      * @param path the path to filter on
      */
     public void setFilterItemPath(String path) {
@@ -315,7 +316,7 @@ public class AlarmTableView extends ViewPart {
         // find the item that has the same path and belongs to this model
         return (model == null || item == null) ? null : model.getConfigTree().getItemByPath(item.getPathName());
     }
-    
+
     private boolean setPresetFilter() {
         if (filterItemName != null && filterItem == null) {
             if (configurationName == null || configurationName.equals(model.getConfigurationName())) {
@@ -351,7 +352,7 @@ public class AlarmTableView extends ViewPart {
      * Set the filter item. Only the alarms that are descendants of the given item will be displayed in the table. The
      * item must match the actual item from the shared model. A clone or a copy with the same path might result in
      * strange behaviour.
-     * 
+     *
      * @param item the item to filter on
      */
     private void setFilterItem(AlarmTreeItem item) {
@@ -361,8 +362,12 @@ public class AlarmTableView extends ViewPart {
         }
         String name;
         if (item == null) {
-            name = filterItemName == null ? model.getConfigurationName() 
-                    : filterItemName.substring(filterItemName.lastIndexOf('/'));
+            if (filterItemName == null) {
+                name = model.getConfigurationName();
+            } else {
+                int idx = filterItemName.lastIndexOf('/');
+                name = idx < 0 ? filterItemName : filterItemName.substring(idx+1);
+            }
         } else {
             name = item.getName();
         }
@@ -391,7 +396,7 @@ public class AlarmTableView extends ViewPart {
     /**
      * Set the columns for the table. The table will display the columns in the provided order and will show only those
      * columns that have the visible flag set to true
-     * 
+     *
      * @param columns the columns to set on the table
      */
     public void setColumns(ColumnWrapper[] columns) {
@@ -429,7 +434,7 @@ public class AlarmTableView extends ViewPart {
 
     /**
      * Combine all alarms into a single table or group the alarms into two separate tables (by the acknowledge status).
-     * 
+     *
      * @param combinedTables true if the acknowledged and unacknowledged alarms should be displayed in a single table,
      *            or false if they should be displayed in separate tables
      */
@@ -442,7 +447,7 @@ public class AlarmTableView extends ViewPart {
      * Sets the flag whether the list of alarms should be synchronized with the selected alarm tree item. When true the
      * table will only display those alarms that are descendants of the tree item selected in the Alarm Tree. If false
      * the table will display all alarms from the currently selected alarm root.
-     * 
+     *
      * @param syncWithTree true if only the alarms that are descendants of the selected tree item should be displayed or
      *            false if all alarms should be displayed
      */
@@ -463,7 +468,7 @@ public class AlarmTableView extends ViewPart {
      * Toggles the lock on the selected tree item. When locked the table will always display the alarms that belong to
      * the tree item that was selected in the alarm tree at the time when the lock was pressed. When unlocked the table
      * will display the alarms according to what was set by {@link #setSyncAlarmsWithTreeSelection(boolean)}.
-     * 
+     *
      * @param lock true if the table should be locked to a tree item or false if the content should change when the tree
      *            selection changes
      */
@@ -483,7 +488,7 @@ public class AlarmTableView extends ViewPart {
 
     /**
      * Enables or disables blinking of icons of the unacknowledged alarms.
-     * 
+     *
      * @param blinking true if the icons should be blinking or false otherwise
      */
     public void setBlinkingIcons(boolean blinking) {
@@ -503,7 +508,7 @@ public class AlarmTableView extends ViewPart {
     /**
      * Sets the time format used for formatting the value in the time column. Format should be in the form acceptable by
      * the {@link SimpleDateFormat}.
-     * 
+     *
      * @param format the format
      */
     public void setTimeFormat(String format) {
