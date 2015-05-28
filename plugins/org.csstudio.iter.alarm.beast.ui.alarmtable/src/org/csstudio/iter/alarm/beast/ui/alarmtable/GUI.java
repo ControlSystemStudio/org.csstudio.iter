@@ -95,7 +95,6 @@ public class GUI implements AlarmClientModelListener {
      */
     final private static String ALARM_TABLE_SORT_COLUMN = "alarm_table_sort_column"; //$NON-NLS-1$
     final private static String ALARM_TABLE_SORT_UP = "alarm_table_sort_up"; //$NON-NLS-1$
-    final private static String ALARM_TABLE_FILTER_ITEM = "alarm_table_filter_item"; //$NON-NLS-1$
 
     /**
      * Initial place holder for display of alarm counts to allocate enough screen space
@@ -126,6 +125,7 @@ public class GUI implements AlarmClientModelListener {
 
     private SeverityColorProvider color_provider;
     private SeverityIconProvider icon_provider;
+    private AlarmTableLabelProvider timeLabelProvider;
 
     /** Is something displayed in <code>error_message</code>? */
     private volatile boolean have_error_message = false;
@@ -140,6 +140,7 @@ public class GUI implements AlarmClientModelListener {
     private final ColumnWrapper[] columns;
 
     private AlarmTreeItem filterItemParent;
+    private String filterItemName;
     
     private boolean blinkUnacknowledged;
     private final int blinkPeriod = Preferences.getBlinkingPeriod();
@@ -222,13 +223,6 @@ public class GUI implements AlarmClientModelListener {
         this.columns = columns;
         createComponents(parent,memento);
         
-        if (memento != null) {
-            String filterPath = memento.getString(ALARM_TABLE_FILTER_ITEM);
-            if (filterPath != null) {
-                filterItemParent = model.getConfigTree().getItemByPath(filterPath);
-            }
-        }
-        
         if (model.isServerAlive()) {
             setErrorMessage(null);
         } else {
@@ -306,6 +300,7 @@ public class GUI implements AlarmClientModelListener {
             baseComposite.setLayout(new FillLayout());
             color_provider = new SeverityColorProvider(baseComposite);
             icon_provider = new SeverityIconProvider(baseComposite);
+            timeLabelProvider = new AlarmTableLabelProvider(icon_provider, color_provider, ColumnInfo.TIME);
             addActiveAlarmSashElement(baseComposite);
             addAcknowledgedAlarmSashElement(baseComposite);
             ((SashForm) baseComposite).setWeights(new int[] { 80, 20 });
@@ -314,6 +309,7 @@ public class GUI implements AlarmClientModelListener {
             baseComposite.setLayout(new FillLayout());
             color_provider = new SeverityColorProvider(baseComposite);
             icon_provider = new SeverityIconProvider(baseComposite);
+            timeLabelProvider = new AlarmTableLabelProvider(icon_provider, color_provider, ColumnInfo.TIME);
             addActiveAlarmSashElement(baseComposite);
         }
         syncTables(active_table_viewer, acknowledged_table_viewer, sortColumn, sortUp);
@@ -369,7 +365,8 @@ public class GUI implements AlarmClientModelListener {
         if (primary == null) return;
         TableColumn[] priColumns = primary.getTable().getColumns();
         TableColumn[] secColumns = secondary == null ? priColumns : secondary.getTable().getColumns();
-        
+        boolean applied = false;
+        AlarmColumnSortingSelector defaultListener = null;
         for (int i = 0; i < priColumns.length; i++) {
             final TableColumn c = priColumns[i];
             final TableColumn s = secColumns[i];
@@ -392,7 +389,13 @@ public class GUI implements AlarmClientModelListener {
             }
             if (w.getColumnInfo() == sortColumn) {
                 listener.setSortDirection(sortUp);
+                applied = true;
+            } else if (defaultListener == null && w.getColumnInfo() != ColumnInfo.ACK) {
+                defaultListener = listener; 
             }
+        }
+        if (!applied && defaultListener != null) {
+            defaultListener.setSortDirection(sortUp);
         }
     }
     
@@ -475,10 +478,6 @@ public class GUI implements AlarmClientModelListener {
     public void saveState(IMemento memento) {
         if (memento == null)
             return;
-
-        if (filterItemParent != null) {
-            memento.putString(ALARM_TABLE_FILTER_ITEM, filterItemParent.getPathName());
-        }
 
         final Table table = active_table_viewer.getTable();
         final TableColumn sort_column = table.getSortColumn();
@@ -646,14 +645,20 @@ public class GUI implements AlarmClientModelListener {
             
             ColumnInfo col_info = cw.getColumnInfo();
             // Tell column how to display the model elements
-            view_col.setLabelProvider(new AlarmTableLabelProvider(icon_provider, color_provider, col_info));
+            
+            if (col_info == ColumnInfo.TIME) {
+                view_col.setLabelProvider(timeLabelProvider);
+            } else {
+                view_col.setLabelProvider(new AlarmTableLabelProvider(icon_provider, color_provider, col_info));
+            }
+            
             // Sort support            
 
             if (col_info == ColumnInfo.ACK) {
                 if (model.isWriteAllowed())
                     view_col.setEditingSupport(new AcknowledgeEditingSupport(table_viewer));
-                table_col.setToolTipText(org.csstudio.alarm.beast.ui.Messages.AcknowledgeColumnHeaderTooltip);
             }
+            table_col.setToolTipText(col_info.getTooltip());
         }
 
         table.addMouseListener(new MouseAdapter() {
@@ -808,7 +813,7 @@ public class GUI implements AlarmClientModelListener {
     }
     
     private AlarmTreePV[] filter(AlarmTreePV[] alarms) {
-        if (filterItemParent == null || filterItemParent instanceof AlarmTreeRoot || alarms.length == 0) {
+       if (filterItemParent == null || filterItemParent instanceof AlarmTreeRoot || alarms.length == 0) {
             return alarms;
         } else {
             List<AlarmTreePV> items = new ArrayList<>(alarms.length);
@@ -830,16 +835,19 @@ public class GUI implements AlarmClientModelListener {
 
     private void updateGUI() {
         if (current_alarms.isDisposed()) return;
+        boolean isWrongTree = filterItemParent == null && filterItemName != null;
+        
         AlarmTreePV[] rawAlarms = model.getActiveAlarms();
-        AlarmTreePV[] alarms = filter(rawAlarms);
-        if (filterItemParent == null || filterItemParent instanceof AlarmTreeRoot) {
+        AlarmTreePV[] alarms = isWrongTree ? new AlarmTreePV[0] : filter(rawAlarms);
+        
+        if ((filterItemParent == null && filterItemName == null) || filterItemParent instanceof AlarmTreeRoot) {
             current_alarms.setText(NLS.bind(org.csstudio.alarm.beast.ui.Messages.CurrentAlarmsFmt, alarms.length));    
-        } else {
-            current_alarms.setText(NLS.bind(Messages.CurrentAlarmsFmt, new Object[]{alarms.length, rawAlarms.length,
-                    filterItemParent.getPathName()}));
+        } else {           
+            current_alarms.setText(NLS.bind(Messages.CurrentAlarmsFmt, new Object[]{alarms.length, 
+                    isWrongTree ? 0 : rawAlarms.length, filterItemName}));
         }
   
-        if (alarms.length != rawAlarms.length) {
+        if (alarms.length != rawAlarms.length || isWrongTree) {
             current_alarms.setForeground(current_alarms.getDisplay().getSystemColor(SWT.COLOR_RED));
         } else {
             current_alarms.setForeground(null);
@@ -848,15 +856,15 @@ public class GUI implements AlarmClientModelListener {
 
         rawAlarms = model.getAcknowledgedAlarms();
         AlarmTreePV[] ackalarms = filter(rawAlarms);
-        if (filterItemParent == null || filterItemParent instanceof AlarmTreeRoot) {
+        if ((filterItemParent == null && filterItemName == null) || filterItemParent instanceof AlarmTreeRoot) {
             acknowledged_alarms.setText(NLS.bind(org.csstudio.alarm.beast.ui.Messages.AcknowledgedAlarmsFmt, 
                     ackalarms.length));
         } else {
             acknowledged_alarms.setText(NLS.bind(Messages.AcknowledgedAlarmsFmt, new Object[]{ackalarms.length, 
-                            rawAlarms.length, filterItemParent.getPathName()}));
+                            isWrongTree ? 0 : rawAlarms.length, filterItemName}));
         }
         
-        if (ackalarms.length != rawAlarms.length) {
+        if (ackalarms.length != rawAlarms.length || isWrongTree) {
             acknowledged_alarms.setForeground(acknowledged_alarms.getDisplay().getSystemColor(SWT.COLOR_RED));
         } else {
             acknowledged_alarms.setForeground(null);
@@ -897,13 +905,10 @@ public class GUI implements AlarmClientModelListener {
         return double_click_handlers;
     }
 
-    void setFilterItem(AlarmTreeItem filterItemParent) {
+    void setFilterItem(AlarmTreeItem filterItemParent, String filterItemName) {
         this.filterItemParent = filterItemParent;
+        this.filterItemName = filterItemParent == null ? filterItemName : filterItemParent.getPathName();
         updateGUI();
-    }
-    
-    AlarmTreeItem getFilterItem() {
-        return this.filterItemParent;
     }
     
     void setBlinking(boolean blinking) {
@@ -917,5 +922,9 @@ public class GUI implements AlarmClientModelListener {
                 acknowledged_table_viewer.refresh();
             }
         }
+    }
+    
+    void setTimeFormat(String timeFormat) {
+        timeLabelProvider.setTimeFormat(timeFormat);
     }
 }

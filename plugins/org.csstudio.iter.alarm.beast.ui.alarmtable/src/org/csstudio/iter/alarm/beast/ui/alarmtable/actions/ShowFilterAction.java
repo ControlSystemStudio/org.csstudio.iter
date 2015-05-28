@@ -29,12 +29,8 @@ public class ShowFilterAction extends Action {
     
     @Override
     public void run() {
-        AlarmTreeItem currentItem = view.getFilterItem();
         final AlarmTreeRoot rootItem = view.getModel().getConfigTree().getRoot();
-        String item = rootItem.getPathName();
-        if (currentItem != null) {
-            item = currentItem.getPathName();
-        }
+        String item = view.getFilterItemPath();
         InputDialog dialog = new InputDialog(view.getViewSite().getShell(), 
                 Messages.SelectFilterDialogTitle, Messages.SelectFilterDialogMessage,
                 item, new IInputValidator(){
@@ -57,7 +53,7 @@ public class ShowFilterAction extends Action {
             } else {
                 view.setSyncAlarmsWithTreeSelection(true);
                 view.setLockTreeSelection(true);
-                view.setFilterItem(newValue);
+                view.setFilterItemPath(newValue);
             }
         }
         

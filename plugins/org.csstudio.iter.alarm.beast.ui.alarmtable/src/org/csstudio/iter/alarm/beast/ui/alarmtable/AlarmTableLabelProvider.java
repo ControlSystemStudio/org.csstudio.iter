@@ -7,6 +7,8 @@
  ******************************************************************************/
 package org.csstudio.iter.alarm.beast.ui.alarmtable;
 
+import java.text.SimpleDateFormat;
+
 import org.csstudio.alarm.beast.AnnunciationFormatter;
 import org.csstudio.alarm.beast.client.AlarmTreePV;
 import org.csstudio.alarm.beast.client.GDCDataStructure;
@@ -28,6 +30,9 @@ public class AlarmTableLabelProvider extends CellLabelProvider
     /** Column handled by this label provider */
     final private ColumnInfo column;
     
+    private String timeFormat;
+    private SimpleDateFormat formatter;
+    
     /** Initialize
      *  @param icon_provider icon provider 
      *  @param color_provider Color provider for severity values
@@ -39,6 +44,24 @@ public class AlarmTableLabelProvider extends CellLabelProvider
         this.icon_provider = icon_provider;
         this.color_provider = color_provider;
         this.column = column;       
+    }
+    
+    /**
+     * Sets the time format used for converting the time value to a string
+     * 
+     * @param timeFormat the format string acceptable by {@link SimpleDateFormat}
+     */
+    public void setTimeFormat(String timeFormat) {
+        this.timeFormat = timeFormat;
+        if (this.timeFormat == null || this.timeFormat.isEmpty()) {
+            formatter = null;
+        } else {
+            try {
+                formatter = new SimpleDateFormat(timeFormat);
+            } catch (Exception e) {
+                formatter = null;
+            }
+        }
     }
 
     /** @return Tooltip text for an alarm */
@@ -81,7 +104,8 @@ public class AlarmTableLabelProvider extends CellLabelProvider
             }
             break;
         case TIME:
-            cell.setText(alarm.getTimestampText());
+            cell.setText(formatter == null ? alarm.getTimestampText() 
+                    : (alarm.getTimestamp() == null ? "" : formatter.format(alarm.getTimestamp().toDate())));
             break;
         case CURRENT_SEVERITY:
             if (alarm.getParent() == null)

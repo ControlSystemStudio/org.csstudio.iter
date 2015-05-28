@@ -1,10 +1,12 @@
 package org.csstudio.iter.alarm.beast.ui.alarmtable;
 
+import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
+import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.CellLabelProvider;
@@ -14,6 +16,8 @@ import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.SelectionEvent;
@@ -26,6 +30,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
@@ -84,8 +89,12 @@ public class ColumnConfigurer extends TitleAreaDialog {
     private Button rightButton;
     private Button upButton;
     private Button downButton;
-
+    private Text timeFormatField;
+    
+    private Button okButton;
+    
     private final ColumnWrapper[] columns;
+    private String timeFormat = null;
 
     /**
      * Constructs a new configurer.
@@ -93,10 +102,11 @@ public class ColumnConfigurer extends TitleAreaDialog {
      * @param parentShell the parent window
      * @param columns the columns that will be manipulated
      */
-    public ColumnConfigurer(Shell parentShell, ColumnWrapper[] columns) {
+    public ColumnConfigurer(Shell parentShell, ColumnWrapper[] columns, String timeFormat) {
         super(parentShell);
         setShellStyle(getShellStyle() | SWT.RESIZE);
         this.columns = columns;
+        this.timeFormat = timeFormat;
     }
 
     /**
@@ -104,6 +114,22 @@ public class ColumnConfigurer extends TitleAreaDialog {
      */
     public ColumnWrapper[] getColumns() {
         return columns;
+    }
+    
+    /**
+     * @return the time format specified in the dialog
+     */
+    public String getTimeFormat() {
+        return timeFormat;
+    }
+    
+    @Override
+    protected Button createButton(Composite parent, int id, String label, boolean defaultButton) {
+        Button b = super.createButton(parent, id, label, defaultButton);
+        if (id == IDialogConstants.OK_ID) {
+            okButton = b;
+        }
+        return b;
     }
     
     @SuppressWarnings("unchecked")
@@ -118,6 +144,7 @@ public class ColumnConfigurer extends TitleAreaDialog {
         for (ColumnWrapper cw : hidden) {
             columns[i++] = cw;
         }
+        timeFormat = timeFormatField.getText();
         super.okPressed();
     }
 
@@ -134,11 +161,13 @@ public class ColumnConfigurer extends TitleAreaDialog {
         setTitle(Messages.ColumnConfigTitle);
         setMessage(Messages.ColumnConfigDescription);
         Composite base = new Composite(composite, SWT.NONE);
-        base.setLayout(new GridLayout(2, true));
+        GridLayout layout = new GridLayout(2, true);
+        layout.marginHeight = 0;
+        base.setLayout(layout);
         base.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
         Composite left = new Composite(base, SWT.NONE);
-        GridLayout layout = new GridLayout(2, false);
+        layout = new GridLayout(2, false);
         layout.marginWidth = 0;
         left.setLayout(layout);
         left.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
@@ -258,6 +287,50 @@ public class ColumnConfigurer extends TitleAreaDialog {
         shownList.setInput(shown);
 
         updateTables();
+        
+        Composite timeFormatComposite = new Composite(base, SWT.NONE);
+        timeFormatComposite.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false, 2, 1));
+        layout = new GridLayout(2, true);
+        layout.marginHeight = 0;
+        layout.verticalSpacing = 0;
+        timeFormatComposite.setLayout(layout);
+        
+        Composite blank = new Composite(timeFormatComposite, SWT.NONE);
+        data = new GridData(SWT.FILL,SWT.TOP,true,false,1,1);
+        data.heightHint = 30;
+        blank.setLayoutData(data);
+
+        Composite rightFormatComposite = new Composite(timeFormatComposite,SWT.NONE);
+        layout = new GridLayout(2, false);
+        layout.marginHeight = 0;
+        layout.verticalSpacing = 0;
+        layout.marginRight = 45;
+        rightFormatComposite.setLayout(layout);
+        rightFormatComposite.setLayoutData(new GridData(SWT.FILL,SWT.TOP,true,false,1,1));
+        
+        Label timeFormatLabel = new Label(rightFormatComposite,SWT.NONE);
+        timeFormatLabel.setText("Time format:");
+        timeFormatLabel.setLayoutData(new GridData(SWT.LEFT,SWT.CENTER,false,false,1,1));
+        timeFormatField = new Text(rightFormatComposite, SWT.BORDER);
+        timeFormatField.setText(timeFormat == null ? "" : timeFormat);
+        timeFormatField.setLayoutData(new GridData(SWT.FILL, SWT.CENTER,true,false,1,1));
+        timeFormatField.addModifyListener(new ModifyListener() {
+            @Override
+            public void modifyText(ModifyEvent e) {
+                String text = timeFormatField.getText();
+                if (text.isEmpty()) {
+                    if (okButton != null) okButton.setEnabled(true);
+                } else {
+                    try {
+                        //try to convert
+                        new SimpleDateFormat(text);
+                        if (okButton != null) okButton.setEnabled(true);
+                    } catch (Exception ex) {
+                        if (okButton != null) okButton.setEnabled(false);
+                    }
+                }                
+            }
+        });
 
         return composite;
 

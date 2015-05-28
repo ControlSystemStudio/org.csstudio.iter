@@ -30,11 +30,20 @@ public class Preferences
     /** Preference and memento tag for lock filter to the selected tree item */ 
     final public static String ALARM_TABLE_LOCK_SELECTION = "lock_tree_selection";    
     
+    /** Memento tag for the selected configuration */
+    final public static String ALARM_TABLE_CONFIGURATION = "configuration_name";
+    
+    /** Memento tag for the selected filter */
+    final public static String ALARM_TABLE_FILTER_ITEM = "alarm_table_filter_item";
+    
     /** Preference tag for blinking of unacknowledged alarms icons */
     final public static String ALARM_TABLE_BLINK_UNACKNOWLEDGED = "blink_unacknowledged";
     
     /** Preference tag for blinking period */
     final public static String ALARM_TABLE_BLINK_PERIOD = "blinking_period";
+    
+    /** Preference and memento tag for the time format in the time column */
+    final public static String ALARM_TABLE_TIME_FORMAT = "time_format";
     
     /** @return Alarm table row limit */
 	public static int getAlarmTableRowLimit()
@@ -89,4 +98,11 @@ public class Preferences
         return service.getInt(Activator.ID, ALARM_TABLE_BLINK_PERIOD, 500, null); 
     }
 
+    /** @return the time format */
+    public static String getTimeFormat() 
+    {
+        final IPreferencesService service = Platform.getPreferencesService();
+        return service.getString(Activator.ID, ALARM_TABLE_TIME_FORMAT, null, null); 
+    }
+    
 }
