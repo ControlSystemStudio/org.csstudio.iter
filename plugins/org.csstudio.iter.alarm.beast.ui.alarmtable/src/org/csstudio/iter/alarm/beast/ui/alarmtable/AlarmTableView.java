@@ -196,7 +196,7 @@ public class AlarmTableView extends ViewPart {
             this.syncWithTree = Preferences.isSynchronizeWithTree();
             this.lockTreeSelection = Preferences.isLockTreeSelection();
             this.columns = ColumnWrapper.fromSaveArray(Preferences.getColumns());
-            if (!"1".equals(getViewSite().getSecondaryId())) {
+            if (getViewSite().getSecondaryId() != null) {
                 this.timeFormat = Preferences.getTimeFormat();
             }
         } else {
