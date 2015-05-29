@@ -28,31 +28,7 @@ of the distribution package.
          version="0.0.0"/>
 
    <includes
-         id="org.csstudio.iter.trends.databrowser2.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.opibuilder.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.logbook.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.scan.ui.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.core.ui.feature"
-         version="0.0.0"/>
-
-   <includes
          id="org.csstudio.iter.core.util.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.css.util.feature"
          version="0.0.0"/>
 
    <includes
@@ -61,10 +37,6 @@ of the distribution package.
 
    <includes
          id="org.eclipse.core.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.core.addon.feature"
          version="0.0.0"/>
 
    <includes
@@ -79,24 +51,77 @@ of the distribution package.
          id="org.csstudio.desy.snl.feature"
          version="0.0.0"/>
 
+   <includes
+         id="org.csstudio.applications.logbook.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.iter.logbook.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.trends.databrowser2.opiwidget.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.iter.opibuilder.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.trends.databrowser2.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.scan.ui.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.iter.batik.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.iter.core.ui.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.core.addon.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.iter.test.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.iter.xmleditor.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.iter.css.util.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.email.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.iter.svn.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.iter.python.feature"
+         version="0.0.0"/>
+
    <requires>
       <import plugin="org.csstudio.security" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.core.expressions"/>
-      <import plugin="org.eclipse.equinox.security"/>
       <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.ui.intro"/>
-      <import plugin="org.eclipse.ui.intro.universal"/>
-      <import plugin="org.eclipse.ui.cheatsheets"/>
-      <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="org.csstudio.logging"/>
-      <import plugin="org.csstudio.logging.ui"/>
-      <import plugin="org.csstudio.workspace"/>
       <import plugin="org.csstudio.startup"/>
-      <import plugin="org.csstudio.apputil.ui"/>
-      <import plugin="org.csstudio.security.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.opibuilder" version="4.0.102" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.intro.universal"/>
       <import plugin="org.eclipse.help"/>
+      <import plugin="org.csstudio.workspace"/>
+      <import plugin="org.csstudio.utility.product" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.core.runtime" version="3.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.6.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.ui.menu" version="3.0.0" match="greaterOrEqual"/>
@@ -110,24 +135,8 @@ of the distribution package.
       <import plugin="org.csstudio.logging.ui" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.ui.menu.app" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.startup.helper" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.utility.product" version="1.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.osgi.services"/>
-      <import plugin="org.eclipse.equinox.http.jetty"/>
-      <import plugin="javax.servlet" version="3.0.0" match="equivalent"/>
-      <import plugin="org.csstudio.opibuilder" version="4.0.102" match="greaterOrEqual"/>
-      <import plugin="org.python.jython"/>
-      <import plugin="org.python.pydev"/>
-      <import plugin="org.python.pydev.core"/>
-      <import plugin="org.python.pydev.debug"/>
-      <import plugin="org.eclipse.osgi"/>
+      <import plugin="org.csstudio.iter.alarm.beast.ui.alarmtable"/>
    </requires>
-
-   <plugin
-         id="org.apache.log4j"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
    <plugin
          id="org.csstudio.iter.authorizationprovider"
@@ -144,21 +153,7 @@ of the distribution package.
          unpack="false"/>
 
    <plugin
-         id="org.csstudio.ui.menu.app"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.csstudio.startup.helper"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.csstudio.utility.product"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -173,25 +168,11 @@ of the distribution package.
          unpack="false"/>
 
    <plugin
-         id="org.csstudio.utility.httpd"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.csstudio.jre6.fragment"
          download-size="0"
          install-size="0"
          version="0.0.0"
          fragment="true"
-         unpack="false"/>
-
-   <plugin
-         id="org.csstudio.iter.pydev.configurator"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
          unpack="false"/>
 
    <plugin
@@ -205,9 +186,24 @@ of the distribution package.
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.platform"
+         id="org.apache.log4j"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.ui.menu.app"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.utility.product"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>
