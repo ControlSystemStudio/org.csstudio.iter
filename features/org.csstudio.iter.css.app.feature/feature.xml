@@ -68,10 +68,6 @@ of the distribution package.
          version="0.0.0"/>
 
    <includes
-         id="org.csstudio.trends.databrowser2.feature"
-         version="0.0.0"/>
-
-   <includes
          id="org.csstudio.scan.ui.feature"
          version="0.0.0"/>
 
@@ -111,11 +107,40 @@ of the distribution package.
          id="org.csstudio.iter.python.feature"
          version="0.0.0"/>
 
+   <includes
+         id="org.csstudio.iter.trends.databrowser2.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.utilities.debugging.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.applications.casnooperui.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.display.pace.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.display.pvtable.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.display.rdbtable.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.iter.diag.pvfields.feature"
+         version="0.0.0"/>
+
    <requires>
       <import plugin="org.csstudio.security" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.csstudio.startup"/>
+      <import plugin="org.csstudio.iter.alarm.beast.ui.alarmtable"/>
       <import plugin="org.csstudio.opibuilder" version="4.0.102" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.intro.universal"/>
       <import plugin="org.eclipse.help"/>
@@ -135,7 +160,6 @@ of the distribution package.
       <import plugin="org.csstudio.logging.ui" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.ui.menu.app" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.startup.helper" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.iter.alarm.beast.ui.alarmtable"/>
    </requires>
 
    <plugin
