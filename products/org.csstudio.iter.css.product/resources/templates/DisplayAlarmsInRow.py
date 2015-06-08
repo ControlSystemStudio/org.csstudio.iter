@@ -1,5 +1,4 @@
 from org.csstudio.opibuilder.scriptUtil import PVUtil
-from org.csstudio.opibuilder.scriptUtil import ColorFontUtil
 
 import datetime
 

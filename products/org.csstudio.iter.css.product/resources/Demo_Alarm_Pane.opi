@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.103.201505220958</boy_version>
+  <boy_version>4.0.103.201506050803</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -188,7 +188,6 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -201,7 +200,7 @@
           <enabled>true</enabled>
           <wuid>-57352fd0:149859b9257:-3092</wuid>
           <scripts />
-          <height>98</height>
+          <height>99</height>
           <border_width>2</border_width>
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -221,7 +220,7 @@
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
-          <width>1138</width>
+          <width>1134</width>
           <x>0</x>
           <name>Linking Container Template</name>
           <y>0</y>
@@ -310,7 +309,6 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -392,7 +390,6 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -405,7 +402,7 @@
           <enabled>true</enabled>
           <wuid>-57352fd0:149859b9257:-309c</wuid>
           <scripts />
-          <height>98</height>
+          <height>99</height>
           <border_width>2</border_width>
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -425,7 +422,7 @@
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
-          <width>573</width>
+          <width>574</width>
           <x>0</x>
           <name>Linking Container Template</name>
           <y>0</y>
@@ -601,8 +598,6 @@
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
-              <on_state></on_state>
-              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -739,8 +734,6 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
-              <on_state></on_state>
-              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -877,8 +870,6 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
-              <on_state></on_state>
-              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -1015,8 +1006,6 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
-              <on_state></on_state>
-              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -1286,7 +1275,6 @@ For example, click on ALARM 10 to access to its alarm page.</text>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>
@@ -1373,8 +1361,6 @@ For example, click on ALARM 10 to access to its alarm page.</text>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -1476,8 +1462,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -1550,7 +1534,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -1624,8 +1608,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -1727,8 +1709,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -1801,7 +1781,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -1875,8 +1855,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -1978,8 +1956,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -2052,7 +2028,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -2126,8 +2102,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -2229,8 +2203,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -2303,7 +2275,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -2377,8 +2349,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -2480,8 +2450,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -2554,7 +2522,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -2628,8 +2596,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -2731,8 +2697,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -2805,7 +2769,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -2879,8 +2843,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -2982,8 +2944,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3056,7 +3016,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -3130,8 +3090,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3233,8 +3191,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3307,7 +3263,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -3381,8 +3337,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3484,8 +3438,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3558,7 +3510,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -3641,8 +3593,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3744,8 +3694,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3818,7 +3766,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -3892,8 +3840,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3995,8 +3941,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -4069,7 +4013,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -4143,8 +4087,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -4246,8 +4188,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -4320,7 +4260,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -4394,8 +4334,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -4497,8 +4435,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -4571,7 +4507,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -4645,8 +4581,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -4748,8 +4682,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -4822,7 +4754,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -4896,8 +4828,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -4999,8 +4929,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -5073,7 +5001,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -5147,8 +5075,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -5250,8 +5176,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -5324,7 +5248,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -5398,8 +5322,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -5501,8 +5423,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -5575,7 +5495,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -5649,8 +5569,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -5752,8 +5670,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -5826,7 +5742,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -5900,8 +5816,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -6003,8 +5917,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -6077,7 +5989,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -6151,8 +6063,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -6254,8 +6164,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -6328,7 +6236,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/DisplayAlarmsInRow.py" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="templates/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -6438,7 +6346,6 @@ $(pv_value)</tooltip>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>
@@ -6493,7 +6400,7 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
             <pv trig="true">loc://$(DID)_FACEPLATE("")</pv>
           </path>
         </scripts>
-        <height>943</height>
+        <height>1</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -6513,7 +6420,7 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
         <background_color>
           <color name="IO Area Background" red="221" green="223" blue="229" />
         </background_color>
-        <width>575</width>
+        <width>1</width>
         <x>0</x>
         <name>Faceplate</name>
         <y>0</y>
@@ -6724,7 +6631,6 @@ widgetController.setPropertyValue("opi_file", opiFile, true);
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
