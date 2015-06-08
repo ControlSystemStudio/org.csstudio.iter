@@ -7,8 +7,7 @@ import org.csstudio.iter.alarm.beast.ui.alarmtable.Preferences;
 import org.eclipse.jface.action.Action;
 
 /**
- * 
- * <code>ResetColumnsAction</code> resets the columns configuration to the default one, which is defined in the
+ * <code>ResetColumnsAction</code> resets the columns configuration to default, as defined in the
  * preferences.ini
  *
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
@@ -16,17 +15,17 @@ import org.eclipse.jface.action.Action;
  */
 public class ResetColumnsAction extends Action {
     private final AlarmTableView view;
-    
+
     /**
      * Constructs a new action that acts on the given alarm table view.
-     * 
+     *
      * @param view the view to configure its columns
      */
     public ResetColumnsAction(final AlarmTableView view) {
         super(Messages.ResetColumns);
         this.view = view;
     }
-    
+
     @Override
     public void run() {
         ColumnWrapper[] columns = ColumnWrapper.fromSaveArray(Preferences.getColumns());

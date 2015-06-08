@@ -35,21 +35,21 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  *
- * <code>ColumnConfigurer</code> is a dialog that allows to configure the visibility
- * of table columns as well as their order of appearance in the table.
+ * <code>ColumnConfigurer</code> is a dialog that allows to configure the visibility of table columns as well as their
+ * order of appearance in the table.
  *
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
  *
  */
 public class ColumnConfigurer extends TitleAreaDialog {
 
-    private static final String LEFT = "Back24.gif";
-    private static final String RIGHT = "Forward24.gif";
-    private static final String UP = "Up24.gif";
-    private static final String DOWN = "Down24.gif";
+    private static final String LEFT = "Back24.gif"; //$NON-NLS-1$
+    private static final String RIGHT = "Forward24.gif"; //$NON-NLS-1$
+    private static final String UP = "Up24.gif"; //$NON-NLS-1$
+    private static final String DOWN = "Down24.gif"; //$NON-NLS-1$
     private static final ImageRegistry IMAGES = new ImageRegistry(Display.getDefault());
     static {
-        String ICONS = "icons/";
+        String ICONS = "icons/"; //$NON-NLS-1$
         IMAGES.put(LEFT, AbstractUIPlugin.imageDescriptorFromPlugin(Activator.ID, ICONS + LEFT));
         IMAGES.put(RIGHT, AbstractUIPlugin.imageDescriptorFromPlugin(Activator.ID, ICONS + RIGHT));
         IMAGES.put(UP, AbstractUIPlugin.imageDescriptorFromPlugin(Activator.ID, ICONS + UP));
@@ -298,13 +298,13 @@ public class ColumnConfigurer extends TitleAreaDialog {
         layout.marginRight = 40;
         timeFormatComposite.setLayout(layout);
 
-        Label timeFormatLabel = new Label(timeFormatComposite,SWT.NONE);
-        timeFormatLabel.setText("Date and Time format:");
-        timeFormatLabel.setLayoutData(new GridData(SWT.LEFT,SWT.CENTER,false,false,1,1));
+        Label timeFormatLabel = new Label(timeFormatComposite, SWT.NONE);
+        timeFormatLabel.setText(Messages.DateAndTimeFormat);
+        timeFormatLabel.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
         timeFormatField = new Text(timeFormatComposite, SWT.BORDER);
-        timeFormatField.setText(timeFormat == null ? "" : timeFormat);
-        timeFormatField.setToolTipText("Enter time format in a form like: yyyy/MM/dd HH:mm:ss z");
-        data = new GridData(SWT.FILL, SWT.CENTER,false,false,1,1);
+        timeFormatField.setText(timeFormat == null ? "" : timeFormat); //$NON-NLS-1$
+        timeFormatField.setToolTipText(Messages.DateAndTimeFormatTooltip);
+        data = new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1);
         data.widthHint = 180;
         timeFormatField.setLayoutData(data);
         timeFormatField.addModifyListener(new ModifyListener() {
@@ -312,14 +312,17 @@ public class ColumnConfigurer extends TitleAreaDialog {
             public void modifyText(ModifyEvent e) {
                 String text = timeFormatField.getText();
                 if (text.isEmpty()) {
-                    if (okButton != null) okButton.setEnabled(true);
+                    if (okButton != null)
+                        okButton.setEnabled(true);
                 } else {
                     try {
-                        //try to convert
+                        // try to convert
                         new SimpleDateFormat(text);
-                        if (okButton != null) okButton.setEnabled(true);
+                        if (okButton != null)
+                            okButton.setEnabled(true);
                     } catch (Exception ex) {
-                        if (okButton != null) okButton.setEnabled(false);
+                        if (okButton != null)
+                            okButton.setEnabled(false);
                     }
                 }
             }

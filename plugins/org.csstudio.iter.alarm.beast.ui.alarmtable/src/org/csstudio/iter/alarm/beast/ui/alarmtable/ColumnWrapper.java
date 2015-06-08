@@ -7,27 +7,26 @@ import java.util.Objects;
 import org.eclipse.ui.IMemento;
 
 /**
- * 
- * <code>ColumnWrapper</code> is a wrapper around {@link ColumnInfo}, which contains also
- * information if the column is visible or not, its width and weight.
+ *
+ * <code>ColumnWrapper</code> is a wrapper around {@link ColumnInfo}, which contains also information if the column is
+ * visible or not, its width and weight.
  *
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
  *
  */
 public final class ColumnWrapper {
 
-    /** The memento tag name of the visible property */ 
-    private static final String M_VISIBLE = "visible";
+    /** The memento tag name of the visible property */
+    private static final String M_VISIBLE = "visible"; //$NON-NLS-1$
     /** The memento tag name of the key by which the columns or ordered */
-    private static final String M_ORDER_KEY = "orderKey";
+    private static final String M_ORDER_KEY = "orderKey"; //$NON-NLS-1$
     /** The memento tag name of the minimum width of the column */
-    private static final String M_MIN_WIDTH = "minWidth";
+    private static final String M_MIN_WIDTH = "minWidth"; //$NON-NLS-1$
     /** The memento tag name of the weight of the column */
-    private static final String M_WEIGHT = "weight";
+    private static final String M_WEIGHT = "weight"; //$NON-NLS-1$
     /** The memento tag name of the visible name of the column */
-    private static final String M_NAME = "name";
-    
-    
+    private static final String M_NAME = "name"; //$NON-NLS-1$
+
     /**
      * @return a set of new wrappers (all visible) for all available column infos
      */
@@ -39,12 +38,11 @@ public final class ColumnWrapper {
         }
         return wrappers;
     }
-    
+
     /**
-     * Generates a clone of the source. The clone has exactly the same number of elements
-     * in the same order and the method guarantees that clone[i].equals(source[i]) but not
-     * clone[i] == source[i].
-     * 
+     * Generates a clone of the source. The clone has exactly the same number of elements in the same order and the
+     * method guarantees that clone[i].equals(source[i]) but not clone[i] == source[i].
+     *
      * @param source wrappers to clone
      * @return cloned array
      */
@@ -59,11 +57,11 @@ public final class ColumnWrapper {
         }
         return w;
     }
-    
+
     /**
-     * Converts the array of wrappers into an array of string, where string is the name
-     * of the column info. Only the visible wrappers are included.
-     * 
+     * Converts the array of wrappers into an array of string, where string is the name of the column info. Only the
+     * visible wrappers are included.
+     *
      * @param columns the source data
      * @return array of visible column info names
      */
@@ -76,12 +74,12 @@ public final class ColumnWrapper {
         }
         return list.toArray(new String[list.size()]);
     }
-    
+
     /**
-     * Converts the array of column info names to an array of column wrappers. The return array
-     * always contains wrappers for all column infos. The wrapper of those infos that are included 
-     * in the <code>columns</code> parameter are visible, the others are not.
-     *  
+     * Converts the array of column info names to an array of column wrappers. The return array always contains wrappers
+     * for all column infos. The wrapper of those infos that are included in the <code>columns</code> parameter are
+     * visible, the others are not.
+     *
      * @param columns visible column info names
      * @return array of wrappers for all column infos
      */
@@ -89,10 +87,10 @@ public final class ColumnWrapper {
         ColumnWrapper[] wrappers = getNewWrappers();
         List<ColumnWrapper> list = new ArrayList<>(wrappers.length);
         for (String s : columns) {
-            String[] col = s.split("\\,",-1);
+            String[] col = s.split("\\,", -1); //$NON-NLS-1$
             String id = null;
             String name = null;
-            int minWidth = -1; 
+            int minWidth = -1;
             int weight = -1;
             if (col.length > 2) {
                 id = col[0];
@@ -100,7 +98,7 @@ public final class ColumnWrapper {
                 weight = Integer.parseInt(col[2]);
                 if (col.length > 3) {
                     name = col[3];
-                } 
+                }
             }
             ColumnInfo info = ColumnInfo.valueOf(id);
             for (int i = 0; i < wrappers.length; i++) {
@@ -122,12 +120,12 @@ public final class ColumnWrapper {
         }
         return list.toArray(new ColumnWrapper[list.size()]);
     }
-    
+
     /**
      * Restore the columns from the memento. The columns are expected to be children of the given memento.
-     * 
-     * @param memento the source 
-     * @return columns restored from the memento with all parameters properly set 
+     *
+     * @param memento the source
+     * @return columns restored from the memento with all parameters properly set
      */
     public static ColumnWrapper[] restoreColumns(IMemento memento) {
         if (memento == null) {
@@ -138,9 +136,9 @@ public final class ColumnWrapper {
         for (ColumnInfo ci : ColumnInfo.values()) {
             IMemento m = memento.getChild(ci.name());
             if (m == null) {
-                for (int i = wrappers.length-1; i >= -1; i--) {
+                for (int i = wrappers.length - 1; i >= -1; i--) {
                     if (wrappers[i] == null) {
-                        wrappers[i] = new ColumnWrapper(ci,false);
+                        wrappers[i] = new ColumnWrapper(ci, false);
                         break;
                     }
                 }
@@ -149,18 +147,18 @@ public final class ColumnWrapper {
                 Integer order = m.getInteger(M_ORDER_KEY);
                 ColumnWrapper w = null;
                 if (wrappers[order] == null) {
-                    wrappers[order] = new ColumnWrapper(ci,visible);
+                    wrappers[order] = new ColumnWrapper(ci, visible);
                     w = wrappers[order];
                 } else {
                     for (int i = 0; i < wrappers.length; i++) {
                         if (wrappers[i] == null) {
-                            wrappers[i] = new ColumnWrapper(ci,visible);
+                            wrappers[i] = new ColumnWrapper(ci, visible);
                             w = wrappers[i];
                             break;
                         }
                     }
                 }
-                
+
                 Integer minWidth = m.getInteger(M_MIN_WIDTH);
                 Integer weight = m.getInteger(M_WEIGHT);
                 if (w != null) {
@@ -172,11 +170,11 @@ public final class ColumnWrapper {
         }
         return wrappers;
     }
-    
+
     /**
-     * Save the column info into the given memento. The columns are stored as children of the memento, one child per 
+     * Save the column info into the given memento. The columns are stored as children of the memento, one child per
      * column. Each child contains information required to restore the current visuble state of the column.
-     * 
+     *
      * @param memento the destination memento
      * @param columns the column to store
      */
@@ -184,7 +182,7 @@ public final class ColumnWrapper {
         if (memento == null) {
             return;
         }
-        
+
         for (int i = 0; i < columns.length; i++) {
             IMemento m = memento.createChild(columns[i].getColumnInfo().name());
             m.putBoolean(M_VISIBLE, columns[i].isVisible());
@@ -194,26 +192,25 @@ public final class ColumnWrapper {
             m.putString(M_NAME, columns[i].name);
         }
     }
-    
+
     private final ColumnInfo info;
     private boolean visible = true;
     private String name;
     private int minWidth = -1;
     private int weight = -1;
-    
-    
+
     /**
      * Constructs a new ColumnWrapper for the given info.
-     * 
+     *
      * @param info the column info
      */
     private ColumnWrapper(ColumnInfo info) {
         this.info = info;
     }
-    
+
     /**
      * Constructs a new ColumnWrapper for the given info.
-     * 
+     *
      * @param info the column info
      * @param visible the default visible property value
      */
@@ -221,16 +218,16 @@ public final class ColumnWrapper {
         this.info = info;
         setVisible(visible);
     }
-    
+
     /**
      * Sets this column visible or invisible. The GUI should make the effort to obey this setting.
-     * 
+     *
      * @param visible true if the column should be visible or false if it should be hidden
      */
     public void setVisible(boolean visible) {
         this.visible = visible;
     }
-    
+
     /**
      * @see {@link #setVisible(boolean)}
      * @return the visible flag for this column
@@ -238,70 +235,65 @@ public final class ColumnWrapper {
     public boolean isVisible() {
         return visible;
     }
-    
+
     /**
      * @return the column info wrapped into this wrapper
      */
     public ColumnInfo getColumnInfo() {
         return info;
     }
-    
+
     /**
-     * @return the visible name of the column 
+     * @return the visible name of the column
      */
-    public String getName()
-    {
+    public String getName() {
         return name == null ? info.getTitle() : name;
     }
-    
+
     /**
      * @return resize weight of the column
      */
-    public int getWeight()
-    {
+    public int getWeight() {
         return weight < 0 ? info.getWeight() : weight;
     }
-    
+
     /**
      * @return minimum width of the column
      */
-    public int getMinWidth()
-    {
+    public int getMinWidth() {
         return minWidth <= 0 ? info.getMinWidth() : minWidth;
     }
-    
+
     /**
      * Set the new minimum width for this column.
-     * 
+     *
      * @param minWidth the new minimum width
      */
     public void setMinWidth(int minWidth) {
         this.minWidth = minWidth;
     }
-    
+
     @Override
-    public String toString()
-    {
+    public String toString() {
         return info.toString();
     }
 
     @Override
-    public int hashCode()
-    {
-        return Objects.hash(info,name,visible,weight,minWidth);
+    public int hashCode() {
+        return Objects.hash(info, name, visible, weight, minWidth);
     }
 
     @Override
-    public boolean equals(Object obj)
-    {
-        if (this == obj)
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
-        if (obj == null)
+        } else if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        } else if (getClass() != obj.getClass()) {
             return false;
+        }
         ColumnWrapper other = (ColumnWrapper) obj;
-        return visible == other.visible && weight == other.weight && minWidth == other.minWidth && info == other.info &&
-                Objects.equals(name, other.name);
-    }   
+        return visible == other.visible && weight == other.weight && minWidth == other.minWidth && info == other.info
+                && Objects.equals(name, other.name);
+    }
 }

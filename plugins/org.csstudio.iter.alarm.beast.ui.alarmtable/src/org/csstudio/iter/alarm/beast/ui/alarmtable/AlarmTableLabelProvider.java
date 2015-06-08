@@ -21,20 +21,20 @@ import org.eclipse.jface.viewers.ViewerCell;
  *  @author Kay Kasemir
  */
 public class AlarmTableLabelProvider extends CellLabelProvider
-{    
+{
     /** Mapping of severities to colors */
     final private SeverityColorProvider color_provider;
-    
+
     final private SeverityIconProvider icon_provider;
-    
+
     /** Column handled by this label provider */
     final private ColumnInfo column;
-    
+
     private String timeFormat;
     private SimpleDateFormat formatter;
-    
+
     /** Initialize
-     *  @param icon_provider icon provider 
+     *  @param icon_provider icon provider
      *  @param color_provider Color provider for severity values
      *  @param column Column for which this label provider should give labels etc.
      */
@@ -43,12 +43,12 @@ public class AlarmTableLabelProvider extends CellLabelProvider
     {
         this.icon_provider = icon_provider;
         this.color_provider = color_provider;
-        this.column = column;       
+        this.column = column;
     }
-    
+
     /**
      * Sets the time format used for converting the time value to a string
-     * 
+     *
      * @param timeFormat the format string acceptable by {@link SimpleDateFormat}
      */
     public void setTimeFormat(String timeFormat) {
@@ -86,7 +86,7 @@ public class AlarmTableLabelProvider extends CellLabelProvider
         switch (column)
         {
         case ACK:
-            cell.setImage(alarm.getSeverity().isActive() 
+            cell.setImage(alarm.getSeverity().isActive()
                     ? CheckBoxImages.getInstance(cell.getControl()).getImage(false)
                     : CheckBoxImages.getInstance(cell.getControl()).getImage(true));
             break;
@@ -104,7 +104,7 @@ public class AlarmTableLabelProvider extends CellLabelProvider
             }
             break;
         case TIME:
-            cell.setText(formatter == null ? alarm.getTimestampText() 
+            cell.setText(formatter == null ? alarm.getTimestampText()
                     : (alarm.getTimestamp() == null ? "" : formatter.format(alarm.getTimestamp().toDate())));
             break;
         case CURRENT_SEVERITY:

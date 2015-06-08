@@ -12,40 +12,31 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.inject.Inject;
-
 import org.csstudio.alarm.beast.client.AlarmTreeItem;
 import org.csstudio.alarm.beast.client.AlarmTreePV;
 import org.csstudio.alarm.beast.client.AlarmTreeRoot;
 import org.csstudio.alarm.beast.ui.actions.AcknowledgeAction;
 import org.csstudio.alarm.beast.ui.actions.MaintenanceModeAction;
-import org.csstudio.alarm.beast.ui.clientmodel.AlarmClientModel;
-import org.csstudio.alarm.beast.ui.clientmodel.AlarmClientModelListener;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.ColumnConfigureAction;
-import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.LockTreeSelectionAction;
+import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.FilterAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.NewTableAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.ResetColumnsAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.SeparateCombineTablesAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.ShowFilterAction;
-import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.SynchronizeWithTreeAction;
-import org.eclipse.e4.core.contexts.ContextInjectionFactory;
-import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.eclipse.e4.ui.model.application.ui.basic.MPart;
-import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
-import org.eclipse.e4.ui.workbench.modeling.ISelectionListener;
-import org.eclipse.jface.action.IAction;
+import org.csstudio.alarm.beast.ui.clientmodel.AlarmClientModel;
+import org.csstudio.alarm.beast.ui.clientmodel.AlarmClientModelListener;
+import org.csstudio.ui.util.dnd.ControlSystemDropTarget;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.Separator;
-import org.eclipse.jface.util.IPropertyChangeListener;
-import org.eclipse.jface.util.PropertyChangeEvent;
-import org.eclipse.jface.viewers.TreeSelection;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.IViewPart;
@@ -59,11 +50,10 @@ import org.eclipse.ui.part.ViewPart;
  * @author Kay Kasemir
  * @author Jaka Bobnar - Combined/split alarm tables, configurable columns
  */
-public class AlarmTableView extends ViewPart {
-    /** Property ID for the synchronise with tree property change events */
-    public static final int PROP_SYNC_WITH_TREE = 555444;
-    /** Property ID for the lock tree selection property change events */
-    public static final int PROP_LOCK_TREE = 555445;
+public class AlarmTableView extends ViewPart
+{
+    public static final int PROP_FILTER = 555444;
+    public static final int PROP_FILTER_ITEM = 555445;
 
     private static AtomicInteger secondaryId = new AtomicInteger(1);
 
@@ -72,91 +62,95 @@ public class AlarmTableView extends ViewPart {
      *
      * @return part
      */
-    public static String newSecondaryID(IViewPart part) {
-        while (part.getSite().getPage().findViewReference(part.getSite().getId(),
-                String.valueOf(secondaryId.get())) != null) {
+    public static String newSecondaryID(IViewPart part)
+    {
+        while (part.getSite().getPage().findViewReference(part.getSite().getId(), String.valueOf(secondaryId.get())) != null)
+        {
             secondaryId.incrementAndGet();
         }
 
         return String.valueOf(secondaryId.get());
     }
 
-    /** ID of view, defined in plugin.xml */
-    public static final String ID = "org.csstudio.iter.alarm.beast.ui.alarmtable.view"; //$NON-NLS-1$
-    private static final String ALARM_TREE_ID = "org.csstudio.alarm.beast.ui.alarmtree.View";
-
-    private AlarmClientModelListener modelListener = new AlarmClientModelListener() {
+    private AlarmClientModel model;
+    private AlarmClientModel defaultModel;
+    private AlarmClientModelListener modelListener = new AlarmClientModelListener()
+    {
         @Override
-        public void newAlarmConfiguration(AlarmClientModel model) {
-            getViewSite().getWorkbenchWindow().getShell().getDisplay().asyncExec(() -> setPresetFilter());
+        public void newAlarmConfiguration(AlarmClientModel model)
+        {
+            parent.getDisplay().asyncExec(()->updateFilterItem());
         }
 
         @Override
-        public void serverTimeout(AlarmClientModel model) {
+        public void serverTimeout(AlarmClientModel model)
+        {
         }
-
         @Override
-        public void serverModeUpdate(AlarmClientModel model, boolean maintenance_mode) {
+        public void serverModeUpdate(AlarmClientModel model, boolean maintenance_mode)
+        {
         }
-
         @Override
-        public void newAlarmState(AlarmClientModel model, AlarmTreePV pv, boolean parent_changed) {
+        public void newAlarmState(AlarmClientModel model, AlarmTreePV pv, boolean parent_changed)
+        {
         }
     };
 
-    private AlarmClientModel model;
-
     private Composite parent;
     private GUI gui;
-
-    @Inject
-    private ESelectionService selectionService;
-
+    private MaintenanceModeAction maintenanceModeAction;
     private IMemento memento;
 
+    private FilterType filterType;
     /** Combined active and acknowledge alarms, group into separate tables? */
     private boolean combinedTables;
-    /** Show alarms belonging to the selected alarm tree item or all alarms */
-    private boolean syncWithTree;
-    /** Update the selected filter when the selection change or keep the previous item */
-    private boolean lockTreeSelection;
     /** Should severity icons blink or not */
     private boolean blinkingIcons;
     /** The time format string used for formatting the alarm time label */
     private String timeFormat;
-    /** The name of the alarm configuration (tree) that this table is attached to */
-    private String configurationName;
     /** The name of the filter item */
-    private String filterItemName;
+    private String filterItemPath;
     /** The filter item, which should match the filterItemName and configurationName if the model is available */
     private AlarmTreeItem filterItem;
 
     private ColumnWrapper[] columns = ColumnWrapper.getNewWrappers();
 
     @Override
-    public void init(IViewSite site, IMemento memento) throws PartInitException {
+    public void init(IViewSite site, IMemento memento) throws PartInitException
+    {
         this.memento = memento;
+        this.blinkingIcons = Preferences.isBlinkUnacknowledged();
+        restoreState(memento,site);
         super.init(site);
-        IEclipseContext context = (IEclipseContext) getSite().getService(IEclipseContext.class);
-        ContextInjectionFactory.inject(this, context);
     }
 
     @Override
-    public void dispose() {
-        if (secondaryId.get() > 1) {
+    public void dispose()
+    {
+        if (secondaryId.get() > 1)
+        {
             secondaryId.decrementAndGet();
         }
         super.dispose();
     }
 
     @Override
-    public void createPartControl(final Composite parent) {
+    public void createPartControl(final Composite parent)
+    {
         this.parent = parent;
-        applyPreferences();
-        try {
-            model = AlarmClientModel.getInstance();
-            model.addListener(modelListener);
-        } catch (final Throwable ex) { // Instead of actual GUI, create error message
+        parent.setLayout(new FillLayout());
+        try
+        {
+            defaultModel = AlarmClientModel.getInstance();
+            defaultModel.addListener(modelListener);
+            if (filterItemPath != null)
+            {
+                model = AlarmClientModel.getInstance(getConfigNameFromPath(filterItemPath));
+                model.addListener(modelListener);
+            }
+        }
+        catch (final Throwable ex)
+        {   // Instead of actual GUI, create error message
             final String error = ex.getCause() != null ? ex.getCause().getMessage() : ex.getMessage();
             final String message = NLS.bind(org.csstudio.alarm.beast.ui.Messages.ServerErrorFmt, error);
             // Add to log, also display in text widget
@@ -167,86 +161,84 @@ public class AlarmTableView extends ViewPart {
         }
 
         // Arrange for model to be released
-        parent.addDisposeListener(new DisposeListener() {
+        parent.addDisposeListener(new DisposeListener()
+        {
             @Override
-            public void widgetDisposed(DisposeEvent e) {
-                model.removeListener(modelListener);
-                model.release();
-                model = null;
+            public void widgetDisposed(DisposeEvent e)
+            {
+                releaseModel(defaultModel);
+                releaseModel(model);
             }
         });
 
         makeGUI();
         createToolbar();
-        setFilterItem(null); //this will initialize the title
-
-        selectionService.addSelectionListener(ALARM_TREE_ID, new ISelectionListener() {
-            @Override
-            public void selectionChanged(MPart part, Object selection) {
-                updateSelection();
-            }
-        });
-        updateSelection();
+        updateFilterItem();
     }
 
-    private void applyPreferences() {
-        this.blinkingIcons = Preferences.isBlinkUnacknowledged();
-        if (memento == null) {
+    private void restoreState(IMemento memento, IViewSite site)
+    {
+        if (memento == null)
+        {
             this.combinedTables = Preferences.isCombinedAlarmTable();
-            this.syncWithTree = Preferences.isSynchronizeWithTree();
-            this.lockTreeSelection = Preferences.isLockTreeSelection();
+            this.filterType = FilterType.TREE;
             this.columns = ColumnWrapper.fromSaveArray(Preferences.getColumns());
-            if (getViewSite().getSecondaryId() != null) {
+            //set format for all tables except the main one
+            if (site.getSecondaryId() != null)
                 this.timeFormat = Preferences.getTimeFormat();
-            }
-        } else {
+        }
+        else
+        {
             Boolean groupSet = memento.getBoolean(Preferences.ALARM_TABLE_COMBINED_TABLES);
             this.combinedTables = groupSet == null ? Preferences.isCombinedAlarmTable() : groupSet;
 
-            Boolean syncWithTreeSet = memento.getBoolean(Preferences.ALARM_TABLE_SYNC_WITH_TREE);
-            this.syncWithTree = syncWithTreeSet == null ? Preferences.isSynchronizeWithTree() : syncWithTreeSet;
-
-            Boolean lockSelectionSet = memento.getBoolean(Preferences.ALARM_TABLE_LOCK_SELECTION);
-            this.lockTreeSelection = lockSelectionSet == null ? Preferences.isLockTreeSelection() : lockSelectionSet;
-
-            if (this.lockTreeSelection) {
-                this.configurationName = memento.getString(Preferences.ALARM_TABLE_CONFIGURATION);
-            }
+            String filterTypeSet = memento.getString(Preferences.ALARM_TABLE_FILTER_TYPE);
+            this.filterType = filterTypeSet == null ? FilterType.TREE : FilterType.valueOf(filterTypeSet.toUpperCase());
 
             this.timeFormat = memento.getString(Preferences.ALARM_TABLE_TIME_FORMAT);
+            if (site.getSecondaryId() != null && this.timeFormat == null)
+                this.timeFormat = Preferences.getTimeFormat();
 
             this.columns = ColumnWrapper.restoreColumns(memento.getChild(Preferences.ALARM_TABLE_COLUMN_SETTING));
 
             String name = memento.getString(Preferences.ALARM_TABLE_FILTER_ITEM);
-            this.filterItemName = name == null || name.isEmpty() ? null : name;
+            this.filterItemPath = name == null || name.isEmpty() ? null : name;
         }
     }
 
     @Override
-    public void saveState(IMemento memento) {
+    public void saveState(IMemento memento)
+    {
         super.saveState(memento);
         memento.putBoolean(Preferences.ALARM_TABLE_COMBINED_TABLES, combinedTables);
-        memento.putBoolean(Preferences.ALARM_TABLE_SYNC_WITH_TREE, syncWithTree);
-        memento.putBoolean(Preferences.ALARM_TABLE_LOCK_SELECTION, lockTreeSelection);
-        memento.putString(Preferences.ALARM_TABLE_CONFIGURATION, configurationName);
-        if (filterItem != null) {
+        memento.putString(Preferences.ALARM_TABLE_FILTER_TYPE, filterType.name());
+        if (filterItem != null)
             memento.putString(Preferences.ALARM_TABLE_FILTER_ITEM, filterItem.getPathName());
-        } else if (filterItemName != null) {
-            memento.putString(Preferences.ALARM_TABLE_FILTER_ITEM, filterItemName);
-        }
+        else if (filterItemPath != null)
+            memento.putString(Preferences.ALARM_TABLE_FILTER_ITEM, filterItemPath);
+
+        if (this.timeFormat != null)
+            memento.putString(Preferences.ALARM_TABLE_TIME_FORMAT, timeFormat);
 
         IMemento columnsMemento = memento.createChild(Preferences.ALARM_TABLE_COLUMN_SETTING);
         ColumnWrapper.saveColumns(columnsMemento, getUpdatedColumns());
-        if (gui != null) {
-            gui.saveState(memento);
+        if (gui != null)
+        {
+            ColumnInfo info = gui.getSortingColumn();
+            if (info != null)
+                memento.putString(Preferences.ALARM_TABLE_SORT_COLUMN, info.name());
+            memento.putBoolean(Preferences.ALARM_TABLE_SORT_UP, gui.isSortingUp());
         }
-
     }
 
-    private void createToolbar() {
+    private void createToolbar()
+    {
         final IToolBarManager toolbar = getViewSite().getActionBars().getToolBarManager();
-        if (model.isWriteAllowed()) {
-            toolbar.add(new MaintenanceModeAction(model));
+        toolbar.removeAll();
+        if (defaultModel.isWriteAllowed())
+        {
+            maintenanceModeAction = new MaintenanceModeAction(defaultModel);
+            toolbar.add(maintenanceModeAction);
             toolbar.add(new Separator());
             AcknowledgeAction action = new AcknowledgeAction(true, gui.getActiveAlarmTable());
             action.clearSelectionOnAcknowledgement(gui.getActiveAlarmTable());
@@ -257,19 +249,8 @@ public class AlarmTableView extends ViewPart {
             toolbar.add(new Separator());
         }
 
-        final SynchronizeWithTreeAction syncAction = new SynchronizeWithTreeAction(this, syncWithTree);
-        final LockTreeSelectionAction lockTreeSelectionAction = new LockTreeSelectionAction(this, lockTreeSelection);
-        syncAction.addPropertyChangeListener(new IPropertyChangeListener() {
-            @Override
-            public void propertyChange(PropertyChangeEvent event) {
-                if (IAction.CHECKED.equals(event.getProperty())) {
-                    lockTreeSelectionAction.setEnabled((Boolean) event.getNewValue());
-                }
-            }
-        });
-        lockTreeSelectionAction.setEnabled(syncAction.isChecked());
-        toolbar.add(syncAction);
-        toolbar.add(lockTreeSelectionAction);
+        for (FilterType f : FilterType.values())
+            toolbar.add(new FilterAction(this, f, this.filterType == f));
         toolbar.add(new Separator());
 
         final IMenuManager menu = getViewSite().getActionBars().getMenuManager();
@@ -282,9 +263,15 @@ public class AlarmTableView extends ViewPart {
         menu.add(new ResetColumnsAction(this));
         menu.add(new Separator());
         menu.add(new ShowFilterAction(this));
-        // no need to allow users to enable
-        // menu.add(new Separator());
-        // menu.add(new BlinkingToggleAction(this, blinkingIcons));
+    }
+
+    private void releaseModel(AlarmClientModel model) {
+        if (this.model != null)
+        {
+            this.model.removeListener(modelListener);
+            this.model.release();
+            this.model = null;
+        }
     }
 
     /**
@@ -294,102 +281,92 @@ public class AlarmTableView extends ViewPart {
      * @see AlarmTableView#setFilterItem(AlarmTreeItem)
      *
      * @param path the path to filter on
+     * @throws Exception if the model for the given path could not be created
      */
-    public void setFilterItemPath(String path) {
-        AlarmTreeRoot root = model.getConfigTree().getRoot();
-        AlarmTreeItem item = root.getItemByPath(path);
-        if (lockTreeSelection) {
-            configurationName = model.getConfigurationName();
+    public void setFilterItemPath(String path) throws Exception
+    {
+        this.filterItemPath = path;
+        if (filterItemPath == null || filterItemPath.isEmpty())
+        {
+            releaseModel(model);
+            setFilterType(FilterType.TREE);
         }
-        setFilterItem(item);
-    }
-
-    private AlarmTreeItem getItem() {
-        Object selection = selectionService.getSelection(ALARM_TREE_ID);
-        AlarmTreeItem item = null;
-        if (selection instanceof TreeSelection) {
-            item = (AlarmTreeItem) ((TreeSelection) selection).getFirstElement();
-        } else if (selection instanceof AlarmTreeItem) {
-            item = (AlarmTreeItem) selection;
-        }
-
-        // find the item that has the same path and belongs to this model
-        return (model == null || item == null) ? null : model.getConfigTree().getItemByPath(item.getPathName());
-    }
-
-    private boolean setPresetFilter() {
-        if (filterItemName != null && filterItem == null) {
-            if (configurationName == null || configurationName.equals(model.getConfigurationName())) {
-                setFilterItem(model.getConfigTree().getItemByPath(filterItemName));
+        else
+        {
+            String configName = getConfigNameFromPath(filterItemPath);
+            if (model == null || !model.getConfigurationName().equals(configName))
+            {
+                releaseModel(model);
+                this.model = AlarmClientModel.getInstance(configName);
+                this.model.addListener(modelListener);
             }
-            return true;
+            setFilterType(FilterType.ITEM);
         }
-        return false;
-    }
-
-    private void updateSelection() {
-        if (model == null || (configurationName != null && !configurationName.equals(model.getConfigurationName()))) {
-            //if the configuration name is set and the name does not equals the name from the model, do not set anything
-            return;
-        }
-        if (syncWithTree) {
-            if (lockTreeSelection) {
-                if (this.filterItem == null) {
-                    if (!setPresetFilter()) {
-                        // no filter item in a locked tree yet
-                        setFilterItem(getItem());
-                    }
-                }
-            } else {
-                setFilterItem(getItem());
-            }
-        } else {
-            setFilterItem(null);
-        }
-    }
-
-    /**
-     * Set the filter item. Only the alarms that are descendants of the given item will be displayed in the table. The
-     * item must match the actual item from the shared model. A clone or a copy with the same path might result in
-     * strange behaviour.
-     *
-     * @param item the item to filter on
-     */
-    private void setFilterItem(AlarmTreeItem item) {
-        this.filterItem = item;
-        if (gui != null) {
-            gui.setFilterItem(item, filterItemName);
-        }
-        String name;
-        if (item == null) {
-            if (filterItemName == null) {
-                name = model.getConfigurationName();
-            } else {
-                int idx = filterItemName.lastIndexOf('/');
-                name = idx < 0 ? filterItemName : filterItemName.substring(idx+1);
-            }
-        } else {
-            name = item.getName();
-        }
-        setPartName(NLS.bind(Messages.AlarmTablePartName, name));
-        setTitleToolTip(NLS.bind(Messages.AlarmTableTitleTT, name));
+        updateFilterItem();
     }
 
     /**
      * @return the currently applied filter item
      */
-    public String getFilterItemPath() {
-        return filterItem == null ? model.getConfigTree().getRoot().getPathName() : filterItem.getPathName();
+    public String getFilterItemPath()
+    {
+        return filterItemPath;
+    }
+
+
+    /**
+     * Updated the filter item according to the selected filter type and filter item path. The view title
+     * is also updated.
+     */
+    private void updateFilterItem()
+    {
+        AlarmClientModel activeModel = null;
+        String name;
+        if (filterType == FilterType.TREE)
+        {
+            activeModel = defaultModel;
+            name = activeModel.getConfigurationName();
+            if (gui != null)
+                gui.setFilterItem(null, activeModel);
+        }
+        else
+        {
+            activeModel = model;
+            AlarmTreeRoot root = activeModel.getConfigTree().getRoot();
+            this.filterItem = root.getItemByPath(filterItemPath);
+            if (filterItem != null)
+            {
+                if (filterType == FilterType.ITEM)
+                    name = filterItem.getName();
+                else
+                    name = activeModel.getConfigurationName();
+            }
+            else
+            {
+                //filter path is set, but the item is null, because it
+                //either does not exist, or the model is not yet connected
+                int idx = filterItemPath.lastIndexOf('/');
+                name = idx < 0 ? filterItemPath : filterItemPath.substring(idx + 1);
+                name = "\u00BF" + name + "?";
+            }
+            if (gui != null)
+                gui.setFilterItem(filterType == FilterType.ITEM ? filterItem : null, activeModel);
+        }
+        if (maintenanceModeAction != null)
+            maintenanceModeAction.setModel(activeModel);
+        setPartName(NLS.bind(Messages.AlarmTablePartName, name));
+        setTitleToolTip(NLS.bind(Messages.AlarmTableTitleTT, name));
+        firePropertyChange(PROP_FILTER_ITEM);
     }
 
     /**
      * @return the columns as they are currently visible and ordered in the table
      */
-    public ColumnWrapper[] getUpdatedColumns() {
+    public ColumnWrapper[] getUpdatedColumns()
+    {
         ColumnWrapper[] columns = ColumnWrapper.getCopy(this.columns);
-        if (gui != null) {
+        if (gui != null)
             gui.updateColumnOrder(columns);
-        }
         return columns;
     }
 
@@ -399,36 +376,83 @@ public class AlarmTableView extends ViewPart {
      *
      * @param columns the columns to set on the table
      */
-    public void setColumns(ColumnWrapper[] columns) {
+    public void setColumns(ColumnWrapper[] columns)
+    {
         this.columns = columns;
         redoGUI();
     }
 
-    private void makeGUI() {
-        if (parent.isDisposed()) {
-            return;
+    private boolean makeGUI()
+    {
+        if (parent.isDisposed())
+            return false;
+        String s = memento == null ? null : memento.getString(Preferences.ALARM_TABLE_SORT_COLUMN);
+        ColumnInfo sorting = s == null ? ColumnInfo.PV : ColumnInfo.valueOf(s);
+        boolean sortUp = false;
+        if (memento != null) {
+            Boolean b = memento.getBoolean(Preferences.ALARM_TABLE_SORT_UP);
+            sortUp = b == null ? false : b;
         }
-        if (gui != null) {
-            gui.saveState(memento);
+
+        if (gui != null)
+        {
+            sorting = gui.getSortingColumn();
+            sortUp = gui.isSortingUp();
             gui.dispose();
         }
-        gui = new GUI(parent, model, getSite(), !combinedTables, columns, memento);
+        gui = new GUI(parent, getSite(), defaultModel.isWriteAllowed(),
+                !combinedTables, columns, sorting, sortUp);
         gui.setBlinking(blinkingIcons);
         gui.setTimeFormat(timeFormat);
-        gui.setFilterItem(filterItem, filterItemName);
+        setUpDrop(gui.getActiveAlarmTable().getTable());
+        setUpDrop(gui.getAcknowledgedAlarmTable().getTable());
+        updateFilterItem();
+
+        return true;
     }
 
-    private void redoGUI() {
-        if (gui != null) {
-            parent.getDisplay().asyncExec(() -> {
-                makeGUI();
-                parent.layout();
+    private void setUpDrop(Control control)
+    {
+        if (control == null || control.getData(DND.DROP_TARGET_KEY) != null)
+            return;
+        new ControlSystemDropTarget(control, AlarmTreeItem.class, AlarmTreeItem[].class,
+                AlarmTreePV.class, AlarmTreePV[].class)
+        {
+            @Override
+            public void handleDrop(Object item)
+            {
+                try
+                {
+                    if (item instanceof AlarmTreeItem[])
+                        setFilterItemPath(((AlarmTreeItem[])item)[0].getPathName());
+                    else if (item instanceof AlarmTreeItem || item instanceof AlarmTreePV)
+                        setFilterItemPath(((AlarmTreeItem)item).getPathName());
+                    else if (item instanceof AlarmTreePV[])
+                        setFilterItemPath(((AlarmTreePV[])item)[0].getPathName());
+                }
+                catch (Exception e)
+                {
+                    throw new IllegalArgumentException(e);
+                }
+            }
+        };
+    }
+
+    private void redoGUI()
+    {
+        if (gui != null)
+        {
+            parent.getDisplay().asyncExec(() ->
+            {
+                if (makeGUI())
+                    parent.layout();
             });
         }
     }
 
     @Override
-    public void setFocus() {
+    public void setFocus()
+    {
         // NOP
     }
 
@@ -438,52 +462,38 @@ public class AlarmTableView extends ViewPart {
      * @param combinedTables true if the acknowledged and unacknowledged alarms should be displayed in a single table,
      *            or false if they should be displayed in separate tables
      */
-    public void setCombinedTables(boolean separated) {
+    public void setCombinedTables(boolean separated)
+    {
         this.combinedTables = separated;
         redoGUI();
     }
 
     /**
-     * Sets the flag whether the list of alarms should be synchronized with the selected alarm tree item. When true the
-     * table will only display those alarms that are descendants of the tree item selected in the Alarm Tree. If false
-     * the table will display all alarms from the currently selected alarm root.
+     * Set the filter type for the table. The table will display alarms according to this filter. If the filter
+     * is {@link FilterType#TREE} all alarms from the root currently selected in the alarm tree; if the filter type
+     * is {@link FilterType#ROOT} all alarms from the root that is currently applied to this table (through filter item)
+     * will be displayed; if filter type is {@link FilterType#ITEM} only the alarms belonging to the filter item will
+     * be displayed.
      *
-     * @param syncWithTree true if only the alarms that are descendants of the selected tree item should be displayed or
-     *            false if all alarms should be displayed
+     * @param filterType the filter type to set
      */
-    public void setSyncAlarmsWithTreeSelection(boolean syncWithTree) {
-        this.syncWithTree = syncWithTree;
-        updateSelection();
-        firePropertyChange(PROP_SYNC_WITH_TREE);
+    public void setFilterType(FilterType filterType)
+    {
+        if (filterItemPath == null && (filterType == FilterType.ROOT || filterType == FilterType.ITEM)) {
+            throw new IllegalStateException("Cannot apply filter type " + filterType //$NON-NLS-1$
+                    + " if no filter item is defined."); //$NON-NLS-1$
+        }
+        this.filterType = filterType;
+        updateFilterItem();
+        firePropertyChange(PROP_FILTER);
     }
 
     /**
-     * @return true if the filter item is synchronised with alarm tree selection
+     * @return the filter type currently selected for this table
      */
-    public boolean isSynchAlarmsWithTreeSelection() {
-        return this.syncWithTree;
-    }
-
-    /**
-     * Toggles the lock on the selected tree item. When locked the table will always display the alarms that belong to
-     * the tree item that was selected in the alarm tree at the time when the lock was pressed. When unlocked the table
-     * will display the alarms according to what was set by {@link #setSyncAlarmsWithTreeSelection(boolean)}.
-     *
-     * @param lock true if the table should be locked to a tree item or false if the content should change when the tree
-     *            selection changes
-     */
-    public void setLockTreeSelection(boolean lock) {
-        this.lockTreeSelection = lock;
-        configurationName = lock ? model.getConfigurationName() : null;
-        updateSelection();
-        firePropertyChange(PROP_LOCK_TREE);
-    }
-
-    /**
-     * @return true if the filter item is locked on some alarm tree item
-     */
-    public boolean isLockTreeSelection() {
-        return this.lockTreeSelection;
+    public FilterType getFilterType()
+    {
+        return this.filterType;
     }
 
     /**
@@ -491,18 +501,19 @@ public class AlarmTableView extends ViewPart {
      *
      * @param blinking true if the icons should be blinking or false otherwise
      */
-    public void setBlinkingIcons(boolean blinking) {
+    public void setBlinkingIcons(boolean blinking)
+    {
         this.blinkingIcons = blinking;
-        if (gui != null) {
+        if (gui != null)
             gui.setBlinking(blinking);
-        }
     }
 
     /**
      * @return the alarm client model used by this table
      */
-    public AlarmClientModel getModel() {
-        return model;
+    public AlarmClientModel getModel()
+    {
+        return filterType == FilterType.TREE ? defaultModel : model;
     }
 
     /**
@@ -511,21 +522,33 @@ public class AlarmTableView extends ViewPart {
      *
      * @param format the format
      */
-    public void setTimeFormat(String format) {
-        if (format != null && format.isEmpty()) {
+    public void setTimeFormat(String format)
+    {
+        if (format != null && format.isEmpty())
             format = null;
-        }
         this.timeFormat = format;
-        if (gui != null) {
+        if (gui != null)
             gui.setTimeFormat(format);
-        }
     }
 
     /**
      * @return the currently used time format or null if default
      */
-    public String getTimeFormat() {
+    public String getTimeFormat()
+    {
         return timeFormat;
     }
 
+    /**
+     * Parses the configuration name from the given path.
+     *
+     * @param path the path to parse
+     * @return configuration name
+     */
+    public static String getConfigNameFromPath(String path) {
+        String name = path;
+        if (name.charAt(0) == '/')
+            name = name.substring(1);
+        return name.substring(0, name.indexOf('/'));
+    }
 }
