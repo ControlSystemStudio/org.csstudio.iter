@@ -11,9 +11,8 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.osgi.util.NLS;
 
 /**
- * 
- * <code>ShowFilterAction</code> opens a dialog through which user can type in the name of the alarm tree item 
- * to use for filtering. 
+ * <code>ShowFilterAction</code> opens a dialog through which user can type in the name of the alarm tree item
+ * to use for filtering.
  *
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
  *
@@ -21,17 +20,17 @@ import org.eclipse.osgi.util.NLS;
 public class ShowFilterAction extends Action {
 
     private final AlarmTableView view;
-    
+
     public ShowFilterAction(AlarmTableView view) {
         super(Messages.SelectFilter, AS_PUSH_BUTTON);
         this.view = view;
     }
-    
+
     @Override
     public void run() {
         final AlarmTreeRoot rootItem = view.getModel().getConfigTree().getRoot();
         String item = view.getFilterItemPath();
-        InputDialog dialog = new InputDialog(view.getViewSite().getShell(), 
+        InputDialog dialog = new InputDialog(view.getViewSite().getShell(),
                 Messages.SelectFilterDialogTitle, Messages.SelectFilterDialogMessage,
                 item, new IInputValidator(){
             @Override
@@ -46,16 +45,16 @@ public class ShowFilterAction extends Action {
                 return null;
             }
         });
+
         if (dialog.open() == Window.OK) {
             String newValue = dialog.getValue();
             if (newValue == null || newValue.isEmpty() || newValue.equals(rootItem.getPathName())) {
-                view.setSyncAlarmsWithTreeSelection(false);
-            } else {
-                view.setSyncAlarmsWithTreeSelection(true);
-                view.setLockTreeSelection(true);
-                view.setFilterItemPath(newValue);
+                try {
+                    view.setFilterItemPath(newValue);
+                } catch (Exception e) {
+                    throw new IllegalArgumentException("Cannot set the filter item path " + newValue, e); //$NON-NLS-1$
+                }
             }
         }
-        
     }
 }

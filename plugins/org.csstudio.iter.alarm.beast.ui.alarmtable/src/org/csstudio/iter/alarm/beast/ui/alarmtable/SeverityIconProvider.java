@@ -11,7 +11,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 
 /**
- * 
+ *
  * <code>SeverityIconProvider</code> provides the icons for the alarm table.
  *
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
@@ -24,7 +24,7 @@ public class SeverityIconProvider {
 
     /**
      * Constructs a new icon provider.
-     * 
+     *
      * @param parent the parent that owns the icons and is used to dispose of them where not needed anymore
      */
     public SeverityIconProvider(Composite parent) {
@@ -37,7 +37,7 @@ public class SeverityIconProvider {
     public void toggle() {
         dis ^= 1;
     }
-    
+
     /**
      * Resets the provider to the colored state.
      */
@@ -48,14 +48,13 @@ public class SeverityIconProvider {
     /**
      * Returns the icon image that matches the severities of the given pv. The icons that are used are provided by the
      * {@link AlarmIcons}.
-     * 
+     *
      * @param pv the pv for which the icon is requested
      * @return icon that matches the severities of the PV
      */
     public Image getIcon(AlarmTreePV pv) {
-        if (pv == null) {
+        if (pv == null)
             return null;
-        }
         SeverityLevel s = pv.getSeverity();
         int c = pv.getCurrentSeverity().ordinal();
         if (s.isActive()) {
@@ -101,7 +100,7 @@ public class SeverityIconProvider {
 
     /**
      * Returns an image descriptor representing the severity/state of the given alarm.
-     * 
+     *
      * @param severity the latched severity
      * @param currentSeverity active severity
      * @param disabled true to fetch the disabled icon or false otherwise

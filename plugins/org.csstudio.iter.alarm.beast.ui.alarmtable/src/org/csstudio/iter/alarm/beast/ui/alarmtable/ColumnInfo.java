@@ -7,18 +7,18 @@ package org.csstudio.iter.alarm.beast.ui.alarmtable;
  */
 public enum ColumnInfo
 {
-    ACK(Messages.AcknowledgeColumnHeader, Messages.AcknowledgeColumnHeaderTooltip ,35, 0),
-    ICON(Messages.AlarmIconColumnHeader, Messages.AlarmIconColumnHeaderTooltip, 20, 0),
-    PV(Messages.AlarmPV, Messages.AlarmPVTooltip, 80, 50),
-    DESCRIPTION(Messages.AlarmDescription, Messages.AlarmDescriptionTooltip, 80, 100),
-    TIME(Messages.AlarmTime, Messages.AlarmTimeTooltip, 80, 70),
-    CURRENT_SEVERITY(Messages.AlarmCurrentSeverity, Messages.AlarmCurrentSeverityTooltip, 50, 30),
-    CURRENT_STATUS(Messages.AlarmCurrentMessage, Messages.AlarmCurrentMessageTooltip, 45, 30),
-    SEVERITY(Messages.AlarmSeverity, Messages.AlarmSeverityTooltip, 50, 30),
-    STATUS(Messages.AlarmMessage, Messages.AlarmMessageTooltip, 45, 30),
-    VALUE(Messages.AlarmValue, Messages.AlarmValueTooltip, 45, 30),
-    ACTION(Messages.AlarmAction, Messages.AlarmActionTooltip, 45, 30),
-    ID(Messages.AlarmID, Messages.AlarmIDTooltip, 45, 30);
+    ACK(Messages.ColumnHeaderAcknowledge, Messages.ColumnHeaderAcknowledgeTooltip ,35, 0),
+    ICON(Messages.ColumnHeaderIcon, Messages.ColumnHeaderIconTooltip, 20, 0),
+    PV(Messages.ColumnHeaderPV, Messages.ColumnHeaderPVTooltip, 80, 50),
+    DESCRIPTION(Messages.ColumnHeaderDescription, Messages.ColumnHeaderDescriptionTooltip, 80, 100),
+    TIME(Messages.ColumnHeaderAlarmTime, Messages.ColumnHeaderAlarmTimeTooltip, 80, 70),
+    CURRENT_SEVERITY(Messages.ColumnHeaderCurrentSeverity, Messages.ColumnHeaderCurrentSeverityTooltip, 50, 30),
+    CURRENT_STATUS(Messages.ColumnHeaderCurrentStatus, Messages.ColumnHeaderCurrentStatusTooltip, 45, 30),
+    SEVERITY(Messages.ColumnHeaderSeverity, Messages.ColumnHeaderSeverityTooltip, 50, 30),
+    STATUS(Messages.ColumnHeaderStatus, Messages.ColumnHeaderStatusTooltip, 45, 30),
+    VALUE(Messages.ColumnHeaderValue, Messages.ColumnHeaderValueTooltip, 45, 30),
+    ACTION(Messages.ColumnHeaderAction, Messages.ColumnHeaderActionTooltip, 45, 30),
+    ID(Messages.ColumnHeaderAlarmID, Messages.ColumnHeaderAlarmIDTooltip, 45, 30);
 
     final private String title;
     final private String tooltip;
@@ -53,7 +53,7 @@ public enum ColumnInfo
     {
         return weight;
     }
-    
+
     /** @return column header tooltip */
     public String getTooltip()
     {
