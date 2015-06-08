@@ -347,6 +347,7 @@ public class AlarmTableView extends ViewPart
                 //either does not exist, or the model is not yet connected
                 int idx = filterItemPath.lastIndexOf('/');
                 name = idx < 0 ? filterItemPath : filterItemPath.substring(idx + 1);
+                name = "\u00BF" + name + "?";
             }
             if (gui != null)
                 gui.setFilterItem(filterType == FilterType.ITEM ? filterItem : null, activeModel);
@@ -357,8 +358,6 @@ public class AlarmTableView extends ViewPart
         setTitleToolTip(NLS.bind(Messages.AlarmTableTitleTT, name));
         firePropertyChange(PROP_FILTER_ITEM);
     }
-
-
 
     /**
      * @return the columns as they are currently visible and ordered in the table
