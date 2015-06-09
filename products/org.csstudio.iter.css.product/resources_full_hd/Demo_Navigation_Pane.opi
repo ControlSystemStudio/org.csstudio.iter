@@ -6454,7 +6454,7 @@ $(pv_value)</tooltip>
         <wuid>-57352fd0:149859b9257:-18dd</wuid>
         <scripts>
           <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-            <scriptName>LoadFaceplate</scriptName>
+            <scriptName></scriptName>
             <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
 
 //Split the faceplate variable to extract opi name and macros
@@ -6492,7 +6492,7 @@ for (i in words) {
 //by setting the property value with forcing fire option in true.
 widgetController.setPropertyValue("opi_file", opiFile, true);
 ]]></scriptText>
-            <pv trig="true">loc://$(DID)_FACEPLATE("")</pv>
+            <pv trig="true">loc://FACEPLATE("")</pv>
           </path>
         </scripts>
         <height>471</height>

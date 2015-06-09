@@ -38,8 +38,6 @@ importPackage(Packages.java.lang)
 
 // recursive list function on CBS tree
 function listCBS(current, depth, max_depth){
-	System.out.println("listCBS - current is " + current.getAttributeValue("name") + " " + depth + " " + max_depth);
-
 	var cbs = current.getChildren();	
 	var itr = cbs.iterator();
 	while (itr.hasNext() && depth <= max_depth) {
@@ -48,17 +46,14 @@ function listCBS(current, depth, max_depth){
 		    if (depth == 0){
 			    // adding the Home button for level 0 - ITER overview
 		    	addHomeButton(elt);
-				System.out.println("listCBS - Home Button " + current.getName());
 		    } else {
 		    	// adding an Up button for intermediate levels
 		    	addUpButton(elt);
-				System.out.println("listCBS - Up Button " + elt.getAttributeValue("name"));
 		    }
 		    
 	    	if (depth == max_depth) {
 	    		// adding mimic specific levels for the last level
 			    addMimicButtons(elt);
-				System.out.println("listCBS - Mimic Button " + elt.getAttributeValue("name"));
 	    	}
 	    	listCBS(elt, depth+1, max_depth);
 	    	depth = max_depth + 1;
@@ -86,7 +81,6 @@ function isEltCurrentCBS(elt, level) {
 	}
 	var currentLevel = elt.getAttributeValue("name");
 	var words = level.split("-");
-	System.out.println("isEltCurrentCBS " + elt.getAttributeValue("name") + " " + level);
 	var i = 0;
 	for (i in words) {
 	  if (words[i].search(currentLevel) >= 0) {
