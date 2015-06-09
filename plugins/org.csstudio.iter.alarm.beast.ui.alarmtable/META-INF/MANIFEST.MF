@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ITER Alarm Table
+Bundle-SymbolicName: org.csstudio.iter.alarm.beast.ui.alarmtable;singleton:=true
+Bundle-Version: 1.1.0.qualifier
+Bundle-Activator: org.csstudio.iter.alarm.beast.ui.alarmtable.Activator
+Bundle-Vendor: ITER
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.rap.ui;resolution:=optional,
+ org.csstudio.ui.util;bundle-version="4.0.0";resolution:=optional,
+ org.csstudio.rap.ui.util;bundle-version="1.0.0";resolution:=optional,
+ org.csstudio.apputil.ui,
+ org.csstudio.alarm.beast;bundle-version="3.2.0",
+ org.csstudio.alarm.beast.ui;bundle-version="3.2.0",
+ org.csstudio.utility.singlesource;bundle-version="1.0.0",
+ org.csstudio.apputil,
+ org.epics.util,
+ org.epics.vtype;bundle-version="2.9.1",
+ org.csstudio.ui.resources;bundle-version="1.0.0",
+ org.csstudio.security;bundle-version="1.1.1"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Activator: org.csstudio.iter.alarm.beast.ui.alarmtable.Activator

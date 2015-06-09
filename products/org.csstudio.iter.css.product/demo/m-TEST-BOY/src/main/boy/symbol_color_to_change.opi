@@ -1,16 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
   <show_close_button>true</show_close_button>
-  <rules />
+  <rules/>
   <wuid>-14a921ec:134b2495e46:-7f53</wuid>
   <show_grid>true</show_grid>
   <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
-  <scripts />
-  <height>1024</height>
+  <scripts/>
+  <height>1280</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.103.201504011436</boy_version>
+  <boy_version>4.0.103.201505180953</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -19,1205 +18,31 @@
     <min_height>-1</min_height>
   </auto_scale_widgets>
   <background_color>
-    <color name="IO Background" red="235" green="235" blue="235" />
+    <color blue="235" green="235" name="IO Background" red="235"/>
   </background_color>
-  <width>1280</width>
+  <width>1600</width>
   <x>0</x>
-  <name></name>
+  <name/>
   <grid_space>5</grid_space>
   <show_ruler>true</show_ruler>
   <y>0</y>
   <snap_to_geometry>true</snap_to_geometry>
   <foreground_color>
-    <color name="IO Grid" red="215" green="215" blue="215" />
+    <color blue="215" green="215" name="IO Grid" red="215"/>
   </foreground_color>
-  <actions hook="false" hook_all="false" />
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <alarm_pulsing>false</alarm_pulsing>
-    <on_state></on_state>
-    <off_state></off_state>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <rules />
-    <bit>0</bit>
-    <pv_value />
-    <auto_size>true</auto_size>
-    <image_file>SymbolLibrary/SVG/Electrical/Protection_and_Cut-Shut_Off-On/JA Withdrawable Circuit Breaker On.svg</image_file>
-    <height>75</height>
-    <border_width>2</border_width>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <visible>true</visible>
-    <pv_name>loc://open(1)</pv_name>
-    <degree>0</degree>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Boolean Symbol Image Monitor</widget_type>
-    <flip_horizontal>false</flip_horizontal>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <name>Boolean Symbol Image Monitor Template</name>
-    <actions hook="false" hook_all="false" />
-    <show_boolean_label>false</show_boolean_label>
-    <flip_vertical>false</flip_vertical>
-    <border_style>0</border_style>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <crop_left>0</crop_left>
-    <enabled>true</enabled>
-    <wuid>108cfdd7:1466b36dbdb:-7fc3</wuid>
-    <on_color>
-      <color name="IO PV ON" red="0" green="0" blue="255" />
-    </on_color>
-    <scripts />
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <on_label>ON</on_label>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <crop_bottom>0</crop_bottom>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color name="IO PV OFF" red="149" green="125" blue="71" />
-    </off_color>
-    <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <boolean_label_position>5</boolean_label_position>
-    <width>40</width>
-    <x>580</x>
-    <data_type>0</data_type>
-    <y>105</y>
-    <foreground_color>
-      <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-    </foreground_color>
-    <crop_top>0</crop_top>
-    <crop_right>0</crop_right>
-    <stretch_to_fit>false</stretch_to_fit>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-    </font>
-    <off_label>OFF</off_label>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <alarm_pulsing>false</alarm_pulsing>
-    <on_state></on_state>
-    <off_state></off_state>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <rules />
-    <bit>0</bit>
-    <pv_value />
-    <auto_size>true</auto_size>
-    <image_file>SymbolLibrary/SVG/Fluid/Pumps/PL Centrifugal Pump On.svg</image_file>
-    <height>40</height>
-    <border_width>2</border_width>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <visible>true</visible>
-    <pv_name>loc://open(1)</pv_name>
-    <degree>0</degree>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Boolean Symbol Image Monitor</widget_type>
-    <flip_horizontal>false</flip_horizontal>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <name>Boolean Symbol Image Monitor Template_1</name>
-    <actions hook="false" hook_all="false" />
-    <show_boolean_label>false</show_boolean_label>
-    <flip_vertical>false</flip_vertical>
-    <border_style>0</border_style>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <crop_left>0</crop_left>
-    <enabled>true</enabled>
-    <wuid>108cfdd7:1466b36dbdb:-7fbf</wuid>
-    <on_color>
-      <color name="IO PV ON" red="0" green="0" blue="255" />
-    </on_color>
-    <scripts />
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <on_label>ON</on_label>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <crop_bottom>0</crop_bottom>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color name="IO PV OFF" red="149" green="125" blue="71" />
-    </off_color>
-    <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <boolean_label_position>5</boolean_label_position>
-    <width>40</width>
-    <x>672</x>
-    <data_type>0</data_type>
-    <y>123</y>
-    <foreground_color>
-      <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-    </foreground_color>
-    <crop_top>0</crop_top>
-    <crop_right>0</crop_right>
-    <stretch_to_fit>false</stretch_to_fit>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-    </font>
-    <off_label>OFF</off_label>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <alarm_pulsing>false</alarm_pulsing>
-    <on_state></on_state>
-    <off_state></off_state>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <rules />
-    <bit>0</bit>
-    <pv_value />
-    <auto_size>true</auto_size>
-    <image_file>SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off On.svg</image_file>
-    <height>40</height>
-    <border_width>2</border_width>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <visible>true</visible>
-    <pv_name>loc://open(1)</pv_name>
-    <degree>0</degree>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Boolean Symbol Image Monitor</widget_type>
-    <flip_horizontal>false</flip_horizontal>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <name>Boolean Symbol Image Monitor Template_2</name>
-    <actions hook="false" hook_all="false" />
-    <show_boolean_label>false</show_boolean_label>
-    <flip_vertical>false</flip_vertical>
-    <border_style>0</border_style>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <crop_left>0</crop_left>
-    <enabled>true</enabled>
-    <wuid>108cfdd7:1466b36dbdb:-7fa1</wuid>
-    <on_color>
-      <color name="IO PV ON" red="0" green="0" blue="255" />
-    </on_color>
-    <scripts />
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <on_label>ON</on_label>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <crop_bottom>0</crop_bottom>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color name="IO PV OFF" red="149" green="125" blue="71" />
-    </off_color>
-    <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <boolean_label_position>5</boolean_label_position>
-    <width>40</width>
-    <x>765</x>
-    <data_type>0</data_type>
-    <y>123</y>
-    <foreground_color>
-      <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-    </foreground_color>
-    <crop_top>0</crop_top>
-    <crop_right>0</crop_right>
-    <stretch_to_fit>false</stretch_to_fit>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-    </font>
-    <off_label>OFF</off_label>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-    <border_style>0</border_style>
-    <tooltip></tooltip>
-    <rules />
-    <enabled>true</enabled>
-    <wuid>-3fbc0685:1466b3a4ee4:-7f78</wuid>
-    <transparent>true</transparent>
-    <lock_children>false</lock_children>
-    <scripts />
-    <height>84</height>
-    <border_width>1</border_width>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <macros>
-      <include_parent_macros>true</include_parent_macros>
-    </macros>
-    <visible>true</visible>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Grouping Container</widget_type>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <width>162</width>
-    <x>400</x>
-    <name>Panel 2</name>
-    <y>97</y>
-    <foreground_color>
-      <color name="IO Foreground" red="0" green="0" blue="0" />
-    </foreground_color>
-    <actions hook="false" hook_all="false" />
-    <fc>false</fc>
-    <show_scrollbar>false</show_scrollbar>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-    </font>
-    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <border_style>0</border_style>
-      <tooltip></tooltip>
-      <horizontal_alignment>0</horizontal_alignment>
-      <rules />
-      <enabled>false</enabled>
-      <wuid>-3fbc0685:1466b3a4ee4:-7fb1</wuid>
-      <transparent>true</transparent>
-      <auto_size>true</auto_size>
-      <text>color_to_change=
-black      /  166, 166, 166</text>
-      <scripts />
-      <height>36</height>
-      <border_width>2</border_width>
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <visible>true</visible>
-      <vertical_alignment>1</vertical_alignment>
-      <border_color>
-        <color name="IO Border" red="0" green="0" blue="0" />
-      </border_color>
-      <widget_type>Label</widget_type>
-      <wrap_words>true</wrap_words>
-      <background_color>
-        <color name="IO Background" red="235" green="235" blue="235" />
-      </background_color>
-      <width>161</width>
-      <x>0</x>
-      <name>Label Template</name>
-      <y>0</y>
-      <foreground_color>
-        <color name="IO Text Fg" red="0" green="0" blue="0" />
-      </foreground_color>
-      <actions hook="false" hook_all="false" />
-      <show_scrollbar>false</show_scrollbar>
-      <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-      </font>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
-      <border_style>0</border_style>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <line_width>1</line_width>
-      <horizontal_fill>true</horizontal_fill>
-      <alarm_pulsing>false</alarm_pulsing>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <rules />
-      <enabled>true</enabled>
-      <wuid>-3fbc0685:1466b3a4ee4:-7f7a</wuid>
-      <transparent>false</transparent>
-      <pv_value />
-      <alpha>255</alpha>
-      <bg_gradient_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
-      </bg_gradient_color>
-      <scripts />
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <height>48</height>
-      <border_width>2</border_width>
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <visible>true</visible>
-      <pv_name></pv_name>
-      <gradient>false</gradient>
-      <border_color>
-        <color name="IO Border" red="0" green="0" blue="0" />
-      </border_color>
-      <anti_alias>true</anti_alias>
-      <line_style>0</line_style>
-      <widget_type>Rectangle</widget_type>
-      <fg_gradient_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
-      </fg_gradient_color>
-      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-      <background_color>
-        <color name="IO Background" red="235" green="235" blue="235" />
-      </background_color>
-      <width>50</width>
-      <x>70</x>
-      <name>Rectangle Template</name>
-      <y>35</y>
-      <fill_level>100.0</fill_level>
-      <foreground_color>
-        <color name="IO Shape Fill" red="166" green="166" blue="166" />
-      </foreground_color>
-      <actions hook="false" hook_all="false" />
-      <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-      </font>
-      <line_color>
-        <color name="IO Line" red="0" green="0" blue="0" />
-      </line_color>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
-      <border_style>0</border_style>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <line_width>1</line_width>
-      <horizontal_fill>true</horizontal_fill>
-      <alarm_pulsing>false</alarm_pulsing>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <rules />
-      <enabled>true</enabled>
-      <wuid>-2b5820d0:1466b628753:-7da5</wuid>
-      <transparent>false</transparent>
-      <pv_value />
-      <alpha>255</alpha>
-      <bg_gradient_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
-      </bg_gradient_color>
-      <scripts />
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <height>48</height>
-      <border_width>2</border_width>
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <visible>true</visible>
-      <pv_name></pv_name>
-      <gradient>false</gradient>
-      <border_color>
-        <color name="IO Border" red="0" green="0" blue="0" />
-      </border_color>
-      <anti_alias>true</anti_alias>
-      <line_style>0</line_style>
-      <widget_type>Rectangle</widget_type>
-      <fg_gradient_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
-      </fg_gradient_color>
-      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-      <background_color>
-        <color name="IO Background" red="235" green="235" blue="235" />
-      </background_color>
-      <width>50</width>
-      <x>5</x>
-      <name>Rectangle Template_1</name>
-      <y>35</y>
-      <fill_level>100.0</fill_level>
-      <foreground_color>
-        <color name="IO Shape Fill" red="166" green="166" blue="166" />
-      </foreground_color>
-      <actions hook="false" hook_all="false" />
-      <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-      </font>
-      <line_color>
-        <color name="IO Line" red="0" green="0" blue="0" />
-      </line_color>
-    </widget>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <alarm_pulsing>false</alarm_pulsing>
-    <on_state></on_state>
-    <off_state></off_state>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <rules />
-    <bit>0</bit>
-    <pv_value />
-    <auto_size>true</auto_size>
-    <image_file>SymbolLibrary/SVG/Electrical/Protection_and_Cut-Shut_Off-On/JA Withdrawable Circuit Breaker On.svg</image_file>
-    <height>75</height>
-    <border_width>2</border_width>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <visible>true</visible>
-    <pv_name>loc://open(1)</pv_name>
-    <degree>0</degree>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Boolean Symbol Image Monitor</widget_type>
-    <flip_horizontal>false</flip_horizontal>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <name>Boolean Symbol Image Monitor Template_3</name>
-    <actions hook="false" hook_all="false" />
-    <show_boolean_label>false</show_boolean_label>
-    <flip_vertical>false</flip_vertical>
-    <border_style>0</border_style>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <crop_left>0</crop_left>
-    <enabled>true</enabled>
-    <wuid>-3fbc0685:1466b3a4ee4:-7f72</wuid>
-    <on_color>
-      <color name="IO PV ON" red="0" green="0" blue="255" />
-    </on_color>
-    <scripts />
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <on_label>ON</on_label>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <crop_bottom>0</crop_bottom>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color name="IO PV OFF" red="149" green="125" blue="71" />
-    </off_color>
-    <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <boolean_label_position>5</boolean_label_position>
-    <width>40</width>
-    <x>580</x>
-    <data_type>0</data_type>
-    <y>223</y>
-    <foreground_color>
-      <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-    </foreground_color>
-    <crop_top>0</crop_top>
-    <crop_right>0</crop_right>
-    <stretch_to_fit>false</stretch_to_fit>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-    </font>
-    <off_label>OFF</off_label>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <alarm_pulsing>false</alarm_pulsing>
-    <on_state></on_state>
-    <off_state></off_state>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <rules />
-    <bit>0</bit>
-    <pv_value />
-    <auto_size>true</auto_size>
-    <image_file>SymbolLibrary/SVG/Fluid/Pumps/PL Centrifugal Pump On.svg</image_file>
-    <height>40</height>
-    <border_width>2</border_width>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <visible>true</visible>
-    <pv_name>loc://open(1)</pv_name>
-    <degree>0</degree>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Boolean Symbol Image Monitor</widget_type>
-    <flip_horizontal>false</flip_horizontal>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <name>Boolean Symbol Image Monitor Template_4</name>
-    <actions hook="false" hook_all="false" />
-    <show_boolean_label>false</show_boolean_label>
-    <flip_vertical>false</flip_vertical>
-    <border_style>0</border_style>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <crop_left>0</crop_left>
-    <enabled>true</enabled>
-    <wuid>-3fbc0685:1466b3a4ee4:-7f71</wuid>
-    <on_color>
-      <color name="IO PV ON" red="0" green="0" blue="255" />
-    </on_color>
-    <scripts />
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <on_label>ON</on_label>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <crop_bottom>0</crop_bottom>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color name="IO PV OFF" red="149" green="125" blue="71" />
-    </off_color>
-    <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <boolean_label_position>5</boolean_label_position>
-    <width>40</width>
-    <x>672</x>
-    <data_type>0</data_type>
-    <y>241</y>
-    <foreground_color>
-      <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-    </foreground_color>
-    <crop_top>0</crop_top>
-    <crop_right>0</crop_right>
-    <stretch_to_fit>false</stretch_to_fit>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-    </font>
-    <off_label>OFF</off_label>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <alarm_pulsing>false</alarm_pulsing>
-    <on_state></on_state>
-    <off_state></off_state>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <rules />
-    <bit>0</bit>
-    <pv_value />
-    <auto_size>true</auto_size>
-    <image_file>SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off On.svg</image_file>
-    <height>40</height>
-    <border_width>2</border_width>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <visible>true</visible>
-    <pv_name>loc://open(1)</pv_name>
-    <degree>0</degree>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Boolean Symbol Image Monitor</widget_type>
-    <flip_horizontal>false</flip_horizontal>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <name>Boolean Symbol Image Monitor Template_5</name>
-    <actions hook="false" hook_all="false" />
-    <show_boolean_label>false</show_boolean_label>
-    <flip_vertical>false</flip_vertical>
-    <border_style>0</border_style>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <crop_left>0</crop_left>
-    <enabled>true</enabled>
-    <wuid>-3fbc0685:1466b3a4ee4:-7f70</wuid>
-    <on_color>
-      <color name="IO PV ON" red="0" green="0" blue="255" />
-    </on_color>
-    <scripts />
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <on_label>ON</on_label>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <crop_bottom>0</crop_bottom>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color name="IO PV OFF" red="149" green="125" blue="71" />
-    </off_color>
-    <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <boolean_label_position>5</boolean_label_position>
-    <width>40</width>
-    <x>765</x>
-    <data_type>0</data_type>
-    <y>241</y>
-    <foreground_color>
-      <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-    </foreground_color>
-    <crop_top>0</crop_top>
-    <crop_right>0</crop_right>
-    <stretch_to_fit>false</stretch_to_fit>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-    </font>
-    <off_label>OFF</off_label>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-    <border_style>0</border_style>
-    <tooltip></tooltip>
-    <rules />
-    <enabled>true</enabled>
-    <wuid>-3fbc0685:1466b3a4ee4:-7f56</wuid>
-    <transparent>true</transparent>
-    <lock_children>false</lock_children>
-    <scripts />
-    <height>91</height>
-    <border_width>1</border_width>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <macros>
-      <include_parent_macros>true</include_parent_macros>
-    </macros>
-    <visible>true</visible>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Grouping Container</widget_type>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <width>126</width>
-    <x>400</x>
-    <name>Panel 2_1</name>
-    <y>215</y>
-    <foreground_color>
-      <color name="IO Foreground" red="0" green="0" blue="0" />
-    </foreground_color>
-    <actions hook="false" hook_all="false" />
-    <fc>false</fc>
-    <show_scrollbar>false</show_scrollbar>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-    </font>
-    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <border_style>0</border_style>
-      <tooltip></tooltip>
-      <horizontal_alignment>0</horizontal_alignment>
-      <rules />
-      <enabled>false</enabled>
-      <wuid>-3fbc0685:1466b3a4ee4:-7f55</wuid>
-      <transparent>true</transparent>
-      <auto_size>true</auto_size>
-      <text>Into On Color=
-green</text>
-      <scripts />
-      <height>36</height>
-      <border_width>2</border_width>
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <visible>true</visible>
-      <vertical_alignment>1</vertical_alignment>
-      <border_color>
-        <color name="IO Border" red="0" green="0" blue="0" />
-      </border_color>
-      <widget_type>Label</widget_type>
-      <wrap_words>true</wrap_words>
-      <background_color>
-        <color name="IO Background" red="235" green="235" blue="235" />
-      </background_color>
-      <width>103</width>
-      <x>0</x>
-      <name>Label Template</name>
-      <y>0</y>
-      <foreground_color>
-        <color name="IO Text Fg" red="0" green="0" blue="0" />
-      </foreground_color>
-      <actions hook="false" hook_all="false" />
-      <show_scrollbar>false</show_scrollbar>
-      <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-      </font>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
-      <border_style>0</border_style>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <line_width>1</line_width>
-      <horizontal_fill>true</horizontal_fill>
-      <alarm_pulsing>false</alarm_pulsing>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <rules />
-      <enabled>true</enabled>
-      <wuid>-3fbc0685:1466b3a4ee4:-7f54</wuid>
-      <transparent>false</transparent>
-      <pv_value />
-      <alpha>255</alpha>
-      <bg_gradient_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
-      </bg_gradient_color>
-      <scripts />
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <height>48</height>
-      <border_width>2</border_width>
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <visible>true</visible>
-      <pv_name></pv_name>
-      <gradient>false</gradient>
-      <border_color>
-        <color name="IO Border" red="0" green="0" blue="0" />
-      </border_color>
-      <anti_alias>true</anti_alias>
-      <line_style>0</line_style>
-      <widget_type>Rectangle</widget_type>
-      <fg_gradient_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
-      </fg_gradient_color>
-      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-      <background_color>
-        <color name="IO Background" red="235" green="235" blue="235" />
-      </background_color>
-      <width>100</width>
-      <x>15</x>
-      <name>Rectangle Template</name>
-      <y>35</y>
-      <fill_level>100.0</fill_level>
-      <foreground_color>
-        <color name="IO Shape Fill" red="166" green="166" blue="166" />
-      </foreground_color>
-      <actions hook="false" hook_all="false" />
-      <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-      </font>
-      <line_color>
-        <color name="IO Line" red="0" green="0" blue="0" />
-      </line_color>
-    </widget>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <alarm_pulsing>false</alarm_pulsing>
-    <on_state></on_state>
-    <off_state></off_state>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <rules />
-    <bit>0</bit>
-    <pv_value />
-    <auto_size>true</auto_size>
-    <image_file>SymbolLibrary/SVG/Electrical/Protection_and_Cut-Shut_Off-On/JA Withdrawable Circuit Breaker On.svg</image_file>
-    <height>75</height>
-    <border_width>2</border_width>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <visible>true</visible>
-    <pv_name>loc://open(1)</pv_name>
-    <degree>0</degree>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Boolean Symbol Image Monitor</widget_type>
-    <flip_horizontal>false</flip_horizontal>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <name>Boolean Symbol Image Monitor Template_6</name>
-    <actions hook="false" hook_all="false" />
-    <show_boolean_label>false</show_boolean_label>
-    <flip_vertical>false</flip_vertical>
-    <border_style>0</border_style>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <crop_left>0</crop_left>
-    <enabled>true</enabled>
-    <wuid>-3fbc0685:1466b3a4ee4:-7edc</wuid>
-    <on_color>
-      <color name="IO PV ON" red="0" green="0" blue="255" />
-    </on_color>
-    <scripts />
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <on_label>ON</on_label>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <crop_bottom>0</crop_bottom>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color name="IO PV OFF" red="149" green="125" blue="71" />
-    </off_color>
-    <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <boolean_label_position>5</boolean_label_position>
-    <width>40</width>
-    <x>578</x>
-    <data_type>0</data_type>
-    <y>331</y>
-    <foreground_color>
-      <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-    </foreground_color>
-    <crop_top>0</crop_top>
-    <crop_right>0</crop_right>
-    <stretch_to_fit>false</stretch_to_fit>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-    </font>
-    <off_label>OFF</off_label>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <alarm_pulsing>false</alarm_pulsing>
-    <on_state></on_state>
-    <off_state></off_state>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <rules />
-    <bit>0</bit>
-    <pv_value />
-    <auto_size>true</auto_size>
-    <image_file>SymbolLibrary/SVG/Fluid/Pumps/PL Centrifugal Pump On.svg</image_file>
-    <height>40</height>
-    <border_width>2</border_width>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <visible>true</visible>
-    <pv_name>loc://open(1)</pv_name>
-    <degree>0</degree>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Boolean Symbol Image Monitor</widget_type>
-    <flip_horizontal>false</flip_horizontal>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <name>Boolean Symbol Image Monitor Template_7</name>
-    <actions hook="false" hook_all="false" />
-    <show_boolean_label>false</show_boolean_label>
-    <flip_vertical>false</flip_vertical>
-    <border_style>0</border_style>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <crop_left>0</crop_left>
-    <enabled>true</enabled>
-    <wuid>-3fbc0685:1466b3a4ee4:-7edb</wuid>
-    <on_color>
-      <color name="IO PV ON" red="0" green="0" blue="255" />
-    </on_color>
-    <scripts />
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <on_label>ON</on_label>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <crop_bottom>0</crop_bottom>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color name="IO PV OFF" red="149" green="125" blue="71" />
-    </off_color>
-    <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <boolean_label_position>5</boolean_label_position>
-    <width>40</width>
-    <x>670</x>
-    <data_type>0</data_type>
-    <y>349</y>
-    <foreground_color>
-      <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-    </foreground_color>
-    <crop_top>0</crop_top>
-    <crop_right>0</crop_right>
-    <stretch_to_fit>false</stretch_to_fit>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-    </font>
-    <off_label>OFF</off_label>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <alarm_pulsing>false</alarm_pulsing>
-    <on_state></on_state>
-    <off_state></off_state>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <rules />
-    <bit>0</bit>
-    <pv_value />
-    <auto_size>true</auto_size>
-    <image_file>SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off On.svg</image_file>
-    <height>40</height>
-    <border_width>2</border_width>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <visible>true</visible>
-    <pv_name>loc://open(1)</pv_name>
-    <degree>0</degree>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Boolean Symbol Image Monitor</widget_type>
-    <flip_horizontal>false</flip_horizontal>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <name>Boolean Symbol Image Monitor Template_8</name>
-    <actions hook="false" hook_all="false" />
-    <show_boolean_label>false</show_boolean_label>
-    <flip_vertical>false</flip_vertical>
-    <border_style>0</border_style>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <crop_left>0</crop_left>
-    <enabled>true</enabled>
-    <wuid>-3fbc0685:1466b3a4ee4:-7eda</wuid>
-    <on_color>
-      <color name="IO PV ON" red="0" green="0" blue="255" />
-    </on_color>
-    <scripts />
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <on_label>ON</on_label>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <crop_bottom>0</crop_bottom>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color name="IO PV OFF" red="149" green="125" blue="71" />
-    </off_color>
-    <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <boolean_label_position>5</boolean_label_position>
-    <width>40</width>
-    <x>763</x>
-    <data_type>0</data_type>
-    <y>349</y>
-    <foreground_color>
-      <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-    </foreground_color>
-    <crop_top>0</crop_top>
-    <crop_right>0</crop_right>
-    <stretch_to_fit>false</stretch_to_fit>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-    </font>
-    <off_label>OFF</off_label>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-    <border_style>0</border_style>
-    <tooltip></tooltip>
-    <rules />
-    <enabled>true</enabled>
-    <wuid>-3fbc0685:1466b3a4ee4:-7ed9</wuid>
-    <transparent>true</transparent>
-    <lock_children>true</lock_children>
-    <scripts />
-    <height>91</height>
-    <border_width>1</border_width>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <macros>
-      <include_parent_macros>true</include_parent_macros>
-    </macros>
-    <visible>true</visible>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Grouping Container</widget_type>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <width>126</width>
-    <x>398</x>
-    <name>Panel 2_2</name>
-    <y>323</y>
-    <foreground_color>
-      <color name="IO Foreground" red="0" green="0" blue="0" />
-    </foreground_color>
-    <actions hook="false" hook_all="false" />
-    <fc>false</fc>
-    <show_scrollbar>false</show_scrollbar>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-    </font>
-    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <border_style>0</border_style>
-      <tooltip></tooltip>
-      <horizontal_alignment>0</horizontal_alignment>
-      <rules />
-      <enabled>false</enabled>
-      <wuid>-3fbc0685:1466b3a4ee4:-7ed8</wuid>
-      <transparent>true</transparent>
-      <auto_size>true</auto_size>
-      <text>Into On Color=
-red</text>
-      <scripts />
-      <height>36</height>
-      <border_width>2</border_width>
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <visible>true</visible>
-      <vertical_alignment>1</vertical_alignment>
-      <border_color>
-        <color name="IO Border" red="0" green="0" blue="0" />
-      </border_color>
-      <widget_type>Label</widget_type>
-      <wrap_words>true</wrap_words>
-      <background_color>
-        <color name="IO Background" red="235" green="235" blue="235" />
-      </background_color>
-      <width>103</width>
-      <x>0</x>
-      <name>Label Template</name>
-      <y>0</y>
-      <foreground_color>
-        <color name="IO Text Fg" red="0" green="0" blue="0" />
-      </foreground_color>
-      <actions hook="false" hook_all="false" />
-      <show_scrollbar>false</show_scrollbar>
-      <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-      </font>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
-      <border_style>0</border_style>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <line_width>1</line_width>
-      <horizontal_fill>true</horizontal_fill>
-      <alarm_pulsing>false</alarm_pulsing>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <rules />
-      <enabled>true</enabled>
-      <wuid>-3fbc0685:1466b3a4ee4:-7ed7</wuid>
-      <transparent>false</transparent>
-      <pv_value />
-      <alpha>255</alpha>
-      <bg_gradient_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
-      </bg_gradient_color>
-      <scripts />
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <height>48</height>
-      <border_width>2</border_width>
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <visible>true</visible>
-      <pv_name></pv_name>
-      <gradient>false</gradient>
-      <border_color>
-        <color name="IO Border" red="0" green="0" blue="0" />
-      </border_color>
-      <anti_alias>true</anti_alias>
-      <line_style>0</line_style>
-      <widget_type>Rectangle</widget_type>
-      <fg_gradient_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
-      </fg_gradient_color>
-      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-      <background_color>
-        <color name="IO Background" red="235" green="235" blue="235" />
-      </background_color>
-      <width>100</width>
-      <x>15</x>
-      <name>Rectangle Template</name>
-      <y>35</y>
-      <fill_level>100.0</fill_level>
-      <foreground_color>
-        <color name="IO Shape Fill" red="166" green="166" blue="166" />
-      </foreground_color>
-      <actions hook="false" hook_all="false" />
-      <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-      </font>
-      <line_color>
-        <color name="IO Line" red="0" green="0" blue="0" />
-      </line_color>
-    </widget>
-  </widget>
+  <actions hook="false" hook_all="false"/>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <border_style>0</border_style>
-    <tooltip></tooltip>
+    <tooltip/>
     <horizontal_alignment>1</horizontal_alignment>
-    <rules />
+    <rules/>
     <enabled>true</enabled>
     <wuid>-2b5820d0:1466b628753:-7efe</wuid>
     <transparent>false</transparent>
     <auto_size>false</auto_size>
     <text>Symbol Color to Replace Demo</text>
-    <scripts />
-    <height>25</height>
+    <scripts/>
+    <height>31</height>
     <border_width>2</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -1227,466 +52,36 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
     <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
+      <color blue="0" green="0" name="IO Border" red="0"/>
     </border_color>
     <widget_type>Label</widget_type>
     <wrap_words>true</wrap_words>
     <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
+      <color blue="235" green="235" name="IO Background" red="235"/>
     </background_color>
-    <width>1242</width>
+    <width>1552</width>
     <x>0</x>
-    <name>EDM Label</name>
+    <name>Title</name>
     <y>0</y>
     <foreground_color>
-      <color name="IO Text Fg" red="0" green="0" blue="0" />
+      <color blue="0" green="0" name="IO Text Fg" red="0"/>
     </foreground_color>
-    <actions hook="false" hook_all="false" />
+    <actions hook="false" hook_all="false"/>
     <show_scrollbar>false</show_scrollbar>
     <font>
       <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
   </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <alarm_pulsing>false</alarm_pulsing>
-    <on_state></on_state>
-    <off_state></off_state>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <rules>
-      <rule name="OnColor" prop_id="on_color" out_exp="false">
-        <exp bool_exp="pvStr0==&quot;Blue&quot;">
-          <value>
-            <color name="IO PV ON" red="0" green="0" blue="255" />
-          </value>
-        </exp>
-        <exp bool_exp="pvStr0==&quot;White&quot;">
-          <value>
-            <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
-          </value>
-        </exp>
-        <exp bool_exp="pvStr0==&quot;Yellow&quot;">
-          <value>
-            <color name="Minor" red="255" green="255" blue="0" />
-          </value>
-        </exp>
-        <pv trig="true">loc://oncolor(0)</pv>
-      </rule>
-      <rule name="OffColor" prop_id="off_color" out_exp="false">
-        <exp bool_exp="pvStr0==&quot;Grey&quot;">
-          <value>
-            <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
-          </value>
-        </exp>
-        <exp bool_exp="pvStr0==&quot;Brown&quot;">
-          <value>
-            <color name="IO Trace 2" red="242" green="26" blue="26" />
-          </value>
-        </exp>
-        <exp bool_exp="pvStr0==&quot;Green&quot;">
-          <value>
-            <color name="IO Trace 3" red="33" green="179" blue="33" />
-          </value>
-        </exp>
-        <pv trig="true">loc://offcolor(0)</pv>
-      </rule>
-    </rules>
-    <bit>0</bit>
-    <pv_value />
-    <auto_size>true</auto_size>
-    <image_file>SymbolLibrary/SVG/Electrical/Protection_and_Cut-Shut_Off-On/JA Withdrawable Circuit Breaker On.svg</image_file>
-    <height>75</height>
-    <border_width>2</border_width>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <visible>true</visible>
-    <pv_name>loc://open(1)</pv_name>
-    <degree>0</degree>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Boolean Symbol Image Monitor</widget_type>
-    <flip_horizontal>false</flip_horizontal>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <name>Boolean Symbol Image Monitor Template_9</name>
-    <actions hook="false" hook_all="false" />
-    <show_boolean_label>false</show_boolean_label>
-    <flip_vertical>false</flip_vertical>
-    <border_style>0</border_style>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <crop_left>0</crop_left>
-    <enabled>true</enabled>
-    <wuid>-2b5820d0:1466b628753:-7eac</wuid>
-    <on_color>
-      <color name="IO PV ON" red="0" green="0" blue="255" />
-    </on_color>
-    <scripts />
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <on_label>ON</on_label>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <crop_bottom>0</crop_bottom>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color name="IO PV OFF" red="149" green="125" blue="71" />
-    </off_color>
-    <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <boolean_label_position>5</boolean_label_position>
-    <width>40</width>
-    <x>578</x>
-    <data_type>0</data_type>
-    <y>445</y>
-    <foreground_color>
-      <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-    </foreground_color>
-    <crop_top>0</crop_top>
-    <crop_right>0</crop_right>
-    <stretch_to_fit>false</stretch_to_fit>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-    </font>
-    <off_label>OFF</off_label>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <alarm_pulsing>false</alarm_pulsing>
-    <on_state></on_state>
-    <off_state></off_state>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <rules>
-      <rule name="OnColor" prop_id="on_color" out_exp="false">
-        <exp bool_exp="pvStr0==&quot;Blue&quot;">
-          <value>
-            <color name="IO PV ON" red="0" green="0" blue="255" />
-          </value>
-        </exp>
-        <exp bool_exp="pvStr0==&quot;White&quot;">
-          <value>
-            <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
-          </value>
-        </exp>
-        <exp bool_exp="pvStr0==&quot;Yellow&quot;">
-          <value>
-            <color name="Minor" red="255" green="255" blue="0" />
-          </value>
-        </exp>
-        <pv trig="true">loc://oncolor(0)</pv>
-      </rule>
-      <rule name="OffColor" prop_id="off_color" out_exp="false">
-        <exp bool_exp="pvStr0==&quot;Grey&quot;">
-          <value>
-            <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
-          </value>
-        </exp>
-        <exp bool_exp="pvStr0==&quot;Brown&quot;">
-          <value>
-            <color name="IO Trace 2" red="242" green="26" blue="26" />
-          </value>
-        </exp>
-        <exp bool_exp="pvStr0==&quot;Green&quot;">
-          <value>
-            <color name="IO Trace 3" red="33" green="179" blue="33" />
-          </value>
-        </exp>
-        <pv trig="true">loc://offcolor(0)</pv>
-      </rule>
-    </rules>
-    <bit>0</bit>
-    <pv_value />
-    <auto_size>true</auto_size>
-    <image_file>SymbolLibrary/SVG/Fluid/Pumps/PL Centrifugal Pump On.svg</image_file>
-    <height>40</height>
-    <border_width>2</border_width>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <visible>true</visible>
-    <pv_name>loc://open(1)</pv_name>
-    <degree>0</degree>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Boolean Symbol Image Monitor</widget_type>
-    <flip_horizontal>false</flip_horizontal>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <name>Boolean Symbol Image Monitor Template_10</name>
-    <actions hook="false" hook_all="false" />
-    <show_boolean_label>false</show_boolean_label>
-    <flip_vertical>false</flip_vertical>
-    <border_style>0</border_style>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <crop_left>0</crop_left>
-    <enabled>true</enabled>
-    <wuid>-2b5820d0:1466b628753:-7eab</wuid>
-    <on_color>
-      <color name="IO PV ON" red="0" green="0" blue="255" />
-    </on_color>
-    <scripts />
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <on_label>ON</on_label>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <crop_bottom>0</crop_bottom>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color name="IO PV OFF" red="149" green="125" blue="71" />
-    </off_color>
-    <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <boolean_label_position>5</boolean_label_position>
-    <width>40</width>
-    <x>670</x>
-    <data_type>0</data_type>
-    <y>463</y>
-    <foreground_color>
-      <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-    </foreground_color>
-    <crop_top>0</crop_top>
-    <crop_right>0</crop_right>
-    <stretch_to_fit>false</stretch_to_fit>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-    </font>
-    <off_label>OFF</off_label>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-    <alarm_pulsing>false</alarm_pulsing>
-    <on_state></on_state>
-    <off_state></off_state>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <rules>
-      <rule name="OnColor" prop_id="on_color" out_exp="false">
-        <exp bool_exp="pvStr0==&quot;Blue&quot;">
-          <value>
-            <color name="IO PV ON" red="0" green="0" blue="255" />
-          </value>
-        </exp>
-        <exp bool_exp="pvStr0==&quot;White&quot;">
-          <value>
-            <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
-          </value>
-        </exp>
-        <exp bool_exp="pvStr0==&quot;Yellow&quot;">
-          <value>
-            <color name="Minor" red="255" green="255" blue="0" />
-          </value>
-        </exp>
-        <pv trig="true">loc://oncolor(0)</pv>
-      </rule>
-      <rule name="OffColor" prop_id="off_color" out_exp="false">
-        <exp bool_exp="pvStr0==&quot;Grey&quot;">
-          <value>
-            <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
-          </value>
-        </exp>
-        <exp bool_exp="pvStr0==&quot;Brown&quot;">
-          <value>
-            <color name="IO Trace 2" red="242" green="26" blue="26" />
-          </value>
-        </exp>
-        <exp bool_exp="pvStr0==&quot;Green&quot;">
-          <value>
-            <color name="IO Trace 3" red="33" green="179" blue="33" />
-          </value>
-        </exp>
-        <pv trig="true">loc://offcolor(0)</pv>
-      </rule>
-    </rules>
-    <bit>0</bit>
-    <pv_value />
-    <auto_size>true</auto_size>
-    <image_file>SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off On.svg</image_file>
-    <height>40</height>
-    <border_width>2</border_width>
-    <align_to_nearest_second>false</align_to_nearest_second>
-    <visible>true</visible>
-    <pv_name>loc://open(1)</pv_name>
-    <degree>0</degree>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Boolean Symbol Image Monitor</widget_type>
-    <flip_horizontal>false</flip_horizontal>
-    <permutation_matrix>
-      <row>
-        <col>1.0</col>
-        <col>0.0</col>
-      </row>
-      <row>
-        <col>0.0</col>
-        <col>1.0</col>
-      </row>
-    </permutation_matrix>
-    <name>Boolean Symbol Image Monitor Template_11</name>
-    <actions hook="false" hook_all="false" />
-    <show_boolean_label>false</show_boolean_label>
-    <flip_vertical>false</flip_vertical>
-    <border_style>0</border_style>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <crop_left>0</crop_left>
-    <enabled>true</enabled>
-    <wuid>-2b5820d0:1466b628753:-7eaa</wuid>
-    <on_color>
-      <color name="IO PV ON" red="0" green="0" blue="255" />
-    </on_color>
-    <scripts />
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <on_label>ON</on_label>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <crop_bottom>0</crop_bottom>
-    <no_animation>false</no_animation>
-    <off_color>
-      <color name="IO PV OFF" red="149" green="125" blue="71" />
-    </off_color>
-    <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <boolean_label_position>5</boolean_label_position>
-    <width>40</width>
-    <x>763</x>
-    <data_type>0</data_type>
-    <y>463</y>
-    <foreground_color>
-      <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-    </foreground_color>
-    <crop_top>0</crop_top>
-    <crop_right>0</crop_right>
-    <stretch_to_fit>false</stretch_to_fit>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-    </font>
-    <off_label>OFF</off_label>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.combo" version="1.0.0">
-    <border_style>6</border_style>
-    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-    <alarm_pulsing>false</alarm_pulsing>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    <rules />
-    <enabled>true</enabled>
-    <wuid>-2b5820d0:1466b628753:-7f55</wuid>
-    <pv_value />
-    <scripts />
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-    <height>27</height>
-    <border_width>2</border_width>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <items_from_pv>false</items_from_pv>
-    <visible>true</visible>
-    <pv_name>loc://oncolor(0)</pv_name>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Combo</widget_type>
-    <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-    <background_color>
-      <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
-    </background_color>
-    <width>120</width>
-    <x>403</x>
-    <name>Combo Box Template_1</name>
-    <y>469</y>
-    <foreground_color>
-      <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
-    </foreground_color>
-    <actions hook="false" hook_all="false" />
-    <items>
-      <s>Blue</s>
-      <s>White</s>
-      <s>Yellow</s>
-    </items>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-    </font>
-  </widget>
-  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-    <border_style>0</border_style>
-    <tooltip></tooltip>
-    <horizontal_alignment>0</horizontal_alignment>
-    <rules />
-    <enabled>false</enabled>
-    <wuid>-2b5820d0:1466b628753:-7f54</wuid>
-    <transparent>true</transparent>
-    <auto_size>true</auto_size>
-    <text>ON Color</text>
-    <scripts />
-    <height>15</height>
-    <border_width>2</border_width>
-    <scale_options>
-      <width_scalable>false</width_scalable>
-      <height_scalable>false</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <visible>true</visible>
-    <vertical_alignment>1</vertical_alignment>
-    <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
-    </border_color>
-    <widget_type>Label</widget_type>
-    <wrap_words>true</wrap_words>
-    <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
-    </background_color>
-    <width>55</width>
-    <x>435</x>
-    <name>Label Template_1</name>
-    <y>444</y>
-    <foreground_color>
-      <color name="IO Text Fg" red="0" green="0" blue="0" />
-    </foreground_color>
-    <actions hook="false" hook_all="false" />
-    <show_scrollbar>false</show_scrollbar>
-    <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
-    </font>
-  </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
     <border_style>0</border_style>
-    <tooltip></tooltip>
-    <rules />
+    <tooltip/>
+    <rules/>
     <enabled>true</enabled>
     <wuid>-2b5820d0:1466b628753:-7d28</wuid>
-    <transparent>true</transparent>
-    <lock_children>true</lock_children>
-    <scripts />
-    <height>25</height>
+    <transparent>false</transparent>
+    <lock_children>false</lock_children>
+    <scripts/>
+    <height>31</height>
     <border_width>1</border_width>
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -1698,20 +93,20 @@ $(pv_value)</tooltip>
     </macros>
     <visible>true</visible>
     <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
+      <color blue="0" green="0" name="IO Border" red="0"/>
     </border_color>
     <widget_type>Grouping Container</widget_type>
     <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
+      <color blue="235" green="235" name="IO Background" red="235"/>
     </background_color>
-    <width>1242</width>
+    <width>1552</width>
     <x>0</x>
     <name>Status Bar</name>
-    <y>675</y>
+    <y>843</y>
     <foreground_color>
-      <color name="IO Foreground" red="0" green="0" blue="0" />
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
     </foreground_color>
-    <actions hook="false" hook_all="false" />
+    <actions hook="false" hook_all="false"/>
     <fc>false</fc>
     <show_scrollbar>false</show_scrollbar>
     <font>
@@ -1719,16 +114,16 @@ $(pv_value)</tooltip>
     </font>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <border_style>0</border_style>
-      <tooltip></tooltip>
+      <tooltip/>
       <horizontal_alignment>1</horizontal_alignment>
-      <rules />
+      <rules/>
       <enabled>true</enabled>
       <wuid>-2b5820d0:1466b628753:-7d27</wuid>
-      <transparent>false</transparent>
+      <transparent>true</transparent>
       <auto_size>false</auto_size>
       <text>ITER specific developments</text>
-      <scripts />
-      <height>25</height>
+      <scripts/>
+      <height>31</height>
       <border_width>2</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1738,21 +133,21 @@ $(pv_value)</tooltip>
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
       <border_color>
-        <color name="IO Border" red="0" green="0" blue="0" />
+        <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
       <widget_type>Label</widget_type>
       <wrap_words>true</wrap_words>
       <background_color>
-        <color name="IO Background" red="235" green="235" blue="235" />
+        <color blue="235" green="235" name="IO Background" red="235"/>
       </background_color>
-      <width>1242</width>
+      <width>1552</width>
       <x>0</x>
       <name>EDM Label</name>
       <y>0</y>
       <foreground_color>
-        <color name="IO Text Fg" red="0" green="0" blue="0" />
+        <color blue="0" green="0" name="IO Text Fg" red="0"/>
       </foreground_color>
-      <actions hook="false" hook_all="false" />
+      <actions hook="false" hook_all="false"/>
       <show_scrollbar>false</show_scrollbar>
       <font>
         <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
@@ -1760,15 +155,15 @@ $(pv_value)</tooltip>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Image" version="1.0.0">
       <border_style>0</border_style>
-      <tooltip></tooltip>
-      <rules />
+      <tooltip/>
+      <rules/>
       <crop_left>0</crop_left>
       <enabled>true</enabled>
       <wuid>-2b5820d0:1466b628753:-7d26</wuid>
       <auto_size>true</auto_size>
       <image_file>pictures/ITERLogo_50x24.png</image_file>
-      <scripts />
-      <height>24</height>
+      <scripts/>
+      <height>12</height>
       <border_width>2</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1780,13 +175,13 @@ $(pv_value)</tooltip>
       <crop_bottom>0</crop_bottom>
       <degree>0</degree>
       <border_color>
-        <color name="IO Border" red="0" green="0" blue="0" />
+        <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
       <no_animation>false</no_animation>
       <widget_type>Image</widget_type>
       <flip_horizontal>false</flip_horizontal>
       <background_color>
-        <color name="IO Background" red="235" green="235" blue="235" />
+        <color blue="235" green="235" name="IO Background" red="235"/>
       </background_color>
       <permutation_matrix>
         <row>
@@ -1798,14 +193,14 @@ $(pv_value)</tooltip>
           <col>1.0</col>
         </row>
       </permutation_matrix>
-      <width>50</width>
+      <width>25</width>
       <x>0</x>
       <name>Image Template</name>
       <y>1</y>
       <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
+        <color blue="0" green="0" name="IO Foreground" red="0"/>
       </foreground_color>
-      <actions hook="false" hook_all="false" />
+      <actions hook="false" hook_all="false"/>
       <crop_top>0</crop_top>
       <crop_right>0</crop_right>
       <stretch_to_fit>false</stretch_to_fit>
@@ -1822,18 +217,18 @@ $(pv_value)</tooltip>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
       <horizontal_alignment>0</horizontal_alignment>
-      <rules />
+      <rules/>
       <enabled>true</enabled>
       <wuid>-2b5820d0:1466b628753:-7d25</wuid>
       <transparent>false</transparent>
-      <pv_value />
+      <pv_value/>
       <auto_size>false</auto_size>
       <text>######</text>
       <rotation_angle>0.0</rotation_angle>
-      <scripts />
+      <scripts/>
       <border_alarm_sensitive>false</border_alarm_sensitive>
       <show_units>true</show_units>
-      <height>25</height>
+      <height>31</height>
       <border_width>2</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1844,7 +239,7 @@ $(pv_value)</tooltip>
       <pv_name>TEST-BOY0:STRING</pv_name>
       <vertical_alignment>1</vertical_alignment>
       <border_color>
-        <color name="IO Border" red="0" green="0" blue="0" />
+        <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
       <precision_from_pv>true</precision_from_pv>
       <widget_type>Text Update</widget_type>
@@ -1852,18 +247,2263 @@ $(pv_value)</tooltip>
       <wrap_words>true</wrap_words>
       <format_type>0</format_type>
       <background_color>
-        <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+        <color blue="235" green="235" name="IO InputPV Bg" red="235"/>
       </background_color>
-      <width>137</width>
-      <x>1105</x>
+      <width>171</width>
+      <x>1381</x>
       <name>Text Update Template</name>
       <y>0</y>
       <foreground_color>
-        <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
       </foreground_color>
-      <actions hook="false" hook_all="false" />
+      <actions hook="false" hook_all="false"/>
       <font>
         <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip/>
+    <rules/>
+    <enabled>true</enabled>
+    <wuid>1e06d87a:14d71ce27dc:-7581</wuid>
+    <transparent>true</transparent>
+    <lock_children>true</lock_children>
+    <scripts/>
+    <height>110</height>
+    <border_width>2</border_width>
+    <scale_options>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <border_color>
+      <color blue="0" green="0" name="IO Border" red="0"/>
+    </border_color>
+    <widget_type>Grouping Container</widget_type>
+    <background_color>
+      <color blue="235" green="235" name="IO Background" red="235"/>
+    </background_color>
+    <width>230</width>
+    <x>480</x>
+    <name>Color To Change</name>
+    <y>115</y>
+    <foreground_color>
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
+    </foreground_color>
+    <actions hook="false" hook_all="false"/>
+    <fc>false</fc>
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+    </font>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip/>
+      <rules/>
+      <enabled>true</enabled>
+      <wuid>-3fbc0685:1466b3a4ee4:-7f78</wuid>
+      <transparent>true</transparent>
+      <lock_children>false</lock_children>
+      <scripts/>
+      <height>60</height>
+      <border_width>1</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <width>144</width>
+      <x>26</x>
+      <name>Color To Change</name>
+      <y>49</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO Foreground" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <line_width>1</line_width>
+        <horizontal_fill>true</horizontal_fill>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules/>
+        <enabled>true</enabled>
+        <wuid>-3fbc0685:1466b3a4ee4:-7f7a</wuid>
+        <transparent>false</transparent>
+        <pv_value/>
+        <alpha>255</alpha>
+        <bg_gradient_color>
+          <color blue="0" green="0" name="IO Foreground" red="0"/>
+        </bg_gradient_color>
+        <scripts/>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>60</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name/>
+        <gradient>false</gradient>
+        <border_color>
+          <color blue="0" green="0" name="IO Border" red="0"/>
+        </border_color>
+        <anti_alias>true</anti_alias>
+        <line_style>0</line_style>
+        <widget_type>Rectangle</widget_type>
+        <fg_gradient_color>
+          <color blue="0" green="0" name="IO Foreground" red="0"/>
+        </fg_gradient_color>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color blue="235" green="235" name="IO Background" red="235"/>
+        </background_color>
+        <width>62</width>
+        <x>81</x>
+        <name>Color</name>
+        <y>0</y>
+        <fill_level>100.0</fill_level>
+        <foreground_color>
+          <color blue="166" green="166" name="IO Shape Fill" red="166"/>
+        </foreground_color>
+        <actions hook="false" hook_all="false"/>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+        <line_color>
+          <color blue="0" green="0" name="IO Line" red="0"/>
+        </line_color>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <line_width>1</line_width>
+        <horizontal_fill>true</horizontal_fill>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules/>
+        <enabled>true</enabled>
+        <wuid>-2b5820d0:1466b628753:-7da5</wuid>
+        <transparent>false</transparent>
+        <pv_value/>
+        <alpha>255</alpha>
+        <bg_gradient_color>
+          <color blue="0" green="0" name="IO Foreground" red="0"/>
+        </bg_gradient_color>
+        <scripts/>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>60</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name/>
+        <gradient>false</gradient>
+        <border_color>
+          <color blue="0" green="0" name="IO Border" red="0"/>
+        </border_color>
+        <anti_alias>true</anti_alias>
+        <line_style>0</line_style>
+        <widget_type>Rectangle</widget_type>
+        <fg_gradient_color>
+          <color blue="0" green="0" name="IO Foreground" red="0"/>
+        </fg_gradient_color>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color blue="235" green="235" name="IO Background" red="235"/>
+        </background_color>
+        <width>62</width>
+        <x>0</x>
+        <name>Color</name>
+        <y>0</y>
+        <fill_level>100.0</fill_level>
+        <foreground_color>
+          <color blue="0" green="0" name="IO Foreground" red="0"/>
+        </foreground_color>
+        <actions hook="false" hook_all="false"/>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+        <line_color>
+          <color blue="0" green="0" name="IO Line" red="0"/>
+        </line_color>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip/>
+      <horizontal_alignment>0</horizontal_alignment>
+      <rules/>
+      <enabled>false</enabled>
+      <wuid>-3fbc0685:1466b3a4ee4:-7fb1</wuid>
+      <transparent>true</transparent>
+      <auto_size>true</auto_size>
+      <text>color_to_change=
+black /166, 166, 166</text>
+      <scripts/>
+      <height>44</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Label</widget_type>
+      <wrap_words>true</wrap_words>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <width>230</width>
+      <x>0</x>
+      <name>Color To Change</name>
+      <y>0</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO Text Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip/>
+    <rules/>
+    <enabled>true</enabled>
+    <wuid>1e06d87a:14d71ce27dc:-757d</wuid>
+    <transparent>true</transparent>
+    <lock_children>true</lock_children>
+    <scripts/>
+    <height>112</height>
+    <border_width>2</border_width>
+    <scale_options>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <border_color>
+      <color blue="0" green="0" name="IO Border" red="0"/>
+    </border_color>
+    <widget_type>Grouping Container</widget_type>
+    <background_color>
+      <color blue="235" green="235" name="IO Background" red="235"/>
+    </background_color>
+    <width>161</width>
+    <x>498</x>
+    <name>Green Color</name>
+    <y>260</y>
+    <foreground_color>
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
+    </foreground_color>
+    <actions hook="false" hook_all="false"/>
+    <fc>false</fc>
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+    </font>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip/>
+      <rules/>
+      <enabled>true</enabled>
+      <wuid>-3fbc0685:1466b3a4ee4:-7f56</wuid>
+      <transparent>true</transparent>
+      <lock_children>true</lock_children>
+      <scripts/>
+      <height>60</height>
+      <border_width>1</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <width>125</width>
+      <x>20</x>
+      <name>Green Color</name>
+      <y>52</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO Foreground" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <line_width>1</line_width>
+        <horizontal_fill>true</horizontal_fill>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules/>
+        <enabled>true</enabled>
+        <wuid>-3fbc0685:1466b3a4ee4:-7f54</wuid>
+        <transparent>false</transparent>
+        <pv_value/>
+        <alpha>255</alpha>
+        <bg_gradient_color>
+          <color blue="0" green="0" name="IO Foreground" red="0"/>
+        </bg_gradient_color>
+        <scripts/>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>60</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name/>
+        <gradient>false</gradient>
+        <border_color>
+          <color blue="0" green="0" name="IO Border" red="0"/>
+        </border_color>
+        <anti_alias>true</anti_alias>
+        <line_style>0</line_style>
+        <widget_type>Rectangle</widget_type>
+        <fg_gradient_color>
+          <color blue="0" green="0" name="IO Foreground" red="0"/>
+        </fg_gradient_color>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color blue="235" green="235" name="IO Background" red="235"/>
+        </background_color>
+        <width>125</width>
+        <x>0</x>
+        <name>Green Color</name>
+        <y>0</y>
+        <fill_level>100.0</fill_level>
+        <foreground_color>
+          <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
+        </foreground_color>
+        <actions hook="false" hook_all="false"/>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+        <line_color>
+          <color blue="0" green="0" name="IO Line" red="0"/>
+        </line_color>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip/>
+      <horizontal_alignment>0</horizontal_alignment>
+      <rules/>
+      <enabled>false</enabled>
+      <wuid>-3fbc0685:1466b3a4ee4:-7f55</wuid>
+      <transparent>true</transparent>
+      <auto_size>true</auto_size>
+      <text>Into On Color=
+green</text>
+      <scripts/>
+      <height>44</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Label</widget_type>
+      <wrap_words>true</wrap_words>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <width>161</width>
+      <x>0</x>
+      <name>Green Color</name>
+      <y>0</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO Text Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip/>
+    <rules/>
+    <enabled>true</enabled>
+    <wuid>1e06d87a:14d71ce27dc:-757b</wuid>
+    <transparent>true</transparent>
+    <lock_children>true</lock_children>
+    <scripts/>
+    <height>115</height>
+    <border_width>2</border_width>
+    <scale_options>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <border_color>
+      <color blue="0" green="0" name="IO Border" red="0"/>
+    </border_color>
+    <widget_type>Grouping Container</widget_type>
+    <background_color>
+      <color blue="235" green="235" name="IO Background" red="235"/>
+    </background_color>
+    <width>161</width>
+    <x>498</x>
+    <name>Red Color</name>
+    <y>392</y>
+    <foreground_color>
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
+    </foreground_color>
+    <actions hook="false" hook_all="false"/>
+    <fc>false</fc>
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+    </font>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip/>
+      <rules/>
+      <enabled>true</enabled>
+      <wuid>-3fbc0685:1466b3a4ee4:-7ed9</wuid>
+      <transparent>true</transparent>
+      <lock_children>true</lock_children>
+      <scripts/>
+      <height>60</height>
+      <border_width>1</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <width>125</width>
+      <x>17</x>
+      <name>Red Color</name>
+      <y>54</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO Foreground" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
+        <border_style>0</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <line_width>1</line_width>
+        <horizontal_fill>true</horizontal_fill>
+        <alarm_pulsing>false</alarm_pulsing>
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <rules/>
+        <enabled>true</enabled>
+        <wuid>-3fbc0685:1466b3a4ee4:-7ed7</wuid>
+        <transparent>false</transparent>
+        <pv_value/>
+        <alpha>255</alpha>
+        <bg_gradient_color>
+          <color blue="0" green="0" name="IO Foreground" red="0"/>
+        </bg_gradient_color>
+        <scripts/>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>60</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <pv_name/>
+        <gradient>false</gradient>
+        <border_color>
+          <color blue="0" green="0" name="IO Border" red="0"/>
+        </border_color>
+        <anti_alias>true</anti_alias>
+        <line_style>0</line_style>
+        <widget_type>Rectangle</widget_type>
+        <fg_gradient_color>
+          <color blue="0" green="0" name="IO Foreground" red="0"/>
+        </fg_gradient_color>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color blue="235" green="235" name="IO Background" red="235"/>
+        </background_color>
+        <width>125</width>
+        <x>0</x>
+        <name>Red Color</name>
+        <y>0</y>
+        <fill_level>100.0</fill_level>
+        <foreground_color>
+          <color blue="14" green="12" name="IO High Level Alarm" red="250"/>
+        </foreground_color>
+        <actions hook="false" hook_all="false"/>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+        <line_color>
+          <color blue="0" green="0" name="IO Line" red="0"/>
+        </line_color>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip/>
+      <horizontal_alignment>0</horizontal_alignment>
+      <rules/>
+      <enabled>false</enabled>
+      <wuid>-3fbc0685:1466b3a4ee4:-7ed8</wuid>
+      <transparent>true</transparent>
+      <auto_size>true</auto_size>
+      <text>Into On Color=
+red</text>
+      <scripts/>
+      <height>44</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Label</widget_type>
+      <wrap_words>true</wrap_words>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <width>161</width>
+      <x>0</x>
+      <name>Red Color</name>
+      <y>0</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO Text Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip/>
+    <rules/>
+    <enabled>true</enabled>
+    <wuid>1e06d87a:14d71ce27dc:-7579</wuid>
+    <transparent>true</transparent>
+    <lock_children>true</lock_children>
+    <scripts/>
+    <height>66</height>
+    <border_width>2</border_width>
+    <scale_options>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <border_color>
+      <color blue="0" green="0" name="IO Border" red="0"/>
+    </border_color>
+    <widget_type>Grouping Container</widget_type>
+    <background_color>
+      <color blue="235" green="235" name="IO Background" red="235"/>
+    </background_color>
+    <width>329</width>
+    <x>745</x>
+    <name>Standard On Color</name>
+    <y>166</y>
+    <foreground_color>
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
+    </foreground_color>
+    <actions hook="false" hook_all="false"/>
+    <fc>false</fc>
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+    </font>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules/>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>SymbolLibrary/SVG/Electrical/Protection_and_Cut-Shut_Off-On/JA Withdrawable Circuit Breaker On.svg</image_file>
+      <height>66</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbols</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>108cfdd7:1466b36dbdb:-7fc3</wuid>
+      <on_color>
+        <color blue="255" green="0" name="IO PV ON" red="0"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>0</x>
+      <data_type>0</data_type>
+      <y>0</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules/>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>SymbolLibrary/SVG/Fluid/Pumps/PL Centrifugal Pump On.svg</image_file>
+      <height>34</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbols</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>108cfdd7:1466b36dbdb:-7fbf</wuid>
+      <on_color>
+        <color blue="255" green="0" name="IO PV ON" red="0"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>95</x>
+      <data_type>0</data_type>
+      <y>16</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules/>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off On.svg</image_file>
+      <height>34</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbols</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>108cfdd7:1466b36dbdb:-7fa1</wuid>
+      <on_color>
+        <color blue="255" green="0" name="IO PV ON" red="0"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>208</x>
+      <data_type>0</data_type>
+      <y>16</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules/>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>pictures/animation/VG 3-Positions 2 way-Valves 3.svg</image_file>
+      <height>34</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbols</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>42ad6f7:14d4d53c02a:-7b07</wuid>
+      <on_color>
+        <color blue="255" green="0" name="IO PV ON" red="0"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>295</x>
+      <data_type>0</data_type>
+      <y>14</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip/>
+    <rules/>
+    <enabled>true</enabled>
+    <wuid>1e06d87a:14d71ce27dc:-7577</wuid>
+    <transparent>true</transparent>
+    <lock_children>true</lock_children>
+    <scripts/>
+    <height>66</height>
+    <border_width>2</border_width>
+    <scale_options>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <border_color>
+      <color blue="0" green="0" name="IO Border" red="0"/>
+    </border_color>
+    <widget_type>Grouping Container</widget_type>
+    <background_color>
+      <color blue="235" green="235" name="IO Background" red="235"/>
+    </background_color>
+    <width>329</width>
+    <x>745</x>
+    <name>Green On Color</name>
+    <y>316</y>
+    <foreground_color>
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
+    </foreground_color>
+    <actions hook="false" hook_all="false"/>
+    <fc>false</fc>
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+    </font>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules/>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>SymbolLibrary/SVG/Electrical/Protection_and_Cut-Shut_Off-On/JA Withdrawable Circuit Breaker On.svg</image_file>
+      <height>66</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbol</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>-3fbc0685:1466b3a4ee4:-7f72</wuid>
+      <on_color>
+        <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>0</x>
+      <data_type>0</data_type>
+      <y>0</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules/>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>SymbolLibrary/SVG/Fluid/Pumps/PL Centrifugal Pump On.svg</image_file>
+      <height>34</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbol</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>-3fbc0685:1466b3a4ee4:-7f71</wuid>
+      <on_color>
+        <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>95</x>
+      <data_type>0</data_type>
+      <y>16</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules/>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off On.svg</image_file>
+      <height>34</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbol</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>-3fbc0685:1466b3a4ee4:-7f70</wuid>
+      <on_color>
+        <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>208</x>
+      <data_type>0</data_type>
+      <y>16</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules/>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>pictures/animation/VG 3-Positions 2 way-Valves 3.svg</image_file>
+      <height>34</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbol</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>42ad6f7:14d4d53c02a:-7b06</wuid>
+      <on_color>
+        <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>295</x>
+      <data_type>0</data_type>
+      <y>14</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip/>
+    <rules/>
+    <enabled>true</enabled>
+    <wuid>1e06d87a:14d71ce27dc:-7575</wuid>
+    <transparent>true</transparent>
+    <lock_children>true</lock_children>
+    <scripts/>
+    <height>66</height>
+    <border_width>2</border_width>
+    <scale_options>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <border_color>
+      <color blue="0" green="0" name="IO Border" red="0"/>
+    </border_color>
+    <widget_type>Grouping Container</widget_type>
+    <background_color>
+      <color blue="235" green="235" name="IO Background" red="235"/>
+    </background_color>
+    <width>329</width>
+    <x>745</x>
+    <name>Red On Color</name>
+    <y>451</y>
+    <foreground_color>
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
+    </foreground_color>
+    <actions hook="false" hook_all="false"/>
+    <fc>false</fc>
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+    </font>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules/>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>SymbolLibrary/SVG/Electrical/Protection_and_Cut-Shut_Off-On/JA Withdrawable Circuit Breaker On.svg</image_file>
+      <height>66</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbol</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>-3fbc0685:1466b3a4ee4:-7edc</wuid>
+      <on_color>
+        <color blue="14" green="12" name="IO High Level Alarm" red="250"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>0</x>
+      <data_type>0</data_type>
+      <y>0</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules/>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>SymbolLibrary/SVG/Fluid/Pumps/PL Centrifugal Pump On.svg</image_file>
+      <height>34</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbol</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>-3fbc0685:1466b3a4ee4:-7edb</wuid>
+      <on_color>
+        <color blue="14" green="12" name="IO High Level Alarm" red="250"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>95</x>
+      <data_type>0</data_type>
+      <y>16</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules/>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off On.svg</image_file>
+      <height>34</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbol</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>-3fbc0685:1466b3a4ee4:-7eda</wuid>
+      <on_color>
+        <color blue="14" green="12" name="IO High Level Alarm" red="250"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>208</x>
+      <data_type>0</data_type>
+      <y>16</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules/>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>pictures/animation/VG 3-Positions 2 way-Valves 3.svg</image_file>
+      <height>34</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbol</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>42ad6f7:14d4d53c02a:-7b05</wuid>
+      <on_color>
+        <color blue="14" green="12" name="IO High Level Alarm" red="250"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>295</x>
+      <data_type>0</data_type>
+      <y>14</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip/>
+    <rules/>
+    <enabled>true</enabled>
+    <wuid>1e06d87a:14d71ce27dc:-7573</wuid>
+    <transparent>true</transparent>
+    <lock_children>true</lock_children>
+    <scripts/>
+    <height>66</height>
+    <border_width>2</border_width>
+    <scale_options>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <border_color>
+      <color blue="0" green="0" name="IO Border" red="0"/>
+    </border_color>
+    <widget_type>Grouping Container</widget_type>
+    <background_color>
+      <color blue="235" green="235" name="IO Background" red="235"/>
+    </background_color>
+    <width>329</width>
+    <x>745</x>
+    <name>Selected On Color</name>
+    <y>591</y>
+    <foreground_color>
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
+    </foreground_color>
+    <actions hook="false" hook_all="false"/>
+    <fc>false</fc>
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+    </font>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules>
+        <rule name="OnColor" out_exp="false" prop_id="on_color">
+          <exp bool_exp="pvStr0==&quot;Blue&quot;">
+            <value>
+              <color blue="255" green="0" name="IO PV ON" red="0"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Magenta&quot;">
+            <value>
+              <color blue="255" green="0" name="Invalid" red="255"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Yellow&quot;">
+            <value>
+              <color blue="0" green="255" name="Minor" red="255"/>
+            </value>
+          </exp>
+          <pv trig="true">loc://oncolor("Blue")</pv>
+        </rule>
+        <rule name="OffColor" out_exp="false" prop_id="off_color">
+          <exp bool_exp="pvStr0==&quot;Grey&quot;">
+            <value>
+              <color blue="166" green="166" name="IO Shape Fill" red="166"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Brown&quot;">
+            <value>
+              <color blue="71" green="125" name="IO PV OFF" red="149"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Green&quot;">
+            <value>
+              <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
+            </value>
+          </exp>
+          <pv trig="true">loc://offcolor(0)</pv>
+        </rule>
+      </rules>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>SymbolLibrary/SVG/Electrical/Protection_and_Cut-Shut_Off-On/JA Withdrawable Circuit Breaker On.svg</image_file>
+      <height>66</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbol</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>-2b5820d0:1466b628753:-7eac</wuid>
+      <on_color>
+        <color blue="255" green="0" name="IO PV ON" red="0"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>0</x>
+      <data_type>0</data_type>
+      <y>0</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules>
+        <rule name="OnColor" out_exp="false" prop_id="on_color">
+          <exp bool_exp="pvStr0==&quot;Blue&quot;">
+            <value>
+              <color blue="255" green="0" name="IO PV ON" red="0"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Magenta&quot;">
+            <value>
+              <color blue="255" green="0" name="Invalid" red="255"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Yellow&quot;">
+            <value>
+              <color blue="0" green="255" name="Minor" red="255"/>
+            </value>
+          </exp>
+          <pv trig="true">loc://oncolor("Blue")</pv>
+        </rule>
+        <rule name="OffColor" out_exp="false" prop_id="off_color">
+          <exp bool_exp="pvStr0==&quot;Grey&quot;">
+            <value>
+              <color blue="166" green="166" name="IO Shape Fill" red="166"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Brown&quot;">
+            <value>
+              <color blue="71" green="125" name="IO PV OFF" red="149"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Green&quot;">
+            <value>
+              <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
+            </value>
+          </exp>
+          <pv trig="true">loc://offcolor(0)</pv>
+        </rule>
+      </rules>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>SymbolLibrary/SVG/Fluid/Pumps/PL Centrifugal Pump On.svg</image_file>
+      <height>34</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbol</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>-2b5820d0:1466b628753:-7eab</wuid>
+      <on_color>
+        <color blue="255" green="0" name="IO PV ON" red="0"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>95</x>
+      <data_type>0</data_type>
+      <y>16</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules>
+        <rule name="OnColor" out_exp="false" prop_id="on_color">
+          <exp bool_exp="pvStr0==&quot;Blue&quot;">
+            <value>
+              <color blue="255" green="0" name="IO PV ON" red="0"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Magenta&quot;">
+            <value>
+              <color blue="255" green="0" name="Invalid" red="255"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Yellow&quot;">
+            <value>
+              <color blue="0" green="255" name="Minor" red="255"/>
+            </value>
+          </exp>
+          <pv trig="true">loc://oncolor("Blue")</pv>
+        </rule>
+        <rule name="OffColor" out_exp="false" prop_id="off_color">
+          <exp bool_exp="pvStr0==&quot;Grey&quot;">
+            <value>
+              <color blue="166" green="166" name="IO Shape Fill" red="166"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Brown&quot;">
+            <value>
+              <color blue="71" green="125" name="IO PV OFF" red="149"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Green&quot;">
+            <value>
+              <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
+            </value>
+          </exp>
+          <pv trig="true">loc://offcolor(0)</pv>
+        </rule>
+      </rules>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off On.svg</image_file>
+      <height>34</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbol</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>-2b5820d0:1466b628753:-7eaa</wuid>
+      <on_color>
+        <color blue="255" green="0" name="IO PV ON" red="0"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>208</x>
+      <data_type>0</data_type>
+      <y>16</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules>
+        <rule name="OnColor" out_exp="false" prop_id="on_color">
+          <exp bool_exp="pvStr0==&quot;Blue&quot;">
+            <value>
+              <color blue="255" green="0" name="IO PV ON" red="0"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Magenta&quot;">
+            <value>
+              <color blue="255" green="0" name="Invalid" red="255"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Yellow&quot;">
+            <value>
+              <color blue="0" green="255" name="Minor" red="255"/>
+            </value>
+          </exp>
+          <pv trig="true">loc://oncolor("Blue")</pv>
+        </rule>
+        <rule name="OffColor" out_exp="false" prop_id="off_color">
+          <exp bool_exp="pvStr0==&quot;Grey&quot;">
+            <value>
+              <color blue="166" green="166" name="IO Shape Fill" red="166"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Brown&quot;">
+            <value>
+              <color blue="71" green="125" name="IO PV OFF" red="149"/>
+            </value>
+          </exp>
+          <exp bool_exp="pvStr0==&quot;Green&quot;">
+            <value>
+              <color blue="0" green="255" name="IO Normal Level Alarm" red="0"/>
+            </value>
+          </exp>
+          <pv trig="true">loc://offcolor(0)</pv>
+        </rule>
+      </rules>
+      <bit>0</bit>
+      <pv_value/>
+      <auto_size>true</auto_size>
+      <image_file>pictures/animation/VG 3-Positions 2 way-Valves 3.svg</image_file>
+      <height>34</height>
+      <border_width>2</border_width>
+      <align_to_nearest_second>false</align_to_nearest_second>
+      <visible>true</visible>
+      <pv_name>loc://open(1)</pv_name>
+      <degree>0</degree>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <flip_horizontal>false</flip_horizontal>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <name>Symbol</name>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>false</show_boolean_label>
+      <flip_vertical>false</flip_vertical>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <crop_left>0</crop_left>
+      <enabled>true</enabled>
+      <wuid>42ad6f7:14d4d53c02a:-7b04</wuid>
+      <on_color>
+        <color blue="255" green="0" name="IO PV ON" red="0"/>
+      </on_color>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <on_label>ON</on_label>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <crop_bottom>0</crop_bottom>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <width>34</width>
+      <x>295</x>
+      <data_type>0</data_type>
+      <y>14</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <crop_top>0</crop_top>
+      <crop_right>0</crop_right>
+      <stretch_to_fit>false</stretch_to_fit>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OFF</off_label>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <border_style>0</border_style>
+    <tooltip/>
+    <rules/>
+    <enabled>true</enabled>
+    <wuid>1e06d87a:14d71ce27dc:-7571</wuid>
+    <transparent>true</transparent>
+    <lock_children>true</lock_children>
+    <scripts/>
+    <height>53</height>
+    <border_width>2</border_width>
+    <scale_options>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <border_color>
+      <color blue="0" green="0" name="IO Border" red="0"/>
+    </border_color>
+    <widget_type>Grouping Container</widget_type>
+    <background_color>
+      <color blue="235" green="235" name="IO Background" red="235"/>
+    </background_color>
+    <width>150</width>
+    <x>503</x>
+    <name>On Color Selector</name>
+    <y>555</y>
+    <foreground_color>
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
+    </foreground_color>
+    <actions hook="false" hook_all="false"/>
+    <fc>false</fc>
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+    </font>
+    <widget typeId="org.csstudio.opibuilder.widgets.combo" version="1.0.0">
+      <border_style>6</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <alarm_pulsing>false</alarm_pulsing>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <rules/>
+      <enabled>true</enabled>
+      <wuid>-2b5820d0:1466b628753:-7f55</wuid>
+      <pv_value/>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <height>22</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <items_from_pv>false</items_from_pv>
+      <visible>true</visible>
+      <pv_name>loc://oncolor("Blue")</pv_name>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Combo</widget_type>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="255" green="255" name="IO OutputPV Bg" red="255"/>
+      </background_color>
+      <width>150</width>
+      <x>0</x>
+      <name>On Color Selector</name>
+      <y>31</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO OutputPV Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <items>
+        <s>Blue</s>
+        <s>Magenta</s>
+        <s>Yellow</s>
+      </items>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip/>
+      <horizontal_alignment>0</horizontal_alignment>
+      <rules/>
+      <enabled>false</enabled>
+      <wuid>-2b5820d0:1466b628753:-7f54</wuid>
+      <transparent>true</transparent>
+      <auto_size>true</auto_size>
+      <text>ON Color</text>
+      <scripts/>
+      <height>19</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Label</widget_type>
+      <wrap_words>true</wrap_words>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <width>80</width>
+      <x>40</x>
+      <name>On Color Selector</name>
+      <y>0</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO Text Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
       </font>
     </widget>
   </widget>

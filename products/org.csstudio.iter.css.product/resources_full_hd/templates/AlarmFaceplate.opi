@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <show_close_button>true</show_close_button>
+  <rules/>
+  <wuid>-14a921ec:134b2495e46:-7f53</wuid>
+  <show_grid>true</show_grid>
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <scripts/>
+  <height>471</height>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+  </macros>
+  <boy_version>4.0.102.201503041229</boy_version>
+  <show_edit_range>true</show_edit_range>
+  <widget_type>Display</widget_type>
+  <auto_scale_widgets>
+    <auto_scale_widgets>false</auto_scale_widgets>
+    <min_width>-1</min_width>
+    <min_height>-1</min_height>
+  </auto_scale_widgets>
+  <background_color>
+    <color blue="235" green="235" name="IO Background" red="235"/>
+  </background_color>
+  <width>287</width>
+  <x>0</x>
+  <name>Alarm Control Area</name>
+  <grid_space>1</grid_space>
+  <show_ruler>true</show_ruler>
+  <y>0</y>
+  <snap_to_geometry>true</snap_to_geometry>
+  <foreground_color>
+    <color blue="215" green="215" name="IO Grid" red="215"/>
+  </foreground_color>
+  <actions hook="false" hook_all="false"/>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <border_style>6</border_style>
+    <tooltip/>
+    <rules/>
+    <enabled>true</enabled>
+    <wuid>-c8fae15:14918e4e678:-7adc</wuid>
+    <transparent>false</transparent>
+    <lock_children>false</lock_children>
+    <scripts/>
+    <height>471</height>
+    <border_width>2</border_width>
+    <scale_options>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <visible>true</visible>
+    <border_color>
+      <color blue="0" green="0" name="IO Border" red="0"/>
+    </border_color>
+    <widget_type>Grouping Container</widget_type>
+    <background_color>
+      <color blue="235" green="235" name="IO Background" red="235"/>
+    </background_color>
+    <width>287</width>
+    <x>0</x>
+    <name>Alarm Faceplate</name>
+    <y>0</y>
+    <foreground_color>
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
+    </foreground_color>
+    <actions hook="false" hook_all="false"/>
+    <fc>false</fc>
+    <show_scrollbar>false</show_scrollbar>
+    <font>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+    </font>
+    <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
+      <toggle_button>true</toggle_button>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <alarm_pulsing>false</alarm_pulsing>
+      <on_state/>
+      <off_state/>
+      <tooltip>Acknowledge</tooltip>
+      <push_action_index>0</push_action_index>
+      <rules/>
+      <effect_3d>true</effect_3d>
+      <bit>-1</bit>
+      <enabled>false</enabled>
+      <wuid>-c8fae15:14918e4e678:-7931</wuid>
+      <on_color>
+        <color blue="255" green="0" name="IO PV ON" red="0"/>
+      </on_color>
+      <show_confirm_dialog>1</show_confirm_dialog>
+      <password/>
+      <pv_value/>
+      <released_action_index>0</released_action_index>
+      <square_button>true</square_button>
+      <show_led>false</show_led>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <height>25</height>
+      <on_label>ACKNOWLEDGE</on_label>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <pv_name/>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Button</widget_type>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <confirm_message>Are your sure you want to do this?</confirm_message>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="178" green="178" name="IO Button" red="178"/>
+      </background_color>
+      <width>150</width>
+      <x>64</x>
+      <name>Alarm Action Button</name>
+      <data_type>0</data_type>
+      <y>47</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>true</show_boolean_label>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>ACKNOWLEDGE</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
+      <toggle_button>true</toggle_button>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <alarm_pulsing>false</alarm_pulsing>
+      <on_state/>
+      <off_state/>
+      <tooltip>Reset</tooltip>
+      <push_action_index>0</push_action_index>
+      <rules/>
+      <effect_3d>true</effect_3d>
+      <bit>-1</bit>
+      <enabled>false</enabled>
+      <wuid>67e41591:14a0bd94970:-3922</wuid>
+      <on_color>
+        <color blue="255" green="0" name="IO PV ON" red="0"/>
+      </on_color>
+      <show_confirm_dialog>1</show_confirm_dialog>
+      <password/>
+      <pv_value/>
+      <released_action_index>0</released_action_index>
+      <square_button>true</square_button>
+      <show_led>false</show_led>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <height>25</height>
+      <on_label>RESET</on_label>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <pv_name/>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Button</widget_type>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <confirm_message>Are your sure you want to do this?</confirm_message>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="178" green="178" name="IO Button" red="178"/>
+      </background_color>
+      <width>150</width>
+      <x>64</x>
+      <name>Alarm Action Button</name>
+      <data_type>0</data_type>
+      <y>100</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>true</show_boolean_label>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>RESET</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
+      <toggle_button>true</toggle_button>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <alarm_pulsing>false</alarm_pulsing>
+      <on_state/>
+      <off_state/>
+      <tooltip>History</tooltip>
+      <push_action_index>0</push_action_index>
+      <rules/>
+      <effect_3d>true</effect_3d>
+      <bit>-1</bit>
+      <enabled>false</enabled>
+      <wuid>67e41591:14a0bd94970:-391e</wuid>
+      <on_color>
+        <color blue="255" green="0" name="IO PV ON" red="0"/>
+      </on_color>
+      <show_confirm_dialog>1</show_confirm_dialog>
+      <password/>
+      <pv_value/>
+      <released_action_index>0</released_action_index>
+      <square_button>true</square_button>
+      <show_led>false</show_led>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <height>25</height>
+      <on_label>HISTORY</on_label>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <pv_name/>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Button</widget_type>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <confirm_message>Are your sure you want to do this?</confirm_message>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="178" green="178" name="IO Button" red="178"/>
+      </background_color>
+      <width>150</width>
+      <x>56</x>
+      <name>Alarm Action Button</name>
+      <data_type>0</data_type>
+      <y>226</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>true</show_boolean_label>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>HISTORY</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
+      <toggle_button>true</toggle_button>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <alarm_pulsing>false</alarm_pulsing>
+      <on_state/>
+      <off_state/>
+      <tooltip>Overview</tooltip>
+      <push_action_index>0</push_action_index>
+      <rules/>
+      <effect_3d>true</effect_3d>
+      <bit>-1</bit>
+      <enabled>false</enabled>
+      <wuid>67e41591:14a0bd94970:-391a</wuid>
+      <on_color>
+        <color blue="255" green="0" name="IO PV ON" red="0"/>
+      </on_color>
+      <show_confirm_dialog>1</show_confirm_dialog>
+      <password/>
+      <pv_value/>
+      <released_action_index>0</released_action_index>
+      <square_button>true</square_button>
+      <show_led>false</show_led>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <height>25</height>
+      <on_label>OVERVIEW</on_label>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <pv_name/>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Button</widget_type>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <confirm_message>Are your sure you want to do this?</confirm_message>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="178" green="178" name="IO Button" red="178"/>
+      </background_color>
+      <width>100</width>
+      <x>20</x>
+      <name>Alarm Action Button</name>
+      <data_type>0</data_type>
+      <y>370</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>true</show_boolean_label>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>OVERVIEW</off_label>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
+      <toggle_button>true</toggle_button>
+      <border_style>0</border_style>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <alarm_pulsing>false</alarm_pulsing>
+      <on_state/>
+      <off_state/>
+      <tooltip>Alarms</tooltip>
+      <push_action_index>0</push_action_index>
+      <rules/>
+      <effect_3d>true</effect_3d>
+      <bit>-1</bit>
+      <enabled>false</enabled>
+      <wuid>67e41591:14a0bd94970:-3912</wuid>
+      <on_color>
+        <color blue="255" green="0" name="IO PV ON" red="0"/>
+      </on_color>
+      <show_confirm_dialog>1</show_confirm_dialog>
+      <password/>
+      <pv_value/>
+      <released_action_index>0</released_action_index>
+      <square_button>true</square_button>
+      <show_led>false</show_led>
+      <scripts/>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <height>25</height>
+      <on_label>ALARMS</on_label>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <pv_name/>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Boolean Button</widget_type>
+      <off_color>
+        <color blue="71" green="125" name="IO PV OFF" red="149"/>
+      </off_color>
+      <confirm_message>Are your sure you want to do this?</confirm_message>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="178" green="178" name="IO Button" red="178"/>
+      </background_color>
+      <width>100</width>
+      <x>160</x>
+      <name>Alarm Action Button</name>
+      <data_type>0</data_type>
+      <y>370</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <show_boolean_label>true</show_boolean_label>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <off_label>ALARMS</off_label>
+    </widget>
+  </widget>
+</display>

@@ -19,14 +19,6 @@ refer to the file ITER-LICENSE.TXT located in the top level directory
 of the distribution package.
    </license>
 
-   <includes
-         id="org.csstudio.iter.trends.databrowser2.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.batik.feature"
-         version="0.0.0"/>
-
    <requires>
       <import plugin="org.eclipse.core.runtime" version="3.4.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.apputil" version="1.0.11" match="greaterOrEqual"/>
@@ -34,6 +26,7 @@ of the distribution package.
       <import plugin="org.csstudio.openfile" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.java" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.csdata" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.jdom" version="1.1.0" match="greaterOrEqual"/>
       <import plugin="org.epics.util" version="0.1.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.autocomplete.ui" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.simplepv" version="1.0.0" match="greaterOrEqual"/>
@@ -42,16 +35,12 @@ of the distribution package.
       <import plugin="org.python.jython" version="2.5.2" match="greaterOrEqual"/>
       <import plugin="org.csstudio.swt.widgets" version="2.1.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.swt.xygraph" version="2.0.4" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.alarm.beast"/>
       <import plugin="org.eclipse.gef"/>
-      <import plugin="org.eclipse.ui" version="3.4.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.resources" version="3.4.1" match="greaterOrEqual"/>
-      <import plugin="org.apache.commons.lang" version="2.6.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.java" version="3.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.filesystem" version="1.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.editors"/>
       <import plugin="org.eclipse.jface.text" version="3.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.core.resources" version="3.4.1" match="greaterOrEqual"/>
       <import plugin="org.csstudio.ui.util"/>
       <import plugin="org.eclipse.search"/>
       <import plugin="org.csstudio.utility.batik" version="0.0.1" match="greaterOrEqual"/>
@@ -61,6 +50,7 @@ of the distribution package.
       <import plugin="org.eclipse.ui.views" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.apache.batik.util"/>
       <import plugin="org.eclipse.draw2d"/>
+      <import plugin="org.eclipse.ui" version="3.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.4.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.examples" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.console" version="3.3.0" match="greaterOrEqual"/>
@@ -77,23 +67,20 @@ of the distribution package.
       <import plugin="org.csstudio.ui.util" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.browser"/>
       <import plugin="org.csstudio.opibuilder.widgets" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.commons.lang" version="2.6.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.swt.xygraph" version="1.0.5" match="greaterOrEqual"/>
-      <import plugin="org.apache.batik.dom"/>
       <import plugin="org.apache.batik.dom.svg"/>
+      <import plugin="org.apache.batik.dom"/>
+      <import plugin="org.w3c.dom.svg"/>
       <import plugin="org.csstudio.swt.widgets" version="1.0.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.draw2d" version="3.4.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.swt.xygraph" version="1.1.3" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.opibuilder" version="1.0.6" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.opibuilder.widgets" version="1.0.5" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.trends.databrowser2" version="4.1.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.utility.pvmanager" version="3.2.0" match="greaterOrEqual"/>
-      <import plugin="org.epics.vtype" version="2.8.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.utility.pvmanager.widgets" version="3.2.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.opibuilder.widgets" version="3.2.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.opibuilder" version="3.2.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.utility.pvmanager.ui.toolbox" version="3.2.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.ui.util" version="3.2.0" match="greaterOrEqual"/>
-      <import plugin="org.jdom" version="1.1.0" match="greaterOrEqual"/>
       <import plugin="org.csstudio.opibuilder" version="4.0.102" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.7.101" match="greaterOrEqual"/>
       <import plugin="org.csstudio.utility.product" version="1.2.0" match="greaterOrEqual"/>
@@ -103,7 +90,8 @@ of the distribution package.
       <import plugin="org.eclipse.core.runtime" version="3.10.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.9.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.106.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.osgi"/>
+      <import plugin="org.csstudio.opibuilder.widgets" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.opibuilder.editor" version="3.1.4" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -112,12 +100,6 @@ of the distribution package.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
-   <plugin
-         id="org.csstudio.opibuilder.converter"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
 
    <plugin
          id="org.csstudio.opibuilder.editor"
@@ -201,33 +183,6 @@ of the distribution package.
          unpack="false"/>
 
    <plugin
-         id="org.csstudio.trends.databrowser2.opiwidget"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.jdom"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.commons.lang"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="org.python.jython"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.csstudio.opibuilder.widgets.extra"
          download-size="0"
          install-size="0"
@@ -250,6 +205,13 @@ of the distribution package.
 
    <plugin
          id="org.csstudio.opibuilder.validation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.examples"
          download-size="0"
          install-size="0"
          version="0.0.0"

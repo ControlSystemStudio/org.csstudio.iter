@@ -19,72 +19,77 @@ refer to the file ITER-LICENSE.TXT located in the top level directory
 of the distribution package.
    </license>
 
-   <includes
-         id="org.csstudio.iter.casnooper.feature"
-         version="0.0.0"/>
+   <requires>
+      <import plugin="org.junit" version="4.8.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.csstudio.apputil.ui"/>
+      <import plugin="org.csstudio.logging" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.platform.libs.jms"/>
+      <import plugin="org.csstudio.platform.utility.jms" version="1.1.2" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.security.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.apputil"/>
+      <import plugin="org.csstudio.security" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.ui.util" version="4.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.platform.utility.rdb" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.utility.pvmanager.ui"/>
+      <import plugin="org.csstudio.csdata" version="0.0.1" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.ui.util" version="0.0.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.intro"/>
+      <import plugin="org.eclipse.ui.intro.universal"/>
+      <import plugin="org.eclipse.help"/>
+      <import plugin="org.csstudio.utility.pvmanager.vtype" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.utility.pvmanager.extra" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.utility.pvmanager.widgets" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="org.epics.util" version="0.2.5" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.utility.pvmanager" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="org.epics.vtype" version="2.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.e4.core.di"/>
+      <import plugin="org.eclipse.e4.core.di.extensions"/>
+      <import plugin="org.eclipse.e4.ui.model.workbench"/>
+      <import plugin="org.eclipse.e4.ui.di"/>
+      <import plugin="javax.annotation"/>
+      <import plugin="org.epics.util" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.ui.util" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.csstudio.autocomplete.ui"/>
+      <import plugin="org.csstudio.csdata" version="3.2.0" match="greaterOrEqual"/>
+   </requires>
 
-   <includes
-         id="org.csstudio.iter.debugging.jmsmonitor.feature"
-         version="0.0.0"/>
+   <plugin
+         id="org.csstudio.diag.pvmanager.probe"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <includes
-         id="org.csstudio.iter.debugging.rdbshell.feature"
-         version="0.0.0"/>
+   <plugin
+         id="org.csstudio.utility.clock"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <includes
-         id="org.csstudio.iter.diag.epics.pvtree.feature"
-         version="0.0.0"/>
+   <plugin
+         id="org.csstudio.utility.eliza"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <includes
-         id="org.csstudio.iter.diag.pvmanager.probe.feature"
-         version="0.0.0"/>
+   <plugin
+         id="org.csstudio.utility.sysmon"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <includes
-         id="org.csstudio.iter.diag.pvfields.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.display.pace.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.display.pvtable.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.display.rdbtable.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.logbook.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.snl.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.svn.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.test.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.utility.clock.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.utility.eliza.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.utility.sysmon.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.iter.xmleditor.feature"
-         version="0.0.0"/>
+   <plugin
+         id="org.csstudio.diag.epics.pvmanager.pvtree"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>

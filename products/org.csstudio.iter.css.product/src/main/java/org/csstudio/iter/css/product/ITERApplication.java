@@ -7,8 +7,17 @@
  ******************************************************************************/
 package org.csstudio.iter.css.product;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.net.URL;
+
 import org.csstudio.startup.application.Application;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
+import org.eclipse.osgi.service.datalocation.Location;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * 
@@ -21,7 +30,56 @@ import org.eclipse.equinox.app.IApplicationContext;
 public class ITERApplication extends Application {
 
     @Override
-    public Object start(IApplicationContext context) throws Exception {      
+    protected Object promptForWorkspace(Display display, IApplicationContext context) throws Exception {
+        Object obj = super.promptForWorkspace(display, context);
+        if (obj == IApplication.EXIT_OK) {
+            return obj;
+        }
+        final String args[] = (String[]) context.getArguments().get("application.args");
+        for (String arg : args) {
+            if (arg.equals("-cleanWorkbench")) { 
+                Location loc = Platform.getInstanceLocation();
+                URL url = loc.getURL();
+                File file = new File(url.getFile());
+                file = new File(file, ".metadata");
+                file = new File(file, ".plugins");
+                file = new File(file, "org.eclipse.e4.workbench");
+                file = new File(file, "workbench.xmi");
+                file.delete();
+            }
+        }
+        
+        Location loc = Platform.getInstanceLocation();
+        if (loc.isSet()) {
+            URL url = loc.getURL();
+            File file = new File(url.getFile());
+            file = new File(file, ".metadata");
+            file = new File(file, ".plugins");
+            file = new File(file, "org.eclipse.e4.workbench");
+            file = new File(file, "workbench.xmi");
+            if (file.exists()) {
+                boolean delete = false;
+                try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+                    while(br.ready()) {
+                        String line = br.readLine();
+                        if (line != null && line.contains("org.csstudio.alarm.beast.ui.alarmtable")) {
+                            delete = true;
+                            break;
+                        }
+                    }
+                }
+                if (delete) {
+                    file.delete();
+                }
+            }
+        }
+        
+        return obj;
+    }
+    
+    @Override
+    public Object start(IApplicationContext context) throws Exception {    
+        //org.csstudio.alarm.beast.ui.alarmtable
         Object o = super.start(context);
         //Bugfix/workaround for org.apache.felix.gogo.shell.Activator, 
         //which prints InterruptedException if stopped before it was even started.

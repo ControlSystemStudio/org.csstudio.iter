@@ -9,7 +9,10 @@ package org.csstudio.iter.alarm.beast.notifier;
 
 import java.util.logging.Logger;
 
-public class Activator {
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+
+public class Activator implements BundleActivator {
 
 	/** Plugin ID defined in MANIFEST.MF */
     final public static String ID = "org.csstudio.iter.alarm.beast.notifier";
@@ -19,6 +22,14 @@ public class Activator {
 	/** @return Logger for plugin ID */
 	public static Logger getLogger() {
 		return logger;
+	}
+	
+	@Override
+	public void start(BundleContext context) throws Exception {
+	}
+	
+	@Override
+	public void stop(BundleContext context) throws Exception {
 	}
 
 }
