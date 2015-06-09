@@ -17,14 +17,14 @@ import org.csstudio.alarm.beast.client.AlarmTreePV;
 import org.csstudio.alarm.beast.client.AlarmTreeRoot;
 import org.csstudio.alarm.beast.ui.actions.AcknowledgeAction;
 import org.csstudio.alarm.beast.ui.actions.MaintenanceModeAction;
+import org.csstudio.alarm.beast.ui.clientmodel.AlarmClientModel;
+import org.csstudio.alarm.beast.ui.clientmodel.AlarmClientModelListener;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.ColumnConfigureAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.FilterAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.NewTableAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.ResetColumnsAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.SeparateCombineTablesAction;
 import org.csstudio.iter.alarm.beast.ui.alarmtable.actions.ShowFilterAction;
-import org.csstudio.alarm.beast.ui.clientmodel.AlarmClientModel;
-import org.csstudio.alarm.beast.ui.clientmodel.AlarmClientModelListener;
 import org.csstudio.ui.util.dnd.ControlSystemDropTarget;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
@@ -64,7 +64,8 @@ public class AlarmTableView extends ViewPart
      */
     public static String newSecondaryID(IViewPart part)
     {
-        while (part.getSite().getPage().findViewReference(part.getSite().getId(), String.valueOf(secondaryId.get())) != null)
+        while (part.getSite().getPage().findViewReference(part.getSite().getId(),
+                String.valueOf(secondaryId.get())) != null)
         {
             secondaryId.incrementAndGet();
         }
@@ -167,7 +168,9 @@ public class AlarmTableView extends ViewPart
             public void widgetDisposed(DisposeEvent e)
             {
                 releaseModel(defaultModel);
+                defaultModel = null;
                 releaseModel(model);
+                model = null;;
             }
         });
 
@@ -193,10 +196,11 @@ public class AlarmTableView extends ViewPart
             this.combinedTables = groupSet == null ? Preferences.isCombinedAlarmTable() : groupSet;
 
             String filterTypeSet = memento.getString(Preferences.ALARM_TABLE_FILTER_TYPE);
-            this.filterType = filterTypeSet == null ? FilterType.TREE : FilterType.valueOf(filterTypeSet.toUpperCase());
+            this.filterType = filterTypeSet == null || filterTypeSet.isEmpty() ?
+                    FilterType.TREE : FilterType.valueOf(filterTypeSet.toUpperCase());
 
             this.timeFormat = memento.getString(Preferences.ALARM_TABLE_TIME_FORMAT);
-            if (site.getSecondaryId() != null && this.timeFormat == null)
+            if (site.getSecondaryId() != null && (this.timeFormat == null || this.timeFormat.isEmpty()))
                 this.timeFormat = Preferences.getTimeFormat();
 
             this.columns = ColumnWrapper.restoreColumns(memento.getChild(Preferences.ALARM_TABLE_COLUMN_SETTING));
@@ -266,11 +270,10 @@ public class AlarmTableView extends ViewPart
     }
 
     private void releaseModel(AlarmClientModel model) {
-        if (this.model != null)
+        if (model != null)
         {
-            this.model.removeListener(modelListener);
-            this.model.release();
-            this.model = null;
+            model.removeListener(modelListener);
+            model.release();
         }
     }
 
@@ -289,6 +292,7 @@ public class AlarmTableView extends ViewPart
         if (filterItemPath == null || filterItemPath.isEmpty())
         {
             releaseModel(model);
+            model = null;
             setFilterType(FilterType.TREE);
         }
         else
@@ -359,6 +363,8 @@ public class AlarmTableView extends ViewPart
         firePropertyChange(PROP_FILTER_ITEM);
     }
 
+
+
     /**
      * @return the columns as they are currently visible and ordered in the table
      */
@@ -393,7 +399,6 @@ public class AlarmTableView extends ViewPart
             Boolean b = memento.getBoolean(Preferences.ALARM_TABLE_SORT_UP);
             sortUp = b == null ? false : b;
         }
-
         if (gui != null)
         {
             sorting = gui.getSortingColumn();
