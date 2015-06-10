@@ -2202,7 +2202,7 @@ Some information is required to train the operator to respond to the alarm:
             <name>Component</name>
             <actions hook="true" hook_all="false">
               <action type="WRITE_PV">
-                <pv_name>loc://FACEPLATE("")</pv_name>
+                <pv_name>loc://$(DID)_FACEPLATE("")</pv_name>
                 <value>templates/AnalogComponent.opi COMPONENT=VG-1100</value>
                 <timeout>10</timeout>
                 <confirm_message></confirm_message>
@@ -7595,7 +7595,7 @@ $(pv_value)</tooltip>
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://FACEPLATE("")</pv>
+            <pv trig="true">loc://$(DID)_FACEPLATE("")</pv>
           </rule>
         </rules>
         <enabled>true</enabled>
@@ -7630,7 +7630,7 @@ $(pv_value)</tooltip>
         </foreground_color>
         <actions hook="true" hook_all="false">
           <action type="WRITE_PV">
-            <pv_name>loc://FACEPLATE("")</pv_name>
+            <pv_name>loc://$(DID)_FACEPLATE("")</pv_name>
             <value>templates/AlarmFaceplate.opi ALARM=ALARM10</value>
             <timeout>10</timeout>
             <confirm_message></confirm_message>

@@ -11,20 +11,22 @@ of the distribution package.
 */
 
 importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-importPackage(Packages.java.lang);
 
-//Getting the legend faceplate
-var opiFile = widget.getMacroValue("LEGEND");
-if (opiFile == null) {
-	//Setting the default faceplate to the legend provided in templates
-	opiFile = "Legend.opi";
+//Getting the faceplate opi from the trigger PV
+var opiInput = PVUtil.getString(pvs[0]);
+
+if (opiInput.length() < 1) {
+	//Getting the legend faceplate
+	opiInput = widget.getMacroValue("LEGEND");
+	
+	if (opiInput == null) {
+		//Setting the default faceplate to the legend provided in templates
+		opiInput = "Legend.opi";
+	}
 }
 
 //Split the faceplate variable to extract opi name and macros
-var inputString = PVUtil.getString(pvs[0]);
-System.out.println("Local PV pvs[0]: " + inputString);
-
-var words = inputString.split(" ");
+var words = opiInput.split(" ");
 
 //Analysis of each word
 var i=0;
@@ -32,10 +34,10 @@ for (i in words) {
 
   if (words[i].search(".opi") > 0) {
      //OPI file
-     opiFile = words[i];
+     opiInput = words[i];
     //Reload the OPI file in the linking container again 
     //by setting the property value with forcing fire option in true.
-    widgetController.setPropertyValue("opi_file", opiFile, true);
+    widgetController.setPropertyValue("opi_file", opiInput, true);
   } else {
 
     var macro = words[i].split("=", 2);
@@ -54,4 +56,4 @@ for (i in words) {
 
 //Reload the OPI file in the linking container again 
 //by setting the property value with forcing fire option in true.
-widgetController.setPropertyValue("opi_file", opiFile, true);
+widgetController.setPropertyValue("opi_file", opiInput, true);
