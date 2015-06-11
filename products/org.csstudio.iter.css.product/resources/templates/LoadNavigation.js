@@ -182,6 +182,28 @@ function createUpButtonContainer() {
 
 function addMimicButtons(root) {
 	var cbs = root.getChildren();
+	
+	var container = getMimicNavigationContainer();
+			
+	var nbButtons = cbs.size();
+	var nbButtonsPerLine = 10;
+			
+	// default button size for maximum 10 buttons on one line
+	height = getMimicNavigationContainerHeight();
+	width = getMimicNavigationContainerWidth()/nbButtonsPerLine;
+	
+	// if more than 10 buttons required, 2 lines of buttons are needed
+	if (nbButtons > nbButtonsPerLine) {
+		container = getLineOneNavigationContainer();
+		height = height/2;
+		if (nbButtons > (2 * nbButtonsPerLine)) {
+			nbButtonsPerLine = Math.ceil(nbButtons/2);
+			width = getMimicNavigationContainerWidth()/nbButtonsPerLine - 1;
+		}
+	} else {
+		// cleaning the one and two line child containers are they are not needed
+		container.removeAllChildren();
+	}
 
 	// iterating over all children in XML
 	var i = 0;
@@ -190,24 +212,11 @@ function addMimicButtons(root) {
 	    var elt = itr.next();
 	    
 	    if (elt.getAttributeValue("name")) {
-			container = getMimicNavigationContainer();
-			height = getMimicNavigationContainerHeight();
-			width = getMimicNavigationContainerWidth();
+			//creating the linking container that display the mimic specific buttons
+			var linkingContainer = createButtonContainer("NavigationMimicButton.opi", width, height);
 			
-			if (cbs.size() <= 10) {
-				//creating the linking container that display the mimic specific buttons
-				var linkingContainer = createButtonContainer("NavigationMimicButton.opi", width/10, height);
-				// cleaning first the one and two line child containers
-				if (i == 0) {
-					container.removeAllChildren();
-				} 
-			} else {
-				if (i < 10) {
-					container = getLineOneNavigationContainer();
-				} else {
-					container = getLineTwoNavigationContainer();
-				}
-				var linkingContainer = createButtonContainer("NavigationMimicHalfButton.opi", width/10, height/2);
+			if (i == nbButtonsPerLine) {
+				container = getLineTwoNavigationContainer();
 			}
 			
 		    // reading attribute from element using JDOM
@@ -222,6 +231,8 @@ function addMimicButtons(root) {
 		    // reading value of children in XML using JDOM
 			// setting navigation button properties 
 		 	var button = container.getWidget(elt.getAttributeValue("name"));	
+		 	button.setPropertyValue("height", height);
+		 	button.setPropertyValue("width", width);
 			setButton(button, elt);
 	
 		 	i+=1;
@@ -264,6 +275,7 @@ function createButtonContainer(opi_container, width, height) {
 		linkingContainer.setPropertyValue("border_style", 0);
 		linkingContainer.setPropertyValue("width", width);
 		linkingContainer.setPropertyValue("height", height);
+		linkingContainer.setPropertyValue("resize_behaviour", 2);
 
 		return linkingContainer;
 }
