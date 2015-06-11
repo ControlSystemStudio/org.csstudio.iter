@@ -12,6 +12,13 @@ of the distribution package.
 
 importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
 
+//Getting the previous selected component
+var old_component = display.getWidget(PVUtil.getString(pvs[1]));
+
+if (old_component) {
+	old_component.setPropertyValue("border_style", 0);
+}
+
 //Getting the faceplate opi from the trigger PV
 var opiInput = PVUtil.getString(pvs[0]);
 
@@ -47,6 +54,14 @@ for (i in words) {
 
        //Put a macro in the new Macro Input - Remove whitespace from both sides
        macroInput.put(macro[0].trim(), macro[1].trim());
+       
+       //Highlight and memorize the selected component
+       var component = display.getWidget(macro[1]);
+		
+		if (component) {
+			component.setPropertyValue("border_style", 7);
+			pvs[1].setValue(macro[1]);
+		}       
 
        //Set the macro input of the linking container to this new macro input.
        widgetController.setPropertyValue("macros", macroInput);
