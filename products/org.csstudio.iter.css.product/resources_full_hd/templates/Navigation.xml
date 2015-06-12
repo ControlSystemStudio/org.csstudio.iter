@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <navigation xmlns:xi="http://www.w3.org/2001/XInclude">
-	<CBS name="ITER" description="ITER Global Supervision" enabled="true" opi_file="../ITER.opi LEVEL=ITER" alarm_root="" >
+	<CBS name="ITER" description="ITER Global Supervision" enabled="false" opi_file="" alarm_root="" >
 		<CBS name="BUIL" description="Buildings" enabled="false" opi_file="" alarm_root="" deprecated="false" >
 			<CBS name="ACCS" description="Access Control" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 			<CBS name="B11" description="Tokamak Building B11" enabled="false" opi_file="" alarm_root="" deprecated="false" >
@@ -11,7 +11,7 @@
 		</CBS>
 		<CBS name="CRST" description="Cryostat" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 		<CBS name="CRYO" description="Cryogenics" enabled="false" opi_file="" alarm_root="" deprecated="false" />
-		<CBS name="CTRL" description="CODAC" enabled="true" opi_file="../Design_Guide.opi" alarm_root="" deprecated="true" />
+		<CBS name="CTRL" description="CODAC" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 		<CBS name="CWS" description="WATER COOLING" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 		<CBS name="D1" description="Diagnostic measurement systems for machine protection, plasma control, and physics exploitation" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 		<CBS name="D2" description="Diagnostics engineering systems including electrical power, cooling water, air, gases, vacuum, temperatures" enabled="false" opi_file="" alarm_root="" deprecated="false" />
@@ -25,7 +25,7 @@
 		<CBS name="RH" description="Remote Handling" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 		<CBS name="SAFE" description="Safety" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 		<CBS name="TRIT" description="Tritium Plant" enabled="false" opi_file="" alarm_root="" deprecated="false" />
-		<CBS name="UTIL" description="Utilities" enabled="true" opi_file="../ITER-UTIL.opi LOG=TEST1 LEVEL=ITER-UTIL" alarm_root="" >
+		<CBS name="UTIL" description="Utilities" enabled="false" opi_file="../Demo_UTIL.opi LOG=TEST1 LEVEL=ITER-UTIL" alarm_root="" >
 			<CBS name="BA" description="Breathable Air" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 			<CBS name="CA" description="Compressed Air" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 			<CBS name="DW" description="Demineralized Water Distribution System" enabled="false" opi_file="" alarm_root="" deprecated="false" />
@@ -43,7 +43,7 @@
 			<CBS name="LV1" description="Low Voltage Area 1" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 			<CBS name="LV2" description="Low Voltage Area 2" enabled="false" opi_file="" alarm_root="" deprecated="false" />
 			<CBS name="RPC" description="Reactive Power Compensation and Harmonic Filter" enabled="false" opi_file="" alarm_root="" deprecated="false" />
-			<CBS name="S15" description="15kV work site power" enabled="true" opi_file="../ITER-UTIL-S15.opi LEVEL=ITER-UTIL-S15 LOG=TEST2" alarm_root="">
+			<CBS name="S15" description="15kV work site power" enabled="false" opi_file="" alarm_root="">
 				<xi:include href="UTIL-S15-AG07.xml"> <xi:fallback /> </xi:include>
 				<xi:include href="UTIL-S15-AG91.xml"> <xi:fallback /> </xi:include>
 				<xi:include href="UTIL-S15-AG92.xml"> <xi:fallback /> </xi:include>

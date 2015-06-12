@@ -23,7 +23,7 @@
   </background_color>
   <width>3830</width>
   <x>0</x>
-  <name>Faceplates Requirements</name>
+  <name>Legend Faceplate</name>
   <grid_space>1</grid_space>
   <show_ruler>true</show_ruler>
   <y>0</y>
@@ -282,7 +282,7 @@
           <wuid>-ae3bbd7:148fa0f526e:-7f3f</wuid>
           <transparent>true</transparent>
           <auto_size>false</auto_size>
-          <text>FACEPLATES REQUIREMENTS</text>
+          <text>LEGEND FACEPLATE</text>
           <scripts />
           <height>98</height>
           <border_width>2</border_width>
@@ -1273,20 +1273,15 @@ $(pv_value)</tooltip>
             <wuid>107a734f:149e1662949:-532a</wuid>
             <transparent>true</transparent>
             <auto_size>false</auto_size>
-            <text>Each controllable component on a mimic will have a ‘faceplate’ to provide information about the component and options to control it and adjustable process variables.
+            <text>By default, a legend provided in templates is displayed in the control pane area.
 
-- Faceplate sizes shall be fixed and not adjustable by the user - 575 x 943.
+To overwrite the default, define the macro LEGEND and provide a relative path to an opi - this path can specify macro.
 
-- Each component faceplate shall open within the mimic at a fixed position.
+For instance: 
 
-- User shall not be able to move faceplates within mimics and windows.
+LEGEND=../MyLegend.opi COMPONENT=UTIL-S15-AG07:MUT9
 
-- Only one faceplate shall be on display at any given time.
-
-- A component’s faceplate shall only appear when a user clicks on a component. When no component is selected a default legend faceplate is displayed.
-
-
-The control pane is provided in standard in templates/ControlPane.opi. This pane manages by default a legend  and display a faceplate according to the user selection.</text>
+will display the OPI MyLegend.opi and instantiate the macro COMPONENT with the value UTIL-S15-AG07:MUT9.</text>
             <scripts />
             <height>1760</height>
             <border_width>2</border_width>

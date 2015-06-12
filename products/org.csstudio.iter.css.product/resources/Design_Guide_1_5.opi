@@ -23,7 +23,7 @@
   </background_color>
   <width>3830</width>
   <x>0</x>
-  <name>Faceplates Requirements</name>
+  <name>Scripting Requirements</name>
   <grid_space>1</grid_space>
   <show_ruler>true</show_ruler>
   <y>0</y>
@@ -282,7 +282,7 @@
           <wuid>-ae3bbd7:148fa0f526e:-7f3f</wuid>
           <transparent>true</transparent>
           <auto_size>false</auto_size>
-          <text>FACEPLATES REQUIREMENTS</text>
+          <text>SCRIPTING REQUIREMENTS</text>
           <scripts />
           <height>98</height>
           <border_width>2</border_width>
@@ -1273,20 +1273,21 @@ $(pv_value)</tooltip>
             <wuid>107a734f:149e1662949:-532a</wuid>
             <transparent>true</transparent>
             <auto_size>false</auto_size>
-            <text>Each controllable component on a mimic will have a ‘faceplate’ to provide information about the component and options to control it and adjustable process variables.
+            <text>Each graphical widget comes with a predefined behaviour.
 
-- Faceplate sizes shall be fixed and not adjustable by the user - 575 x 943.
+For instance, the monitor widgets are background alarm sensitive which means that the background color reflects the alarm severity.
 
-- Each component faceplate shall open within the mimic at a fixed position.
+In the future versions, they will flash at 2Hz until the alarm is acknowledged by the operator.
 
-- User shall not be able to move faceplates within mimics and windows.
+For complex mechanism, CODAC provides containers which manage user interaction - navigation pane, control pane to display faceplate...
 
-- Only one faceplate shall be on display at any given time.
+In order to minimise the maintenance effort, the customization of widgets should be limited.
 
-- A component’s faceplate shall only appear when a user clicks on a component. When no component is selected a default legend faceplate is displayed.
+In case the default behaviour is not acceptable, defining rules should be the preferred solution.
 
+The usage of script should be exceptional and Javascript the chosen programming language.
 
-The control pane is provided in standard in templates/ControlPane.opi. This pane manages by default a legend  and display a faceplate according to the user selection.</text>
+The support of Python introduces some Jython implementation limitations designed to run on a Java platform.</text>
             <scripts />
             <height>1760</height>
             <border_width>2</border_width>

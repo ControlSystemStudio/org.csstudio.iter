@@ -23,7 +23,7 @@
   </background_color>
   <width>3830</width>
   <x>0</x>
-  <name>Faceplates Requirements</name>
+  <name>Component Selection</name>
   <grid_space>1</grid_space>
   <show_ruler>true</show_ruler>
   <y>0</y>
@@ -282,7 +282,7 @@
           <wuid>-ae3bbd7:148fa0f526e:-7f3f</wuid>
           <transparent>true</transparent>
           <auto_size>false</auto_size>
-          <text>FACEPLATES REQUIREMENTS</text>
+          <text>COMPONENT SELECTION</text>
           <scripts />
           <height>98</height>
           <border_width>2</border_width>
@@ -1273,20 +1273,18 @@ $(pv_value)</tooltip>
             <wuid>107a734f:149e1662949:-532a</wuid>
             <transparent>true</transparent>
             <auto_size>false</auto_size>
-            <text>Each controllable component on a mimic will have a ‘faceplate’ to provide information about the component and options to control it and adjustable process variables.
+            <text>To open a faceplate when a component is selected, an action has to be defined on the component.
 
-- Faceplate sizes shall be fixed and not adjustable by the user - 575 x 943.
+The action should set the trigger PV 'loc://$(DID)_FACEPLATE("")' to the relative path of the faceplate opi.
 
-- Each component faceplate shall open within the mimic at a fixed position.
+For instance, writing the value 
 
-- User shall not be able to move faceplates within mimics and windows.
+      AnalogComponent.opi COMPONENT=VG-1100
 
-- Only one faceplate shall be on display at any given time.
+to loc://$(DID)_FACEPLATE
 
-- A component’s faceplate shall only appear when a user clicks on a component. When no component is selected a default legend faceplate is displayed.
-
-
-The control pane is provided in standard in templates/ControlPane.opi. This pane manages by default a legend  and display a faceplate according to the user selection.</text>
+will open the faceplate AnalogComponent.opi with the macro COMPONENT instantiated to VG-1100. In addition the widget named VG-1100 will be hightlighted.
+</text>
             <scripts />
             <height>1760</height>
             <border_width>2</border_width>
@@ -1316,6 +1314,252 @@ The control pane is provided in standard in templates/ControlPane.opi. This pane
             <show_scrollbar>false</show_scrollbar>
             <font>
               <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+            </font>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <alarm_pulsing>false</alarm_pulsing>
+            <tooltip>Click on the component to display its faceplate</tooltip>
+            <rules />
+            <bit>0</bit>
+            <pv_value />
+            <auto_size>false</auto_size>
+            <image_file>SymbolLibrary/SVG/Fluid/Valves_with_Actuators/VC 2 way-Valves On-Off Control Valve Off.svg</image_file>
+            <height>233</height>
+            <border_width>2</border_width>
+            <align_to_nearest_second>false</align_to_nearest_second>
+            <visible>true</visible>
+            <pv_name>sim://const(1)</pv_name>
+            <degree>0</degree>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <widget_type>Boolean Symbol Image Monitor</widget_type>
+            <flip_horizontal>false</flip_horizontal>
+            <permutation_matrix>
+              <row>
+                <col>1.0</col>
+                <col>0.0</col>
+              </row>
+              <row>
+                <col>0.0</col>
+                <col>1.0</col>
+              </row>
+            </permutation_matrix>
+            <name>VG-1100</name>
+            <actions hook="true" hook_all="true">
+              <action type="WRITE_PV">
+                <pv_name>loc://$(DID)_FACEPLATE("")</pv_name>
+                <value>AnalogComponent.opi COMPONENT=VG-1100</value>
+                <timeout>10</timeout>
+                <confirm_message></confirm_message>
+                <description>Load the component faceplate</description>
+              </action>
+            </actions>
+            <show_boolean_label>false</show_boolean_label>
+            <flip_vertical>false</flip_vertical>
+            <border_style>0</border_style>
+            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+            <crop_left>0</crop_left>
+            <enabled>true</enabled>
+            <wuid>-5b416466:14de1b32d15:1091</wuid>
+            <on_color>
+              <color name="IO PV ON" red="0" green="0" blue="255" />
+            </on_color>
+            <scripts />
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+            <on_label>ON</on_label>
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <crop_bottom>0</crop_bottom>
+            <no_animation>false</no_animation>
+            <off_color>
+              <color name="IO PV OFF" red="149" green="125" blue="71" />
+            </off_color>
+            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+            <background_color>
+              <color name="IO Background" red="235" green="235" blue="235" />
+            </background_color>
+            <boolean_label_position>5</boolean_label_position>
+            <width>127</width>
+            <x>1399</x>
+            <data_type>0</data_type>
+            <y>1279</y>
+            <foreground_color>
+              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+            </foreground_color>
+            <crop_top>0</crop_top>
+            <crop_right>0</crop_right>
+            <stretch_to_fit>true</stretch_to_fit>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+            </font>
+            <off_label>OFF</off_label>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <alarm_pulsing>false</alarm_pulsing>
+            <tooltip>Click on the component to display its faceplate</tooltip>
+            <rules />
+            <bit>0</bit>
+            <pv_value />
+            <auto_size>false</auto_size>
+            <image_file>SymbolLibrary/SVG/Fluid/Valves_with_Actuators/VC 2 way-Valves On-Off Control Valve Off.svg</image_file>
+            <height>233</height>
+            <border_width>2</border_width>
+            <align_to_nearest_second>false</align_to_nearest_second>
+            <visible>true</visible>
+            <pv_name>sim://const(1)</pv_name>
+            <degree>0</degree>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <widget_type>Boolean Symbol Image Monitor</widget_type>
+            <flip_horizontal>false</flip_horizontal>
+            <permutation_matrix>
+              <row>
+                <col>1.0</col>
+                <col>0.0</col>
+              </row>
+              <row>
+                <col>0.0</col>
+                <col>1.0</col>
+              </row>
+            </permutation_matrix>
+            <name>VG-2100</name>
+            <actions hook="true" hook_all="true">
+              <action type="WRITE_PV">
+                <pv_name>loc://$(DID)_FACEPLATE("")</pv_name>
+                <value>AnalogComponent.opi COMPONENT=VG-2100</value>
+                <timeout>10</timeout>
+                <confirm_message></confirm_message>
+                <description>Load the component faceplate</description>
+              </action>
+            </actions>
+            <show_boolean_label>false</show_boolean_label>
+            <flip_vertical>false</flip_vertical>
+            <border_style>0</border_style>
+            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+            <crop_left>0</crop_left>
+            <enabled>true</enabled>
+            <wuid>-5b416466:14de1b32d15:22c5</wuid>
+            <on_color>
+              <color name="IO PV ON" red="0" green="0" blue="255" />
+            </on_color>
+            <scripts />
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+            <on_label>ON</on_label>
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <crop_bottom>0</crop_bottom>
+            <no_animation>false</no_animation>
+            <off_color>
+              <color name="IO PV OFF" red="149" green="125" blue="71" />
+            </off_color>
+            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+            <background_color>
+              <color name="IO Background" red="235" green="235" blue="235" />
+            </background_color>
+            <boolean_label_position>5</boolean_label_position>
+            <width>127</width>
+            <x>1676</x>
+            <data_type>0</data_type>
+            <y>1279</y>
+            <foreground_color>
+              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+            </foreground_color>
+            <crop_top>0</crop_top>
+            <crop_right>0</crop_right>
+            <stretch_to_fit>true</stretch_to_fit>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+            </font>
+            <off_label>OFF</off_label>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+            <border_style>0</border_style>
+            <tooltip></tooltip>
+            <horizontal_alignment>0</horizontal_alignment>
+            <rules />
+            <enabled>false</enabled>
+            <wuid>-5b416466:14de1b32d15:2771</wuid>
+            <transparent>true</transparent>
+            <auto_size>true</auto_size>
+            <text>VG-1100</text>
+            <scripts />
+            <height>33</height>
+            <border_width>2</border_width>
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <widget_type>Label</widget_type>
+            <wrap_words>true</wrap_words>
+            <background_color>
+              <color name="IO Background" red="235" green="235" blue="235" />
+            </background_color>
+            <width>112</width>
+            <x>1410</x>
+            <name>Component Tag</name>
+            <y>1546</y>
+            <foreground_color>
+              <color name="IO Text Fg" red="0" green="0" blue="0" />
+            </foreground_color>
+            <actions hook="false" hook_all="false" />
+            <show_scrollbar>false</show_scrollbar>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+            </font>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+            <border_style>0</border_style>
+            <tooltip></tooltip>
+            <horizontal_alignment>0</horizontal_alignment>
+            <rules />
+            <enabled>false</enabled>
+            <wuid>-5b416466:14de1b32d15:2777</wuid>
+            <transparent>true</transparent>
+            <auto_size>true</auto_size>
+            <text>VG-2100</text>
+            <scripts />
+            <height>33</height>
+            <border_width>2</border_width>
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <widget_type>Label</widget_type>
+            <wrap_words>true</wrap_words>
+            <background_color>
+              <color name="IO Background" red="235" green="235" blue="235" />
+            </background_color>
+            <width>112</width>
+            <x>1684</x>
+            <name>Component Tag</name>
+            <y>1546</y>
+            <foreground_color>
+              <color name="IO Text Fg" red="0" green="0" blue="0" />
+            </foreground_color>
+            <actions hook="false" hook_all="false" />
+            <show_scrollbar>false</show_scrollbar>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
             </font>
           </widget>
         </widget>
