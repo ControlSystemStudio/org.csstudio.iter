@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.103.201506100650</boy_version>
+  <boy_version>4.0.103.201506161016</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -193,7 +193,7 @@
           </font>
         </widget>
         <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
-          <opi_file>templates/GlobalStatuses.opi</opi_file>
+          <opi_file>../templates/GlobalStatuses.opi</opi_file>
           <border_style>0</border_style>
           <tooltip></tooltip>
           <rules />
@@ -395,7 +395,7 @@
           </font>
         </widget>
         <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
-          <opi_file>templates/UTC_Time.opi</opi_file>
+          <opi_file>../templates/UTC_Time.opi</opi_file>
           <border_style>0</border_style>
           <tooltip></tooltip>
           <rules />
@@ -1651,7 +1651,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="../templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -1898,7 +1898,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="../templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -2145,7 +2145,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="../templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -2392,7 +2392,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="../templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -2639,7 +2639,7 @@ $(pv_value)</tooltip>
               <color name="IO PV ON" red="0" green="0" blue="255" />
             </on_color>
             <scripts>
-              <path pathString="templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="../templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="true">$(pv_name)</pv>
               </path>
             </scripts>
@@ -2795,7 +2795,7 @@ $(pv_value)</tooltip>
         <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
-        <opi_file>templates/NavigationPane.opi</opi_file>
+        <opi_file>../templates/NavigationPane.opi</opi_file>
         <border_style>0</border_style>
         <tooltip></tooltip>
         <rules />
@@ -2811,7 +2811,7 @@ $(pv_value)</tooltip>
         </scale_options>
         <macros>
           <include_parent_macros>true</include_parent_macros>
-          <INPUT>../Design_Guide.xml</INPUT>
+          <INPUT>../Design_Guide/navigation/Design_Guide.xml</INPUT>
         </macros>
         <resize_behaviour>3</resize_behaviour>
         <visible>true</visible>
