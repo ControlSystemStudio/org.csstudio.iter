@@ -8,8 +8,9 @@
   <height>471</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
+    <COMPONENT>TUTU</COMPONENT>
   </macros>
-  <boy_version>4.0.103.201506100650</boy_version>
+  <boy_version>4.0.103.201506161016</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -1642,7 +1643,7 @@ $(trace_0_y_pv_value)</tooltip>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
-      <visible>false</visible>
+      <visible>true</visible>
       <border_color>
         <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
@@ -1672,7 +1673,7 @@ $(trace_0_y_pv_value)</tooltip>
         <transparent>true</transparent>
         <lock_children>false</lock_children>
         <scripts/>
-        <height>87</height>
+        <height>136</height>
         <border_width>1</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -1730,7 +1731,7 @@ $(trace_0_y_pv_value)</tooltip>
           <background_color>
             <color blue="235" green="235" name="IO Background" red="235"/>
           </background_color>
-          <width>83</width>
+          <width>50</width>
           <x>0</x>
           <name>MPosR</name>
           <y>0</y>
@@ -1749,7 +1750,19 @@ $(trace_0_y_pv_value)</tooltip>
             <tooltip>MPosR	FLOAT32	Manual Position Request
 	Value of the position requested by operator</tooltip>
             <horizontal_alignment>0</horizontal_alignment>
-            <rules/>
+            <rules>
+              <rule name="ActionOnGoing" out_exp="false" prop_id="enabled">
+                <exp bool_exp="pv2 != pv0">
+                  <value>false</value>
+                </exp>
+                <exp bool_exp="pv2 == pv0">
+                  <value>true</value>
+                </exp>
+                <pv trig="false">loc://$(COMPONENT)_MPosRSt(52)</pv>
+                <pv trig="true">loc://$(COMPONENT)_MPosRS(0)</pv>
+                <pv trig="true">loc://$(COMPONENT)_PosSt(52)</pv>
+              </rule>
+            </rules>
             <pv_value/>
             <auto_size>false</auto_size>
             <read_only>false</read_only>
@@ -1759,13 +1772,13 @@ $(trace_0_y_pv_value)</tooltip>
             <multiline_input>false</multiline_input>
             <border_width>1</border_width>
             <visible>true</visible>
-            <pv_name>loc://$(COMPONENT)_MPosR(52)</pv_name>
+            <pv_name>loc://_$(COMPONENT)_MPosR(-1)</pv_name>
             <border_color>
               <color blue="0" green="0" name="IO Border" red="0"/>
             </border_color>
             <precision_from_pv>true</precision_from_pv>
             <widget_type>Text Input</widget_type>
-            <confirm_message>Are you sure you want to change this?</confirm_message>
+            <confirm_message/>
             <name>MPosR</name>
             <style>1</style>
             <actions hook="false" hook_all="false"/>
@@ -1776,51 +1789,17 @@ $(trace_0_y_pv_value)</tooltip>
             <wuid>-57352fd0:149859b9257:290</wuid>
             <next_focus>0</next_focus>
             <scripts>
-              <path checkConnect="true" pathString="EmbeddedPy" seoe="false" sfe="true">
-                <scriptName>Input_Validation</scriptName>
-                <scriptText><![CDATA[from org.csstudio.opibuilder.scriptUtil import PVUtil
-from org.eclipse.jface.dialogs import MessageDialog
-
-request   = PVUtil.getDouble(pvs[0])
-limit_on  = PVUtil.getDouble(pvs[1])
-limit_off = PVUtil.getDouble(pvs[2])
-max_range = PVUtil.getDouble(pvs[3])
-min_range = PVUtil.getDouble(pvs[4])
-
-MessageDialog.openInformation(
-	None, "Input Limits", "Min " + str(min_range) + " Max " + str(max_range))
-
-
-# Check out of range input
-if request > max_range:
-	MessageDialog.openError(
-		None, "Input Validation Script", "Position request of " + str(request) + " is greater than Max Range of " + str(max_range))
-
-elif request == max_range:
-	MessageDialog.openWarning(
-		None, "Input Validation Script", "Position request of " + str(request) + " is equal to Max Range of " + str(max_range))
-
-elif request == min_range:
-	MessageDialog.openWarning(
-		None, "Input Validation Script", "Position request of " + str(request) + " is equal to Min Range of " + str(min_range))
-
-elif request < min_range:
-	MessageDialog.openError(
-		None, "Input Validation Script", "Position request of " + str(request) + " is smaller than Min Range of " + str(min_range))
-
-elif request >= limit_on:
-	MessageDialog.openInformation(
-		None, "Input Validation Script", "Position request of " + str(request) + " is greater or equal to the Limit ON of " + str(limit_on))
-
-elif request <= limit_off:
-	MessageDialog.openInformation(
-		None, "Input Validation Script", "Position request of " + str(request) + " is smaller or equal to the Limit OFF of " + str(limit_off))
-]]></scriptText>
-                <pv trig="true">loc://$(COMPONENT)_MPosR(52)</pv>
-                <pv trig="false">loc://$(COMPONENT)_PLiOn(100)</pv>
-                <pv trig="false">loc://$(COMPONENT)_PLiOff(50)</pv>
+              <path checkConnect="true" pathString="scripts/init_MPosR.js" seoe="false" sfe="false">
+                <pv trig="false">loc://_$(COMPONENT)_MPosR(-1)</pv>
+                <pv trig="true">loc://$(COMPONENT)_MPosRSt(52)</pv>
+                <pv trig="true">loc://$(COMPONENT)_MPosRV(0)</pv>
+              </path>
+              <path checkConnect="true" pathString="scripts/validate_MPosR.js" seoe="false" sfe="true">
+                <pv trig="true">loc://_$(COMPONENT)_MPosR(-1)</pv>
+                <pv trig="false">loc://$(COMPONENT)_MPosRSt(52)</pv>
                 <pv trig="false">loc://$(COMPONENT)_PMaxRange(150)</pv>
                 <pv trig="false">loc://$(COMPONENT)_PMinRange(0)</pv>
+                <pv trig="false">loc://$(COMPONENT)_MPosRV(0)</pv>
               </path>
             </scripts>
             <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1856,7 +1835,7 @@ elif request <= limit_off:
             <wuid>519ca8c1:149d2905103:-6ae8</wuid>
             <transparent>true</transparent>
             <auto_size>true</auto_size>
-            <text>Request</text>
+            <text>Input</text>
             <scripts/>
             <height>16</height>
             <border_width>2</border_width>
@@ -1875,7 +1854,7 @@ elif request <= limit_off:
             <background_color>
               <color blue="235" green="235" name="IO Background" red="235"/>
             </background_color>
-            <width>56</width>
+            <width>40</width>
             <x>0</x>
             <name>MPosR</name>
             <y>0</y>
@@ -1916,8 +1895,8 @@ elif request <= limit_off:
           <background_color>
             <color blue="235" green="235" name="IO Background" red="235"/>
           </background_color>
-          <width>50</width>
-          <x>87</x>
+          <width>56</width>
+          <x>82</x>
           <name>MPosRSt</name>
           <y>0</y>
           <foreground_color>
@@ -1942,21 +1921,14 @@ elif request <= limit_off:
             <wuid>519ca8c1:149d2905103:-6ae0</wuid>
             <transparent>false</transparent>
             <pv_value/>
-            <auto_size>true</auto_size>
+            <auto_size>false</auto_size>
             <text>######</text>
             <rotation_angle>0.0</rotation_angle>
             <scripts>
-              <path checkConnect="true" pathString="EmbeddedJs" seoe="false" sfe="false">
-                <scriptName>InputValidation</scriptName>
-                <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-
-var request = PVUtil.getDouble(pvs[0]);
-
-pvs[1].setValue(request);
-
-]]></scriptText>
-                <pv trig="true">loc://$(COMPONENT)_MPosR(52)</pv>
+              <path checkConnect="true" pathString="scripts/simul_MPosRSt.js" seoe="false" sfe="true">
+                <pv trig="false">loc://_$(COMPONENT)_MPosR(-1)</pv>
                 <pv trig="false">loc://$(COMPONENT)_MPosRSt(52)</pv>
+                <pv trig="true">loc://$(COMPONENT)_MPosRS(0)</pv>
               </path>
             </scripts>
             <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1983,7 +1955,7 @@ pvs[1].setValue(request);
               <color blue="229" green="223" name="IO Area Background" red="221"/>
             </background_color>
             <width>48</width>
-            <x>0</x>
+            <x>5</x>
             <name>MPosRSt</name>
             <y>25</y>
             <foreground_color>
@@ -2004,7 +1976,7 @@ pvs[1].setValue(request);
             <wuid>519ca8c1:149d2905103:-6ace</wuid>
             <transparent>true</transparent>
             <auto_size>true</auto_size>
-            <text>Status</text>
+            <text>InputSt</text>
             <scripts/>
             <height>16</height>
             <border_width>2</border_width>
@@ -2023,7 +1995,7 @@ pvs[1].setValue(request);
             <background_color>
               <color blue="235" green="235" name="IO Background" red="235"/>
             </background_color>
-            <width>48</width>
+            <width>56</width>
             <x>0</x>
             <name>MPosRSt</name>
             <y>0</y>
@@ -2139,8 +2111,8 @@ pvs[1].setValue(request);
                     <color blue="229" green="223" name="IO Area Background" red="221"/>
                   </value>
                 </exp>
-                <pv trig="false">loc://$(COMPONENT)_MPosR(52)</pv>
-                <pv trig="true">loc://$(COMPONENT)_MPosRSt(52)</pv>
+                <pv trig="false">loc://$(COMPONENT)_MPosRSt(52)</pv>
+                <pv trig="true">loc://$(COMPONENT)_MPosRS(0)</pv>
                 <pv trig="true">$(pv_name)</pv>
                 <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
               </rule>
@@ -2153,37 +2125,10 @@ pvs[1].setValue(request);
             <text>######</text>
             <rotation_angle>0.0</rotation_angle>
             <scripts>
-              <path checkConnect="true" pathString="EmbeddedPy" seoe="false" sfe="true">
-                <scriptName>InputValidation</scriptName>
-                <scriptText><![CDATA[from org.csstudio.opibuilder.scriptUtil import PVUtil
-
-from java.lang import Thread, Runnable
-
-class onGoingTask(Runnable):
-    def run(self): 
-
-        request = PVUtil.getDouble(pvs[0])
-
-        position = PVUtil.getDouble(pvs[1])
-
-        result = pvs[1]
-
-        i=0
-        if request < position:
-          i = -1
-        elif request > position:
-          i = 1
-        
-        while (position != request):
-           position = position + i
-           result.setValue(position)
-           Thread.sleep(1000)
-
-thread =Thread(onGoingTask());
-thread.start()
-]]></scriptText>
-                <pv trig="true">loc://$(COMPONENT)_MPosR(52)</pv>
+              <path checkConnect="true" pathString="scripts/simul_PosSt.js" seoe="false" sfe="true">
+                <pv trig="false">loc://$(COMPONENT)_MPosR(-1)</pv>
                 <pv trig="false">loc://$(COMPONENT)_PosSt(52)</pv>
+                <pv trig="true">loc://$(COMPONENT)_MPosRS(0)</pv>
               </path>
             </scripts>
             <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2222,6 +2167,78 @@ thread.start()
             </font>
           </widget>
         </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+          <toggle_button>false</toggle_button>
+          <border_style>6</border_style>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          <push_action_index>0</push_action_index>
+          <rules>
+            <rule name="ActionOnGoing" out_exp="false" prop_id="enabled">
+              <exp bool_exp="pv2 != pv0">
+                <value>false</value>
+              </exp>
+              <exp bool_exp="pv2 == pv0">
+                <value>true</value>
+              </exp>
+              <pv trig="false">loc://$(COMPONENT)_MPosRSt(52)</pv>
+              <pv trig="true">loc://$(COMPONENT)_MPosRS(0)</pv>
+              <pv trig="true">loc://$(COMPONENT)_PosSt(52)</pv>
+            </rule>
+          </rules>
+          <enabled>false</enabled>
+          <wuid>-17ac9c77:14e06d26cd5:-7d10</wuid>
+          <pv_value/>
+          <text>Submit</text>
+          <scripts>
+            <path checkConnect="true" pathString="scripts/submit_MPosR.js" seoe="false" sfe="true">
+              <pv trig="true">loc://$(COMPONENT)_submit_MPosR(0)</pv>
+              <pv trig="false">loc://_$(COMPONENT)_MPosR(-1)</pv>
+              <pv trig="false">loc://$(COMPONENT)_MPosRSt(52)</pv>
+              <pv trig="false">loc://$(COMPONENT)_MPosRV(0)</pv>
+              <pv trig="false">loc://$(COMPONENT)_PLiOn(100)</pv>
+              <pv trig="false">loc://$(COMPONENT)_PLiOff(50)</pv>
+              <pv trig="false">loc://$(COMPONENT)_MPosRS(0)</pv>
+              <pv trig="false">loc://$(COMPONENT)_MPosR(-1)</pv>
+            </path>
+          </scripts>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <height>25</height>
+          <border_width>2</border_width>
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <image>../pictures/Start_16.png</image>
+          <visible>true</visible>
+          <pv_name>loc://$(COMPONENT)_submit_MPosR(0)</pv_name>
+          <border_color>
+            <color blue="0" green="0" name="IO Border" red="0"/>
+          </border_color>
+          <widget_type>Action Button</widget_type>
+          <width>100</width>
+          <x>63</x>
+          <name>Submit</name>
+          <y>63</y>
+          <style>1</style>
+          <foreground_color>
+            <color blue="0" green="0" name="IO Foreground" red="0"/>
+          </foreground_color>
+          <actions hook="false" hook_all="false">
+            <action type="WRITE_PV">
+              <pv_name>loc://$(COMPONENT)_submit_MPosR(0)</pv_name>
+              <value>1</value>
+              <timeout>10</timeout>
+              <confirm_message/>
+              <description/>
+            </action>
+          </actions>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+        </widget>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
         <border_style>13</border_style>
@@ -2253,7 +2270,7 @@ thread.start()
         <width>277</width>
         <x>2</x>
         <name>Limit On/Off</name>
-        <y>92</y>
+        <y>141</y>
         <foreground_color>
           <color blue="0" green="0" name="IO Foreground" red="0"/>
         </foreground_color>
@@ -2804,7 +2821,7 @@ $(pv_value)</tooltip>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
-      <visible>true</visible>
+      <visible>false</visible>
       <border_color>
         <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
