@@ -8,6 +8,99 @@
 
 <p>Version numbers in here refer to CODAC Core System.</p>
 
+<h2>Version 5.1.0 - 2015-06-30</h2>
+<ul>
+	<li>
+		CSS enhancements:
+		<ul>
+			<li>Integration of CSS 4.2.0 official release:<br><img src="images/image028.jpg"/><br>
+				In this release CSS menu has been changed to CS-Studio:<br><img src="images/image029.jpg"/></li>
+		</ul>
+	</li>
+	<li>
+		Auto-Complete improvements:
+		<ul>
+			<li>Implemented Auto-Complete support for ca JSON extension:<br><img align="middle" src="images/image030.jpg"/></li>
+		</ul>
+	</li>
+	<li>New mini-CODAC save/restore database tool that allow the user to take a snapshot any databases - archive, alarm, message history or logbook. 
+		It is also possible to specify a time frame for the snapshot:
+		<pre>
+$ css-dbmanager -help
+
+Usage:
+    css-dbmanager -list | -save | -restore -file my_backup_file -rdb_name dbname [-from t1] [-to t2] 
+    [-rdb_user user] [-rdb_host host] [-rdb_url url]
+
+Options:
+    -help                          show Help
+    -version                       show version
+    -list                          list available databases, then exit
+    -save                          save database (to be used with the option -file)
+    -restore                       clean and restore database (to be used with the option -file)
+    -file my_backup_file           dump file name (.zip extension is added automatically)
+    -rdb_name name                 database name to save or restore (such as css_archive_3_0_0)
+    -from "yyyy-mm-dd hh24:mi:ss"  time of the first entry (time must be between quotes)
+    -to "yyyy-mm-dd hh24:mi:ss"    time of the last entry (time must be between quotes)
+    -rdb_user user                 database username (such as archive)
+    -rdb_host host                 database server host (by default localhost)
+    -rdb_url url                   database url (by default jdbc:postgresql)
+    -verbose                       verbose mode
+    -format                        PG dump/restore format (by default plain)
+
+The keyword 'all' can be used after -save or - restore to target all databases instead of specifying -rdb_name.
+In that case, the backup file name will be automatically generated.
+
+Example:
+    css-dbmanager -save all -from "2015-01-01 00:00:00" -to "2015-06-01 17:00:00"
+		</pre>
+	</li>
+	<li>
+		OPI Validation - OPI Validation tool built on the Eclipse's validation framework provides means to validate and quickly fix existing OPI files with regards to ITER OPI schema. 
+		Validation can be invoked manually on an OPI file or group of OPI files by invoking the "Validate" context menu item. 
+		Manually invoking validation will run validation in the background.
+		When validation completes, a validation results dialog is displayed, and any problems found will be shown in the Problems view.
+		To open the Problems view, select Problems from the menu bar Window -> Show View -> Other... -> General -> Problems.
+		Double-clicking on an error/warning/info message in this view opens the respective editor (OPI Editor or OPI Runtime) and highlights the failing widget.
+		Finally, from the Problems view, fixes can be applied on one or many error/warning messages by invoking the "Quick fix" context menu item. 
+		A confirmation is asked for making a backup before applying the fix. After the quick fix is completed, the modified OPI files are revalidated.
+		<br><img src="images/image031.jpg"/>
+	</li>
+	<li>
+		OPI Scaling - Full HD to 4K that will resize the widgets by a factor of 2, 4K to Full HD that will resize the widgets by a factor of 0.5 and a custom scale.
+		<br><img src="images/image032.jpg"/>
+	</li>
+	<li>
+		New shortcut to CODAC provided templates - navigation pane, control pane for the faceplates, UTC and logo pane...
+		<br><img src="images/image033.jpg"/>
+	</li>
+	<li>
+		Standardization of User Input validation - validate, submit JavaScript. An example of validation is provided for the faceplate template AnalogComponent.opi
+		<br/><img src="images/image034.jpg"/>
+	</li>
+	<li>
+		New Full HD color, font and schema definition compliant with ITER HMI Design Guide.<br>
+		<i>Note: the use of mono-space font could impact the layout of existing OPI files. Manual adjustments could be required to align text widgets with other widgets.</i>
+	</li>
+	<li>
+		Updated color definition file - invalid/disconnected PVs shown in magenta, pipes with flow in very dark-grey and pipes without flow in mid-grey.
+	</li>
+	<li>
+		Recommendation to use JavaScript instead of Python for performance reason and better integration in a Java platform.
+	</li>
+	<li>
+		New alarm table layout which includes the following features:
+		<ul>
+			<li>Alarm acknowledgement tick box</li>
+			<li>Alarm priority icons<br><img src="images/image035.jpg"/></li>
+			<li>The alarm priority symbol is flashing at 2Hz until acknowledged by the operator</li>
+			<li>Multiple alarm table views can be opened at the same time</li>
+			<li>New view menu<br><img src="images/image036.jpg"/></li>
+			<li>Alarm table layout for ITER with Alarm Action as the first guidance description and Alarm ID as the first guidance title<br><img src="images/image037.jpg"/></li>
+		</ul>
+	</li>
+</ul>
+
 <h2>Version 5.0.0 - 2015-02-15</h2>
 <ul>
 	<li>
@@ -24,10 +117,10 @@
 			<li>	Support of display canvas of 3840x2160 </li>
 			<li>	Support of standard layout with Global Statuses, MIMIC Title, UTC Time, Main Display Area, Active Alarm Pane, Control Area/Faceplates and Navigation Pane</li>
   			<ul>
-  				<li>VDU Screen 16/9 Layout</li> <img src="images/image024.jpg"/></li>
-  				<li>Demo - Level 0</li> <img src="images/image025.jpg"/></li>
-  				<li>Demo - Level 1 for UTIL</li> <img src="images/image026.jpg"/></li>
-  				<li>Demo - Alarm Page</li> <img src="images/image027.jpg"/></li>
+  				<li>VDU Screen 16/9 Layout<br><img src="images/image024.jpg"/></li>
+  				<li>Demo - Level 0<br><img src="images/image025.jpg"/></li>
+  				<li>Demo - Level 1 for UTIL<br><img src="images/image026.jpg"/></li>
+  				<li>Demo - Alarm Page<br><img src="images/image027.jpg"/></li>
   			</ul>
 			<li>	Scale OPI tool accessible via a right-click on selected OPI files in the Navigator view. The scaling options are:</li>
   			<ul>
