@@ -25,7 +25,7 @@
 	</li>
 	<li>New mini-CODAC save/restore database tool that allow the user to take a snapshot any databases - archive, alarm, message history or logbook. 
 		It is also possible to specify a time frame for the snapshot:
-		<pre>
+		<pre style="font-family: Courier New;">
 $ css-dbmanager -help
 
 Usage:
@@ -46,10 +46,10 @@ Options:
     -rdb_host host                 database server host (by default localhost)
     -rdb_url url                   database url (by default jdbc:postgresql)
     -verbose                       verbose mode
-    -format                        PG dump/restore format (by default plain)
+    -format  plain|custom          PG dump/restore format (by default plain)
 
-The keyword 'all' can be used after -save or - restore to target all databases instead of specifying -rdb_name.
-In that case, the backup file name will be automatically generated.
+The keyword 'all' can be used after -save or -restore to target all databases instead of specifying -rdb_name.
+In that case, -file option is not required.
 
 Example:
     css-dbmanager -save all -from "2015-01-01 00:00:00" -to "2015-06-01 17:00:00"
@@ -58,9 +58,9 @@ Example:
 	<li>
 		OPI Validation - OPI Validation tool built on the Eclipse's validation framework provides means to validate and quickly fix existing OPI files with regards to ITER OPI schema. 
 		Validation can be invoked manually on an OPI file or group of OPI files by invoking the "Validate" context menu item. 
-		Manually invoking validation will run validation in the background.
-		When validation completes, a validation results dialog is displayed, and any problems found will be shown in the Problems view.
-		To open the Problems view, select Problems from the menu bar Window -> Show View -> Other... -> General -> Problems.
+		Manually invoking validation will run validation in the background.<br>
+		When validation completes, a validation results dialog is displayed, and any problems found will be shown in the Problems view.<br>
+		To open the Problems view, select Problems from the menu bar Window -> Show View -> Other... -> General -> Problems.<br>
 		Double-clicking on an error/warning/info message in this view opens the respective editor (OPI Editor or OPI Runtime) and highlights the failing widget.
 		Finally, from the Problems view, fixes can be applied on one or many error/warning messages by invoking the "Quick fix" context menu item. 
 		A confirmation is asked for making a backup before applying the fix. After the quick fix is completed, the modified OPI files are revalidated.
