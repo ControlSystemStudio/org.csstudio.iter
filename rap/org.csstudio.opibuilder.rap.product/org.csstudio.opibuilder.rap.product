@@ -29,10 +29,14 @@
    <features>
       <feature id="org.csstudio.archive.reader.rdb.feature"/>
       <feature id="org.csstudio.applications.opibuilder.rap.feature"/>
+      <feature id="org.csstudio.jdbc.feature"/>
    </features>
 
    <configurations>
+      <plugin id="com.google.guava" autoStart="true" startLevel="0" />
       <plugin id="com.ibm.icu.base" autoStart="true" startLevel="0" />
+      <plugin id="javax.annotation" autoStart="true" startLevel="0" />
+      <plugin id="javax.inject" autoStart="true" startLevel="0" />
       <plugin id="javax.mail" autoStart="true" startLevel="0" />
       <plugin id="org.antlr.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.apache.batik.bridge" autoStart="true" startLevel="0" />
@@ -46,6 +50,7 @@
       <plugin id="org.apache.batik.util" autoStart="true" startLevel="0" />
       <plugin id="org.apache.batik.util.gui" autoStart="true" startLevel="0" />
       <plugin id="org.apache.batik.xml" autoStart="true" startLevel="0" />
+      <plugin id="org.apache.commons.jxpath" autoStart="true" startLevel="0" />
       <plugin id="org.apache.commons.lang" autoStart="true" startLevel="0" />
       <plugin id="org.apache.felix.gogo.command" autoStart="true" startLevel="0" />
       <plugin id="org.apache.felix.gogo.runtime" autoStart="true" startLevel="0" />
@@ -109,6 +114,14 @@
       <plugin id="org.eclipse.core.expressions" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.core.jobs" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.e4.core.contexts" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.e4.core.di" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.e4.core.di.annotations" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.e4.core.services" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.e4.emf.xpath" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.e4.ui.model.workbench" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.emf.common" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.emf.ecore" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.app" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.console" autoStart="true" startLevel="0" />
