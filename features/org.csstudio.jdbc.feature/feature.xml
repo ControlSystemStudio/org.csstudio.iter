@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.csstudio.jdbc.feature"
-      label="Data Browser"
+      label="JDBC Feature"
       version="1.0.0.qualifier"
       provider-name="ITER">
 
    <description>
-      Data Browser, &quot;Strip Chart&quot; and archive data viewer
+      JDBC Feature
    </description>
 
    <copyright>
@@ -22,15 +22,6 @@ For the terms and conditions of redistribution or use of this software
 refer to the file ITER-LICENSE.TXT located in the top level directory
 of the distribution package.
    </license>
-
-   <requires>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.csstudio.trends.databrowser2" version="3.0.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.archive.reader" version="3.2.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.archive.rdb" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.autocomplete"/>
-      <import plugin="org.csstudio.archive.reader.rdb"/>
-   </requires>
 
    <plugin
          id="org.csstudio.platform.libs.jdbc"
