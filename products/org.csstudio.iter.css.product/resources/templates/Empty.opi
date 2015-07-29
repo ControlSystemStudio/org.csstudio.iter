@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.103.201505220958</boy_version>
+  <boy_version>4.0.103.201506161016</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -23,7 +23,7 @@
   </background_color>
   <width>3830</width>
   <x>0</x>
-  <name>Empty Canvas</name>
+  <name>${TITLE}</name>
   <grid_space>1</grid_space>
   <show_ruler>true</show_ruler>
   <y>0</y>
@@ -269,7 +269,6 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -473,7 +472,6 @@
             <color name="IO Foreground" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -595,52 +593,10 @@
               <color name="IO Foreground" red="0" green="0" blue="0" />
             </foreground_color>
             <actions hook="false" hook_all="false" />
-            <show_scrollbar>false</show_scrollbar>
             <font>
               <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
             </font>
           </widget>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <border_style>0</border_style>
-          <tooltip></tooltip>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>-1e0f3b69:149c8d6d12f:-432f</wuid>
-          <transparent>true</transparent>
-          <lock_children>true</lock_children>
-          <scripts />
-          <height>1760</height>
-          <border_width>2</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <visible>true</visible>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Grouping Container</widget_type>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <width>3236</width>
-          <x>0</x>
-          <name>Information Layer</name>
-          <y>0</y>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="false" hook_all="false" />
-          <fc>false</fc>
-          <show_scrollbar>false</show_scrollbar>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
         </widget>
         <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
           <border_style>0</border_style>
@@ -681,6 +637,144 @@
           <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          </font>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+          <border_style>0</border_style>
+          <tooltip></tooltip>
+          <rules>
+            <rule name="MakeLayerVisible" prop_id="visible" out_exp="false">
+              <exp bool_exp="pv0==0">
+                <value>false</value>
+              </exp>
+              <pv trig="true">loc://$(DID)_INFO_SHOW(0)</pv>
+            </rule>
+          </rules>
+          <enabled>true</enabled>
+          <wuid>-1e0f3b69:149c8d6d12f:-432f</wuid>
+          <transparent>true</transparent>
+          <lock_children>false</lock_children>
+          <scripts />
+          <height>1760</height>
+          <border_width>2</border_width>
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+          </macros>
+          <visible>true</visible>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <widget_type>Grouping Container</widget_type>
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <width>3236</width>
+          <x>0</x>
+          <name>Information Layer</name>
+          <y>0</y>
+          <foreground_color>
+            <color name="IO Foreground" red="0" green="0" blue="0" />
+          </foreground_color>
+          <actions hook="false" hook_all="false" />
+          <fc>false</fc>
+          <show_scrollbar>false</show_scrollbar>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          </font>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+            <border_style>0</border_style>
+            <tooltip>MAIN DISPLAY AREA - MIMIC</tooltip>
+            <horizontal_alignment>1</horizontal_alignment>
+            <rules />
+            <enabled>false</enabled>
+            <wuid>-17ac9c77:14e0084b99a:2177</wuid>
+            <transparent>true</transparent>
+            <auto_size>false</auto_size>
+            <text>
+
+
+
+This layer shall have a show/hide function for information</text>
+            <scripts />
+            <height>1760</height>
+            <border_width>2</border_width>
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <widget_type>Label</widget_type>
+            <wrap_words>false</wrap_words>
+            <background_color>
+              <color name="IO Background" red="235" green="235" blue="235" />
+            </background_color>
+            <width>3236</width>
+            <x>0</x>
+            <name>Show/Hide Comment</name>
+            <y>0</y>
+            <foreground_color>
+              <color name="IO Foreground" red="0" green="0" blue="0" />
+            </foreground_color>
+            <actions hook="false" hook_all="false" />
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+            </font>
+          </widget>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.checkbox" version="1.0.0">
+          <border_style>0</border_style>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <alarm_pulsing>false</alarm_pulsing>
+          <tooltip>Show/Hide the Information Layer</tooltip>
+          <rules />
+          <bit>0</bit>
+          <enabled>true</enabled>
+          <wuid>-17ac9c77:14e0084b99a:2504</wuid>
+          <selected_color>
+            <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+          </selected_color>
+          <pv_value />
+          <auto_size>true</auto_size>
+          <scripts />
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <height>45</height>
+          <border_width>2</border_width>
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <visible>true</visible>
+          <pv_name>loc://$(DID)_INFO_SHOW(0)</pv_name>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <label>Info</label>
+          <widget_type>Check Box</widget_type>
+          <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <width>99</width>
+          <x>3100</x>
+          <name>Show/Hide Tickbox</name>
+          <y>0</y>
+          <foreground_color>
+            <color name="IO Text Fg" red="0" green="0" blue="0" />
+          </foreground_color>
+          <actions hook="false" hook_all="false" />
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
           </font>
         </widget>
       </widget>
@@ -761,7 +855,6 @@
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>
@@ -807,99 +900,16 @@
       <font>
         <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
-      <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
-        <opi_file></opi_file>
-        <border_style>0</border_style>
-        <tooltip></tooltip>
-        <rules />
-        <enabled>true</enabled>
-        <wuid>-57352fd0:149859b9257:-177b</wuid>
-        <scripts>
-          <path pathString="EmbeddedJs" checkConnect="true" sfe="false" seoe="false">
-            <scriptName>LoadFaceplate</scriptName>
-            <scriptText><![CDATA[importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-
-//Split the faceplate variable to extract opi name and macros
-var inputString = PVUtil.getString(pvs[0]);
-var words = inputString.split(" ");
-
-//Analysis of each word
-var opiFile="";
-var i=0;
-for (i in words) {
-
-  if (words[i].search(".opi") > 0) {
-     //OPI file
-     opiFile = words[i];
-    //Reload the OPI file in the linking container again 
-    //by setting the property value with forcing fire option in true.
-    widgetController.setPropertyValue("opi_file", opiFile, true);
-  } else {
-
-    var macro = words[i].split("=", 2);
-    if (macro.length > 1) {
-       //Create a new Macro Input
-       var macroInput = DataUtil.createMacrosInput(true);
-
-       //Put a macro in the new Macro Input
-       macroInput.put("COMPONENT", macro[1]);
-
-       //Set the macro input of the linking container to this new macro input.
-       widgetController.setPropertyValue("macros", macroInput);
-    }
-  }
-}
-
-//Reload the OPI file in the linking container again 
-//by setting the property value with forcing fire option in true.
-widgetController.setPropertyValue("opi_file", opiFile, true);
-]]></scriptText>
-            <pv trig="true">loc://$(DID)_FACEPLATE("")</pv>
-          </path>
-        </scripts>
-        <height>943</height>
-        <border_width>2</border_width>
-        <scale_options>
-          <width_scalable>false</width_scalable>
-          <height_scalable>false</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <macros>
-          <include_parent_macros>true</include_parent_macros>
-        </macros>
-        <resize_behaviour>0</resize_behaviour>
-        <visible>true</visible>
-        <group_name></group_name>
-        <border_color>
-          <color name="IO Border" red="0" green="0" blue="0" />
-        </border_color>
-        <widget_type>Linking Container</widget_type>
-        <background_color>
-          <color name="IO Area Background" red="221" green="223" blue="229" />
-        </background_color>
-        <width>575</width>
-        <x>0</x>
-        <name>Faceplate</name>
-        <y>0</y>
-        <foreground_color>
-          <color name="IO Foreground" red="0" green="0" blue="0" />
-        </foreground_color>
-        <actions hook="false" hook_all="false" />
-        <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-        </font>
-      </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
         <border_style>0</border_style>
         <tooltip>CONTROL AREA - FACEPLATES</tooltip>
         <horizontal_alignment>1</horizontal_alignment>
         <rules />
         <enabled>true</enabled>
-        <wuid>-ae3bbd7:148fa0f526e:-7ed6</wuid>
+        <wuid>-45a5416a:14dddc61744:-6d8a</wuid>
         <transparent>true</transparent>
         <auto_size>false</auto_size>
-        <text>CONTROL AREA /
-FACEPLATES</text>
+        <text></text>
         <scripts />
         <height>941</height>
         <border_width>2</border_width>
@@ -923,12 +933,51 @@ FACEPLATES</text>
         <name>Comment</name>
         <y>0</y>
         <foreground_color>
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+        <opi_file>ControlPane.opi</opi_file>
+        <border_style>0</border_style>
+        <tooltip></tooltip>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-45a5416a:14dddc61744:-6d89</wuid>
+        <scripts />
+        <height>943</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <resize_behaviour>0</resize_behaviour>
+        <visible>true</visible>
+        <group_name></group_name>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Linking Container</widget_type>
+        <background_color>
+          <color name="IO Area Background" red="221" green="223" blue="229" />
+        </background_color>
+        <width>575</width>
+        <x>4</x>
+        <name>Faceplate</name>
+        <y>14</y>
+        <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
     </widget>

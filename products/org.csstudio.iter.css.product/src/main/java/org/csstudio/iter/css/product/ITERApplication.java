@@ -20,7 +20,7 @@ import org.eclipse.osgi.service.datalocation.Location;
 import org.eclipse.swt.widgets.Display;
 
 /**
- * 
+ *
  * <code>ITERApplication</code> is an extension of the default CSS application that suppresses
  * a specific exception printout made by third party plugins
  *
@@ -37,7 +37,7 @@ public class ITERApplication extends Application {
         }
         final String args[] = (String[]) context.getArguments().get("application.args");
         for (String arg : args) {
-            if (arg.equals("-cleanWorkbench")) { 
+            if (arg.equals("-cleanWorkbench")) {
                 Location loc = Platform.getInstanceLocation();
                 URL url = loc.getURL();
                 File file = new File(url.getFile());
@@ -48,7 +48,7 @@ public class ITERApplication extends Application {
                 file.delete();
             }
         }
-        
+
         Location loc = Platform.getInstanceLocation();
         if (loc.isSet()) {
             URL url = loc.getURL();
@@ -62,7 +62,7 @@ public class ITERApplication extends Application {
                 try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                     while(br.ready()) {
                         String line = br.readLine();
-                        if (line != null && line.contains("org.csstudio.alarm.beast.ui.alarmtable")) {
+                        if (line != null && line.contains("org.csstudio.iter.alarm.beast.ui.alarmtable")) {
                             delete = true;
                             break;
                         }
@@ -73,15 +73,15 @@ public class ITERApplication extends Application {
                 }
             }
         }
-        
+
         return obj;
     }
-    
+
     @Override
-    public Object start(IApplicationContext context) throws Exception {    
+    public Object start(IApplicationContext context) throws Exception {
         //org.csstudio.alarm.beast.ui.alarmtable
         Object o = super.start(context);
-        //Bugfix/workaround for org.apache.felix.gogo.shell.Activator, 
+        //Bugfix/workaround for org.apache.felix.gogo.shell.Activator,
         //which prints InterruptedException if stopped before it was even started.
         //It is using a hardcoded 100 ms sleep, so we should be safe if we wait 150 ms for
         //that plugin to finish its magic.

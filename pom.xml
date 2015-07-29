@@ -55,9 +55,9 @@
             <properties>
                 <eclipse-site>http://download.eclipse.org/releases/luna</eclipse-site>
                 <eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.4</eclipse-update-site>
-                <rap-site>http://download.eclipse.org/rt/rap/2.3</rap-site>
-                <rap-incubator-site>http://download.eclipse.org/rt/rap/incubator/nightly/gef/20150122-1538</rap-incubator-site>
-<!--                <rap-incubator-site>http://download.eclipse.org/rt/rap/incubator/nightly/gef</rap-incubator-site> LATEST RAP HAS PROBLEMS-->
+                <rap-site>http://download.eclipse.org/rt/rap/3.0</rap-site>
+                <rap-gef-site>http://download.eclipse.org/rt/rap/incubator/nightly/gef/20150122-1538</rap-gef-site>
+                <rap-e4-site>http://download.eclipse.org/rt/rap/incubator/nightly/e4/target/site</rap-e4-site>
                 <swtbot-site>http://download.eclipse.org/technology/swtbot/luna/dev-build/update-site</swtbot-site>
                 <platform-version>[4.4,4.5)</platform-version>
             </properties>
@@ -85,11 +85,11 @@
                     <url>http://download.controlsystemstudio.org/thirdparty/4.1</url>
                     <layout>p2</layout>
                 </repository>
-                <repository>
+                <!--repository>
                     <id>maven-osgi-bundles</id>
                     <url>http://download.controlsystemstudio.org/maven-osgi-bundles/4.1</url>
                     <layout>p2</layout>
-                </repository>
+                </repository-->
             </repositories>
         </profile>
     </profiles>
@@ -111,8 +111,13 @@
             <layout>p2</layout>
         </repository>
         <repository>
-            <id>rap-incubator</id>
-            <url>${rap-incubator-site}</url>
+            <id>rap-gef</id>
+            <url>${rap-gef-site}</url>
+            <layout>p2</layout>
+        </repository>
+        <repository>
+            <id>rap-e4</id>
+            <url>${rap-e4-site}</url>
             <layout>p2</layout>
         </repository>
         <repository>
