@@ -71,6 +71,7 @@ function buildCBSMap(root, indent){
 		linkingContainer.addMacro("CBS", labelText);
 
 		linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));	
+		linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
 		addOPImacros(linkingContainer, elt);	
 
 	    // adding the container to the parent widget 
@@ -117,6 +118,12 @@ function getOPI_FILE(elt) {
     	// suppressing the extension .opi
     	return attribute.substring(0, attribute.search(".opi"));
     }
+    return attribute;
+}
+
+function getALARM_ROOT(elt) {
+	var attribute = elt.getAttributeValue("alarm_root");
+
     return attribute;
 }
 

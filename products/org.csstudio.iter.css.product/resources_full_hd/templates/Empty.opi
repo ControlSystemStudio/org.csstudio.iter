@@ -9,7 +9,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.103.201506161016</boy_version>
+  <boy_version>4.0.104.201507310857</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -600,98 +600,6 @@
         <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
           <border_style>0</border_style>
           <tooltip/>
-          <rules>
-            <rule name="MakeLayerVisible" out_exp="false" prop_id="visible">
-              <exp bool_exp="pv0==0">
-                <value>false</value>
-              </exp>
-              <pv trig="true">loc://$(DID)_INFO_SHOW(0)</pv>
-            </rule>
-          </rules>
-          <enabled>true</enabled>
-          <wuid>-1e0f3b69:149c8d6d12f:-432f</wuid>
-          <transparent>true</transparent>
-          <lock_children>true</lock_children>
-          <scripts/>
-          <height>880</height>
-          <border_width>2</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <visible>true</visible>
-          <border_color>
-            <color blue="0" green="0" name="IO Border" red="0"/>
-          </border_color>
-          <widget_type>Grouping Container</widget_type>
-          <background_color>
-            <color blue="235" green="235" name="IO Background" red="235"/>
-          </background_color>
-          <width>1618</width>
-          <x>0</x>
-          <name>Information Layer</name>
-          <y>0</y>
-          <foreground_color>
-            <color blue="0" green="0" name="IO Foreground" red="0"/>
-          </foreground_color>
-          <actions hook="false" hook_all="false"/>
-          <fc>false</fc>
-          <show_scrollbar>false</show_scrollbar>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-            <border_style>0</border_style>
-            <tooltip>MAIN DISPLAY AREA - MIMIC</tooltip>
-            <horizontal_alignment>1</horizontal_alignment>
-            <rules/>
-            <enabled>false</enabled>
-            <wuid>-17ac9c77:14e0084b99a:5eae</wuid>
-            <transparent>true</transparent>
-            <auto_size>false</auto_size>
-            <text>
-
-
-
-This layer shall have a show/hide function for information</text>
-            <scripts/>
-            <height>880</height>
-            <border_width>2</border_width>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <visible>true</visible>
-            <vertical_alignment>1</vertical_alignment>
-            <border_color>
-              <color blue="0" green="0" name="IO Border" red="0"/>
-            </border_color>
-            <widget_type>Label</widget_type>
-            <wrap_words>false</wrap_words>
-            <background_color>
-              <color blue="235" green="235" name="IO Background" red="235"/>
-            </background_color>
-            <width>1618</width>
-            <x>5</x>
-            <name>Show/Hide Comment</name>
-            <y>3</y>
-            <foreground_color>
-              <color blue="0" green="0" name="IO Foreground" red="0"/>
-            </foreground_color>
-            <actions hook="false" hook_all="false"/>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-            </font>
-          </widget>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <border_style>0</border_style>
-          <tooltip/>
           <rules/>
           <enabled>true</enabled>
           <wuid>-1e0f3b69:149c8d6d12f:-4312</wuid>
@@ -730,6 +638,98 @@ This layer shall have a show/hide function for information</text>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
         </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+          <border_style>0</border_style>
+          <tooltip/>
+          <rules>
+            <rule name="MakeLayerVisible" out_exp="false" prop_id="visible">
+              <exp bool_exp="pv0==0">
+                <value>false</value>
+              </exp>
+              <pv trig="true">loc://$(DID)_INFO_SHOW(0)</pv>
+            </rule>
+          </rules>
+          <enabled>true</enabled>
+          <wuid>-1e0f3b69:149c8d6d12f:-432f</wuid>
+          <transparent>true</transparent>
+          <lock_children>false</lock_children>
+          <scripts/>
+          <height>880</height>
+          <border_width>2</border_width>
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+          </macros>
+          <visible>true</visible>
+          <border_color>
+            <color blue="0" green="0" name="IO Border" red="0"/>
+          </border_color>
+          <widget_type>Grouping Container</widget_type>
+          <background_color>
+            <color blue="235" green="235" name="IO Background" red="235"/>
+          </background_color>
+          <width>1618</width>
+          <x>0</x>
+          <name>Information Layer</name>
+          <y>0</y>
+          <foreground_color>
+            <color blue="0" green="0" name="IO Foreground" red="0"/>
+          </foreground_color>
+          <actions hook="false" hook_all="false"/>
+          <fc>false</fc>
+          <show_scrollbar>false</show_scrollbar>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          </font>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+            <border_style>0</border_style>
+            <tooltip>MAIN DISPLAY AREA - MIMIC</tooltip>
+            <horizontal_alignment>1</horizontal_alignment>
+            <rules/>
+            <enabled>false</enabled>
+            <wuid>-17ac9c77:14e0084b99a:2177</wuid>
+            <transparent>true</transparent>
+            <auto_size>false</auto_size>
+            <text>
+
+
+
+This layer shall have a show/hide function for information</text>
+            <scripts/>
+            <height>880</height>
+            <border_width>2</border_width>
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <border_color>
+              <color blue="0" green="0" name="IO Border" red="0"/>
+            </border_color>
+            <widget_type>Label</widget_type>
+            <wrap_words>false</wrap_words>
+            <background_color>
+              <color blue="235" green="235" name="IO Background" red="235"/>
+            </background_color>
+            <width>1618</width>
+            <x>0</x>
+            <name>Show/Hide Comment</name>
+            <y>0</y>
+            <foreground_color>
+              <color blue="0" green="0" name="IO Foreground" red="0"/>
+            </foreground_color>
+            <actions hook="false" hook_all="false"/>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+            </font>
+          </widget>
+        </widget>
         <widget typeId="org.csstudio.opibuilder.widgets.checkbox" version="1.0.0">
           <border_style>0</border_style>
           <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
@@ -738,7 +738,7 @@ This layer shall have a show/hide function for information</text>
           <rules/>
           <bit>0</bit>
           <enabled>true</enabled>
-          <wuid>-17ac9c77:14e0084b99a:5d1c</wuid>
+          <wuid>-17ac9c77:14e0084b99a:2504</wuid>
           <selected_color>
             <color blue="0" green="0" name="IO OutputPV Fg" red="0"/>
           </selected_color>
@@ -758,14 +758,14 @@ This layer shall have a show/hide function for information</text>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
           </border_color>
-          <label>Show Info</label>
+          <label>Info</label>
           <widget_type>Check Box</widget_type>
           <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
           <background_color>
             <color blue="235" green="235" name="IO Background" red="235"/>
           </background_color>
-          <width>100</width>
-          <x>1500</x>
+          <width>49</width>
+          <x>1550</x>
           <name>Show/Hide Tickbox</name>
           <y>0</y>
           <foreground_color>
@@ -785,7 +785,7 @@ This layer shall have a show/hide function for information</text>
       <enabled>true</enabled>
       <wuid>-ae3bbd7:148fa0f526e:-7f3c</wuid>
       <transparent>false</transparent>
-      <lock_children>true</lock_children>
+      <lock_children>false</lock_children>
       <scripts/>
       <height>503</height>
       <border_width>1</border_width>
@@ -856,6 +856,46 @@ This layer shall have a show/hide function for information</text>
         <actions hook="false" hook_all="false"/>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+        <opi_file>AlarmPane.opi</opi_file>
+        <border_style>0</border_style>
+        <tooltip/>
+        <rules/>
+        <enabled>true</enabled>
+        <wuid>-77568aca:14ee42ff2b8:-7d06</wuid>
+        <scripts/>
+        <height>501</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <resize_behaviour>1</resize_behaviour>
+        <visible>true</visible>
+        <group_name/>
+        <border_color>
+          <color blue="0" green="0" name="IO Border" red="0"/>
+        </border_color>
+        <widget_type>Linking Container</widget_type>
+        <background_color>
+          <color blue="235" green="235" name="IO Background" red="235"/>
+        </background_color>
+        <width>288</width>
+        <x>0</x>
+        <name>Linking Container Template</name>
+        <y>0</y>
+        <foreground_color>
+          <color blue="0" green="0" name="IO Foreground" red="0"/>
+        </foreground_color>
+        <actions hook="false" hook_all="false"/>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
     </widget>

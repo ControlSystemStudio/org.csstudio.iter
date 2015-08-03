@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <show_close_button>true</show_close_button>
+  <rules/>
+  <wuid>-14a921ec:134b2495e46:-7f53</wuid>
+  <show_grid>true</show_grid>
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <scripts/>
+  <height>500</height>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+  </macros>
+  <boy_version>4.0.104.201507310857</boy_version>
+  <show_edit_range>true</show_edit_range>
+  <widget_type>Display</widget_type>
+  <auto_scale_widgets>
+    <auto_scale_widgets>false</auto_scale_widgets>
+    <min_width>-1</min_width>
+    <min_height>-1</min_height>
+  </auto_scale_widgets>
+  <background_color>
+    <color blue="235" green="235" name="IO Background" red="235"/>
+  </background_color>
+  <width>287</width>
+  <x>0</x>
+  <name>Alarm Pane</name>
+  <grid_space>1</grid_space>
+  <show_ruler>true</show_ruler>
+  <y>0</y>
+  <snap_to_geometry>true</snap_to_geometry>
+  <foreground_color>
+    <color blue="215" green="215" name="IO Grid" red="215"/>
+  </foreground_color>
+  <actions hook="false" hook_all="false"/>
+  <widget typeId="org.csstudio.alarm.beast.ui.alarmtable" version="1.0.0">
+    <border_style>0</border_style>
+    <columns>
+      <column id="ACK" visible="true" weight="0" width="20"/>
+      <column id="ICON" visible="true" weight="0" width="20"/>
+      <column id="DESCRIPTION" visible="true" weight="100" width="143"/>
+      <column id="TIME" visible="true" weight="40" width="80"/>
+      <column id="PV" visible="false" weight="50" width="80"/>
+      <column id="CURRENT_SEVERITY" visible="false" weight="30" width="50"/>
+      <column id="CURRENT_STATUS" visible="false" weight="30" width="45"/>
+      <column id="SEVERITY" visible="false" weight="30" width="50"/>
+      <column id="STATUS" visible="false" weight="30" width="45"/>
+      <column id="VALUE" visible="false" weight="30" width="45"/>
+      <column id="ACTION" visible="false" weight="100" width="80"/>
+      <column id="ID" visible="false" weight="100" width="80"/>
+    </columns>
+    <tooltip>List of active alarms on ${ALARM_ROOT}</tooltip>
+    <rules/>
+    <sorting_column>1</sorting_column>
+    <enabled>true</enabled>
+    <wuid>-77568aca:14ee42ff2b8:-7d91</wuid>
+    <writable>true</writable>
+    <sort_ascending>false</sort_ascending>
+    <filter_item>${ALARM_ROOT}</filter_item>
+    <scripts/>
+    <separate_tables>false</separate_tables>
+    <height>500</height>
+    <border_width>1</border_width>
+    <scale_options>
+      <width_scalable>false</width_scalable>
+      <height_scalable>false</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <visible>true</visible>
+    <time_format>HH:mm:ss</time_format>
+    <border_color>
+      <color blue="0" green="0" name="IO Border" red="0"/>
+    </border_color>
+    <widget_type>Alarm Table</widget_type>
+    <background_color>
+      <color blue="229" green="223" name="IO Area Background" red="221"/>
+    </background_color>
+    <table_weight_acknowledge>80</table_weight_acknowledge>
+    <unacknowledged_blinking>true</unacknowledged_blinking>
+    <width>287</width>
+    <x>0</x>
+    <name>Alarm Table Template</name>
+    <max_number_of_alarms>20</max_number_of_alarms>
+    <y>0</y>
+    <table_weight_unacknowledge>20</table_weight_unacknowledge>
+    <foreground_color>
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
+    </foreground_color>
+    <actions hook="false" hook_all="false"/>
+    <font>
+      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+    </font>
+  </widget>
+</display>
