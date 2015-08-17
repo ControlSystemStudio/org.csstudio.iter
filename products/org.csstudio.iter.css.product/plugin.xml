@@ -14,10 +14,10 @@
                value="icons/css16.png,icons/css32.png,icons/css48.png,icons/css64.png,icons/css128.png"/>
          <property
                name="aboutImage"
-               value="icons/about.png"/>
+               value="icons/cs-studio-about.png"/>
          <property
                name="aboutText"
-               value="\n\n&#x0A;&#x0A;Control System Studio is an Eclipse-based collection of tools\n\&#x0A; &#x0A;to monitor and operate large scale control systems,\n\&#x0A;&#x0A;such as the ones in the fusion community.\n\&#x0A;&#x0A;&#x0A;&#x0A;It&apos;s a product of the collaboration between different laboratories and universities.">
+               value="Control System Studio is an Eclipse-based collection of tools&#x0A;&#x0A;to monitor and operate large scale control systems,&#x0A;&#x0A;such as the ones in the fusion community.&#x0A;&#x0A;&#x0A;It&apos;s a product of the collaboration between different laboratories and universities.">
          </property>
          <property
                name="startupForegroundColor"
@@ -34,10 +34,6 @@
          <property
                name="appName"
                value="Css">
-         </property>
-         <property
-               name="preferenceCustomization"
-               value="plugin_customization.ini">
          </property>
          <property 
             name="introTitle"
@@ -76,6 +72,10 @@
          <property
             name="applicationCSSResources"
             value="platform:/plugin/org.eclipse.platform/images/">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
          </property>
       </product>
    </extension>
@@ -230,11 +230,5 @@
              pattern="*.svn"
              selected="true">
        </filter>
-    </extension>
-    <extension
-          point="org.csstudio.iter.alarm.beast.ui.alarmtable.customconfig">
-       <doubleClickHandler
-             class="org.csstudio.iter.alarm.beast.ui.alarmtable.customconfig.OpenDisplayDoubleClickHandler">
-       </doubleClickHandler>
     </extension>
 </plugin>
