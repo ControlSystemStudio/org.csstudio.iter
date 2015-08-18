@@ -25,8 +25,6 @@ import org.python.pydev.ui.pythonpathconf.InterpreterInfo;
 
 public class InterpreterUtils {
 
-    private static final boolean DO_NOT_CONFIGURE_JYTHON = true;
-
 	private static final String[] PLUGIN_TO_ADD_IN_PYTHON_PATH = new String[] {
 			"org.eclipse.ui", "org.eclipse.ui.workbench", "org.eclipse.swt",
 			"org.eclipse.jface", "org.csstudio.swt.xygraph",
@@ -109,9 +107,6 @@ public class InterpreterUtils {
 	 */
 	public static boolean createJythonInterpreter(final String name,
 			final IProgressMonitor mon) throws Exception {
-	    //TODO this currently doesn't work: the org.python.pydev.jython hangs, and the the css community jython plugin
-	    //is unpacked, which makes it impossible to use it by pydev interpreter
-	    if (DO_NOT_CONFIGURE_JYTHON) return false;
 		final JythonInterpreterManager man = (JythonInterpreterManager) PydevPlugin
 				.getJythonInterpreterManager();
 		InterpreterInfo info = null;
@@ -122,8 +117,7 @@ public class InterpreterUtils {
 		}
 		// Code copies from Pydev when the user chooses a Jython interpreter
 		// - these are the defaults.
-		final File jydir = BundleUtils.getBundleLocation("org.python.pydev.jython");
-//		final File jydir = BundleUtils.getBundleLocation("org.csstudio.iter.pydev.configurator");
+		final File jydir = BundleUtils.getBundleLocation("org.csstudio.iter.pydev.configurator");
 		File exeFile = new File(jydir, "jython.jar");
 		if (!exeFile.exists()) {
 			//by jbobnar: the latest org.python.jython no longer includes the jython.jar. Instead the contents
