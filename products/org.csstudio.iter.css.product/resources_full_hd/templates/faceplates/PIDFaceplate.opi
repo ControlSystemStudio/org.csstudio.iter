@@ -9,7 +9,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.103.201506100650</boy_version>
+  <boy_version>4.0.103.codac_core_5_2b1</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -135,7 +135,7 @@
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
-      <visible>false</visible>
+      <visible>true</visible>
       <border_color>
         <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
@@ -165,7 +165,7 @@
         <transparent>true</transparent>
         <lock_children>false</lock_children>
         <scripts/>
-        <height>138</height>
+        <height>134</height>
         <border_width>1</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -183,7 +183,7 @@
         <background_color>
           <color blue="229" green="223" name="IO Area Background" red="221"/>
         </background_color>
-        <width>277</width>
+        <width>280</width>
         <x>2</x>
         <name>Controller Output</name>
         <y>8</y>
@@ -194,7 +194,7 @@
         <fc>false</fc>
         <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
         <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
           <border_style>0</border_style>
@@ -223,7 +223,7 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <visible>true</visible>
-          <pv_name>loc://$(COMPONENT)_In(40.4)</pv_name>
+          <pv_name>loc://$(VALVE)_In(40.4)</pv_name>
           <vertical_alignment>1</vertical_alignment>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
@@ -237,7 +237,7 @@
             <color blue="229" green="223" name="IO Area Background" red="221"/>
           </background_color>
           <width>48</width>
-          <x>140</x>
+          <x>153</x>
           <name>Controlled Value</name>
           <y>14</y>
           <foreground_color>
@@ -275,7 +275,7 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <visible>true</visible>
-          <pv_name>loc://$(COMPONENT)_SP(40)</pv_name>
+          <pv_name>loc://$(VALVE)_SP(40)</pv_name>
           <vertical_alignment>1</vertical_alignment>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
@@ -289,7 +289,7 @@
             <color blue="229" green="223" name="IO Area Background" red="221"/>
           </background_color>
           <width>48</width>
-          <x>140</x>
+          <x>153</x>
           <name>Setpoint</name>
           <y>34</y>
           <foreground_color>
@@ -326,7 +326,7 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <visible>true</visible>
-          <pv_name>loc://$(COMPONENT)_Out(37.3)</pv_name>
+          <pv_name>loc://$(VALVE)_Out(37.3)</pv_name>
           <vertical_alignment>1</vertical_alignment>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
@@ -340,7 +340,7 @@
             <color blue="229" green="223" name="IO Area Background" red="221"/>
           </background_color>
           <width>48</width>
-          <x>140</x>
+          <x>153</x>
           <name>Controller Output</name>
           <y>54</y>
           <foreground_color>
@@ -361,7 +361,7 @@ $(pv_value)</tooltip>
             <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">IO Scale</opifont.name>
           </scale_font>
           <pv_value/>
-          <show_scale>false</show_scale>
+          <show_scale>true</show_scale>
           <scale_format/>
           <height>95</height>
           <fill_color>
@@ -369,24 +369,24 @@ $(pv_value)</tooltip>
           </fill_color>
           <border_width>2</border_width>
           <visible>true</visible>
-          <pv_name>loc://$(COMPONENT)_In(40.4)</pv_name>
+          <pv_name>loc://$(VALVE)_In(40.4)</pv_name>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
           </border_color>
           <widget_type>Tank</widget_type>
           <name>Controlled Value</name>
-          <show_hi>false</show_hi>
+          <show_hi>true</show_hi>
           <actions hook="false" hook_all="false"/>
-          <show_lo>false</show_lo>
+          <show_lo>true</show_lo>
           <border_style>0</border_style>
-          <show_lolo>false</show_lolo>
+          <show_lolo>true</show_lolo>
           <show_minor_ticks>false</show_minor_ticks>
           <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
           <show_markers>false</show_markers>
           <color_hihi>
             <color blue="14" green="12" name="IO High Level Alarm" red="250"/>
           </color_hihi>
-          <show_hihi>false</show_hihi>
+          <show_hihi>true</show_hihi>
           <log_scale>false</log_scale>
           <enabled>true</enabled>
           <wuid>25daaf5f:14a04bdce50:-7eb4</wuid>
@@ -418,7 +418,7 @@ $(pv_value)</tooltip>
             <color blue="235" green="235" name="IO InputPV Bg" red="235"/>
           </background_color>
           <level_lolo>10.0</level_lolo>
-          <width>25</width>
+          <width>40</width>
           <x>0</x>
           <y>0</y>
           <maximum>100.0</maximum>
@@ -428,7 +428,7 @@ $(pv_value)</tooltip>
           <foreground_color>
             <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
           </foreground_color>
-          <minimum>0.0</minimum>
+          <minimum>-100.0</minimum>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
           </font>
@@ -443,7 +443,7 @@ $(pv_value)</tooltip>
             <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">IO Scale</opifont.name>
           </scale_font>
           <pv_value/>
-          <show_scale>false</show_scale>
+          <show_scale>true</show_scale>
           <scale_format/>
           <height>95</height>
           <fill_color>
@@ -451,24 +451,24 @@ $(pv_value)</tooltip>
           </fill_color>
           <border_width>2</border_width>
           <visible>true</visible>
-          <pv_name>loc://$(COMPONENT)_SP(40)</pv_name>
+          <pv_name>loc://$(VALVE)_SP(40)</pv_name>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
           </border_color>
           <widget_type>Tank</widget_type>
           <name>Setpoint</name>
-          <show_hi>false</show_hi>
+          <show_hi>true</show_hi>
           <actions hook="false" hook_all="false"/>
-          <show_lo>false</show_lo>
+          <show_lo>true</show_lo>
           <border_style>0</border_style>
-          <show_lolo>false</show_lolo>
+          <show_lolo>true</show_lolo>
           <show_minor_ticks>false</show_minor_ticks>
           <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
           <show_markers>false</show_markers>
           <color_hihi>
             <color blue="14" green="12" name="IO High Level Alarm" red="250"/>
           </color_hihi>
-          <show_hihi>false</show_hihi>
+          <show_hihi>true</show_hihi>
           <log_scale>false</log_scale>
           <enabled>true</enabled>
           <wuid>25daaf5f:14a04bdce50:-7eac</wuid>
@@ -500,8 +500,8 @@ $(pv_value)</tooltip>
             <color blue="235" green="235" name="IO InputPV Bg" red="235"/>
           </background_color>
           <level_lolo>10.0</level_lolo>
-          <width>25</width>
-          <x>34</x>
+          <width>40</width>
+          <x>40</x>
           <y>0</y>
           <maximum>100.0</maximum>
           <color_lolo>
@@ -510,7 +510,7 @@ $(pv_value)</tooltip>
           <foreground_color>
             <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
           </foreground_color>
-          <minimum>0.0</minimum>
+          <minimum>-100.0</minimum>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
           </font>
@@ -524,7 +524,7 @@ $(pv_value)</tooltip>
             <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">IO Scale</opifont.name>
           </scale_font>
           <pv_value/>
-          <show_scale>false</show_scale>
+          <show_scale>true</show_scale>
           <scale_format/>
           <height>95</height>
           <fill_color>
@@ -532,24 +532,24 @@ $(pv_value)</tooltip>
           </fill_color>
           <border_width>2</border_width>
           <visible>true</visible>
-          <pv_name>loc://$(COMPONENT)_Out(37.3)</pv_name>
+          <pv_name>loc://$(VALVE)_Out(37.3)</pv_name>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
           </border_color>
           <widget_type>Tank</widget_type>
           <name>Controller Output</name>
-          <show_hi>false</show_hi>
+          <show_hi>true</show_hi>
           <actions hook="false" hook_all="false"/>
-          <show_lo>false</show_lo>
+          <show_lo>true</show_lo>
           <border_style>0</border_style>
-          <show_lolo>false</show_lolo>
+          <show_lolo>true</show_lolo>
           <show_minor_ticks>false</show_minor_ticks>
           <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
           <show_markers>false</show_markers>
           <color_hihi>
             <color blue="14" green="12" name="IO High Level Alarm" red="250"/>
           </color_hihi>
-          <show_hihi>false</show_hihi>
+          <show_hihi>true</show_hihi>
           <log_scale>false</log_scale>
           <enabled>true</enabled>
           <wuid>25daaf5f:14a04bdce50:-7ea8</wuid>
@@ -581,7 +581,7 @@ $(pv_value)</tooltip>
             <color blue="235" green="235" name="IO InputPV Bg" red="235"/>
           </background_color>
           <level_lolo>10.0</level_lolo>
-          <width>25</width>
+          <width>40</width>
           <x>200</x>
           <y>0</y>
           <maximum>100.0</maximum>
@@ -591,7 +591,7 @@ $(pv_value)</tooltip>
           <foreground_color>
             <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
           </foreground_color>
-          <minimum>0.0</minimum>
+          <minimum>-100.0</minimum>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
           </font>
@@ -625,7 +625,7 @@ $(pv_value)</tooltip>
             <color blue="235" green="235" name="IO Background" red="235"/>
           </background_color>
           <width>40</width>
-          <x>70</x>
+          <x>88</x>
           <name>Controlled Value</name>
           <y>14</y>
           <foreground_color>
@@ -666,7 +666,7 @@ $(pv_value)</tooltip>
             <color blue="235" green="235" name="IO Background" red="235"/>
           </background_color>
           <width>64</width>
-          <x>70</x>
+          <x>88</x>
           <name>Setpoint</name>
           <y>34</y>
           <foreground_color>
@@ -707,7 +707,7 @@ $(pv_value)</tooltip>
             <color blue="235" green="235" name="IO Background" red="235"/>
           </background_color>
           <width>48</width>
-          <x>70</x>
+          <x>88</x>
           <name>Controller Output</name>
           <y>54</y>
           <foreground_color>
@@ -758,7 +758,7 @@ $(pv_value)</tooltip>
         <fc>false</fc>
         <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
         <widget typeId="org.csstudio.opibuilder.widgets.checkbox" version="1.0.0">
           <border_style>0</border_style>
@@ -785,7 +785,7 @@ $(pv_value)</tooltip>
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <visible>true</visible>
-          <pv_name>=1</pv_name>
+          <pv_name>loc://$(MODE)_Auto(1)</pv_name>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
           </border_color>
@@ -832,7 +832,7 @@ $(pv_value)</tooltip>
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <visible>true</visible>
-          <pv_name>=0</pv_name>
+          <pv_name>loc://$(MODE)_Manual(0)</pv_name>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
           </border_color>
@@ -879,7 +879,7 @@ $(pv_value)</tooltip>
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <visible>true</visible>
-          <pv_name>=0</pv_name>
+          <pv_name>loc://$(MODE)_Force(0)</pv_name>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
           </border_color>
@@ -940,7 +940,7 @@ $(pv_value)</tooltip>
         <fc>false</fc>
         <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
         <widget typeId="org.csstudio.opibuilder.widgets.checkbox" version="1.0.0">
           <border_style>0</border_style>
@@ -1028,7 +1028,7 @@ $(pv_value)</tooltip>
         <fc>false</fc>
         <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
         <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
           <border_style>0</border_style>
@@ -1097,7 +1097,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <pv_name>loc://$(COMPONENT)_PSt(50)</pv_name>
+            <pv_name>loc://$(VALVE)_PSt(50)</pv_name>
             <vertical_alignment>1</vertical_alignment>
             <border_color>
               <color blue="0" green="0" name="IO Border" red="0"/>
@@ -1231,7 +1231,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <pv_name>loc://$(COMPONENT)_ISt(35)</pv_name>
+            <pv_name>loc://$(VALVE)_ISt(35)</pv_name>
             <vertical_alignment>1</vertical_alignment>
             <border_color>
               <color blue="0" green="0" name="IO Border" red="0"/>
@@ -1406,7 +1406,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <pv_name>loc://$(COMPONENT)_DSt(0)</pv_name>
+            <pv_name>loc://$(VALVE)_DSt(0)</pv_name>
             <vertical_alignment>1</vertical_alignment>
             <border_color>
               <color blue="0" green="0" name="IO Border" red="0"/>
@@ -1518,7 +1518,7 @@ $(trace_0_y_pv_value)</tooltip>
         </axis_1_axis_color>
         <axis_0_scale_format/>
         <axis_1_log_scale>false</axis_1_log_scale>
-        <title>$(COMPONENT)</title>
+        <title>$(VALVE)</title>
         <trace_0_visible>true</trace_0_visible>
         <trace_1_name>$(trace_1_y_pv)</trace_1_name>
         <trace_1_y_pv_value/>
@@ -1694,7 +1694,7 @@ $(trace_0_y_pv_value)</tooltip>
         <fc>false</fc>
         <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
         <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
           <border_style>0</border_style>
@@ -1754,7 +1754,7 @@ $(trace_0_y_pv_value)</tooltip>
           <multiline_input>false</multiline_input>
           <border_width>1</border_width>
           <visible>true</visible>
-          <pv_name>loc://_$(COMPONENT)_PR(50)</pv_name>
+          <pv_name>loc://_$(VALVE)_PR(50)</pv_name>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
           </border_color>
@@ -1856,8 +1856,8 @@ $(trace_0_y_pv_value)</tooltip>
                   <color blue="229" green="223" name="IO Area Background" red="221"/>
                 </value>
               </exp>
-              <pv trig="false">loc://$(COMPONENT)_PR(50)</pv>
-              <pv trig="true">loc://$(COMPONENT)_PSt(50)</pv>
+              <pv trig="false">loc://$(VALVE)_PR(50)</pv>
+              <pv trig="true">loc://$(VALVE)_PSt(50)</pv>
               <pv trig="true">$(pv_name)</pv>
               <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
             </rule>
@@ -1892,8 +1892,8 @@ class onGoingTask(Runnable):
 thread =Thread(onGoingTask());
 thread.start()
 ]]></scriptText>
-              <pv trig="true">loc://$(COMPONENT)_PR(50)</pv>
-              <pv trig="false">loc://$(COMPONENT)_PSt(50)</pv>
+              <pv trig="true">loc://$(VALVE)_PR(50)</pv>
+              <pv trig="false">loc://$(VALVE)_PSt(50)</pv>
             </path>
           </scripts>
           <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1906,7 +1906,7 @@ thread.start()
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <visible>true</visible>
-          <pv_name>loc://$(COMPONENT)_PSt(50)</pv_name>
+          <pv_name>loc://$(VALVE)_PSt(50)</pv_name>
           <vertical_alignment>1</vertical_alignment>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
@@ -1989,7 +1989,7 @@ thread.start()
           <multiline_input>false</multiline_input>
           <border_width>1</border_width>
           <visible>true</visible>
-          <pv_name>loc://_$(COMPONENT)_IR(35)</pv_name>
+          <pv_name>loc://_$(VALVE)_IR(35)</pv_name>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
           </border_color>
@@ -2049,8 +2049,8 @@ thread.start()
                   <color blue="229" green="223" name="IO Area Background" red="221"/>
                 </value>
               </exp>
-              <pv trig="false">loc://$(COMPONENT)_IR(35)</pv>
-              <pv trig="true">loc://$(COMPONENT)_ISt(35)</pv>
+              <pv trig="false">loc://$(VALVE)_IR(35)</pv>
+              <pv trig="true">loc://$(VALVE)_ISt(35)</pv>
               <pv trig="true">$(pv_name)</pv>
               <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
             </rule>
@@ -2085,8 +2085,8 @@ class onGoingTask(Runnable):
 thread =Thread(onGoingTask());
 thread.start()
 ]]></scriptText>
-              <pv trig="true">loc://$(COMPONENT)_IR(35)</pv>
-              <pv trig="false">loc://$(COMPONENT)_ISt(35)</pv>
+              <pv trig="true">loc://$(VALVE)_IR(35)</pv>
+              <pv trig="false">loc://$(VALVE)_ISt(35)</pv>
             </path>
           </scripts>
           <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2099,7 +2099,7 @@ thread.start()
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <visible>true</visible>
-          <pv_name>loc://$(COMPONENT)_ISt(35)</pv_name>
+          <pv_name>loc://$(VALVE)_ISt(35)</pv_name>
           <vertical_alignment>1</vertical_alignment>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
@@ -2182,7 +2182,7 @@ thread.start()
           <multiline_input>false</multiline_input>
           <border_width>1</border_width>
           <visible>true</visible>
-          <pv_name>loc://_$(COMPONENT)_DR(0)</pv_name>
+          <pv_name>loc://_$(VALVE)_DR(0)</pv_name>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
           </border_color>
@@ -2242,8 +2242,8 @@ thread.start()
                   <color blue="229" green="223" name="IO Area Background" red="221"/>
                 </value>
               </exp>
-              <pv trig="false">loc://$(COMPONENT)_DR(0)</pv>
-              <pv trig="true">loc://$(COMPONENT)_DSt(0)</pv>
+              <pv trig="false">loc://$(VALVE)_DR(0)</pv>
+              <pv trig="true">loc://$(VALVE)_DSt(0)</pv>
               <pv trig="true">$(pv_name)</pv>
               <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
             </rule>
@@ -2278,8 +2278,8 @@ class onGoingTask(Runnable):
 thread =Thread(onGoingTask());
 thread.start()
 ]]></scriptText>
-              <pv trig="true">loc://$(COMPONENT)_DR(0)</pv>
-              <pv trig="false">loc://$(COMPONENT)_DSt(0)</pv>
+              <pv trig="true">loc://$(VALVE)_DR(0)</pv>
+              <pv trig="false">loc://$(VALVE)_DSt(0)</pv>
             </path>
           </scripts>
           <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2292,7 +2292,7 @@ thread.start()
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <visible>true</visible>
-          <pv_name>loc://$(COMPONENT)_DSt(0)</pv_name>
+          <pv_name>loc://$(VALVE)_DSt(0)</pv_name>
           <vertical_alignment>1</vertical_alignment>
           <border_color>
             <color blue="0" green="0" name="IO Border" red="0"/>
@@ -2388,12 +2388,12 @@ if (confirm_ok == 1):
         i +=1
 ]]></scriptText>
               <pv trig="true">loc://$(DID)_SubmitPID(0)</pv>
-              <pv trig="false">loc://_$(COMPONENT)_PR(50)</pv>
-              <pv trig="false">loc://_$(COMPONENT)_IR(35)</pv>
-              <pv trig="false">loc://_$(COMPONENT)_DR(0)</pv>
-              <pv trig="false">loc://$(COMPONENT)_PR(50)</pv>
-              <pv trig="false">loc://$(COMPONENT)_IR(35)</pv>
-              <pv trig="false">loc://$(COMPONENT)_DR(0)</pv>
+              <pv trig="false">loc://_$(VALVE)_PR(50)</pv>
+              <pv trig="false">loc://_$(VALVE)_IR(35)</pv>
+              <pv trig="false">loc://_$(VALVE)_DR(0)</pv>
+              <pv trig="false">loc://$(VALVE)_PR(50)</pv>
+              <pv trig="false">loc://$(VALVE)_IR(35)</pv>
+              <pv trig="false">loc://$(VALVE)_DR(0)</pv>
             </path>
           </scripts>
           <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2466,7 +2466,7 @@ $(pv_value)</tooltip>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <visible>true</visible>
-        <pv_name>loc://$(COMPONENT)_AuMoR(1)</pv_name>
+        <pv_name>loc://$(VALVE)_AuMoR(1)</pv_name>
         <border_color>
           <color blue="0" green="0" name="IO Border" red="0"/>
         </border_color>
@@ -2527,7 +2527,7 @@ $(pv_value)</tooltip>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <visible>true</visible>
-        <pv_name>loc://$(COMPONENT)_MaMoR(0)</pv_name>
+        <pv_name>loc://$(VALVE)_MaMoR(0)</pv_name>
         <border_color>
           <color blue="0" green="0" name="IO Border" red="0"/>
         </border_color>
@@ -2588,7 +2588,7 @@ $(pv_value)</tooltip>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <visible>true</visible>
-        <pv_name>loc://$(COMPONENT)_FoMoR(0)</pv_name>
+        <pv_name>loc://$(VALVE)_FoMoR(0)</pv_name>
         <border_color>
           <color blue="0" green="0" name="IO Border" red="0"/>
         </border_color>
@@ -2636,7 +2636,7 @@ $(pv_value)</tooltip>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
-      <visible>true</visible>
+      <visible>false</visible>
       <border_color>
         <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
@@ -2716,7 +2716,7 @@ The PID monitors an input PV, determines if the input is out of range, and if so
     <wuid>-45a5416a:14ddca6456a:-7437</wuid>
     <transparent>true</transparent>
     <auto_size>false</auto_size>
-    <text>$(COMPONENT)</text>
+    <text>VALVE $(VALVE)</text>
     <scripts/>
     <height>25</height>
     <border_width>2</border_width>
@@ -2744,7 +2744,7 @@ The PID monitors an input PV, determines if the input is out of range, and if so
     </foreground_color>
     <actions hook="false" hook_all="false"/>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
   </widget>
 </display>
