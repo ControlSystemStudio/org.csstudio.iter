@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.103.201503301159</boy_version>
+  <boy_version>4.0.104.201508191015</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -188,6 +188,7 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
+          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -309,6 +310,7 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
+          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -390,6 +392,7 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
+          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -598,6 +601,8 @@
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -734,6 +739,8 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -870,6 +877,8 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -1006,6 +1015,8 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -1674,6 +1685,8 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
+                <on_state></on_state>
+                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -1850,7 +1863,7 @@ $(pv_value)</tooltip>
                 <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-                <border_style>0</border_style>
+                <border_style>1</border_style>
                 <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
                 <alarm_pulsing>false</alarm_pulsing>
                 <precision>0</precision>
@@ -1869,7 +1882,7 @@ $(pv_value)</tooltip>
                 <border_alarm_sensitive>false</border_alarm_sensitive>
                 <show_units>true</show_units>
                 <height>33</height>
-                <border_width>2</border_width>
+                <border_width>1</border_width>
                 <scale_options>
                   <width_scalable>false</width_scalable>
                   <height_scalable>false</height_scalable>
@@ -1879,7 +1892,7 @@ $(pv_value)</tooltip>
                 <pv_name>loc://$(DID)_V11("HWC8-YT1")</pv_name>
                 <vertical_alignment>1</vertical_alignment>
                 <border_color>
-                  <color name="IO Border" red="0" green="0" blue="0" />
+                  <color name="IO Button" red="178" green="178" blue="178" />
                 </border_color>
                 <precision_from_pv>true</precision_from_pv>
                 <widget_type>Text Update</widget_type>
@@ -1943,7 +1956,7 @@ $(pv_value)</tooltip>
                 <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-                <border_style>0</border_style>
+                <border_style>1</border_style>
                 <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
                 <alarm_pulsing>false</alarm_pulsing>
                 <precision>0</precision>
@@ -1962,7 +1975,7 @@ $(pv_value)</tooltip>
                 <border_alarm_sensitive>false</border_alarm_sensitive>
                 <show_units>true</show_units>
                 <height>33</height>
-                <border_width>2</border_width>
+                <border_width>1</border_width>
                 <scale_options>
                   <width_scalable>false</width_scalable>
                   <height_scalable>false</height_scalable>
@@ -1972,7 +1985,7 @@ $(pv_value)</tooltip>
                 <pv_name>loc://$(DID)_V12("Open")</pv_name>
                 <vertical_alignment>1</vertical_alignment>
                 <border_color>
-                  <color name="IO Border" red="0" green="0" blue="0" />
+                  <color name="IO Button" red="178" green="178" blue="178" />
                 </border_color>
                 <precision_from_pv>true</precision_from_pv>
                 <widget_type>Text Update</widget_type>
@@ -2078,6 +2091,8 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
+                <on_state></on_state>
+                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -2254,7 +2269,7 @@ $(pv_value)</tooltip>
                 <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-                <border_style>0</border_style>
+                <border_style>1</border_style>
                 <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
                 <alarm_pulsing>false</alarm_pulsing>
                 <precision>0</precision>
@@ -2273,7 +2288,7 @@ $(pv_value)</tooltip>
                 <border_alarm_sensitive>false</border_alarm_sensitive>
                 <show_units>true</show_units>
                 <height>33</height>
-                <border_width>2</border_width>
+                <border_width>1</border_width>
                 <scale_options>
                   <width_scalable>false</width_scalable>
                   <height_scalable>false</height_scalable>
@@ -2283,7 +2298,7 @@ $(pv_value)</tooltip>
                 <pv_name>loc://$(DID)_V21("HWC14-YT1")</pv_name>
                 <vertical_alignment>1</vertical_alignment>
                 <border_color>
-                  <color name="IO Border" red="0" green="0" blue="0" />
+                  <color name="IO Button" red="178" green="178" blue="178" />
                 </border_color>
                 <precision_from_pv>true</precision_from_pv>
                 <widget_type>Text Update</widget_type>
@@ -2347,7 +2362,7 @@ $(pv_value)</tooltip>
                 <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-                <border_style>0</border_style>
+                <border_style>1</border_style>
                 <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
                 <alarm_pulsing>false</alarm_pulsing>
                 <precision>0</precision>
@@ -2366,7 +2381,7 @@ $(pv_value)</tooltip>
                 <border_alarm_sensitive>false</border_alarm_sensitive>
                 <show_units>true</show_units>
                 <height>33</height>
-                <border_width>2</border_width>
+                <border_width>1</border_width>
                 <scale_options>
                   <width_scalable>false</width_scalable>
                   <height_scalable>false</height_scalable>
@@ -2376,7 +2391,7 @@ $(pv_value)</tooltip>
                 <pv_name>loc://$(DID)_V22("Fault")</pv_name>
                 <vertical_alignment>1</vertical_alignment>
                 <border_color>
-                  <color name="IO Border" red="0" green="0" blue="0" />
+                  <color name="IO Button" red="178" green="178" blue="178" />
                 </border_color>
                 <precision_from_pv>true</precision_from_pv>
                 <widget_type>Text Update</widget_type>
@@ -2482,6 +2497,8 @@ $(pv_value)</tooltip>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
                 <alarm_pulsing>false</alarm_pulsing>
+                <on_state></on_state>
+                <off_state></off_state>
                 <tooltip>$(pv_name)
 $(pv_value)</tooltip>
                 <rules />
@@ -2658,7 +2675,7 @@ $(pv_value)</tooltip>
                 <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-                <border_style>0</border_style>
+                <border_style>1</border_style>
                 <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
                 <alarm_pulsing>false</alarm_pulsing>
                 <precision>0</precision>
@@ -2677,7 +2694,7 @@ $(pv_value)</tooltip>
                 <border_alarm_sensitive>false</border_alarm_sensitive>
                 <show_units>true</show_units>
                 <height>33</height>
-                <border_width>2</border_width>
+                <border_width>1</border_width>
                 <scale_options>
                   <width_scalable>false</width_scalable>
                   <height_scalable>false</height_scalable>
@@ -2687,7 +2704,7 @@ $(pv_value)</tooltip>
                 <pv_name>loc://$(DID)_V31("HWC16-YT1")</pv_name>
                 <vertical_alignment>1</vertical_alignment>
                 <border_color>
-                  <color name="IO Border" red="0" green="0" blue="0" />
+                  <color name="IO Button" red="178" green="178" blue="178" />
                 </border_color>
                 <precision_from_pv>true</precision_from_pv>
                 <widget_type>Text Update</widget_type>
@@ -2751,7 +2768,7 @@ $(pv_value)</tooltip>
                 <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
               </font>
               <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-                <border_style>0</border_style>
+                <border_style>1</border_style>
                 <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
                 <alarm_pulsing>false</alarm_pulsing>
                 <precision>0</precision>
@@ -2770,7 +2787,7 @@ $(pv_value)</tooltip>
                 <border_alarm_sensitive>false</border_alarm_sensitive>
                 <show_units>true</show_units>
                 <height>33</height>
-                <border_width>2</border_width>
+                <border_width>1</border_width>
                 <scale_options>
                   <width_scalable>false</width_scalable>
                   <height_scalable>false</height_scalable>
@@ -2780,7 +2797,7 @@ $(pv_value)</tooltip>
                 <pv_name>loc://$(DID)_V32("Normal")</pv_name>
                 <vertical_alignment>1</vertical_alignment>
                 <border_color>
-                  <color name="IO Border" red="0" green="0" blue="0" />
+                  <color name="IO Button" red="178" green="178" blue="178" />
                 </border_color>
                 <precision_from_pv>true</precision_from_pv>
                 <widget_type>Text Update</widget_type>
@@ -2847,7 +2864,7 @@ $(pv_value)</tooltip>
           <macros>
             <include_parent_macros>true</include_parent_macros>
           </macros>
-          <replace>1</replace>
+          <mode>0</mode>
           <description></description>
         </action>
       </actions>
@@ -2892,6 +2909,7 @@ $(pv_value)</tooltip>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>
@@ -2978,6 +2996,8 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
+            <on_state></on_state>
+            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -2989,7 +3009,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3012,7 +3032,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3079,6 +3099,8 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
+            <on_state></on_state>
+            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3090,7 +3112,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3113,7 +3135,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3225,6 +3247,8 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
+            <on_state></on_state>
+            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3236,7 +3260,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3259,7 +3283,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3326,6 +3350,8 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
+            <on_state></on_state>
+            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3337,7 +3363,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3360,7 +3386,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3472,6 +3498,8 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
+            <on_state></on_state>
+            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3483,7 +3511,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3506,7 +3534,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3573,6 +3601,8 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
+            <on_state></on_state>
+            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3584,7 +3614,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3607,7 +3637,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3719,6 +3749,8 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
+            <on_state></on_state>
+            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3730,7 +3762,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3753,7 +3785,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3820,6 +3852,8 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
+            <on_state></on_state>
+            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3831,7 +3865,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3854,7 +3888,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -3966,6 +4000,8 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
+            <on_state></on_state>
+            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -3977,7 +4013,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -4000,7 +4036,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -4067,6 +4103,8 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
+            <on_state></on_state>
+            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules>
@@ -4078,7 +4116,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -4101,7 +4139,7 @@ $(pv_value)</tooltip>
                 </exp>
                 <exp bool_exp="pvSev0==-1">
                   <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="255" blue="255" />
+                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
                   </value>
                 </exp>
                 <exp bool_exp="pvSev0==1">
@@ -4249,6 +4287,7 @@ $(pv_value)</tooltip>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>
@@ -4260,6 +4299,7 @@ $(pv_value)</tooltip>
         <rules />
         <enabled>true</enabled>
         <wuid>-57352fd0:149859b9257:-18dd</wuid>
+        <scripts />
         <height>943</height>
         <border_width>2</border_width>
         <scale_options>

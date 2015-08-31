@@ -137,6 +137,7 @@ function addHomeButton(elt) {
     // adding macros CBS and OPI_FILE to the container
 	linkingContainer.addMacro("CBS", cbs_name);	
 	linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));	
+	linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
 	addOPImacros(linkingContainer, elt);	
 
 	// adding the linking container to the navigation widget
@@ -162,6 +163,7 @@ function addUpButton(elt) {
     // adding macros CBS and OPI_FILE to the container
 	linkingContainer.addMacro("CBS", elt.getAttributeValue("name"));	
 	linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));	
+	linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
 	addOPImacros(linkingContainer, elt);	
 
 	// adding the linking container to the navigation widget
@@ -223,6 +225,7 @@ function addMimicButtons(root) {
 		    // adding macros CBS and OPI_FILE to the container
 			linkingContainer.addMacro("CBS", elt.getAttributeValue("name"));	
 			linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));
+			linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
 			addOPImacros(linkingContainer, elt);	
 		
 			// adding the linking container to the navigation widget
@@ -247,6 +250,12 @@ function getOPI_FILE(elt) {
     	// suppressing the extension .opi
     	return attribute.substring(0, attribute.search(".opi"));
     }
+    return attribute;
+}
+
+function getALARM_ROOT(elt) {
+	var attribute = elt.getAttributeValue("alarm_root");
+
     return attribute;
 }
 

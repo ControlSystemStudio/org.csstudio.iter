@@ -34,7 +34,7 @@ public class InterpreterUtils {
 	/**
 	 * Creates a Python interpreter by attempting to read where the python
 	 * command being used originates.
-	 * 
+	 *
 	 * @param name
 	 * @param monitor
 	 * @throws Exception
@@ -102,12 +102,11 @@ public class InterpreterUtils {
 	/**
 	 * We programmatically create a Jython Interpreter so that the user does not
 	 * have to.
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	public static boolean createJythonInterpreter(final String name,
 			final IProgressMonitor mon) throws Exception {
-
 		final JythonInterpreterManager man = (JythonInterpreterManager) PydevPlugin
 				.getJythonInterpreterManager();
 		InterpreterInfo info = null;
@@ -118,7 +117,7 @@ public class InterpreterUtils {
 		}
 		// Code copies from Pydev when the user chooses a Jython interpreter
 		// - these are the defaults.
-		final File jydir = BundleUtils.getBundleLocation("org.python.jython");
+		final File jydir = BundleUtils.getBundleLocation("org.csstudio.iter.pydev.configurator");
 		File exeFile = new File(jydir, "jython.jar");
 		if (!exeFile.exists()) {
 			//by jbobnar: the latest org.python.jython no longer includes the jython.jar. Instead the contents
@@ -183,9 +182,9 @@ public class InterpreterUtils {
 				"PyDev workspace saved with interpreter: " + name);
 
 		man.clearCaches();
-		
+
 		updateInitialInterpreterCmds();
-		
+
 		return true;
 	}
 

@@ -1,193 +1,120 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <databrowser>
-<xyGraphSettings>
-    <axisSettingsList>
-        <autoFormat>true</autoFormat>
-        <autoScale>false</autoScale>
-        <autoScaleThreshold>0.01</autoScaleThreshold>
-        <dashGridLine>true</dashGridLine>
-        <dateEnabled>true</dateEnabled>
-        <foregroundColor>
-            <blue>0</blue>
-            <green>0</green>
-            <red>0</red>
-        </foregroundColor>
-        <formatPattern>HH:mm:ss</formatPattern>
-        <logScale>false</logScale>
-        <majorGridColor>
-            <blue>200</blue>
-            <green>200</green>
-            <red>200</red>
-        </majorGridColor>
-        <onPrimarySide>true</onPrimarySide>
-        <range>
-            <lower>1.418995354094E12</lower>
-            <upper>1.418995654094E12</upper>
-        </range>
-        <scaleFont>1|DejaVu Sans Mono|26.0|0|GTK|1|</scaleFont>
-        <showMajorGrid>false</showMajorGrid>
-        <title>Time</title>
-        <titleFont>1|DejaVu Sans Mono|26.0|1|GTK|1|</titleFont>
-    </axisSettingsList>
-    <axisSettingsList>
-        <autoFormat>true</autoFormat>
-        <autoScale>false</autoScale>
-        <autoScaleThreshold>0.1</autoScaleThreshold>
-        <dashGridLine>true</dashGridLine>
-        <dateEnabled>false</dateEnabled>
-        <foregroundColor>
-            <blue>0</blue>
-            <green>0</green>
-            <red>0</red>
-        </foregroundColor>
-        <formatPattern>############.##</formatPattern>
-        <logScale>false</logScale>
-        <majorGridColor>
-            <blue>200</blue>
-            <green>200</green>
-            <red>200</red>
-        </majorGridColor>
-        <onPrimarySide>true</onPrimarySide>
-        <range>
-            <lower>100.0</lower>
-            <upper>610.0</upper>
-        </range>
-        <scaleFont>1|DejaVu Sans Mono|26.0|0|GTK|1|</scaleFont>
-        <showMajorGrid>false</showMajorGrid>
-        <title>Value</title>
-        <titleFont>1|DejaVu Sans Mono|26.0|1|GTK|1|</titleFont>
-    </axisSettingsList>
-    <axisSettingsList>
-        <autoFormat>true</autoFormat>
-        <autoScale>false</autoScale>
-        <autoScaleThreshold>0.01</autoScaleThreshold>
-        <dashGridLine>true</dashGridLine>
-        <dateEnabled>false</dateEnabled>
-        <foregroundColor>
-            <blue>26</blue>
-            <green>26</green>
-            <red>242</red>
-        </foregroundColor>
-        <formatPattern>############.##</formatPattern>
-        <logScale>false</logScale>
-        <majorGridColor>
-            <blue>200</blue>
-            <green>200</green>
-            <red>200</red>
-        </majorGridColor>
-        <onPrimarySide>true</onPrimarySide>
-        <range>
-            <lower>100.0</lower>
-            <upper>610.0</upper>
-        </range>
-        <scaleFont>1|DejaVu Sans Mono|26.0|0|GTK|1|</scaleFont>
-        <showMajorGrid>false</showMajorGrid>
-        <title>sim://noise(600,610,1)</title>
-        <titleFont>1|DejaVu Sans Mono|26.0|1|GTK|1|</titleFont>
-    </axisSettingsList>
-    <plotAreaBackColor>
-        <blue>255</blue>
-        <green>255</green>
-        <red>255</red>
-    </plotAreaBackColor>
-    <showLegend>true</showLegend>
-    <showPlotAreaBorder>false</showPlotAreaBorder>
-    <showTitle>true</showTitle>
-    <title></title>
-    <titleColor>
-        <blue>0</blue>
-        <green>0</green>
-        <red>0</red>
-    </titleColor>
-    <titleFont>1|DejaVu Sans Mono|12.0|1|GTK|1|</titleFont>
-    <traceSettingsList>
-        <antiAliasing>true</antiAliasing>
-        <areaAlpha>100</areaAlpha>
-        <baseLine>ZERO</baseLine>
-        <drawYErrorInArea>true</drawYErrorInArea>
-        <errorBarCapWidth>4</errorBarCapWidth>
-        <errorBarColor>
-            <blue>196</blue>
-            <green>21</green>
-            <red>21</red>
-        </errorBarColor>
-        <errorBarEnabled>true</errorBarEnabled>
-        <lineWidth>2</lineWidth>
-        <name>sim://noise(100,125,1)</name>
-        <pointSize>4</pointSize>
-        <pointStyle>NONE</pointStyle>
-        <traceColor>
-            <blue>196</blue>
-            <green>21</green>
-            <red>21</red>
-        </traceColor>
-        <traceType>SOLID_LINE</traceType>
-        <xAxis>0</xAxis>
-        <xErrorBarType>BOTH</xErrorBarType>
-        <yAxis>0</yAxis>
-        <yErrorBarType>BOTH</yErrorBarType>
-    </traceSettingsList>
-    <traceSettingsList>
-        <antiAliasing>true</antiAliasing>
-        <areaAlpha>100</areaAlpha>
-        <baseLine>ZERO</baseLine>
-        <drawYErrorInArea>true</drawYErrorInArea>
-        <errorBarCapWidth>4</errorBarCapWidth>
-        <errorBarColor>
-            <blue>26</blue>
-            <green>26</green>
-            <red>242</red>
-        </errorBarColor>
-        <errorBarEnabled>true</errorBarEnabled>
-        <lineWidth>2</lineWidth>
-        <name>sim://noise(600,610,1)</name>
-        <pointSize>4</pointSize>
-        <pointStyle>NONE</pointStyle>
-        <traceColor>
-            <blue>26</blue>
-            <green>26</green>
-            <red>242</red>
-        </traceColor>
-        <traceType>STEP_HORIZONTALLY</traceType>
-        <xAxis>0</xAxis>
-        <xErrorBarType>BOTH</xErrorBarType>
-        <yAxis>0</yAxis>
-        <yErrorBarType>BOTH</yErrorBarType>
-    </traceSettingsList>
-    <transparent>false</transparent>
-</xyGraphSettings>
+    <title>Noise signals</title>
+    <save_changes>true</save_changes>
+    <show_legend>true</show_legend>
+    <show_toolbar>true</show_toolbar>
+    <grid>false</grid>
     <scroll>true</scroll>
     <update_period>3.0</update_period>
-    <start>2014/12/19 13:20:17.309</start>
-    <end>2014/12/19 13:25:17.309</end>
+    <scroll_step>5</scroll_step>
+    <start>-30.08 min</start>
+    <end>now</end>
     <archive_rescale>NONE</archive_rescale>
+    <background>
+        <red>235</red>
+        <green>235</green>
+        <blue>235</blue>
+    </background>
+    <title_font>DejaVu Sans Mono|18|1</title_font>
+    <label_font>DejaVu Sans Mono|12|1</label_font>
+    <scale_font>DejaVu Sans Mono|12|0</scale_font>
+    <legend_font>DejaVu Sans Mono|10|0</legend_font>
+    <axes>
+        <axis>
+            <visible>false</visible>
+            <name>sim://noise(100,125,1)</name>
+            <use_axis_name>false</use_axis_name>
+            <use_trace_names>true</use_trace_names>
+            <right>false</right>
+            <color>
+                <red>21</red>
+                <green>21</green>
+                <blue>196</blue>
+            </color>
+            <min>100.0</min>
+            <max>610.0</max>
+            <grid>false</grid>
+            <autoscale>false</autoscale>
+            <log_scale>false</log_scale>
+        </axis>
+        <axis>
+            <visible>true</visible>
+            <name>sim://noise(600,610,1)</name>
+            <use_axis_name>false</use_axis_name>
+            <use_trace_names>true</use_trace_names>
+            <right>false</right>
+            <color>
+                <red>242</red>
+                <green>26</green>
+                <blue>26</blue>
+            </color>
+            <min>100.0</min>
+            <max>610.0</max>
+            <grid>false</grid>
+            <autoscale>false</autoscale>
+            <log_scale>false</log_scale>
+        </axis>
+    </axes>
+    <annotations>
+    </annotations>
     <pvlist>
         <pv>
-            <name>sim://noise(100,125,1)</name>
+            <display_name>sim://noise(100,125,1)</display_name>
             <visible>true</visible>
-            <axis>0</axis>
+            <name>sim://noise(100,125,1)</name>
+            <axis>1</axis>
+            <color>
+                <red>21</red>
+                <green>21</green>
+                <blue>196</blue>
+            </color>
+            <trace_type>AREA</trace_type>
+            <linewidth>2</linewidth>
+            <point_type>NONE</point_type>
+            <point_size>2</point_size>
             <waveform_index>0</waveform_index>
             <period>0.0</period>
             <ring_size>5000</ring_size>
             <request>OPTIMIZED</request>
             <archive>
-                <name>Archive RDB</name>
-                <url>jdbc:postgresql://4501DS-SRV-0001.codac.iter.org/css_archive_3_0_0</url>
+                <name>Local Archive RDB</name>
+                <url>jdbc:postgresql://localhost/css_archive_3_0_0</url>
                 <key>1</key>
+            </archive>
+            <archive>
+                <name>Snapshot RDB</name>
+                <url>jdbc:postgresql://4504ds-srv-0008.codac.iter.org/css_archive_3_0_0</url>
+                <key>2</key>
             </archive>
         </pv>
         <pv>
-            <name>sim://noise(600,610,1)</name>
+            <display_name>sim://noise(600,610,1)</display_name>
             <visible>true</visible>
-            <axis>0</axis>
+            <name>sim://noise(600,610,1)</name>
+            <axis>1</axis>
+            <color>
+                <red>242</red>
+                <green>26</green>
+                <blue>26</blue>
+            </color>
+            <trace_type>AREA</trace_type>
+            <linewidth>2</linewidth>
+            <point_type>NONE</point_type>
+            <point_size>2</point_size>
             <waveform_index>0</waveform_index>
             <period>0.0</period>
             <ring_size>5000</ring_size>
             <request>OPTIMIZED</request>
             <archive>
-                <name>Archive RDB</name>
-                <url>jdbc:postgresql://4501DS-SRV-0001.codac.iter.org/css_archive_3_0_0</url>
+                <name>Local Archive RDB</name>
+                <url>jdbc:postgresql://localhost/css_archive_3_0_0</url>
                 <key>1</key>
+            </archive>
+            <archive>
+                <name>Snapshot RDB</name>
+                <url>jdbc:postgresql://4504ds-srv-0008.codac.iter.org/css_archive_3_0_0</url>
+                <key>2</key>
             </archive>
         </pv>
     </pvlist>

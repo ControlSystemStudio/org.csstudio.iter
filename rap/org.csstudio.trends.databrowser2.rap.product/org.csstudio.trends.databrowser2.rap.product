@@ -29,6 +29,8 @@
    <features>
       <feature id="org.csstudio.trends.databrowser2.rap.feature"/>
       <feature id="org.csstudio.iter.trends.databrowser2.rap.feature"/>
+      <feature id="org.csstudio.jdbc.feature"/>
+      <feature id="org.csstudio.archive.reader.rdb.feature"/>
    </features>
 
    <configurations>
@@ -37,7 +39,9 @@
       <plugin id="org.antlr.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.apputil" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.apputil.ui" autoStart="true" startLevel="0" />
+      <plugin id="org.csstudio.archive.rdb" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.archive.reader" autoStart="true" startLevel="0" />
+      <plugin id="org.csstudio.archive.reader.rdb" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.archive.vtype" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.autocomplete" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.autocomplete.archive" autoStart="true" startLevel="0" />

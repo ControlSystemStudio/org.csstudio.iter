@@ -10,14 +10,12 @@ package org.csstudio.iter.css.product;
 import org.csstudio.iter.css.product.util.WorkbenchUtil;
 import org.csstudio.startup.application.OpenDocumentEventProcessor;
 import org.csstudio.utility.product.ApplicationWorkbenchAdvisor;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.ui.IMemento;
 import org.eclipse.ui.application.IWorkbenchConfigurer;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 
 /**
- * 
+ *
  * <code>ITERWorkbenchAdvisor</code> is an extension of default advisor that disables
  * certain perspectives, logs and bindings.
  *
@@ -29,7 +27,7 @@ public class ITERWorkbenchAdvisor extends ApplicationWorkbenchAdvisor {
 	public ITERWorkbenchAdvisor(OpenDocumentEventProcessor openDocProcessor) {
 		super(openDocProcessor);
 	}
-	
+
 	/*
 	 * (non-Javadoc)
 	 * @see org.csstudio.utility.product.ApplicationWorkbenchAdvisor#initialize(org.eclipse.ui.application.IWorkbenchConfigurer)
@@ -39,10 +37,10 @@ public class ITERWorkbenchAdvisor extends ApplicationWorkbenchAdvisor {
 		super.initialize(configurer);
 		WorkbenchUtil.removeUnWantedPerspectives();
 		WorkbenchUtil.unbindDuplicateBindings();
-		
-		
+
+
 	}
-	
+
 	/*
 	 * (non-Javadoc)
 	 * @see org.csstudio.utility.product.ApplicationWorkbenchAdvisor#createWorkbenchWindowAdvisor(org.eclipse.ui.application.IWorkbenchWindowConfigurer)
@@ -52,10 +50,4 @@ public class ITERWorkbenchAdvisor extends ApplicationWorkbenchAdvisor {
 			IWorkbenchWindowConfigurer configurer) {
 		return new ITERWorkbenchWindowAdvisor(configurer);
 	}
-	
-	@Override
-	public IStatus restoreState(IMemento memento) {
-		return super.restoreState(memento);
-	}
-
 }

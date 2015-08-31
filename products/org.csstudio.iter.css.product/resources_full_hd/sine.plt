@@ -1,124 +1,74 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <databrowser>
-<xyGraphSettings>
-    <axisSettingsList>
-        <autoFormat>true</autoFormat>
-        <autoScale>true</autoScale>
-        <autoScaleThreshold>0.01</autoScaleThreshold>
-        <dashGridLine>true</dashGridLine>
-        <dateEnabled>true</dateEnabled>
-        <foregroundColor>
-            <blue>0</blue>
-            <green>0</green>
-            <red>0</red>
-        </foregroundColor>
-        <formatPattern>HH:mm:ss</formatPattern>
-        <logScale>false</logScale>
-        <majorGridColor>
-            <blue>200</blue>
-            <green>200</green>
-            <red>200</red>
-        </majorGridColor>
-        <onPrimarySide>true</onPrimarySide>
-        <range>
-            <lower>1.41899456832E12</lower>
-            <upper>1.41899458832E12</upper>
-        </range>
-        <scaleFont>1|DejaVu LGC Sans Mono|20.0|0|GTK|1|</scaleFont>
-        <showMajorGrid>false</showMajorGrid>
-        <title>Time</title>
-        <titleFont>1|DejaVu LGC Sans Mono|26.0|0|GTK|1|</titleFont>
-    </axisSettingsList>
-    <axisSettingsList>
-        <autoFormat>true</autoFormat>
-        <autoScale>false</autoScale>
-        <autoScaleThreshold>0.1</autoScaleThreshold>
-        <dashGridLine>true</dashGridLine>
-        <dateEnabled>false</dateEnabled>
-        <foregroundColor>
-            <blue>0</blue>
-            <green>0</green>
-            <red>0</red>
-        </foregroundColor>
-        <formatPattern>############.##</formatPattern>
-        <logScale>false</logScale>
-        <majorGridColor>
-            <blue>200</blue>
-            <green>200</green>
-            <red>200</red>
-        </majorGridColor>
-        <onPrimarySide>true</onPrimarySide>
-        <range>
-            <lower>-5.0</lower>
-            <upper>5.0</upper>
-        </range>
-        <scaleFont>1|DejaVu LGC Sans Mono|20.0|0|GTK|1|</scaleFont>
-        <showMajorGrid>false</showMajorGrid>
-        <title>sim://sine</title>
-        <titleFont>1|DejaVu LGC Sans Mono|26.0|0|GTK|1|</titleFont>
-    </axisSettingsList>
-    <plotAreaBackColor>
-        <blue>235</blue>
-        <green>235</green>
-        <red>235</red>
-    </plotAreaBackColor>
-    <showLegend>false</showLegend>
-    <showPlotAreaBorder>true</showPlotAreaBorder>
-    <showTitle>true</showTitle>
-    <title>Data Browser Widget</title>
-    <titleColor>
-        <blue>0</blue>
-        <green>0</green>
-        <red>0</red>
-    </titleColor>
-    <titleFont>1|DejaVu Sans Mono|36.0|0|GTK|1|</titleFont>
-    <traceSettingsList>
-        <antiAliasing>true</antiAliasing>
-        <areaAlpha>100</areaAlpha>
-        <baseLine>ZERO</baseLine>
-        <drawYErrorInArea>true</drawYErrorInArea>
-        <errorBarCapWidth>4</errorBarCapWidth>
-        <errorBarColor>
-            <blue>196</blue>
-            <green>21</green>
-            <red>21</red>
-        </errorBarColor>
-        <errorBarEnabled>true</errorBarEnabled>
-        <lineWidth>3</lineWidth>
-        <name>sim://sine</name>
-        <pointSize>4</pointSize>
-        <pointStyle>NONE</pointStyle>
-        <traceColor>
-            <blue>196</blue>
-            <green>21</green>
-            <red>21</red>
-        </traceColor>
-        <traceType>STEP_HORIZONTALLY</traceType>
-        <xAxis>0</xAxis>
-        <xErrorBarType>BOTH</xErrorBarType>
-        <yAxis>0</yAxis>
-        <yErrorBarType>BOTH</yErrorBarType>
-    </traceSettingsList>
-    <transparent>false</transparent>
-</xyGraphSettings>
+    <title>Sine Wave</title>
+    <save_changes>true</save_changes>
+    <show_legend>true</show_legend>
+    <show_toolbar>true</show_toolbar>
+    <grid>true</grid>
     <scroll>true</scroll>
     <update_period>3.0</update_period>
-    <start>-20.0 seconds</start>
+    <scroll_step>5</scroll_step>
+    <start>-35.00 sec</start>
     <end>now</end>
     <archive_rescale>NONE</archive_rescale>
+    <background>
+        <red>235</red>
+        <green>235</green>
+        <blue>235</blue>
+    </background>
+    <title_font>DejaVu Sans Mono|18|1</title_font>
+    <label_font>DejaVu Sans Mono|12|0</label_font>
+    <scale_font>DejaVu Sans Mono|12|0</scale_font>
+    <legend_font>DejaVu Sans Mono|10|0</legend_font>
+    <axes>
+        <axis>
+            <visible>true</visible>
+            <name>sim://sine</name>
+            <use_axis_name>true</use_axis_name>
+            <use_trace_names>false</use_trace_names>
+            <right>false</right>
+            <color>
+                <red>21</red>
+                <green>21</green>
+                <blue>196</blue>
+            </color>
+            <min>-5.0</min>
+            <max>5.0</max>
+            <grid>true</grid>
+            <autoscale>false</autoscale>
+            <log_scale>false</log_scale>
+        </axis>
+    </axes>
+    <annotations>
+    </annotations>
     <pvlist>
         <pv>
-            <name>sim://sine</name>
+            <display_name>sim://sine</display_name>
             <visible>true</visible>
+            <name>sim://sine</name>
             <axis>0</axis>
+            <color>
+                <red>21</red>
+                <green>21</green>
+                <blue>196</blue>
+            </color>
+            <trace_type>AREA</trace_type>
+            <linewidth>3</linewidth>
+            <point_type>NONE</point_type>
+            <point_size>2</point_size>
             <waveform_index>0</waveform_index>
             <period>0.0</period>
             <ring_size>5000</ring_size>
             <request>OPTIMIZED</request>
             <archive>
-                <name>Archive RDB</name>
-                <url>jdbc:postgresql://4501DS-SRV-0001.codac.iter.org/css_archive_3_0_0</url>
+                <name>Local Archive RDB</name>
+                <url>jdbc:postgresql://localhost/css_archive_3_0_0</url>
                 <key>1</key>
+            </archive>
+            <archive>
+                <name>Snapshot RDB</name>
+                <url>jdbc:postgresql://4504ds-srv-0008.codac.iter.org/css_archive_3_0_0</url>
+                <key>2</key>
             </archive>
         </pv>
     </pvlist>

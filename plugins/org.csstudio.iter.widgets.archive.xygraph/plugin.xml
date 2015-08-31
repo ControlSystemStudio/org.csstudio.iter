@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.csstudio.opibuilder.widget">
+      <widget
+            category="Monitors"
+            description="A widget that is able to plot 1D or 2D data from PVs."
+            editpart_class="org.csstudio.iter.widgets.archive.xygraph.editparts.ArchiveXYGraphEditPart"
+            icon="icons/XYGraph.gif"
+            model_class="org.csstudio.iter.widgets.archive.xygraph.model.ArchiveXYGraphModel"
+            name="Archive XY Graph"
+            typeId="org.csstudio.iter.widgets.archive.archiveXYGraph">
+      </widget>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.csstudio.iter.widgets.archive.archiveXYGraph"
+            objectClass="org.csstudio.iter.widgets.archive.xygraph.editparts.ArchiveXYGraphEditPart">
+         <action
+               class="org.csstudio.iter.widgets.archive.xygraph.actions.ShowArchiveXYGraphToolbarAction"
+               enablesFor="1"
+               id="org.csstudio.iter.widgets.archive.xygraph.showToolbarAction"
+               label="Show/Hide Graph Toolbar"
+               menubarPath="xygraph"
+               tooltip="Show/Hide XY-Graph Toolbar">
+         </action>
+         <action
+               class="org.csstudio.iter.widgets.archive.xygraph.actions.ClearArchiveXYGraphAction"
+               enablesFor="1"
+               id="org.csstudio.iter.widgets.archive.xygraph.clearGraphAction"
+               label="Clear Graph"
+               menubarPath="xygraph"
+               tooltip="Clear Graph">
+         </action>
+      </objectContribution>
+   </extension>
+</plugin>
