@@ -5,7 +5,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
-package org.csstudio.iter.widgets.archive.xygraph;
+package org.csstudio.iter.widgets.archive.databrowser2;
 
 import java.util.logging.Logger;
 
@@ -20,7 +20,7 @@ import org.osgi.framework.BundleContext;
  */
 public class Activator extends AbstractUIPlugin {
     /** Plug-in ID registered in MANIFEST.MF */
-    public static final String PLUGIN_ID = "org.csstudio.iter.widgets.archive.xygraph"; //$NON-NLS-1$
+    public static final String PLUGIN_ID = "org.csstudio.iter.widgets.archive.databrowser2"; //$NON-NLS-1$
 
     // The shared instance
     private static Activator plugin;
