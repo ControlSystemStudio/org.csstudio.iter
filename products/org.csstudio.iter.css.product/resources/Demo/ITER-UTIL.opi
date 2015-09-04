@@ -12,7 +12,7 @@
     <TITLE>UTIL OVERVIEW</TITLE>
     <LEVEL>ITER-UTIL</LEVEL>
   </macros>
-  <boy_version>4.0.103.201506081322</boy_version>
+  <boy_version>4.0.104.201508270735</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -1090,7 +1090,7 @@ $(pv_value)</tooltip>
           <macros>
             <include_parent_macros>true</include_parent_macros>
           </macros>
-          <replace>1</replace>
+          <mode>0</mode>
           <description></description>
         </action>
       </actions>
@@ -1270,8 +1270,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -1371,8 +1394,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -1517,8 +1563,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -1618,8 +1687,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -1764,8 +1856,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -1865,8 +1980,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -2011,8 +2149,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -2112,8 +2273,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -2258,8 +2442,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -2359,8 +2566,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -2505,8 +2735,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -2606,8 +2859,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -2752,8 +3028,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -2853,8 +3152,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -2999,8 +3321,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -3100,8 +3445,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -3246,8 +3614,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -3347,8 +3738,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -3493,8 +3907,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -3594,8 +4031,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -3740,8 +4200,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -3841,8 +4324,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -3987,8 +4493,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -4088,8 +4617,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -4234,8 +4786,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -4335,8 +4910,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -4481,8 +5079,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -4582,8 +5203,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -4728,8 +5372,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -4829,8 +5496,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -4975,8 +5665,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -5076,8 +5789,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -5222,8 +5958,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -5323,8 +6082,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -5469,8 +6251,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -5570,8 +6375,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -5716,8 +6544,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
@@ -5817,8 +6668,31 @@ $(pv_value)</tooltip>
                 </exp>
                 <pv trig="true">$(pv_name)</pv>
               </rule>
+              <rule name="TextColorSeverityRule" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pvSev0==0">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==-1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==1">
+                  <value>
+                    <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pvSev0==2">
+                  <value>
+                    <color name="IO Foreground" red="0" green="0" blue="0" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+              </rule>
             </rules>
-            <effect_3d>true</effect_3d>
+            <effect_3d>false</effect_3d>
             <bit>-1</bit>
             <pv_value />
             <height>50</height>
