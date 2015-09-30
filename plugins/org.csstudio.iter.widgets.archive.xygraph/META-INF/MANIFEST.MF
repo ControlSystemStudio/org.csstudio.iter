@@ -26,9 +26,11 @@ Require-Bundle: org.eclipse.core.runtime,
  org.epics.util;bundle-version="0.3.2",
  org.csstudio.csdata;bundle-version="3.2.0",
  org.jdom,
- org.csstudio.trends.databrowser2
+ org.csstudio.iter.widgets.archive.databrowser2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.csstudio.iter.widgets.archive.xygraph.actions,
  org.csstudio.iter.widgets.archive.xygraph.editparts,
  org.csstudio.iter.widgets.archive.xygraph.model
+Import-Package: org.csstudio.archive.vtype,
+ org.csstudio.trends.databrowser2.model
