@@ -10,7 +10,7 @@
     <include_parent_macros>true</include_parent_macros>
     <COMPONENT>UTIL-S15-AG07:MUT9</COMPONENT>
   </macros>
-  <boy_version>4.0.104.201508311235</boy_version>
+  <boy_version>4.0.104.201509301353</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -1268,7 +1268,7 @@ $(trace_0_y_pv_value)</tooltip>
       <fc>false</fc>
       <show_scrollbar>false</show_scrollbar>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">Default</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
       </font>
       <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
         <border_style>13</border_style>
@@ -1322,48 +1322,24 @@ $(trace_0_y_pv_value)</tooltip>
           <pv_value/>
           <text>Submit</text>
           <scripts>
-            <path checkConnect="true" pathString="scripts/validate_MTTnSR.js" seoe="false" sfe="true">
-              <pv trig="false">loc://_$(COMPONENT)-MTT1SR(-1)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT1SRSt(140)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT5SRSt(150)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT1SRV(0)</pv>
+            <path checkConnect="true" pathString="scripts/submit_TTnMSPo.js" seoe="false" sfe="true">
               <pv trig="true">loc://$(DID)_Submit(0)</pv>
-            </path>
-            <path checkConnect="true" pathString="scripts/validate_MTTnSR.js" seoe="false" sfe="true">
-              <pv trig="false">loc://_$(COMPONENT)-MTT2SR(-1)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT2SRSt(140)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT6SRSt(150)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT2SRV(0)</pv>
-              <pv trig="true">loc://$(DID)_Submit(0)</pv>
-            </path>
-            <path checkConnect="true" pathString="scripts/validate_MTTnSR.js" seoe="false" sfe="true">
-              <pv trig="false">loc://_$(COMPONENT)-MTT3SR(-1)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT3SRSt(140)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT7SRSt(150)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT3SRV(0)</pv>
-              <pv trig="true">loc://$(DID)_Submit(0)</pv>
-            </path>
-            <path checkConnect="true" pathString="scripts/validate_MTTnSR.js" seoe="false" sfe="true">
-              <pv trig="false">loc://_$(COMPONENT)-MTT4SR(-1)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT4SRSt(60)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT8SRSt(80)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT4SRV(0)</pv>
-              <pv trig="true">loc://$(DID)_Submit(0)</pv>
-            </path>
-            <path checkConnect="true" pathString="scripts/submit_MTTnSR.js" seoe="false" sfe="true">
-              <pv trig="true">loc://$(DID)_Submit(0)</pv>
-              <pv trig="false">loc://_$(COMPONENT)-MTT1SR(-1)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT1SRSt(140)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT1SRV(0)</pv>
-              <pv trig="false">loc://_$(COMPONENT)-MTT2SR(-1)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT2SRSt(140)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT2SRV(0)</pv>
-              <pv trig="false">loc://_$(COMPONENT)-MTT3SR(-1)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT3SRSt(140)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT3SRV(0)</pv>
-              <pv trig="false">loc://_$(COMPONENT)-MTT4SR(-1)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT4SRSt(60)</pv>
-              <pv trig="false">loc://$(COMPONENT)-MTT4SRV(0)</pv>
+              <pv trig="false">loc://_$(COMPONENT)-TT1MSPo(-1)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT1MSPo(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT1MSPoBak(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
+              <pv trig="false">loc://_$(COMPONENT)-TT2MSPo(-1)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT2MSPo(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT2MSPoBak(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
+              <pv trig="false">loc://_$(COMPONENT)-TT3MSPo(-1)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT3MSPo(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT3MSPoBak(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
+              <pv trig="false">loc://_$(COMPONENT)-TT4MSPo(-1)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT4MSPo(60)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT4MSPoBak(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
             </path>
           </scripts>
           <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1382,9 +1358,9 @@ $(trace_0_y_pv_value)</tooltip>
           </border_color>
           <widget_type>Action Button</widget_type>
           <width>100</width>
-          <x>72</x>
+          <x>9</x>
           <name>Submit</name>
-          <y>291</y>
+          <y>304</y>
           <style>1</style>
           <foreground_color>
             <color blue="0" green="0" name="IO Foreground" red="0"/>
@@ -1432,7 +1408,7 @@ $(trace_0_y_pv_value)</tooltip>
           <width>245</width>
           <x>-1</x>
           <name>TT1</name>
-          <y>69</y>
+          <y>81</y>
           <foreground_color>
             <color blue="0" green="0" name="IO Foreground" red="0"/>
           </foreground_color>
@@ -1445,17 +1421,38 @@ $(trace_0_y_pv_value)</tooltip>
           <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
             <alarm_pulsing>false</alarm_pulsing>
             <precision>0</precision>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+            <tooltip>$(COMPONENT) Alarm Setpoint Input</tooltip>
             <horizontal_alignment>0</horizontal_alignment>
             <rules>
-              <rule name="InvalidInput" out_exp="false" prop_id="background_color">
-                <exp bool_exp="pv0==0">
+              <rule name="InputStatus" out_exp="false" prop_id="foreground_color">
+                <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
                   <value>
-                    <color blue="255" green="0" name="Invalid" red="255"/>
+                    <color blue="255" green="0" name="IO PV ON" red="0"/>
                   </value>
                 </exp>
-                <pv trig="true">loc://$(COMPONENT)-MTT1SRV(0)</pv>
+                <exp bool_exp="pv2&lt;=0">
+                  <value>
+                    <color blue="14" green="12" name="IO High Level Alarm" red="250"/>
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
+              </rule>
+              <rule name="InfoErrorTooltip" out_exp="false" prop_id="tooltip">
+                <exp bool_exp="pv0==1">
+                  <value>Alarm Setpoint $(pv_value) is valid and ready to be submitted</value>
+                </exp>
+                <exp bool_exp="pv0==-1">
+                  <value>Alarm Setpoint $(pv_value) is invalid and cannot be converted to a value</value>
+                </exp>
+                <exp bool_exp="pv0==-2">
+                  <value>Alarm Setpoint $(pv_value) is invalid as greater than the trip setpoint</value>
+                </exp>
+                <exp bool_exp="pv0==2">
+                  <value>Alarm Setpoint $(pv_value) unchanged</value>
+                </exp>
+                <pv trig="true">loc://07PHT01_TEC-TT1MSPoSt(0)</pv>
               </rule>
             </rules>
             <pv_value/>
@@ -1467,7 +1464,7 @@ $(pv_value)</tooltip>
             <multiline_input>false</multiline_input>
             <border_width>1</border_width>
             <visible>true</visible>
-            <pv_name>loc://_$(COMPONENT)-MTT1SR(-1)</pv_name>
+            <pv_name>loc://_$(COMPONENT)-TT1MSPo(-1)</pv_name>
             <border_color>
               <color blue="0" green="0" name="IO Border" red="0"/>
             </border_color>
@@ -1484,16 +1481,15 @@ $(pv_value)</tooltip>
             <wuid>-4f7e792e:14d24101041:-246b</wuid>
             <next_focus>0</next_focus>
             <scripts>
-              <path checkConnect="true" pathString="scripts/init_MTTnSR.js" seoe="false" sfe="false">
-                <pv trig="false">loc://_$(COMPONENT)-MTT1SR(-1)</pv>
-                <pv trig="true">loc://$(COMPONENT)-MTT1SRSt(140)</pv>
-                <pv trig="true">loc://$(COMPONENT)-MTT1SRV(0)</pv>
+              <path checkConnect="true" pathString="scripts/init_TTnMSPo.js" seoe="false" sfe="false">
+                <pv trig="false">loc://_$(COMPONENT)-TT1MSPo(-1)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
               </path>
-              <path checkConnect="true" pathString="scripts/validate_MTTnSR.js" seoe="false" sfe="true">
-                <pv trig="true">loc://_$(COMPONENT)-MTT1SR(-1)</pv>
-                <pv trig="false">loc://$(COMPONENT)-MTT1SRSt(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-MTT5SRSt(150)</pv>
-                <pv trig="false">loc://$(COMPONENT)-MTT1SRV(0)</pv>
+              <path checkConnect="true" pathString="scripts/validate_TTnMSPo.js" seoe="false" sfe="true">
+                <pv trig="true">loc://_$(COMPONENT)-TT1MSPo(-1)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT1SPoH(150)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
               </path>
             </scripts>
             <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1513,7 +1509,7 @@ $(pv_value)</tooltip>
             <x>30</x>
             <y>0</y>
             <foreground_color>
-              <color blue="0" green="0" name="IO OutputPV Fg" red="0"/>
+              <color blue="0" green="0" name="IO Foreground" red="0"/>
             </foreground_color>
             <font>
               <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
@@ -1527,7 +1523,19 @@ $(pv_value)</tooltip>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <horizontal_alignment>0</horizontal_alignment>
-            <rules/>
+            <rules>
+              <rule name="SetpointNotReached" out_exp="false" prop_id="background_color">
+                <exp bool_exp="pv2 &amp;&amp; pv3 == 0 &amp;&amp; pv1 != pv0">
+                  <value>
+                    <color blue="255" green="255" name="IO Stopped Symbol Fill" red="255"/>
+                  </value>
+                </exp>
+                <pv trig="false">loc://$(COMPONENT)-TT1MSPo(140)</pv>
+                <pv trig="false">$(pv_name)</pv>
+                <pv trig="true">loc://$(DID)_Submit(0)</pv>
+                <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
+              </rule>
+            </rules>
             <enabled>true</enabled>
             <wuid>-4f7e792e:14d24101041:-210b</wuid>
             <transparent>false</transparent>
@@ -1535,7 +1543,18 @@ $(pv_value)</tooltip>
             <auto_size>false</auto_size>
             <text>######</text>
             <rotation_angle>0.0</rotation_angle>
-            <scripts/>
+            <scripts>
+              <path checkConnect="true" pathString="scripts/simul_TTnAtSPo.js" seoe="false" sfe="true">
+                <pv trig="true">loc://$(COMPONENT)-TT1MSPo(140)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
+              </path>
+              <path checkConnect="true" pathString="scripts/end_TTnMSPo.js" seoe="false" sfe="false">
+                <pv trig="false">loc://$(COMPONENT)-TT1MSPo(140)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
+              </path>
+            </scripts>
             <border_alarm_sensitive>false</border_alarm_sensitive>
             <show_units>true</show_units>
             <height>20</height>
@@ -1546,7 +1565,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <pv_name>loc://$(COMPONENT)-MTT1SRSt(140)</pv_name>
+            <pv_name>loc://$(COMPONENT)-TT1AtSPo(140)</pv_name>
             <vertical_alignment>1</vertical_alignment>
             <border_color>
               <color blue="178" green="178" name="IO Button" red="178"/>
@@ -1639,7 +1658,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <pv_name>loc://$(COMPONENT)-MTT5SRSt(150)</pv_name>
+            <pv_name>loc://$(COMPONENT)-TT1SPoH(150)</pv_name>
             <vertical_alignment>1</vertical_alignment>
             <border_color>
               <color blue="178" green="178" name="IO Button" red="178"/>
@@ -1674,7 +1693,7 @@ $(pv_value)</tooltip>
           <transparent>true</transparent>
           <lock_children>true</lock_children>
           <scripts/>
-          <height>16</height>
+          <height>48</height>
           <border_width>2</border_width>
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -1692,10 +1711,10 @@ $(pv_value)</tooltip>
           <background_color>
             <color blue="235" green="235" name="IO Background" red="235"/>
           </background_color>
-          <width>182</width>
-          <x>30</x>
+          <width>218</width>
+          <x>27</x>
           <name>Header</name>
-          <y>26</y>
+          <y>8</y>
           <foreground_color>
             <color blue="0" green="0" name="IO Foreground" red="0"/>
           </foreground_color>
@@ -1714,10 +1733,11 @@ $(pv_value)</tooltip>
             <enabled>false</enabled>
             <wuid>-4f7e792e:14d24101041:-216e</wuid>
             <transparent>true</transparent>
-            <auto_size>true</auto_size>
-            <text>New</text>
+            <auto_size>false</auto_size>
+            <text>New
+Setpoint</text>
             <scripts/>
-            <height>16</height>
+            <height>47</height>
             <border_width>2</border_width>
             <scale_options>
               <width_scalable>false</width_scalable>
@@ -1725,7 +1745,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <vertical_alignment>1</vertical_alignment>
+            <vertical_alignment>2</vertical_alignment>
             <border_color>
               <color blue="0" green="0" name="IO Border" red="0"/>
             </border_color>
@@ -1734,7 +1754,7 @@ $(pv_value)</tooltip>
             <background_color>
               <color blue="235" green="235" name="IO Background" red="235"/>
             </background_color>
-            <width>24</width>
+            <width>67</width>
             <x>0</x>
             <name>New</name>
             <y>0</y>
@@ -1756,10 +1776,11 @@ $(pv_value)</tooltip>
             <enabled>false</enabled>
             <wuid>-4f7e792e:14d24101041:-216d</wuid>
             <transparent>true</transparent>
-            <auto_size>true</auto_size>
-            <text>Current</text>
+            <auto_size>false</auto_size>
+            <text>Actual
+Setpoint</text>
             <scripts/>
-            <height>16</height>
+            <height>48</height>
             <border_width>2</border_width>
             <scale_options>
               <width_scalable>false</width_scalable>
@@ -1767,7 +1788,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <vertical_alignment>1</vertical_alignment>
+            <vertical_alignment>2</vertical_alignment>
             <border_color>
               <color blue="0" green="0" name="IO Border" red="0"/>
             </border_color>
@@ -1776,8 +1797,8 @@ $(pv_value)</tooltip>
             <background_color>
               <color blue="235" green="235" name="IO Background" red="235"/>
             </background_color>
-            <width>56</width>
-            <x>77</x>
+            <width>68</width>
+            <x>80</x>
             <name>Current</name>
             <y>0</y>
             <foreground_color>
@@ -1798,10 +1819,10 @@ $(pv_value)</tooltip>
             <enabled>false</enabled>
             <wuid>-3f662702:14f8cf0a35a:-69c3</wuid>
             <transparent>true</transparent>
-            <auto_size>true</auto_size>
-            <text>Trip</text>
+            <auto_size>false</auto_size>
+            <text>Trip High Limit</text>
             <scripts/>
-            <height>16</height>
+            <height>48</height>
             <border_width>2</border_width>
             <scale_options>
               <width_scalable>false</width_scalable>
@@ -1809,7 +1830,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <vertical_alignment>1</vertical_alignment>
+            <vertical_alignment>2</vertical_alignment>
             <border_color>
               <color blue="0" green="0" name="IO Border" red="0"/>
             </border_color>
@@ -1818,8 +1839,8 @@ $(pv_value)</tooltip>
             <background_color>
               <color blue="235" green="235" name="IO Background" red="235"/>
             </background_color>
-            <width>32</width>
-            <x>150</x>
+            <width>65</width>
+            <x>152</x>
             <name>Trip</name>
             <y>0</y>
             <foreground_color>
@@ -1862,7 +1883,7 @@ $(pv_value)</tooltip>
           <width>245</width>
           <x>0</x>
           <name>TT2</name>
-          <y>124</y>
+          <y>137</y>
           <foreground_color>
             <color blue="0" green="0" name="IO Foreground" red="0"/>
           </foreground_color>
@@ -1875,17 +1896,38 @@ $(pv_value)</tooltip>
           <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
             <alarm_pulsing>false</alarm_pulsing>
             <precision>0</precision>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+            <tooltip>$(COMPONENT) Alarm Setpoint Input</tooltip>
             <horizontal_alignment>0</horizontal_alignment>
             <rules>
-              <rule name="InvalidInput" out_exp="false" prop_id="background_color">
-                <exp bool_exp="pv0==0">
+              <rule name="InputStatus" out_exp="false" prop_id="foreground_color">
+                <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
                   <value>
-                    <color blue="255" green="0" name="Invalid" red="255"/>
+                    <color blue="255" green="0" name="IO PV ON" red="0"/>
                   </value>
                 </exp>
-                <pv trig="true">loc://$(COMPONENT)-MTT2SRV(0)</pv>
+                <exp bool_exp="pv2&lt;=0">
+                  <value>
+                    <color blue="14" green="12" name="IO High Level Alarm" red="250"/>
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
+              </rule>
+              <rule name="InfoErrorTooltip" out_exp="false" prop_id="tooltip">
+                <exp bool_exp="pv0==1">
+                  <value>Alarm Setpoint $(pv_value) is valid and ready to be submitted</value>
+                </exp>
+                <exp bool_exp="pv0==-1">
+                  <value>Alarm Setpoint $(pv_value) is invalid and cannot be converted to a value</value>
+                </exp>
+                <exp bool_exp="pv0==-2">
+                  <value>Alarm Setpoint $(pv_value) is invalid as greater than the trip setpoint</value>
+                </exp>
+                <exp bool_exp="pv0==2">
+                  <value>Alarm Setpoint $(pv_value) unchanged</value>
+                </exp>
+                <pv trig="true">loc://07PHT01_TEC-TT2MSPoSt(0)</pv>
               </rule>
             </rules>
             <pv_value/>
@@ -1897,7 +1939,7 @@ $(pv_value)</tooltip>
             <multiline_input>false</multiline_input>
             <border_width>1</border_width>
             <visible>true</visible>
-            <pv_name>loc://_$(COMPONENT)-MTT2SR(-1)</pv_name>
+            <pv_name>loc://_$(COMPONENT)-TT2MSPo(-1)</pv_name>
             <border_color>
               <color blue="0" green="0" name="IO Border" red="0"/>
             </border_color>
@@ -1914,16 +1956,15 @@ $(pv_value)</tooltip>
             <wuid>-4f7e792e:14d24101041:-2467</wuid>
             <next_focus>0</next_focus>
             <scripts>
-              <path checkConnect="true" pathString="scripts/init_MTTnSR.js" seoe="false" sfe="false">
-                <pv trig="false">loc://_$(COMPONENT)-MTT2SR(-1)</pv>
-                <pv trig="true">loc://$(COMPONENT)-MTT2SRSt(140)</pv>
-                <pv trig="true">loc://$(COMPONENT)-MTT2SRV(0)</pv>
+              <path checkConnect="true" pathString="scripts/init_TTnMSPo.js" seoe="false" sfe="false">
+                <pv trig="false">loc://_$(COMPONENT)-TT2MSPo(-1)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
               </path>
-              <path checkConnect="true" pathString="scripts/validate_MTTnSR.js" seoe="false" sfe="true">
-                <pv trig="true">loc://_$(COMPONENT)-MTT2SR(-1)</pv>
-                <pv trig="false">loc://$(COMPONENT)-MTT2SRSt(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-MTT6SRSt(150)</pv>
-                <pv trig="false">loc://$(COMPONENT)-MTT2SRV(0)</pv>
+              <path checkConnect="true" pathString="scripts/validate_TTnMSPo.js" seoe="false" sfe="true">
+                <pv trig="true">loc://_$(COMPONENT)-TT2MSPo(-1)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT2SPoH(150)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
               </path>
             </scripts>
             <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1957,7 +1998,19 @@ $(pv_value)</tooltip>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <horizontal_alignment>0</horizontal_alignment>
-            <rules/>
+            <rules>
+              <rule name="SetpointNotReached" out_exp="false" prop_id="background_color">
+                <exp bool_exp="pv2 &amp;&amp; pv3 == 0 &amp;&amp; pv1 != pv0">
+                  <value>
+                    <color blue="255" green="255" name="IO Stopped Symbol Fill" red="255"/>
+                  </value>
+                </exp>
+                <pv trig="false">loc://$(COMPONENT)-TT2MSPo(140)</pv>
+                <pv trig="false">$(pv_name)</pv>
+                <pv trig="true">loc://$(DID)_Submit(0)</pv>
+                <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
+              </rule>
+            </rules>
             <enabled>true</enabled>
             <wuid>-4f7e792e:14d24101041:-2107</wuid>
             <transparent>false</transparent>
@@ -1965,7 +2018,18 @@ $(pv_value)</tooltip>
             <auto_size>false</auto_size>
             <text>######</text>
             <rotation_angle>0.0</rotation_angle>
-            <scripts/>
+            <scripts>
+              <path checkConnect="true" pathString="scripts/simul_TTnAtSPo.js" seoe="false" sfe="true">
+                <pv trig="true">loc://$(COMPONENT)-TT2MSPo(140)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
+              </path>
+              <path checkConnect="true" pathString="scripts/end_TTnMSPo.js" seoe="false" sfe="false">
+                <pv trig="false">loc://$(COMPONENT)-TT2MSPo(140)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
+              </path>
+            </scripts>
             <border_alarm_sensitive>false</border_alarm_sensitive>
             <show_units>true</show_units>
             <height>20</height>
@@ -1976,7 +2040,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <pv_name>loc://$(COMPONENT)-MTT2SRSt(140)</pv_name>
+            <pv_name>loc://$(COMPONENT)-TT2AtSPo(140)</pv_name>
             <vertical_alignment>1</vertical_alignment>
             <border_color>
               <color blue="178" green="178" name="IO Button" red="178"/>
@@ -2069,7 +2133,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <pv_name>loc://$(COMPONENT)-MTT6SRSt(150)</pv_name>
+            <pv_name>loc://$(COMPONENT)-TT2SPoH(150)</pv_name>
             <vertical_alignment>1</vertical_alignment>
             <border_color>
               <color blue="178" green="178" name="IO Button" red="178"/>
@@ -2125,7 +2189,7 @@ $(pv_value)</tooltip>
           <width>245</width>
           <x>0</x>
           <name>TT3</name>
-          <y>176</y>
+          <y>189</y>
           <foreground_color>
             <color blue="0" green="0" name="IO Foreground" red="0"/>
           </foreground_color>
@@ -2138,17 +2202,38 @@ $(pv_value)</tooltip>
           <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
             <alarm_pulsing>false</alarm_pulsing>
             <precision>0</precision>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+            <tooltip>$(COMPONENT) Alarm Setpoint Input</tooltip>
             <horizontal_alignment>0</horizontal_alignment>
             <rules>
-              <rule name="InvalidInput" out_exp="false" prop_id="background_color">
-                <exp bool_exp="pv0==0">
+              <rule name="InputStatus" out_exp="false" prop_id="foreground_color">
+                <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
                   <value>
-                    <color blue="255" green="0" name="Invalid" red="255"/>
+                    <color blue="255" green="0" name="IO PV ON" red="0"/>
                   </value>
                 </exp>
-                <pv trig="true">loc://$(COMPONENT)-MTT3SRV(0)</pv>
+                <exp bool_exp="pv2&lt;=0">
+                  <value>
+                    <color blue="14" green="12" name="IO High Level Alarm" red="250"/>
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
+              </rule>
+              <rule name="InfoErrorTooltip" out_exp="false" prop_id="tooltip">
+                <exp bool_exp="pv0==1">
+                  <value>Alarm Setpoint $(pv_value) is valid and ready to be submitted</value>
+                </exp>
+                <exp bool_exp="pv0==-1">
+                  <value>Alarm Setpoint $(pv_value) is invalid and cannot be converted to a value</value>
+                </exp>
+                <pv trig="true">loc://07PHT01_TEC-TT3MSPoSt(0)</pv>
+                <exp bool_exp="pv0==-2">
+                  <value>Alarm Setpoint $(pv_value) is invalid as greater than the trip setpoint</value>
+                </exp>
+                <exp bool_exp="pv0==2">
+                  <value>Alarm Setpoint $(pv_value) unchanged</value>
+                </exp>
               </rule>
             </rules>
             <pv_value/>
@@ -2160,7 +2245,7 @@ $(pv_value)</tooltip>
             <multiline_input>false</multiline_input>
             <border_width>1</border_width>
             <visible>true</visible>
-            <pv_name>loc://_$(COMPONENT)-MTT3SR(-1)</pv_name>
+            <pv_name>loc://_$(COMPONENT)-TT3MSPo(-1)</pv_name>
             <border_color>
               <color blue="0" green="0" name="IO Border" red="0"/>
             </border_color>
@@ -2177,16 +2262,15 @@ $(pv_value)</tooltip>
             <wuid>-4f7e792e:14d24101041:-245f</wuid>
             <next_focus>0</next_focus>
             <scripts>
-              <path checkConnect="true" pathString="scripts/init_MTTnSR.js" seoe="false" sfe="false">
-                <pv trig="false">loc://_$(COMPONENT)-MTT3SR(-1)</pv>
-                <pv trig="true">loc://$(COMPONENT)-MTT3SRSt(140)</pv>
-                <pv trig="true">loc://$(COMPONENT)-MTT3SRV(0)</pv>
+              <path checkConnect="true" pathString="scripts/init_TTnMSPo.js" seoe="false" sfe="false">
+                <pv trig="false">loc://_$(COMPONENT)-TT3MSPo(-1)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
               </path>
-              <path checkConnect="true" pathString="scripts/validate_MTTnSR.js" seoe="false" sfe="true">
-                <pv trig="true">loc://_$(COMPONENT)-MTT3SR(-1)</pv>
-                <pv trig="false">loc://$(COMPONENT)-MTT3SRSt(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-MTT7SRSt(150)</pv>
-                <pv trig="false">loc://$(COMPONENT)-MTT3SRV(0)</pv>
+              <path checkConnect="true" pathString="scripts/validate_TTnMSPo.js" seoe="false" sfe="true">
+                <pv trig="true">loc://_$(COMPONENT)-TT3MSPo(-1)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT3SPoH(150)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
               </path>
             </scripts>
             <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2220,7 +2304,19 @@ $(pv_value)</tooltip>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <horizontal_alignment>0</horizontal_alignment>
-            <rules/>
+            <rules>
+              <rule name="SetpointNotReached" out_exp="false" prop_id="background_color">
+                <exp bool_exp="pv2 &amp;&amp; pv3 == 0 &amp;&amp; pv1 != pv0">
+                  <value>
+                    <color blue="255" green="255" name="IO Stopped Symbol Fill" red="255"/>
+                  </value>
+                </exp>
+                <pv trig="false">loc://$(COMPONENT)-TT3MSPo(140)</pv>
+                <pv trig="false">$(pv_name)</pv>
+                <pv trig="true">loc://$(DID)_Submit(0)</pv>
+                <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
+              </rule>
+            </rules>
             <enabled>true</enabled>
             <wuid>-4f7e792e:14d24101041:-2103</wuid>
             <transparent>false</transparent>
@@ -2228,7 +2324,18 @@ $(pv_value)</tooltip>
             <auto_size>false</auto_size>
             <text>######</text>
             <rotation_angle>0.0</rotation_angle>
-            <scripts/>
+            <scripts>
+              <path checkConnect="true" pathString="scripts/simul_TTnAtSPo.js" seoe="false" sfe="true">
+                <pv trig="true">loc://$(COMPONENT)-TT3MSPo(140)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
+              </path>
+              <path checkConnect="true" pathString="scripts/end_TTnMSPo.js" seoe="false" sfe="false">
+                <pv trig="false">loc://$(COMPONENT)-TT3MSPo(140)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
+              </path>
+            </scripts>
             <border_alarm_sensitive>false</border_alarm_sensitive>
             <show_units>true</show_units>
             <height>20</height>
@@ -2239,7 +2346,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <pv_name>loc://$(COMPONENT)-MTT3SRSt(140)</pv_name>
+            <pv_name>loc://$(COMPONENT)-TT3AtSPo(140)</pv_name>
             <vertical_alignment>1</vertical_alignment>
             <border_color>
               <color blue="178" green="178" name="IO Button" red="178"/>
@@ -2332,7 +2439,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <pv_name>loc://$(COMPONENT)-MTT7SRSt(150)</pv_name>
+            <pv_name>loc://$(COMPONENT)-TT3SPoH(150)</pv_name>
             <vertical_alignment>1</vertical_alignment>
             <border_color>
               <color blue="178" green="178" name="IO Button" red="178"/>
@@ -2388,7 +2495,7 @@ $(pv_value)</tooltip>
           <width>245</width>
           <x>0</x>
           <name>TT4</name>
-          <y>230</y>
+          <y>243</y>
           <foreground_color>
             <color blue="0" green="0" name="IO Foreground" red="0"/>
           </foreground_color>
@@ -2401,17 +2508,38 @@ $(pv_value)</tooltip>
           <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
             <alarm_pulsing>false</alarm_pulsing>
             <precision>0</precision>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+            <tooltip>$(COMPONENT) Alarm Setpoint Input</tooltip>
             <horizontal_alignment>0</horizontal_alignment>
             <rules>
-              <rule name="InvalidInput" out_exp="false" prop_id="background_color">
-                <exp bool_exp="pv0==0">
+              <rule name="InputStatus" out_exp="false" prop_id="foreground_color">
+                <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
                   <value>
-                    <color blue="255" green="0" name="Invalid" red="255"/>
+                    <color blue="255" green="0" name="IO PV ON" red="0"/>
                   </value>
                 </exp>
-                <pv trig="true">loc://$(COMPONENT)-MTT4SRV(0)</pv>
+                <exp bool_exp="pv2&lt;=0">
+                  <value>
+                    <color blue="14" green="12" name="IO High Level Alarm" red="250"/>
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
+              </rule>
+              <rule name="InfoErrorTooltip" out_exp="false" prop_id="tooltip">
+                <exp bool_exp="pv0==1">
+                  <value>Alarm Setpoint $(pv_value) is valid and ready to be submitted</value>
+                </exp>
+                <exp bool_exp="pv0==-1">
+                  <value>Alarm Setpoint $(pv_value) is invalid and cannot be converted to a value</value>
+                </exp>
+                <exp bool_exp="pv0==-2">
+                  <value>Alarm Setpoint $(pv_value) is invalid as greater than the trip setpoint</value>
+                </exp>
+                <exp bool_exp="pv0==2">
+                  <value>Alarm Setpoint $(pv_value) unchanged</value>
+                </exp>
+                <pv trig="true">loc://07PHT01_TEC-TT4MSPoSt(0)</pv>
               </rule>
             </rules>
             <pv_value/>
@@ -2423,7 +2551,7 @@ $(pv_value)</tooltip>
             <multiline_input>false</multiline_input>
             <border_width>1</border_width>
             <visible>true</visible>
-            <pv_name>loc://_$(COMPONENT)-MTT4SR(-1)</pv_name>
+            <pv_name>loc://_$(COMPONENT)-TT4MSPo(-1)</pv_name>
             <border_color>
               <color blue="0" green="0" name="IO Border" red="0"/>
             </border_color>
@@ -2440,16 +2568,15 @@ $(pv_value)</tooltip>
             <wuid>-4f7e792e:14d24101041:-2459</wuid>
             <next_focus>0</next_focus>
             <scripts>
-              <path checkConnect="true" pathString="scripts/init_MTTnSR.js" seoe="false" sfe="false">
-                <pv trig="false">loc://_$(COMPONENT)-MTT4SR(-1)</pv>
-                <pv trig="true">loc://$(COMPONENT)-MTT4SRSt(60)</pv>
-                <pv trig="true">loc://$(COMPONENT)-MTT4SRV(0)</pv>
+              <path checkConnect="true" pathString="scripts/init_TTnMSPo.js" seoe="false" sfe="false">
+                <pv trig="false">loc://_$(COMPONENT)-TT4MSPo(-1)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
               </path>
-              <path checkConnect="true" pathString="scripts/validate_MTTnSR.js" seoe="false" sfe="true">
-                <pv trig="true">loc://_$(COMPONENT)-MTT4SR(-1)</pv>
-                <pv trig="false">loc://$(COMPONENT)-MTT4SRSt(60)</pv>
-                <pv trig="false">loc://$(COMPONENT)-MTT8SRSt(80)</pv>
-                <pv trig="false">loc://$(COMPONENT)-MTT4SRV(0)</pv>
+              <path checkConnect="true" pathString="scripts/validate_TTnMSPo.js" seoe="false" sfe="true">
+                <pv trig="true">loc://_$(COMPONENT)-TT4MSPo(-1)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT4SPoH(80)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
               </path>
             </scripts>
             <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -2483,7 +2610,19 @@ $(pv_value)</tooltip>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <horizontal_alignment>0</horizontal_alignment>
-            <rules/>
+            <rules>
+              <rule name="SetpointNotReached" out_exp="false" prop_id="background_color">
+                <exp bool_exp="pv2 &amp;&amp; pv3 == 0 &amp;&amp; pv1 != pv0">
+                  <value>
+                    <color blue="255" green="255" name="IO Stopped Symbol Fill" red="255"/>
+                  </value>
+                </exp>
+                <pv trig="false">loc://$(COMPONENT)-TT4MSPo(60)</pv>
+                <pv trig="false">$(pv_name)</pv>
+                <pv trig="true">loc://$(DID)_Submit(0)</pv>
+                <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
+              </rule>
+            </rules>
             <enabled>true</enabled>
             <wuid>-4f7e792e:14d24101041:-20ff</wuid>
             <transparent>false</transparent>
@@ -2491,7 +2630,18 @@ $(pv_value)</tooltip>
             <auto_size>false</auto_size>
             <text>######</text>
             <rotation_angle>0.0</rotation_angle>
-            <scripts/>
+            <scripts>
+              <path checkConnect="true" pathString="scripts/simul_TTnAtSPo.js" seoe="false" sfe="true">
+                <pv trig="true">loc://$(COMPONENT)-TT4MSPo(60)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
+              </path>
+              <path checkConnect="true" pathString="scripts/end_TTnMSPo.js" seoe="false" sfe="false">
+                <pv trig="false">loc://$(COMPONENT)-TT4MSPo(60)</pv>
+                <pv trig="true">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
+                <pv trig="false">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
+              </path>
+            </scripts>
             <border_alarm_sensitive>false</border_alarm_sensitive>
             <show_units>true</show_units>
             <height>20</height>
@@ -2502,7 +2652,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <pv_name>loc://$(COMPONENT)-MTT4SRSt(60)</pv_name>
+            <pv_name>loc://$(COMPONENT)-TT4AtSPo(60)</pv_name>
             <vertical_alignment>1</vertical_alignment>
             <border_color>
               <color blue="178" green="178" name="IO Button" red="178"/>
@@ -2595,7 +2745,7 @@ $(pv_value)</tooltip>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
             <visible>true</visible>
-            <pv_name>loc://$(COMPONENT)-MTT8SRSt(80)</pv_name>
+            <pv_name>loc://$(COMPONENT)-TT4SPoH(80)</pv_name>
             <vertical_alignment>1</vertical_alignment>
             <border_color>
               <color blue="178" green="178" name="IO Button" red="178"/>
@@ -2620,6 +2770,74 @@ $(pv_value)</tooltip>
               <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
             </font>
           </widget>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+          <toggle_button>false</toggle_button>
+          <border_style>6</border_style>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <tooltip>Cancel or undo the previous command</tooltip>
+          <push_action_index>0</push_action_index>
+          <rules/>
+          <enabled>true</enabled>
+          <wuid>-6101ebb:14ffa02c014:-7ea5</wuid>
+          <pv_value/>
+          <text>Cancel</text>
+          <scripts>
+            <path checkConnect="true" pathString="scripts/cancel_TTnMSPo.js" seoe="false" sfe="true">
+              <pv trig="true">loc://$(DID)_Cancel(0)</pv>
+              <pv trig="false">loc://_$(COMPONENT)-TT1MSPo(-1)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT1MSPo(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT1MSPoBak(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
+              <pv trig="false">loc://_$(COMPONENT)-TT2MSPo(-1)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT2MSPo(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT2MSPoBak(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
+              <pv trig="false">loc://_$(COMPONENT)-TT3MSPo(-1)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT3MSPo(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT3MSPoBak(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
+              <pv trig="false">loc://_$(COMPONENT)-TT4MSPo(-1)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT4MSPo(60)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT4MSPoBak(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
+            </path>
+          </scripts>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <height>25</height>
+          <border_width>2</border_width>
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <image>../../templates/pictures/Cancel_16.png</image>
+          <visible>true</visible>
+          <pv_name>loc://$(DID)_Cancel(0)</pv_name>
+          <border_color>
+            <color blue="0" green="0" name="IO Border" red="0"/>
+          </border_color>
+          <widget_type>Action Button</widget_type>
+          <width>100</width>
+          <x>137</x>
+          <name>Cancel</name>
+          <y>304</y>
+          <style>1</style>
+          <foreground_color>
+            <color blue="0" green="0" name="IO Foreground" red="0"/>
+          </foreground_color>
+          <actions hook="false" hook_all="false">
+            <action type="WRITE_PV">
+              <pv_name>$(pv_name)</pv_name>
+              <value>1</value>
+              <timeout>10</timeout>
+              <confirm_message/>
+              <description/>
+            </action>
+          </actions>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
         </widget>
       </widget>
     </widget>

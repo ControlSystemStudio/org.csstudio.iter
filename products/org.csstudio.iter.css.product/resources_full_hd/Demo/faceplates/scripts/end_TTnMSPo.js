@@ -11,17 +11,14 @@ of the distribution package.
 */
 
 importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
-importPackage(Packages.org.csstudio.platform.data);
+importPackage(Packages.java.lang);
 
-var request_value = PVUtil.getDouble(pvs[0]);
-var request       = pvs[0];
-var init_value    = PVUtil.getDouble(pvs[1]);
-var flag          = pvs[2];
-var OK            = 1;
-var null_value    = -1;
+var flag       = pvs[2];
+var Ended      = 4;
 
-// If none, set an initial value
-if (request_value == null_value) {
-	request.setValue(init_value);
-	flag.setValue(OK);	
+var request    = PVUtil.getDouble(pvs[0]);
+var feedback   = PVUtil.getDouble(pvs[1]);
+
+if (feedback == request) {
+	flag.setValue(Ended);	
 }
