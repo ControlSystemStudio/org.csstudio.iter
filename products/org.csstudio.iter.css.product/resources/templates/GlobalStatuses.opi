@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.104.201508191015</boy_version>
+  <boy_version>4.0.104.201508311235</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -148,15 +148,12 @@
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
-        <on_state></on_state>
-        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -217,7 +214,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <wuid>56bdcf55:1490ddf160e:-7e99</wuid>
       <transparent>true</transparent>
-      <lock_children>true</lock_children>
+      <lock_children>false</lock_children>
       <scripts />
       <height>41</height>
       <border_width>1</border_width>
@@ -237,7 +234,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Area Background" red="221" green="223" blue="229" />
       </background_color>
-      <width>296</width>
+      <width>301</width>
       <x>820</x>
       <name>PULSE_ID</name>
       <y>5</y>
@@ -286,7 +283,6 @@ $(pv_value)</tooltip>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
@@ -331,7 +327,7 @@ $(pv_value)</tooltip>
         <background_color>
           <color name="IO Area Background" red="221" green="223" blue="229" />
         </background_color>
-        <width>120</width>
+        <width>125</width>
         <x>175</x>
         <name>Pulse ID</name>
         <y>0</y>
@@ -420,15 +416,12 @@ $(pv_value)</tooltip>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
-        <on_state></on_state>
-        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -558,15 +551,12 @@ $(pv_value)</tooltip>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
-        <on_state></on_state>
-        <off_state></off_state>
         <tooltip>$(pv_name)
 $(pv_value)</tooltip>
         <rules />
@@ -627,9 +617,9 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <wuid>-1e0f3b69:149c8d6d12f:-428f</wuid>
       <transparent>true</transparent>
-      <lock_children>true</lock_children>
+      <lock_children>false</lock_children>
       <scripts />
-      <height>40</height>
+      <height>42</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -647,8 +637,8 @@ $(pv_value)</tooltip>
       <background_color>
         <color name="IO Area Background" red="221" green="223" blue="229" />
       </background_color>
-      <width>296</width>
-      <x>820</x>
+      <width>203</width>
+      <x>918</x>
       <name>SUP</name>
       <y>50</y>
       <foreground_color>
@@ -689,14 +679,13 @@ $(pv_value)</tooltip>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <width>60</width>
-        <x>98</x>
+        <x>0</x>
         <name>SUP</name>
         <y>0</y>
         <foreground_color>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
@@ -714,13 +703,13 @@ $(pv_value)</tooltip>
         <wuid>-1e0f3b69:149c8d6d12f:-428d</wuid>
         <transparent>false</transparent>
         <pv_value />
-        <auto_size>true</auto_size>
-        <text>###</text>
+        <auto_size>false</auto_size>
+        <text>######</text>
         <rotation_angle>0.0</rotation_angle>
         <scripts />
         <border_alarm_sensitive>false</border_alarm_sensitive>
         <show_units>true</show_units>
-        <height>39</height>
+        <height>41</height>
         <border_width>1</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -741,8 +730,8 @@ $(pv_value)</tooltip>
         <background_color>
           <color name="IO Area Background" red="221" green="223" blue="229" />
         </background_color>
-        <width>60</width>
-        <x>233</x>
+        <width>125</width>
+        <x>77</x>
         <name>SUP</name>
         <y>0</y>
         <foreground_color>
@@ -830,15 +819,12 @@ $(pv_value)</tooltip>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
         </font>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
         <alarm_pulsing>false</alarm_pulsing>
-        <on_state></on_state>
-        <off_state></off_state>
         <tooltip>Control Access System (CAS)</tooltip>
         <rules />
         <effect_3d>true</effect_3d>
