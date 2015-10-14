@@ -38,8 +38,8 @@ import org.csstudio.swt.xygraph.figures.Trace;
 import org.csstudio.trends.databrowser2.model.PVSamples;
 import org.csstudio.ui.util.thread.UIBundlingThread;
 import org.eclipse.draw2d.IFigure;
-import org.epics.util.time.Timestamp;
-import org.epics.vtype.VType;
+import org.diirt.util.time.Timestamp;
+import org.diirt.vtype.VType;
 
 /**The Archive XYGraph editpart
  * @author lamberm (Sopra)
@@ -97,7 +97,7 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
 
                 //get back the pv on x
                 boolean pvOnX = false;
-                if (pv == null || pv.length() <= 0) {
+                if (pv.length() <= 0) {
                 	propID = ArchiveXYGraphModel.makeTracePropID(TraceProperty.XPV.propIDPre, i);
                 	pv = (String) getWidgetModel().getProperty(propID).getPropertyValue();
 
