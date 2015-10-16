@@ -17,7 +17,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.application.WorkbenchAdvisor;
 
 /**
- * 
+ *
  * <code>ITERWorkbench</code> is a workbench that takes care of disabling some unneeded stuff.
  *
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
@@ -34,9 +34,10 @@ public class ITERWorkbench extends Workbench {
 			IApplicationContext context, Map<String, Object> parameters) {
 		WorkbenchUtil.removeUnWantedLog();
 		WorkbenchUtil.setupSystemFonts();
+		WorkbenchUtil.initDefaultDatasource();
 		return super.beforeWorkbenchCreation(display, context, parameters);
 	}
-	
+
 	/*
 	 * (non-Javadoc)
 	 * @see org.csstudio.utility.product.Workbench#createWorkbenchAdvisor(java.util.Map)
