@@ -288,6 +288,9 @@ public class WorkbenchUtil {
 	    }
 	}
 
+	/**
+	 * Set the default data source for diirt based on the settings of pvmanager.
+	 */
 	public static void initDefaultDatasource() {
 	    DataSource dataSource = PVManager.getDefaultDataSource();
 	    if (dataSource instanceof CompositeDataSource) {
