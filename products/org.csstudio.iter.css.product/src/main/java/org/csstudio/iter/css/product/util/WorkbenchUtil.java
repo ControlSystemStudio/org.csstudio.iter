@@ -20,6 +20,11 @@ import java.util.logging.Logger;
 
 import org.csstudio.iter.css.product.Activator;
 import org.csstudio.iter.css.product.preferences.Preferences;
+import org.csstudio.utility.pvmanager.ConfigurationHelper;
+import org.diirt.datasource.CompositeDataSource;
+import org.diirt.datasource.CompositeDataSourceConfiguration;
+import org.diirt.datasource.DataSource;
+import org.diirt.datasource.PVManager;
 import org.eclipse.core.commands.CommandManager;
 import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.core.commands.contexts.ContextManager;
@@ -41,7 +46,7 @@ import org.eclipse.ui.keys.IBindingService;
 public class WorkbenchUtil {
 
 	private static final String APPLIED_SYSTEM_FONT = "appliedSystemFont";
-	
+
 	private static final String[] HIDE_MESSAGE_STARTS_WITH = new String[] {
 			"Keybinding conflicts occurred.  They may interfere with normal accelerator operation.",
 			"Invalid preference page path: XML Syntax",
@@ -50,12 +55,12 @@ public class WorkbenchUtil {
 	public static final String[] IGNORE_PERSPECTIVES = new String[] {
 	// "org.eclipse.debug.ui.DebugPerspective", // Used by Pydev
 	"org.eclipse.wst.xml.ui.perspective" };
-	
+
 	private static final String[] VERBOSE_PACKAGES = new String[] {
 	        "com.sun.jersey.core.spi.component",
 	        "com.sun.jersey.core.spi.component.ProviderServices",
 	        "com.sun.jersey.spi.service.ServiceFinder" };
-	
+
 	private static final List<Logger> strongRefLoggers = new ArrayList<>();
 
 	private static class HideUnWantedLogFilter implements Filter {
@@ -89,7 +94,7 @@ public class WorkbenchUtil {
 		for (Handler handler : rootLogger.getHandlers()) {
 			handler.setFilter(new HideUnWantedLogFilter(handler.getFilter()));
 		}
-		
+
 		// Set upper log level on too verbose packages
         Level verboseLogLevel;
         try {
@@ -127,7 +132,7 @@ public class WorkbenchUtil {
 				removePerspectiveDesc.add(perspectiveDescriptor);
 				//fix for RCP 4, where IExtensionChangeHandler#removeExtension is not implemented
 				//we could create a new PerspectiveDescriptor, but that would require access to the restricted
-				//eclipse code, which some compilers might not like. Instead use reflection to force deletion 
+				//eclipse code, which some compilers might not like. Instead use reflection to force deletion
 				//of a perspective
 				if ("org.eclipse.ui.internal.registry.PerspectiveDescriptor".equals(perspectiveDescriptor.getClass().getName())) {
 				    try {
@@ -136,7 +141,7 @@ public class WorkbenchUtil {
     				    f.set(perspectiveDescriptor, null);
 				    } catch (NoSuchFieldException | IllegalAccessException e) {
 				        //ignore: we don't care this will happen only if the Eclipse internals change
-				    } 				    
+				    }
 				}
 				perspectiveRegistry.deletePerspective(perspectiveDescriptor);
 			}
@@ -150,7 +155,7 @@ public class WorkbenchUtil {
 			IExtensionChangeHandler extChgHandler = (IExtensionChangeHandler) perspectiveRegistry;
 			extChgHandler
 					.removeExtension(null, removePerspectiveDesc.toArray());
-			
+
 		}
 	}
 
@@ -163,7 +168,7 @@ public class WorkbenchUtil {
 				.getWorkbench().getAdapter(IBindingService.class);
 		BindingManager localChangeManager = new BindingManager(
 				new ContextManager(), new CommandManager());
-		
+
 		final Scheme[] definedSchemes = bindingService.getDefinedSchemes();
 		try {
 			for (int i = 0; i < definedSchemes.length; i++) {
@@ -181,7 +186,7 @@ public class WorkbenchUtil {
 		localChangeManager.setLocale(bindingService.getLocale());
 		localChangeManager.setPlatform(bindingService.getPlatform());
 		localChangeManager.setBindings(bindingService.getBindings());
-		
+
 		KeyBinding opiFullScreenBinding = null;
 		int nbBinding = 0;
 
@@ -241,7 +246,7 @@ public class WorkbenchUtil {
 			}
 		}
 	}
-	
+
 	/**
 	 * Force the default font for all those fonts that we know are not using the system font.
 	 * The method has to be called before the workbench is created to have any effect.
@@ -250,8 +255,8 @@ public class WorkbenchUtil {
 	    String s = Activator.getDefault().getPreferenceStore().getString(APPLIED_SYSTEM_FONT);
 	    FontData[] fd = JFaceResources.getDefaultFont().getFontData();
 	    String font = fd[0].toString();
-	    //apply the system font if the system font has never been applied 
-	    //yet or if it is different than the previously applied font 
+	    //apply the system font if the system font has never been applied
+	    //yet or if it is different than the previously applied font
 	    if (s == null || s.isEmpty() || !font.equals(s)) {
     	    IEclipsePreferences sc = InstanceScope.INSTANCE.getNode("org.eclipse.ui.workbench");
     	    String oldF = sc.get(JFaceResources.BANNER_FONT,"");
@@ -280,6 +285,17 @@ public class WorkbenchUtil {
     	        sc.put("org.eclipse.jface.consoleFont", font);
     	    }
     	    Activator.getDefault().getPreferenceStore().setValue(APPLIED_SYSTEM_FONT, font);
+	    }
+	}
+
+	/**
+	 * Set the default data source for diirt based on the settings of pvmanager.
+	 */
+	public static void initDefaultDatasource() {
+	    DataSource dataSource = PVManager.getDefaultDataSource();
+	    if (dataSource instanceof CompositeDataSource) {
+	        CompositeDataSourceConfiguration conf = ((CompositeDataSource)dataSource).getConfiguration();
+	        conf.defaultDataSource(ConfigurationHelper.defaultDataSourceName());
 	    }
 	}
 }
