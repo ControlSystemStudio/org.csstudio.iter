@@ -1,6 +1,8 @@
-package org.csstudio.opibuilder.widgets.editparts;
+package org.csstudio.iter.opibuilder.widgets;
 
-import org.csstudio.opibuilder.widgets.model.TextInputStyledModel;
+import org.csstudio.iter.opibuilder.widgets.TextInputStyledModel;
+import org.csstudio.opibuilder.widgets.editparts.LabelCellEditorLocator;
+import org.csstudio.opibuilder.widgets.editparts.TextInputEditpart;
 import org.eclipse.draw2d.Figure;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;

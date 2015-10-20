@@ -1,9 +1,10 @@
-package org.csstudio.opibuilder.widgets.model;
+package org.csstudio.iter.opibuilder.widgets;
 
 import org.csstudio.opibuilder.properties.BooleanProperty;
 import org.csstudio.opibuilder.properties.ColorProperty;
 import org.csstudio.opibuilder.properties.WidgetPropertyCategory;
 import org.csstudio.opibuilder.util.MediaService;
+import org.csstudio.opibuilder.widgets.model.TextInputModel;
 import org.eclipse.swt.graphics.RGB;
 
 /**

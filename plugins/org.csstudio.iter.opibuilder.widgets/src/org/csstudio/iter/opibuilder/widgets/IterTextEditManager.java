@@ -1,9 +1,10 @@
-package org.csstudio.opibuilder.widgets.editparts;
+package org.csstudio.iter.opibuilder.widgets;
 
 import org.csstudio.opibuilder.OPIBuilderPlugin;
 import org.csstudio.opibuilder.editparts.AbstractBaseEditPart;
 import org.csstudio.opibuilder.editparts.ExecutionMode;
 import org.csstudio.opibuilder.editparts.IPVWidgetEditpart;
+import org.csstudio.opibuilder.widgets.editparts.TextEditManager;
 import org.eclipse.gef.tools.CellEditorLocator;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.TextCellEditor;
@@ -61,16 +62,16 @@ public class IterTextEditManager extends TextEditManager {
 	        protected void focusLost() {
 	            //in run mode, if the widget has a PV attached,
 	            //lose focus should cancel the editing except mobile or when confirmOnFocusLost is set to true.
-	                if (editPart.getExecutionMode() == ExecutionMode.RUN_MODE
+	                if (((AbstractBaseEditPart) getEditPart()).getExecutionMode() == ExecutionMode.RUN_MODE
 	                        && !OPIBuilderPlugin.isMobile(getControl().getDisplay())
 	                        && !confirmOnFocusLost
-	                        && editPart instanceof IPVWidgetEditpart
-	                        && ((IPVWidgetEditpart) editPart).getPV() != null) {
+	                        && getEditPart() instanceof IPVWidgetEditpart
+	                        && ((IPVWidgetEditpart) getEditPart()).getPV() != null) {
 	                    if (isActivated()) {
 	                        fireCancelEditor();
 	                        deactivate();
 	                    }
-	                    editPart.getFigure().requestFocus();
+	                    getEditPart().getFigure().requestFocus();
 	                } else
 	                    super.focusLost();
 	        }
@@ -78,7 +79,7 @@ public class IterTextEditManager extends TextEditManager {
 	        @Override
 	        protected void handleDefaultSelection(SelectionEvent event) {
 	            //In run mode, hit ENTER should force to write the new value even it doesn't change.
-	            if(editPart.getExecutionMode() == ExecutionMode.RUN_MODE) {
+	            if(((AbstractBaseEditPart) getEditPart()).getExecutionMode() == ExecutionMode.RUN_MODE) {
 	                setDirty(true);
 	            }
 	            super.handleDefaultSelection(event);
@@ -88,7 +89,7 @@ public class IterTextEditManager extends TextEditManager {
 	        protected void keyReleaseOccured(KeyEvent keyEvent) {
 	            //In run mode, CTRL+ENTER will always perform a write if it is multiline text input
 	            if (keyEvent.character == '\r' &&
-	                    editPart.getExecutionMode() == ExecutionMode.RUN_MODE) { // Return key
+	            		((AbstractBaseEditPart) getEditPart()).getExecutionMode() == ExecutionMode.RUN_MODE) { // Return key
 	                if (text != null && !text.isDisposed()
 	                        && (text.getStyle() & SWT.MULTI) != 0) {
 	                    if ((keyEvent.stateMask & SWT.CTRL) != 0) {
@@ -108,7 +109,7 @@ public class IterTextEditManager extends TextEditManager {
 		super.initCellEditor();
 		
 		// override background color setting, but only in runMode
-		if (editPart.getExecutionMode() == ExecutionMode.RUN_MODE && backgroundFocusColor != null)
+		if (((AbstractBaseEditPart) getEditPart()).getExecutionMode() == ExecutionMode.RUN_MODE && backgroundFocusColor != null)
 			getCellEditor().getControl().setBackground(backgroundFocusColor);
 	}
 
