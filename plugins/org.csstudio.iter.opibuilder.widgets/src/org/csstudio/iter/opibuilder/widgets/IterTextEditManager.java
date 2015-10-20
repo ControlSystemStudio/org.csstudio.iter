@@ -1,9 +1,10 @@
-package org.csstudio.opibuilder.widgets.editparts;
+package org.csstudio.iter.opibuilder.widgets;
 
 import org.csstudio.opibuilder.OPIBuilderPlugin;
 import org.csstudio.opibuilder.editparts.AbstractBaseEditPart;
 import org.csstudio.opibuilder.editparts.ExecutionMode;
 import org.csstudio.opibuilder.editparts.IPVWidgetEditpart;
+import org.csstudio.opibuilder.widgets.editparts.TextEditManager;
 import org.eclipse.gef.tools.CellEditorLocator;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.TextCellEditor;
