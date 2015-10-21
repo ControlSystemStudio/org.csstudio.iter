@@ -13,10 +13,14 @@ of the distribution package.
 importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
 
 	//Getting the previous selected component
-	var old_component = display.getWidget(PVUtil.getString(pvs[1]));
-	if (old_component && display.getWidget(old_component)) {
-		old_component.setPropertyValue("border_style", 0);
+	try {
+		var old_component = display.getWidget(PVUtil.getString(pvs[1]));
+		if (old_component && display.getWidget(old_component)) {
+			old_component.setPropertyValue("border_style", 0);
+		}
 	}
+    catch (err) {
+	}       
 
 	//Getting the faceplate opi from the trigger PV
 	var opiInput = PVUtil.getString(pvs[0]);
@@ -31,7 +35,7 @@ importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
 	}
 
 	//Splitting the faceplate variable to extract opi name and macros
-	var words = opiInput.split(" ");
+	var words = opiInput.match(/(?:[^\s"]+|"[^"]*")+/g);
 	
 	//Creating a new Macro Input
 	var macroInput = DataUtil.createMacrosInput(true);
