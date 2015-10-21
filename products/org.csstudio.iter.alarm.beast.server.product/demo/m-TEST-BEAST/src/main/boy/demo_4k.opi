@@ -11,7 +11,7 @@
     <include_parent_macros>true</include_parent_macros>
     <TITLE>TANK LEVEL MONITORING</TITLE>
   </macros>
-  <boy_version>4.0.105.201510190742</boy_version>
+  <boy_version>4.0.105.201510201201</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -820,7 +820,7 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
         <border_style>0</border_style>
         <tooltip></tooltip>
-        <horizontal_alignment>1</horizontal_alignment>
+        <horizontal_alignment>0</horizontal_alignment>
         <rules />
         <enabled>false</enabled>
         <wuid>4b8395de:13c62753cc4:-7ea5</wuid>
@@ -1162,7 +1162,7 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
         <border_style>0</border_style>
         <tooltip></tooltip>
-        <horizontal_alignment>1</horizontal_alignment>
+        <horizontal_alignment>0</horizontal_alignment>
         <rules />
         <enabled>false</enabled>
         <wuid>4b8395de:13c62753cc4:-7ef5</wuid>
@@ -1876,7 +1876,7 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
         <border_style>0</border_style>
         <tooltip></tooltip>
-        <horizontal_alignment>1</horizontal_alignment>
+        <horizontal_alignment>0</horizontal_alignment>
         <rules />
         <enabled>false</enabled>
         <wuid>4b8395de:13c62753cc4:-7f0e</wuid>
@@ -1924,7 +1924,7 @@ carried out by the MID switch</text>
       <enabled>true</enabled>
       <wuid>-1e84d259:13c81946001:-7bec</wuid>
       <transparent>true</transparent>
-      <lock_children>false</lock_children>
+      <lock_children>true</lock_children>
       <scripts />
       <height>392</height>
       <border_width>1</border_width>
@@ -1945,9 +1945,9 @@ carried out by the MID switch</text>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
       <width>436</width>
-      <x>2752</x>
+      <x>2790</x>
       <name>Interlock</name>
-      <y>1315</y>
+      <y>1355</y>
       <foreground_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </foreground_color>
@@ -2325,6 +2325,245 @@ $(pv_value)</tooltip>
       <font>
         <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">IO Scale</opifont.name>
       </font>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <border_style>13</border_style>
+      <tooltip></tooltip>
+      <rules />
+      <enabled>true</enabled>
+      <wuid>-7ee55bef:15085622a84:-7c31</wuid>
+      <transparent>true</transparent>
+      <lock_children>false</lock_children>
+      <scripts />
+      <height>392</height>
+      <border_width>1</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <visible>true</visible>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <widget_type>Grouping Container</widget_type>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <width>436</width>
+      <x>2315</x>
+      <name>Simulation</name>
+      <y>1355</y>
+      <foreground_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </foreground_color>
+      <actions hook="false" hook_all="false" />
+      <fc>false</fc>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      </font>
+      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+        <border_style>0</border_style>
+        <tooltip></tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>-7ee55bef:15085622a84:-7c2e</wuid>
+        <transparent>true</transparent>
+        <auto_size>true</auto_size>
+        <text>Tank Level</text>
+        <scripts />
+        <height>39</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Label</widget_type>
+        <wrap_words>true</wrap_words>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <width>200</width>
+        <x>9</x>
+        <name>Label Template</name>
+        <y>80</y>
+        <foreground_color>
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+        <alarm_pulsing>false</alarm_pulsing>
+        <precision>0</precision>
+        <tooltip>Tank Level Input</tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules>
+          <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
+            <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
+              <value>
+                <color name="IO PV ON" red="0" green="0" blue="255" />
+              </value>
+            </exp>
+            <exp bool_exp="pv2&lt;=0">
+              <value>
+                <color name="IO High Level Alarm" red="250" green="12" blue="14" />
+              </value>
+            </exp>
+            <pv trig="true">$(pv_name)</pv>
+            <pv trig="true">TEST-BST0:TANK-LEVEL</pv>
+            <pv trig="true">loc://TEST-BST0:TANK-LEVELPoSt(0)</pv>
+          </rule>
+          <rule name="InfoErrorTooltip" prop_id="tooltip" out_exp="false">
+            <exp bool_exp="pv0==1">
+              <value>Tank Level Input $(pv_value) is valid and ready to be submitted</value>
+            </exp>
+            <exp bool_exp="pv0==-1">
+              <value>Tank Level Input $(pv_value) is invalid and cannot be converted to a value</value>
+            </exp>
+            <exp bool_exp="pv0==-2">
+              <value>Tank Level Input $(pv_value) is invalid as greater than the HOPR</value>
+            </exp>
+            <exp bool_exp="pv0==2">
+              <value>Tank Level Input $(pv_value) unchanged</value>
+            </exp>
+            <pv trig="true">loc://TEST-BST0:TANK-LEVELPoSt(0)</pv>
+          </rule>
+        </rules>
+        <pv_value />
+        <auto_size>false</auto_size>
+        <read_only>false</read_only>
+        <text>######</text>
+        <show_units>true</show_units>
+        <height>40</height>
+        <multiline_input>false</multiline_input>
+        <border_width>1</border_width>
+        <visible>true</visible>
+        <pv_name>loc://_TEST-BST0:TANK-LEVEL(-1)</pv_name>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <precision_from_pv>true</precision_from_pv>
+        <widget_type>Text Input</widget_type>
+        <confirm_message></confirm_message>
+        <name>TT1</name>
+        <style>1</style>
+        <actions hook="false" hook_all="false" />
+        <border_style>1</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <show_native_border>false</show_native_border>
+        <enabled>true</enabled>
+        <wuid>-7ee55bef:15085622a84:-7bc6</wuid>
+        <next_focus>0</next_focus>
+        <scripts>
+          <path pathString="scripts/init_TANK_LEVEL.js" checkConnect="true" sfe="false" seoe="false">
+            <pv trig="false">loc://_TEST-BST0:TANK-LEVEL(-1)</pv>
+            <pv trig="true">TEST-BST0:TANK-LEVEL</pv>
+          </path>
+          <path pathString="scripts/validate_TANK_LEVEL.js" checkConnect="true" sfe="true" seoe="false">
+            <pv trig="true">loc://_TEST-BST0:TANK-LEVEL(-1)</pv>
+            <pv trig="false">TEST-BST0:TANK-LEVEL</pv>
+            <pv trig="false">TEST-BST0:TANK-LEVEL.HOPR</pv>
+            <pv trig="false">loc://TEST-BST0:TANK-LEVELPoSt(0)</pv>
+          </path>
+        </scripts>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <background_focus_color>
+          <color name="Minor" red="255" green="255" blue="0" />
+        </background_focus_color>
+        <confirm_focus_lost>true</confirm_focus_lost>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <format_type>0</format_type>
+        <limits_from_pv>true</limits_from_pv>
+        <background_color>
+          <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+        </background_color>
+        <password_input>false</password_input>
+        <width>130</width>
+        <x>215</x>
+        <y>80</y>
+        <foreground_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </foreground_color>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+        <toggle_button>false</toggle_button>
+        <border_style>6</border_style>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <tooltip>Submit all alarm setpoints</tooltip>
+        <push_action_index>0</push_action_index>
+        <rules />
+        <enabled>true</enabled>
+        <wuid>-7ee55bef:15085622a84:-7739</wuid>
+        <pv_value />
+        <text>Submit</text>
+        <scripts>
+          <path pathString="scripts/submit_TANK_LEVEL.js" checkConnect="true" sfe="true" seoe="false">
+            <pv trig="true">loc://$(DID)_Submit(0)</pv>
+            <pv trig="false">loc://_TEST-BST0:TANK-LEVEL(-1)</pv>
+            <pv trig="false">TEST-BST0:TANK-LEVEL</pv>
+            <pv trig="false">loc://TEST-BST0:TANK-LEVELPoBak(25)</pv>
+            <pv trig="false">loc://TEST-BST0:TANK-LEVELPoSt(0)</pv>
+          </path>
+        </scripts>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <height>50</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <image></image>
+        <visible>true</visible>
+        <pv_name>loc://$(DID)_Submit(0)</pv_name>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Action Button</widget_type>
+        <width>200</width>
+        <x>80</x>
+        <name>Submit</name>
+        <y>215</y>
+        <style>1</style>
+        <foreground_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false">
+          <action type="WRITE_PV">
+            <pv_name>$(pv_name)</pv_name>
+            <value>1</value>
+            <timeout>10</timeout>
+            <confirm_message></confirm_message>
+            <description></description>
+          </action>
+        </actions>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
     </widget>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
