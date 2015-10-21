@@ -35,7 +35,7 @@ importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
 	}
 
 	//Splitting the faceplate variable to extract opi name and macros
-	var words = opiInput.split(" ");
+	var words = opiInput.match(/(?:[^\s"]+|"[^"]*")+/g);
 	
 	//Creating a new Macro Input
 	var macroInput = DataUtil.createMacrosInput(true);
