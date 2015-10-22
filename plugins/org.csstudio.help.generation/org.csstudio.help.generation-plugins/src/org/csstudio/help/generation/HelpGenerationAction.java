@@ -24,10 +24,11 @@ public class HelpGenerationAction implements IWorkbenchWindowActionDelegate {
 				try {
 					generateHTML.create();
 				} catch (Exception e) {
+					final Exception e1 = e;
 					Display.getDefault().asyncExec(new Runnable() {
 					      public void run() {
 					    	  MessageDialog.openError(window.getShell(), "Generation PDF Error",
-								e.getMessage());
+								e1.getMessage());
 					      }
 					});
 					return Status.CANCEL_STATUS;
