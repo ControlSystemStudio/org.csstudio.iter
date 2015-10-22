@@ -39,7 +39,7 @@ public class TextInputStyledModel extends TextInputModel {
                 WidgetPropertyCategory.Display, "Minor"));
 
         addProperty(new BooleanProperty(PROP_CONFIRM_FOCUS_LOST, "Confirm on Focus Lost",
-                WidgetPropertyCategory.Behavior, false));
+                WidgetPropertyCategory.Behavior, true));
     }
     
     public RGB getBackgroundFocusColor(){
