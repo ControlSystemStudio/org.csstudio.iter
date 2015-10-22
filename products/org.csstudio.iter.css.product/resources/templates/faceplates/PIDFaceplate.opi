@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.104.201508191015</boy_version>
+  <boy_version>4.0.105.201510201201</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -1636,7 +1636,7 @@ $(trace_0_y_pv_value)</tooltip>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
-      <visible>true</visible>
+      <visible>false</visible>
       <border_color>
         <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
@@ -1778,6 +1778,10 @@ $(trace_0_y_pv_value)</tooltip>
             <height_scalable>false</height_scalable>
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
+          <background_focus_color>
+            <color name="Minor" red="255" green="255" blue="0" />
+          </background_focus_color>
+          <confirm_focus_lost>false</confirm_focus_lost>
           <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
           <format_type>0</format_type>
           <limits_from_pv>true</limits_from_pv>
@@ -2013,6 +2017,10 @@ thread.start()
             <height_scalable>false</height_scalable>
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
+          <background_focus_color>
+            <color name="Minor" red="255" green="255" blue="0" />
+          </background_focus_color>
+          <confirm_focus_lost>false</confirm_focus_lost>
           <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
           <format_type>0</format_type>
           <limits_from_pv>true</limits_from_pv>
@@ -2206,6 +2214,10 @@ thread.start()
             <height_scalable>false</height_scalable>
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
+          <background_focus_color>
+            <color name="Minor" red="255" green="255" blue="0" />
+          </background_focus_color>
+          <confirm_focus_lost>false</confirm_focus_lost>
           <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
           <format_type>0</format_type>
           <limits_from_pv>true</limits_from_pv>
@@ -2637,7 +2649,7 @@ $(pv_value)</tooltip>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
-      <visible>false</visible>
+      <visible>true</visible>
       <border_color>
         <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
@@ -2697,6 +2709,47 @@ The PID monitors an input PV, determines if the input is out of range, and if so
         <x>0</x>
         <name>Help</name>
         <y>0</y>
+        <foreground_color>
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+        <border_style>0</border_style>
+        <tooltip></tooltip>
+        <horizontal_alignment>0</horizontal_alignment>
+        <rules />
+        <enabled>false</enabled>
+        <wuid>-441babce:15089d22b05:-7774</wuid>
+        <transparent>true</transparent>
+        <auto_size>true</auto_size>
+        <text>$(HELP)</text>
+        <scripts />
+        <height>33</height>
+        <border_width>2</border_width>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <visible>true</visible>
+        <vertical_alignment>1</vertical_alignment>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <widget_type>Label</widget_type>
+        <wrap_words>true</wrap_words>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <width>112</width>
+        <x>12</x>
+        <name>Title</name>
+        <y>33</y>
         <foreground_color>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
