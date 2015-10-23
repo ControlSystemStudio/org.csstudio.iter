@@ -1,8 +1,9 @@
-package org.csstudio.iter.widgets.archive.databrowser2;
+package org.csstudio.iter.widgets.archive.xygraph.databrowser2;
 
 import java.time.Instant;
 import java.util.List;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.csstudio.archive.reader.rdb.ConnectionCache;
 import org.csstudio.trends.databrowser2.archive.ArchiveFetchJob;
@@ -18,6 +19,8 @@ import org.csstudio.trends.databrowser2.model.RequestType;
  *
  */
 public class XYArchiveFetchJob extends ArchiveFetchJob {
+
+    final private static Logger LOGGER = Logger.getLogger(XYArchiveFetchJob.class.getName());
 
 	/**
 	 * Main constructor
@@ -67,12 +70,12 @@ public class XYArchiveFetchJob extends ArchiveFetchJob {
 	    return new ArchiveFetchJobListener() {
 			@Override
 			public void archiveFetchFailed(ArchiveFetchJob job, ArchiveDataSource archive, Exception error) {
-				Activator.getLogger().log(Level.WARNING, "Archive fetch failed for pv '" + pvName + "' and url '" + archive.getUrl() + "'", error);
+				LOGGER.log(Level.WARNING, "Archive fetch failed for pv '" + pvName + "' and url '" + archive.getUrl() + "'", error);
 			}
 			@Override
 			public void fetchCompleted(ArchiveFetchJob job) {
 				PVSamples pvSamples = job.getPVItem().getSamples();
-				Activator.getLogger().log(Level.INFO, "Completed for " + job.getPVItem().getName() + " - size : " + pvSamples.size());
+				LOGGER.log(Level.INFO, "Completed for " + job.getPVItem().getName() + " - size : " + pvSamples.size());
 				if (pvSamples.size() <= 0 || completeListener == null) {
 					return;
 				}

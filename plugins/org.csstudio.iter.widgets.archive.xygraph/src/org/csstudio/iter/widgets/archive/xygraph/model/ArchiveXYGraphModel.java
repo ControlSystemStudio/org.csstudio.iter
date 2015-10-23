@@ -27,7 +27,7 @@ public class ArchiveXYGraphModel extends XYGraphModel {
 
     /** The ID of the number of time span. */
     public static final String PROP_TIME_SPAN = "time_span"; //$NON-NLS-1$
-    
+
     /** The ID of the boolean value of plot data source. */
     public static final String PROP_PLOT_DATA_SOURCE = "plt_data_source"; //$NON-NLS-1$
 
@@ -37,7 +37,7 @@ public class ArchiveXYGraphModel extends XYGraphModel {
     /**
      * The ID of this widget model.
      */
-    public static final String ID = "org.csstudio.iter.widgets.archive.archiveXYGraph"; //$NON-NLS-1$
+    public static final String ID = "org.csstudio.opibuilder.widgets.xyGraph"; //$NON-NLS-1$
 
     /**default value of time span in second for the property*/
 	private static final int DEFAULT_TIME_SPAN = 3600;

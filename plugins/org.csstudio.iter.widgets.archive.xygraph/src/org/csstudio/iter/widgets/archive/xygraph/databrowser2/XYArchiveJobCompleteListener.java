@@ -1,4 +1,4 @@
-package org.csstudio.iter.widgets.archive.databrowser2;
+package org.csstudio.iter.widgets.archive.xygraph.databrowser2;
 
 import org.csstudio.trends.databrowser2.model.PVSamples;
 

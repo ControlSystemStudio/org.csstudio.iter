@@ -19,9 +19,9 @@ import java.util.logging.Level;
 
 import org.csstudio.archive.vtype.ArchiveVType;
 import org.csstudio.archive.vtype.TimestampHelper;
-import org.csstudio.iter.widgets.archive.databrowser2.XYArchiveFetchJob;
-import org.csstudio.iter.widgets.archive.databrowser2.XYArchiveJobCompleteListener;
 import org.csstudio.iter.widgets.archive.xygraph.Activator;
+import org.csstudio.iter.widgets.archive.xygraph.databrowser2.XYArchiveFetchJob;
+import org.csstudio.iter.widgets.archive.xygraph.databrowser2.XYArchiveJobCompleteListener;
 import org.csstudio.iter.widgets.archive.xygraph.model.ArchiveXYGraphModel;
 import org.csstudio.iter.widgets.archive.xygraph.util.DataSourceUrl;
 import org.csstudio.opibuilder.editparts.ExecutionMode;
