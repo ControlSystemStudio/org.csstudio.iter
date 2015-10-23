@@ -1,5 +1,7 @@
 package org.csstudio.help.generation;
 
+import java.util.logging.Level;
+
 import org.csstudio.help.generation.html.GenerateHTML;
 import org.csstudio.help.generation.preferences.Preferences;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -24,6 +26,7 @@ public class HelpGenerationAction implements IWorkbenchWindowActionDelegate {
 				try {
 					generateHTML.create();
 				} catch (Exception e) {
+					Activator.getLogger().log(Level.WARNING, "generation pdf error", e);
 					final Exception e1 = e;
 					Display.getDefault().asyncExec(new Runnable() {
 					      public void run() {
