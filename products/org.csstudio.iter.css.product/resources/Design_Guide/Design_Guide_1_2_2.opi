@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.104.201508191015</boy_version>
+  <boy_version>4.0.105.codac_core_5_2b2</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -188,7 +188,6 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -310,7 +309,6 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -392,7 +390,6 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -601,8 +598,6 @@
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
-              <on_state></on_state>
-              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -739,8 +734,6 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
-              <on_state></on_state>
-              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -877,8 +870,6 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
-              <on_state></on_state>
-              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -1015,8 +1006,6 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
-              <on_state></on_state>
-              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -1244,7 +1233,7 @@ $(pv_value)</tooltip>
             <auto_size>true</auto_size>
             <image_file>../templates/CryogenicGuardVacuumSystem.png</image_file>
             <scripts />
-            <height>1760</height>
+            <height>1545</height>
             <border_width>2</border_width>
             <scale_options>
               <width_scalable>false</width_scalable>
@@ -1274,7 +1263,7 @@ $(pv_value)</tooltip>
                 <col>1.0</col>
               </row>
             </permutation_matrix>
-            <width>2264</width>
+            <width>2184</width>
             <x>600</x>
             <name>PumpSets</name>
             <y>0</y>
@@ -1342,8 +1331,6 @@ $(pv_value)</tooltip>
           </font>
           <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules />
@@ -1436,7 +1423,7 @@ $(pv_value)</tooltip>
             <scripts />
             <border_alarm_sensitive>false</border_alarm_sensitive>
             <show_units>true</show_units>
-            <height>33</height>
+            <height>35</height>
             <border_width>1</border_width>
             <scale_options>
               <width_scalable>false</width_scalable>
@@ -1457,7 +1444,7 @@ $(pv_value)</tooltip>
             <background_color>
               <color name="IO InputPV Bg" red="235" green="235" blue="235" />
             </background_color>
-            <width>96</width>
+            <width>98</width>
             <x>1414</x>
             <name>Pressure Measurment</name>
             <y>1637</y>
@@ -1471,8 +1458,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules />
@@ -1548,8 +1533,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules />
@@ -1625,8 +1608,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules />
@@ -1719,7 +1700,7 @@ $(pv_value)</tooltip>
             <scripts />
             <border_alarm_sensitive>false</border_alarm_sensitive>
             <show_units>true</show_units>
-            <height>33</height>
+            <height>35</height>
             <border_width>1</border_width>
             <scale_options>
               <width_scalable>false</width_scalable>
@@ -1740,7 +1721,7 @@ $(pv_value)</tooltip>
             <background_color>
               <color name="IO InputPV Bg" red="235" green="235" blue="235" />
             </background_color>
-            <width>96</width>
+            <width>98</width>
             <x>1967</x>
             <name>Pressure Measurment</name>
             <y>1616</y>
@@ -1754,8 +1735,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules />
@@ -1848,7 +1827,7 @@ $(pv_value)</tooltip>
             <scripts />
             <border_alarm_sensitive>false</border_alarm_sensitive>
             <show_units>true</show_units>
-            <height>33</height>
+            <height>35</height>
             <border_width>1</border_width>
             <scale_options>
               <width_scalable>false</width_scalable>
@@ -1869,7 +1848,7 @@ $(pv_value)</tooltip>
             <background_color>
               <color name="IO InputPV Bg" red="235" green="235" blue="235" />
             </background_color>
-            <width>96</width>
+            <width>98</width>
             <x>2251</x>
             <name>Pressure Measurment</name>
             <y>1425</y>
@@ -1883,8 +1862,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules />
@@ -1960,8 +1937,6 @@ $(pv_value)</tooltip>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <rules />
@@ -2086,7 +2061,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <wuid>-ae3bbd7:148fa0f526e:-7f3c</wuid>
       <transparent>false</transparent>
-      <lock_children>true</lock_children>
+      <lock_children>false</lock_children>
       <scripts />
       <height>1006</height>
       <border_width>1</border_width>
@@ -2128,58 +2103,16 @@ $(pv_value)</tooltip>
       <font>
         <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
-      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+        <opi_file>../templates/AlarmPane.opi</opi_file>
         <border_style>0</border_style>
-        <tooltip>ACTIVE ALARM BUTTONS</tooltip>
-        <horizontal_alignment>1</horizontal_alignment>
+        <tooltip></tooltip>
         <rules />
         <enabled>true</enabled>
-        <wuid>333eae9e:14951f153e9:-5583</wuid>
-        <transparent>true</transparent>
-        <auto_size>false</auto_size>
-        <text></text>
+        <wuid>-4dd0cfa9:150a847eb4f:-630c</wuid>
         <scripts />
-        <height>1001</height>
+        <height>1002</height>
         <border_width>2</border_width>
-        <scale_options>
-          <width_scalable>false</width_scalable>
-          <height_scalable>false</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <visible>true</visible>
-        <vertical_alignment>1</vertical_alignment>
-        <border_color>
-          <color name="IO Border" red="0" green="0" blue="0" />
-        </border_color>
-        <widget_type>Label</widget_type>
-        <wrap_words>false</wrap_words>
-        <background_color>
-          <color name="IO Area Background" red="221" green="223" blue="229" />
-        </background_color>
-        <width>575</width>
-        <x>0</x>
-        <name>Comment</name>
-        <y>0</y>
-        <foreground_color>
-          <color name="IO Text Fg" red="0" green="0" blue="0" />
-        </foreground_color>
-        <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
-        <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-        </font>
-      </widget>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-        <border_style>0</border_style>
-        <tooltip>ACTIVE ALARM BUTTONS</tooltip>
-        <rules />
-        <enabled>true</enabled>
-        <wuid>-57352fd0:149859b9257:-26bf</wuid>
-        <transparent>true</transparent>
-        <lock_children>false</lock_children>
-        <scripts />
-        <height>1001</height>
-        <border_width>1</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
           <height_scalable>false</height_scalable>
@@ -2188,1282 +2121,27 @@ $(pv_value)</tooltip>
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
+        <resize_behaviour>1</resize_behaviour>
         <visible>true</visible>
+        <group_name></group_name>
         <border_color>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
-        <widget_type>Grouping Container</widget_type>
+        <widget_type>Linking Container</widget_type>
         <background_color>
-          <color name="IO Area Background" red="221" green="223" blue="229" />
+          <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
-        <width>575</width>
+        <width>576</width>
         <x>0</x>
-        <name>Active Alarms</name>
+        <name>Alarm Pane</name>
         <y>0</y>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <fc>false</fc>
-        <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <border_style>0</border_style>
-          <tooltip>Alarm Pane</tooltip>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>-57352fd0:149859b9257:-26be</wuid>
-          <transparent>true</transparent>
-          <lock_children>false</lock_children>
-          <scripts />
-          <height>50</height>
-          <border_width>1</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <visible>true</visible>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Grouping Container</widget_type>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <width>573</width>
-          <x>0</x>
-          <name>Alarm 1</name>
-          <y>0</y>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="false" hook_all="false" />
-          <fc>false</fc>
-          <show_scrollbar>false</show_scrollbar>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-          <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-            <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <rules>
-              <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-              <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-            </rules>
-            <effect_3d>true</effect_3d>
-            <bit>-1</bit>
-            <pv_value />
-            <height>50</height>
-            <border_width>2</border_width>
-            <visible>true</visible>
-            <pv_name>sim://ramp(0,5,1,5)</pv_name>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <widget_type>LED</widget_type>
-            <name>Alarm Title</name>
-            <actions hook="false" hook_all="false" />
-            <show_boolean_label>true</show_boolean_label>
-            <border_style>0</border_style>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <enabled>true</enabled>
-            <wuid>-57352fd0:149859b9257:-26bd</wuid>
-            <on_color>
-              <color name="IO PV ON" red="0" green="0" blue="255" />
-            </on_color>
-            <scripts />
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <on_label>ALARM 1</on_label>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <off_color>
-              <color name="IO PV OFF" red="149" green="125" blue="71" />
-            </off_color>
-            <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <square_led>true</square_led>
-            <width>430</width>
-            <x>0</x>
-            <data_type>0</data_type>
-            <y>0</y>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <off_label>ALARM 1</off_label>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-            <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <rules>
-              <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-              <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-            </rules>
-            <effect_3d>true</effect_3d>
-            <bit>-1</bit>
-            <pv_value />
-            <height>50</height>
-            <border_width>2</border_width>
-            <visible>true</visible>
-            <pv_name>sim://ramp(0,5,1,5)</pv_name>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <widget_type>LED</widget_type>
-            <name>Alarm 1</name>
-            <actions hook="false" hook_all="false" />
-            <show_boolean_label>true</show_boolean_label>
-            <border_style>0</border_style>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <enabled>true</enabled>
-            <wuid>-57352fd0:149859b9257:-26bc</wuid>
-            <on_color>
-              <color name="IO PV ON" red="0" green="0" blue="255" />
-            </on_color>
-            <scripts>
-              <path pathString="../templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
-                <pv trig="true">$(pv_name)</pv>
-              </path>
-            </scripts>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <on_label>00:00:00</on_label>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <off_color>
-              <color name="IO PV OFF" red="149" green="125" blue="71" />
-            </off_color>
-            <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <square_led>true</square_led>
-            <width>146</width>
-            <x>430</x>
-            <data_type>0</data_type>
-            <y>0</y>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <off_label>00:00:00</off_label>
-          </widget>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <border_style>0</border_style>
-          <tooltip>Alarm Pane</tooltip>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>-57352fd0:149859b9257:-26bb</wuid>
-          <transparent>true</transparent>
-          <lock_children>false</lock_children>
-          <scripts />
-          <height>50</height>
-          <border_width>1</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <visible>true</visible>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Grouping Container</widget_type>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <width>573</width>
-          <x>0</x>
-          <name>Alarm 2</name>
-          <y>50</y>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="false" hook_all="false" />
-          <fc>false</fc>
-          <show_scrollbar>false</show_scrollbar>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-          <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-            <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <rules>
-              <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-              <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-            </rules>
-            <effect_3d>true</effect_3d>
-            <bit>-1</bit>
-            <pv_value />
-            <height>50</height>
-            <border_width>2</border_width>
-            <visible>true</visible>
-            <pv_name>sim://noise(0,5,5)</pv_name>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <widget_type>LED</widget_type>
-            <name>Alarm Title</name>
-            <actions hook="false" hook_all="false" />
-            <show_boolean_label>true</show_boolean_label>
-            <border_style>0</border_style>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <enabled>true</enabled>
-            <wuid>-57352fd0:149859b9257:-26ba</wuid>
-            <on_color>
-              <color name="IO PV ON" red="0" green="0" blue="255" />
-            </on_color>
-            <scripts />
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <on_label>ALARM 2</on_label>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <off_color>
-              <color name="IO PV OFF" red="149" green="125" blue="71" />
-            </off_color>
-            <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <square_led>true</square_led>
-            <width>430</width>
-            <x>0</x>
-            <data_type>0</data_type>
-            <y>0</y>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <off_label>ALARM 2</off_label>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-            <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <rules>
-              <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-              <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-            </rules>
-            <effect_3d>true</effect_3d>
-            <bit>-1</bit>
-            <pv_value />
-            <height>50</height>
-            <border_width>2</border_width>
-            <visible>true</visible>
-            <pv_name>sim://noise(0,5,5)</pv_name>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <widget_type>LED</widget_type>
-            <name>Alarm 2</name>
-            <actions hook="false" hook_all="false" />
-            <show_boolean_label>true</show_boolean_label>
-            <border_style>0</border_style>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <enabled>true</enabled>
-            <wuid>-57352fd0:149859b9257:-26b9</wuid>
-            <on_color>
-              <color name="IO PV ON" red="0" green="0" blue="255" />
-            </on_color>
-            <scripts>
-              <path pathString="../templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
-                <pv trig="true">$(pv_name)</pv>
-              </path>
-            </scripts>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <on_label>00:00:00</on_label>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <off_color>
-              <color name="IO PV OFF" red="149" green="125" blue="71" />
-            </off_color>
-            <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <square_led>true</square_led>
-            <width>146</width>
-            <x>430</x>
-            <data_type>0</data_type>
-            <y>0</y>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <off_label>00:00:00</off_label>
-          </widget>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <border_style>0</border_style>
-          <tooltip>Alarm Pane</tooltip>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>-57352fd0:149859b9257:-26b8</wuid>
-          <transparent>true</transparent>
-          <lock_children>false</lock_children>
-          <scripts />
-          <height>50</height>
-          <border_width>1</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <visible>true</visible>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Grouping Container</widget_type>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <width>573</width>
-          <x>0</x>
-          <name>Alarm 3</name>
-          <y>100</y>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="false" hook_all="false" />
-          <fc>false</fc>
-          <show_scrollbar>false</show_scrollbar>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-          <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-            <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <rules>
-              <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-              <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-            </rules>
-            <effect_3d>true</effect_3d>
-            <bit>-1</bit>
-            <pv_value />
-            <height>50</height>
-            <border_width>2</border_width>
-            <visible>true</visible>
-            <pv_name>sim://noise(0,25,5)</pv_name>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <widget_type>LED</widget_type>
-            <name>Alarm Title</name>
-            <actions hook="false" hook_all="false" />
-            <show_boolean_label>true</show_boolean_label>
-            <border_style>0</border_style>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <enabled>true</enabled>
-            <wuid>-57352fd0:149859b9257:-26b7</wuid>
-            <on_color>
-              <color name="IO PV ON" red="0" green="0" blue="255" />
-            </on_color>
-            <scripts />
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <on_label>ALARM 3</on_label>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <off_color>
-              <color name="IO PV OFF" red="149" green="125" blue="71" />
-            </off_color>
-            <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <square_led>true</square_led>
-            <width>430</width>
-            <x>0</x>
-            <data_type>0</data_type>
-            <y>0</y>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <off_label>ALARM 3</off_label>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-            <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <rules>
-              <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-              <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-            </rules>
-            <effect_3d>true</effect_3d>
-            <bit>-1</bit>
-            <pv_value />
-            <height>50</height>
-            <border_width>2</border_width>
-            <visible>true</visible>
-            <pv_name>sim://noise(0,25,5)</pv_name>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <widget_type>LED</widget_type>
-            <name>Alarm 3</name>
-            <actions hook="false" hook_all="false" />
-            <show_boolean_label>true</show_boolean_label>
-            <border_style>0</border_style>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <enabled>true</enabled>
-            <wuid>-57352fd0:149859b9257:-26b6</wuid>
-            <on_color>
-              <color name="IO PV ON" red="0" green="0" blue="255" />
-            </on_color>
-            <scripts>
-              <path pathString="../templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
-                <pv trig="true">$(pv_name)</pv>
-              </path>
-            </scripts>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <on_label>00:00:00</on_label>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <off_color>
-              <color name="IO PV OFF" red="149" green="125" blue="71" />
-            </off_color>
-            <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <square_led>true</square_led>
-            <width>146</width>
-            <x>430</x>
-            <data_type>0</data_type>
-            <y>0</y>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <off_label>00:00:00</off_label>
-          </widget>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <border_style>0</border_style>
-          <tooltip>Alarm Pane</tooltip>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>-57352fd0:149859b9257:-26b5</wuid>
-          <transparent>true</transparent>
-          <lock_children>false</lock_children>
-          <scripts />
-          <height>50</height>
-          <border_width>1</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <visible>true</visible>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Grouping Container</widget_type>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <width>573</width>
-          <x>0</x>
-          <name>Alarm 4</name>
-          <y>150</y>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="false" hook_all="false" />
-          <fc>false</fc>
-          <show_scrollbar>false</show_scrollbar>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-          <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-            <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <rules>
-              <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-              <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-            </rules>
-            <effect_3d>true</effect_3d>
-            <bit>-1</bit>
-            <pv_value />
-            <height>50</height>
-            <border_width>2</border_width>
-            <visible>true</visible>
-            <pv_name>sim://ramp(0,25,1,10)</pv_name>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <widget_type>LED</widget_type>
-            <name>Alarm Title</name>
-            <actions hook="false" hook_all="false" />
-            <show_boolean_label>true</show_boolean_label>
-            <border_style>0</border_style>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <enabled>true</enabled>
-            <wuid>-57352fd0:149859b9257:-26b4</wuid>
-            <on_color>
-              <color name="IO PV ON" red="0" green="0" blue="255" />
-            </on_color>
-            <scripts />
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <on_label>ALARM 4</on_label>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <off_color>
-              <color name="IO PV OFF" red="149" green="125" blue="71" />
-            </off_color>
-            <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <square_led>true</square_led>
-            <width>430</width>
-            <x>0</x>
-            <data_type>0</data_type>
-            <y>0</y>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <off_label>ALARM 4</off_label>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-            <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <rules>
-              <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-              <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-            </rules>
-            <effect_3d>true</effect_3d>
-            <bit>-1</bit>
-            <pv_value />
-            <height>50</height>
-            <border_width>2</border_width>
-            <visible>true</visible>
-            <pv_name>sim://ramp(0,25,1,10)</pv_name>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <widget_type>LED</widget_type>
-            <name>Alarm 4</name>
-            <actions hook="false" hook_all="false" />
-            <show_boolean_label>true</show_boolean_label>
-            <border_style>0</border_style>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <enabled>true</enabled>
-            <wuid>-57352fd0:149859b9257:-26b3</wuid>
-            <on_color>
-              <color name="IO PV ON" red="0" green="0" blue="255" />
-            </on_color>
-            <scripts>
-              <path pathString="../templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
-                <pv trig="true">$(pv_name)</pv>
-              </path>
-            </scripts>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <on_label>00:00:00</on_label>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <off_color>
-              <color name="IO PV OFF" red="149" green="125" blue="71" />
-            </off_color>
-            <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <square_led>true</square_led>
-            <width>146</width>
-            <x>430</x>
-            <data_type>0</data_type>
-            <y>0</y>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <off_label>00:00:00</off_label>
-          </widget>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <border_style>0</border_style>
-          <tooltip>Alarm Pane</tooltip>
-          <rules />
-          <enabled>true</enabled>
-          <wuid>-57352fd0:149859b9257:-26b2</wuid>
-          <transparent>true</transparent>
-          <lock_children>false</lock_children>
-          <scripts />
-          <height>50</height>
-          <border_width>1</border_width>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <visible>true</visible>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <widget_type>Grouping Container</widget_type>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <width>573</width>
-          <x>0</x>
-          <name>Alarm 5</name>
-          <y>200</y>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <actions hook="false" hook_all="false" />
-          <fc>false</fc>
-          <show_scrollbar>false</show_scrollbar>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-          <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-            <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <rules>
-              <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-              <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-            </rules>
-            <effect_3d>true</effect_3d>
-            <bit>-1</bit>
-            <pv_value />
-            <height>50</height>
-            <border_width>2</border_width>
-            <visible>true</visible>
-            <pv_name>sim://noise(0,25,15)</pv_name>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <widget_type>LED</widget_type>
-            <name>Alarm Title</name>
-            <actions hook="false" hook_all="false" />
-            <show_boolean_label>true</show_boolean_label>
-            <border_style>0</border_style>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <enabled>true</enabled>
-            <wuid>-57352fd0:149859b9257:-26b1</wuid>
-            <on_color>
-              <color name="IO PV ON" red="0" green="0" blue="255" />
-            </on_color>
-            <scripts />
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <on_label>ALARM 5</on_label>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <off_color>
-              <color name="IO PV OFF" red="149" green="125" blue="71" />
-            </off_color>
-            <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <square_led>true</square_led>
-            <width>430</width>
-            <x>0</x>
-            <data_type>0</data_type>
-            <y>0</y>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <off_label>ALARM 5</off_label>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-            <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <rules>
-              <rule name="OnColorSeverityRule" prop_id="on_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-              <rule name="OffColorSeverityRule" prop_id="off_color" out_exp="false">
-                <exp bool_exp="pvSev0==0">
-                  <value>
-                    <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==-1">
-                  <value>
-                    <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==1">
-                  <value>
-                    <color name="IO High Level Alarm" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <exp bool_exp="pvSev0==2">
-                  <value>
-                    <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-              </rule>
-            </rules>
-            <effect_3d>true</effect_3d>
-            <bit>-1</bit>
-            <pv_value />
-            <height>50</height>
-            <border_width>2</border_width>
-            <visible>true</visible>
-            <pv_name>sim://noise(0,25,15)</pv_name>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <widget_type>LED</widget_type>
-            <name>Alarm 5</name>
-            <actions hook="false" hook_all="false" />
-            <show_boolean_label>true</show_boolean_label>
-            <border_style>0</border_style>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <enabled>true</enabled>
-            <wuid>-57352fd0:149859b9257:-26b0</wuid>
-            <on_color>
-              <color name="IO PV ON" red="0" green="0" blue="255" />
-            </on_color>
-            <scripts>
-              <path pathString="../templates/scripts/AlarmShortFormat.js" checkConnect="true" sfe="false" seoe="false">
-                <pv trig="true">$(pv_name)</pv>
-              </path>
-            </scripts>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <on_label>00:00:00</on_label>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <off_color>
-              <color name="IO PV OFF" red="149" green="125" blue="71" />
-            </off_color>
-            <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <square_led>true</square_led>
-            <width>146</width>
-            <x>430</x>
-            <data_type>0</data_type>
-            <y>0</y>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <off_label>00:00:00</off_label>
-          </widget>
-        </widget>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -3542,7 +2220,6 @@ $(pv_value)</tooltip>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>
