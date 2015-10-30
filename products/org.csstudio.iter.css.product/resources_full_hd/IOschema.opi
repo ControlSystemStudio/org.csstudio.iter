@@ -9,7 +9,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.104.201508191015</boy_version>
+  <boy_version>4.0.105.201510211344</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -680,7 +680,7 @@ $(pv_value)</tooltip>
       <scripts/>
       <border_alarm_sensitive>false</border_alarm_sensitive>
       <show_units>true</show_units>
-      <height>20</height>
+      <height>17</height>
       <border_width>1</border_width>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -701,7 +701,7 @@ $(pv_value)</tooltip>
       <background_color>
         <color blue="235" green="235" name="IO InputPV Bg" red="235"/>
       </background_color>
-      <width>52</width>
+      <width>60</width>
       <x>117</x>
       <name>Text Update Template</name>
       <y>262</y>
@@ -1599,7 +1599,6 @@ $(pv_value)</tooltip>
     <widget typeId="org.csstudio.trends.databrowser.opiwidget" version="1.0.0">
       <show_value_labels>false</show_value_labels>
       <border_style>0</border_style>
-      <show_toolbar>false</show_toolbar>
       <tooltip/>
       <rules/>
       <enabled>true</enabled>
@@ -1617,7 +1616,6 @@ $(pv_value)</tooltip>
         <include_parent_macros>true</include_parent_macros>
       </macros>
       <visible>true</visible>
-      <show_legend>false</show_legend>
       <border_color>
         <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
@@ -1681,7 +1679,9 @@ $(pv_value)</tooltip>
         <color blue="229" green="223" name="IO Area Background" red="221"/>
       </background_color>
       <table_weight_acknowledge>80</table_weight_acknowledge>
+      <table_header_visible>false</table_header_visible>
       <unacknowledged_blinking>true</unacknowledged_blinking>
+      <column_headers_visible>true</column_headers_visible>
       <width>287</width>
       <x>1788</x>
       <name>Alarm Table Template</name>
@@ -2682,7 +2682,7 @@ $(pv_value)</tooltip>
       <read_only>false</read_only>
       <text>######</text>
       <show_units>true</show_units>
-      <height>20</height>
+      <height>19</height>
       <multiline_input>false</multiline_input>
       <border_width>1</border_width>
       <visible>true</visible>
@@ -2709,6 +2709,10 @@ $(pv_value)</tooltip>
         <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
+      <background_focus_color>
+        <color blue="241" green="217" name="IO Focus Entry" red="198"/>
+      </background_focus_color>
+      <confirm_focus_lost>true</confirm_focus_lost>
       <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <format_type>0</format_type>
       <limits_from_pv>true</limits_from_pv>
@@ -2716,7 +2720,7 @@ $(pv_value)</tooltip>
         <color blue="255" green="255" name="IO OutputPV Bg" red="255"/>
       </background_color>
       <password_input>false</password_input>
-      <width>52</width>
+      <width>60</width>
       <x>116</x>
       <y>10</y>
       <foreground_color>
@@ -2735,7 +2739,7 @@ $(pv_value)</tooltip>
       <horizon_profile_x_pv_name/>
       <height>350</height>
       <border_width>2</border_width>
-      <graph_area_width>731</graph_area_width>
+      <graph_area_width>733</graph_area_width>
       <y_axis_scale_font>
         <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">IO Scale</opifont.name>
       </y_axis_scale_font>
@@ -2761,7 +2765,7 @@ $(pv_value)</tooltip>
         <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </y_axis_title_font>
       <border_alarm_sensitive>false</border_alarm_sensitive>
-      <graph_area_height>617</graph_area_height>
+      <graph_area_height>619</graph_area_height>
       <x_axis_visible>true</x_axis_visible>
       <vertical_profile_x_pv_name/>
       <pixel_info_pv_name/>
