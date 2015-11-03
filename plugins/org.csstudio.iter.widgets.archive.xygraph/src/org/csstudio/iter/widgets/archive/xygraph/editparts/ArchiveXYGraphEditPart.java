@@ -286,7 +286,7 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
             Trace trace = traceList.get(traceIndex);
 
             List <VType> samples = cacheDuringLoad.get(new Integer(traceIndex));
-            if (samples != null) {
+            if (samples != null && newValue instanceof VType) {
             	samples.add((VType) newValue);
             }
 
