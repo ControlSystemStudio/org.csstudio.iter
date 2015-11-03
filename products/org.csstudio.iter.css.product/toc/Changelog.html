@@ -2,43 +2,43 @@
 <head>
 <title>ITER CSS Changelog</title>
 <link rel="stylesheet" href="PLUGINS_ROOT/PRODUCT_PLUGIN/book.css"
-	type="text/css"></link>
+    type="text/css"></link>
 </head>
 <body>
-	<h1>ITER CSS Changelog</h1>
-	<p>Version numbers in here refer to CODAC Core System.</p>
-	<h2>Version 5.2.0 - 2016-02-01</h2>
-	<ul>
-		<li>
-			CSS enhancements:
-			<ul>
-				<li>AlarmTable BOY widget added</li>
-			</ul>
-		</li>
-	</ul>
-	<h2>Version 5.1.0 - 2015-06-30</h2>
-	<ul>
-		<li>CSS enhancements:
-			<ul>
-				<li>Integration of CSS 4.2.0 official release:<br> <img
-					src="images/image028.jpg" /><br> In this release CSS menu has
-					been changed to CS-Studio:<br> <img src="images/image029.jpg" /></li>
-			</ul>
-		</li>
-		<li>Auto-Complete improvements:
-			<ul>
-				<li>Implemented Auto-Complete support for ca JSON extension:<br>
-					<img align="middle" src="images/image030.jpg" /></li>
-			</ul>
-		</li>
-		<li>New mini-CODAC save/restore database tool that allow the user
-			to take a snapshot any databases - archive, alarm, message history or
-			logbook. It is also possible to specify a time frame for the
-			snapshot: <pre style="font-family: Courier New;">
+    <h1>ITER CSS Changelog</h1>
+    <p>Version numbers in here refer to CODAC Core System.</p>
+    <h2>Version 5.2.0 - 2016-02-01</h2>
+    <ul>
+        <li>
+            CSS enhancements:
+            <ul>
+                <li>AlarmTable BOY widget added</li>
+            </ul>
+        </li>
+    </ul>
+    <h2>Version 5.1.0 - 2015-06-30</h2>
+    <ul>
+        <li>CSS enhancements:
+            <ul>
+                <li>Integration of CSS 4.2.0 official release:<br> <img
+                    src="images/image028.jpg" /><br> In this release CSS menu has
+                    been changed to CS-Studio:<br> <img src="images/image029.jpg" /></li>
+            </ul>
+        </li>
+        <li>Auto-Complete improvements:
+            <ul>
+                <li>Implemented Auto-Complete support for ca JSON extension:<br>
+                    <img align="middle" src="images/image030.jpg" /></li>
+            </ul>
+        </li>
+        <li>New mini-CODAC save/restore database tool that allow the user
+            to take a snapshot any databases - archive, alarm, message history or
+            logbook. It is also possible to specify a time frame for the
+            snapshot: <pre style="font-family: Courier New;">
 $ css-dbmanager -help
 
 Usage:
-    css-dbmanager -list | -save | -restore -file my_backup_file -rdb_name dbname [-from t1] [-to t2] 
+    css-dbmanager -list | -save | -restore -file my_backup_file -rdb_name dbname [-from t1] [-to t2]
     [-rdb_user user] [-rdb_host host] [-rdb_url url]
 
 Options:
@@ -62,454 +62,454 @@ In that case, -file option is not required.
 
 Example:
     css-dbmanager -save all -from "2015-01-01 00:00:00" -to "2015-06-01 17:00:00"
-		</pre>
-		</li>
-		<li>OPI Validation - OPI Validation tool built on the Eclipse's
-			validation framework provides means to validate and quickly fix
-			existing OPI files with regards to ITER OPI schema. Validation can be
-			invoked manually on an OPI file or group of OPI files by invoking the
-			"Validate" context menu item. Manually invoking validation will run
-			validation in the background.<br> When validation completes, a
-			validation results dialog is displayed, and any problems found will
-			be shown in the Problems view.<br> To open the Problems view,
-			select Problems from the menu bar Window -> Show View -> Other... ->
-			General -> Problems.<br> Double-clicking on an
-			error/warning/info message in this view opens the respective editor
-			(OPI Editor or OPI Runtime) and highlights the failing widget.
-			Finally, from the Problems view, fixes can be applied on one or many
-			error/warning messages by invoking the "Quick fix" context menu item.
-			A confirmation is asked for making a backup before applying the fix.
-			After the quick fix is completed, the modified OPI files are
-			revalidated. <br> <img src="images/image031.jpg" />
-		</li>
-		<li>OPI Scaling - Full HD to 4K that will resize the widgets by a
-			factor of 2, 4K to Full HD that will resize the widgets by a factor
-			of 0.5 and a custom scale. <br> <img src="images/image032.jpg" />
-		</li>
-		<li>New shortcut to CODAC provided templates - navigation pane,
-			control pane for the faceplates, UTC and logo pane... <br> <img
-			src="images/image033.jpg" />
-		</li>
-		<li>Standardization of User Input validation - validate, submit
-			JavaScript. An example of validation is provided for the faceplate
-			template AnalogComponent.opi <br /> <img src="images/image034.jpg" />
-		</li>
-		<li>New Full HD color, font and schema definition compliant with
-			ITER HMI Design Guide.<br> <i>Note: the use of mono-space
-				font could impact the layout of existing OPI files. Manual
-				adjustments could be required to align text widgets with other
-				widgets.</i>
-		</li>
-		<li>Updated color definition file - invalid/disconnected PVs
-			shown in magenta, pipes with flow in very dark-grey and pipes without
-			flow in mid-grey.</li>
-		<li>Recommendation to use JavaScript instead of Python for
-			performance reason and better integration in a Java platform.</li>
-		<li>New alarm table layout which includes the following features:
-			<ul>
-				<li>Alarm acknowledgement tick box</li>
-				<li>Alarm priority icons<br> <img
-					src="images/image035.jpg" /></li>
-				<li>The alarm priority symbol is flashing at 2Hz until
-					acknowledged by the operator</li>
-				<li>Multiple alarm table views can be opened at the same time</li>
-				<li>New view menu<br> <img src="images/image036.jpg" /></li>
-				<li>Alarm table layout for ITER with Alarm Action as the first
-					guidance description and Alarm ID as the first guidance title<br>
-					<img src="images/image037.jpg" />
-				</li>
-			</ul>
-		</li>
-	</ul>
+        </pre>
+        </li>
+        <li>OPI Validation - OPI Validation tool built on the Eclipse's
+            validation framework provides means to validate and quickly fix
+            existing OPI files with regards to ITER OPI schema. Validation can be
+            invoked manually on an OPI file or group of OPI files by invoking the
+            "Validate" context menu item. Manually invoking validation will run
+            validation in the background.<br> When validation completes, a
+            validation results dialog is displayed, and any problems found will
+            be shown in the Problems view.<br> To open the Problems view,
+            select Problems from the menu bar Window -> Show View -> Other... ->
+            General -> Problems.<br> Double-clicking on an
+            error/warning/info message in this view opens the respective editor
+            (OPI Editor or OPI Runtime) and highlights the failing widget.
+            Finally, from the Problems view, fixes can be applied on one or many
+            error/warning messages by invoking the "Quick fix" context menu item.
+            A confirmation is asked for making a backup before applying the fix.
+            After the quick fix is completed, the modified OPI files are
+            revalidated. <br> <img src="images/image031.jpg" />
+        </li>
+        <li>OPI Scaling - Full HD to 4K that will resize the widgets by a
+            factor of 2, 4K to Full HD that will resize the widgets by a factor
+            of 0.5 and a custom scale. <br> <img src="images/image032.jpg" />
+        </li>
+        <li>New shortcut to CODAC provided templates - navigation pane,
+            control pane for the faceplates, UTC and logo pane... <br> <img
+            src="images/image033.jpg" />
+        </li>
+        <li>Standardization of User Input validation - validate, submit
+            JavaScript. An example of validation is provided for the faceplate
+            template AnalogComponent.opi <br /> <img src="images/image034.jpg" />
+        </li>
+        <li>New Full HD color, font and schema definition compliant with
+            ITER HMI Design Guide.<br> <i>Note: the use of mono-space
+                font could impact the layout of existing OPI files. Manual
+                adjustments could be required to align text widgets with other
+                widgets.</i>
+        </li>
+        <li>Updated color definition file - invalid/disconnected PVs
+            shown in magenta, pipes with flow in very dark-grey and pipes without
+            flow in mid-grey.</li>
+        <li>Recommendation to use JavaScript instead of Python for
+            performance reason and better integration in a Java platform.</li>
+        <li>New alarm table layout which includes the following features:
+            <ul>
+                <li>Alarm acknowledgement tick box</li>
+                <li>Alarm priority icons<br> <img
+                    src="images/image035.jpg" /></li>
+                <li>The alarm priority symbol is flashing at 2Hz until
+                    acknowledged by the operator</li>
+                <li>Multiple alarm table views can be opened at the same time</li>
+                <li>New view menu<br> <img src="images/image036.jpg" /></li>
+                <li>Alarm table layout for ITER with Alarm Action as the first
+                    guidance description and Alarm ID as the first guidance title<br>
+                    <img src="images/image037.jpg" />
+                </li>
+            </ul>
+        </li>
+    </ul>
 
-	<h2>Version 5.0.0 - 2015-02-15</h2>
-	<ul>
-		<li>CSS enhancements:
-			<ul>
-				<li>Integration of CSS 4.0.0 official release based on Eclipse
-					4 and Java 8</li>
-			</ul>
-		</li>
-		<li>BOY - Operator Interface enhancements:
-			<ul>
-				<li>Support of ITER HMI Design Guide - Colours, fonts, default
-					widget properties</li>
-				<li>Support of 4K screen for VDU screen 16/9</li>
-				<li>Support of display canvas of 3840x2160</li>
-				<li>Support of standard layout with Global Statuses, MIMIC
-					Title, UTC Time, Main Display Area, Active Alarm Pane, Control
-					Area/Faceplates and Navigation Pane
-					<ul>
-						<li>VDU Screen 16/9 Layout<br> <img
-							src="images/image024.jpg" /></li>
-						<li>Demo - Level 0<br> <img src="images/image025.jpg" /></li>
-						<li>Demo - Level 1 for UTIL<br> <img
-							src="images/image026.jpg" /></li>
-						<li>Demo - Alarm Page<br> <img src="images/image027.jpg" /></li>
-					</ul>
-				</li>
-				<li>Scale OPI tool accessible via a right-click on selected OPI
-					files in the Navigator view. The scaling options are:
-					<ul>
-						<li>Full HD to 4K Scale - will scale by a factor of 2 the
-							input OPI files</li>
-						<li>4K to Full HD Scale - will scale by a factor of 0.5 the
-							input OPI files</li>
-						<li>Custom Scale - will ask for the scaling factor</li>
-					</ul>
-				</li>
-				<li>Support of animated png image files</li>
-				<li>Support of Symbol widget Background alarm sensitive
-					property</li>
-			</ul>
-		</li>
-		<li>Electronic Logbook enhancements:
-			<ul>
-				<li>Auto update of the logbook entries list every few seconds</li>
-				<li>Logbook entry export action</li>
-				<li>Integration of the Logbook Python API</li>
-			</ul>
-		</li>
-	</ul>
+    <h2>Version 5.0.0 - 2015-02-15</h2>
+    <ul>
+        <li>CSS enhancements:
+            <ul>
+                <li>Integration of CSS 4.0.0 official release based on Eclipse
+                    4 and Java 8</li>
+            </ul>
+        </li>
+        <li>BOY - Operator Interface enhancements:
+            <ul>
+                <li>Support of ITER HMI Design Guide - Colours, fonts, default
+                    widget properties</li>
+                <li>Support of 4K screen for VDU screen 16/9</li>
+                <li>Support of display canvas of 3840x2160</li>
+                <li>Support of standard layout with Global Statuses, MIMIC
+                    Title, UTC Time, Main Display Area, Active Alarm Pane, Control
+                    Area/Faceplates and Navigation Pane
+                    <ul>
+                        <li>VDU Screen 16/9 Layout<br> <img
+                            src="images/image024.jpg" /></li>
+                        <li>Demo - Level 0<br> <img src="images/image025.jpg" /></li>
+                        <li>Demo - Level 1 for UTIL<br> <img
+                            src="images/image026.jpg" /></li>
+                        <li>Demo - Alarm Page<br> <img src="images/image027.jpg" /></li>
+                    </ul>
+                </li>
+                <li>Scale OPI tool accessible via a right-click on selected OPI
+                    files in the Navigator view. The scaling options are:
+                    <ul>
+                        <li>Full HD to 4K Scale - will scale by a factor of 2 the
+                            input OPI files</li>
+                        <li>4K to Full HD Scale - will scale by a factor of 0.5 the
+                            input OPI files</li>
+                        <li>Custom Scale - will ask for the scaling factor</li>
+                    </ul>
+                </li>
+                <li>Support of animated png image files</li>
+                <li>Support of Symbol widget Background alarm sensitive
+                    property</li>
+            </ul>
+        </li>
+        <li>Electronic Logbook enhancements:
+            <ul>
+                <li>Auto update of the logbook entries list every few seconds</li>
+                <li>Logbook entry export action</li>
+                <li>Integration of the Logbook Python API</li>
+            </ul>
+        </li>
+    </ul>
 
-	<h2>Version 4.3.b2 - 2014-06-04</h2>
-	<ul>
-		<li>CSS enhancements:
-			<ul>
-				<li>Integration of JAVA Channel Access for Client CAJ 1.1.14</li>
-			</ul>
-		</li>
-		<li>Electronic Logbook enhancements:
-			<ul>
-				<li>Log Entries can be mapped to a URL so that they can be
-					copied into emails, other log entries, etc.</li>
-				<li>Log Table refreshed automatically with new entries when the
-					view is active.</li>
-			</ul>
-		</li>
-		<li>BOY - Operator Interface enhancements:
-			<ul>
-				<li>ITER Template draft for information only available under
-					/opt/codac/opi/boy/resources/HMI_template/. It contains a new font
-					and colour definition files, a main layout
-					display_canvas_1266_726.opi and a mimic template
-					main_display_area_942_623.opi</li>
-			</ul>
-		</li>
-	</ul>
+    <h2>Version 4.3.b2 - 2014-06-04</h2>
+    <ul>
+        <li>CSS enhancements:
+            <ul>
+                <li>Integration of JAVA Channel Access for Client CAJ 1.1.14</li>
+            </ul>
+        </li>
+        <li>Electronic Logbook enhancements:
+            <ul>
+                <li>Log Entries can be mapped to a URL so that they can be
+                    copied into emails, other log entries, etc.</li>
+                <li>Log Table refreshed automatically with new entries when the
+                    view is active.</li>
+            </ul>
+        </li>
+        <li>BOY - Operator Interface enhancements:
+            <ul>
+                <li>ITER Template draft for information only available under
+                    /opt/codac/opi/boy/resources/HMI_template/. It contains a new font
+                    and colour definition files, a main layout
+                    display_canvas_1266_726.opi and a mimic template
+                    main_display_area_942_623.opi</li>
+            </ul>
+        </li>
+    </ul>
 
-	<h2>Version 4.3.b1 - 2014-05-07</h2>
-	<ul>
-		<li>CSS enhancements:
-			<ul>
-				<li>Integration of CSS 3.3.0 official release</li>
-			</ul>
-		</li>
-		<li>CSS bug fixes:
-			<ul>
-				<li>ITER CSS products can display their current version using
-					the option -version</li>
-				<li>Time format issue on 24 hours</li>
-			</ul>
-		</li>
-		<li>BOY - Operator Interface bug fixes:
-			<ul>
-				<li>Industrial symbol position label does not use the
-					foreground color</li>
-			</ul>
-		</li>
-		<li>BEAUTY - Engineering Archiving fixes:
-			<ul>
-				<li>Databrowser plot Time Axis Auto Format issue</li>
-				<li>Databrowser default bins size has been increased for ITER</li>
-			</ul>
-		</li>
-		<li>BEAST - Alarm System enhancements:
-			<ul>
-				<li>It is now possible to create an automated action that will
-					create a new entry in the electronic logbook when an alarm change
-					is notified</li>
-			</ul>
-		</li>
-	</ul>
+    <h2>Version 4.3.b1 - 2014-05-07</h2>
+    <ul>
+        <li>CSS enhancements:
+            <ul>
+                <li>Integration of CSS 3.3.0 official release</li>
+            </ul>
+        </li>
+        <li>CSS bug fixes:
+            <ul>
+                <li>ITER CSS products can display their current version using
+                    the option -version</li>
+                <li>Time format issue on 24 hours</li>
+            </ul>
+        </li>
+        <li>BOY - Operator Interface bug fixes:
+            <ul>
+                <li>Industrial symbol position label does not use the
+                    foreground color</li>
+            </ul>
+        </li>
+        <li>BEAUTY - Engineering Archiving fixes:
+            <ul>
+                <li>Databrowser plot Time Axis Auto Format issue</li>
+                <li>Databrowser default bins size has been increased for ITER</li>
+            </ul>
+        </li>
+        <li>BEAST - Alarm System enhancements:
+            <ul>
+                <li>It is now possible to create an automated action that will
+                    create a new entry in the electronic logbook when an alarm change
+                    is notified</li>
+            </ul>
+        </li>
+    </ul>
 
-	<h2>Version 4.2.b4 - 2014-01-07</h2>
-	<ul>
-		<li>CSS enhancements:
-			<ul>
-				<li>Updated Auto-Complete history management, the history is
-					now managed by entry type instead of fields type and shared by all</li>
-			</ul>
-		</li>
-		<li>CSS bug fixes:
-			<ul>
-				<li>Tooltip is now properly closed when an auto-completed field
-					is validated</li>
-			</ul>
-		</li>
-		<li>BOY - Operator Interface enhancements:
-			<ul>
-				<li>Fluid symbols updated for CRYO &amp; CWS</li>
-				<li>Graphics Image Widget now handles SVG images</li>
-				<li>Symbol widgets now handle 'ForeColor Alarm Sensitive'
-					property</li>
-				<li>Renamed preference for regular expression applied as symbol
-					images filter in Symbol widgets</li>
-			</ul>
-		</li>
-		<li>BOY - Operator Interface bug fixes:
-			<ul>
-				<li>Fixed zoom issue on BOY Symbol boolean control &amp; both
-					multi-state widgets</li>
-				<li>Fixed NullPointer exceptions on file path for Graphics
-					Image &amp; Symbols widgets</li>
-			</ul>
-		</li>
-		<li>BEAUTY - Engineering Archiving enhancements:
-			<ul>
-				<li>In the PostGres table 'sample' data type of 'float_val' has
-					been updated to 'double precision'</li>
-				<li>Data Browser Plot XYGraph Settings are now ALL saved within
-					the configuration file</li>
-			</ul>
-		</li>
-		<li>BEAST - Alarm System enhancements:
-			<ul>
-				<li>Updated Alarm Notifier trace INFO messages to be more "user
-					friendly"</li>
-			</ul>
-		</li>
-	</ul>
+    <h2>Version 4.2.b4 - 2014-01-07</h2>
+    <ul>
+        <li>CSS enhancements:
+            <ul>
+                <li>Updated Auto-Complete history management, the history is
+                    now managed by entry type instead of fields type and shared by all</li>
+            </ul>
+        </li>
+        <li>CSS bug fixes:
+            <ul>
+                <li>Tooltip is now properly closed when an auto-completed field
+                    is validated</li>
+            </ul>
+        </li>
+        <li>BOY - Operator Interface enhancements:
+            <ul>
+                <li>Fluid symbols updated for CRYO &amp; CWS</li>
+                <li>Graphics Image Widget now handles SVG images</li>
+                <li>Symbol widgets now handle 'ForeColor Alarm Sensitive'
+                    property</li>
+                <li>Renamed preference for regular expression applied as symbol
+                    images filter in Symbol widgets</li>
+            </ul>
+        </li>
+        <li>BOY - Operator Interface bug fixes:
+            <ul>
+                <li>Fixed zoom issue on BOY Symbol boolean control &amp; both
+                    multi-state widgets</li>
+                <li>Fixed NullPointer exceptions on file path for Graphics
+                    Image &amp; Symbols widgets</li>
+            </ul>
+        </li>
+        <li>BEAUTY - Engineering Archiving enhancements:
+            <ul>
+                <li>In the PostGres table 'sample' data type of 'float_val' has
+                    been updated to 'double precision'</li>
+                <li>Data Browser Plot XYGraph Settings are now ALL saved within
+                    the configuration file</li>
+            </ul>
+        </li>
+        <li>BEAST - Alarm System enhancements:
+            <ul>
+                <li>Updated Alarm Notifier trace INFO messages to be more "user
+                    friendly"</li>
+            </ul>
+        </li>
+    </ul>
 
-	<h2>Version 4.2.b2 - 2013-11-07</h2>
-	<ul>
-		<li>CSS enhancements:
-			<ul>
-				<li>'ITER Control System Studio' default perspective has been
-					replaced by CSStudio perspective. <br /> If you are using an
-					existing workspace, it is recommended to switch to the new default<br />
-					one via the menu Window -> Open Perspective -> Other… and then
-					select CSStudio (default)
-				</li>
-			</ul>
-		</li>
-		<li>Electronic Logbook enhancements:
-			<ul>
-				<li>It is now possible to specify for an electronic logbook
-					entry a Level (Info by default on mini-CODAC)</li>
-			</ul>
-		</li>
-		<li>BOY - Operator Interface bug fixes:
-			<ul>
-				<li>Some BOY connector issues fixed</li>
-			</ul>
-		</li>
-		<li>BEAUTY - Engineering Archiving enhancements:
-			<ul>
-				<li>New icon in the plot toolbar to show trace value labels</li>
-			</ul>
-		</li>
-		<li>BEAST - Alarm System enhancements:
-			<ul>
-				<li>Alarm Message History Auto Refresh (every 30 seconds on
-					mini-CODAC)</li>
-			</ul>
-		</li>
-	</ul>
-
-
-	<h2>Version 4.2.b1 - 2013-10-07</h2>
-	<ul>
-		<li>CSS enhancements:
-			<ul>
-				<li>Auto-complete provides some help for Sys, Sim and Loc
-					DataSource</li>
-				<li>Auto-complete provides some help for formula</li>
-				<li>Auto-complete provides some help editing a sequence of
-					command</li>
-				<li>NEW setting: Auto-complete History Size</li>
-				<li>CSS Process Variable Default Prefix is "ca://"</li>
-				<li>NEW: Integration of the PV Manager Probe</li>
-			</ul>
-		</li>
-		<li>CSS bug fixes:
-			<ul>
-				<li>PV Auto-complete makes use of native font</li>
-				<li>it is no more possible to select the provider name instead
-					of a PV name</li>
-			</ul>
-		</li>
-		<li>Experiment Automation enhancements:
-			<ul>
-				<li>NEW: CSS Scan System Integration for PON Experiment
-					Automation</li>
-				<li>Jython Editor and Debugger Support</li>
-			</ul>
-		</li>
-		<li>Electronic Logbook enhancements:
-			<ul>
-				<li>NEW: Integration of the electronic logbook web client</li>
-			</ul>
-		</li>
-		<li>BOY - Operator Interface enhancements:
-			<ul>
-				<li>NEW: ITER CSS OPI Probe</li>
-				<li>OPI Runtime starts the application window in compact mode
-					by default</li>
-				<li>CSS/Display/OPI Examples has been moved to
-					CSS/Utilities/Install Samples menu</li>
-				<li>Add Top Files sub menu to CSS File menu to open top OPIs
-					and other files</li>
-				<li>Add Open Navigator context menu entry to OPI Runtime to
-					open Navigator View</li>
-				<li>Add OPI Editor Perspective context menu entry to OPI editor
-					to open/reset OPI Editor Perspective</li>
-				<li>Add OPI Runtime Perspective context menu entry to OPI
-					Runtime to open/reset OPI Runtime Perspective</li>
-				<li>BOY Spinner widget additional properties</li>
-				<li>Tank, Progress Bar, Thermometer supports "FillColor Alarm
-					Sensitive" property</li>
-				<li>Add PVManager as BOY default PV connection layer</li>
-				<li>Adaptation of OPI example resources to PV Manager</li>
-				<li>BOY local variable should be prefixed by $(DID)</li>
-			</ul>
-		</li>
-		<li>BOY - Operator Interface bug fixes:
-			<ul>
-				<li>Connector issues using a Linking and Tabbed Containers</li>
-				<li>BOY Symbol Control widgets are not grayed when disabled</li>
-			</ul>
-		</li>
-		<li>BEAUTY - Engineering Archiving enhancements:
-			<ul>
-				<li>Auto-complete PON Archive RDB provider</li>
-				<li>NEW: Archive Web Reporting Tool to assess the PON Archive
-					System</li>
-				<li>Archive RDB writer option 'use_postgres_copy=true' to
-					increase the performance</li>
-				<li>'Archive RDB' alias name for mini-CODAC Archive Data Source
-					URLs</li>
-			</ul>
-		</li>
-		<li>BEAUTY - Engineering Archiving bug fixes:
-			<ul>
-				<li>Data Browser Plot fails to export String PV Value</li>
-			</ul>
-		</li>
-		<li>BEAST - Alarm System enhancements:
-			<ul>
-				<li>NEW: Alarm Web Reporting Tool to assess the Alarm System</li>
-			</ul>
-		</li>
-	</ul>
+    <h2>Version 4.2.b2 - 2013-11-07</h2>
+    <ul>
+        <li>CSS enhancements:
+            <ul>
+                <li>'ITER Control System Studio' default perspective has been
+                    replaced by CSStudio perspective. <br /> If you are using an
+                    existing workspace, it is recommended to switch to the new default<br />
+                    one via the menu Window -> Open Perspective -> Other… and then
+                    select CSStudio (default)
+                </li>
+            </ul>
+        </li>
+        <li>Electronic Logbook enhancements:
+            <ul>
+                <li>It is now possible to specify for an electronic logbook
+                    entry a Level (Info by default on mini-CODAC)</li>
+            </ul>
+        </li>
+        <li>BOY - Operator Interface bug fixes:
+            <ul>
+                <li>Some BOY connector issues fixed</li>
+            </ul>
+        </li>
+        <li>BEAUTY - Engineering Archiving enhancements:
+            <ul>
+                <li>New icon in the plot toolbar to show trace value labels</li>
+            </ul>
+        </li>
+        <li>BEAST - Alarm System enhancements:
+            <ul>
+                <li>Alarm Message History Auto Refresh (every 30 seconds on
+                    mini-CODAC)</li>
+            </ul>
+        </li>
+    </ul>
 
 
-	<h2>Version 4.1 - 2013-06-15</h2>
-	<ul>
-		<li>New ITER CSS Getting Started section on the online Help</li>
+    <h2>Version 4.2.b1 - 2013-10-07</h2>
+    <ul>
+        <li>CSS enhancements:
+            <ul>
+                <li>Auto-complete provides some help for Sys, Sim and Loc
+                    DataSource</li>
+                <li>Auto-complete provides some help for formula</li>
+                <li>Auto-complete provides some help editing a sequence of
+                    command</li>
+                <li>NEW setting: Auto-complete History Size</li>
+                <li>CSS Process Variable Default Prefix is "ca://"</li>
+                <li>NEW: Integration of the PV Manager Probe</li>
+            </ul>
+        </li>
+        <li>CSS bug fixes:
+            <ul>
+                <li>PV Auto-complete makes use of native font</li>
+                <li>it is no more possible to select the provider name instead
+                    of a PV name</li>
+            </ul>
+        </li>
+        <li>Experiment Automation enhancements:
+            <ul>
+                <li>NEW: CSS Scan System Integration for PON Experiment
+                    Automation</li>
+                <li>Jython Editor and Debugger Support</li>
+            </ul>
+        </li>
+        <li>Electronic Logbook enhancements:
+            <ul>
+                <li>NEW: Integration of the electronic logbook web client</li>
+            </ul>
+        </li>
+        <li>BOY - Operator Interface enhancements:
+            <ul>
+                <li>NEW: ITER CSS OPI Probe</li>
+                <li>OPI Runtime starts the application window in compact mode
+                    by default</li>
+                <li>CSS/Display/OPI Examples has been moved to
+                    CSS/Utilities/Install Samples menu</li>
+                <li>Add Top Files sub menu to CSS File menu to open top OPIs
+                    and other files</li>
+                <li>Add Open Navigator context menu entry to OPI Runtime to
+                    open Navigator View</li>
+                <li>Add OPI Editor Perspective context menu entry to OPI editor
+                    to open/reset OPI Editor Perspective</li>
+                <li>Add OPI Runtime Perspective context menu entry to OPI
+                    Runtime to open/reset OPI Runtime Perspective</li>
+                <li>BOY Spinner widget additional properties</li>
+                <li>Tank, Progress Bar, Thermometer supports "FillColor Alarm
+                    Sensitive" property</li>
+                <li>Add PVManager as BOY default PV connection layer</li>
+                <li>Adaptation of OPI example resources to PV Manager</li>
+                <li>BOY local variable should be prefixed by $(DID)</li>
+            </ul>
+        </li>
+        <li>BOY - Operator Interface bug fixes:
+            <ul>
+                <li>Connector issues using a Linking and Tabbed Containers</li>
+                <li>BOY Symbol Control widgets are not grayed when disabled</li>
+            </ul>
+        </li>
+        <li>BEAUTY - Engineering Archiving enhancements:
+            <ul>
+                <li>Auto-complete PON Archive RDB provider</li>
+                <li>NEW: Archive Web Reporting Tool to assess the PON Archive
+                    System</li>
+                <li>Archive RDB writer option 'use_postgres_copy=true' to
+                    increase the performance</li>
+                <li>'Archive RDB' alias name for mini-CODAC Archive Data Source
+                    URLs</li>
+            </ul>
+        </li>
+        <li>BEAUTY - Engineering Archiving bug fixes:
+            <ul>
+                <li>Data Browser Plot fails to export String PV Value</li>
+            </ul>
+        </li>
+        <li>BEAST - Alarm System enhancements:
+            <ul>
+                <li>NEW: Alarm Web Reporting Tool to assess the Alarm System</li>
+            </ul>
+        </li>
+    </ul>
 
-		<li>CSS Changelog – new ITER CSS section that lists the main
-			newly integrated enhancements and bug fixes</li>
 
-		<li>New ITER CSS Tutorials – the exercises are also demonstrated
-			during CSS training sessions</li>
+    <h2>Version 4.1 - 2013-06-15</h2>
+    <ul>
+        <li>New ITER CSS Getting Started section on the online Help</li>
 
-		<li>New PV Name lookup – auto completion based on History, DB
-			files parsing and SDD information</li>
+        <li>CSS Changelog – new ITER CSS section that lists the main
+            newly integrated enhancements and bug fixes</li>
 
-		<li>New Electronic Logbook (ELog) – with automatic content from
-			OPI, plot and alarm views</li>
+        <li>New ITER CSS Tutorials – the exercises are also demonstrated
+            during CSS training sessions</li>
 
-		<li>New XML Editor – to edit for instance OPI files directly in
-			XML</li>
+        <li>New PV Name lookup – auto completion based on History, DB
+            files parsing and SDD information</li>
 
-		<li>BOY – Addition of a small square handle on top left of PV
-			widget to allow editing PV Name directly on widget. Hover mouse on
-			the handle will show PV Name as tooltip. Handle color could be grey
-			or orange, depending on if the PV name is empty or not</li>
+        <li>New Electronic Logbook (ELog) – with automatic content from
+            OPI, plot and alarm views</li>
 
-		<li>BOY – Addition of a feedback to Grouping Container widget
-			showing if it is locked. Click the handle can lock/unlock the
-			container</li>
+        <li>New XML Editor – to edit for instance OPI files directly in
+            XML</li>
 
-		<li>BOY – Change of the looking and colours of Check Box and
-			Radio Box to have modern style and feeling</li>
+        <li>BOY – Addition of a small square handle on top left of PV
+            widget to allow editing PV Name directly on widget. Hover mouse on
+            the handle will show PV Name as tooltip. Handle color could be grey
+            or orange, depending on if the PV name is empty or not</li>
 
-		<li>BOY – Dump PV List context menu in Runtime to dump all PVs in
-			the OPI including the ones for rules and scripts</li>
+        <li>BOY – Addition of a feedback to Grouping Container widget
+            showing if it is locked. Click the handle can lock/unlock the
+            container</li>
 
-		<li>Top OPIs menu allows now to open directly plot files</li>
+        <li>BOY – Change of the looking and colours of Check Box and
+            Radio Box to have modern style and feeling</li>
 
-		<li>New Web Alarm Interface to consult the Alarm Tree and Alarm
-			Table</li>
+        <li>BOY – Dump PV List context menu in Runtime to dump all PVs in
+            the OPI including the ones for rules and scripts</li>
 
-		<li>Web Data Browser: the Search view is hidden by default. The
-			vertical and horizontal zoom cursors have different shapes</li>
+        <li>Top OPIs menu allows now to open directly plot files</li>
 
-	</ul>
+        <li>New Web Alarm Interface to consult the Alarm Tree and Alarm
+            Table</li>
 
-	<h2>Version 4.0 - 2013-02-15</h2>
-	<ul>
-		<li>Re-integration of CaSnooper - simple program to display
-			statistics of EPICS broadcasts on the network. <img
-			src="images/image002.jpg" />
-		</li>
-		<li>Integration of PV Fields Viewer - diagnostic tool that
-			displays information about a Process Variable. By default it displays
-			data obtained by connecting to the life control system channel, which
-			includes the name of the host that serves the channel, the underlying
-			data type etc. ITER site-specific extension retrieves information
-			from EPICS db files. <img src="images/image004.jpg" />
-		</li>
-		<li>Integration of PACE Editor - this tool provides a tabular
-			view of Process Variables (PV) names and their current values. The
-			user can edit the values, change multiple values at once, review the
-			changes and revert them if needed. <img src="images/image006.jpg" />
-		</li>
-		<li>Integration of the Alarm Annunciator tool – the alarm
-			description is converted to speech and annunciated. <img
-			src="images/image008.jpg" />
-		</li>
-		<li>Email Support Library integration - allows tools to send
-			electronic mails with optional text and image attachments. For
-			example, the Data Browser can email a screen-shot of the current
-			plot. <img src="images/image010.png" />
-		</li>
-		<li>Web OPI integration - aims to provide web access to Operator
-			Interfaces (OPI) that were created in CSS BOY. With WebOPI, the user
-			can seamlessly access to their OPIs from anywhere in the world at any
-			time via a web-browser-equipped device such as a PC, laptop, tablet
-			or smart phone. <img src="images/image012.jpg" />
-		</li>
-		<li>Web Data Browser development – it is now possible to access
-			to plotted data from a Web Navigator. <img src="images/image014.jpg" />
-		</li>
-		<li>BOY: a PID example is provided at
-			/opt/codac/opi/boy/resources/PID_Water_Cooling.opi. <img
-			src="images/image016.jpg" />
-		</li>
-		<li>BOY enhancements:
-			<ul>
-				<li>Image widget rotation by 90 degrees: <img
-					src="images/image017.png" /></li>
-				<li>Data Browser widget that allows to integrate a predefined
-					plot .plt file into BOY and then access to historic data: <img
-					src="images/image019.jpg" />
-				</li>
-				<li>Vertical Tabbed Container and possibility to enable/disable
-					tab according to operational states: <img src="images/image021.jpg" />
-				</li>
-				<li>Support of waveform and setpoint via an Array Widget that
-					allows to adjust the setpoint using sliders for example: <img
-					src="images/image023.jpg" />
-				</li>
-				<li>It is now possible to open OPI file directly from command
-					line:
-					<p>css &lt;unit_name&gt;/src/main/boy/myScreen.opi</p>
-				</li>
-			</ul>
-		</li>
-	</ul>
+        <li>Web Data Browser: the Search view is hidden by default. The
+            vertical and horizontal zoom cursors have different shapes</li>
+
+    </ul>
+
+    <h2>Version 4.0 - 2013-02-15</h2>
+    <ul>
+        <li>Re-integration of CaSnooper - simple program to display
+            statistics of EPICS broadcasts on the network. <img
+            src="images/image002.jpg" />
+        </li>
+        <li>Integration of PV Fields Viewer - diagnostic tool that
+            displays information about a Process Variable. By default it displays
+            data obtained by connecting to the life control system channel, which
+            includes the name of the host that serves the channel, the underlying
+            data type etc. ITER site-specific extension retrieves information
+            from EPICS db files. <img src="images/image004.jpg" />
+        </li>
+        <li>Integration of PACE Editor - this tool provides a tabular
+            view of Process Variables (PV) names and their current values. The
+            user can edit the values, change multiple values at once, review the
+            changes and revert them if needed. <img src="images/image006.jpg" />
+        </li>
+        <li>Integration of the Alarm Annunciator tool – the alarm
+            description is converted to speech and annunciated. <img
+            src="images/image008.jpg" />
+        </li>
+        <li>Email Support Library integration - allows tools to send
+            electronic mails with optional text and image attachments. For
+            example, the Data Browser can email a screen-shot of the current
+            plot. <img src="images/image010.png" />
+        </li>
+        <li>Web OPI integration - aims to provide web access to Operator
+            Interfaces (OPI) that were created in CSS BOY. With WebOPI, the user
+            can seamlessly access to their OPIs from anywhere in the world at any
+            time via a web-browser-equipped device such as a PC, laptop, tablet
+            or smart phone. <img src="images/image012.jpg" />
+        </li>
+        <li>Web Data Browser development – it is now possible to access
+            to plotted data from a Web Navigator. <img src="images/image014.jpg" />
+        </li>
+        <li>BOY: a PID example is provided at
+            /opt/codac/opi/boy/resources/PID_Water_Cooling.opi. <img
+            src="images/image016.jpg" />
+        </li>
+        <li>BOY enhancements:
+            <ul>
+                <li>Image widget rotation by 90 degrees: <img
+                    src="images/image017.png" /></li>
+                <li>Data Browser widget that allows to integrate a predefined
+                    plot .plt file into BOY and then access to historic data: <img
+                    src="images/image019.jpg" />
+                </li>
+                <li>Vertical Tabbed Container and possibility to enable/disable
+                    tab according to operational states: <img src="images/image021.jpg" />
+                </li>
+                <li>Support of waveform and setpoint via an Array Widget that
+                    allows to adjust the setpoint using sliders for example: <img
+                    src="images/image023.jpg" />
+                </li>
+                <li>It is now possible to open OPI file directly from command
+                    line:
+                    <p>css &lt;unit_name&gt;/src/main/boy/myScreen.opi</p>
+                </li>
+            </ul>
+        </li>
+    </ul>
 
 </body>
 </html>
