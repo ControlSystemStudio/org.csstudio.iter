@@ -20,7 +20,7 @@ import org.eclipse.swt.widgets.Composite;
  * 	- it can set a configurable background color (for the direct edit CellEditor) when the text input has focus
  *  - it can confirm (save) the value to the PV on focus loss (without pressing ENTER)
  *  
- *  It must be used together with TextInputStyledEditpart and TextInputStyledModel.
+ *  It must be used together with LabeledTextInputEditpart and LabeledTextInputModel.
  *
  * @author Boris Versic
  *

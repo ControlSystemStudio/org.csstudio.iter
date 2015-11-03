@@ -16,14 +16,14 @@ import org.eclipse.swt.graphics.RGB;
  * 	- it provides a property for a different background color when the text input has focus (used to paint the CellEditor's background)
  *  - it provides a property to enable confirmation (saving) of value to the PV on focus loss (without pressing ENTER)
  *  
- *  It must be used together with TextInputEditpart and IterTextEditManager.
- *  The TypeID is the same as for the TextInputModel (and defined with the same id in fragment.xml) so that this widget implementation
+ *  It must be used together with LabeledTextInputEditpart and IterTextEditManager.
+ *  The TypeID is the same as for the TextInputModel (and defined with the same id in plugin.xml) so that this widget implementation
  *  replaces the default TextInput widget.
  *
  * @author Boris Versic
  *
  */
-public class TextInputStyledModel extends TextInputModel {
+public class LabeledTextInputModel extends TextInputModel {
     
 	/** The background color when this control has focus */
     public static final String PROP_COLOR_BACKGROUND_FOCUS = "background_focus_color";//$NON-NLS-1$
@@ -66,7 +66,7 @@ public class TextInputStyledModel extends TextInputModel {
         };
     } 
     
-	public TextInputStyledModel() {
+	public LabeledTextInputModel() {
 	}
 
     @Override
@@ -80,7 +80,7 @@ public class TextInputStyledModel extends TextInputModel {
                 WidgetPropertyCategory.Behavior, true));
         
         addProperty(new StringProperty(PROP_INPUT_LABEL_TEXT, "Label Text",
-                WidgetPropertyCategory.Display, "", false));
+                WidgetPropertyCategory.Display, "", true));
 
         addProperty(new ComboProperty(PROP_INPUT_LABEL_STACKING, "Label Stacking mode",
                 WidgetPropertyCategory.Position, INPUT_LABEL_STACKING.stringValues(), INPUT_LABEL_STACKING.getDefault()));

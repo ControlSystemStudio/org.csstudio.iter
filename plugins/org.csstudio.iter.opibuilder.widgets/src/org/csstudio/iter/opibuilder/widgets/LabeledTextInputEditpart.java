@@ -1,9 +1,8 @@
 package org.csstudio.iter.opibuilder.widgets;
 
-import org.csstudio.iter.opibuilder.widgets.TextInputStyledModel;
+import org.csstudio.iter.opibuilder.widgets.LabeledTextInputModel;
 import org.csstudio.opibuilder.widgets.editparts.Draw2DTextInputEditpartDelegate;
 import org.csstudio.opibuilder.widgets.editparts.LabelCellEditorLocator;
-import org.csstudio.opibuilder.widgets.editparts.NativeTextEditpartDelegate;
 import org.csstudio.opibuilder.widgets.editparts.TextInputEditpart;
 import org.csstudio.swt.widgets.figures.TextInputFigure;
 import org.eclipse.draw2d.Figure;
@@ -17,19 +16,19 @@ import org.eclipse.swt.widgets.Display;
  * giving the TextInput widget the option of setting a different background color when the control has focus,
  * and saving the value to the PV without pressing ENTER (on loss of focus).
  *  
- * It must be used together with TextInputStyledModel and IterTextEditManager.
+ * It must be used together with LabeledTextInputModel and IterTextEditManager.
  *
  * @author Boris Versic
  */
-public class TextInputStyledEditpart extends TextInputEditpart {
+public class LabeledTextInputEditpart extends TextInputEditpart {
 	
-	public TextInputStyledEditpart() {
+	public LabeledTextInputEditpart() {
 		super();
 	}
 
     @Override
-    public TextInputStyledModel getWidgetModel() {
-        return (TextInputStyledModel) getModel();
+    public LabeledTextInputModel getWidgetModel() {
+        return (LabeledTextInputModel) getModel();
     }
 
     @Override
@@ -43,7 +42,7 @@ public class TextInputStyledEditpart extends TextInputEditpart {
                     this, getWidgetModel(), textInputFigure);
 
         }else{
-            delegate = new NativeTextStyledEditpartDelegate(this, getWidgetModel());
+            delegate = new NativeLabeledTextEditpartDelegate(this, getWidgetModel());
         }
 
         getPVWidgetEditpartDelegate().setUpdateSuppressTime(-1);
@@ -54,7 +53,7 @@ public class TextInputStyledEditpart extends TextInputEditpart {
     
 	@Override
     protected void performDirectEdit() {
-    	final TextInputStyledModel model = getWidgetModel();
+    	final LabeledTextInputModel model = getWidgetModel();
         new IterTextEditManager(this, new LabelCellEditorLocator(
                 (Figure) getFigure()), getWidgetModel().isMultilineInput(),
         		new Color(Display.getDefault(), model.getBackgroundFocusColor()), model.isConfirmOnFocusLost()).show();
