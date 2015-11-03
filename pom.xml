@@ -81,13 +81,19 @@
                     <url>http://download.controlsystemstudio.org/updates/4.2</url>
                     <layout>p2</layout>
                 </repository>
+                <!-- Just make this something valid, doesn't matter what. Thirparty tag is needed by jenkins, but no when building locally -->
+                <repository>
+                    <id>thirdparty</id>
+                    <url>http://download.controlsystemstudio.org/applications/4.2</url>
+                    <layout>p2</layout>
+                </repository>
                 <repository>
                     <id>csstudio-thirdparty</id>
                     <url>http://download.controlsystemstudio.org/thirdparty/4.2</url>
                     <layout>p2</layout>
                 </repository>
                 <repository>
-                    <id>maven-osgi-bundles</id>
+                    <id>csstudio-maven-osgi-bundles</id>
                     <url>http://download.controlsystemstudio.org/maven-osgi-bundles/4.2</url>
                     <layout>p2</layout>
                 </repository>

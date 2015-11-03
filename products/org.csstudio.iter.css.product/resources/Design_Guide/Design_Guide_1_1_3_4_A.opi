@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.103.201505220958</boy_version>
+  <boy_version>4.0.105.codac_core_5_2b2</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -269,7 +269,6 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
-          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -513,7 +512,6 @@
               <color name="IO Text Fg" red="0" green="0" blue="0" />
             </foreground_color>
             <actions hook="false" hook_all="false" />
-            <show_scrollbar>false</show_scrollbar>
             <font>
               <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
             </font>
@@ -689,8 +687,6 @@
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
             <alarm_pulsing>false</alarm_pulsing>
-            <on_state></on_state>
-            <off_state></off_state>
             <tooltip></tooltip>
             <rules />
             <bit>0</bit>
@@ -845,7 +841,7 @@
       <enabled>true</enabled>
       <wuid>-ae3bbd7:148fa0f526e:-7f3c</wuid>
       <transparent>false</transparent>
-      <lock_children>true</lock_children>
+      <lock_children>false</lock_children>
       <scripts />
       <height>1006</height>
       <border_width>1</border_width>
@@ -878,45 +874,44 @@
       <font>
         <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
       </font>
-      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+        <opi_file>../templates/AlarmPane.opi</opi_file>
         <border_style>0</border_style>
-        <tooltip>ACTIVE ALARM BUTTONS</tooltip>
-        <horizontal_alignment>1</horizontal_alignment>
+        <tooltip></tooltip>
         <rules />
         <enabled>true</enabled>
-        <wuid>333eae9e:14951f153e9:-5583</wuid>
-        <transparent>true</transparent>
-        <auto_size>false</auto_size>
-        <text>ACTIVE ALARM BUTTONS</text>
+        <wuid>-4dd0cfa9:150a847eb4f:-6bca</wuid>
         <scripts />
-        <height>1001</height>
+        <height>1002</height>
         <border_width>2</border_width>
         <scale_options>
           <width_scalable>false</width_scalable>
           <height_scalable>false</height_scalable>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <resize_behaviour>1</resize_behaviour>
         <visible>true</visible>
-        <vertical_alignment>1</vertical_alignment>
+        <group_name></group_name>
         <border_color>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
-        <widget_type>Label</widget_type>
-        <wrap_words>false</wrap_words>
+        <widget_type>Linking Container</widget_type>
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
-        <width>575</width>
+        <width>576</width>
         <x>0</x>
-        <name>Comment</name>
+        <name>Alarm Pane</name>
         <y>0</y>
         <foreground_color>
-          <color name="IO Text Fg" red="0" green="0" blue="0" />
+          <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
       </widget>
     </widget>
@@ -967,6 +962,7 @@
         <rules />
         <enabled>true</enabled>
         <wuid>-57352fd0:149859b9257:-177b</wuid>
+        <scripts />
         <height>943</height>
         <border_width>2</border_width>
         <scale_options>
@@ -1036,7 +1032,6 @@ FACEPLATES</text>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
-        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>
