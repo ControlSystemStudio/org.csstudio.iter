@@ -35,8 +35,8 @@ public class XYArchiveFetchJob extends ArchiveFetchJob {
 			XYArchiveJobCompleteListener listener) throws Exception {
 		super(getPVItem(pv, archiveDataSource), start, end, getArchiveFetchJobListener(pv, listener));
 
-		this.failedThrowExceptionGetData = false;
 		this.displayUnknowChannelException = false;
+		this.concurrency = true;
 
 		ConnectionCache.clean();
 	}
