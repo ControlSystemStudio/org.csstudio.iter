@@ -7,7 +7,6 @@ import org.csstudio.opibuilder.properties.StringProperty;
 import org.csstudio.opibuilder.properties.WidgetPropertyCategory;
 import org.csstudio.opibuilder.util.MediaService;
 import org.csstudio.opibuilder.widgets.model.TextInputModel;
-import org.csstudio.opibuilder.widgets.model.TextInputModel.FOCUS_TRAVERSE;
 import org.eclipse.swt.graphics.RGB;
 
 /**
