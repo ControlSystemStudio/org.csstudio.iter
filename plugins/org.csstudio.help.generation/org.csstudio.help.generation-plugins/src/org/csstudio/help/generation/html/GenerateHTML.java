@@ -290,7 +290,6 @@ public class GenerateHTML {
 			}
 		}
 
-		Activator.getLogger().log(Level.SEVERE, "Label : " + topic.getLabel() + " - href : " + topic.getHref());
 		String href = topic.getHref();
 		if (href != null) {
 			int indexOfSharp = href.indexOf("#");
@@ -310,7 +309,7 @@ public class GenerateHTML {
 		String fileName = directoryToGenerate + File.separator + topic.getLabel() + ".xml.vm";
 		File file = new File(fileName);
 		file.createNewFile();
-		Activator.logInfo(pathWithouGeneratedDirectory(fileName) + " - " + topic.getLabel() + " - " + href);
+		Activator.logInfo("Path : " + pathWithouGeneratedDirectory(fileName) + " - label : " + topic.getLabel() + " - href : " + href);
 		String charset = getContentCharset(href);
 		String content = getContentTopics(topic.getHref(), level);
 		content = applyRegex(content);
