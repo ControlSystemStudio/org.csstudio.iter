@@ -234,13 +234,13 @@ public class GenerateHTML {
 		String ref = chapter.getPath();
 		
 		List < Chapter > subchap = chapter.getSubChapter();
-		boolean xmlPathFile = ref.endsWith( ".xml");
+		boolean xmlPathFile = ref.endsWith(".xml.vm");
 
 		if (!xmlPathFile && subchap != null && subchap.size() > 0) {
 			ref = subchap.get(0).getPath();
 		}
 
-		if (ref == null || ref.length() <= 0 || !ref.endsWith( ".xml")) {
+		if (ref == null || ref.length() <= 0 || !ref.endsWith( ".xml.vm")) {
 			return;
 		}
 		boolean refLoadContain = !refLoads.contains(ref);
@@ -276,13 +276,9 @@ public class GenerateHTML {
 	}
 	
 	private void generateBasicContentToc(int toc, String directoryToGenerate, Chapter current) throws IOException {
-		ITopic[] topics = getEnabledSubtopics(tocs[toc]);
-		for (int i = 0; i < topics.length; i++) {
-			generateBasicTopic(topics[i], directoryToGenerate, 0, current);
-		}
+		ITopic topic = tocs[toc].getTopic(null);
+		generateBasicTopic(topic, directoryToGenerate, 0, current);
 	}
-	
-	
 
 	private void generateBasicTopic(ITopic topic, String directoryToGenerate, int level, Chapter current)
 			throws IOException {
@@ -293,7 +289,8 @@ public class GenerateHTML {
 				return;
 			}
 		}
-		
+
+		Activator.getLogger().log(Level.SEVERE, "Label : " + topic.getLabel() + " - href : " + topic.getHref());
 		String href = topic.getHref();
 		if (href != null) {
 			int indexOfSharp = href.indexOf("#");
@@ -310,12 +307,12 @@ public class GenerateHTML {
 		boolean hasNodes = topics.length > 0;
 
 		Files.createDirectories(Paths.get(directoryToGenerate));
-		String fileName = directoryToGenerate + File.separator + topic.getLabel() + ".xml";
+		String fileName = directoryToGenerate + File.separator + topic.getLabel() + ".xml.vm";
 		File file = new File(fileName);
 		file.createNewFile();
-		Activator.getLogger().log(Level.INFO, pathWithouGeneratedDirectory(fileName) + " - " + topic.getLabel() + " - " + href);
+		Activator.logInfo(pathWithouGeneratedDirectory(fileName) + " - " + topic.getLabel() + " - " + href);
 		String charset = getContentCharset(href);
-		String content = getContentTopics(topic, level);
+		String content = getContentTopics(topic.getHref(), level);
 		content = applyRegex(content);
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), charset));
 		//wrap html into xml tag for pdf gen
@@ -324,8 +321,7 @@ public class GenerateHTML {
 		writer.write("</body></document>");
 		writer.flush();
 		writer.close();
-		Chapter temp = new Chapter(pathWithouGeneratedDirectory(fileName),
-				topic.getLabel(), charset);
+		Chapter temp = new Chapter(pathWithouGeneratedDirectory(fileName), topic.getLabel(), charset);
 		current.getSubChapter().add(temp);
 
 		if (hasNodes) {
@@ -344,7 +340,8 @@ public class GenerateHTML {
 	private String applyRegex(String content) {
 		String newContent = content.replaceAll("(?i)<br>", "<br/>")
 				.replaceAll("(?i)<hr>", "<hr/>")
-				.replaceAll("(</?)h([0-9])", "$1H$2");
+				.replaceAll("(</?)h([0-9])", "$1H$2")
+				.replaceAll("(</?)(?i)code([^>]*)(>)", "");
 		
 		//table add double quote on missing quote
 		String regex = "<table([^>]*)>";
@@ -408,8 +405,7 @@ public class GenerateHTML {
 		return pathOrig;
 	}
 	
-	private String getContentTopics(ITopic topic, int level) {
-		String href = topic.getHref();
+	private String getContentTopics(String href, int level) {
 		if (href == null) {
 			return "";
 		}
@@ -584,27 +580,6 @@ public class GenerateHTML {
 		return (ITopic[]) topics.toArray(new ITopic[topics.size()]);
 	}
 
-	private static ITopic[] decodePath(int[] path, IToc toc,
-			AbstractHelpScope scope) {
-		ITopic[] topicPath = new ITopic[path.length - 1];
-		try {
-			if (path.length > 1) {
-				ITopic[] topics = toc.getTopics();
-				ITopic[] enabledTopics = ScopeUtils
-						.inScopeTopics(topics, scope);
-				topicPath[0] = enabledTopics[path[1]];
-			}
-			for (int i = 1; i < topicPath.length; i++) {
-				ITopic[] topics = topicPath[i - 1].getSubtopics();
-				ITopic[] enabledTopics = ScopeUtils
-						.inScopeTopics(topics, scope);
-				topicPath[i] = enabledTopics[path[i + 1]];
-			}
-		} catch (RuntimeException e) {
-			return null;
-		}
-		return topicPath;
-	}
 
 	/**
 	 * Obtains children topics for a given navigation element. Topics from TOCs
