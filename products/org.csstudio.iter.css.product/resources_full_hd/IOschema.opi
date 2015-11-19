@@ -9,7 +9,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.105.201510211344</boy_version>
+  <boy_version>4.0.105.201511181250</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -1319,6 +1319,7 @@ $(trace_0_y_pv_value)</tooltip>
       <trace_1_trace_type>0</trace_1_trace_type>
       <axis_0_auto_scale>true</axis_0_auto_scale>
       <axis_0_minimum>0.0</axis_0_minimum>
+      <plt_data_source>true</plt_data_source>
       <trace_2_y_axis_index>1</trace_2_y_axis_index>
       <trace_1_update_delay>100</trace_1_update_delay>
       <axis_1_axis_title>Y Axis</axis_1_axis_title>
@@ -1339,6 +1340,7 @@ $(trace_0_y_pv_value)</tooltip>
       <trace_0_plot_mode>0</trace_0_plot_mode>
       <trace_4_trace_type>0</trace_4_trace_type>
       <enabled>true</enabled>
+      <time_span>3600</time_span>
       <trace_0_x_pv/>
       <trace_7_point_style>0</trace_7_point_style>
       <axis_1_scale_font>
@@ -1660,6 +1662,7 @@ $(pv_value)</tooltip>
       <writable>true</writable>
       <sort_ascending>false</sort_ascending>
       <filter_item>${ALARM_ROOT}</filter_item>
+      <columns_headers_visible>true</columns_headers_visible>
       <scripts/>
       <separate_tables>false</separate_tables>
       <height>500</height>
@@ -1681,7 +1684,6 @@ $(pv_value)</tooltip>
       <table_weight_acknowledge>80</table_weight_acknowledge>
       <table_header_visible>false</table_header_visible>
       <unacknowledged_blinking>true</unacknowledged_blinking>
-      <column_headers_visible>true</column_headers_visible>
       <width>287</width>
       <x>1788</x>
       <name>Alarm Table Template</name>
@@ -2695,13 +2697,15 @@ $(pv_value)</tooltip>
       <confirm_message/>
       <name>Text Input Template</name>
       <style>1</style>
+      <input_label_text/>
       <actions hook="false" hook_all="false"/>
       <border_style>1</border_style>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <show_native_border>false</show_native_border>
       <enabled>true</enabled>
       <wuid>-14a921ec:134b2495e46:-7f3c</wuid>
-      <next_focus>0</next_focus>
+      <next_focus>2</next_focus>
+      <input_label_stacking>0</input_label_stacking>
       <scripts/>
       <border_alarm_sensitive>false</border_alarm_sensitive>
       <scale_options>
@@ -2739,7 +2743,7 @@ $(pv_value)</tooltip>
       <horizon_profile_x_pv_name/>
       <height>350</height>
       <border_width>2</border_width>
-      <graph_area_width>733</graph_area_width>
+      <graph_area_width>731</graph_area_width>
       <y_axis_scale_font>
         <opifont.name fontName="DejaVu Sans Mono" height="20" style="0">IO Scale</opifont.name>
       </y_axis_scale_font>
@@ -2765,7 +2769,7 @@ $(pv_value)</tooltip>
         <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </y_axis_title_font>
       <border_alarm_sensitive>false</border_alarm_sensitive>
-      <graph_area_height>619</graph_area_height>
+      <graph_area_height>617</graph_area_height>
       <x_axis_visible>true</x_axis_visible>
       <vertical_profile_x_pv_name/>
       <pixel_info_pv_name/>

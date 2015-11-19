@@ -10,7 +10,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <boy_version>4.0.105.codac_core_5_2b2</boy_version>
+  <boy_version>4.0.105.201511181250</boy_version>
   <show_edit_range>true</show_edit_range>
   <widget_type>Display</widget_type>
   <auto_scale_widgets>
@@ -188,6 +188,7 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
+          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -309,6 +310,7 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
+          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -390,6 +392,7 @@
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <actions hook="false" hook_all="false" />
+          <show_scrollbar>false</show_scrollbar>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
@@ -598,6 +601,8 @@
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -734,6 +739,8 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -870,6 +877,8 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -1006,6 +1015,8 @@ $(pv_value)</tooltip>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -1750,6 +1761,8 @@ to enter the Label Text</text>
             </font>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -1806,6 +1819,8 @@ $(pv_value)</tooltip>
               <border_style>0</border_style>
               <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -1857,6 +1872,8 @@ $(pv_value)</tooltip>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -1913,6 +1930,8 @@ $(pv_value)</tooltip>
               <border_style>0</border_style>
               <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <rules />
@@ -2473,6 +2492,7 @@ $(pv_value)</tooltip>
               <toggle_button>false</toggle_button>
               <border_style>6</border_style>
               <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+              <alarm_pulsing>false</alarm_pulsing>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <push_action_index>0</push_action_index>
@@ -2497,6 +2517,10 @@ $(pv_value)</tooltip>
                 <color name="IO Border" red="0" green="0" blue="0" />
               </border_color>
               <widget_type>Action Button</widget_type>
+              <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+              <background_color>
+                <color red="240" green="240" blue="240" />
+              </background_color>
               <width>214</width>
               <x>0</x>
               <name>Action Button Template</name>
@@ -2549,6 +2573,7 @@ $(pv_value)</tooltip>
               <foreground_color>
                 <color name="IO Foreground" red="0" green="0" blue="0" />
               </foreground_color>
+              <actions hook="false" hook_all="false" />
               <font>
                 <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
               </font>
@@ -2560,16 +2585,19 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <horizontal_alignment>0</horizontal_alignment>
               <rules />
+              <show_h_scroll>false</show_h_scroll>
               <pv_value />
               <auto_size>true</auto_size>
               <read_only>false</read_only>
               <text>######</text>
+              <rotation_angle>0.0</rotation_angle>
               <show_units>true</show_units>
               <height>39</height>
               <multiline_input>false</multiline_input>
               <border_width>1</border_width>
               <visible>true</visible>
               <pv_name>loc://toto(10687.891)</pv_name>
+              <selector_type>0</selector_type>
               <border_color>
                 <color name="IO Border" red="0" green="0" blue="0" />
               </border_color>
@@ -2578,13 +2606,16 @@ $(pv_value)</tooltip>
               <confirm_message></confirm_message>
               <name>Text Input Template</name>
               <style>1</style>
+              <input_label_text></input_label_text>
               <actions hook="false" hook_all="false" />
               <border_style>1</border_style>
               <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
               <show_native_border>false</show_native_border>
               <enabled>true</enabled>
               <wuid>-7451d5cb:14a622a4ef9:-60b2</wuid>
-              <next_focus>0</next_focus>
+              <transparent>false</transparent>
+              <next_focus>2</next_focus>
+              <input_label_stacking>0</input_label_stacking>
               <scripts />
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <scale_options>
@@ -2592,8 +2623,9 @@ $(pv_value)</tooltip>
                 <height_scalable>false</height_scalable>
                 <keep_wh_ratio>false</keep_wh_ratio>
               </scale_options>
+              <show_v_scroll>false</show_v_scroll>
               <background_focus_color>
-                <color name="Minor" red="255" green="255" blue="0" />
+                <color name="IO Focus Entry" red="198" green="217" blue="241" />
               </background_focus_color>
               <confirm_focus_lost>true</confirm_focus_lost>
               <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
@@ -2606,9 +2638,11 @@ $(pv_value)</tooltip>
               <width>103</width>
               <x>843</x>
               <y>31</y>
+              <maximum>1.7976931348623157E308</maximum>
               <foreground_color>
                 <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
+              <minimum>-1.7976931348623157E308</minimum>
               <font>
                 <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
               </font>
@@ -2948,6 +2982,8 @@ $(pv_value)</tooltip>
               <border_style>0</border_style>
               <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <push_action_index>0</push_action_index>
@@ -3008,6 +3044,8 @@ $(pv_value)</tooltip>
               <border_style>0</border_style>
               <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <push_action_index>0</push_action_index>
@@ -3068,6 +3106,8 @@ $(pv_value)</tooltip>
               <border_style>0</border_style>
               <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <push_action_index>0</push_action_index>
@@ -3129,6 +3169,8 @@ $(pv_value)</tooltip>
               <border_style>0</border_style>
               <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <push_action_index>0</push_action_index>
@@ -3431,6 +3473,8 @@ $(pv_value)</tooltip>
             <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
               <toggle_button>true</toggle_button>
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <push_action_index>0</push_action_index>
@@ -3512,6 +3556,8 @@ $(pv_value)</tooltip>
             <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolControlWidget" version="1.0.0">
               <toggle_button>true</toggle_button>
               <alarm_pulsing>false</alarm_pulsing>
+              <on_state></on_state>
+              <off_state></off_state>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <push_action_index>0</push_action_index>
@@ -3768,6 +3814,7 @@ $(pv_value)</tooltip>
           <color name="IO Text Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <actions hook="false" hook_all="false" />
+        <show_scrollbar>false</show_scrollbar>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
         </font>

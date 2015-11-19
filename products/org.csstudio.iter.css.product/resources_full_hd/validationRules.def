@@ -124,7 +124,7 @@ text=RW
 label.font=WRITE [IO Title; IO SubTitle; IO Label bold; IO Scale]
 auto_size=RW
 horizontal_alignment=RW
-vertical_alignment=RO
+vertical_alignment=RW
 show_scrollbar=RO
 
 #! IMAGE
@@ -251,6 +251,8 @@ axis_count=RW
 trace_count=RW
 show_toolbar=RW
 trigger_pv=RW
+plt_data_source=RO
+time_span=RW
 axis_[0-4]_auto_scale=RW
 axis_[0-4]_auto_scale_threshold=RO
 axis_[0-4]_axis_color=RO
@@ -331,6 +333,9 @@ show_native_border=RO
 read_only=RW
 show_h_scroll=RO
 show_v_scroll=RO
+background_focus_color=RO
+confirm_focus_lost=RO
+next_focus=RO
 
 #! SPINNER
 format=RW
@@ -407,16 +412,16 @@ router=RO
 
 #! Alarm Table
 filter_item=RW
-sort_ascending=R
-sorting_column=R
+sort_ascending=RO
+sorting_column=RO
 time_format=RW
-unacknowledged_blink=R
-writable=R
+unacknowledged_blink=RO
+writable=RO
 columns=RW
 max_number_of_alarms=RW
-separate_tables=R
+separate_tables=RO
 table_weight_acknowledge=RW
 table_weight_unacknowledge=RW
 table_header_visible=RW
-columns_header_visible=R
+columns_header_visible=RO
 
