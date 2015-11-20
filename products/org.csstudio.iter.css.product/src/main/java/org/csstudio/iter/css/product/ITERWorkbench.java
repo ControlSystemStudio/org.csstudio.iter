@@ -34,7 +34,7 @@ public class ITERWorkbench extends Workbench {
 			IApplicationContext context, Map<String, Object> parameters) {
 		WorkbenchUtil.removeUnWantedLog();
 		WorkbenchUtil.setupSystemFonts();
-		WorkbenchUtil.initDefaultDatasource();
+//		WorkbenchUtil.initDefaultDatasource();
 		return super.beforeWorkbenchCreation(display, context, parameters);
 	}
 

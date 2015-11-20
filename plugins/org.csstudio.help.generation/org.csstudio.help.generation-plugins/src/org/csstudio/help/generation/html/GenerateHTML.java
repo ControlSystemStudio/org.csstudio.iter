@@ -56,6 +56,7 @@ public class GenerateHTML {
 	private Set < String > refLoads = new HashSet<>();
 	// images directory
 	private final static String IMAGES_DIRECTORY = "images/";
+	private final static String RESOURCE_DIRECTORY = "src/site/resources/";
 	private final static String GENERATED_DIRECTORY = Preferences.getGeneratedDocumentationPath();
 	private final static String GENERATED_DIRECTORY_SRC = GENERATED_DIRECTORY + "/src/site";
 	private final static String GENERATED_DIRECTORY_XDOC = GENERATED_DIRECTORY_SRC + "/xdoc/";
@@ -147,10 +148,12 @@ public class GenerateHTML {
 			deleteFolder(new File(GENERATED_DIRECTORY));
 			Files.createDirectories(Paths.get(GENERATED_DIRECTORY_XDOC));
 			Files.createDirectories(Paths.get(GENERATED_DIRECTORY + File.separator + IMAGES_DIRECTORY));
+			Files.createDirectories(Paths.get(GENERATED_DIRECTORY + File.separator + RESOURCE_DIRECTORY));
 			
 			//create directory for maven build
 			//cp pom.xml to generated dir
 			copyResourceTo("/template/pom.xml", GENERATED_DIRECTORY + "/pom.xml");
+			copyResourceTo("/template/pdf-config.xml", GENERATED_DIRECTORY + File.separator + RESOURCE_DIRECTORY + "/pdf-config.xml");
 			copyResourceTo("/images/css.png", GENERATED_DIRECTORY + File.separator + IMAGES_DIRECTORY + "/css.png");
 			copyResourceTo("/images/top_logo.png", GENERATED_DIRECTORY + File.separator + IMAGES_DIRECTORY + "/top_logo.png");
 
