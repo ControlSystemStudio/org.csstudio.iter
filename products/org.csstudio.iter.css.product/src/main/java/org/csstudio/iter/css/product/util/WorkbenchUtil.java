@@ -20,11 +20,6 @@ import java.util.logging.Logger;
 
 import org.csstudio.iter.css.product.Activator;
 import org.csstudio.iter.css.product.preferences.Preferences;
-import org.csstudio.utility.pvmanager.ConfigurationHelper;
-import org.diirt.datasource.CompositeDataSource;
-import org.diirt.datasource.CompositeDataSourceConfiguration;
-import org.diirt.datasource.DataSource;
-import org.diirt.datasource.PVManager;
 import org.eclipse.core.commands.CommandManager;
 import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.core.commands.contexts.ContextManager;
@@ -285,17 +280,6 @@ public class WorkbenchUtil {
     	        sc.put("org.eclipse.jface.consoleFont", font);
     	    }
     	    Activator.getDefault().getPreferenceStore().setValue(APPLIED_SYSTEM_FONT, font);
-	    }
-	}
-
-	/**
-	 * Set the default data source for diirt based on the settings of pvmanager.
-	 */
-	public static void initDefaultDatasource() {
-	    DataSource dataSource = PVManager.getDefaultDataSource();
-	    if (dataSource instanceof CompositeDataSource) {
-	        CompositeDataSourceConfiguration conf = ((CompositeDataSource)dataSource).getConfiguration();
-	        conf.defaultDataSource(ConfigurationHelper.defaultDataSourceName());
 	    }
 	}
 }

@@ -28,6 +28,7 @@ openFile
 -Dpython.cachedir.skip=true
 -Dorg.eclipse.swt.browser.DefaultType=mozilla
 -Dorg.eclipse.swt.browser.XULRunnerPath=/usr/lib64/firefox
+-Dorg.osgi.framework.bundle.parent=ext
 -Dosgi.framework.extensions=org.eclipse.fx.osgi
       </vmArgs>
    </launcherArgs>
@@ -105,5 +106,12 @@ of the distribution package.
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
       <property name="org.eclipse.update.reconcile" value="false" />
    </configurations>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
 
 </product>
