@@ -78,11 +78,13 @@ public class GenerateHTML {
 	}
 
 	private void launchMvnPdf() throws Exception {
+		ProcessBuilder builder = new ProcessBuilder("sudo", "/opt/codac/bin/switch-maven-operation", "online");
+		builder.start().waitFor();
 		File pathToExecutable = new File("/usr/bin/mvn");
-		ProcessBuilder builder = new ProcessBuilder( pathToExecutable.getAbsolutePath(), "pdf:pdf");
-		builder.directory( new File(GENERATED_DIRECTORY).getAbsoluteFile() ); // this is where you set the root folder for the executable to run with
+		builder = new ProcessBuilder(pathToExecutable.getAbsolutePath(), "pdf:pdf");
+		builder.directory(new File(GENERATED_DIRECTORY).getAbsoluteFile());
 		builder.redirectErrorStream(true);
-		Process process =  builder.start();
+		Process process = builder.start();
 
 		BufferedReader stdInput = new BufferedReader(new 
 		     InputStreamReader(process.getInputStream()));
