@@ -78,19 +78,30 @@ public class GenerateHTML {
 	}
 
 	private void launchMvnPdf() throws Exception {
-		ProcessBuilder builder = new ProcessBuilder("sudo", "/opt/codac/bin/switch-maven-operation", "online");
+		ProcessBuilder builder = new ProcessBuilder("/opt/codac/bin/switch-maven-operation", "status");
+		Process process = builder.start();
+		BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
+		String output = stdInput.readLine();
+		stdInput.close();
+		boolean isOffline = output.contains("offline");
+		process.waitFor();
+
+		builder = new ProcessBuilder("sudo", "/opt/codac/bin/switch-maven-operation", "online");
 		builder.start().waitFor();
+
+		if (isOffline) {
+			builder = new ProcessBuilder("sudo", "/opt/codac/bin/switch-maven-operation", "offline");
+			builder.start().waitFor();
+		}
+		
 		File pathToExecutable = new File("/usr/bin/mvn");
 		builder = new ProcessBuilder(pathToExecutable.getAbsolutePath(), "pdf:pdf");
 		builder.directory(new File(GENERATED_DIRECTORY).getAbsoluteFile());
 		builder.redirectErrorStream(true);
-		Process process = builder.start();
+		process = builder.start();
 
-		BufferedReader stdInput = new BufferedReader(new 
-		     InputStreamReader(process.getInputStream()));
-		// read the output from the command
+		stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
-		// read any errors from the attempted command
 		String s = null;
 		StringBuffer errorBuf = new StringBuffer();
 		while ((s = stdInput.readLine()) != null) {
