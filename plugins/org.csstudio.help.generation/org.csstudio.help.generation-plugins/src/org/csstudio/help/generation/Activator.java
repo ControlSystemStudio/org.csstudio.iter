@@ -21,37 +21,37 @@ import org.osgi.framework.BundleContext;
  */
 public class Activator extends AbstractUIPlugin {
 
-	private static Activator instance;
-	private static Logger logger = Logger.getLogger("help.generation");
+    private static Activator instance;
+    private static Logger logger = Logger.getLogger("help.generation");
 
-	/** Plug-in ID defined in MANIFEST.MF */
-	final public static String ID = "org.csstudio.help.generation-plugins"; //$NON-NLS-1$
+    /** Plug-in ID defined in MANIFEST.MF */
+    final public static String ID = "org.csstudio.help.generation-plugins"; //$NON-NLS-1$
 
-	@Override
-	public void start(BundleContext context) throws Exception {
-		super.start(context);
+    @Override
+    public void start(BundleContext context) throws Exception {
+        super.start(context);
 
-		instance = this;
-	}
+        instance = this;
+    }
 
-	@Override
-	public void stop(BundleContext context) throws Exception {
-		super.stop(context);
-		instance = null;
-	}
+    @Override
+    public void stop(BundleContext context) throws Exception {
+        super.stop(context);
+        instance = null;
+    }
 
 
-	public static void logInfo(String msg) {
-		if (Preferences.isLogEnabled() && logger.isLoggable(Level.INFO)) {
-			logger.log(Level.INFO, msg);
-		}
-	}
+    public static void logInfo(String msg) {
+        if (Preferences.isLogEnabled() && logger.isLoggable(Level.INFO)) {
+            logger.log(Level.INFO, msg);
+        }
+    }
 
-	public static Logger getLogger() {
-		return logger;
-	}
+    public static Logger getLogger() {
+        return logger;
+    }
 
-	public static Activator getInstance() {
-		return instance;
-	}
+    public static Activator getInstance() {
+        return instance;
+    }
 }

@@ -36,35 +36,35 @@ import java.io.File;
  * @author Takashi Nakamoto, Cosylab
  */
 public class ActiveHelpOpenCodacPdf implements ILiveHelpAction {
-	public static final String PREFS_ID = "org.csstudio.iter.css.product";
-	public static final String PDF_DOC_ROOT = "pdf_doc_root";
-	public static final String PDF_VIEWER = "pdf_viewer";
+    public static final String PREFS_ID = "org.csstudio.iter.css.product";
+    public static final String PDF_DOC_ROOT = "pdf_doc_root";
+    public static final String PDF_VIEWER = "pdf_viewer";
 
-	String pdfFile;
+    String pdfFile;
 
-	public void setInitializationString(String data) {
-		pdfFile = data;
-	}
+    public void setInitializationString(String data) {
+        pdfFile = data;
+    }
 
-	public void run() {
-		final String codacRoot = System.getenv("CODAC_ROOT");
-		final String defaultPdfDocRoot = codacRoot + "/doc/pdf";
+    public void run() {
+        final String codacRoot = System.getenv("CODAC_ROOT");
+        final String defaultPdfDocRoot = codacRoot + "/doc/pdf";
 
-		final IPreferencesService prefs = Platform.getPreferencesService();
-		String pdfDocRoot = prefs.getString(PREFS_ID, PDF_DOC_ROOT, defaultPdfDocRoot, null);
-		String pdfViewer = prefs.getString(PREFS_ID, PDF_VIEWER, "acroread %s", null);
+        final IPreferencesService prefs = Platform.getPreferencesService();
+        String pdfDocRoot = prefs.getString(PREFS_ID, PDF_DOC_ROOT, defaultPdfDocRoot, null);
+        String pdfViewer = prefs.getString(PREFS_ID, PDF_VIEWER, "acroread %s", null);
 
-		String pdfPath = pdfDocRoot + File.separator + pdfFile;
-		String cmd = pdfViewer.replaceFirst("%s", pdfPath);
+        String pdfPath = pdfDocRoot + File.separator + pdfFile;
+        String cmd = pdfViewer.replaceFirst("%s", pdfPath);
 
-		try {
-			Runtime rt = Runtime.getRuntime();
-			rt.exec(cmd);
-		} catch (IOException ex) {
-			ex.printStackTrace();
-			System.err.println("Failed to run: " + cmd);
-		}
+        try {
+            Runtime rt = Runtime.getRuntime();
+            rt.exec(cmd);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            System.err.println("Failed to run: " + cmd);
+        }
 
-		//		System.out.println("Opening PDF file: " + cmd);
-	}
+        //        System.out.println("Opening PDF file: " + cmd);
+    }
 }

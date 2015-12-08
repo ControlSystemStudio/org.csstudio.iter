@@ -29,9 +29,9 @@ import org.eclipse.swt.widgets.Display;
  */
 public class LabeledTextInputEditpart extends TextInputEditpart {
 
-	public LabeledTextInputEditpart() {
-		super();
-	}
+    public LabeledTextInputEditpart() {
+        super();
+    }
 
     @Override
     public LabeledTextInputModel getWidgetModel() {
@@ -58,11 +58,11 @@ public class LabeledTextInputEditpart extends TextInputEditpart {
         return delegate.doCreateFigure();
     }
 
-	@Override
+    @Override
     protected void performDirectEdit() {
-    	final LabeledTextInputModel model = getWidgetModel();
+        final LabeledTextInputModel model = getWidgetModel();
         new IterTextEditManager(this, new LabelCellEditorLocator(
                 (Figure) getFigure()), getWidgetModel().isMultilineInput(),
-        		new Color(Display.getDefault(), model.getBackgroundFocusColor()), model.isConfirmOnFocusLost()).show();
+                new Color(Display.getDefault(), model.getBackgroundFocusColor()), model.isConfirmOnFocusLost()).show();
     }
 }

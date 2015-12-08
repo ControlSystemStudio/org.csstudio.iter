@@ -29,25 +29,25 @@ public class ITERWorkbench extends Workbench {
      * (non-Javadoc)
      * @see org.csstudio.utility.product.Workbench#beforeWorkbenchCreation(org.eclipse.swt.widgets.Display, org.eclipse.equinox.app.IApplicationContext, java.util.Map)
      */
-	@Override
-	public Object beforeWorkbenchCreation(Display display,
-			IApplicationContext context, Map<String, Object> parameters) {
-		WorkbenchUtil.removeUnWantedLog();
-		WorkbenchUtil.setupSystemFonts();
-//		WorkbenchUtil.initDefaultDatasource();
-		return super.beforeWorkbenchCreation(display, context, parameters);
-	}
+    @Override
+    public Object beforeWorkbenchCreation(Display display,
+            IApplicationContext context, Map<String, Object> parameters) {
+        WorkbenchUtil.removeUnWantedLog();
+        WorkbenchUtil.setupSystemFonts();
+//        WorkbenchUtil.initDefaultDatasource();
+        return super.beforeWorkbenchCreation(display, context, parameters);
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.csstudio.utility.product.Workbench#createWorkbenchAdvisor(java.util.Map)
-	 */
-	@Override
-	protected WorkbenchAdvisor createWorkbenchAdvisor(
-			Map<String, Object> parameters) {
-	    OpenDocumentEventProcessor openDocProcessor = (OpenDocumentEventProcessor) parameters.get(
-		        OpenDocumentEventProcessor.OPEN_DOC_PROCESSOR);
-		return new ITERWorkbenchAdvisor(openDocProcessor);
-	}
+    /*
+     * (non-Javadoc)
+     * @see org.csstudio.utility.product.Workbench#createWorkbenchAdvisor(java.util.Map)
+     */
+    @Override
+    protected WorkbenchAdvisor createWorkbenchAdvisor(
+            Map<String, Object> parameters) {
+        OpenDocumentEventProcessor openDocProcessor = (OpenDocumentEventProcessor) parameters.get(
+                OpenDocumentEventProcessor.OPEN_DOC_PROCESSOR);
+        return new ITERWorkbenchAdvisor(openDocProcessor);
+    }
 
 }

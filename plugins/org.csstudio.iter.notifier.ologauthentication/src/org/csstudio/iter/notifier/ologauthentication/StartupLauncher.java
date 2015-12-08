@@ -26,30 +26,26 @@ import edu.msu.nscl.olog.api.OlogClientImpl.OlogClientBuilder;
  */
 public class StartupLauncher implements IApplicationListener {
 
-	@Override
-	public void applicationStarted(IApplicationContext context) {
-		final IPreferencesService prefs = Platform.getPreferencesService();
+    @Override
+    public void applicationStarted(IApplicationContext context) {
+        final IPreferencesService prefs = Platform.getPreferencesService();
 
-		// Set default olog user to anonymous
-		String username = prefs.getString(Activator.PLUGIN_ID,
-				PreferenceConstants.anonymous_olog_user, null, null);
-		String password = prefs.getString(Activator.PLUGIN_ID,
-				PreferenceConstants.anonymous_olog_password, null, null);
+        // Set default olog user to anonymous
+        String username = prefs.getString(Activator.PLUGIN_ID, PreferenceConstants.anonymous_olog_user, null, null);
+        String password = prefs.getString(Activator.PLUGIN_ID, PreferenceConstants.anonymous_olog_password, null, null);
 
-		if (username != null) {
-			String url = prefs.getString(Activator.PLUGIN_ID,
-					PreferenceConstants.Olog_URL,
-					"http://localhost:8080/Olog/resources", null);
-			OlogClientBuilder ologClientBuilder = OlogClientBuilder.serviceURL(url);
-			ologClientBuilder.withHTTPAuthentication(true).username(username).password(password);
-			Activator.getLogger().log(Level.INFO,
-					"Creating Olog client : " + url + " with user '" + username + "'");
-			try {
-				Olog.setClient(ologClientBuilder.create());
-			} catch (Exception e) {
-				Activator.getLogger().log(Level.WARNING, e.getMessage(), e);
-			}
-		}
-	}
+        if (username != null) {
+            String url = prefs.getString(Activator.PLUGIN_ID, PreferenceConstants.Olog_URL,
+                    "http://localhost:8080/Olog/resources", null);
+            OlogClientBuilder ologClientBuilder = OlogClientBuilder.serviceURL(url);
+            ologClientBuilder.withHTTPAuthentication(true).username(username).password(password);
+            Activator.getLogger().log(Level.INFO, "Creating Olog client : " + url + " with user '" + username + "'");
+            try {
+                Olog.setClient(ologClientBuilder.create());
+            } catch (Exception e) {
+                Activator.getLogger().log(Level.WARNING, e.getMessage(), e);
+            }
+        }
+    }
 
 }

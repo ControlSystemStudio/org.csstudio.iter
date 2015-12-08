@@ -9,7 +9,9 @@ package org.csstudio.iter.widgets.archive.xygraph.actions;
 
 import org.csstudio.opibuilder.widgets.actions.ClearXYGraphAction;
 
-/**Clear XY Graph.
+/**
+ * Clear XY Graph.
+ * 
  * @author Xihui Chen
  *
  */

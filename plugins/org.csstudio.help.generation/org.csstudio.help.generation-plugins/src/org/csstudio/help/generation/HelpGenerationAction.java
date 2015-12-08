@@ -23,52 +23,52 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
 public class HelpGenerationAction implements IWorkbenchWindowActionDelegate {
-	private IWorkbenchWindow window;
-	@Override
-	public void run(IAction arg0) {
-		Job job = new Job("Help generation") {
-			@Override
-			protected IStatus run(IProgressMonitor monitor) {
-				GenerateHTML generateHTML = new GenerateHTML();
-				try {
-					generateHTML.create();
-				} catch (Exception e) {
-					Activator.getLogger().log(Level.WARNING, "generation pdf error", e);
-					final Exception e1 = e;
-					Display.getDefault().asyncExec(new Runnable() {
-					      public void run() {
-					    	  MessageDialog.openError(window.getShell(), "Generation PDF Error",
-								e1.getMessage());
-					      }
-					});
-					return Status.CANCEL_STATUS;
-				}
-				Display.getDefault().asyncExec(new Runnable() {
-				      public void run() {
-				    	  MessageDialog.openInformation(
-							window.getShell(), "Info",
-							"Help has been successfully generated at '" + Preferences.getGeneratedDocumentationPath() + "'");
-				      }
-				});
-				return Status.OK_STATUS;
-			}
-		};
+    private IWorkbenchWindow window;
+    @Override
+    public void run(IAction arg0) {
+        Job job = new Job("Help generation") {
+            @Override
+            protected IStatus run(IProgressMonitor monitor) {
+                GenerateHTML generateHTML = new GenerateHTML();
+                try {
+                    generateHTML.create();
+                } catch (Exception e) {
+                    Activator.getLogger().log(Level.WARNING, "generation pdf error", e);
+                    final Exception e1 = e;
+                    Display.getDefault().asyncExec(new Runnable() {
+                          public void run() {
+                              MessageDialog.openError(window.getShell(), "Generation PDF Error",
+                                e1.getMessage());
+                          }
+                    });
+                    return Status.CANCEL_STATUS;
+                }
+                Display.getDefault().asyncExec(new Runnable() {
+                      public void run() {
+                          MessageDialog.openInformation(
+                            window.getShell(), "Info",
+                            "Help has been successfully generated at '" + Preferences.getGeneratedDocumentationPath() + "'");
+                      }
+                });
+                return Status.OK_STATUS;
+            }
+        };
 
-		// Start the Job
-		job.schedule();
-	}
+        // Start the Job
+        job.schedule();
+    }
 
-	@Override
-	public void selectionChanged(IAction arg0, ISelection arg1) {
-	}
+    @Override
+    public void selectionChanged(IAction arg0, ISelection arg1) {
+    }
 
-	@Override
-	public void dispose() {
-	}
+    @Override
+    public void dispose() {
+    }
 
-	@Override
-	public void init(IWorkbenchWindow window) {
-		this.window = window;
-	}
+    @Override
+    public void init(IWorkbenchWindow window) {
+        this.window = window;
+    }
 
 }

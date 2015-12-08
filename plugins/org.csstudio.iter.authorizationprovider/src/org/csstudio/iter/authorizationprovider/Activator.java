@@ -16,10 +16,10 @@ import java.util.logging.Logger;
  */
 @SuppressWarnings("nls")
 public class Activator {
-	final public static String ID = "org.csstudio.iter.authorizationprovider";
+    final public static String ID = "org.csstudio.iter.authorizationprovider";
 
-	/** @return Logger for plugin ID */
-	public static Logger getLogger() {
-		return Logger.getLogger(ID);
-	}
+    /** @return Logger for plugin ID */
+    public static Logger getLogger() {
+        return Logger.getLogger(ID);
+    }
 }

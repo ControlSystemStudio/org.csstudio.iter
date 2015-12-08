@@ -21,79 +21,77 @@ import org.csstudio.utility.dbparser.data.Record;
 import org.eclipse.core.resources.IFile;
 
 /**
- * DB context management. This context is available in any level of the
- * application.
+ * DB context management. This context is available in any level of the application.
  *
  * @author Fred Arnaud (Sopra Group) - ITER
  */
 public class DBContext implements Serializable {
 
-	private static final long serialVersionUID = -3296261941300049496L;
+    private static final long serialVersionUID = -3296261941300049496L;
 
-	private Map<String, List<Record>> records;
+    private Map<String, List<Record>> records;
 
-	private static final DBContext context = new DBContext();
+    private static final DBContext context = new DBContext();
 
-	/**
-	 * Singleton = private constructor
-	 */
-	private DBContext() {
-		records = new TreeMap<String, List<Record>>();
-	}
+    /**
+     * Singleton = private constructor
+     */
+    private DBContext() {
+        records = new TreeMap<String, List<Record>>();
+    }
 
-	/**
-	 * Get the instance of {@link DBContext}..
-	 */
-	public static DBContext get() {
-		return context;
-	}
+    /**
+     * Get the instance of {@link DBContext}..
+     */
+    public static DBContext get() {
+        return context;
+    }
 
-	public List<Record> findRecord(String name) {
-		List<Record> result = new ArrayList<Record>();
-		for (String rec : records.keySet()) {
-			// replace macro by .*
-			final String regexp = rec.replaceAll("\\$\\([a-zA-Z0-9]+\\)", ".*");
-			Pattern p = Pattern.compile(regexp);
-			Matcher m = p.matcher(name);
-			if (m.matches())
-				result.addAll(records.get(rec));
-		}
-		return result;
-	}
+    public List<Record> findRecord(String name) {
+        List<Record> result = new ArrayList<Record>();
+        for (String rec : records.keySet()) {
+            // replace macro by .*
+            final String regexp = rec.replaceAll("\\$\\([a-zA-Z0-9]+\\)", ".*");
+            Pattern p = Pattern.compile(regexp);
+            Matcher m = p.matcher(name);
+            if (m.matches())
+                result.addAll(records.get(rec));
+        }
+        return result;
+    }
 
-	public Record getRecord(String name) {
-		if (records.get(name) == null)
-			return null;
-		return records.get(name).get(0);
-	}
+    public Record getRecord(String name) {
+        if (records.get(name) == null)
+            return null;
+        return records.get(name).get(0);
+    }
 
-	public Set<String> listRecords() {
-		return records.keySet();
-	}
+    public Set<String> listRecords() {
+        return records.keySet();
+    }
 
-	public void addRecord(IFile file, Record record) {
-		record.setFile(file.getFullPath());
-		if (records.get(record.getName()) == null)
-			records.put(record.getName(), new ArrayList<Record>());
-		records.get(record.getName()).add(record);
-	}
+    public void addRecord(IFile file, Record record) {
+        record.setFile(file.getFullPath());
+        if (records.get(record.getName()) == null)
+            records.put(record.getName(), new ArrayList<Record>());
+        records.get(record.getName()).add(record);
+    }
 
-	public void removeFile(IFile file) {
-		for (List<Record> list : records.values()) {
-			Iterator<Record> it = list.iterator();
-			while (it.hasNext()) {
-				Record r = it.next();
-				if (r.getFile().equals(file))
-					it.remove();
-			}
-		}
-		Iterator<Map.Entry<String, List<Record>>> it = records.entrySet()
-				.iterator();
-		while (it.hasNext()) {
-			Map.Entry<String, List<Record>> entry = it.next();
-			if (entry.getValue().isEmpty())
-				it.remove();
-		}
-	}
+    public void removeFile(IFile file) {
+        for (List<Record> list : records.values()) {
+            Iterator<Record> it = list.iterator();
+            while (it.hasNext()) {
+                Record r = it.next();
+                if (r.getFile().equals(file))
+                    it.remove();
+            }
+        }
+        Iterator<Map.Entry<String, List<Record>>> it = records.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<String, List<Record>> entry = it.next();
+            if (entry.getValue().isEmpty())
+                it.remove();
+        }
+    }
 
 }

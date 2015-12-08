@@ -17,8 +17,8 @@ import org.eclipse.ui.IStartup;
  */
 public class StartupLauncher implements IStartup {
 
-	@Override
-	public void earlyStartup() {
-//		new OlogAuthAdapter();
-	}
+    @Override
+    public void earlyStartup() {
+        // new OlogAuthAdapter();
+    }
 }

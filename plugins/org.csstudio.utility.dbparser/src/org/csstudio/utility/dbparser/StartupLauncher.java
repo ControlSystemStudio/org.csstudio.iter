@@ -32,85 +32,79 @@ import org.eclipse.ui.IStartup;
  */
 public class StartupLauncher implements IStartup {
 
-	@Override
-	public void earlyStartup() {
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		try {
-			workspace.getRoot().accept(new IResourceVisitor() {
-				public boolean visit(IResource resource)
-				{
-					if (!(resource.getType() == IResource.FILE))
-						return true;
-					if (resource.getName().endsWith(".db")) {
-						try {
-							parseDB((IFile) resource);
-						} catch (Exception e) {
-							Activator.getLogger().log(
-									Level.WARNING,
-									"Failed to parse " + resource.getFullPath() + ": " + e.getMessage());
-						}
-					}
-					return true;
-				}
-			});
-		} catch (CoreException e) {
-			Activator.getLogger().log(Level.SEVERE,
-					"Failed to read workspace: " + e.getMessage());
-		}
-		IResourceChangeListener listener = new IResourceChangeListener() {
-			public void resourceChanged(IResourceChangeEvent event) {
-				try {
-					if (event == null || event.getDelta() == null)
-						return;
-					event.getDelta().accept(new IResourceDeltaVisitor() {
-						public boolean visit(IResourceDelta delta) {
-							IResource resource = delta.getResource();
-							if (resource.getType() != IResource.FILE)
-								return true;
-							if (resource.getFileExtension() != null
-									&& resource.getFileExtension()
-											.toLowerCase().equals("db")) {
-								switch (delta.getKind()) {
-								case IResourceDelta.REMOVED:
-									DBContext.get().removeFile((IFile) resource);
-									break;
+    @Override
+    public void earlyStartup() {
+        IWorkspace workspace = ResourcesPlugin.getWorkspace();
+        try {
+            workspace.getRoot().accept(new IResourceVisitor() {
+                public boolean visit(IResource resource) {
+                    if (!(resource.getType() == IResource.FILE))
+                        return true;
+                    if (resource.getName().endsWith(".db")) {
+                        try {
+                            parseDB((IFile) resource);
+                        } catch (Exception e) {
+                            Activator.getLogger().log(Level.WARNING,
+                                    "Failed to parse " + resource.getFullPath() + ": " + e.getMessage());
+                        }
+                    }
+                    return true;
+                }
+            });
+        } catch (CoreException e) {
+            Activator.getLogger().log(Level.SEVERE, "Failed to read workspace: " + e.getMessage());
+        }
+        IResourceChangeListener listener = new IResourceChangeListener() {
+            public void resourceChanged(IResourceChangeEvent event) {
+                try {
+                    if (event == null || event.getDelta() == null)
+                        return;
+                    event.getDelta().accept(new IResourceDeltaVisitor() {
+                        public boolean visit(IResourceDelta delta) {
+                            IResource resource = delta.getResource();
+                            if (resource.getType() != IResource.FILE)
+                                return true;
+                            if (resource.getFileExtension() != null
+                                    && resource.getFileExtension().toLowerCase().equals("db")) {
+                                switch (delta.getKind()) {
+                                    case IResourceDelta.REMOVED:
+                                        DBContext.get().removeFile((IFile) resource);
+                                        break;
 
-								case IResourceDelta.CHANGED:
-								case IResourceDelta.CONTENT:
-									DBContext.get().removeFile((IFile) resource);
-									parseDB((IFile) resource);
-									break;
+                                    case IResourceDelta.CHANGED:
+                                    case IResourceDelta.CONTENT:
+                                        DBContext.get().removeFile((IFile) resource);
+                                        parseDB((IFile) resource);
+                                        break;
 
-								case IResourceDelta.ADDED:
-									parseDB((IFile) resource);
-									break;
+                                    case IResourceDelta.ADDED:
+                                        parseDB((IFile) resource);
+                                        break;
 
-								default:
-									break;
-								}
-							}
-							return true;
-						}
-					});
-				} catch (CoreException e) {
-					Activator.getLogger().log(Level.SEVERE,
-							"Failed to read workspace on change: " + e.getMessage());
-				}
-			}
-		};
-		workspace.addResourceChangeListener(listener);
-	}
+                                    default:
+                                        break;
+                                }
+                            }
+                            return true;
+                        }
+                    });
+                } catch (CoreException e) {
+                    Activator.getLogger().log(Level.SEVERE, "Failed to read workspace on change: " + e.getMessage());
+                }
+            }
+        };
+        workspace.addResourceChangeListener(listener);
+    }
 
-	private void parseDB(IFile file) {
-		try {
-			String dbContent = DbUtil.readFile(file);
-			List<Record> records = DbUtil.parseDb(dbContent);
-			for (Record r : records)
-				DBContext.get().addRecord(file, r);
-		} catch (Exception e) {
-			Activator.getLogger().log(Level.WARNING,
-					"Failed to parse " + file.getFullPath() + ": " + e.getMessage());
-		}
-	}
+    private void parseDB(IFile file) {
+        try {
+            String dbContent = DbUtil.readFile(file);
+            List<Record> records = DbUtil.parseDb(dbContent);
+            for (Record r : records)
+                DBContext.get().addRecord(file, r);
+        } catch (Exception e) {
+            Activator.getLogger().log(Level.WARNING, "Failed to parse " + file.getFullPath() + ": " + e.getMessage());
+        }
+    }
 
 }

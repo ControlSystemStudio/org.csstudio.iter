@@ -27,86 +27,86 @@ public class NativeLabeledTextFigure extends AbstractSWTWidgetFigure<Composite> 
     private Composite base;
     private Text text;
     private boolean readOnly, verticalStacking;
-	private Label label;
-	private final byte LABEL_SPACING = 2;
-	private int textStyle;
+    private Label label;
+    private final byte LABEL_SPACING = 2;
+    private int textStyle;
 
-	/**
+    /**
      * Constructs a new figure for a LabeledTextInput.
      *
-	 * @param editPart
-	 * @param style
-	 */
-	public NativeLabeledTextFigure(AbstractBaseEditPart editPart, int style) {
-		super(editPart, style);
-	}
+     * @param editPart
+     * @param style
+     */
+    public NativeLabeledTextFigure(AbstractBaseEditPart editPart, int style) {
+        super(editPart, style);
+    }
 
 /*    @Override
-	protected void dispose() {
-    	if (label != null) label.dispose();
-    	if (text != null) text.dispose();
+    protected void dispose() {
+        if (label != null) label.dispose();
+        if (text != null) text.dispose();
 
-		super.dispose();
-	}
+        super.dispose();
+    }
 */
-	@Override
-	public Color getForegroundColor() {
+    @Override
+    public Color getForegroundColor() {
         if (text != null)
             return text.getForeground();
         return super.getForegroundColor();
-	}
+    }
 
     @Override
-	public void setForegroundColor(Color fg) {
+    public void setForegroundColor(Color fg) {
         if(!runmode)
             super.setForegroundColor(fg);
         if (text != null)
-        	text.setForeground(fg);
+            text.setForeground(fg);
         if (label != null)
-        	label.setForeground(fg);
-	}
+            label.setForeground(fg);
+    }
 
-	@Override
-	public Color getBackgroundColor() {
+    @Override
+    public Color getBackgroundColor() {
         if (text != null)
             return text.getBackground();
         return super.getBackgroundColor();
-	}
+    }
 
-	@Override
-	public void setBackgroundColor(Color bg) {
+    @Override
+    public void setBackgroundColor(Color bg) {
 //        if(!runmode)
 //            super.setBackgroundColor(bg);
         if (text != null)
             text.setBackground(bg);
 //        if (getSWTWidget() != null) // base
-//        	getSWTWidget().setBackground(bg);
-	};
+//            getSWTWidget().setBackground(bg);
+    };
 
-	@Override
-	public void setFont(Font f) {
+    @Override
+    public void setFont(Font f) {
         super.setFont(f);
         if (text != null)
             text.setFont(f);
         if (label != null)
-        	label.setFont(f);
-	}
+            label.setFont(f);
+    }
 
-	private int getLabelStyle(int textStyle, boolean isStackingVertical) {
+    private int getLabelStyle(int textStyle, boolean isStackingVertical) {
         int style = SWT.NONE | SWT.WRAP;
         if (isStackingVertical) {
-        	style |= SWT.BOTTOM | (textStyle & (SWT.LEFT|SWT.CENTER|SWT.RIGHT));
+            style |= SWT.BOTTOM | (textStyle & (SWT.LEFT|SWT.CENTER|SWT.RIGHT));
         }
         else {
-        	style |= SWT.RIGHT;
+            style |= SWT.RIGHT;
         }
 
         return style;
-	}
+    }
 
-	@Override
+    @Override
     protected Composite createSWTWidget(Composite parent, int textStyle) {
-		this.textStyle = textStyle;
+        this.textStyle = textStyle;
         LabeledTextInputModel model = ((LabeledTextInputEditpart) editPart).getWidgetModel();
 
         base = new Composite(parent, SWT.NONE);
@@ -123,7 +123,7 @@ public class NativeLabeledTextFigure extends AbstractSWTWidgetFigure<Composite> 
         return base;
     }
 
-	public void layoutLabeledInput() {
+    public void layoutLabeledInput() {
         if (label != null) label.dispose();
         if (text != null) text.dispose();
 
@@ -135,42 +135,42 @@ public class NativeLabeledTextFigure extends AbstractSWTWidgetFigure<Composite> 
 
         if (hasLabel)
         {
-        	label = new Label(base, getLabelStyle(textStyle, verticalStacking));
+            label = new Label(base, getLabelStyle(textStyle, verticalStacking));
             label.setText(model.getInputLabelText());
         } else {
-        	label = null;
+            label = null;
         }
 
         text= new Text(base, textStyle);
         readOnly = (textStyle & SWT.READ_ONLY)!=0;
 
         if (verticalStacking)
-    	{
-        	labelGridData = new GridData(SWT.FILL, SWT.BOTTOM, true, false);
-        	textGridData = new GridData(SWT.FILL, SWT.FILL, true, true);
-    	}
+        {
+            labelGridData = new GridData(SWT.FILL, SWT.BOTTOM, true, false);
+            textGridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+        }
         else
-    	{	// horizontal stacking
-        	// if the Input is multiline, v.align the label to top; otherwise center it
-        	labelGridData = new GridData(SWT.LEFT, SWT.FILL, false, true);
-        	if (model.isMultilineInput())
-        		labelGridData.verticalAlignment = SWT.TOP;
-        	else
-        		labelGridData.verticalAlignment = SWT.CENTER;
-        	textGridData = new GridData(SWT.FILL, SWT.FILL, true, true);
-    	}
+        {    // horizontal stacking
+            // if the Input is multiline, v.align the label to top; otherwise center it
+            labelGridData = new GridData(SWT.LEFT, SWT.FILL, false, true);
+            if (model.isMultilineInput())
+                labelGridData.verticalAlignment = SWT.TOP;
+            else
+                labelGridData.verticalAlignment = SWT.CENTER;
+            textGridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+        }
         if (hasLabel) label.setLayoutData(labelGridData);
-		text.setLayoutData(textGridData);
-	}
+        text.setLayoutData(textGridData);
+    }
 
     public Dimension getAutoSizeDimension(){
         Point textSize = text.computeSize(SWT.DEFAULT, SWT.DEFAULT);
         if (label == null)
-        	return new Dimension(textSize.x + this.getInsets().getWidth(), textSize.y + this.getInsets().getHeight());
+            return new Dimension(textSize.x + this.getInsets().getWidth(), textSize.y + this.getInsets().getHeight());
 
         Point labelSize = label.computeSize(SWT.DEFAULT, SWT.DEFAULT);
         return new Dimension(textSize.x + labelSize.x + (verticalStacking ? 0 : LABEL_SPACING) + this.getInsets().getWidth(),
-        					 textSize.y + labelSize.y + (verticalStacking ? LABEL_SPACING : 0) + this.getInsets().getHeight());
+                             textSize.y + labelSize.y + (verticalStacking ? LABEL_SPACING : 0) + this.getInsets().getHeight());
     }
 
     @Override
@@ -189,20 +189,20 @@ public class NativeLabeledTextFigure extends AbstractSWTWidgetFigure<Composite> 
     }
 
     @Override
-	public void setBorder(Border border) {
-		super.setBorder(border);
-	}
+    public void setBorder(Border border) {
+        super.setBorder(border);
+    }
 
-	@Override
+    @Override
     public String getText() {
         return text.getText();
     }
 
-	public Text getTextSWTWidget() {
-		return text;
-	}
+    public Text getTextSWTWidget() {
+        return text;
+    }
 
-	public Label getLabelSWTWidget() {
-		return label;
-	}
+    public Label getLabelSWTWidget() {
+        return label;
+    }
 }

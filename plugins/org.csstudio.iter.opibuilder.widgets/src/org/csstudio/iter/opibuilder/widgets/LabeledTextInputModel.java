@@ -19,7 +19,7 @@ import org.eclipse.swt.graphics.RGB;
 /**
  * An override for the default Model for the text input widget.
  * Differences with the default TextInputModel:
- * 	- it provides a property for a different background color when the text input has focus (used to paint the CellEditor's background)
+ *     - it provides a property for a different background color when the text input has focus (used to paint the CellEditor's background)
  *  - it provides a property to enable confirmation (saving) of value to the PV on focus loss (without pressing ENTER)
  *
  *  It must be used together with LabeledTextInputEditpart and IterTextEditManager.
@@ -31,7 +31,7 @@ import org.eclipse.swt.graphics.RGB;
  */
 public class LabeledTextInputModel extends TextInputModel {
 
-	/** The background color when this control has focus */
+    /** The background color when this control has focus */
     public static final String PROP_COLOR_BACKGROUND_FOCUS = "background_focus_color";//$NON-NLS-1$
 
     /** Confirm (store value) at focus lost */
@@ -68,12 +68,12 @@ public class LabeledTextInputModel extends TextInputModel {
         }
 
         public static int getDefault() {
-        	return VERTICAL.ordinal();
+            return VERTICAL.ordinal();
         };
     }
 
-	public LabeledTextInputModel() {
-	}
+    public LabeledTextInputModel() {
+    }
 
     @Override
     protected void configureProperties() {
@@ -102,7 +102,7 @@ public class LabeledTextInputModel extends TextInputModel {
     }
 
     public void setBackgroundFocusColor(String colorName) {
-    	setBackgroundFocusColor(MediaService.getInstance().getOPIColor(colorName).getRGBValue());
+        setBackgroundFocusColor(MediaService.getInstance().getOPIColor(colorName).getRGBValue());
     }
 
     public boolean isConfirmOnFocusLost(){

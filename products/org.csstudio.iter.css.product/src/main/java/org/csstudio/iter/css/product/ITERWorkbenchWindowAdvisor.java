@@ -23,40 +23,40 @@ import org.eclipse.ui.internal.WorkbenchWindow;
 @SuppressWarnings("restriction")
 public class ITERWorkbenchWindowAdvisor extends ApplicationWorkbenchWindowAdvisor {
 
-	private boolean toolbarWasVisible;
+    private boolean toolbarWasVisible;
 
-	/**
-	 * Constructs a new advisor.
-	 *
-	 * @param configurer
-	 */
-	public ITERWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer) {
-		super(configurer);
-	}
+    /**
+     * Constructs a new advisor.
+     *
+     * @param configurer
+     */
+    public ITERWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer) {
+        super(configurer);
+    }
 
-	@Override
-	public void preWindowOpen() {
-		super.preWindowOpen();
-		WorkbenchWindow window = (WorkbenchWindow)getWindowConfigurer().getWindow();
-		toolbarWasVisible = window.isToolbarVisible();
-		window.setCoolBarVisible(true);
-		window.setPerspectiveBarVisible(true);
-	}
+    @Override
+    public void preWindowOpen() {
+        super.preWindowOpen();
+        WorkbenchWindow window = (WorkbenchWindow)getWindowConfigurer().getWindow();
+        toolbarWasVisible = window.isToolbarVisible();
+        window.setCoolBarVisible(true);
+        window.setPerspectiveBarVisible(true);
+    }
 
-	@Override
-	public void postWindowOpen() {
-		super.postWindowOpen();
-		WorkbenchWindow window = (WorkbenchWindow)getWindowConfigurer().getWindow();
+    @Override
+    public void postWindowOpen() {
+        super.postWindowOpen();
+        WorkbenchWindow window = (WorkbenchWindow)getWindowConfigurer().getWindow();
 
-		if (!toolbarWasVisible) {
-			//put a runnable on the display queue, so it gets updated the last, when the correct menu bar is set
-			window.getShell().getDisplay().asyncExec(() ->
-			{
-				window.getShell().setMenuBar(null);
-				CompactModeAction action = WorkbenchWindowService.getInstance().getCompactModeAction(window);
-				if (action != null && !action.isInCompactMode())
-					action.run();
-			});
-		}
-	}
+        if (!toolbarWasVisible) {
+            //put a runnable on the display queue, so it gets updated the last, when the correct menu bar is set
+            window.getShell().getDisplay().asyncExec(() ->
+            {
+                window.getShell().setMenuBar(null);
+                CompactModeAction action = WorkbenchWindowService.getInstance().getCompactModeAction(window);
+                if (action != null && !action.isInCompactMode())
+                    action.run();
+            });
+        }
+    }
 }

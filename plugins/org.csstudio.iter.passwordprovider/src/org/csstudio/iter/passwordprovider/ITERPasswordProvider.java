@@ -21,23 +21,21 @@ import org.eclipse.equinox.security.storage.provider.PasswordProvider;
 
 public class ITERPasswordProvider extends PasswordProvider {
 
-	final public static String FILENAME = "css.key";
+    final public static String FILENAME = "css.key";
 
-	@Override
-	public PBEKeySpec getPassword(final IPreferencesContainer container,
-			final int passwordType) {
-		String key = "";
-		try {
-			URI path = Platform.getInstallLocation().getDataArea(FILENAME).toURI();
-			File keyFile = new File(path);
-			BufferedReader reader = new BufferedReader(new FileReader(keyFile));
-			key = reader.readLine();
-			reader.close();
-		} catch (Exception e) {
-			Activator.getLogger().log(Level.SEVERE,
-					"Error reading password: " + e.getMessage());
-		}
-		return new PBEKeySpec(key.toCharArray());
-	}
+    @Override
+    public PBEKeySpec getPassword(final IPreferencesContainer container, final int passwordType) {
+        String key = "";
+        try {
+            URI path = Platform.getInstallLocation().getDataArea(FILENAME).toURI();
+            File keyFile = new File(path);
+            BufferedReader reader = new BufferedReader(new FileReader(keyFile));
+            key = reader.readLine();
+            reader.close();
+        } catch (Exception e) {
+            Activator.getLogger().log(Level.SEVERE, "Error reading password: " + e.getMessage());
+        }
+        return new PBEKeySpec(key.toCharArray());
+    }
 
 }

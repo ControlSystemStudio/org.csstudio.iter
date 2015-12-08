@@ -23,34 +23,34 @@ import org.csstudio.security.authorization.Authorizations;
  */
 @SuppressWarnings("nls")
 public class ITERAuthorizationProvider extends
-		org.csstudio.security.authorization.LDAPGroupAuthorizationProvider
-		implements AuthorizationProvider {
+        org.csstudio.security.authorization.LDAPGroupAuthorizationProvider
+        implements AuthorizationProvider {
 
-	@Override
-	public Authorizations getAuthorizations(Subject user) throws Exception {
-		Authorizations authorizations = null;
-		try {
-			authorizations = super.getAuthorizations(user);
-		} catch (Exception e) {
-			// Handle LDAP connection error.
-			Activator.getLogger().log(Level.WARNING,
-					"Unable to retrieve authorizations from LDAP server : " + e.getMessage());
-		}
-		if (authorizations == null
-				|| authorizations.getAuthorizations() == null) {
-			authorizations = new Authorizations(new HashSet<String>(0));
-		}
+    @Override
+    public Authorizations getAuthorizations(Subject user) throws Exception {
+        Authorizations authorizations = null;
+        try {
+            authorizations = super.getAuthorizations(user);
+        } catch (Exception e) {
+            // Handle LDAP connection error.
+            Activator.getLogger().log(Level.WARNING,
+                    "Unable to retrieve authorizations from LDAP server : " + e.getMessage());
+        }
+        if (authorizations == null
+                || authorizations.getAuthorizations() == null) {
+            authorizations = new Authorizations(new HashSet<String>(0));
+        }
 
-		String[] defaultAuthList = Preferences.getDefaultAuthorization();
-		if (defaultAuthList == null || defaultAuthList.length == 0) {
-			return authorizations;
-		}
+        String[] defaultAuthList = Preferences.getDefaultAuthorization();
+        if (defaultAuthList == null || defaultAuthList.length == 0) {
+            return authorizations;
+        }
 
-		Set<String> authList = new HashSet<>(authorizations.getAuthorizations());
-		for (String auth : defaultAuthList) {
-			authList.add(auth);
-		}
+        Set<String> authList = new HashSet<>(authorizations.getAuthorizations());
+        for (String auth : defaultAuthList) {
+            authList.add(auth);
+        }
 
-		return new Authorizations(authList);
-	}
+        return new Authorizations(authList);
+    }
 }

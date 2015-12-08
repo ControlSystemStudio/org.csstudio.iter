@@ -10,6 +10,6 @@ package org.csstudio.diag.pvfields.dbfiles;
 
 public class Activator {
 
-	// The plug-in ID
-	public static final String ID = "org.csstudio.diag.pvfields.dbfiles"; //$NON-NLS-1$
+    // The plug-in ID
+    public static final String ID = "org.csstudio.diag.pvfields.dbfiles"; //$NON-NLS-1$
 }

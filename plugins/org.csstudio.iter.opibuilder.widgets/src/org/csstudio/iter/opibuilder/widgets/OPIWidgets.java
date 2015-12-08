@@ -15,43 +15,43 @@ import org.osgi.framework.BundleContext;
  */
 public class OPIWidgets extends AbstractUIPlugin {
 
-	// The plug-in ID
-	public static final String PLUGIN_ID = "org.csstudio.iter.opibuilder.widgets"; //$NON-NLS-1$
+    // The plug-in ID
+    public static final String PLUGIN_ID = "org.csstudio.iter.opibuilder.widgets"; //$NON-NLS-1$
 
-	// The shared instance
-	private static OPIWidgets plugin;
+    // The shared instance
+    private static OPIWidgets plugin;
 
-	/**
-	 * The constructor
-	 */
-	public OPIWidgets() {
-	}
+    /**
+     * The constructor
+     */
+    public OPIWidgets() {
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
-	 */
-	public void start(BundleContext context) throws Exception {
-		super.start(context);
-		plugin = this;
-	}
+    /*
+     * (non-Javadoc)
+     * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
+     */
+    public void start(BundleContext context) throws Exception {
+        super.start(context);
+        plugin = this;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
-	 */
-	public void stop(BundleContext context) throws Exception {
-		plugin = null;
-		super.stop(context);
-	}
+    /*
+     * (non-Javadoc)
+     * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
+     */
+    public void stop(BundleContext context) throws Exception {
+        plugin = null;
+        super.stop(context);
+    }
 
-	/**
-	 * Returns the shared instance
-	 *
-	 * @return the shared instance
-	 */
-	public static OPIWidgets getDefault() {
-		return plugin;
-	}
+    /**
+     * Returns the shared instance
+     *
+     * @return the shared instance
+     */
+    public static OPIWidgets getDefault() {
+        return plugin;
+    }
 
 }

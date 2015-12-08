@@ -9,16 +9,16 @@ package org.csstudio.iter.utility.sddreader;
 
 public class SDDContextValueHolder {
 
-	private static final SDDContext context = new SDDContext();
+    private static final SDDContext context = new SDDContext();
 
-	/**
-	 * Singleton = private constructor
-	 */
-	private SDDContextValueHolder() {
-		// Singleton
-	}
+    /**
+     * Singleton = private constructor
+     */
+    private SDDContextValueHolder() {
+        // Singleton
+    }
 
-	public static SDDContext get() {
-		return context;
-	}
+    public static SDDContext get() {
+        return context;
+    }
 }

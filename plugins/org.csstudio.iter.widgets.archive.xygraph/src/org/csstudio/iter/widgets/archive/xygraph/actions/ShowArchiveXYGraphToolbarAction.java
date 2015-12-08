@@ -6,10 +6,12 @@
  * http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
 package org.csstudio.iter.widgets.archive.xygraph.actions;
+
 import org.csstudio.opibuilder.widgets.actions.ShowXYGraphToolbarAction;
 
-
-/**Show/Hide XYGraph Toolbar
+/**
+ * Show/Hide XYGraph Toolbar
+ * 
  * @author Xihui Chen
  *
  */

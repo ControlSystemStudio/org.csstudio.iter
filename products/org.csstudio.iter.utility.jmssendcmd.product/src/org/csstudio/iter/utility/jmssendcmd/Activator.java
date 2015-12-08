@@ -14,17 +14,17 @@ import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
 
-	/** Plugin ID defined in MANIFEST.MF */
+    /** Plugin ID defined in MANIFEST.MF */
     final public static String ID = "org.csstudio.iter.utility.jmssendcmd";
 
     final private static Logger logger = Logger.getLogger(ID);
 
-	/** @return Logger for plugin ID */
-	public static Logger getLogger() {
-		return logger;
-	}
+    /** @return Logger for plugin ID */
+    public static Logger getLogger() {
+        return logger;
+    }
 
-	@Override
+    @Override
     public void start(BundleContext context) throws Exception {
     }
 

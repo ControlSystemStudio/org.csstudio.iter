@@ -20,28 +20,28 @@ import org.eclipse.core.runtime.preferences.IPreferencesService;
  */
 @SuppressWarnings("nls")
 public class Preferences {
-	final public static String VERBOSE_LOG_LEVEL = "verbose_log.level";
+    final public static String VERBOSE_LOG_LEVEL = "verbose_log.level";
 
-	/**
-	 * @return {@link Level} for verbose log
-	 * @throws Exception
-	 *             when value cannot be parsed
-	 */
-	public static Level getVerboseLogLevel() throws Exception {
-		Level level = Level.INFO;
-		final IPreferencesService prefs = Platform.getPreferencesService();
-		if (prefs != null) {
-			String txt = prefs.getString(Activator.PLUGIN_ID,
-					VERBOSE_LOG_LEVEL, level.getName(), null);
-			if (txt != null && !txt.isEmpty()) {
-				try {
-					level = Level.parse(txt);
-				} catch (Throwable ex) {
-					throw new Exception("Illegal console log level '" + txt
-							+ "'");
-				}
-			}
-		}
-		return level;
-	}
+    /**
+     * @return {@link Level} for verbose log
+     * @throws Exception
+     *             when value cannot be parsed
+     */
+    public static Level getVerboseLogLevel() throws Exception {
+        Level level = Level.INFO;
+        final IPreferencesService prefs = Platform.getPreferencesService();
+        if (prefs != null) {
+            String txt = prefs.getString(Activator.PLUGIN_ID,
+                    VERBOSE_LOG_LEVEL, level.getName(), null);
+            if (txt != null && !txt.isEmpty()) {
+                try {
+                    level = Level.parse(txt);
+                } catch (Throwable ex) {
+                    throw new Exception("Illegal console log level '" + txt
+                            + "'");
+                }
+            }
+        }
+        return level;
+    }
 }
