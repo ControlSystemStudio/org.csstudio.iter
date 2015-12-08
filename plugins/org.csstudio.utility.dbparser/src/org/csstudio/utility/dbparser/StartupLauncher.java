@@ -26,9 +26,9 @@ import org.eclipse.ui.IStartup;
 
 /**
  * Scan workspace looking for DB files.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
- * 
+ *
  */
 public class StartupLauncher implements IStartup {
 
@@ -37,7 +37,7 @@ public class StartupLauncher implements IStartup {
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		try {
 			workspace.getRoot().accept(new IResourceVisitor() {
-				public boolean visit(IResource resource) 
+				public boolean visit(IResource resource)
 				{
 					if (!(resource.getType() == IResource.FILE))
 						return true;
@@ -80,7 +80,7 @@ public class StartupLauncher implements IStartup {
 									DBContext.get().removeFile((IFile) resource);
 									parseDB((IFile) resource);
 									break;
-									
+
 								case IResourceDelta.ADDED:
 									parseDB((IFile) resource);
 									break;

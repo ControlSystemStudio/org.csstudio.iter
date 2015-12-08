@@ -18,7 +18,7 @@ import org.junit.Test;
  * Test {@link DbUtil}. readFile: read a {@link IFile} and return a
  * {@link String} with comments replaced by an empty line. parseDb: return a
  * non-empty list of {@link Record} initialized from specified DB file.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
  */
 public class DbUtilUnitTest {

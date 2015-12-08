@@ -55,7 +55,7 @@ public class HelpGenerationAction implements IWorkbenchWindowActionDelegate {
 		};
 
 		// Start the Job
-		job.schedule(); 
+		job.schedule();
 	}
 
 	@Override

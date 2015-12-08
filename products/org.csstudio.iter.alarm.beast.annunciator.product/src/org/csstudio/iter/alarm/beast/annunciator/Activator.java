@@ -23,11 +23,11 @@ public class Activator implements BundleActivator {
 	public static Logger getLogger() {
 		return logger;
 	}
-	
+
 	@Override
     public void start(BundleContext context) throws Exception {
     }
-    
+
     @Override
     public void stop(BundleContext context) throws Exception {
     }

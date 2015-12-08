@@ -37,7 +37,7 @@ import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
 /**
  * PON Archive RDB Provider for PV names.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
  */
 public class ArchiveRDBProvider implements IAutoCompleteProvider {

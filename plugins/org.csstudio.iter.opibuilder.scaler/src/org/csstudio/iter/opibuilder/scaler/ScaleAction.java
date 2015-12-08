@@ -32,7 +32,7 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
 /**
- * 
+ *
  * <code>ScaleAction</code> is a Navigator action that scales the selecte4d files for a factor that user enters into
  * a message dialog.
  *
@@ -43,7 +43,7 @@ public class ScaleAction implements IObjectActionDelegate {
 
     private List<IFile> selectedFiles;
     protected Shell parent;
-    
+
     /*
      * (non-Javadoc)
      * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
@@ -60,7 +60,7 @@ public class ScaleAction implements IObjectActionDelegate {
                     return;
                 }
                 final List<String> errors = new ArrayList<String>();
-                
+
                 new Job("Opi scaling") {
                     @Override
                     protected IStatus run(IProgressMonitor monitor) {
@@ -85,13 +85,13 @@ public class ScaleAction implements IObjectActionDelegate {
                         if (monitor.isCanceled()) {
                             return Status.CANCEL_STATUS;
                         }
-                        
+
                         Display.getDefault().asyncExec(new Runnable(){
                             public void run() {
                                 if (errors.isEmpty()) {
                                     MessageDialog.openInformation(parent, "Scaling Completed",
-                                            (selectedFiles.size() == 1 ? "File " + selectedFiles.get(0).getName() : 
-                                            (selectedFiles.size() + " files")) + " successfully scaled by a factor of " 
+                                            (selectedFiles.size() == 1 ? "File " + selectedFiles.get(0).getName() :
+                                            (selectedFiles.size() + " files")) + " successfully scaled by a factor of "
                                                     + scale + ".");
                                 } else {
                                     StringBuilder sb = new StringBuilder((errors.size() + 2)* 150);
@@ -105,18 +105,18 @@ public class ScaleAction implements IObjectActionDelegate {
                                 }
                             };
                         });
-                        
+
                         return monitor.isCanceled() ? Status.CANCEL_STATUS : Status.OK_STATUS;
                     }
                 }.schedule();
             }
         }
     }
-    
+
     /**
      * Check if the files are OK to be scaled with the given scale. If yes, it returns true,
      * if no it returns false. A message can be displayed within this method if needed.
-     * 
+     *
      * @param scale the scale used for transformation
      * @param files the files which will be scaled
      * @return true if the files can be scaled or false otherwise
@@ -128,7 +128,7 @@ public class ScaleAction implements IObjectActionDelegate {
     /**
      * Returns the scale which will be used for OPI transformation.
      * This method displays a dialog that allows user to enter the scaling factor.
-     * 
+     *
      * @return the scale factor
      */
     protected double getScale() {
@@ -153,9 +153,9 @@ public class ScaleAction implements IObjectActionDelegate {
         } else {
             return Double.NaN;
         }
-        
+
     }
-    
+
     /*
      * (non-Javadoc)
      * @see org.eclipse.ui.IActionDelegate#selectionChanged(org.eclipse.jface.action.IAction, org.eclipse.jface.viewers.ISelection)

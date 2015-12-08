@@ -29,7 +29,7 @@ public class SDDContext implements Serializable {
 			+ "INNER JOIN variableattributetypes as at ON at.id = fa.atttype_id "
 			+ "WHERE fv.id = ?";
 	private final String pv_get_id = "SELECT id, recordType FROM functionalvariables WHERE name = ?";
-	
+
 	private final Pattern FIELD_PATTERN = Pattern.compile("^[A-Z0-9]{1,6}$");
 
 	private RDBUtil rdb;
@@ -37,7 +37,7 @@ public class SDDContext implements Serializable {
 	public SDDContext() {
 		try {
 			rdb = RDBUtil.connect(Preferences.getRDB_Url(),
-					Preferences.getRDB_User(), 
+					Preferences.getRDB_User(),
 					Preferences.getRDB_Password(),
 					true);
 			Activator.getLogger().log(Level.INFO,
@@ -59,7 +59,7 @@ public class SDDContext implements Serializable {
 				Record r = new Record();
 				r.setName(name);
 				r.setType(resultSetPV.getString(2));
-				
+
 				int id = resultSetPV.getInt(1);
 				statement_fields = rdb.getConnection().prepareStatement(pv_get_fields);
 				statement_fields.setInt(1, id);
@@ -73,7 +73,7 @@ public class SDDContext implements Serializable {
 						r.addField(f);
 					}
 				}
-				
+
 				result.add(r);
 			}
 		} catch (Exception e) {

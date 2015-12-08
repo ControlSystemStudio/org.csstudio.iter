@@ -21,8 +21,8 @@ public class PythonUtils {
 	 * Attempts to determine probable python interpreter path to be used with
 	 * edna. The pydev extensions also attempt to use this interpreter for the
 	 * default pydev interpreter when running python written in the workbench.
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
 	public static String getProbablePythonPath() {
@@ -55,7 +55,7 @@ public class PythonUtils {
 	/**
 	 * Could not find Java method to search path, so since it is not hard, will
 	 * write a simple algorithm.
-	 * 
+	 *
 	 * @param path
 	 * @param execName
 	 * @return
@@ -115,7 +115,7 @@ public class PythonUtils {
 	/**
 	 * Attempts to generate legal variable name. Does not take into account key
 	 * words.
-	 * 
+	 *
 	 * @param setName
 	 * @return
 	 * @throws Exception
@@ -152,7 +152,7 @@ public class PythonUtils {
 
 	/**
 	 * Does not fix key words
-	 * 
+	 *
 	 * @param name
 	 * @return
 	 */
@@ -178,7 +178,7 @@ public class PythonUtils {
 	/**
 	 * Attempts to guess a python interpreter command to use when linking to
 	 * python with RPC.
-	 * 
+	 *
 	 * @return
 	 */
 	public static String getPythonInterpreterCommand() {

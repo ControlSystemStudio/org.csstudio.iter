@@ -26,7 +26,7 @@ import org.eclipse.core.runtime.CoreException;
 
 /**
  * DBD parser helper.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
  */
 public class DbdUtil {

@@ -20,7 +20,7 @@ public class OPIWidgets extends AbstractUIPlugin {
 
 	// The shared instance
 	private static OPIWidgets plugin;
-	
+
 	/**
 	 * The constructor
 	 */

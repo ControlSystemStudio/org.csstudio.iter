@@ -257,11 +257,11 @@ public TreeAdaptor getTreeAdaptor() {
 
             // AST REWRITE
             // elements: RECORD_INSTANCE, record_block, record_head
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -343,11 +343,11 @@ public TreeAdaptor getTreeAdaptor() {
             // DbRecord.g:33:13: ( 'record' '(' record_name ')' -> ^( RECORD record_name ) )
             // DbRecord.g:33:15: 'record' '(' record_name ')'
             {
-            string_literal5=(Token)match(input,RECORD,FOLLOW_RECORD_in_record_head163);  
+            string_literal5=(Token)match(input,RECORD,FOLLOW_RECORD_in_record_head163);
             stream_RECORD.add(string_literal5);
 
 
-            char_literal6=(Token)match(input,24,FOLLOW_24_in_record_head165);  
+            char_literal6=(Token)match(input,24,FOLLOW_24_in_record_head165);
             stream_24.add(char_literal6);
 
 
@@ -358,17 +358,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_record_name.add(record_name7.getTree());
 
-            char_literal8=(Token)match(input,25,FOLLOW_25_in_record_head169);  
+            char_literal8=(Token)match(input,25,FOLLOW_25_in_record_head169);
             stream_25.add(char_literal8);
 
 
             // AST REWRITE
             // elements: record_name
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -445,7 +445,7 @@ public TreeAdaptor getTreeAdaptor() {
             // DbRecord.g:35:14: ( '{' ( record_body )* '}' -> ^( 'record_body' ( record_body )* ) )
             // DbRecord.g:35:16: '{' ( record_body )* '}'
             {
-            char_literal9=(Token)match(input,27,FOLLOW_27_in_record_block185);  
+            char_literal9=(Token)match(input,27,FOLLOW_27_in_record_block185);
             stream_27.add(char_literal9);
 
 
@@ -480,17 +480,17 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            char_literal11=(Token)match(input,28,FOLLOW_28_in_record_block190);  
+            char_literal11=(Token)match(input,28,FOLLOW_28_in_record_block190);
             stream_28.add(char_literal11);
 
 
             // AST REWRITE
             // elements: RECORD_BODY, record_body
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -695,11 +695,11 @@ public TreeAdaptor getTreeAdaptor() {
             // DbRecord.g:39:7: ( 'field' '(' key_value ')' -> ^( FIELD key_value ) )
             // DbRecord.g:39:9: 'field' '(' key_value ')'
             {
-            string_literal15=(Token)match(input,FIELD,FOLLOW_FIELD_in_field224);  
+            string_literal15=(Token)match(input,FIELD,FOLLOW_FIELD_in_field224);
             stream_FIELD.add(string_literal15);
 
 
-            char_literal16=(Token)match(input,24,FOLLOW_24_in_field226);  
+            char_literal16=(Token)match(input,24,FOLLOW_24_in_field226);
             stream_24.add(char_literal16);
 
 
@@ -710,17 +710,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_key_value.add(key_value17.getTree());
 
-            char_literal18=(Token)match(input,25,FOLLOW_25_in_field230);  
+            char_literal18=(Token)match(input,25,FOLLOW_25_in_field230);
             stream_25.add(char_literal18);
 
 
             // AST REWRITE
             // elements: key_value
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -800,11 +800,11 @@ public TreeAdaptor getTreeAdaptor() {
             // DbRecord.g:41:6: ( 'info' '(' key_value ')' -> ^( INFO key_value ) )
             // DbRecord.g:41:8: 'info' '(' key_value ')'
             {
-            string_literal19=(Token)match(input,INFO,FOLLOW_INFO_in_info246);  
+            string_literal19=(Token)match(input,INFO,FOLLOW_INFO_in_info246);
             stream_INFO.add(string_literal19);
 
 
-            char_literal20=(Token)match(input,24,FOLLOW_24_in_info248);  
+            char_literal20=(Token)match(input,24,FOLLOW_24_in_info248);
             stream_24.add(char_literal20);
 
 
@@ -815,17 +815,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_key_value.add(key_value21.getTree());
 
-            char_literal22=(Token)match(input,25,FOLLOW_25_in_info252);  
+            char_literal22=(Token)match(input,25,FOLLOW_25_in_info252);
             stream_25.add(char_literal22);
 
 
             // AST REWRITE
             // elements: key_value
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -905,11 +905,11 @@ public TreeAdaptor getTreeAdaptor() {
             // DbRecord.g:43:7: ( 'alias' '(' type ')' -> ^( ALIAS type ) )
             // DbRecord.g:43:9: 'alias' '(' type ')'
             {
-            string_literal23=(Token)match(input,ALIAS,FOLLOW_ALIAS_in_alias268);  
+            string_literal23=(Token)match(input,ALIAS,FOLLOW_ALIAS_in_alias268);
             stream_ALIAS.add(string_literal23);
 
 
-            char_literal24=(Token)match(input,24,FOLLOW_24_in_alias270);  
+            char_literal24=(Token)match(input,24,FOLLOW_24_in_alias270);
             stream_24.add(char_literal24);
 
 
@@ -920,17 +920,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_type.add(type25.getTree());
 
-            char_literal26=(Token)match(input,25,FOLLOW_25_in_alias274);  
+            char_literal26=(Token)match(input,25,FOLLOW_25_in_alias274);
             stream_25.add(char_literal26);
 
 
             // AST REWRITE
             // elements: type
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -1014,7 +1014,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_type.add(type27.getTree());
 
-            char_literal28=(Token)match(input,26,FOLLOW_26_in_key_value292);  
+            char_literal28=(Token)match(input,26,FOLLOW_26_in_key_value292);
             stream_26.add(char_literal28);
 
 
@@ -1027,11 +1027,11 @@ public TreeAdaptor getTreeAdaptor() {
 
             // AST REWRITE
             // elements: value, type
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -1127,7 +1127,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_type.add(type30.getTree());
 
-            char_literal31=(Token)match(input,26,FOLLOW_26_in_record_name318);  
+            char_literal31=(Token)match(input,26,FOLLOW_26_in_record_name318);
             stream_26.add(char_literal31);
 
 
@@ -1140,11 +1140,11 @@ public TreeAdaptor getTreeAdaptor() {
 
             // AST REWRITE
             // elements: name, type
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -1230,8 +1230,8 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (Object)adaptor.nil();
 
 
-            ID33=(Token)match(input,ID,FOLLOW_ID_in_type342); 
-            ID33_tree = 
+            ID33=(Token)match(input,ID,FOLLOW_ID_in_type342);
+            ID33_tree =
             (Object)adaptor.create(ID33)
             ;
             adaptor.addChild(root_0, ID33_tree);
@@ -1287,8 +1287,8 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (Object)adaptor.nil();
 
 
-            String34=(Token)match(input,String,FOLLOW_String_in_value350); 
-            String34_tree = 
+            String34=(Token)match(input,String,FOLLOW_String_in_value350);
+            String34_tree =
             (Object)adaptor.create(String34)
             ;
             adaptor.addChild(root_0, String34_tree);
@@ -1348,7 +1348,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             if ( input.LA(1)==NonQuotedString||input.LA(1)==String ) {
                 input.consume();
-                adaptor.addChild(root_0, 
+                adaptor.addChild(root_0,
                 (Object)adaptor.create(set35)
                 );
                 state.errorRecovery=false;
@@ -1385,7 +1385,7 @@ public TreeAdaptor getTreeAdaptor() {
     // Delegated rules
 
 
- 
+
 
     public static final BitSet FOLLOW_program_in_top125 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_record_in_program133 = new BitSet(new long[]{0x0000000000010002L});

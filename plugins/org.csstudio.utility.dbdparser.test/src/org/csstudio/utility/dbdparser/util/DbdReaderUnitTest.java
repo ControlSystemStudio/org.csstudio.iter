@@ -13,7 +13,7 @@ import org.junit.Test;
 /**
  * Test {@link DbdReader}: recursively replaces all dbd file inclusion by the
  * corresponding file content.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
  */
 public class DbdReaderUnitTest {

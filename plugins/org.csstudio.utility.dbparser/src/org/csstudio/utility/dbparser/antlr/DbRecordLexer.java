@@ -49,7 +49,7 @@ public class DbRecordLexer extends Lexer {
         return new Lexer[] {};
     }
 
-    public DbRecordLexer() {} 
+    public DbRecordLexer() {}
     public DbRecordLexer(CharStream input) {
         this(input, new RecognizerSharedState());
     }
@@ -66,7 +66,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:11:7: ( 'alias' )
             // DbRecord.g:11:9: 'alias'
             {
-            match("alias"); 
+            match("alias");
 
 
 
@@ -89,7 +89,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:12:7: ( 'field' )
             // DbRecord.g:12:9: 'field'
             {
-            match("field"); 
+            match("field");
 
 
 
@@ -112,7 +112,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:13:6: ( 'info' )
             // DbRecord.g:13:8: 'info'
             {
-            match("info"); 
+            match("info");
 
 
 
@@ -135,7 +135,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:14:8: ( 'record' )
             // DbRecord.g:14:10: 'record'
             {
-            match("record"); 
+            match("record");
 
 
 
@@ -158,7 +158,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:15:13: ( 'record_body' )
             // DbRecord.g:15:15: 'record_body'
             {
-            match("record_body"); 
+            match("record_body");
 
 
 
@@ -181,7 +181,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:16:17: ( 'record_instance' )
             // DbRecord.g:16:19: 'record_instance'
             {
-            match("record_instance"); 
+            match("record_instance");
 
 
 
@@ -204,7 +204,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:17:6: ( 'type' )
             // DbRecord.g:17:8: 'type'
             {
-            match("type"); 
+            match("type");
 
 
 
@@ -227,7 +227,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:18:7: ( 'value' )
             // DbRecord.g:18:9: 'value'
             {
-            match("value"); 
+            match("value");
 
 
 
@@ -250,7 +250,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:19:7: ( '(' )
             // DbRecord.g:19:9: '('
             {
-            match('('); 
+            match('(');
 
             }
 
@@ -271,7 +271,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:20:7: ( ')' )
             // DbRecord.g:20:9: ')'
             {
-            match(')'); 
+            match(')');
 
             }
 
@@ -292,7 +292,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:21:7: ( ',' )
             // DbRecord.g:21:9: ','
             {
-            match(','); 
+            match(',');
 
             }
 
@@ -313,7 +313,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:22:7: ( '{' )
             // DbRecord.g:22:9: '{'
             {
-            match('{'); 
+            match('{');
 
             }
 
@@ -334,7 +334,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:23:7: ( '}' )
             // DbRecord.g:23:9: '}'
             {
-            match('}'); 
+            match('}');
 
             }
 
@@ -405,7 +405,7 @@ public class DbRecordLexer extends Lexer {
                 case 1 :
                     // DbRecord.g:57:3: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
                     {
-                    match('\\'); 
+                    match('\\');
 
                     if ( (input.LA(1) >= '0' && input.LA(1) <= '3') ) {
                         input.consume();
@@ -442,7 +442,7 @@ public class DbRecordLexer extends Lexer {
                 case 2 :
                     // DbRecord.g:58:5: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
                     {
-                    match('\\'); 
+                    match('\\');
 
                     if ( (input.LA(1) >= '0' && input.LA(1) <= '7') ) {
                         input.consume();
@@ -469,7 +469,7 @@ public class DbRecordLexer extends Lexer {
                 case 3 :
                     // DbRecord.g:59:5: '\\\\' ( '0' .. '7' )
                     {
-                    match('\\'); 
+                    match('\\');
 
                     if ( (input.LA(1) >= '0' && input.LA(1) <= '7') ) {
                         input.consume();
@@ -531,20 +531,20 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:72:3: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
             // DbRecord.g:73:3: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
             {
-            match('\\'); 
+            match('\\');
 
-            match('u'); 
+            match('u');
 
-            mHEX_DIGIT(); 
-
-
-            mHEX_DIGIT(); 
+            mHEX_DIGIT();
 
 
-            mHEX_DIGIT(); 
+            mHEX_DIGIT();
 
 
-            mHEX_DIGIT(); 
+            mHEX_DIGIT();
+
+
+            mHEX_DIGIT();
 
 
             }
@@ -607,7 +607,7 @@ public class DbRecordLexer extends Lexer {
 
 
                _channel = HIDDEN;
-              
+
 
             }
 
@@ -792,7 +792,7 @@ public class DbRecordLexer extends Lexer {
                     } while (true);
 
 
-                    match('.'); 
+                    match('.');
 
                     // DbRecord.g:114:19: ( '0' .. '9' )*
                     loop6:
@@ -839,7 +839,7 @@ public class DbRecordLexer extends Lexer {
                         case 1 :
                             // DbRecord.g:114:31: EXPONENT
                             {
-                            mEXPONENT(); 
+                            mEXPONENT();
 
 
                             }
@@ -853,7 +853,7 @@ public class DbRecordLexer extends Lexer {
                 case 2 :
                     // DbRecord.g:115:5: '.' ( '0' .. '9' )+ ( EXPONENT )?
                     {
-                    match('.'); 
+                    match('.');
 
                     // DbRecord.g:115:9: ( '0' .. '9' )+
                     int cnt8=0;
@@ -905,7 +905,7 @@ public class DbRecordLexer extends Lexer {
                         case 1 :
                             // DbRecord.g:115:21: EXPONENT
                             {
-                            mEXPONENT(); 
+                            mEXPONENT();
 
 
                             }
@@ -958,7 +958,7 @@ public class DbRecordLexer extends Lexer {
                     } while (true);
 
 
-                    mEXPONENT(); 
+                    mEXPONENT();
 
 
                     }
@@ -982,7 +982,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:120:3: ( '#' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
             // DbRecord.g:121:3: '#' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
             {
-            match('#'); 
+            match('#');
 
             // DbRecord.g:122:3: (~ ( '\\n' | '\\r' ) )*
             loop12:
@@ -1029,7 +1029,7 @@ public class DbRecordLexer extends Lexer {
                 case 1 :
                     // DbRecord.g:126:3: '\\r'
                     {
-                    match('\r'); 
+                    match('\r');
 
                     }
                     break;
@@ -1037,11 +1037,11 @@ public class DbRecordLexer extends Lexer {
             }
 
 
-            match('\n'); 
+            match('\n');
 
 
                          _channel = HIDDEN;
-                        
+
 
             }
 
@@ -1062,7 +1062,7 @@ public class DbRecordLexer extends Lexer {
             // DbRecord.g:133:3: ( '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"' )
             // DbRecord.g:134:3: '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"'
             {
-            match('\"'); 
+            match('\"');
 
             // DbRecord.g:135:3: ( ESC_SEQ |~ ( '\\\\' | '\"' ) )*
             loop14:
@@ -1082,7 +1082,7 @@ public class DbRecordLexer extends Lexer {
             	case 1 :
             	    // DbRecord.g:136:5: ESC_SEQ
             	    {
-            	    mESC_SEQ(); 
+            	    mESC_SEQ();
 
 
             	    }
@@ -1109,7 +1109,7 @@ public class DbRecordLexer extends Lexer {
             } while (true);
 
 
-            match('\"'); 
+            match('\"');
 
             }
 
@@ -1240,7 +1240,7 @@ public class DbRecordLexer extends Lexer {
                 case 1 :
                     // DbRecord.g:163:3: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
                     {
-                    match('\\'); 
+                    match('\\');
 
                     if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
                         input.consume();
@@ -1257,7 +1257,7 @@ public class DbRecordLexer extends Lexer {
                 case 2 :
                     // DbRecord.g:174:5: UNICODE_ESC
                     {
-                    mUNICODE_ESC(); 
+                    mUNICODE_ESC();
 
 
                     }
@@ -1265,7 +1265,7 @@ public class DbRecordLexer extends Lexer {
                 case 3 :
                     // DbRecord.g:175:5: OCTAL_ESC
                     {
-                    mOCTAL_ESC(); 
+                    mOCTAL_ESC();
 
 
                     }
@@ -1384,7 +1384,7 @@ public class DbRecordLexer extends Lexer {
             case 1 :
                 // DbRecord.g:1:10: ALIAS
                 {
-                mALIAS(); 
+                mALIAS();
 
 
                 }
@@ -1392,7 +1392,7 @@ public class DbRecordLexer extends Lexer {
             case 2 :
                 // DbRecord.g:1:16: FIELD
                 {
-                mFIELD(); 
+                mFIELD();
 
 
                 }
@@ -1400,7 +1400,7 @@ public class DbRecordLexer extends Lexer {
             case 3 :
                 // DbRecord.g:1:22: INFO
                 {
-                mINFO(); 
+                mINFO();
 
 
                 }
@@ -1408,7 +1408,7 @@ public class DbRecordLexer extends Lexer {
             case 4 :
                 // DbRecord.g:1:27: RECORD
                 {
-                mRECORD(); 
+                mRECORD();
 
 
                 }
@@ -1416,7 +1416,7 @@ public class DbRecordLexer extends Lexer {
             case 5 :
                 // DbRecord.g:1:34: RECORD_BODY
                 {
-                mRECORD_BODY(); 
+                mRECORD_BODY();
 
 
                 }
@@ -1424,7 +1424,7 @@ public class DbRecordLexer extends Lexer {
             case 6 :
                 // DbRecord.g:1:46: RECORD_INSTANCE
                 {
-                mRECORD_INSTANCE(); 
+                mRECORD_INSTANCE();
 
 
                 }
@@ -1432,7 +1432,7 @@ public class DbRecordLexer extends Lexer {
             case 7 :
                 // DbRecord.g:1:62: TYPE
                 {
-                mTYPE(); 
+                mTYPE();
 
 
                 }
@@ -1440,7 +1440,7 @@ public class DbRecordLexer extends Lexer {
             case 8 :
                 // DbRecord.g:1:67: VALUE
                 {
-                mVALUE(); 
+                mVALUE();
 
 
                 }
@@ -1448,7 +1448,7 @@ public class DbRecordLexer extends Lexer {
             case 9 :
                 // DbRecord.g:1:73: T__24
                 {
-                mT__24(); 
+                mT__24();
 
 
                 }
@@ -1456,7 +1456,7 @@ public class DbRecordLexer extends Lexer {
             case 10 :
                 // DbRecord.g:1:79: T__25
                 {
-                mT__25(); 
+                mT__25();
 
 
                 }
@@ -1464,7 +1464,7 @@ public class DbRecordLexer extends Lexer {
             case 11 :
                 // DbRecord.g:1:85: T__26
                 {
-                mT__26(); 
+                mT__26();
 
 
                 }
@@ -1472,7 +1472,7 @@ public class DbRecordLexer extends Lexer {
             case 12 :
                 // DbRecord.g:1:91: T__27
                 {
-                mT__27(); 
+                mT__27();
 
 
                 }
@@ -1480,7 +1480,7 @@ public class DbRecordLexer extends Lexer {
             case 13 :
                 // DbRecord.g:1:97: T__28
                 {
-                mT__28(); 
+                mT__28();
 
 
                 }
@@ -1488,7 +1488,7 @@ public class DbRecordLexer extends Lexer {
             case 14 :
                 // DbRecord.g:1:103: OCTAL_ESC
                 {
-                mOCTAL_ESC(); 
+                mOCTAL_ESC();
 
 
                 }
@@ -1496,7 +1496,7 @@ public class DbRecordLexer extends Lexer {
             case 15 :
                 // DbRecord.g:1:113: HEX_DIGIT
                 {
-                mHEX_DIGIT(); 
+                mHEX_DIGIT();
 
 
                 }
@@ -1504,7 +1504,7 @@ public class DbRecordLexer extends Lexer {
             case 16 :
                 // DbRecord.g:1:123: UNICODE_ESC
                 {
-                mUNICODE_ESC(); 
+                mUNICODE_ESC();
 
 
                 }
@@ -1512,7 +1512,7 @@ public class DbRecordLexer extends Lexer {
             case 17 :
                 // DbRecord.g:1:135: WHITESPACE
                 {
-                mWHITESPACE(); 
+                mWHITESPACE();
 
 
                 }
@@ -1520,7 +1520,7 @@ public class DbRecordLexer extends Lexer {
             case 18 :
                 // DbRecord.g:1:146: ID
                 {
-                mID(); 
+                mID();
 
 
                 }
@@ -1528,7 +1528,7 @@ public class DbRecordLexer extends Lexer {
             case 19 :
                 // DbRecord.g:1:149: INT
                 {
-                mINT(); 
+                mINT();
 
 
                 }
@@ -1536,7 +1536,7 @@ public class DbRecordLexer extends Lexer {
             case 20 :
                 // DbRecord.g:1:153: FLOAT
                 {
-                mFLOAT(); 
+                mFLOAT();
 
 
                 }
@@ -1544,7 +1544,7 @@ public class DbRecordLexer extends Lexer {
             case 21 :
                 // DbRecord.g:1:159: COMMENT
                 {
-                mCOMMENT(); 
+                mCOMMENT();
 
 
                 }
@@ -1552,7 +1552,7 @@ public class DbRecordLexer extends Lexer {
             case 22 :
                 // DbRecord.g:1:167: String
                 {
-                mString(); 
+                mString();
 
 
                 }
@@ -1560,7 +1560,7 @@ public class DbRecordLexer extends Lexer {
             case 23 :
                 // DbRecord.g:1:174: NonQuotedString
                 {
-                mNonQuotedString(); 
+                mNonQuotedString();
 
 
                 }
@@ -1568,7 +1568,7 @@ public class DbRecordLexer extends Lexer {
             case 24 :
                 // DbRecord.g:1:190: ESC_SEQ
                 {
-                mESC_SEQ(); 
+                mESC_SEQ();
 
 
                 }
@@ -1576,7 +1576,7 @@ public class DbRecordLexer extends Lexer {
             case 25 :
                 // DbRecord.g:1:198: EXPONENT
                 {
-                mEXPONENT(); 
+                mEXPONENT();
 
 
                 }
@@ -1834,6 +1834,6 @@ public class DbRecordLexer extends Lexer {
             return "1:1: Tokens : ( ALIAS | FIELD | INFO | RECORD | RECORD_BODY | RECORD_INSTANCE | TYPE | VALUE | T__24 | T__25 | T__26 | T__27 | T__28 | OCTAL_ESC | HEX_DIGIT | UNICODE_ESC | WHITESPACE | ID | INT | FLOAT | COMMENT | String | NonQuotedString | ESC_SEQ | EXPONENT );";
         }
     }
- 
+
 
 }

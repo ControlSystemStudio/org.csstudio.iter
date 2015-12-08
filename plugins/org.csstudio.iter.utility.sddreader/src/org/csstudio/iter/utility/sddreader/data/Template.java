@@ -10,7 +10,7 @@ package org.csstudio.iter.utility.sddreader.data;
 import java.util.List;
 
 public class Template {
-	
+
 	private List<Record> epicsRecords;
 
 	public List<Record> getEPICSRecords() {

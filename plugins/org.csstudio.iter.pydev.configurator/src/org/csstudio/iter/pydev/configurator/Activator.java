@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 /**
  * Plugin Activator
- * 
+ *
  */
 public class Activator {
 	final public static String ID = "org.csstudio.iter.pydev.configurator";

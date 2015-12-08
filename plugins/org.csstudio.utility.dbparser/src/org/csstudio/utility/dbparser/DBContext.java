@@ -23,7 +23,7 @@ import org.eclipse.core.resources.IFile;
 /**
  * DB context management. This context is available in any level of the
  * application.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
  */
 public class DBContext implements Serializable {

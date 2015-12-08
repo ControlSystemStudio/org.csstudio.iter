@@ -12,7 +12,7 @@ import org.eclipse.core.runtime.preferences.IPreferencesService;
 
 /**
  * Access to preferences
- * 
+ *
  * @author Kay Kasemir
  */
 @SuppressWarnings("nls")
@@ -22,7 +22,7 @@ public class Preferences {
 
 	/**
 	 * Get preference settings for column definitions
-	 * 
+	 *
 	 * @return Array of raw strings for column preferences
 	 * @throws Exception
 	 *             on error

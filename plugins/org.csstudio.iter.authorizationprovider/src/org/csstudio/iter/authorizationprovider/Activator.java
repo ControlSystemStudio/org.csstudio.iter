@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 /**
  * Plugin Activator
- * 
+ *
  * @author Davy Dequidt
  */
 @SuppressWarnings("nls")

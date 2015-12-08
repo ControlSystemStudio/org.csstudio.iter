@@ -22,13 +22,13 @@ import org.eclipse.swt.widgets.Display;
  * Differences with the default TextInputEditPart: it uses an IterTextEditManager instance for DirectEdit,
  * giving the TextInput widget the option of setting a different background color when the control has focus,
  * and saving the value to the PV without pressing ENTER (on loss of focus).
- *  
+ *
  * It must be used together with LabeledTextInputModel and IterTextEditManager.
  *
  * @author Boris Versic
  */
 public class LabeledTextInputEditpart extends TextInputEditpart {
-	
+
 	public LabeledTextInputEditpart() {
 		super();
 	}
@@ -56,8 +56,8 @@ public class LabeledTextInputEditpart extends TextInputEditpart {
         updatePropSheet();
 
         return delegate.doCreateFigure();
-    }    
-    
+    }
+
 	@Override
     protected void performDirectEdit() {
     	final LabeledTextInputModel model = getWidgetModel();

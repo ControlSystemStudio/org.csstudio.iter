@@ -26,14 +26,14 @@ import org.eclipse.swt.widgets.Composite;
  * Differences with the default TextEditManager:
  * 	- it can set a configurable background color (for the direct edit CellEditor) when the text input has focus
  *  - it can confirm (save) the value to the PV on focus loss (without pressing ENTER)
- *  
+ *
  *  It must be used together with LabeledTextInputEditpart and LabeledTextInputModel.
  *
  * @author Boris Versic
  *
  */
 public class IterTextEditManager extends TextEditManager {
-	
+
 	private Color backgroundFocusColor;
 	private boolean confirmOnFocusLost;
 
@@ -43,7 +43,7 @@ public class IterTextEditManager extends TextEditManager {
 	 */
 	public IterTextEditManager(AbstractBaseEditPart source, CellEditorLocator locator, boolean multiline, Color backgroundFocusColor, boolean confirmOnFocusLost) {
 		super(source, locator, multiline);
-		
+
 		this.backgroundFocusColor = backgroundFocusColor;
 		this.confirmOnFocusLost = confirmOnFocusLost;
 	}
@@ -57,7 +57,7 @@ public class IterTextEditManager extends TextEditManager {
 
 	public IterTextEditManager(AbstractBaseEditPart source, CellEditorLocator locator) {
 		super(source, locator);
-		
+
 		this.backgroundFocusColor = null;
 		this.confirmOnFocusLost = false;
 	}
@@ -110,11 +110,11 @@ public class IterTextEditManager extends TextEditManager {
 	    editor.getControl().moveAbove(null);
 	    return editor;
 	}
-	
+
 	@Override
 	protected void initCellEditor() {
 		super.initCellEditor();
-		
+
 		// override background color setting, but only in runMode
 		if (((AbstractBaseEditPart) getEditPart()).getExecutionMode() == ExecutionMode.RUN_MODE && backgroundFocusColor != null)
 			getCellEditor().getControl().setBackground(backgroundFocusColor);

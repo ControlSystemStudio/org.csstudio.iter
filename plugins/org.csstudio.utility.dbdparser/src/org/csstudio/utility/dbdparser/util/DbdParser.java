@@ -34,7 +34,7 @@ import org.csstudio.utility.dbdparser.exception.DbdParsingException;
 
 /**
  * Create {@link Template} from ANTLR {@link Tree}.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
  */
 public class DbdParser {
@@ -55,7 +55,7 @@ public class DbdParser {
 
 	/**
 	 * Parse tokens from {@link DbdFileLexer}.
-	 * 
+	 *
 	 * @param tokens
 	 */
 	public void parse(CommonTokenStream tokens) {
@@ -94,7 +94,7 @@ public class DbdParser {
 
 	/**
 	 * Generates {@link Template} from {@link Tree}.
-	 * 
+	 *
 	 * @throws DbdParsingException
 	 */
 	public void transform() throws DbdParsingException {

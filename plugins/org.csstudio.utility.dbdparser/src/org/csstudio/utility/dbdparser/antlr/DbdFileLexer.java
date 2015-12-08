@@ -74,7 +74,7 @@ public class DbdFileLexer extends Lexer {
         return new Lexer[] {};
     }
 
-    public DbdFileLexer() {} 
+    public DbdFileLexer() {}
     public DbdFileLexer(CharStream input) {
         this(input, new RecognizerSharedState());
     }
@@ -91,7 +91,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:11:12: ( '$$_breaktable' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:11:14: '$$_breaktable'
             {
-            match("$$_breaktable"); 
+            match("$$_breaktable");
 
 
 
@@ -114,7 +114,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:12:8: ( '$$_choice' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:12:10: '$$_choice'
             {
-            match("$$_choice"); 
+            match("$$_choice");
 
 
 
@@ -137,7 +137,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:13:8: ( '$$_device' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:13:10: '$$_device'
             {
-            match("$$_device"); 
+            match("$$_device");
 
 
 
@@ -160,7 +160,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:14:8: ( '$$_driver' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:14:10: '$$_driver'
             {
-            match("$$_driver"); 
+            match("$$_driver");
 
 
 
@@ -183,7 +183,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:15:5: ( '$$_eng' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:15:7: '$$_eng'
             {
-            match("$$_eng"); 
+            match("$$_eng");
 
 
 
@@ -206,7 +206,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:16:7: ( '$$_field' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:16:9: '$$_field'
             {
-            match("$$_field"); 
+            match("$$_field");
 
 
 
@@ -229,7 +229,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:17:10: ( '$$_function' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:17:12: '$$_function'
             {
-            match("$$_function"); 
+            match("$$_function");
 
 
 
@@ -252,7 +252,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:18:9: ( '$$_include' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:18:11: '$$_include'
             {
-            match("$$_include"); 
+            match("$$_include");
 
 
 
@@ -275,7 +275,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:19:5: ( '$$_key' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:19:7: '$$_key'
             {
-            match("$$_key"); 
+            match("$$_key");
 
 
 
@@ -298,7 +298,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:20:6: ( '$$_menu' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:20:8: '$$_menu'
             {
-            match("$$_menu"); 
+            match("$$_menu");
 
 
 
@@ -321,7 +321,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:21:6: ( '$$_name' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:21:8: '$$_name'
             {
-            match("$$_name"); 
+            match("$$_name");
 
 
 
@@ -344,7 +344,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:22:6: ( '$$_path' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:22:8: '$$_path'
             {
-            match("$$_path"); 
+            match("$$_path");
 
 
 
@@ -367,7 +367,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:23:5: ( '$$_raw' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:23:7: '$$_raw'
             {
-            match("$$_raw"); 
+            match("$$_raw");
 
 
 
@@ -390,7 +390,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:24:12: ( '$$_recordtype' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:24:14: '$$_recordtype'
             {
-            match("$$_recordtype"); 
+            match("$$_recordtype");
 
 
 
@@ -413,7 +413,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:25:11: ( '$$_registrar' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:25:13: '$$_registrar'
             {
-            match("$$_registrar"); 
+            match("$$_registrar");
 
 
 
@@ -436,7 +436,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:26:6: ( '$$_rule' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:26:8: '$$_rule'
             {
-            match("$$_rule"); 
+            match("$$_rule");
 
 
 
@@ -459,7 +459,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:27:8: ( '$$_string' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:27:10: '$$_string'
             {
-            match("$$_string"); 
+            match("$$_string");
 
 
 
@@ -482,7 +482,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:28:6: ( '$$_type' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:28:8: '$$_type'
             {
-            match("$$_type"); 
+            match("$$_type");
 
 
 
@@ -505,7 +505,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:29:7: ( '$$_value' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:29:9: '$$_value'
             {
-            match("$$_value"); 
+            match("$$_value");
 
 
 
@@ -528,7 +528,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:30:10: ( '$$_variable' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:30:12: '$$_variable'
             {
-            match("$$_variable"); 
+            match("$$_variable");
 
 
 
@@ -551,7 +551,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:31:7: ( '(' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:31:9: '('
             {
-            match('('); 
+            match('(');
 
             }
 
@@ -572,7 +572,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:32:7: ( ')' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:32:9: ')'
             {
-            match(')'); 
+            match(')');
 
             }
 
@@ -593,7 +593,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:33:7: ( ',' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:33:9: ','
             {
-            match(','); 
+            match(',');
 
             }
 
@@ -614,7 +614,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:34:7: ( 'addpath' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:34:9: 'addpath'
             {
-            match("addpath"); 
+            match("addpath");
 
 
 
@@ -637,7 +637,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:35:7: ( 'breaktable' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:35:9: 'breaktable'
             {
-            match("breaktable"); 
+            match("breaktable");
 
 
 
@@ -660,7 +660,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:36:7: ( 'choice' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:36:9: 'choice'
             {
-            match("choice"); 
+            match("choice");
 
 
 
@@ -683,7 +683,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:37:7: ( 'device' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:37:9: 'device'
             {
-            match("device"); 
+            match("device");
 
 
 
@@ -706,7 +706,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:38:7: ( 'driver' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:38:9: 'driver'
             {
-            match("driver"); 
+            match("driver");
 
 
 
@@ -729,7 +729,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:39:7: ( 'field' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:39:9: 'field'
             {
-            match("field"); 
+            match("field");
 
 
 
@@ -752,7 +752,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:40:7: ( 'function' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:40:9: 'function'
             {
-            match("function"); 
+            match("function");
 
 
 
@@ -775,7 +775,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:41:7: ( 'include' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:41:9: 'include'
             {
-            match("include"); 
+            match("include");
 
 
 
@@ -798,7 +798,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:42:7: ( 'menu' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:42:9: 'menu'
             {
-            match("menu"); 
+            match("menu");
 
 
 
@@ -821,7 +821,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:43:7: ( 'path' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:43:9: 'path'
             {
-            match("path"); 
+            match("path");
 
 
 
@@ -844,7 +844,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:44:7: ( 'recordtype' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:44:9: 'recordtype'
             {
-            match("recordtype"); 
+            match("recordtype");
 
 
 
@@ -867,7 +867,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:45:7: ( 'registrar' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:45:9: 'registrar'
             {
-            match("registrar"); 
+            match("registrar");
 
 
 
@@ -890,7 +890,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:46:7: ( 'variable' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:46:9: 'variable'
             {
-            match("variable"); 
+            match("variable");
 
 
 
@@ -913,7 +913,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:47:7: ( '{' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:47:9: '{'
             {
-            match('{'); 
+            match('{');
 
             }
 
@@ -934,7 +934,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:48:7: ( '}' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:48:9: '}'
             {
-            match('}'); 
+            match('}');
 
             }
 
@@ -1005,7 +1005,7 @@ public class DbdFileLexer extends Lexer {
                 case 1 :
                     // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:130:3: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
                     {
-                    match('\\'); 
+                    match('\\');
 
                     if ( (input.LA(1) >= '0' && input.LA(1) <= '3') ) {
                         input.consume();
@@ -1042,7 +1042,7 @@ public class DbdFileLexer extends Lexer {
                 case 2 :
                     // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:131:5: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
                     {
-                    match('\\'); 
+                    match('\\');
 
                     if ( (input.LA(1) >= '0' && input.LA(1) <= '7') ) {
                         input.consume();
@@ -1069,7 +1069,7 @@ public class DbdFileLexer extends Lexer {
                 case 3 :
                     // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:132:5: '\\\\' ( '0' .. '7' )
                     {
-                    match('\\'); 
+                    match('\\');
 
                     if ( (input.LA(1) >= '0' && input.LA(1) <= '7') ) {
                         input.consume();
@@ -1154,20 +1154,20 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:150:3: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:151:3: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
             {
-            match('\\'); 
+            match('\\');
 
-            match('u'); 
+            match('u');
 
-            mHEX_DIGIT(); 
-
-
-            mHEX_DIGIT(); 
+            mHEX_DIGIT();
 
 
-            mHEX_DIGIT(); 
+            mHEX_DIGIT();
 
 
-            mHEX_DIGIT(); 
+            mHEX_DIGIT();
+
+
+            mHEX_DIGIT();
 
 
             }
@@ -1241,7 +1241,7 @@ public class DbdFileLexer extends Lexer {
                 case 1 :
                     // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:156:3: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
                     {
-                    match('\\'); 
+                    match('\\');
 
                     if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
                         input.consume();
@@ -1258,7 +1258,7 @@ public class DbdFileLexer extends Lexer {
                 case 2 :
                     // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:167:5: UNICODE_ESC
                     {
-                    mUNICODE_ESC(); 
+                    mUNICODE_ESC();
 
 
                     }
@@ -1266,7 +1266,7 @@ public class DbdFileLexer extends Lexer {
                 case 3 :
                     // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:168:5: OCTAL_ESC
                     {
-                    mOCTAL_ESC(); 
+                    mOCTAL_ESC();
 
 
                     }
@@ -1425,7 +1425,7 @@ public class DbdFileLexer extends Lexer {
                     } while (true);
 
 
-                    match('.'); 
+                    match('.');
 
                     // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:186:14: ( DIGIT )*
                     loop6:
@@ -1472,7 +1472,7 @@ public class DbdFileLexer extends Lexer {
                         case 1 :
                             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:186:21: EXPONENT
                             {
-                            mEXPONENT(); 
+                            mEXPONENT();
 
 
                             }
@@ -1486,7 +1486,7 @@ public class DbdFileLexer extends Lexer {
                 case 2 :
                     // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:187:5: '.' ( DIGIT )+ ( EXPONENT )?
                     {
-                    match('.'); 
+                    match('.');
 
                     // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:187:9: ( DIGIT )+
                     int cnt8=0;
@@ -1538,7 +1538,7 @@ public class DbdFileLexer extends Lexer {
                         case 1 :
                             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:187:16: EXPONENT
                             {
-                            mEXPONENT(); 
+                            mEXPONENT();
 
 
                             }
@@ -1591,7 +1591,7 @@ public class DbdFileLexer extends Lexer {
                     } while (true);
 
 
-                    mEXPONENT(); 
+                    mEXPONENT();
 
 
                     }
@@ -1615,7 +1615,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:192:3: ( '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:193:3: '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"'
             {
-            match('\"'); 
+            match('\"');
 
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:194:3: ( ESC_SEQ |~ ( '\\\\' | '\"' ) )*
             loop12:
@@ -1635,7 +1635,7 @@ public class DbdFileLexer extends Lexer {
             	case 1 :
             	    // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:195:5: ESC_SEQ
             	    {
-            	    mESC_SEQ(); 
+            	    mESC_SEQ();
 
 
             	    }
@@ -1662,7 +1662,7 @@ public class DbdFileLexer extends Lexer {
             } while (true);
 
 
-            match('\"'); 
+            match('\"');
 
             }
 
@@ -1780,7 +1780,7 @@ public class DbdFileLexer extends Lexer {
             } while (true);
 
 
-             _channel = HIDDEN; 
+             _channel = HIDDEN;
 
             }
 
@@ -1801,7 +1801,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:247:3: ( '#' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:248:3: '#' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
             {
-            match('#'); 
+            match('#');
 
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:249:3: (~ ( '\\n' | '\\r' ) )*
             loop15:
@@ -1848,7 +1848,7 @@ public class DbdFileLexer extends Lexer {
                 case 1 :
                     // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:253:3: '\\r'
                     {
-                    match('\r'); 
+                    match('\r');
 
                     }
                     break;
@@ -1856,9 +1856,9 @@ public class DbdFileLexer extends Lexer {
             }
 
 
-            match('\n'); 
+            match('\n');
 
-             _channel = HIDDEN; 
+             _channel = HIDDEN;
 
             }
 
@@ -1879,7 +1879,7 @@ public class DbdFileLexer extends Lexer {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:258:3: ( '%' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:259:3: '%' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
             {
-            match('%'); 
+            match('%');
 
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:260:3: (~ ( '\\n' | '\\r' ) )*
             loop17:
@@ -1926,7 +1926,7 @@ public class DbdFileLexer extends Lexer {
                 case 1 :
                     // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:264:3: '\\r'
                     {
-                    match('\r'); 
+                    match('\r');
 
                     }
                     break;
@@ -1934,9 +1934,9 @@ public class DbdFileLexer extends Lexer {
             }
 
 
-            match('\n'); 
+            match('\n');
 
-             _channel = HIDDEN; 
+             _channel = HIDDEN;
 
             }
 
@@ -1957,7 +1957,7 @@ public class DbdFileLexer extends Lexer {
             case 1 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:10: BREAKTABLE
                 {
-                mBREAKTABLE(); 
+                mBREAKTABLE();
 
 
                 }
@@ -1965,7 +1965,7 @@ public class DbdFileLexer extends Lexer {
             case 2 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:21: CHOICE
                 {
-                mCHOICE(); 
+                mCHOICE();
 
 
                 }
@@ -1973,7 +1973,7 @@ public class DbdFileLexer extends Lexer {
             case 3 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:28: DEVICE
                 {
-                mDEVICE(); 
+                mDEVICE();
 
 
                 }
@@ -1981,7 +1981,7 @@ public class DbdFileLexer extends Lexer {
             case 4 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:35: DRIVER
                 {
-                mDRIVER(); 
+                mDRIVER();
 
 
                 }
@@ -1989,7 +1989,7 @@ public class DbdFileLexer extends Lexer {
             case 5 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:42: ENG
                 {
-                mENG(); 
+                mENG();
 
 
                 }
@@ -1997,7 +1997,7 @@ public class DbdFileLexer extends Lexer {
             case 6 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:46: FIELD
                 {
-                mFIELD(); 
+                mFIELD();
 
 
                 }
@@ -2005,7 +2005,7 @@ public class DbdFileLexer extends Lexer {
             case 7 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:52: FUNCTION
                 {
-                mFUNCTION(); 
+                mFUNCTION();
 
 
                 }
@@ -2013,7 +2013,7 @@ public class DbdFileLexer extends Lexer {
             case 8 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:61: INCLUDE
                 {
-                mINCLUDE(); 
+                mINCLUDE();
 
 
                 }
@@ -2021,7 +2021,7 @@ public class DbdFileLexer extends Lexer {
             case 9 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:69: KEY
                 {
-                mKEY(); 
+                mKEY();
 
 
                 }
@@ -2029,7 +2029,7 @@ public class DbdFileLexer extends Lexer {
             case 10 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:73: MENU
                 {
-                mMENU(); 
+                mMENU();
 
 
                 }
@@ -2037,7 +2037,7 @@ public class DbdFileLexer extends Lexer {
             case 11 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:78: NAME
                 {
-                mNAME(); 
+                mNAME();
 
 
                 }
@@ -2045,7 +2045,7 @@ public class DbdFileLexer extends Lexer {
             case 12 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:83: PATH
                 {
-                mPATH(); 
+                mPATH();
 
 
                 }
@@ -2053,7 +2053,7 @@ public class DbdFileLexer extends Lexer {
             case 13 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:88: RAW
                 {
-                mRAW(); 
+                mRAW();
 
 
                 }
@@ -2061,7 +2061,7 @@ public class DbdFileLexer extends Lexer {
             case 14 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:92: RECORDTYPE
                 {
-                mRECORDTYPE(); 
+                mRECORDTYPE();
 
 
                 }
@@ -2069,7 +2069,7 @@ public class DbdFileLexer extends Lexer {
             case 15 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:103: REGISTRAR
                 {
-                mREGISTRAR(); 
+                mREGISTRAR();
 
 
                 }
@@ -2077,7 +2077,7 @@ public class DbdFileLexer extends Lexer {
             case 16 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:113: RULE
                 {
-                mRULE(); 
+                mRULE();
 
 
                 }
@@ -2085,7 +2085,7 @@ public class DbdFileLexer extends Lexer {
             case 17 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:118: STRING
                 {
-                mSTRING(); 
+                mSTRING();
 
 
                 }
@@ -2093,7 +2093,7 @@ public class DbdFileLexer extends Lexer {
             case 18 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:125: TYPE
                 {
-                mTYPE(); 
+                mTYPE();
 
 
                 }
@@ -2101,7 +2101,7 @@ public class DbdFileLexer extends Lexer {
             case 19 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:130: VALUE
                 {
-                mVALUE(); 
+                mVALUE();
 
 
                 }
@@ -2109,7 +2109,7 @@ public class DbdFileLexer extends Lexer {
             case 20 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:136: VARIABLE
                 {
-                mVARIABLE(); 
+                mVARIABLE();
 
 
                 }
@@ -2117,7 +2117,7 @@ public class DbdFileLexer extends Lexer {
             case 21 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:145: T__36
                 {
-                mT__36(); 
+                mT__36();
 
 
                 }
@@ -2125,7 +2125,7 @@ public class DbdFileLexer extends Lexer {
             case 22 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:151: T__37
                 {
-                mT__37(); 
+                mT__37();
 
 
                 }
@@ -2133,7 +2133,7 @@ public class DbdFileLexer extends Lexer {
             case 23 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:157: T__38
                 {
-                mT__38(); 
+                mT__38();
 
 
                 }
@@ -2141,7 +2141,7 @@ public class DbdFileLexer extends Lexer {
             case 24 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:163: T__39
                 {
-                mT__39(); 
+                mT__39();
 
 
                 }
@@ -2149,7 +2149,7 @@ public class DbdFileLexer extends Lexer {
             case 25 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:169: T__40
                 {
-                mT__40(); 
+                mT__40();
 
 
                 }
@@ -2157,7 +2157,7 @@ public class DbdFileLexer extends Lexer {
             case 26 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:175: T__41
                 {
-                mT__41(); 
+                mT__41();
 
 
                 }
@@ -2165,7 +2165,7 @@ public class DbdFileLexer extends Lexer {
             case 27 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:181: T__42
                 {
-                mT__42(); 
+                mT__42();
 
 
                 }
@@ -2173,7 +2173,7 @@ public class DbdFileLexer extends Lexer {
             case 28 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:187: T__43
                 {
-                mT__43(); 
+                mT__43();
 
 
                 }
@@ -2181,7 +2181,7 @@ public class DbdFileLexer extends Lexer {
             case 29 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:193: T__44
                 {
-                mT__44(); 
+                mT__44();
 
 
                 }
@@ -2189,7 +2189,7 @@ public class DbdFileLexer extends Lexer {
             case 30 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:199: T__45
                 {
-                mT__45(); 
+                mT__45();
 
 
                 }
@@ -2197,7 +2197,7 @@ public class DbdFileLexer extends Lexer {
             case 31 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:205: T__46
                 {
-                mT__46(); 
+                mT__46();
 
 
                 }
@@ -2205,7 +2205,7 @@ public class DbdFileLexer extends Lexer {
             case 32 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:211: T__47
                 {
-                mT__47(); 
+                mT__47();
 
 
                 }
@@ -2213,7 +2213,7 @@ public class DbdFileLexer extends Lexer {
             case 33 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:217: T__48
                 {
-                mT__48(); 
+                mT__48();
 
 
                 }
@@ -2221,7 +2221,7 @@ public class DbdFileLexer extends Lexer {
             case 34 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:223: T__49
                 {
-                mT__49(); 
+                mT__49();
 
 
                 }
@@ -2229,7 +2229,7 @@ public class DbdFileLexer extends Lexer {
             case 35 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:229: T__50
                 {
-                mT__50(); 
+                mT__50();
 
 
                 }
@@ -2237,7 +2237,7 @@ public class DbdFileLexer extends Lexer {
             case 36 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:235: T__51
                 {
-                mT__51(); 
+                mT__51();
 
 
                 }
@@ -2245,7 +2245,7 @@ public class DbdFileLexer extends Lexer {
             case 37 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:241: T__52
                 {
-                mT__52(); 
+                mT__52();
 
 
                 }
@@ -2253,7 +2253,7 @@ public class DbdFileLexer extends Lexer {
             case 38 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:247: T__53
                 {
-                mT__53(); 
+                mT__53();
 
 
                 }
@@ -2261,7 +2261,7 @@ public class DbdFileLexer extends Lexer {
             case 39 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:253: OCTAL_ESC
                 {
-                mOCTAL_ESC(); 
+                mOCTAL_ESC();
 
 
                 }
@@ -2269,7 +2269,7 @@ public class DbdFileLexer extends Lexer {
             case 40 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:263: UNICODE_ESC
                 {
-                mUNICODE_ESC(); 
+                mUNICODE_ESC();
 
 
                 }
@@ -2277,7 +2277,7 @@ public class DbdFileLexer extends Lexer {
             case 41 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:275: ESC_SEQ
                 {
-                mESC_SEQ(); 
+                mESC_SEQ();
 
 
                 }
@@ -2285,7 +2285,7 @@ public class DbdFileLexer extends Lexer {
             case 42 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:283: FLOAT
                 {
-                mFLOAT(); 
+                mFLOAT();
 
 
                 }
@@ -2293,7 +2293,7 @@ public class DbdFileLexer extends Lexer {
             case 43 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:289: String
                 {
-                mString(); 
+                mString();
 
 
                 }
@@ -2301,7 +2301,7 @@ public class DbdFileLexer extends Lexer {
             case 44 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:296: UnquotedString
                 {
-                mUnquotedString(); 
+                mUnquotedString();
 
 
                 }
@@ -2309,7 +2309,7 @@ public class DbdFileLexer extends Lexer {
             case 45 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:311: WHITESPACE
                 {
-                mWHITESPACE(); 
+                mWHITESPACE();
 
 
                 }
@@ -2317,7 +2317,7 @@ public class DbdFileLexer extends Lexer {
             case 46 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:322: COMMENT
                 {
-                mCOMMENT(); 
+                mCOMMENT();
 
 
                 }
@@ -2325,7 +2325,7 @@ public class DbdFileLexer extends Lexer {
             case 47 :
                 // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:1:330: C_declaration
                 {
-                mC_declaration(); 
+                mC_declaration();
 
 
                 }
@@ -2670,6 +2670,6 @@ public class DbdFileLexer extends Lexer {
             return "1:1: Tokens : ( BREAKTABLE | CHOICE | DEVICE | DRIVER | ENG | FIELD | FUNCTION | INCLUDE | KEY | MENU | NAME | PATH | RAW | RECORDTYPE | REGISTRAR | RULE | STRING | TYPE | VALUE | VARIABLE | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | OCTAL_ESC | UNICODE_ESC | ESC_SEQ | FLOAT | String | UnquotedString | WHITESPACE | COMMENT | C_declaration );";
         }
     }
- 
+
 
 }

@@ -15,7 +15,7 @@ import org.eclipse.core.runtime.preferences.IPreferencesService;
  * Read preferences
  * <p>
  * See preferences.ini for explanation of supported preferences.
- * 
+ *
  * @author Fred Arnaud (Sopra Group)
  */
 @SuppressWarnings("nls")
@@ -65,7 +65,7 @@ public class Preferences {
 	public static String getRDB_Password() {
 		return getSecureString(RDB_PASSWORD);
 	}
-	
+
 	/** @return Top result separators */
 	public static String getSeparators() {
 		return getString(SEPARATORS);

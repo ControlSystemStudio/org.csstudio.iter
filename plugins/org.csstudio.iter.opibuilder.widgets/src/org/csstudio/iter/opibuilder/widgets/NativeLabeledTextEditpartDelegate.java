@@ -32,7 +32,7 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
 
 	public NativeLabeledTextEditpartDelegate(LabeledTextInputEditpart editpart, LabeledTextInputModel model) {
 		super(editpart, model);
-		
+
 		this.backgroundFocusColor = new Color(Display.getDefault(), model.getBackgroundFocusColor());
 	}
 
@@ -47,7 +47,7 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
             @Override
             public void focusLost(FocusEvent e) {
             	// This listener will also be triggered when ENTER is pressed to store the value (even when FOCUS_TRAVERSE is set to KEEP).
-            	// When ConfirmOnFocusLost is TRUE, this will cause a bug: the value will be reset to the old value. 
+            	// When ConfirmOnFocusLost is TRUE, this will cause a bug: the value will be reset to the old value.
             	// This is because at this point the value of text.getText() will be the old value, set in NativeTextEditpartDelegate.outputText().
             	// Only after the value is successfully set on the PV will the model (and thus text) be updated to the new value.
             	// In such a case, focusLost must not call outputText with the value in text.getText().
@@ -59,19 +59,19 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
             			return;
         			}
             	}
-            	
+
                 //On mobile, lost focus should output text since there is not enter hit or ctrl key.
             	//If ConfirmOnFocusLost is set, lost focus should also output text.
                 if(editpart.getPV() != null && !OPIBuilderPlugin.isMobile(text.getDisplay()) && ((LabeledTextInputModel)model).isConfirmOnFocusLost() == false)
                     text.setText(model.getText());
-                else if(text.isEnabled())	
+                else if(text.isEnabled())
                     outputText(text.getText());
-                
+
 //                figure.setBackgroundColor(originalBackgroundColor);
                 text.setBackground(originalBackgroundColor);
                 originalBackgroundColor = null;
             }
-            
+
             @Override
             public void focusGained(FocusEvent e) {
 //            	if (originalBackgroundColor == null) originalBackgroundColor = figure.getBackgroundColor();
@@ -142,24 +142,24 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
             });
             text.addFocusListener(getTextFocusListener(figure));
         }
-        
+
         Label label = figure.getLabelSWTWidget();
         if (label != null)
 	        label.addMouseListener(new MouseAdapter() {
 	        	@Override
 	        	   public void mouseUp(MouseEvent event) {
 	        	      super.mouseUp(event);
-	
+
 	        	      if (event.getSource() instanceof Label) {
 	        	         Label label = (Label)event.getSource();
 	        	         label.forceFocus();
 	        	      }
 	        	   }
 	        });
-        
+
         return figure;
     }
-    
+
     @Override
 	public void registerPropertyChangeHandlers() {
     	super.registerPropertyChangeHandlers();
@@ -172,7 +172,7 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
         };
         model.getProperty(LabeledTextInputModel.PROP_INPUT_LABEL_STACKING).addPropertyChangeListener(listener);
         model.getProperty(LabeledTextInputModel.PROP_INPUT_LABEL_TEXT).addPropertyChangeListener(listener);
-*/    	
+*/
         IWidgetPropertyChangeHandler handler = new IWidgetPropertyChangeHandler() {
 
             @Override
@@ -188,7 +188,7 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
         editpart.setPropertyChangeHandler(LabeledTextInputModel.PROP_INPUT_LABEL_TEXT, handler);
 
     }
-    
+
     @Override
     public void performAutoSize() {
         model.setSize(((NativeLabeledTextFigure)editpart.getFigure()).getAutoSizeDimension());

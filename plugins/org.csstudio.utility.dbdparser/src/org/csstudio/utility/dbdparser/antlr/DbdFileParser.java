@@ -464,7 +464,7 @@ public TreeAdaptor getTreeAdaptor() {
                 case 1 :
                     // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:44:13: 'path'
                     {
-                    string_literal12=(Token)match(input,48,FOLLOW_48_in_pathdef295);  
+                    string_literal12=(Token)match(input,48,FOLLOW_48_in_pathdef295);
                     stream_48.add(string_literal12);
 
 
@@ -473,7 +473,7 @@ public TreeAdaptor getTreeAdaptor() {
                 case 2 :
                     // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:44:22: 'addpath'
                     {
-                    string_literal13=(Token)match(input,39,FOLLOW_39_in_pathdef299);  
+                    string_literal13=(Token)match(input,39,FOLLOW_39_in_pathdef299);
                     stream_39.add(string_literal13);
 
 
@@ -492,11 +492,11 @@ public TreeAdaptor getTreeAdaptor() {
 
             // AST REWRITE
             // elements: path
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -570,7 +570,7 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:46:9: ( 'include' filename -> ^( INCLUDE filename ) )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:46:11: 'include' filename
             {
-            string_literal15=(Token)match(input,46,FOLLOW_46_in_include320);  
+            string_literal15=(Token)match(input,46,FOLLOW_46_in_include320);
             stream_46.add(string_literal15);
 
 
@@ -583,11 +583,11 @@ public TreeAdaptor getTreeAdaptor() {
 
             // AST REWRITE
             // elements: filename
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -661,8 +661,8 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (Object)adaptor.nil();
 
 
-            String17=(Token)match(input,String,FOLLOW_String_in_path339); 
-            String17_tree = 
+            String17=(Token)match(input,String,FOLLOW_String_in_path339);
+            String17_tree =
             (Object)adaptor.create(String17)
             ;
             adaptor.addChild(root_0, String17_tree);
@@ -718,8 +718,8 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (Object)adaptor.nil();
 
 
-            String18=(Token)match(input,String,FOLLOW_String_in_filename348); 
-            String18_tree = 
+            String18=(Token)match(input,String,FOLLOW_String_in_filename348);
+            String18_tree =
             (Object)adaptor.create(String18)
             ;
             adaptor.addChild(root_0, String18_tree);
@@ -791,11 +791,11 @@ public TreeAdaptor getTreeAdaptor() {
 
             // AST REWRITE
             // elements: menu_block, menu_head
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -887,11 +887,11 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:54:11: ( 'menu' '(' name ')' -> name )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:54:13: 'menu' '(' name ')'
             {
-            string_literal21=(Token)match(input,47,FOLLOW_47_in_menu_head382);  
+            string_literal21=(Token)match(input,47,FOLLOW_47_in_menu_head382);
             stream_47.add(string_literal21);
 
 
-            char_literal22=(Token)match(input,36,FOLLOW_36_in_menu_head384);  
+            char_literal22=(Token)match(input,36,FOLLOW_36_in_menu_head384);
             stream_36.add(char_literal22);
 
 
@@ -902,17 +902,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_name.add(name23.getTree());
 
-            char_literal24=(Token)match(input,37,FOLLOW_37_in_menu_head388);  
+            char_literal24=(Token)match(input,37,FOLLOW_37_in_menu_head388);
             stream_37.add(char_literal24);
 
 
             // AST REWRITE
             // elements: name
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -979,7 +979,7 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:56:12: ( '{' ( menu_body )* '}' -> ( menu_body )* )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:56:14: '{' ( menu_body )* '}'
             {
-            char_literal25=(Token)match(input,52,FOLLOW_52_in_menu_block401);  
+            char_literal25=(Token)match(input,52,FOLLOW_52_in_menu_block401);
             stream_52.add(char_literal25);
 
 
@@ -1014,17 +1014,17 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            char_literal27=(Token)match(input,53,FOLLOW_53_in_menu_block406);  
+            char_literal27=(Token)match(input,53,FOLLOW_53_in_menu_block406);
             stream_53.add(char_literal27);
 
 
             // AST REWRITE
             // elements: menu_body
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -1193,11 +1193,11 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:60:8: ( 'choice' '(' key_value ')' -> ^( CHOICE key_value ) )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:60:10: 'choice' '(' key_value ')'
             {
-            string_literal30=(Token)match(input,41,FOLLOW_41_in_choice433);  
+            string_literal30=(Token)match(input,41,FOLLOW_41_in_choice433);
             stream_41.add(string_literal30);
 
 
-            char_literal31=(Token)match(input,36,FOLLOW_36_in_choice435);  
+            char_literal31=(Token)match(input,36,FOLLOW_36_in_choice435);
             stream_36.add(char_literal31);
 
 
@@ -1208,17 +1208,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_key_value.add(key_value32.getTree());
 
-            char_literal33=(Token)match(input,37,FOLLOW_37_in_choice439);  
+            char_literal33=(Token)match(input,37,FOLLOW_37_in_choice439);
             stream_37.add(char_literal33);
 
 
             // AST REWRITE
             // elements: key_value
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -1308,11 +1308,11 @@ public TreeAdaptor getTreeAdaptor() {
 
             // AST REWRITE
             // elements: recordtype_head, recordtype_block
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -1394,11 +1394,11 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:64:17: ( 'recordtype' '(' name ')' -> ^( NAME name ) )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:64:19: 'recordtype' '(' name ')'
             {
-            string_literal36=(Token)match(input,49,FOLLOW_49_in_recordtype_head477);  
+            string_literal36=(Token)match(input,49,FOLLOW_49_in_recordtype_head477);
             stream_49.add(string_literal36);
 
 
-            char_literal37=(Token)match(input,36,FOLLOW_36_in_recordtype_head479);  
+            char_literal37=(Token)match(input,36,FOLLOW_36_in_recordtype_head479);
             stream_36.add(char_literal37);
 
 
@@ -1409,17 +1409,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_name.add(name38.getTree());
 
-            char_literal39=(Token)match(input,37,FOLLOW_37_in_recordtype_head483);  
+            char_literal39=(Token)match(input,37,FOLLOW_37_in_recordtype_head483);
             stream_37.add(char_literal39);
 
 
             // AST REWRITE
             // elements: name
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -1496,7 +1496,7 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:66:18: ( '{' ( recordtype_body )* '}' -> ( recordtype_body )* )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:66:20: '{' ( recordtype_body )* '}'
             {
-            char_literal40=(Token)match(input,52,FOLLOW_52_in_recordtype_block500);  
+            char_literal40=(Token)match(input,52,FOLLOW_52_in_recordtype_block500);
             stream_52.add(char_literal40);
 
 
@@ -1531,17 +1531,17 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            char_literal42=(Token)match(input,53,FOLLOW_53_in_recordtype_block505);  
+            char_literal42=(Token)match(input,53,FOLLOW_53_in_recordtype_block505);
             stream_53.add(char_literal42);
 
 
             // AST REWRITE
             // elements: recordtype_body
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -1720,11 +1720,11 @@ public TreeAdaptor getTreeAdaptor() {
 
             // AST REWRITE
             // elements: field_block, field_head
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -1812,11 +1812,11 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:72:12: ( 'field' '(' name ',' field_type ')' -> ^( NAME name ) ^( TYPE field_type ) )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:72:14: 'field' '(' name ',' field_type ')'
             {
-            string_literal47=(Token)match(input,44,FOLLOW_44_in_field_head553);  
+            string_literal47=(Token)match(input,44,FOLLOW_44_in_field_head553);
             stream_44.add(string_literal47);
 
 
-            char_literal48=(Token)match(input,36,FOLLOW_36_in_field_head555);  
+            char_literal48=(Token)match(input,36,FOLLOW_36_in_field_head555);
             stream_36.add(char_literal48);
 
 
@@ -1827,7 +1827,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_name.add(name49.getTree());
 
-            char_literal50=(Token)match(input,38,FOLLOW_38_in_field_head559);  
+            char_literal50=(Token)match(input,38,FOLLOW_38_in_field_head559);
             stream_38.add(char_literal50);
 
 
@@ -1838,17 +1838,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_field_type.add(field_type51.getTree());
 
-            char_literal52=(Token)match(input,37,FOLLOW_37_in_field_head563);  
+            char_literal52=(Token)match(input,37,FOLLOW_37_in_field_head563);
             stream_37.add(char_literal52);
 
 
             // AST REWRITE
             // elements: name, field_type
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -1934,8 +1934,8 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (Object)adaptor.nil();
 
 
-            UnquotedString53=(Token)match(input,UnquotedString,FOLLOW_UnquotedString_in_field_type586); 
-            UnquotedString53_tree = 
+            UnquotedString53=(Token)match(input,UnquotedString,FOLLOW_UnquotedString_in_field_type586);
+            UnquotedString53_tree =
             (Object)adaptor.create(UnquotedString53)
             ;
             adaptor.addChild(root_0, UnquotedString53_tree);
@@ -1994,7 +1994,7 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:76:13: ( '{' ( rule )* '}' -> ( rule )* )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:76:15: '{' ( rule )* '}'
             {
-            char_literal54=(Token)match(input,52,FOLLOW_52_in_field_block595);  
+            char_literal54=(Token)match(input,52,FOLLOW_52_in_field_block595);
             stream_52.add(char_literal54);
 
 
@@ -2029,17 +2029,17 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            char_literal56=(Token)match(input,53,FOLLOW_53_in_field_block600);  
+            char_literal56=(Token)match(input,53,FOLLOW_53_in_field_block600);
             stream_53.add(char_literal56);
 
 
             // AST REWRITE
             // elements: rule
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -2135,11 +2135,11 @@ public TreeAdaptor getTreeAdaptor() {
 
                     // AST REWRITE
                     // elements: menu_head
-                    // token labels: 
+                    // token labels:
                     // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
+                    // token list labels:
+                    // rule list labels:
+                    // wildcard labels:
                     retval.tree = root_0;
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -2160,7 +2160,7 @@ public TreeAdaptor getTreeAdaptor() {
                         (Object)adaptor.create(NAME, "NAME")
                         , root_2);
 
-                        adaptor.addChild(root_2, 
+                        adaptor.addChild(root_2,
                         (Object)adaptor.create(STRING, "menu")
                         );
 
@@ -2201,11 +2201,11 @@ public TreeAdaptor getTreeAdaptor() {
 
                     // AST REWRITE
                     // elements: rule_head
-                    // token labels: 
+                    // token labels:
                     // rule labels: retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
+                    // token list labels:
+                    // rule list labels:
+                    // wildcard labels:
                     retval.tree = root_0;
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -2294,7 +2294,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_name.add(name59.getTree());
 
-            char_literal60=(Token)match(input,36,FOLLOW_36_in_rule_head656);  
+            char_literal60=(Token)match(input,36,FOLLOW_36_in_rule_head656);
             stream_36.add(char_literal60);
 
 
@@ -2305,17 +2305,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_rule_value.add(rule_value61.getTree());
 
-            char_literal62=(Token)match(input,37,FOLLOW_37_in_rule_head660);  
+            char_literal62=(Token)match(input,37,FOLLOW_37_in_rule_head660);
             stream_37.add(char_literal62);
 
 
             // AST REWRITE
             // elements: rule_value, name
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -2405,7 +2405,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             if ( input.LA(1)==FLOAT||input.LA(1)==String||input.LA(1)==UnquotedString ) {
                 input.consume();
-                adaptor.addChild(root_0, 
+                adaptor.addChild(root_0,
                 (Object)adaptor.create(set63)
                 );
                 state.errorRecovery=false;
@@ -2488,11 +2488,11 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:84:8: ( 'device' '(' record_type ',' link_type ',' dsetname ',' choice_string ')' -> ^( DEVICE record_type link_type dsetname choice_string ) )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:84:10: 'device' '(' record_type ',' link_type ',' dsetname ',' choice_string ')'
             {
-            string_literal64=(Token)match(input,42,FOLLOW_42_in_device700);  
+            string_literal64=(Token)match(input,42,FOLLOW_42_in_device700);
             stream_42.add(string_literal64);
 
 
-            char_literal65=(Token)match(input,36,FOLLOW_36_in_device702);  
+            char_literal65=(Token)match(input,36,FOLLOW_36_in_device702);
             stream_36.add(char_literal65);
 
 
@@ -2503,7 +2503,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_record_type.add(record_type66.getTree());
 
-            char_literal67=(Token)match(input,38,FOLLOW_38_in_device706);  
+            char_literal67=(Token)match(input,38,FOLLOW_38_in_device706);
             stream_38.add(char_literal67);
 
 
@@ -2514,7 +2514,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_link_type.add(link_type68.getTree());
 
-            char_literal69=(Token)match(input,38,FOLLOW_38_in_device710);  
+            char_literal69=(Token)match(input,38,FOLLOW_38_in_device710);
             stream_38.add(char_literal69);
 
 
@@ -2525,7 +2525,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_dsetname.add(dsetname70.getTree());
 
-            char_literal71=(Token)match(input,38,FOLLOW_38_in_device714);  
+            char_literal71=(Token)match(input,38,FOLLOW_38_in_device714);
             stream_38.add(char_literal71);
 
 
@@ -2536,17 +2536,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_choice_string.add(choice_string72.getTree());
 
-            char_literal73=(Token)match(input,37,FOLLOW_37_in_device718);  
+            char_literal73=(Token)match(input,37,FOLLOW_37_in_device718);
             stream_37.add(char_literal73);
 
 
             // AST REWRITE
             // elements: dsetname, link_type, record_type, choice_string
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -2626,8 +2626,8 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (Object)adaptor.nil();
 
 
-            UnquotedString74=(Token)match(input,UnquotedString,FOLLOW_UnquotedString_in_record_type741); 
-            UnquotedString74_tree = 
+            UnquotedString74=(Token)match(input,UnquotedString,FOLLOW_UnquotedString_in_record_type741);
+            UnquotedString74_tree =
             (Object)adaptor.create(UnquotedString74)
             ;
             adaptor.addChild(root_0, UnquotedString74_tree);
@@ -2683,8 +2683,8 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (Object)adaptor.nil();
 
 
-            UnquotedString75=(Token)match(input,UnquotedString,FOLLOW_UnquotedString_in_link_type750); 
-            UnquotedString75_tree = 
+            UnquotedString75=(Token)match(input,UnquotedString,FOLLOW_UnquotedString_in_link_type750);
+            UnquotedString75_tree =
             (Object)adaptor.create(UnquotedString75)
             ;
             adaptor.addChild(root_0, UnquotedString75_tree);
@@ -2740,8 +2740,8 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (Object)adaptor.nil();
 
 
-            UnquotedString76=(Token)match(input,UnquotedString,FOLLOW_UnquotedString_in_dsetname759); 
-            UnquotedString76_tree = 
+            UnquotedString76=(Token)match(input,UnquotedString,FOLLOW_UnquotedString_in_dsetname759);
+            UnquotedString76_tree =
             (Object)adaptor.create(UnquotedString76)
             ;
             adaptor.addChild(root_0, UnquotedString76_tree);
@@ -2797,8 +2797,8 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (Object)adaptor.nil();
 
 
-            String77=(Token)match(input,String,FOLLOW_String_in_choice_string768); 
-            String77_tree = 
+            String77=(Token)match(input,String,FOLLOW_String_in_choice_string768);
+            String77_tree =
             (Object)adaptor.create(String77)
             ;
             adaptor.addChild(root_0, String77_tree);
@@ -2860,11 +2860,11 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:94:8: ( 'driver' '(' name ')' -> ^( DRIVER name ) )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:94:10: 'driver' '(' name ')'
             {
-            string_literal78=(Token)match(input,43,FOLLOW_43_in_driver777);  
+            string_literal78=(Token)match(input,43,FOLLOW_43_in_driver777);
             stream_43.add(string_literal78);
 
 
-            char_literal79=(Token)match(input,36,FOLLOW_36_in_driver779);  
+            char_literal79=(Token)match(input,36,FOLLOW_36_in_driver779);
             stream_36.add(char_literal79);
 
 
@@ -2875,17 +2875,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_name.add(name80.getTree());
 
-            char_literal81=(Token)match(input,37,FOLLOW_37_in_driver783);  
+            char_literal81=(Token)match(input,37,FOLLOW_37_in_driver783);
             stream_37.add(char_literal81);
 
 
             // AST REWRITE
             // elements: name
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -2965,11 +2965,11 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:96:11: ( 'registrar' '(' name ')' -> ^( REGISTRAR name ) )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:96:13: 'registrar' '(' name ')'
             {
-            string_literal82=(Token)match(input,50,FOLLOW_50_in_registrar800);  
+            string_literal82=(Token)match(input,50,FOLLOW_50_in_registrar800);
             stream_50.add(string_literal82);
 
 
-            char_literal83=(Token)match(input,36,FOLLOW_36_in_registrar802);  
+            char_literal83=(Token)match(input,36,FOLLOW_36_in_registrar802);
             stream_36.add(char_literal83);
 
 
@@ -2980,17 +2980,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_name.add(name84.getTree());
 
-            char_literal85=(Token)match(input,37,FOLLOW_37_in_registrar806);  
+            char_literal85=(Token)match(input,37,FOLLOW_37_in_registrar806);
             stream_37.add(char_literal85);
 
 
             // AST REWRITE
             // elements: name
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -3064,7 +3064,7 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:98:10: ( 'variable' var_body -> var_body )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:98:12: 'variable' var_body
             {
-            string_literal86=(Token)match(input,51,FOLLOW_51_in_variable823);  
+            string_literal86=(Token)match(input,51,FOLLOW_51_in_variable823);
             stream_51.add(string_literal86);
 
 
@@ -3077,11 +3077,11 @@ public TreeAdaptor getTreeAdaptor() {
 
             // AST REWRITE
             // elements: var_body
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -3264,7 +3264,7 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:102:18: ( '(' name ')' -> ^( VARIABLE name ) )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:102:20: '(' name ')'
             {
-            char_literal90=(Token)match(input,36,FOLLOW_36_in_var_body_no_type851);  
+            char_literal90=(Token)match(input,36,FOLLOW_36_in_var_body_no_type851);
             stream_36.add(char_literal90);
 
 
@@ -3275,17 +3275,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_name.add(name91.getTree());
 
-            char_literal92=(Token)match(input,37,FOLLOW_37_in_var_body_no_type855);  
+            char_literal92=(Token)match(input,37,FOLLOW_37_in_var_body_no_type855);
             stream_37.add(char_literal92);
 
 
             // AST REWRITE
             // elements: name
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -3368,7 +3368,7 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:104:20: ( '(' name ',' variable_type ')' -> ^( VARIABLE name variable_type ) )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:104:22: '(' name ',' variable_type ')'
             {
-            char_literal93=(Token)match(input,36,FOLLOW_36_in_var_body_with_type872);  
+            char_literal93=(Token)match(input,36,FOLLOW_36_in_var_body_with_type872);
             stream_36.add(char_literal93);
 
 
@@ -3379,7 +3379,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_name.add(name94.getTree());
 
-            char_literal95=(Token)match(input,38,FOLLOW_38_in_var_body_with_type876);  
+            char_literal95=(Token)match(input,38,FOLLOW_38_in_var_body_with_type876);
             stream_38.add(char_literal95);
 
 
@@ -3390,17 +3390,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_variable_type.add(variable_type96.getTree());
 
-            char_literal97=(Token)match(input,37,FOLLOW_37_in_var_body_with_type880);  
+            char_literal97=(Token)match(input,37,FOLLOW_37_in_var_body_with_type880);
             stream_37.add(char_literal97);
 
 
             // AST REWRITE
             // elements: name, variable_type
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -3476,8 +3476,8 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (Object)adaptor.nil();
 
 
-            UnquotedString98=(Token)match(input,UnquotedString,FOLLOW_UnquotedString_in_variable_type899); 
-            UnquotedString98_tree = 
+            UnquotedString98=(Token)match(input,UnquotedString,FOLLOW_UnquotedString_in_variable_type899);
+            UnquotedString98_tree =
             (Object)adaptor.create(UnquotedString98)
             ;
             adaptor.addChild(root_0, UnquotedString98_tree);
@@ -3539,11 +3539,11 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:108:10: ( 'function' '(' name ')' -> ^( FUNCTION name ) )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:108:12: 'function' '(' name ')'
             {
-            string_literal99=(Token)match(input,45,FOLLOW_45_in_function908);  
+            string_literal99=(Token)match(input,45,FOLLOW_45_in_function908);
             stream_45.add(string_literal99);
 
 
-            char_literal100=(Token)match(input,36,FOLLOW_36_in_function910);  
+            char_literal100=(Token)match(input,36,FOLLOW_36_in_function910);
             stream_36.add(char_literal100);
 
 
@@ -3554,17 +3554,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_name.add(name101.getTree());
 
-            char_literal102=(Token)match(input,37,FOLLOW_37_in_function914);  
+            char_literal102=(Token)match(input,37,FOLLOW_37_in_function914);
             stream_37.add(char_literal102);
 
 
             // AST REWRITE
             // elements: name
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -3654,11 +3654,11 @@ public TreeAdaptor getTreeAdaptor() {
 
             // AST REWRITE
             // elements: breaktable_block, breaktable_head
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -3740,11 +3740,11 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:112:17: ( 'breaktable' '(' name ')' -> ^( NAME name ) )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:112:19: 'breaktable' '(' name ')'
             {
-            string_literal105=(Token)match(input,40,FOLLOW_40_in_breaktable_head952);  
+            string_literal105=(Token)match(input,40,FOLLOW_40_in_breaktable_head952);
             stream_40.add(string_literal105);
 
 
-            char_literal106=(Token)match(input,36,FOLLOW_36_in_breaktable_head954);  
+            char_literal106=(Token)match(input,36,FOLLOW_36_in_breaktable_head954);
             stream_36.add(char_literal106);
 
 
@@ -3755,17 +3755,17 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_name.add(name107.getTree());
 
-            char_literal108=(Token)match(input,37,FOLLOW_37_in_breaktable_head958);  
+            char_literal108=(Token)match(input,37,FOLLOW_37_in_breaktable_head958);
             stream_37.add(char_literal108);
 
 
             // AST REWRITE
             // elements: name
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -3842,7 +3842,7 @@ public TreeAdaptor getTreeAdaptor() {
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:114:18: ( '{' ( breaktable_body )* '}' -> ( breaktable_body )* )
             // cs-studio/products/ITER/plugins/org.csstudio.utility.dbdparser.test/src/org/csstudio/utility/dbdparser/antlr/DbdFile.g:114:20: '{' ( breaktable_body )* '}'
             {
-            char_literal109=(Token)match(input,52,FOLLOW_52_in_breaktable_block975);  
+            char_literal109=(Token)match(input,52,FOLLOW_52_in_breaktable_block975);
             stream_52.add(char_literal109);
 
 
@@ -3877,17 +3877,17 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            char_literal111=(Token)match(input,53,FOLLOW_53_in_breaktable_block980);  
+            char_literal111=(Token)match(input,53,FOLLOW_53_in_breaktable_block980);
             stream_53.add(char_literal111);
 
 
             // AST REWRITE
             // elements: breaktable_body
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -3972,11 +3972,11 @@ public TreeAdaptor getTreeAdaptor() {
 
             // AST REWRITE
             // elements: raw_value, eng_value
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -4072,8 +4072,8 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (Object)adaptor.nil();
 
 
-            FLOAT114=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_raw_value1023); 
-            FLOAT114_tree = 
+            FLOAT114=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_raw_value1023);
+            FLOAT114_tree =
             (Object)adaptor.create(FLOAT114)
             ;
             adaptor.addChild(root_0, FLOAT114_tree);
@@ -4129,8 +4129,8 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (Object)adaptor.nil();
 
 
-            FLOAT115=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_eng_value1032); 
-            FLOAT115_tree = 
+            FLOAT115=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_eng_value1032);
+            FLOAT115_tree =
             (Object)adaptor.create(FLOAT115)
             ;
             adaptor.addChild(root_0, FLOAT115_tree);
@@ -4196,7 +4196,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_name.add(name116.getTree());
 
-            char_literal117=(Token)match(input,38,FOLLOW_38_in_key_value1043);  
+            char_literal117=(Token)match(input,38,FOLLOW_38_in_key_value1043);
             stream_38.add(char_literal117);
 
 
@@ -4209,11 +4209,11 @@ public TreeAdaptor getTreeAdaptor() {
 
             // AST REWRITE
             // elements: value, name
-            // token labels: 
+            // token labels:
             // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
+            // token list labels:
+            // rule list labels:
+            // wildcard labels:
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
@@ -4299,8 +4299,8 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (Object)adaptor.nil();
 
 
-            UnquotedString119=(Token)match(input,UnquotedString,FOLLOW_UnquotedString_in_name1068); 
-            UnquotedString119_tree = 
+            UnquotedString119=(Token)match(input,UnquotedString,FOLLOW_UnquotedString_in_name1068);
+            UnquotedString119_tree =
             (Object)adaptor.create(UnquotedString119)
             ;
             adaptor.addChild(root_0, UnquotedString119_tree);
@@ -4356,8 +4356,8 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (Object)adaptor.nil();
 
 
-            String120=(Token)match(input,String,FOLLOW_String_in_value1077); 
-            String120_tree = 
+            String120=(Token)match(input,String,FOLLOW_String_in_value1077);
+            String120_tree =
             (Object)adaptor.create(String120)
             ;
             adaptor.addChild(root_0, String120_tree);
@@ -4389,7 +4389,7 @@ public TreeAdaptor getTreeAdaptor() {
     // Delegated rules
 
 
- 
+
 
     public static final BitSet FOLLOW_program_in_top234 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_pathdef_in_program245 = new BitSet(new long[]{0x000FED8000000002L});

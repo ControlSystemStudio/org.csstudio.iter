@@ -19,7 +19,7 @@ import org.eclipse.core.resources.IFile;
 
 /**
  * Helper for unit tests.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
  */
 public class UnitTestUtils {

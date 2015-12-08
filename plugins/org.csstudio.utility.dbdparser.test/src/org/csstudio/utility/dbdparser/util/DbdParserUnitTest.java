@@ -18,7 +18,7 @@ import org.junit.Test;
 
 /**
  * Test {@link DbdParser}: create {@link Template} from ANTLR {@link Tree}.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
  */
 public class DbdParserUnitTest {

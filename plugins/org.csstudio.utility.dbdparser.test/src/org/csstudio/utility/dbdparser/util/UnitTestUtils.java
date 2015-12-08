@@ -17,7 +17,7 @@ import java.io.IOException;
 
 /**
  * Helper for unit tests.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
  */
 public class UnitTestUtils {

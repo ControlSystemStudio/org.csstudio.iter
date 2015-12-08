@@ -16,7 +16,7 @@ import org.osgi.framework.BundleContext;
 
 /**
  * Plugin Activator
- * 
+ *
  * @author Lambert (sopra)
  */
 public class Activator extends AbstractUIPlugin {
@@ -40,7 +40,7 @@ public class Activator extends AbstractUIPlugin {
 		instance = null;
 	}
 
-	
+
 	public static void logInfo(String msg) {
 		if (Preferences.isLogEnabled() && logger.isLoggable(Level.INFO)) {
 			logger.log(Level.INFO, msg);

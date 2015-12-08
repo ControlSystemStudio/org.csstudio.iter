@@ -23,7 +23,7 @@ public class BundleUtils {
 
 	/**
 	 * Get the java.io.File location of a bundle.
-	 * 
+	 *
 	 * @param bundleName
 	 * @return
 	 * @throws Exception
@@ -77,7 +77,7 @@ public class BundleUtils {
 
 	/**
 	 * Get the bundle path using eclipse.home.location not loading the bundle.
-	 * 
+	 *
 	 * @param bundleName
 	 * @return
 	 */
@@ -88,7 +88,7 @@ public class BundleUtils {
 
 	/**
 	 * Gets eclipse home in debug and in deployed application mode.
-	 * 
+	 *
 	 * @return
 	 */
 	public static String getEclipseHome() {

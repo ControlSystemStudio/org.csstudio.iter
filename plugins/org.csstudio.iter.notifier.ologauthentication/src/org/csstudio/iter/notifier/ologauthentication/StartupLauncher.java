@@ -20,9 +20,9 @@ import edu.msu.nscl.olog.api.OlogClientImpl.OlogClientBuilder;
 
 /**
  * Initialize {@link OlogClient}.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
- * 
+ *
  */
 public class StartupLauncher implements IApplicationListener {
 

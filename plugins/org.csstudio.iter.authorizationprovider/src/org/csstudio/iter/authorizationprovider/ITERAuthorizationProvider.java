@@ -19,7 +19,7 @@ import org.csstudio.security.authorization.Authorizations;
 /**
  * AuthorizationProvider based on LDAP group membership but settings default
  * authorization to non-LDAPusers.
- * 
+ *
  */
 @SuppressWarnings("nls")
 public class ITERAuthorizationProvider extends

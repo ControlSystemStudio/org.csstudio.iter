@@ -15,7 +15,7 @@ import org.eclipse.core.runtime.preferences.IPreferencesService;
 
 /**
  * Helper to read preferences
- * 
+ *
  * @author Davy Dequidt
  */
 @SuppressWarnings("nls")

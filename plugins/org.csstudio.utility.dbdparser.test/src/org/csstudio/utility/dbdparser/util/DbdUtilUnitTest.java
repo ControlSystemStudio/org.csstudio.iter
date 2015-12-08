@@ -26,7 +26,7 @@ import org.junit.Test;
  * generateTemplate: return a non-null {@link Template} initialized from
  * base.dbd file in the specified directory.
  * Test compatibility with EPICS 3.15.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
  */
 public class DbdUtilUnitTest {

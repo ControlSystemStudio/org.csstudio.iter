@@ -23,7 +23,7 @@ import org.csstudio.utility.dbparser.data.Record;
 
 /**
  * PV Fields Data provider from DB files.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
  */
 public class DBFilesDataProvider implements DataProvider {
@@ -41,7 +41,7 @@ public class DBFilesDataProvider implements DataProvider {
 				"DB Files Info for {0}: {1}", new Object[] { name, emptyInfo });
 		return emptyInfo;
 	}
-	
+
 	private PVInfo searchInDB(String name) {
 		List<Record> records = DBContext.get().findRecord(name);
 		if (records == null || records.size() == 0)
@@ -77,5 +77,5 @@ public class DBFilesDataProvider implements DataProvider {
 				"DB Files Info for {0}: {1}", new Object[] { name, info });
 		return info;
 	}
-	
+
 }

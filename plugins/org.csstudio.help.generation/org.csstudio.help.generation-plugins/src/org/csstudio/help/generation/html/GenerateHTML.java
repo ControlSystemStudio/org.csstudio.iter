@@ -67,10 +67,10 @@ public class GenerateHTML {
 	private final static String GENERATED_DIRECTORY = Preferences.getGeneratedDocumentationPath();
 	private final static String GENERATED_DIRECTORY_SRC = GENERATED_DIRECTORY + "/src/site";
 	private final static String GENERATED_DIRECTORY_XDOC = GENERATED_DIRECTORY_SRC + "/xdoc/";
-	
+
 	private List < Chapter >summary = new LinkedList<>();
 	private Chapter current;
-	
+
 	public void create() throws Exception {
 		loadHelp();
 		writeBeginningHelp();
@@ -93,7 +93,7 @@ public class GenerateHTML {
 			builder = new ProcessBuilder("sudo", "/opt/codac/bin/switch-maven-operation", "offline");
 			builder.start().waitFor();
 		}
-		
+
 		File pathToExecutable = new File("/usr/bin/mvn");
 		builder = new ProcessBuilder(pathToExecutable.getAbsolutePath(), "pdf:pdf");
 		builder.directory(new File(GENERATED_DIRECTORY).getAbsoluteFile());
@@ -162,14 +162,14 @@ public class GenerateHTML {
 		return sb.toString();
 
 	}
-	
+
 	private void loadHelp() {
 		try {
 			deleteFolder(new File(GENERATED_DIRECTORY));
 			Files.createDirectories(Paths.get(GENERATED_DIRECTORY_XDOC));
 			Files.createDirectories(Paths.get(GENERATED_DIRECTORY + File.separator + IMAGES_DIRECTORY));
 			Files.createDirectories(Paths.get(GENERATED_DIRECTORY + File.separator + RESOURCE_DIRECTORY));
-			
+
 			//create directory for maven build
 			//cp pom.xml to generated dir
 			copyResourceTo("/template/pom.xml", GENERATED_DIRECTORY + "/pom.xml");
@@ -179,11 +179,11 @@ public class GenerateHTML {
 
 			tocs = HelpPlugin.getTocManager().getTocs(Locale.getDefault().toString());
 			List < IToc > tocsTmp = new ArrayList<>();
-			
+
 			String[] tocFilter = Preferences.getTocFilter();
 			for (int i = 0; i < tocFilter.length; i++) {
 				for (int j = 0; j < tocs.length; j++) {
-					
+
 					if (tocs[j].getLabel().equals(tocFilter[i].trim())) {
 						tocsTmp.add((IToc) tocs[j]);
 					}
@@ -223,7 +223,7 @@ public class GenerateHTML {
 				}
 				zipFile.close();
 			}
-			
+
 			for (int i = 0; i < tocs.length; i++) {
 				String directoryToGenerate = GENERATED_DIRECTORY_XDOC + File.separator + tocs[i].getLabel();
 				Files.createDirectories(Paths.get(directoryToGenerate));
@@ -255,7 +255,7 @@ public class GenerateHTML {
 
 	private void recursiveSysoutChapter(StringBuffer content, Chapter chapter, int level) throws IOException {
 		String ref = chapter.getPath();
-		
+
 		List < Chapter > subchap = chapter.getSubChapter();
 		boolean xmlPathFile = ref.endsWith(".xml.vm");
 
@@ -283,7 +283,7 @@ public class GenerateHTML {
 			content.append("</item>\n");
 		}
 	}
-	
+
 	private void deleteFolder(File folder) {
 	    File[] files = folder.listFiles();
 	    if(files!=null) { //some JVMs return null for empty dirs
@@ -297,7 +297,7 @@ public class GenerateHTML {
 	    }
 	    folder.delete();
 	}
-	
+
 	private void generateBasicContentToc(int toc, String directoryToGenerate, Chapter current) throws IOException {
 		ITopic topic = tocs[toc].getTopic(null);
 		generateBasicTopic(topic, directoryToGenerate, 0, current);
@@ -305,7 +305,7 @@ public class GenerateHTML {
 
 	private void generateBasicTopic(ITopic topic, String directoryToGenerate, int level, Chapter current)
 			throws IOException {
-		
+
 		String[] tocDisable = Preferences.getTocDisable();
 		for (int k = 0; k < tocDisable.length; k++) {
 			if (topic.getLabel().equals(tocDisable[k].trim())) {
@@ -324,7 +324,7 @@ public class GenerateHTML {
 			return;
 		}
 		tocLoads.add(href);
-		
+
 		ITopic[] topics = getEnabledSubtopics(topic);
 		boolean hasNodes = topics.length > 0;
 
@@ -353,7 +353,7 @@ public class GenerateHTML {
 			}
 		}
 	}
-	
+
 	/**
 	 * apply regex on wrong html to format it
 	 * @param content
@@ -364,16 +364,16 @@ public class GenerateHTML {
 				.replaceAll("(?i)<hr>", "<hr/>")
 				.replaceAll("(</?)h([0-9])", "$1H$2")
 				.replaceAll("(</?)(?i)code([^>]*)(>)", "");
-		
+
 		//table add double quote on missing quote
 		String regex = "<table([^>]*)>";
 		String regexAttribute = "(\\w+)\\s*=\\s*([\\w\\d]*[^/\\s>]?)";
-		
+
 		Pattern pattern = Pattern.compile(regex);
 	    Matcher matcher = pattern.matcher(newContent);
 	    while (matcher.find()) {
 	    	String contentGroup = matcher.group(0);
-	    	
+
 	    	Pattern patternSub = Pattern.compile(regexAttribute);
 	    	Matcher matcherSub = patternSub.matcher(contentGroup);
 	    	while (matcherSub.find()) {
@@ -386,7 +386,7 @@ public class GenerateHTML {
 	    		}
 	    	}
 	    }
-	    
+
 	    //img width and height to large
 	    regex = "<(img|IMG)([^>]*)>";
 		regexAttribute = "(width|height)\\s*=[\"\']?(\\w+)[\"\']?";
@@ -426,7 +426,7 @@ public class GenerateHTML {
 		}
 		return pathOrig;
 	}
-	
+
 	private String getContentTopics(String href, int level) {
 		if (href == null) {
 			return "";
@@ -455,7 +455,7 @@ public class GenerateHTML {
         		}
         	}
         }
-        
+
         int indexBodyBegin = content.toLowerCase().indexOf("<body");
         if (indexBodyBegin >= 0) {
 	        int indexBodyBeginClose = content.substring(indexBodyBegin).indexOf(">");
@@ -497,7 +497,7 @@ public class GenerateHTML {
         }
 		return finalNameSrc;
 	}
-	
+
 	private static String removeAnchor(String href) {
 		int index = href.indexOf('#');
 		if (index != -1) {
@@ -555,7 +555,7 @@ public class GenerateHTML {
 		if (in != null) {
 			try {
 				String charset = getContentCharsetCustom(in);
-				
+
 				rawInput = HelpSystem.getHelpContent(href, locale);
 				in = DynamicXHTMLProcessor.process(href, rawInput, locale, false);
 
@@ -592,7 +592,7 @@ public class GenerateHTML {
 	/**
 	 * Obtains children topics for a given navigation element. Topics from TOCs
 	 * not matching enabled activities are filtered out.
-	 * 
+	 *
 	 * @param element
 	 *            ITopic or IToc
 	 * @return ITopic[]
@@ -606,7 +606,7 @@ public class GenerateHTML {
 	/**
 	 * Obtains children topics for a given navigation element. Topics from TOCs
 	 * not matching enabled activities are filtered out.
-	 * 
+	 *
 	 * @param navigationElement
 	 * @return List of ITopic
 	 */
@@ -645,7 +645,7 @@ public class GenerateHTML {
 
 	/**
 	 * Check if given TOC is visible
-	 * 
+	 *
 	 * @param toc
 	 * @return true if TOC should be visible
 	 */

@@ -23,7 +23,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 public class NativeLabeledTextFigure extends AbstractSWTWidgetFigure<Composite> implements ITextFigure {
-	
+
     private Composite base;
     private Text text;
     private boolean readOnly, verticalStacking;
@@ -33,19 +33,19 @@ public class NativeLabeledTextFigure extends AbstractSWTWidgetFigure<Composite> 
 
 	/**
      * Constructs a new figure for a LabeledTextInput.
-     * 
+     *
 	 * @param editPart
 	 * @param style
 	 */
 	public NativeLabeledTextFigure(AbstractBaseEditPart editPart, int style) {
 		super(editPart, style);
 	}
-	
+
 /*    @Override
 	protected void dispose() {
     	if (label != null) label.dispose();
     	if (text != null) text.dispose();
-    	
+
 		super.dispose();
 	}
 */
@@ -82,7 +82,7 @@ public class NativeLabeledTextFigure extends AbstractSWTWidgetFigure<Composite> 
 //        if (getSWTWidget() != null) // base
 //        	getSWTWidget().setBackground(bg);
 	};
-	
+
 	@Override
 	public void setFont(Font f) {
         super.setFont(f);
@@ -100,10 +100,10 @@ public class NativeLabeledTextFigure extends AbstractSWTWidgetFigure<Composite> 
         else {
         	style |= SWT.RIGHT;
         }
-        
-        return style;		
+
+        return style;
 	}
-	
+
 	@Override
     protected Composite createSWTWidget(Composite parent, int textStyle) {
 		this.textStyle = textStyle;
@@ -111,7 +111,7 @@ public class NativeLabeledTextFigure extends AbstractSWTWidgetFigure<Composite> 
 
         base = new Composite(parent, SWT.NONE);
         base.setBackgroundMode(SWT.INHERIT_DEFAULT);
-        
+
         verticalStacking = model.getInputLabelStacking() == LabeledTextInputModel.INPUT_LABEL_STACKING.VERTICAL;
         GridLayout layout = new GridLayout(verticalStacking ? 1 : 2, false);
         layout.horizontalSpacing = LABEL_SPACING;
@@ -122,16 +122,16 @@ public class NativeLabeledTextFigure extends AbstractSWTWidgetFigure<Composite> 
 
         return base;
     }
-	
+
 	public void layoutLabeledInput() {
         if (label != null) label.dispose();
         if (text != null) text.dispose();
-        
+
         if (base == null) return;
-        
+
         GridData labelGridData, textGridData;
         LabeledTextInputModel model = ((LabeledTextInputEditpart) editPart).getWidgetModel();
-        boolean hasLabel = !model.getInputLabelText().isEmpty(); 
+        boolean hasLabel = !model.getInputLabelText().isEmpty();
 
         if (hasLabel)
         {
@@ -140,7 +140,7 @@ public class NativeLabeledTextFigure extends AbstractSWTWidgetFigure<Composite> 
         } else {
         	label = null;
         }
-        
+
         text= new Text(base, textStyle);
         readOnly = (textStyle & SWT.READ_ONLY)!=0;
 
@@ -160,19 +160,19 @@ public class NativeLabeledTextFigure extends AbstractSWTWidgetFigure<Composite> 
         	textGridData = new GridData(SWT.FILL, SWT.FILL, true, true);
     	}
         if (hasLabel) label.setLayoutData(labelGridData);
-		text.setLayoutData(textGridData);        
+		text.setLayoutData(textGridData);
 	}
 
     public Dimension getAutoSizeDimension(){
         Point textSize = text.computeSize(SWT.DEFAULT, SWT.DEFAULT);
         if (label == null)
         	return new Dimension(textSize.x + this.getInsets().getWidth(), textSize.y + this.getInsets().getHeight());
-        
+
         Point labelSize = label.computeSize(SWT.DEFAULT, SWT.DEFAULT);
-        return new Dimension(textSize.x + labelSize.x + (verticalStacking ? 0 : LABEL_SPACING) + this.getInsets().getWidth(), 
+        return new Dimension(textSize.x + labelSize.x + (verticalStacking ? 0 : LABEL_SPACING) + this.getInsets().getWidth(),
         					 textSize.y + labelSize.y + (verticalStacking ? LABEL_SPACING : 0) + this.getInsets().getHeight());
     }
-    
+
     @Override
     public void setEnabled(boolean value) {
             super.setEnabled(value);
@@ -197,11 +197,11 @@ public class NativeLabeledTextFigure extends AbstractSWTWidgetFigure<Composite> 
     public String getText() {
         return text.getText();
     }
-    
+
 	public Text getTextSWTWidget() {
 		return text;
 	}
-	
+
 	public Label getLabelSWTWidget() {
 		return label;
 	}

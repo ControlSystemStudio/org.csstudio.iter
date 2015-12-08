@@ -20,7 +20,7 @@ import org.eclipse.core.runtime.CoreException;
 
 /**
  * Recursively replaces all file inclusion by the corresponding file content.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
  */
 public class DbdReader {
