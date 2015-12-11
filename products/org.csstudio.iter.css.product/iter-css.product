@@ -6,11 +6,9 @@
    <aboutInfo>
       <image path="/org.csstudio.iter.css.product/icons/cs-studio-about.png"/>
       <text>
-         ITER CS-Studio is an Eclipse-based collection of tools to monitor and operate large scale control systems, such as the ones in the fusion community.
+         Control System Studio is an Eclipse-based collection of tools to monitor and operate large scale control systems, such as the ones in the fusion community.
 
-
-
-It is the result of a collaboration between different laboratories and universities.
+It is a product of the collaboration between different laboratories and universities.
       </text>
    </aboutInfo>
 
@@ -37,8 +35,8 @@ openFile
 
    <splash
       location="org.csstudio.iter.css.product"
-      startupProgressRect="5,222,470,15"
-      startupMessageRect="7,200,466,20"
+      startupProgressRect="5,210,470,15"
+      startupMessageRect="7,190,445,20"
       startupForegroundColor="FFFFFF" />
    <launcher name="css">
       <linux icon="/org.csstudio.iter.css.product/icons/css48.xpm"/>
@@ -101,12 +99,12 @@ of the distribution package.
    </features>
 
    <configurations>
-      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="5" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
-      <property name="org.eclipse.update.reconcile" value="false" />
    </configurations>
 
    <preferencesInfo>
