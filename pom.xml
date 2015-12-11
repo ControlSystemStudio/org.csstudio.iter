@@ -19,16 +19,16 @@
         <global-version>4.2.1-SNAPSHOT</global-version>
         <assembly-version>2.4</assembly-version>
         <replacer-version>1.4.1</replacer-version>
+        <cs-studio.version>4.3</cs-studio.version>
         <tycho.version>0.22.0</tycho.version>
         <tycho-extras.version>0.22.0</tycho-extras.version>
         <tycho-groupid>org.eclipse.tycho</tycho-groupid>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <baselineMode>fail</baselineMode>
         <pydev-site>http://www.pydev.org/updates/</pydev-site>
-	    <!--pydev-site>http://update-production-pydev.s3.amazonaws.com/pydev/updates</pydev-site-->
         <svn-site>http://subclipse.tigris.org/update_1.12.x</svn-site>
-        <orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20140114142710/repository</orbit-site>
-        <efx-site>http://download.eclipse.org/efxclipse/runtime-released/1.2.0/site</efx-site>
+        <orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20150519210750/repository</orbit-site>
+        <efx-site>http://download.eclipse.org/efxclipse/runtime-released/2.1.0/site</efx-site>
     </properties>
 
     <groupId>org.csstudio</groupId>
@@ -78,23 +78,23 @@
                 </repository>
                 <repository>
                     <id>css-core</id>
-                    <url>http://download.controlsystemstudio.org/updates/4.2</url>
+                    <url>http://download.controlsystemstudio.org/updates/${cs-studio.version}</url>
                     <layout>p2</layout>
                 </repository>
                 <!-- Just make this something valid, doesn't matter what. Thirparty tag is needed by jenkins, but no when building locally -->
                 <repository>
                     <id>thirdparty</id>
-                    <url>http://download.controlsystemstudio.org/applications/4.2</url>
+                    <url>http://download.controlsystemstudio.org/applications/${cs-studio.version}</url>
                     <layout>p2</layout>
                 </repository>
                 <repository>
                     <id>csstudio-thirdparty</id>
-                    <url>http://download.controlsystemstudio.org/thirdparty/4.2</url>
+                    <url>http://download.controlsystemstudio.org/thirdparty/${cs-studio.version}</url>
                     <layout>p2</layout>
                 </repository>
                 <repository>
                     <id>csstudio-maven-osgi-bundles</id>
-                    <url>http://download.controlsystemstudio.org/maven-osgi-bundles/4.2</url>
+                    <url>http://download.controlsystemstudio.org/maven-osgi-bundles/${cs-studio.version}</url>
                     <layout>p2</layout>
                 </repository>
             </repositories>
@@ -187,12 +187,6 @@
           </dependency-resolution>
 
           <filters>
-              <!-- This is how features/plugins can be ignored. -->
-              <!--<filter>
-                <type>eclipse-plugin</type>
-                <id>artifactId</id>
-                <removeAll />
-              </filter>-->
           </filters>
 
           <environments>
@@ -202,26 +196,6 @@
               <ws>gtk</ws>
               <arch>x86_64</arch>
             </environment>
-              <!--environment>
-                <os>linux</os>
-                <ws>gtk</ws>
-                <arch>x86</arch>
-              </environment>
-              <environment>
-                <os>macosx</os>
-                <ws>cocoa</ws>
-                <arch>x86</arch>
-              </environment>
-              <environment>
-                <os>win32</os>
-                <ws>win32</ws>
-                <arch>x86</arch>
-              </environment>
-              <environment>
-                <os>win32</os>
-                <ws>win32</ws>
-                <arch>x86_64</arch>
-              </environment-->
           </environments>
         </configuration>
       </plugin>
