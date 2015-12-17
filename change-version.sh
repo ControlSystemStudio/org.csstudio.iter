@@ -41,4 +41,5 @@ update "css" "iter-css" 1
 update "jms2rdb" "jms2rdb" 0
 update "scan.server" "scan-server" 1
 update "utility.jmssendcmd" "jms-send" 0
+sed -i "s|\(version=\"\)[^<>]*\(.qualifier\"\)|\1${ver}\2|" repository-rcp/org.csstudio.iter.product.opivalidation.product
 
