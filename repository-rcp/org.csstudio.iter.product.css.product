@@ -6,14 +6,9 @@
    <aboutInfo>
       <image path="/org.csstudio.iter.css.product/icons/cs-studio-about.png"/>
       <text>
-         Control System Studio is an Eclipse-based collection of tools
+         Control System Studio is an Eclipse-based collection of tools to monitor and operate large scale control systems, such as the ones in the fusion community.
 
-to monitor and operate large scale control systems,
-
-such as the ones in the fusion community.
-
-
-It&apos;s a product of the collaboration between different laboratories and universities.
+It is a product of the collaboration between different laboratories and universities.
       </text>
    </aboutInfo>
 
@@ -26,6 +21,7 @@ openFile
       </programArgs>
       <vmArgs>-Xmx1024m
 -Xms512m
+-Ddiirt.home=/opt/codac/css/css/configuration/diirt
 -Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.SimpleLog
 -Dorg.apache.commons.logging.simplelog.defaultlog=fatal
 -Dpython.cachedir.skip=true
@@ -101,14 +97,23 @@ of the distribution package.
       <feature id="org.csstudio.iter.trends.opiwidget.feature"/>
       <feature id="org.csstudio.iter.product.configuration.feature"/>
       <feature id="org.csstudio.pvmanager.autocomplete.feature"/>
+      <feature id="org.csstudio.alarm.diirt.datasource.feature"/>
    </features>
 
    <configurations>
-      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="5" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
    </configurations>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
 
 </product>

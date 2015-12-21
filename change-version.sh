@@ -29,7 +29,6 @@ function update() {
     sed -i "s|\(<version>\)[^<>]*\(-SNAPSHOT</version>\)|\1${ver}\2|" products/org.csstudio.iter.${product}.product/pom.xml
     sed -i "s|\(Bundle-Version: \)[^<>]*\(.qualifier\)|\1${ver}\2|" products/org.csstudio.iter.${product}.product/META-INF/MANIFEST.MF
     sed -i "s|\(version=\"\)[^<>]*\(.qualifier\"\)|\1${ver}\2|" ${repository}/org.csstudio.iter.product.${product}.product
-#    sed -i "s|\(version=\"\)[^<>]*\(.qualifier\"\)|\1${ver}\2|" repository-rcp/org.csstudio.iter.product.${product}.product
 }
 
 update "alarm.beast.server" "alarm-server" 0
@@ -42,4 +41,5 @@ update "css" "iter-css" 1
 update "jms2rdb" "jms2rdb" 0
 update "scan.server" "scan-server" 1
 update "utility.jmssendcmd" "jms-send" 0
+sed -i "s|\(version=\"\)[^<>]*\(.qualifier\"\)|\1${ver}\2|" repository-rcp/org.csstudio.iter.product.opivalidation.product
 
