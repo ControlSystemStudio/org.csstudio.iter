@@ -10,14 +10,14 @@ package org.csstudio.iter.utility.sddreader.data;
 import java.util.List;
 
 public class Template {
-	
-	private List<Record> epicsRecords;
 
-	public List<Record> getEPICSRecords() {
-		return epicsRecords;
-	}
+    private List<Record> epicsRecords;
 
-	public void setEPICSRecords(List<Record> epicsRecords) {
-		this.epicsRecords = epicsRecords;
-	}
+    public List<Record> getEPICSRecords() {
+        return epicsRecords;
+    }
+
+    public void setEPICSRecords(List<Record> epicsRecords) {
+        this.epicsRecords = epicsRecords;
+    }
 }

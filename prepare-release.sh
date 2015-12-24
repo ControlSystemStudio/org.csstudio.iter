@@ -22,4 +22,4 @@ fi
 echo ::: Prepare splash :::
 java -jar $BUILD_DIR/ImageLabeler-1.0.jar $VERSION 462 53 ./products/org.csstudio.iter.css.product/splash-template.bmp ./products/org.csstudio.iter.css.product/splash.bmp
 echo ::: Prepare products versions :::
-source change-version.sh
+source change-version.sh $VERSION

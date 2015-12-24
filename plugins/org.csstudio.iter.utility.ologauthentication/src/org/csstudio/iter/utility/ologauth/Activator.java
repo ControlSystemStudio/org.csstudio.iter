@@ -17,53 +17,49 @@ import org.osgi.framework.BundleContext;
  */
 public class Activator implements BundleActivator {
 
-	/**
-	 * This plugin's ID.
-	 */
-	public static final String PLUGIN_ID = "org.csstudio.iter.utility.ologauthentication";
+    /**
+     * This plugin's ID.
+     */
+    public static final String PLUGIN_ID = "org.csstudio.iter.utility.ologauthentication";
 
-	// The shared instance
-	private static Activator plugin;
-	private OlogAuthAdapter ologAuthAdapter;
+    // The shared instance
+    private static Activator plugin;
+    private OlogAuthAdapter ologAuthAdapter;
 
-	/**
-	 * The constructor
-	 */
-	public Activator() {
-	}
+    /**
+     * The constructor
+     */
+    public Activator() {
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext
-	 * )
-	 */
-	public void start(BundleContext context) throws Exception {
-		plugin = this;
-		ologAuthAdapter = new OlogAuthAdapter();
-		SecuritySupport.addListener(ologAuthAdapter);
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext )
+     */
+    public void start(BundleContext context) throws Exception {
+        plugin = this;
+        ologAuthAdapter = new OlogAuthAdapter();
+        SecuritySupport.addListener(ologAuthAdapter);
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext
-	 * )
-	 */
-	public void stop(BundleContext context) throws Exception {
-		SecuritySupport.removeListener(ologAuthAdapter);
-		ologAuthAdapter = null;
-		plugin = null;
-	}
+    /*
+     * (non-Javadoc)
+     *
+     * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext )
+     */
+    public void stop(BundleContext context) throws Exception {
+        SecuritySupport.removeListener(ologAuthAdapter);
+        ologAuthAdapter = null;
+        plugin = null;
+    }
 
-	/**
-	 * Returns the shared instance
-	 * 
-	 * @return the shared instance
-	 */
-	public static Activator getDefault() {
-		return plugin;
-	}
+    /**
+     * Returns the shared instance
+     *
+     * @return the shared instance
+     */
+    public static Activator getDefault() {
+        return plugin;
+    }
 }

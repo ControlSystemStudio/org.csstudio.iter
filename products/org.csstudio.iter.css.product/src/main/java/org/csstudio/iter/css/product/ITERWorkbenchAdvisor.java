@@ -24,30 +24,30 @@ import org.eclipse.ui.application.WorkbenchWindowAdvisor;
  */
 public class ITERWorkbenchAdvisor extends ApplicationWorkbenchAdvisor {
 
-	public ITERWorkbenchAdvisor(OpenDocumentEventProcessor openDocProcessor) {
-		super(openDocProcessor);
-	}
+    public ITERWorkbenchAdvisor(OpenDocumentEventProcessor openDocProcessor) {
+        super(openDocProcessor);
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.csstudio.utility.product.ApplicationWorkbenchAdvisor#initialize(org.eclipse.ui.application.IWorkbenchConfigurer)
-	 */
-	@Override
-	public void initialize(IWorkbenchConfigurer configurer) {
-		super.initialize(configurer);
-		WorkbenchUtil.removeUnWantedPerspectives();
-		WorkbenchUtil.unbindDuplicateBindings();
+    /*
+     * (non-Javadoc)
+     * @see org.csstudio.utility.product.ApplicationWorkbenchAdvisor#initialize(org.eclipse.ui.application.IWorkbenchConfigurer)
+     */
+    @Override
+    public void initialize(IWorkbenchConfigurer configurer) {
+        super.initialize(configurer);
+        WorkbenchUtil.removeUnWantedPerspectives();
+        WorkbenchUtil.unbindDuplicateBindings();
 
 
-	}
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.csstudio.utility.product.ApplicationWorkbenchAdvisor#createWorkbenchWindowAdvisor(org.eclipse.ui.application.IWorkbenchWindowConfigurer)
-	 */
-	@Override
-	public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(
-			IWorkbenchWindowConfigurer configurer) {
-		return new ITERWorkbenchWindowAdvisor(configurer);
-	}
+    /*
+     * (non-Javadoc)
+     * @see org.csstudio.utility.product.ApplicationWorkbenchAdvisor#createWorkbenchWindowAdvisor(org.eclipse.ui.application.IWorkbenchWindowConfigurer)
+     */
+    @Override
+    public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(
+            IWorkbenchWindowConfigurer configurer) {
+        return new ITERWorkbenchWindowAdvisor(configurer);
+    }
 }

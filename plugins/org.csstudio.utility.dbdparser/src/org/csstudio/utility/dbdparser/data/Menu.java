@@ -14,73 +14,72 @@ import java.util.TreeMap;
 
 public class Menu {
 
-	private final String name;
-	private Map<String, String> choices;
-	private List<Include> includes;
+    private final String name;
+    private Map<String, String> choices;
+    private List<Include> includes;
 
-	public Menu(String name) {
-		this.name = name;
-		this.choices = new TreeMap<String, String>();
-		this.includes = new ArrayList<Include>();
-	}
+    public Menu(String name) {
+        this.name = name;
+        this.choices = new TreeMap<String, String>();
+        this.includes = new ArrayList<Include>();
+    }
 
-	public void addChoice(String name, String value) {
-		this.choices.put(name, value);
-	}
+    public void addChoice(String name, String value) {
+        this.choices.put(name, value);
+    }
 
-	public void addInclude(Include include) {
-		this.includes.add(include);
-	}
+    public void addInclude(Include include) {
+        this.includes.add(include);
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public Map<String, String> getChoices() {
-		return choices;
-	}
+    public Map<String, String> getChoices() {
+        return choices;
+    }
 
-	public void setChoices(Map<String, String> choices) {
-		this.choices = choices;
-	}
+    public void setChoices(Map<String, String> choices) {
+        this.choices = choices;
+    }
 
-	public List<Include> getIncludes() {
-		return includes;
-	}
+    public List<Include> getIncludes() {
+        return includes;
+    }
 
-	public void setIncludes(List<Include> includes) {
-		this.includes = includes;
-	}
+    public void setIncludes(List<Include> includes) {
+        this.includes = includes;
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		return result;
-	}
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        return result;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Menu other = (Menu) obj;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		return true;
-	}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Menu other = (Menu) obj;
+        if (name == null) {
+            if (other.name != null)
+                return false;
+        } else if (!name.equals(other.name))
+            return false;
+        return true;
+    }
 
-	@Override
-	public String toString() {
-		return "Menu [name=" + name + ", choices=" + choices + ", includes="
-				+ includes + "]";
-	}
+    @Override
+    public String toString() {
+        return "Menu [name=" + name + ", choices=" + choices + ", includes=" + includes + "]";
+    }
 
 }

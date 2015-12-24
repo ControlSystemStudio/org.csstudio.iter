@@ -1,3 +1,10 @@
+/*******************************************************************************
+ * Copyright (c) 2010-2015 ITER Organization.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ ******************************************************************************/
 package org.csstudio.iter.opibuilder.widgets;
 
 import org.csstudio.iter.opibuilder.widgets.LabeledTextInputModel;
@@ -15,16 +22,16 @@ import org.eclipse.swt.widgets.Display;
  * Differences with the default TextInputEditPart: it uses an IterTextEditManager instance for DirectEdit,
  * giving the TextInput widget the option of setting a different background color when the control has focus,
  * and saving the value to the PV without pressing ENTER (on loss of focus).
- *  
+ *
  * It must be used together with LabeledTextInputModel and IterTextEditManager.
  *
  * @author Boris Versic
  */
 public class LabeledTextInputEditpart extends TextInputEditpart {
-	
-	public LabeledTextInputEditpart() {
-		super();
-	}
+
+    public LabeledTextInputEditpart() {
+        super();
+    }
 
     @Override
     public LabeledTextInputModel getWidgetModel() {
@@ -49,13 +56,13 @@ public class LabeledTextInputEditpart extends TextInputEditpart {
         updatePropSheet();
 
         return delegate.doCreateFigure();
-    }    
-    
-	@Override
+    }
+
+    @Override
     protected void performDirectEdit() {
-    	final LabeledTextInputModel model = getWidgetModel();
+        final LabeledTextInputModel model = getWidgetModel();
         new IterTextEditManager(this, new LabelCellEditorLocator(
                 (Figure) getFigure()), getWidgetModel().isMultilineInput(),
-        		new Color(Display.getDefault(), model.getBackgroundFocusColor()), model.isConfirmOnFocusLost()).show();
+                new Color(Display.getDefault(), model.getBackgroundFocusColor()), model.isConfirmOnFocusLost()).show();
     }
 }
