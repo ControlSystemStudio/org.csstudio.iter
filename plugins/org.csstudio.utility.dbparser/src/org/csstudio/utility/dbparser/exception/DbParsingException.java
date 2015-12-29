@@ -9,9 +9,9 @@ package org.csstudio.utility.dbparser.exception;
 
 public class DbParsingException extends Exception {
 
-	private static final long serialVersionUID = -2848619488552788774L;
+    private static final long serialVersionUID = -2848619488552788774L;
 
-	public DbParsingException(String msg) {
-		super(msg);
-	}
+    public DbParsingException(String msg) {
+        super(msg);
+    }
 }

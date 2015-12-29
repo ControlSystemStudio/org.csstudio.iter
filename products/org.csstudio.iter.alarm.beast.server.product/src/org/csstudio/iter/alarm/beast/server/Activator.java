@@ -14,22 +14,22 @@ import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
 
-	/** Plugin ID defined in MANIFEST.MF */
+    /** Plugin ID defined in MANIFEST.MF */
     final public static String ID = "org.csstudio.iter.alarm.beast.server";
 
     final private static Logger logger = Logger.getLogger(ID);
 
-	/** @return Logger for plugin ID */
-	public static Logger getLogger() {
-		return logger;
-	}
+    /** @return Logger for plugin ID */
+    public static Logger getLogger() {
+        return logger;
+    }
 
     @Override
     public void start(BundleContext context) throws Exception {
     }
 
     @Override
-    public void stop(BundleContext context) throws Exception {        
+    public void stop(BundleContext context) throws Exception {
     }
 
 }

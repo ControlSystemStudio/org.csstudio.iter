@@ -17,34 +17,32 @@ import java.io.IOException;
 
 /**
  * Helper for unit tests.
- * 
+ *
  * @author Fred Arnaud (Sopra Group) - ITER
  */
 public class UnitTestUtils {
 
-	public static File getTestResource(String name)
-			throws FileNotFoundException {
-		return new File("resources/test/" + name);
-	}
+    public static File getTestResource(String name) throws FileNotFoundException {
+        return new File("resources/test/" + name);
+    }
 
-	public static String readFile(File file) throws IOException {
-		StringBuilder out = new StringBuilder();
-		BufferedReader br = new BufferedReader(new FileReader(file));
-		for (String line = br.readLine(); line != null; line = br.readLine())
-			out.append(line + "\n");
-		br.close();
-		return out.toString();
-	}
+    public static String readFile(File file) throws IOException {
+        StringBuilder out = new StringBuilder();
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        for (String line = br.readLine(); line != null; line = br.readLine())
+            out.append(line + "\n");
+        br.close();
+        return out.toString();
+    }
 
-	public static void writeFile(String filename, String content)
-			throws IOException {
-		BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
-		writer.write(content);
-		writer.close();
-	}
+    public static void writeFile(String filename, String content) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+        writer.write(content);
+        writer.close();
+    }
 
-	public static boolean isEPICS315(String basePath) {
-		return new File(basePath + "/printfRecord.dbd").exists();
-	}
+    public static boolean isEPICS315(String basePath) {
+        return new File(basePath + "/printfRecord.dbd").exists();
+    }
 
 }

@@ -31,136 +31,128 @@ import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
 public class EarlyStartup implements IStartup {
 
-	private static final String[] HIDE_MESSAGE_STARTS_WITH = new String[] {
-			"Restoring info for", "Finished restoring information for",
-			"Info: Rebuilding internal caches:",
-			"Plug-in 'org.python.pydev' contributed an invalid Menu Extension" };
+    private static final String[] HIDE_MESSAGE_STARTS_WITH = new String[] { "Restoring info for",
+            "Finished restoring information for", "Info: Rebuilding internal caches:",
+            "Plug-in 'org.python.pydev' contributed an invalid Menu Extension" };
 
-	//Fix by jbobnar: use the OS default SEPARATOR instead of /. Take care of \ differently, because that is an escape character for regex.
-	private static String SEPARATOR = File.separatorChar == '\\' ? "\\\\" : String.valueOf(File.separatorChar);
-	private static Pattern SCAN_JYTHON_PLUGIN_PATH_PATTERN = Pattern
-//			.compile(".*/org\\.csstudio\\.scan(_[^/]*)?/jython");
-			.compile(".*" + SEPARATOR + "org\\.csstudio\\.scan(_[^" + SEPARATOR + "]*)?" + SEPARATOR + "jython");
-	private static class HideUnWantedLogFilter implements Filter {
+    // Fix by jbobnar: use the OS default SEPARATOR instead of /. Take care of \ differently, because that is an escape
+    // character for regex.
+    private static String SEPARATOR = File.separatorChar == '\\' ? "\\\\" : String.valueOf(File.separatorChar);
+    private static Pattern SCAN_JYTHON_PLUGIN_PATH_PATTERN = Pattern
+            // .compile(".*/org\\.csstudio\\.scan(_[^/]*)?/jython");
+            .compile(".*" + SEPARATOR + "org\\.csstudio\\.scan(_[^" + SEPARATOR + "]*)?" + SEPARATOR + "jython");
 
-		private Filter previousFilter;
+    private static class HideUnWantedLogFilter implements Filter {
 
-		public HideUnWantedLogFilter(Filter previousFilter) {
-			this.previousFilter = previousFilter;
-		}
+        private Filter previousFilter;
 
-		@Override
-		public boolean isLoggable(LogRecord record) {
-			if (record.getMessage() != null) {
-				for (String hideMsgStartsWith : HIDE_MESSAGE_STARTS_WITH) {
-					if (record.getMessage().startsWith(hideMsgStartsWith)) {
-						return false;
-					}
-				}
-			}
-			if (previousFilter == null) {
-				return true;
-			}
-			return previousFilter.isLoggable(record);
-		}
-	};
+        public HideUnWantedLogFilter(Filter previousFilter) {
+            this.previousFilter = previousFilter;
+        }
 
-	private void removeUnWantedLog() {
-		// Hide unwanted message from log
-		Logger rootLogger = Logger.getLogger("");
-		rootLogger.setFilter(new HideUnWantedLogFilter(rootLogger.getFilter()));
-		for (Handler handler : rootLogger.getHandlers()) {
-			handler.setFilter(new HideUnWantedLogFilter(handler.getFilter()));
-		}
-	}
+        @Override
+        public boolean isLoggable(LogRecord record) {
+            if (record.getMessage() != null) {
+                for (String hideMsgStartsWith : HIDE_MESSAGE_STARTS_WITH) {
+                    if (record.getMessage().startsWith(hideMsgStartsWith)) {
+                        return false;
+                    }
+                }
+            }
+            if (previousFilter == null) {
+                return true;
+            }
+            return previousFilter.isLoggable(record);
+        }
+    };
 
-	private boolean updateOpiBuilderPythonPath() throws IOException {
-		File scanPluginDir = BundleUtils.getBundleLocation("org.csstudio.scan");
-		final File scanJythonLibDir = new File(scanPluginDir, "jython");
-		if (scanJythonLibDir.exists()) {
-			final IPreferencesService prefs = Platform.getPreferencesService();
+    private void removeUnWantedLog() {
+        // Hide unwanted message from log
+        Logger rootLogger = Logger.getLogger("");
+        rootLogger.setFilter(new HideUnWantedLogFilter(rootLogger.getFilter()));
+        for (Handler handler : rootLogger.getHandlers()) {
+            handler.setFilter(new HideUnWantedLogFilter(handler.getFilter()));
+        }
+    }
 
-			StringBuilder newPythonPaths = new StringBuilder();
-			newPythonPaths.append(scanJythonLibDir.getCanonicalPath());
-			newPythonPaths.append('|');
+    private boolean updateOpiBuilderPythonPath() throws IOException {
+        File scanPluginDir = BundleUtils.getBundleLocation("org.csstudio.scan");
+        final File scanJythonLibDir = new File(scanPluginDir, "jython");
+        if (scanJythonLibDir.exists()) {
+            final IPreferencesService prefs = Platform.getPreferencesService();
 
-			String oldPythonPathString = prefs.getString(
-					"org.csstudio.opibuilder", "python_path", "", null);
-			String[] oldPythonPaths = oldPythonPathString.split("\\|");
-			for (String oldPythonPath : oldPythonPaths) {
-				if (!"".equals(oldPythonPath.trim())) {
-					Matcher m = SCAN_JYTHON_PLUGIN_PATH_PATTERN
-							.matcher(oldPythonPath.trim());
-					if (!m.matches()) {
-						newPythonPaths.append(oldPythonPath);
-						newPythonPaths.append('|');
-					}
-				}
-			}
-			String newPythonPathString = newPythonPaths.substring(0,
-					newPythonPaths.length() - 1);
-			if (!oldPythonPathString.equals(newPythonPathString)) {
-				final ScopedPreferenceStore prefStore = new ScopedPreferenceStore(
-						InstanceScope.INSTANCE, "org.csstudio.opibuilder");
-				prefStore.setValue("python_path", newPythonPathString);
-				prefStore.save();
-				return true;
-			}
-		}
-		return false;
-	}
+            StringBuilder newPythonPaths = new StringBuilder();
+            newPythonPaths.append(scanJythonLibDir.getCanonicalPath());
+            newPythonPaths.append('|');
 
-	@Override
-	public void earlyStartup() {
-		Job job = new Job("Configure python executable") {
-			@Override
-			protected IStatus run(IProgressMonitor monitor) {
-				removeUnWantedLog();
-				boolean confChanged = false;
-				try {
-					boolean changed = InterpreterUtils.createPythonInterpreter(
-							"default_python", monitor);
-					confChanged |= changed;
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				try {
-					boolean changed = InterpreterUtils.createJythonInterpreter(
-							"default_jython", monitor);
-					confChanged |= changed;
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+            String oldPythonPathString = prefs.getString("org.csstudio.opibuilder", "python_path", "", null);
+            String[] oldPythonPaths = oldPythonPathString.split("\\|");
+            for (String oldPythonPath : oldPythonPaths) {
+                if (!"".equals(oldPythonPath.trim())) {
+                    Matcher m = SCAN_JYTHON_PLUGIN_PATH_PATTERN.matcher(oldPythonPath.trim());
+                    if (!m.matches()) {
+                        newPythonPaths.append(oldPythonPath);
+                        newPythonPaths.append('|');
+                    }
+                }
+            }
+            String newPythonPathString = newPythonPaths.substring(0, newPythonPaths.length() - 1);
+            if (!oldPythonPathString.equals(newPythonPathString)) {
+                final ScopedPreferenceStore prefStore = new ScopedPreferenceStore(InstanceScope.INSTANCE,
+                        "org.csstudio.opibuilder");
+                prefStore.setValue("python_path", newPythonPathString);
+                prefStore.save();
+                return true;
+            }
+        }
+        return false;
+    }
 
-				try {
-					boolean changed = updateOpiBuilderPythonPath();
-					confChanged |= changed;
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+    @Override
+    public void earlyStartup() {
+        Job job = new Job("Configure python executable") {
+            @Override
+            protected IStatus run(IProgressMonitor monitor) {
+                removeUnWantedLog();
+                boolean confChanged = false;
+                try {
+                    boolean changed = InterpreterUtils.createPythonInterpreter("default_python", monitor);
+                    confChanged |= changed;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                try {
+                    boolean changed = InterpreterUtils.createJythonInterpreter("default_jython", monitor);
+                    confChanged |= changed;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
-				if (confChanged) {
-					Display.getDefault().asyncExec(new Runnable() {
-						@Override
-						public void run() {
-							MessageDialog dialog = new MessageDialog(
-									null,
-									"Restart required",
-									null,
-									"Python Configuration has been updated automatically and requires a restart.",
-									MessageDialog.QUESTION, new String[] {
-											"Restart Now", "Restart Later" }, 0);
-							int result = dialog.open();
-							if (result == 0) {
-								PlatformUI.getWorkbench().restart();
-							}
-						}
-					});
-				}
+                try {
+                    boolean changed = updateOpiBuilderPythonPath();
+                    confChanged |= changed;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
-				return Status.OK_STATUS;
-			}
-		};
-		job.schedule();
-	}
+                if (confChanged) {
+                    Display.getDefault().asyncExec(new Runnable() {
+                        @Override
+                        public void run() {
+                            MessageDialog dialog = new MessageDialog(null, "Restart required", null,
+                                    "Python Configuration has been updated automatically and requires a restart.",
+                                    MessageDialog.QUESTION, new String[] { "Restart Now", "Restart Later" }, 0);
+                            int result = dialog.open();
+                            if (result == 0) {
+                                PlatformUI.getWorkbench().restart();
+                            }
+                        }
+                    });
+                }
+
+                return Status.OK_STATUS;
+            }
+        };
+        job.schedule();
+    }
 }

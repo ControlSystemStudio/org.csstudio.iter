@@ -12,9 +12,9 @@ package org.csstudio.utility.dbdparser.exception;
  */
 public class DbdParsingException extends Exception {
 
-	private static final long serialVersionUID = -1744059558609516445L;
+    private static final long serialVersionUID = -1744059558609516445L;
 
-	public DbdParsingException(String msg) {
-		super(msg);
-	}
+    public DbdParsingException(String msg) {
+        super(msg);
+    }
 }

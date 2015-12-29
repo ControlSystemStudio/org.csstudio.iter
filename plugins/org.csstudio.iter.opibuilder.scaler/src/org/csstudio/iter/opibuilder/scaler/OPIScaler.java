@@ -31,35 +31,35 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 /**
- * 
+ *
  * <code>OPIScaler</code> scales the OPI by changing the position and size properties of all components.
  *
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
  *
  */
 public final class OPIScaler {
-    
+
     private OPIScaler() {
     }
-    
+
     /**
      * Scales the OPI.
-     * 
+     *
      * @param opiSourceFile the opi source file, which will be scaled
-     * @param opiDestinationFile the destination file, the scaled opi will be stored into 
+     * @param opiDestinationFile the destination file, the scaled opi will be stored into
      * @param scale the scale factor
-     * 
+     *
      * @throws ParserConfigurationException
      * @throws SAXException
      * @throws IOException
      * @throws TransformerException
      */
-    public static void scale(File opiSourceFile, File opiDestinationFile, double scale) 
+    public static void scale(File opiSourceFile, File opiDestinationFile, double scale)
             throws ParserConfigurationException, SAXException, IOException, TransformerException  {
         DocumentBuilderFactory factory =  DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document =  builder.parse(opiSourceFile);
-        
+
         NodeList nodeList = document.getDocumentElement().getChildNodes();
         updateAllNodes(nodeList, scale);
 
@@ -69,27 +69,27 @@ public final class OPIScaler {
         StreamResult result = new StreamResult(opiDestinationFile);
         transformer.transform(source, result);
     }
-    
+
     /**
      * Returns the dimension of the display in the source file.
-     * 
+     *
      * @param sourceFile the sourcefile to check the display dimension
      * @return the dimension of the source file
-     * 
+     *
      * @throws ParserConfigurationException
      * @throws SAXException
      * @throws IOException
      */
-    public static Dimension getDisplayDimension(File sourceFile) 
+    public static Dimension getDisplayDimension(File sourceFile)
             throws ParserConfigurationException, SAXException, IOException {
         DocumentBuilderFactory factory =  DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document =  builder.parse(sourceFile);
-        
+
         NodeList nodeList = document.getDocumentElement().getChildNodes();
         return getDisplayDimension(nodeList);
     }
-    
+
     private static Dimension getDisplayDimension(NodeList nodeList) {
         if (nodeList == null) return null;
         Node node;
@@ -111,21 +111,21 @@ public final class OPIScaler {
                 }
                 return new Dimension(width, height);
             }
-            
+
             Dimension dim = getDisplayDimension(node.getChildNodes());
             if (dim != null) return dim;
         }
         return null;
     }
-    
+
     private static void updateAllNodes(NodeList nodeList, double scale) {
         Node node;
         String name;
         for (int i = 0; i < nodeList.getLength(); i++) {
             node = nodeList.item(i);
             name = node.getNodeName();
-            
-            if ("x".equalsIgnoreCase(name) || "y".equalsIgnoreCase(name) 
+
+            if ("x".equalsIgnoreCase(name) || "y".equalsIgnoreCase(name)
                     || "width".equalsIgnoreCase(name) || "height".equalsIgnoreCase(name)) {
                 scale(node,scale);
             } else if ("points".equalsIgnoreCase(name)) {
@@ -143,27 +143,27 @@ public final class OPIScaler {
             updateAllNodes(node.getChildNodes(), scale);
         }
     }
-    
+
     private static boolean isDisplay(Node node) {
         String type  = node.getParentNode().getAttributes().getNamedItem("typeId").getLastChild().getTextContent();
 //        String type  = node.getAttributes().getNamedItem("typeId").getLastChild().getTextContent();
         return "org.csstudio.opibuilder.Display".equalsIgnoreCase(type);
     }
-    
+
     private static boolean isPolyLineOrPolygon(Node node) {
         String type  = node.getParentNode().getAttributes().getNamedItem("typeId").getLastChild().getTextContent();
         return "org.csstudio.opibuilder.widgets.polyline".equalsIgnoreCase(type)
                 || "org.csstudio.opibuilder.widgets.polygon".equalsIgnoreCase(type);
     }
-    
+
     private static void scale(Node node, double scale) {
         int val = Integer.parseInt(node.getLastChild().getTextContent().trim());
         val *= scale;
         node.getLastChild().setTextContent(String.valueOf(val));
     }
-     
+
     public static void main(String[] args) throws Exception {
-        
+
         File inFile = null;
         File outFile = null;
         double scale = 2.0;
@@ -198,7 +198,7 @@ public final class OPIScaler {
             if (line.isEmpty() || line.charAt(0) != 'y') {
                 System.out.println("Bye Bye!");
                 return;
-            }            
+            }
         }
         if (scale == 1.0) {
             System.out.println("The size is 1. The new file is a copy of the old one.");
@@ -206,12 +206,12 @@ public final class OPIScaler {
             System.out.println("Bye Bye!");
             return;
         }
-        
+
         scale(inFile, outFile, scale);
         System.out.println("Successfully created file '" + outFile.getAbsolutePath()+ "'.");
         System.out.println("Bye Bye!");
     }
-    
+
     private static final void printHelp() {
         System.out.println("**************************************************************************");
         System.out.println("*                                                                        *");
