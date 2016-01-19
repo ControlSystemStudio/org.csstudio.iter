@@ -1,0 +1,37 @@
+TYPE "sCTRL_SUP_CSS"
+	STRUCT
+		VAR1 : BYTE ;	
+	END_STRUCT ;	
+END_TYPE
+
+
+
+
+
+
+DATA_BLOCK "CodacStates"
+	STRUCT 	
+	Header : "CodacStatesHeader" ;	
+	CTRL_SUP_CSS : "sCTRL_SUP_CSS" ;
+   Footer : "CodacStatesFooter" ;	
+  END_STRUCT ;	
+BEGIN
+   Header.Length := 64;		// Length of "CodacStates" DB 
+   Header.InterfaceVersion := '01-19-2016 09:37:09' ; 
+END_DATA_BLOCK
+
+
+
+DATA_BLOCK "CodacChannels"
+  STRUCT 	
+   channel1 : "UCodacChannel" ;	//State and configuration
+   channel2 : "UCodacChannel" ;	//Simple commands
+  END_STRUCT ;	
+BEGIN
+   channel1.SEND_LEN := 64;		// Length of "CodacStates" DB 
+   channel1.RECV_LEN := 0 ;		// Length of "CodacConfiguration" DB
+   channel2.SEND_LEN := 0 ; 
+   channel2.RECV_LEN := 0 ;		// Length of "CodacCommands" DB 
+END_DATA_BLOCK
+
+
