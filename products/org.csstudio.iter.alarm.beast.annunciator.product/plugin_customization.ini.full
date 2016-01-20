@@ -1,10 +1,174 @@
 #/
-## Generated date: Tue Jan 12 17:20:50 UTC 2016
+## Generated date: Tue Jan 19 09:09:00 UTC 2016
 #/
 
 #/
 ## Organization (ITER) specific plugin preferences
 #/
+
+#/
+## org.csstudio.alarm.beast.annunciator 
+#/
+#/ # Default preferences for this plugin
+#/ 
+#/ JMS Connection URL
+# org.csstudio.alarm.beast.annunciator/jms_url= failover:(tcp://localhost:61616)
+#/ 
+#/ JMS Topics from which each MapMessage TEXT will be annunciated
+#/ Can be a list of comma-separated topics
+#/ For alarm messages, list the .._TALK topic of the alarm system root
+# org.csstudio.alarm.beast.annunciator/jms_topic=Annunciator_TALK
+#/ 
+#/ Translation file, for syntax see example file
+# org.csstudio.alarm.beast.annunciator/translations_file =
+#/ translations_file = /home/ek5/workspace/org.csstudio.sns.jms2speech/translations.txt
+#/ translations_file = /usr/local/css/JMS2SPEECH/translations.txt
+#/ 
+#/ List of severities, separated by comma, ordered by priority (highest first)
+# org.csstudio.alarm.beast.annunciator/jms_severity_priorities = FATAL,INVALID, ERROR, MAJOR, WARN, MINOR, INFO, OK, DEBUG
+#/ 
+#/ Threshold for ignoring flurry of messages. When more than this number
+#/ of messages queue up, a shorter "N more messages" info is annunciated
+# org.csstudio.alarm.beast.annunciator/threshold=3
+#/ 
+#/ Number of messages kept in Annunciator View
+# org.csstudio.alarm.beast.annunciator/message_buffer=50
+#/ 
+
+#<< org.csstudio.alarm.beast.annunciator/jms_severity_priorities = FATAL,INVALID, ERROR, MAJOR, WARN, MINOR, INFO, OK, DEBUG
+#<< org.csstudio.alarm.beast.annunciator/jms_topic=Annunciator_TALK
+org.csstudio.alarm.beast.annunciator/jms_topic=CODAC_AlarmHandler_TALK
+#<< org.csstudio.alarm.beast.annunciator/jms_url= failover:(tcp://localhost:61616)
+#<< org.csstudio.alarm.beast.annunciator/message_buffer=50
+#<< org.csstudio.alarm.beast.annunciator/threshold=3
+#<< org.csstudio.alarm.beast.annunciator/translations_file =
+
+#/
+## org.csstudio.autocomplete 
+#/
+#/ # Default preferences for this plugin
+#/ 
+#/ Default max result per provider
+# org.csstudio.autocomplete/default_max_results=10
+#/ 
+#/ Define ordered provider list by type and maximum number of expected results by provider
+#/ providers.TYPE=provider_name[,max_results];provider_name[,max_results]...
+#/ providers.ANOTHER_TYPE=provider_name[,max_results];provider_name[,max_results]...
+#/ Example:
+#/ providers.PV= History; SDD Database, 5; DB Files, 5
+# org.csstudio.autocomplete/providers.PV=History,10
+# org.csstudio.autocomplete/providers.Formula=History,10
+#/ 
+#/ Top results separators
+# org.csstudio.autocomplete/max_top_results=3
+# org.csstudio.autocomplete/separators=-.(
+
+#<< org.csstudio.autocomplete/default_max_results=10
+#<< org.csstudio.autocomplete/max_top_results=3
+#<< org.csstudio.autocomplete/providers.Formula=History,10
+#<< org.csstudio.autocomplete/providers.PV=History,10
+#<< org.csstudio.autocomplete/separators=-.(
+
+#/
+## org.csstudio.autocomplete.ui 
+#/
+#/ # Default preferences for this plugin
+#/ 
+#/ Default history storage capacity per type
+# org.csstudio.autocomplete.ui/history_size=100
+
+#<< org.csstudio.autocomplete.ui/history_size=100
+
+#/
+## org.csstudio.logging 
+#/
+#/ Logging preferences
+#/ 
+#/ Detail of message format: LOW, HIGH
+# org.csstudio.logging/detail=HIGH
+#/ 
+#/ Log level for console:
+#/ OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL
+#/ Technically also allows integer level as defined by java.util.logging.Level,
+#/ but suggestion is to use predefined level names
+# org.csstudio.logging/console_level=CONFIG
+#/ 
+#/ Log level for file:
+#/ OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL
+#/ Note that level for file cannot be higher than level for console
+# org.csstudio.logging/file_level=INFO
+#/ 
+#/ Path and pattern for log files
+#/ Leave empty to disable file logging
+# org.csstudio.logging/file_pattern=
+#/ 
+#/ Maximum number of bytes kept in file
+# org.csstudio.logging/file_bytes=8000
+#/ 
+#/ Maximum number of file kept in rotation
+# org.csstudio.logging/file_count=2
+#/ 
+#/ Log level for JMS:
+#/ OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL
+#/ Note that level for JMS cannot be higher than level for console
+# org.csstudio.logging/jms_level=INFO
+#/ 
+#/ URL of JMS used for logging: failover:(tcp://some_host.my.site.org:61616)
+#/ Leave empty to disable JMS logging
+# org.csstudio.logging/jms_url=
+#/ 
+#/ Topic to use for log messages
+# org.csstudio.logging/jms_topic=LOG
+
+#<< org.csstudio.logging/console_level=CONFIG
+#<< org.csstudio.logging/detail=HIGH
+#<< org.csstudio.logging/file_bytes=8000
+org.csstudio.logging/file_bytes=500000
+#<< org.csstudio.logging/file_count=2
+#<< org.csstudio.logging/file_level=INFO
+org.csstudio.logging/file_level=CONFIG
+#<< org.csstudio.logging/file_pattern=
+#<< org.csstudio.logging/jms_level=INFO
+org.csstudio.logging/jms_level=SEVERE
+#<< org.csstudio.logging/jms_topic=LOG
+#<< org.csstudio.logging/jms_url=
+
+#/
+## org.csstudio.utility.speech 
+#/
+#/ 
+#/ Annunciator class to use:
+#/ FreeTTS, JSAPI - Similar
+#/ External - Invokes an external command
+#/ UDP - Sends each annunciation as UDP packet
+# org.csstudio.utility.speech/annunciator=JSAPI
+#/ 
+#/ FreeTTS/JSAPI voices
+#/ "kevin" - default
+#/ "kevin16" - sounds clearer on some systems, but 'stutters' on RedHat 6
+#/ "alan" - Specialized, mostly for numbers, not generic text
+# org.csstudio.utility.speech/voice=kevin
+#/ 
+#/ External command used to perform the annunciation.
+#/ Must take the text as an argument.
+# org.csstudio.utility.speech/command=say
+#/ 
+#/ Host and Port used in UDP mode
+#/ Default uses global broadcast (discouraged)
+#/ Suggestion is to use subnet broadcast like
+#/ 128.1.2.255 or specific IP address of UDP server
+#/ 
+#/ For testing, netcat can be useful:
+#/ 
+#/ nc -l -p 6543 -u
+# org.csstudio.utility.speech/host=255.255.255.255
+# org.csstudio.utility.speech/port=6543
+
+#<< org.csstudio.utility.speech/annunciator=JSAPI
+#<< org.csstudio.utility.speech/command=say
+#<< org.csstudio.utility.speech/host=255.255.255.255
+#<< org.csstudio.utility.speech/port=6543
+#<< org.csstudio.utility.speech/voice=kevin
 
 #/
 ## Core plugins preferences

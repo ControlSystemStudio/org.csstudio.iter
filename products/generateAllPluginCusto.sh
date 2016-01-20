@@ -23,6 +23,7 @@ function generatePluginCusto {
   fi
   echo ====== Compute plugin_cutomization.ini.complete of $2
   cd "$SCRIPTPATH"
+  echo ./generate-plugin-custo.pl -r "$REPO_DIR" -o $1 -l "$REPO_DIR/org.csstudio.iter/products/$2/plugins.list" -p "$REPO_DIR/org.csstudio.iter/products/$2/plugin_customization.ini" -f "$REPO_DIR/org.csstudio.iter/products/$2/plugin_customization.ini.full"
   ./generate-plugin-custo.pl -r "$REPO_DIR" -o $1 -l "$REPO_DIR/org.csstudio.iter/products/$2/plugins.list" -p "$REPO_DIR/org.csstudio.iter/products/$2/plugin_customization.ini" -f "$REPO_DIR/org.csstudio.iter/products/$2/plugin_customization.ini.full"
   if [ "$?" -ne "0" ]; then
     echo Generation failed: $2. >&2
