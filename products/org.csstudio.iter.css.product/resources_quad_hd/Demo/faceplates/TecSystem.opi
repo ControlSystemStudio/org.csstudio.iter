@@ -1905,7 +1905,7 @@ $(trace_0_y_pv_value)</tooltip>
           <pv_value />
           <text>Submit</text>
           <scripts>
-            <path pathString="scripts/submit_TTnMSPo.js" checkConnect="true" sfe="true" seoe="false">
+            <path pathString="scripts/submit.js" checkConnect="true" sfe="true" seoe="false">
               <pv trig="true">loc://$(DID)_Submit(0)</pv>
               <pv trig="false">loc://_$(COMPONENT)-TT1MSPo(-1)</pv>
               <pv trig="false">loc://$(COMPONENT)-TT1MSPo(140)</pv>
@@ -2074,11 +2074,11 @@ $(trace_0_y_pv_value)</tooltip>
             <next_focus>2</next_focus>
             <input_label_stacking>0</input_label_stacking>
             <scripts>
-              <path pathString="scripts/init_TTnMSPo.js" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="scripts/init.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="false">loc://_$(COMPONENT)-TT1MSPo(-1)</pv>
                 <pv trig="true">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
               </path>
-              <path pathString="scripts/validate_TTnMSPo.js" checkConnect="true" sfe="true" seoe="false">
+              <path pathString="scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
                 <pv trig="true">loc://_$(COMPONENT)-TT1MSPo(-1)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT1SPoH(150)</pv>
@@ -2144,12 +2144,12 @@ $(pv_value)</tooltip>
             <text>######</text>
             <rotation_angle>0.0</rotation_angle>
             <scripts>
-              <path pathString="scripts/simul_TTnAtSPo.js" checkConnect="true" sfe="true" seoe="false">
+              <path pathString="scripts/simul.js" checkConnect="true" sfe="true" seoe="false">
                 <pv trig="true">loc://$(COMPONENT)-TT1MSPo(140)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
               </path>
-              <path pathString="scripts/end_TTnMSPo.js" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="scripts/end.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="false">loc://$(COMPONENT)-TT1MSPo(140)</pv>
                 <pv trig="true">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
@@ -2562,11 +2562,11 @@ Setpoint</text>
             <next_focus>2</next_focus>
             <input_label_stacking>0</input_label_stacking>
             <scripts>
-              <path pathString="scripts/init_TTnMSPo.js" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="scripts/init.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="false">loc://_$(COMPONENT)-TT2MSPo(-1)</pv>
                 <pv trig="true">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
               </path>
-              <path pathString="scripts/validate_TTnMSPo.js" checkConnect="true" sfe="true" seoe="false">
+              <path pathString="scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
                 <pv trig="true">loc://_$(COMPONENT)-TT2MSPo(-1)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT2SPoH(150)</pv>
@@ -2632,12 +2632,12 @@ $(pv_value)</tooltip>
             <text>######</text>
             <rotation_angle>0.0</rotation_angle>
             <scripts>
-              <path pathString="scripts/simul_TTnAtSPo.js" checkConnect="true" sfe="true" seoe="false">
+              <path pathString="scripts/simul.js" checkConnect="true" sfe="true" seoe="false">
                 <pv trig="true">loc://$(COMPONENT)-TT2MSPo(140)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
               </path>
-              <path pathString="scripts/end_TTnMSPo.js" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="scripts/end.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="false">loc://$(COMPONENT)-TT2MSPo(140)</pv>
                 <pv trig="true">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
@@ -2881,11 +2881,11 @@ $(pv_value)</tooltip>
             <next_focus>2</next_focus>
             <input_label_stacking>0</input_label_stacking>
             <scripts>
-              <path pathString="scripts/init_TTnMSPo.js" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="scripts/init.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="false">loc://_$(COMPONENT)-TT3MSPo(-1)</pv>
                 <pv trig="true">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
               </path>
-              <path pathString="scripts/validate_TTnMSPo.js" checkConnect="true" sfe="true" seoe="false">
+              <path pathString="scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
                 <pv trig="true">loc://_$(COMPONENT)-TT3MSPo(-1)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT3SPoH(150)</pv>
@@ -2951,12 +2951,12 @@ $(pv_value)</tooltip>
             <text>######</text>
             <rotation_angle>0.0</rotation_angle>
             <scripts>
-              <path pathString="scripts/simul_TTnAtSPo.js" checkConnect="true" sfe="true" seoe="false">
+              <path pathString="scripts/simul.js" checkConnect="true" sfe="true" seoe="false">
                 <pv trig="true">loc://$(COMPONENT)-TT3MSPo(140)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
               </path>
-              <path pathString="scripts/end_TTnMSPo.js" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="scripts/end.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="false">loc://$(COMPONENT)-TT3MSPo(140)</pv>
                 <pv trig="true">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
@@ -3200,11 +3200,11 @@ $(pv_value)</tooltip>
             <next_focus>2</next_focus>
             <input_label_stacking>0</input_label_stacking>
             <scripts>
-              <path pathString="scripts/init_TTnMSPo.js" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="scripts/init.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="false">loc://_$(COMPONENT)-TT4MSPo(-1)</pv>
                 <pv trig="true">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
               </path>
-              <path pathString="scripts/validate_TTnMSPo.js" checkConnect="true" sfe="true" seoe="false">
+              <path pathString="scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
                 <pv trig="true">loc://_$(COMPONENT)-TT4MSPo(-1)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT4SPoH(80)</pv>
@@ -3270,12 +3270,12 @@ $(pv_value)</tooltip>
             <text>######</text>
             <rotation_angle>0.0</rotation_angle>
             <scripts>
-              <path pathString="scripts/simul_TTnAtSPo.js" checkConnect="true" sfe="true" seoe="false">
+              <path pathString="scripts/simul.js" checkConnect="true" sfe="true" seoe="false">
                 <pv trig="true">loc://$(COMPONENT)-TT4MSPo(60)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
               </path>
-              <path pathString="scripts/end_TTnMSPo.js" checkConnect="true" sfe="false" seoe="false">
+              <path pathString="scripts/end.js" checkConnect="true" sfe="false" seoe="false">
                 <pv trig="false">loc://$(COMPONENT)-TT4MSPo(60)</pv>
                 <pv trig="true">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
                 <pv trig="false">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
@@ -3423,7 +3423,7 @@ $(pv_value)</tooltip>
           <pv_value />
           <text>Cancel</text>
           <scripts>
-            <path pathString="scripts/cancel_TTnMSPo.js" checkConnect="true" sfe="true" seoe="false">
+            <path pathString="scripts/cancel.js" checkConnect="true" sfe="true" seoe="false">
               <pv trig="true">loc://$(DID)_Cancel(0)</pv>
               <pv trig="false">loc://_$(COMPONENT)-TT1MSPo(-1)</pv>
               <pv trig="false">loc://$(COMPONENT)-TT1MSPo(140)</pv>
