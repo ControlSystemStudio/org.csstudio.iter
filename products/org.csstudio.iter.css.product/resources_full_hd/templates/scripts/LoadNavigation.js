@@ -262,7 +262,7 @@ function getALARM_ROOT(elt) {
 function addOPImacros(container, elt) {
 	var attribute = elt.getAttributeValue("opi_file");
 	if (attribute) {
-		var words = attribute.split(" ");
+		var words = attribute.match(/(?:[^\s']+|'[^']*')+/g);
 	
 		var i=0;
 		for (i in words) {

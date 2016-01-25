@@ -16,10 +16,10 @@
         <green>235</green>
         <blue>235</blue>
     </background>
-    <title_font>DejaVu Sans Mono|18|1</title_font>
-    <label_font>DejaVu Sans Mono|12|0</label_font>
-    <scale_font>DejaVu Sans Mono|12|0</scale_font>
-    <legend_font>DejaVu Sans Mono|10|0</legend_font>
+    <title_font>DejaVu Sans Mono|36|1</title_font>
+    <label_font>DejaVu Sans Mono|26|0</label_font>
+    <scale_font>DejaVu Sans Mono|26|0</scale_font>
+    <legend_font>DejaVu Sans Mono|20|0</legend_font>
     <axes>
         <axis>
             <visible>true</visible>
