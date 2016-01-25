@@ -7169,8 +7169,8 @@ $(pv_value)</tooltip>
               <foreground_color>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
-              <height>88</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VR Relief Valve.svg</image_file>
+              <height>68</height>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VR Relief Device 0.svg</image_file>
               <name>VR-7000</name>
               <no_animation>false</no_animation>
               <off_color>
@@ -7209,8 +7209,8 @@ $(pv_value)</tooltip>
               <widget_type>Boolean Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a73</wuid>
-              <x>16</x>
-              <y>51</y>
+              <x>15</x>
+              <y>60</y>
             </widget>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -10126,6 +10126,82 @@ $(pv_value)</tooltip>
             <wuid>7dc994ca:14b12277eae:-5a20</wuid>
             <x>1951</x>
             <y>770</y>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <actions hook="false" hook_all="false" />
+            <alarm_pulsing>false</alarm_pulsing>
+            <align_to_nearest_second>true</align_to_nearest_second>
+            <auto_size>true</auto_size>
+            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+            <background_color>
+              <color red="240" green="240" blue="240" />
+            </background_color>
+            <bit>0</bit>
+            <boolean_label_position>5</boolean_label_position>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <border_style>0</border_style>
+            <border_width>2</border_width>
+            <crop_bottom>0</crop_bottom>
+            <crop_left>0</crop_left>
+            <crop_right>0</crop_right>
+            <crop_top>0</crop_top>
+            <data_type>0</data_type>
+            <degree>0</degree>
+            <enabled>true</enabled>
+            <flip_horizontal>false</flip_horizontal>
+            <flip_vertical>false</flip_vertical>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+            </font>
+            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+            <foreground_color>
+              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+            </foreground_color>
+            <height>68</height>
+            <image_file>../SymbolLibrary/SVG/Fluid/Valves/VR Relief Valve 0.svg</image_file>
+            <name>VR-7000_2</name>
+            <no_animation>false</no_animation>
+            <off_color>
+              <color name="IO PV OFF" red="149" green="125" blue="71" />
+            </off_color>
+            <off_label>OFF</off_label>
+            <on_color>
+              <color name="IO PV ON" red="0" green="0" blue="255" />
+            </on_color>
+            <on_label>ON</on_label>
+            <permutation_matrix>
+              <row>
+                <col>1.0</col>
+                <col>0.0</col>
+              </row>
+              <row>
+                <col>0.0</col>
+                <col>1.0</col>
+              </row>
+            </permutation_matrix>
+            <pv_name>sim://flipflop(3)</pv_name>
+            <pv_value />
+            <rules />
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <scripts />
+            <show_boolean_label>false</show_boolean_label>
+            <stretch_to_fit>false</stretch_to_fit>
+            <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+            <transparency>true</transparency>
+            <visible>true</visible>
+            <widget_type>Boolean Symbol Image Monitor</widget_type>
+            <width>68</width>
+            <wuid>-29204d8b:152781f0007:699</wuid>
+            <x>2736</x>
+            <y>1654</y>
           </widget>
         </widget>
       </widget>
