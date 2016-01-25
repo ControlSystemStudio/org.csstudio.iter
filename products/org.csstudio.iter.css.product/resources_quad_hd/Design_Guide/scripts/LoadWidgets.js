@@ -62,7 +62,7 @@ function setSymbol(symbol, elt) {
 	symbol.setPropertyValue("x", elt.getAttributeValue("x"));
 	symbol.setPropertyValue("y", elt.getAttributeValue("y"));
 	if(statesCount > 2) {
-		symbol.setPropertyValue("pv_name", "sim://ramp(0," + (statesCount-1) + ",1,1)");
+		symbol.setPropertyValue("pv_name", "sim://ramp(0," + (statesCount-1) + ",1,5)");
 	}
 }
 

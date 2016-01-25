@@ -9,6 +9,7 @@ use FindBin qw($Bin);
 use Term::ANSIColor qw(:constants);
 use Cwd 'realpath';
 use File::Basename;
+use File::stat;
 
 =head1 NAME
 
@@ -296,14 +297,21 @@ print $customFile "#/\n";
 print $customFile "\n";
 for my $plugin(@plugins) {
   # search first is products/ORGANIZATION/plugins for site specific plugins
-  my $prefFiles = "$repo/products/$organization/plugins/$plugin/preferences.ini";
-  if ( ! -f "$prefFiles" && $organization eq "ITER") {
-    if(($plugin =~ m/org.csstudio.scan/)
-        || ($plugin =~ m/org.csstudio.imagej/)) {
-      # Search in products/SNS/plugins for o.c.scan.* and o.c.imagej plugins to get SNS version (a version exists also in products/FRIB)
-      $prefFiles = "$repo/products/SNS/plugins/$plugin/preferences.ini";
-    } else {
-      $prefFiles = "$repo/products/DESY/plugins/$plugin/preferences.ini";
+  my $prefFiles = "$repo/org.csstudio.iter/products/$plugin/preferences.ini";
+
+  if ( ! -f "$prefFiles") {
+    my $tmp = `find "$repo/cs-studio/core" -name "$plugin"`;
+    chomp $tmp;
+    if ( ! -d "$tmp") {
+      $tmp = `find "$repo/cs-studio/applications" -name "$plugin"`;
+      chomp $tmp;
+    }
+    if ( ! -d "$tmp") {
+      $tmp = `find "$repo/cs-studio/products" -name "$plugin"`;
+      chomp $tmp;
+    }
+    if ( -d "$tmp") {
+      $prefFiles = "${tmp}/preferences.ini";
     }
   }
   if ( -f "$prefFiles") {

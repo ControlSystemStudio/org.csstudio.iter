@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.0.0.201512210936</boy_version>
+  <boy_version>5.0.0.201601201053</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -180,7 +180,6 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <show_scrollbar>false</show_scrollbar>
           <text>GLOBAL STATUSES</text>
           <tooltip>GLOBAL STATUSES</tooltip>
           <transparent>true</transparent>
@@ -302,7 +301,6 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <show_scrollbar>false</show_scrollbar>
           <text>WIDGETS</text>
           <tooltip>MIMIC TITLE</tooltip>
           <transparent>true</transparent>
@@ -384,7 +382,6 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <show_scrollbar>false</show_scrollbar>
           <text>UTC - TIME</text>
           <tooltip>UTC - TIME</tooltip>
           <transparent>true</transparent>
@@ -633,12 +630,10 @@
                 <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <off_label>Not healthy</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <on_label>Healthy</on_label>
-              <on_state></on_state>
               <pv_name>sim://const(1)</pv_name>
               <pv_value />
               <rules />
@@ -775,12 +770,10 @@ $(pv_value)</tooltip>
                 <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <off_label>Not healthy</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <on_label>Healthy</on_label>
-              <on_state></on_state>
               <pv_name>sim://const(0)</pv_name>
               <pv_value />
               <rules />
@@ -917,12 +910,10 @@ $(pv_value)</tooltip>
                 <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <off_label>Not healthy</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <on_label>Healthy</on_label>
-              <on_state></on_state>
               <pv_name>sim://const(1)</pv_name>
               <pv_value />
               <rules />
@@ -1059,12 +1050,10 @@ $(pv_value)</tooltip>
                 <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <off_label>Not healthy</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <on_label>Healthy</on_label>
-              <on_state></on_state>
               <pv_name>sim://const(0)</pv_name>
               <pv_value />
               <rules />
@@ -1810,12 +1799,10 @@ to enter the Label Text</text>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
               <off_label>OFF</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
               <on_label>ON</on_label>
-              <on_state></on_state>
               <pv_name>sim://const(0)</pv_name>
               <pv_value />
               <rules />
@@ -1867,10 +1854,8 @@ $(pv_value)</tooltip>
               <no_animation>false</no_animation>
               <off_image>../SymbolLibrary/SVG/Fluid/Pumps/PL Centrifugal Pump Off.svg</off_image>
               <off_label>OFF</off_label>
-              <off_state></off_state>
               <on_image>../SymbolLibrary/SVG/Fluid/Pumps/PL Centrifugal Pump On.svg</on_image>
               <on_label>ON</on_label>
-              <on_state></on_state>
               <pv_name>sim://const(0)</pv_name>
               <pv_value />
               <rules />
@@ -1926,12 +1911,10 @@ $(pv_value)</tooltip>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
               <off_label>OFF</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
               <on_label>ON</on_label>
-              <on_state></on_state>
               <pv_name>sim://const(1)</pv_name>
               <pv_value />
               <rules />
@@ -1983,10 +1966,8 @@ $(pv_value)</tooltip>
               <no_animation>false</no_animation>
               <off_image>../SymbolLibrary/SVG/Fluid/Pumps/PL Centrifugal Pump Off.svg</off_image>
               <off_label>OFF</off_label>
-              <off_state></off_state>
               <on_image>../SymbolLibrary/SVG/Fluid/Pumps/PL Centrifugal Pump On.svg</on_image>
               <on_label>ON</on_label>
-              <on_state></on_state>
               <pv_name>sim://const(1)</pv_name>
               <pv_value />
               <rules />
@@ -2517,11 +2498,6 @@ $(pv_value)</tooltip>
             <y>605</y>
             <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
               <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
                 <color name="IO Border" red="0" green="0" blue="0" />
@@ -2562,7 +2538,6 @@ $(pv_value)</tooltip>
               <y>13</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
-              <actions hook="false" hook_all="false" />
               <actions_from_pv>true</actions_from_pv>
               <alarm_pulsing>false</alarm_pulsing>
               <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
@@ -2639,8 +2614,6 @@ $(pv_value)</tooltip>
               <input_label_stacking>0</input_label_stacking>
               <input_label_text></input_label_text>
               <limits_from_pv>true</limits_from_pv>
-              <maximum>1.7976931348623157E308</maximum>
-              <minimum>-1.7976931348623157E308</minimum>
               <multiline_input>false</multiline_input>
               <name>Text Input Template</name>
               <next_focus>2</next_focus>
@@ -2650,7 +2623,6 @@ $(pv_value)</tooltip>
               <pv_name>loc://toto(10687.891)</pv_name>
               <pv_value />
               <read_only>false</read_only>
-              <rotation_angle>0.0</rotation_angle>
               <rules />
               <scale_options>
                 <width_scalable>false</width_scalable>
@@ -2658,16 +2630,12 @@ $(pv_value)</tooltip>
                 <keep_wh_ratio>false</keep_wh_ratio>
               </scale_options>
               <scripts />
-              <selector_type>0</selector_type>
-              <show_h_scroll>false</show_h_scroll>
               <show_native_border>false</show_native_border>
               <show_units>true</show_units>
-              <show_v_scroll>false</show_v_scroll>
               <style>1</style>
               <text>######</text>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-              <transparent>false</transparent>
               <visible>true</visible>
               <widget_type>Text Input</widget_type>
               <width>103</width>
@@ -3037,12 +3005,10 @@ $(pv_value)</tooltip>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
               <off_label>OFF</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
               <on_label>ON</on_label>
-              <on_state></on_state>
               <password></password>
               <push_action_index>0</push_action_index>
               <pv_name>loc://constant0(0)</pv_name>
@@ -3099,12 +3065,10 @@ $(pv_value)</tooltip>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
               <off_label>OFF</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
               <on_label>ON</on_label>
-              <on_state></on_state>
               <password></password>
               <push_action_index>0</push_action_index>
               <pv_name>loc://constant1(1)</pv_name>
@@ -3160,12 +3124,10 @@ $(pv_value)</tooltip>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
               <off_label>OFF</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
               <on_label>ON</on_label>
-              <on_state></on_state>
               <password></password>
               <push_action_index>0</push_action_index>
               <pv_name>loc://constant0(0)</pv_name>
@@ -3223,12 +3185,10 @@ $(pv_value)</tooltip>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
               <off_label>OFF</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
               <on_label>ON</on_label>
-              <on_state></on_state>
               <password></password>
               <push_action_index>0</push_action_index>
               <pv_name>loc://constant1(1)</pv_name>
@@ -3540,12 +3500,10 @@ $(pv_value)</tooltip>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
               <off_label>OFF</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
               <on_label>ON</on_label>
-              <on_state></on_state>
               <password></password>
               <permutation_matrix>
                 <row>
@@ -3624,12 +3582,10 @@ $(pv_value)</tooltip>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
               <off_label>OFF</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
               <on_label>ON</on_label>
-              <on_state></on_state>
               <password></password>
               <permutation_matrix>
                 <row>
@@ -3836,7 +3792,6 @@ $(pv_value)</tooltip>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
-        <show_scrollbar>false</show_scrollbar>
         <text></text>
         <tooltip>CONTROL AREA - FACEPLATES</tooltip>
         <transparent>true</transparent>
@@ -3872,7 +3827,7 @@ $(pv_value)</tooltip>
           <include_parent_macros>true</include_parent_macros>
         </macros>
         <name>Faceplate</name>
-        <opi_file></opi_file>
+        <opi_file>../templates/ControlPane.opi</opi_file>
         <resize_behaviour>0</resize_behaviour>
         <rules />
         <scale_options>

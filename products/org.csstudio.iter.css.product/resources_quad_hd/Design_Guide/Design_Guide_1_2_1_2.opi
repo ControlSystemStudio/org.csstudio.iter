@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.0.0.201512210936</boy_version>
+  <boy_version>5.0.0.201601211726</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -1658,7 +1658,7 @@ $(pv_value)</tooltip>
               <x>92</x>
               <y>17</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -1667,7 +1667,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>5</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -1679,7 +1678,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>270</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -1692,17 +1690,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>VG-6016</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Hand Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>0.0</col>
@@ -1728,87 +1726,11 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5b09</wuid>
-              <x>87</x>
+              <x>90</x>
               <y>105</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>3</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>270</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>87</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Hand Actuator.svg</image_file>
-              <name>VG-6016</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-                <row>
-                  <col>-1.0</col>
-                  <col>0.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>108</width>
-              <wuid>7dc994ca:14b12277eae:-5b08</wuid>
-              <x>0</x>
-              <y>95</y>
             </widget>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -1851,7 +1773,7 @@ $(pv_value)</tooltip>
             <wuid>7dc994ca:14b12277eae:-5b07</wuid>
             <x>2016</x>
             <y>425</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -1860,7 +1782,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>5</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -1872,7 +1793,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>270</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -1885,17 +1805,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>VG-6017</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Hand Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>0.0</col>
@@ -1921,10 +1841,10 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5b06</wuid>
-              <x>84</x>
+              <x>86</x>
               <y>100</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
@@ -2036,82 +1956,6 @@ $(pv_value)</tooltip>
               <wuid>7dc994ca:14b12277eae:-5b04</wuid>
               <x>90</x>
               <y>17</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>3</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>270</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>87</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Hand Actuator.svg</image_file>
-              <name>VG-6017</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-                <row>
-                  <col>-1.0</col>
-                  <col>0.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>108</width>
-              <wuid>7dc994ca:14b12277eae:-5b02</wuid>
-              <x>0</x>
-              <y>90</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -2311,7 +2155,7 @@ $(pv_value)</tooltip>
             <wuid>7dc994ca:14b12277eae:-5aff</wuid>
             <x>1091</x>
             <y>561</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -2320,7 +2164,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>9</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -2332,7 +2175,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>270</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -2345,17 +2187,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>VG-500x</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Hand Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>0.0</col>
@@ -2381,13 +2223,13 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5afe</wuid>
-              <x>87</x>
+              <x>91</x>
               <y>126</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -2396,7 +2238,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>9</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -2408,7 +2249,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>270</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -2421,17 +2261,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>VG-500x</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Hand Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>0.0</col>
@@ -2457,7 +2297,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5afd</wuid>
               <x>250</x>
@@ -2654,158 +2494,6 @@ $(pv_value)</tooltip>
               <wuid>7dc994ca:14b12277eae:-5af9</wuid>
               <x>241</x>
               <y>89</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>3</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>270</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>87</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Hand Actuator.svg</image_file>
-              <name>VG-500x</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-                <row>
-                  <col>-1.0</col>
-                  <col>0.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>108</width>
-              <wuid>7dc994ca:14b12277eae:-5af8</wuid>
-              <x>0</x>
-              <y>116</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>3</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>270</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>87</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Hand Actuator.svg</image_file>
-              <name>VG-500x</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-                <row>
-                  <col>-1.0</col>
-                  <col>0.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>108</width>
-              <wuid>7dc994ca:14b12277eae:-5af7</wuid>
-              <x>165</x>
-              <y>116</y>
             </widget>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
@@ -3313,7 +3001,7 @@ HNB-3LV</text>
               <wuid>7dc994ca:14b12277eae:-5aec</wuid>
               <x>21</x>
               <y>19</y>
-              <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+              <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
                 <actions hook="false" hook_all="false" />
                 <alarm_pulsing>false</alarm_pulsing>
                 <align_to_nearest_second>true</align_to_nearest_second>
@@ -3322,7 +3010,6 @@ HNB-3LV</text>
                 <background_color>
                   <color red="240" green="240" blue="240" />
                 </background_color>
-                <bit>0</bit>
                 <boolean_label_position>5</boolean_label_position>
                 <border_alarm_sensitive>false</border_alarm_sensitive>
                 <border_color>
@@ -3334,7 +3021,6 @@ HNB-3LV</text>
                 <crop_left>0</crop_left>
                 <crop_right>0</crop_right>
                 <crop_top>0</crop_top>
-                <data_type>0</data_type>
                 <degree>0</degree>
                 <enabled>true</enabled>
                 <flip_horizontal>false</flip_horizontal>
@@ -3347,17 +3033,17 @@ HNB-3LV</text>
                   <color name="IO InputPV Fg" red="0" green="0" blue="0" />
                 </foreground_color>
                 <height>68</height>
-                <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-                <name>VG-1405</name>
+                <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Pneumatic Valve 0.svg</image_file>
+                <items />
+                <items_from_pv>true</items_from_pv>
+                <name>Multistate Symbol Image Monitor Template</name>
                 <no_animation>false</no_animation>
                 <off_color>
                   <color name="IO PV OFF" red="149" green="125" blue="71" />
                 </off_color>
-                <off_label>OFF</off_label>
                 <on_color>
                   <color name="IO PV ON" red="0" green="0" blue="255" />
                 </on_color>
-                <on_label>ON</on_label>
                 <permutation_matrix>
                   <row>
                     <col>1.0</col>
@@ -3383,11 +3069,11 @@ HNB-3LV</text>
 $(pv_value)</tooltip>
                 <transparency>true</transparency>
                 <visible>true</visible>
-                <widget_type>Boolean Symbol Image Monitor</widget_type>
+                <widget_type>Multistate Symbol Image Monitor</widget_type>
                 <width>68</width>
                 <wuid>7dc994ca:14b12277eae:-5aeb</wuid>
                 <x>179</x>
-                <y>84</y>
+                <y>86</y>
               </widget>
               <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
                 <actions hook="false" hook_all="false" />
@@ -3464,82 +3150,6 @@ $(pv_value)</tooltip>
                 <wuid>7dc994ca:14b12277eae:-5ae9</wuid>
                 <x>0</x>
                 <y>77</y>
-              </widget>
-              <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-                <actions hook="false" hook_all="false" />
-                <alarm_pulsing>false</alarm_pulsing>
-                <align_to_nearest_second>true</align_to_nearest_second>
-                <auto_size>true</auto_size>
-                <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-                <background_color>
-                  <color red="240" green="240" blue="240" />
-                </background_color>
-                <bit>0</bit>
-                <boolean_label_position>1</boolean_label_position>
-                <border_alarm_sensitive>false</border_alarm_sensitive>
-                <border_color>
-                  <color name="IO Border" red="0" green="0" blue="0" />
-                </border_color>
-                <border_style>0</border_style>
-                <border_width>2</border_width>
-                <crop_bottom>0</crop_bottom>
-                <crop_left>0</crop_left>
-                <crop_right>0</crop_right>
-                <crop_top>0</crop_top>
-                <data_type>0</data_type>
-                <degree>0</degree>
-                <enabled>true</enabled>
-                <flip_horizontal>false</flip_horizontal>
-                <flip_vertical>false</flip_vertical>
-                <font>
-                  <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-                </font>
-                <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-                <foreground_color>
-                  <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-                </foreground_color>
-                <height>108</height>
-                <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Cylinder Piston.svg</image_file>
-                <name>VG-1405</name>
-                <no_animation>false</no_animation>
-                <off_color>
-                  <color name="IO PV OFF" red="149" green="125" blue="71" />
-                </off_color>
-                <off_label>OFF</off_label>
-                <on_color>
-                  <color name="IO PV ON" red="0" green="0" blue="255" />
-                </on_color>
-                <on_label>ON</on_label>
-                <permutation_matrix>
-                  <row>
-                    <col>1.0</col>
-                    <col>0.0</col>
-                  </row>
-                  <row>
-                    <col>0.0</col>
-                    <col>1.0</col>
-                  </row>
-                </permutation_matrix>
-                <pv_name></pv_name>
-                <pv_value />
-                <rules />
-                <scale_options>
-                  <width_scalable>false</width_scalable>
-                  <height_scalable>false</height_scalable>
-                  <keep_wh_ratio>false</keep_wh_ratio>
-                </scale_options>
-                <scripts />
-                <show_boolean_label>false</show_boolean_label>
-                <stretch_to_fit>false</stretch_to_fit>
-                <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-                <transparency>true</transparency>
-                <visible>true</visible>
-                <widget_type>Boolean Symbol Image Monitor</widget_type>
-                <width>87</width>
-                <wuid>7dc994ca:14b12277eae:-5ae8</wuid>
-                <x>169</x>
-                <y>0</y>
               </widget>
               <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
                 <actions hook="false" hook_all="false" />
@@ -3997,7 +3607,7 @@ $(pv_value)</tooltip>
               <wuid>7dc994ca:14b12277eae:-5adf</wuid>
               <x>185</x>
               <y>21</y>
-              <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+              <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
                 <actions hook="false" hook_all="false" />
                 <alarm_pulsing>false</alarm_pulsing>
                 <align_to_nearest_second>true</align_to_nearest_second>
@@ -4006,7 +3616,6 @@ $(pv_value)</tooltip>
                 <background_color>
                   <color red="240" green="240" blue="240" />
                 </background_color>
-                <bit>0</bit>
                 <boolean_label_position>5</boolean_label_position>
                 <border_alarm_sensitive>false</border_alarm_sensitive>
                 <border_color>
@@ -4018,7 +3627,6 @@ $(pv_value)</tooltip>
                 <crop_left>0</crop_left>
                 <crop_right>0</crop_right>
                 <crop_top>0</crop_top>
-                <data_type>0</data_type>
                 <degree>0</degree>
                 <enabled>true</enabled>
                 <flip_horizontal>false</flip_horizontal>
@@ -4031,17 +3639,17 @@ $(pv_value)</tooltip>
                   <color name="IO InputPV Fg" red="0" green="0" blue="0" />
                 </foreground_color>
                 <height>68</height>
-                <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction On.svg</image_file>
-                <name>VG-1404</name>
+                <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Pneumatic Valve 0.svg</image_file>
+                <items />
+                <items_from_pv>true</items_from_pv>
+                <name>Multistate Symbol Image Monitor Template</name>
                 <no_animation>false</no_animation>
                 <off_color>
                   <color name="IO PV OFF" red="149" green="125" blue="71" />
                 </off_color>
-                <off_label>OFF</off_label>
                 <on_color>
                   <color name="IO PV ON" red="0" green="0" blue="255" />
                 </on_color>
-                <on_label>ON</on_label>
                 <permutation_matrix>
                   <row>
                     <col>1.0</col>
@@ -4067,87 +3675,11 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
                 <transparency>true</transparency>
                 <visible>true</visible>
-                <widget_type>Boolean Symbol Image Monitor</widget_type>
+                <widget_type>Multistate Symbol Image Monitor</widget_type>
                 <width>68</width>
                 <wuid>7dc994ca:14b12277eae:-5ade</wuid>
                 <x>10</x>
-                <y>84</y>
-              </widget>
-              <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-                <actions hook="false" hook_all="false" />
-                <alarm_pulsing>false</alarm_pulsing>
-                <align_to_nearest_second>true</align_to_nearest_second>
-                <auto_size>true</auto_size>
-                <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-                <background_color>
-                  <color red="240" green="240" blue="240" />
-                </background_color>
-                <bit>0</bit>
-                <boolean_label_position>1</boolean_label_position>
-                <border_alarm_sensitive>false</border_alarm_sensitive>
-                <border_color>
-                  <color name="IO Border" red="0" green="0" blue="0" />
-                </border_color>
-                <border_style>0</border_style>
-                <border_width>2</border_width>
-                <crop_bottom>0</crop_bottom>
-                <crop_left>0</crop_left>
-                <crop_right>0</crop_right>
-                <crop_top>0</crop_top>
-                <data_type>0</data_type>
-                <degree>0</degree>
-                <enabled>true</enabled>
-                <flip_horizontal>false</flip_horizontal>
-                <flip_vertical>false</flip_vertical>
-                <font>
-                  <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-                </font>
-                <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-                <foreground_color>
-                  <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-                </foreground_color>
-                <height>108</height>
-                <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Cylinder Piston.svg</image_file>
-                <name>VG-1404</name>
-                <no_animation>false</no_animation>
-                <off_color>
-                  <color name="IO PV OFF" red="149" green="125" blue="71" />
-                </off_color>
-                <off_label>OFF</off_label>
-                <on_color>
-                  <color name="IO PV ON" red="0" green="0" blue="255" />
-                </on_color>
-                <on_label>ON</on_label>
-                <permutation_matrix>
-                  <row>
-                    <col>1.0</col>
-                    <col>0.0</col>
-                  </row>
-                  <row>
-                    <col>0.0</col>
-                    <col>1.0</col>
-                  </row>
-                </permutation_matrix>
-                <pv_name></pv_name>
-                <pv_value />
-                <rules />
-                <scale_options>
-                  <width_scalable>false</width_scalable>
-                  <height_scalable>false</height_scalable>
-                  <keep_wh_ratio>false</keep_wh_ratio>
-                </scale_options>
-                <scripts />
-                <show_boolean_label>false</show_boolean_label>
-                <stretch_to_fit>false</stretch_to_fit>
-                <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-                <transparency>true</transparency>
-                <visible>true</visible>
-                <widget_type>Boolean Symbol Image Monitor</widget_type>
-                <width>87</width>
-                <wuid>7dc994ca:14b12277eae:-5add</wuid>
-                <x>0</x>
-                <y>0</y>
+                <y>86</y>
               </widget>
               <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
                 <actions hook="false" hook_all="false" />
@@ -4605,7 +4137,7 @@ NBS-HV</text>
               <wuid>7dc994ca:14b12277eae:-5ad3</wuid>
               <x>185</x>
               <y>27</y>
-              <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+              <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
                 <actions hook="false" hook_all="false" />
                 <alarm_pulsing>false</alarm_pulsing>
                 <align_to_nearest_second>true</align_to_nearest_second>
@@ -4614,83 +4146,6 @@ NBS-HV</text>
                 <background_color>
                   <color red="240" green="240" blue="240" />
                 </background_color>
-                <bit>0</bit>
-                <boolean_label_position>1</boolean_label_position>
-                <border_alarm_sensitive>false</border_alarm_sensitive>
-                <border_color>
-                  <color name="IO Border" red="0" green="0" blue="0" />
-                </border_color>
-                <border_style>0</border_style>
-                <border_width>2</border_width>
-                <crop_bottom>0</crop_bottom>
-                <crop_left>0</crop_left>
-                <crop_right>0</crop_right>
-                <crop_top>0</crop_top>
-                <data_type>0</data_type>
-                <degree>0</degree>
-                <enabled>true</enabled>
-                <flip_horizontal>false</flip_horizontal>
-                <flip_vertical>false</flip_vertical>
-                <font>
-                  <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-                </font>
-                <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-                <foreground_color>
-                  <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-                </foreground_color>
-                <height>108</height>
-                <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Cylinder Piston.svg</image_file>
-                <name>VG-1403</name>
-                <no_animation>false</no_animation>
-                <off_color>
-                  <color name="IO PV OFF" red="149" green="125" blue="71" />
-                </off_color>
-                <off_label>OFF</off_label>
-                <on_color>
-                  <color name="IO PV ON" red="0" green="0" blue="255" />
-                </on_color>
-                <on_label>ON</on_label>
-                <permutation_matrix>
-                  <row>
-                    <col>1.0</col>
-                    <col>0.0</col>
-                  </row>
-                  <row>
-                    <col>0.0</col>
-                    <col>1.0</col>
-                  </row>
-                </permutation_matrix>
-                <pv_name></pv_name>
-                <pv_value />
-                <rules />
-                <scale_options>
-                  <width_scalable>false</width_scalable>
-                  <height_scalable>false</height_scalable>
-                  <keep_wh_ratio>false</keep_wh_ratio>
-                </scale_options>
-                <scripts />
-                <show_boolean_label>false</show_boolean_label>
-                <stretch_to_fit>false</stretch_to_fit>
-                <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-                <transparency>true</transparency>
-                <visible>true</visible>
-                <widget_type>Boolean Symbol Image Monitor</widget_type>
-                <width>87</width>
-                <wuid>7dc994ca:14b12277eae:-5ad2</wuid>
-                <x>0</x>
-                <y>0</y>
-              </widget>
-              <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-                <actions hook="false" hook_all="false" />
-                <alarm_pulsing>false</alarm_pulsing>
-                <align_to_nearest_second>true</align_to_nearest_second>
-                <auto_size>true</auto_size>
-                <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-                <background_color>
-                  <color red="240" green="240" blue="240" />
-                </background_color>
-                <bit>0</bit>
                 <boolean_label_position>5</boolean_label_position>
                 <border_alarm_sensitive>false</border_alarm_sensitive>
                 <border_color>
@@ -4702,7 +4157,6 @@ $(pv_value)</tooltip>
                 <crop_left>0</crop_left>
                 <crop_right>0</crop_right>
                 <crop_top>0</crop_top>
-                <data_type>0</data_type>
                 <degree>0</degree>
                 <enabled>true</enabled>
                 <flip_horizontal>false</flip_horizontal>
@@ -4715,17 +4169,17 @@ $(pv_value)</tooltip>
                   <color name="IO InputPV Fg" red="0" green="0" blue="0" />
                 </foreground_color>
                 <height>68</height>
-                <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction On.svg</image_file>
-                <name>VG-1403</name>
+                <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Pneumatic Valve 0.svg</image_file>
+                <items />
+                <items_from_pv>true</items_from_pv>
+                <name>Multistate Symbol Image Monitor Template</name>
                 <no_animation>false</no_animation>
                 <off_color>
                   <color name="IO PV OFF" red="149" green="125" blue="71" />
                 </off_color>
-                <off_label>OFF</off_label>
                 <on_color>
                   <color name="IO PV ON" red="0" green="0" blue="255" />
                 </on_color>
-                <on_label>ON</on_label>
                 <permutation_matrix>
                   <row>
                     <col>1.0</col>
@@ -4751,11 +4205,11 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
                 <transparency>true</transparency>
                 <visible>true</visible>
-                <widget_type>Boolean Symbol Image Monitor</widget_type>
+                <widget_type>Multistate Symbol Image Monitor</widget_type>
                 <width>68</width>
                 <wuid>7dc994ca:14b12277eae:-5ad1</wuid>
                 <x>10</x>
-                <y>84</y>
+                <y>82</y>
               </widget>
               <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
                 <actions hook="false" hook_all="false" />
@@ -5213,7 +4667,7 @@ HNB-2LV</text>
               <wuid>7dc994ca:14b12277eae:-5ac7</wuid>
               <x>185</x>
               <y>25</y>
-              <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+              <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
                 <actions hook="false" hook_all="false" />
                 <alarm_pulsing>false</alarm_pulsing>
                 <align_to_nearest_second>true</align_to_nearest_second>
@@ -5222,83 +4676,6 @@ HNB-2LV</text>
                 <background_color>
                   <color red="240" green="240" blue="240" />
                 </background_color>
-                <bit>0</bit>
-                <boolean_label_position>1</boolean_label_position>
-                <border_alarm_sensitive>false</border_alarm_sensitive>
-                <border_color>
-                  <color name="IO Border" red="0" green="0" blue="0" />
-                </border_color>
-                <border_style>0</border_style>
-                <border_width>2</border_width>
-                <crop_bottom>0</crop_bottom>
-                <crop_left>0</crop_left>
-                <crop_right>0</crop_right>
-                <crop_top>0</crop_top>
-                <data_type>0</data_type>
-                <degree>0</degree>
-                <enabled>true</enabled>
-                <flip_horizontal>false</flip_horizontal>
-                <flip_vertical>false</flip_vertical>
-                <font>
-                  <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-                </font>
-                <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-                <foreground_color>
-                  <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-                </foreground_color>
-                <height>108</height>
-                <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Cylinder Piston.svg</image_file>
-                <name>VG-1402</name>
-                <no_animation>false</no_animation>
-                <off_color>
-                  <color name="IO PV OFF" red="149" green="125" blue="71" />
-                </off_color>
-                <off_label>OFF</off_label>
-                <on_color>
-                  <color name="IO PV ON" red="0" green="0" blue="255" />
-                </on_color>
-                <on_label>ON</on_label>
-                <permutation_matrix>
-                  <row>
-                    <col>1.0</col>
-                    <col>0.0</col>
-                  </row>
-                  <row>
-                    <col>0.0</col>
-                    <col>1.0</col>
-                  </row>
-                </permutation_matrix>
-                <pv_name></pv_name>
-                <pv_value />
-                <rules />
-                <scale_options>
-                  <width_scalable>false</width_scalable>
-                  <height_scalable>false</height_scalable>
-                  <keep_wh_ratio>false</keep_wh_ratio>
-                </scale_options>
-                <scripts />
-                <show_boolean_label>false</show_boolean_label>
-                <stretch_to_fit>false</stretch_to_fit>
-                <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-                <transparency>true</transparency>
-                <visible>true</visible>
-                <widget_type>Boolean Symbol Image Monitor</widget_type>
-                <width>87</width>
-                <wuid>7dc994ca:14b12277eae:-5ac6</wuid>
-                <x>0</x>
-                <y>0</y>
-              </widget>
-              <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-                <actions hook="false" hook_all="false" />
-                <alarm_pulsing>false</alarm_pulsing>
-                <align_to_nearest_second>true</align_to_nearest_second>
-                <auto_size>true</auto_size>
-                <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-                <background_color>
-                  <color red="240" green="240" blue="240" />
-                </background_color>
-                <bit>0</bit>
                 <boolean_label_position>5</boolean_label_position>
                 <border_alarm_sensitive>false</border_alarm_sensitive>
                 <border_color>
@@ -5310,7 +4687,6 @@ $(pv_value)</tooltip>
                 <crop_left>0</crop_left>
                 <crop_right>0</crop_right>
                 <crop_top>0</crop_top>
-                <data_type>0</data_type>
                 <degree>0</degree>
                 <enabled>true</enabled>
                 <flip_horizontal>false</flip_horizontal>
@@ -5323,17 +4699,17 @@ $(pv_value)</tooltip>
                   <color name="IO InputPV Fg" red="0" green="0" blue="0" />
                 </foreground_color>
                 <height>68</height>
-                <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction On.svg</image_file>
-                <name>VG-1402</name>
+                <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Pneumatic Valve 0.svg</image_file>
+                <items />
+                <items_from_pv>true</items_from_pv>
+                <name>Multistate Symbol Image Monitor Template</name>
                 <no_animation>false</no_animation>
                 <off_color>
                   <color name="IO PV OFF" red="149" green="125" blue="71" />
                 </off_color>
-                <off_label>OFF</off_label>
                 <on_color>
                   <color name="IO PV ON" red="0" green="0" blue="255" />
                 </on_color>
-                <on_label>ON</on_label>
                 <permutation_matrix>
                   <row>
                     <col>1.0</col>
@@ -5359,7 +4735,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
                 <transparency>true</transparency>
                 <visible>true</visible>
-                <widget_type>Boolean Symbol Image Monitor</widget_type>
+                <widget_type>Multistate Symbol Image Monitor</widget_type>
                 <width>68</width>
                 <wuid>7dc994ca:14b12277eae:-5ac5</wuid>
                 <x>10</x>
@@ -5821,7 +5197,7 @@ HNB-1LV</text>
               <wuid>7dc994ca:14b12277eae:-5abb</wuid>
               <x>185</x>
               <y>27</y>
-              <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+              <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
                 <actions hook="false" hook_all="false" />
                 <alarm_pulsing>false</alarm_pulsing>
                 <align_to_nearest_second>true</align_to_nearest_second>
@@ -5830,83 +5206,6 @@ HNB-1LV</text>
                 <background_color>
                   <color red="240" green="240" blue="240" />
                 </background_color>
-                <bit>0</bit>
-                <boolean_label_position>1</boolean_label_position>
-                <border_alarm_sensitive>false</border_alarm_sensitive>
-                <border_color>
-                  <color name="IO Border" red="0" green="0" blue="0" />
-                </border_color>
-                <border_style>0</border_style>
-                <border_width>2</border_width>
-                <crop_bottom>0</crop_bottom>
-                <crop_left>0</crop_left>
-                <crop_right>0</crop_right>
-                <crop_top>0</crop_top>
-                <data_type>0</data_type>
-                <degree>0</degree>
-                <enabled>true</enabled>
-                <flip_horizontal>false</flip_horizontal>
-                <flip_vertical>false</flip_vertical>
-                <font>
-                  <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-                </font>
-                <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-                <foreground_color>
-                  <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-                </foreground_color>
-                <height>108</height>
-                <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Cylinder Piston.svg</image_file>
-                <name>VG-1401</name>
-                <no_animation>false</no_animation>
-                <off_color>
-                  <color name="IO PV OFF" red="149" green="125" blue="71" />
-                </off_color>
-                <off_label>OFF</off_label>
-                <on_color>
-                  <color name="IO PV ON" red="0" green="0" blue="255" />
-                </on_color>
-                <on_label>ON</on_label>
-                <permutation_matrix>
-                  <row>
-                    <col>1.0</col>
-                    <col>0.0</col>
-                  </row>
-                  <row>
-                    <col>0.0</col>
-                    <col>1.0</col>
-                  </row>
-                </permutation_matrix>
-                <pv_name></pv_name>
-                <pv_value />
-                <rules />
-                <scale_options>
-                  <width_scalable>false</width_scalable>
-                  <height_scalable>false</height_scalable>
-                  <keep_wh_ratio>false</keep_wh_ratio>
-                </scale_options>
-                <scripts />
-                <show_boolean_label>false</show_boolean_label>
-                <stretch_to_fit>false</stretch_to_fit>
-                <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-                <transparency>true</transparency>
-                <visible>true</visible>
-                <widget_type>Boolean Symbol Image Monitor</widget_type>
-                <width>87</width>
-                <wuid>7dc994ca:14b12277eae:-5aba</wuid>
-                <x>0</x>
-                <y>0</y>
-              </widget>
-              <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-                <actions hook="false" hook_all="false" />
-                <alarm_pulsing>false</alarm_pulsing>
-                <align_to_nearest_second>true</align_to_nearest_second>
-                <auto_size>true</auto_size>
-                <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-                <background_color>
-                  <color red="240" green="240" blue="240" />
-                </background_color>
-                <bit>0</bit>
                 <boolean_label_position>5</boolean_label_position>
                 <border_alarm_sensitive>false</border_alarm_sensitive>
                 <border_color>
@@ -5918,7 +5217,6 @@ $(pv_value)</tooltip>
                 <crop_left>0</crop_left>
                 <crop_right>0</crop_right>
                 <crop_top>0</crop_top>
-                <data_type>0</data_type>
                 <degree>0</degree>
                 <enabled>true</enabled>
                 <flip_horizontal>false</flip_horizontal>
@@ -5931,17 +5229,17 @@ $(pv_value)</tooltip>
                   <color name="IO InputPV Fg" red="0" green="0" blue="0" />
                 </foreground_color>
                 <height>68</height>
-                <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction On.svg</image_file>
-                <name>VG-1401</name>
+                <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Pneumatic Valve 0.svg</image_file>
+                <items />
+                <items_from_pv>true</items_from_pv>
+                <name>Multistate Symbol Image Monitor Template</name>
                 <no_animation>false</no_animation>
                 <off_color>
                   <color name="IO PV OFF" red="149" green="125" blue="71" />
                 </off_color>
-                <off_label>OFF</off_label>
                 <on_color>
                   <color name="IO PV ON" red="0" green="0" blue="255" />
                 </on_color>
-                <on_label>ON</on_label>
                 <permutation_matrix>
                   <row>
                     <col>1.0</col>
@@ -5967,11 +5265,11 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
                 <transparency>true</transparency>
                 <visible>true</visible>
-                <widget_type>Boolean Symbol Image Monitor</widget_type>
+                <widget_type>Multistate Symbol Image Monitor</widget_type>
                 <width>68</width>
                 <wuid>7dc994ca:14b12277eae:-5ab9</wuid>
                 <x>10</x>
-                <y>86</y>
+                <y>85</y>
               </widget>
               <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
                 <actions hook="false" hook_all="false" />
@@ -6097,7 +5395,7 @@ $(pv_value)</tooltip>
               <x>0</x>
               <y>313</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -6106,7 +5404,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>1</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -6118,7 +5415,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>270</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -6130,18 +5426,18 @@ $(pv_value)</tooltip>
               <foreground_color>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
-              <height>56</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VK 2 way-Valves Checking.svg</image_file>
-              <name>VK-5000</name>
+              <height>68</height>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VK 2-way Checking Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>0.0</col>
@@ -6167,10 +5463,10 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>36</width>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
+              <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5ab5</wuid>
-              <x>118</x>
+              <x>102</x>
               <y>345</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
@@ -6372,7 +5668,7 @@ $(pv_value)</tooltip>
               <wuid>7dc994ca:14b12277eae:-5ab1</wuid>
               <x>24</x>
               <y>172</y>
-              <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+              <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
                 <actions hook="false" hook_all="false" />
                 <alarm_pulsing>false</alarm_pulsing>
                 <align_to_nearest_second>true</align_to_nearest_second>
@@ -6381,7 +5677,6 @@ $(pv_value)</tooltip>
                 <background_color>
                   <color red="240" green="240" blue="240" />
                 </background_color>
-                <bit>0</bit>
                 <boolean_label_position>5</boolean_label_position>
                 <border_alarm_sensitive>false</border_alarm_sensitive>
                 <border_color>
@@ -6393,7 +5688,6 @@ $(pv_value)</tooltip>
                 <crop_left>0</crop_left>
                 <crop_right>0</crop_right>
                 <crop_top>0</crop_top>
-                <data_type>0</data_type>
                 <degree>270</degree>
                 <enabled>true</enabled>
                 <flip_horizontal>false</flip_horizontal>
@@ -6405,18 +5699,18 @@ $(pv_value)</tooltip>
                 <foreground_color>
                   <color name="IO InputPV Fg" red="0" green="0" blue="0" />
                 </foreground_color>
-                <height>88</height>
-                <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC 2 way-Valves Control.svg</image_file>
-                <name>VC-5000</name>
+                <height>68</height>
+                <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC Self-contained Pressure Reduction Regulator 0.svg</image_file>
+                <items />
+                <items_from_pv>true</items_from_pv>
+                <name>Multistate Symbol Image Monitor Template</name>
                 <no_animation>false</no_animation>
                 <off_color>
                   <color name="IO PV OFF" red="149" green="125" blue="71" />
                 </off_color>
-                <off_label>OFF</off_label>
                 <on_color>
                   <color name="IO PV ON" red="0" green="0" blue="255" />
                 </on_color>
-                <on_label>ON</on_label>
                 <permutation_matrix>
                   <row>
                     <col>0.0</col>
@@ -6442,86 +5736,10 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
                 <transparency>true</transparency>
                 <visible>true</visible>
-                <widget_type>Boolean Symbol Image Monitor</widget_type>
+                <widget_type>Multistate Symbol Image Monitor</widget_type>
                 <width>68</width>
                 <wuid>7dc994ca:14b12277eae:-5ab0</wuid>
                 <x>80</x>
-                <y>0</y>
-              </widget>
-              <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-                <actions hook="false" hook_all="false" />
-                <alarm_pulsing>false</alarm_pulsing>
-                <align_to_nearest_second>true</align_to_nearest_second>
-                <auto_size>true</auto_size>
-                <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-                <background_color>
-                  <color red="240" green="240" blue="240" />
-                </background_color>
-                <bit>0</bit>
-                <boolean_label_position>1</boolean_label_position>
-                <border_alarm_sensitive>false</border_alarm_sensitive>
-                <border_color>
-                  <color name="IO Border" red="0" green="0" blue="0" />
-                </border_color>
-                <border_style>0</border_style>
-                <border_width>2</border_width>
-                <crop_bottom>0</crop_bottom>
-                <crop_left>0</crop_left>
-                <crop_right>0</crop_right>
-                <crop_top>0</crop_top>
-                <data_type>0</data_type>
-                <degree>270</degree>
-                <enabled>true</enabled>
-                <flip_horizontal>false</flip_horizontal>
-                <flip_vertical>false</flip_vertical>
-                <font>
-                  <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-                </font>
-                <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-                <foreground_color>
-                  <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-                </foreground_color>
-                <height>87</height>
-                <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Single-Acting Diaphragm Actuator.svg</image_file>
-                <name>VC-5000</name>
-                <no_animation>false</no_animation>
-                <off_color>
-                  <color name="IO PV OFF" red="149" green="125" blue="71" />
-                </off_color>
-                <off_label>OFF</off_label>
-                <on_color>
-                  <color name="IO PV ON" red="0" green="0" blue="255" />
-                </on_color>
-                <on_label>ON</on_label>
-                <permutation_matrix>
-                  <row>
-                    <col>0.0</col>
-                    <col>1.0</col>
-                  </row>
-                  <row>
-                    <col>-1.0</col>
-                    <col>0.0</col>
-                  </row>
-                </permutation_matrix>
-                <pv_name></pv_name>
-                <pv_value />
-                <rules />
-                <scale_options>
-                  <width_scalable>false</width_scalable>
-                  <height_scalable>false</height_scalable>
-                  <keep_wh_ratio>false</keep_wh_ratio>
-                </scale_options>
-                <scripts />
-                <show_boolean_label>false</show_boolean_label>
-                <stretch_to_fit>false</stretch_to_fit>
-                <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-                <transparency>true</transparency>
-                <visible>true</visible>
-                <widget_type>Boolean Symbol Image Monitor</widget_type>
-                <width>108</width>
-                <wuid>7dc994ca:14b12277eae:-5aaf</wuid>
-                <x>0</x>
                 <y>0</y>
               </widget>
             </widget>
@@ -6680,7 +5898,7 @@ $(pv_value)</tooltip>
               <x>125</x>
               <y>72</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -6689,7 +5907,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>7</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -6701,7 +5918,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>270</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -6714,17 +5930,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction On.svg</image_file>
-              <name>PI-8015</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Hand Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>0.0</col>
@@ -6750,7 +5966,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a9d</wuid>
               <x>90</x>
@@ -6849,82 +6065,6 @@ $(pv_value)</tooltip>
               <wuid>7dc994ca:14b12277eae:-5a9b</wuid>
               <x>142</x>
               <y>200</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>3</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>270</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>87</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Hand Actuator.svg</image_file>
-              <name>PI-8015</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-                <row>
-                  <col>-1.0</col>
-                  <col>0.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>108</width>
-              <wuid>7dc994ca:14b12277eae:-5a9a</wuid>
-              <x>8</x>
-              <y>110</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -7140,7 +6280,7 @@ $(pv_value)</tooltip>
               <x>152</x>
               <y>115</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -7149,7 +6289,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>7</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -7161,7 +6300,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>270</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -7174,17 +6312,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction On.svg</image_file>
-              <name>PI-6001</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Pneumatic Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>0.0</col>
@@ -7210,7 +6348,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a95</wuid>
               <x>117</x>
@@ -7257,82 +6395,6 @@ $(pv_value)</tooltip>
               <wuid>7dc994ca:14b12277eae:-5a94</wuid>
               <x>177</x>
               <y>252</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>1</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>270</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>87</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Cylinder Piston.svg</image_file>
-              <name>PI-6001</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-                <row>
-                  <col>-1.0</col>
-                  <col>0.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>108</width>
-              <wuid>7dc994ca:14b12277eae:-5a93</wuid>
-              <x>30</x>
-              <y>162</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -7416,7 +6478,7 @@ $(pv_value)</tooltip>
             <wuid>7dc994ca:14b12277eae:-5a91</wuid>
             <x>1581</x>
             <y>1572</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -7425,7 +6487,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>5</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -7437,7 +6498,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>0</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -7450,17 +6510,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Off.svg</image_file>
-              <name>VG-1100</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG On-Off 2-way Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>1.0</col>
@@ -7486,7 +6546,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a90</wuid>
               <x>22</x>
@@ -7525,8 +6585,8 @@ $(pv_value)</tooltip>
               <foreground_color>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
-              <height>108</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Rotary Motor Actuator.svg</image_file>
+              <height>68</height>
+              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Rotary Motor Actuator Off.svg</image_file>
               <name>VG-1100</name>
               <no_animation>false</no_animation>
               <off_color>
@@ -7563,10 +6623,10 @@ $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
               <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>87</width>
+              <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a8f</wuid>
-              <x>12</x>
-              <y>0</y>
+              <x>22</x>
+              <y>3</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -7608,6 +6668,62 @@ $(pv_value)</tooltip>
               <wuid>7dc994ca:14b12277eae:-5a8e</wuid>
               <x>0</x>
               <y>125</y>
+            </widget>
+            <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
+              <actions hook="false" hook_all="false" />
+              <alarm_pulsing>false</alarm_pulsing>
+              <alpha>255</alpha>
+              <anti_alias>true</anti_alias>
+              <arrow_length>20</arrow_length>
+              <arrows>0</arrows>
+              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+              <background_color>
+                <color name="IO Background" red="235" green="235" blue="235" />
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color name="IO Border" red="0" green="0" blue="0" />
+              </border_color>
+              <border_style>0</border_style>
+              <border_width>2</border_width>
+              <enabled>true</enabled>
+              <fill_arrow>true</fill_arrow>
+              <fill_level>100.0</fill_level>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </font>
+              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+              <foreground_color>
+                <color name="IO Link" red="0" green="0" blue="0" />
+              </foreground_color>
+              <height>56</height>
+              <horizontal_fill>true</horizontal_fill>
+              <line_style>0</line_style>
+              <line_width>4</line_width>
+              <name>Polyline Template</name>
+              <points>
+                <point x="55" y="60" />
+                <point x="55" y="115" />
+              </points>
+              <pv_name></pv_name>
+              <pv_value />
+              <rotation_angle>0.0</rotation_angle>
+              <rules />
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts />
+              <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+              <transparent>false</transparent>
+              <visible>true</visible>
+              <widget_type>Polyline</widget_type>
+              <width>1</width>
+              <wuid>52d8f005:1526a19e509:-63ad</wuid>
+              <x>55</x>
+              <y>60</y>
             </widget>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -7706,7 +6822,7 @@ $(pv_value)</tooltip>
               <x>122</x>
               <y>115</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -7715,7 +6831,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>5</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -7727,7 +6842,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>270</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -7740,17 +6854,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>VG-6002</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Pneumatic Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>0.0</col>
@@ -7776,7 +6890,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a7e</wuid>
               <x>87</x>
@@ -7899,82 +7013,6 @@ $(pv_value)</tooltip>
               <x>143</x>
               <y>462</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>1</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>270</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>87</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Cylinder Piston.svg</image_file>
-              <name>VG-6002</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-                <row>
-                  <col>-1.0</col>
-                  <col>0.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>108</width>
-              <wuid>7dc994ca:14b12277eae:-5a7b</wuid>
-              <x>0</x>
-              <y>435</y>
-            </widget>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
             <actions hook="false" hook_all="false" />
@@ -8092,7 +7130,7 @@ $(pv_value)</tooltip>
               <x>115</x>
               <y>0</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -8101,7 +7139,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>5</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -8113,7 +7150,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>0</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -8126,17 +7162,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>VG-5004</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Pneumatic Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>1.0</col>
@@ -8162,87 +7198,11 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a78</wuid>
               <x>10</x>
               <y>186</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>1</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>0</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>108</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Cylinder Piston.svg</image_file>
-              <name>VG-5004</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>1.0</col>
-                  <col>0.0</col>
-                </row>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>87</width>
-              <wuid>7dc994ca:14b12277eae:-5a77</wuid>
-              <x>0</x>
-              <y>103</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -8480,9 +7440,9 @@ $(pv_value)</tooltip>
             <transparent>true</transparent>
             <visible>true</visible>
             <widget_type>Grouping Container</widget_type>
-            <width>258</width>
+            <width>233</width>
             <wuid>7dc994ca:14b12277eae:-5a72</wuid>
-            <x>2123</x>
+            <x>2148</x>
             <y>370</y>
             <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -8539,7 +7499,7 @@ $(pv_value)</tooltip>
               <widget_type>Ellipse</widget_type>
               <width>75</width>
               <wuid>7dc994ca:14b12277eae:-5a71</wuid>
-              <x>87</x>
+              <x>62</x>
               <y>0</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
@@ -8591,10 +7551,10 @@ $(pv_value)</tooltip>
               <width>62</width>
               <wrap_words>false</wrap_words>
               <wuid>7dc994ca:14b12277eae:-5a70</wuid>
-              <x>92</x>
+              <x>67</x>
               <y>17</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -8603,7 +7563,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>5</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -8615,7 +7574,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>270</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -8628,17 +7586,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>VG-6018</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Hand Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>0.0</col>
@@ -8664,10 +7622,10 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a6f</wuid>
-              <x>87</x>
+              <x>65</x>
               <y>100</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
@@ -8708,84 +7666,8 @@ $(pv_value)</tooltip>
               <width>112</width>
               <wrap_words>true</wrap_words>
               <wuid>7dc994ca:14b12277eae:-5a6e</wuid>
-              <x>145</x>
+              <x>120</x>
               <y>117</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>3</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>270</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>87</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Hand Actuator.svg</image_file>
-              <name>VG-6018</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-                <row>
-                  <col>-1.0</col>
-                  <col>0.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>108</width>
-              <wuid>7dc994ca:14b12277eae:-5a6d</wuid>
-              <x>0</x>
-              <y>90</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -8825,7 +7707,7 @@ $(pv_value)</tooltip>
               <width>112</width>
               <wrap_words>true</wrap_words>
               <wuid>7dc994ca:14b12277eae:-5b03</wuid>
-              <x>25</x>
+              <x>0</x>
               <y>176</y>
             </widget>
           </widget>
@@ -8910,7 +7792,7 @@ $(pv_value)</tooltip>
               <x>0</x>
               <y>132</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -8919,7 +7801,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>5</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -8931,7 +7812,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>0</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -8944,17 +7824,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>VG-6021</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Hand Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>1.0</col>
@@ -8980,87 +7860,11 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a6a</wuid>
               <x>16</x>
-              <y>84</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>5</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>0</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>108</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Hand Actuator.svg</image_file>
-              <name>VG-6021</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>1.0</col>
-                  <col>0.0</col>
-                </row>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>87</width>
-              <wuid>7dc994ca:14b12277eae:-5a69</wuid>
-              <x>6</x>
-              <y>0</y>
+              <y>89</y>
             </widget>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -9103,7 +7907,7 @@ $(pv_value)</tooltip>
             <wuid>7dc994ca:14b12277eae:-5a68</wuid>
             <x>2369</x>
             <y>1085</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -9112,7 +7916,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>5</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -9124,7 +7927,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>0</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -9137,17 +7939,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>VG-6022</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Hand Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>1.0</col>
@@ -9173,87 +7975,11 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a67</wuid>
               <x>22</x>
               <y>83</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>5</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>0</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>108</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Hand Actuator.svg</image_file>
-              <name>VG-6022</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>1.0</col>
-                  <col>0.0</col>
-                </row>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>87</width>
-              <wuid>7dc994ca:14b12277eae:-5a66</wuid>
-              <x>12</x>
-              <y>0</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -9378,7 +8104,7 @@ $(pv_value)</tooltip>
               <x>0</x>
               <y>131</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -9387,7 +8113,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>5</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -9399,7 +8124,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>0</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -9412,17 +8136,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>VG-6019</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Hand Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>1.0</col>
@@ -9448,87 +8172,11 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a62</wuid>
               <x>31</x>
               <y>85</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>5</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>0</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>108</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Hand Actuator.svg</image_file>
-              <name>VG-6019</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>1.0</col>
-                  <col>0.0</col>
-                </row>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>87</width>
-              <wuid>7dc994ca:14b12277eae:-5a61</wuid>
-              <x>12</x>
-              <y>0</y>
             </widget>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -9571,7 +8219,7 @@ $(pv_value)</tooltip>
             <wuid>7dc994ca:14b12277eae:-5a60</wuid>
             <x>2229</x>
             <y>1028</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -9580,7 +8228,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>5</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -9592,7 +8239,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>0</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -9605,17 +8251,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>VG-6020</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Hand Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>1.0</col>
@@ -9641,87 +8287,11 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a5f</wuid>
               <x>22</x>
               <y>88</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>5</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>0</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>108</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Hand Actuator.svg</image_file>
-              <name>VG-6020</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>1.0</col>
-                  <col>0.0</col>
-                </row>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>87</width>
-              <wuid>7dc994ca:14b12277eae:-5a5e</wuid>
-              <x>12</x>
-              <y>0</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -9805,7 +8375,7 @@ $(pv_value)</tooltip>
             <wuid>7dc994ca:14b12277eae:-5a5c</wuid>
             <x>2063</x>
             <y>823</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -9814,7 +8384,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>5</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -9826,7 +8395,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>0</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -9839,17 +8407,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>VG-6005</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Hand Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>1.0</col>
@@ -9875,11 +8443,11 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a5b</wuid>
               <x>20</x>
-              <y>86</y>
+              <y>84</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -9922,82 +8490,6 @@ $(pv_value)</tooltip>
               <x>0</x>
               <y>146</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>5</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>0</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>108</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Hand Actuator.svg</image_file>
-              <name>Boolean Symbol Image Monitor Template_70</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>1.0</col>
-                  <col>0.0</col>
-                </row>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>87</width>
-              <wuid>7dc994ca:14b12277eae:-5a59</wuid>
-              <x>10</x>
-              <y>0</y>
-            </widget>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
             <actions hook="false" hook_all="false" />
@@ -10039,7 +8531,7 @@ $(pv_value)</tooltip>
             <wuid>7dc994ca:14b12277eae:-5a58</wuid>
             <x>1403</x>
             <y>757</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -10048,7 +8540,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>5</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -10060,7 +8551,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>0</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -10073,17 +8563,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>VG-5000</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Pneumatic Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>1.0</col>
@@ -10109,11 +8599,11 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a57</wuid>
               <x>22</x>
-              <y>83</y>
+              <y>82</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -10156,82 +8646,6 @@ $(pv_value)</tooltip>
               <x>0</x>
               <y>128</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>1</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>0</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>108</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Cylinder Piston.svg</image_file>
-              <name>VG-5000</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>1.0</col>
-                  <col>0.0</col>
-                </row>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>87</width>
-              <wuid>7dc994ca:14b12277eae:-5a55</wuid>
-              <x>12</x>
-              <y>0</y>
-            </widget>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
             <actions hook="false" hook_all="false" />
@@ -10273,82 +8687,6 @@ $(pv_value)</tooltip>
             <wuid>7dc994ca:14b12277eae:-5a54</wuid>
             <x>1471</x>
             <y>125</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>1</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>270</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>87</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Cylinder Piston.svg</image_file>
-              <name>PI-5003</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-                <row>
-                  <col>-1.0</col>
-                  <col>0.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>108</width>
-              <wuid>7dc994ca:14b12277eae:-5a53</wuid>
-              <x>19</x>
-              <y>431</y>
-            </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
@@ -10405,7 +8743,7 @@ $(pv_value)</tooltip>
               <x>137</x>
               <y>115</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -10414,7 +8752,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>9</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -10426,7 +8763,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>270</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -10439,17 +8775,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>PI-5003</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Pneumatic Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>0.0</col>
@@ -10475,13 +8811,13 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a51</wuid>
               <x>102</x>
               <y>441</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -10490,7 +8826,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>5</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -10502,7 +8837,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>270</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -10514,18 +8848,18 @@ $(pv_value)</tooltip>
               <foreground_color>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
-              <height>88</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC 2 way-Valves Control.svg</image_file>
-              <name>PI-5003</name>
+              <height>68</height>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC 2-way Control Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>0.0</col>
@@ -10551,7 +8885,7 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a50</wuid>
               <x>102</x>
@@ -10756,82 +9090,6 @@ $(pv_value)</tooltip>
               <wuid>7dc994ca:14b12277eae:-5a4c</wuid>
               <x>143</x>
               <y>508</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>1</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>270</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>87</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Single-Acting Diaphragm Actuator.svg</image_file>
-              <name>PI-5003</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-                <row>
-                  <col>-1.0</col>
-                  <col>0.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>108</width>
-              <wuid>7dc994ca:14b12277eae:-5a4b</wuid>
-              <x>30</x>
-              <y>294</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -12607,7 +10865,7 @@ $(pv_value)</tooltip>
             <wuid>7dc994ca:14b12277eae:-5a24</wuid>
             <x>2067</x>
             <y>972</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+            <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
               <align_to_nearest_second>true</align_to_nearest_second>
@@ -12616,7 +10874,6 @@ $(pv_value)</tooltip>
               <background_color>
                 <color red="240" green="240" blue="240" />
               </background_color>
-              <bit>0</bit>
               <boolean_label_position>5</boolean_label_position>
               <border_alarm_sensitive>false</border_alarm_sensitive>
               <border_color>
@@ -12628,7 +10885,6 @@ $(pv_value)</tooltip>
               <crop_left>0</crop_left>
               <crop_right>0</crop_right>
               <crop_top>0</crop_top>
-              <data_type>0</data_type>
               <degree>0</degree>
               <enabled>true</enabled>
               <flip_horizontal>false</flip_horizontal>
@@ -12641,17 +10897,17 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <height>68</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VG 2 way-Valves On-Off Ball Construction Off.svg</image_file>
-              <name>VG-6006</name>
+              <image_file>../SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Hand Valve 0.svg</image_file>
+              <items />
+              <items_from_pv>true</items_from_pv>
+              <name>Multistate Symbol Image Monitor Template</name>
               <no_animation>false</no_animation>
               <off_color>
                 <color name="IO PV OFF" red="149" green="125" blue="71" />
               </off_color>
-              <off_label>OFF</off_label>
               <on_color>
                 <color name="IO PV ON" red="0" green="0" blue="255" />
               </on_color>
-              <on_label>ON</on_label>
               <permutation_matrix>
                 <row>
                   <col>1.0</col>
@@ -12677,87 +10933,11 @@ $(pv_value)</tooltip>
 $(pv_value)</tooltip>
               <transparency>true</transparency>
               <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
+              <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a23</wuid>
               <x>16</x>
-              <y>88</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <align_to_nearest_second>true</align_to_nearest_second>
-              <auto_size>true</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color red="240" green="240" blue="240" />
-              </background_color>
-              <bit>0</bit>
-              <boolean_label_position>5</boolean_label_position>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <crop_bottom>0</crop_bottom>
-              <crop_left>0</crop_left>
-              <crop_right>0</crop_right>
-              <crop_top>0</crop_top>
-              <data_type>0</data_type>
-              <degree>0</degree>
-              <enabled>true</enabled>
-              <flip_horizontal>false</flip_horizontal>
-              <flip_vertical>false</flip_vertical>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>108</height>
-              <image_file>../SymbolLibrary/SVG/Fluid/Actuators/AT Hand Actuator.svg</image_file>
-              <name>VG-6006</name>
-              <no_animation>false</no_animation>
-              <off_color>
-                <color name="IO PV OFF" red="149" green="125" blue="71" />
-              </off_color>
-              <off_label>OFF</off_label>
-              <on_color>
-                <color name="IO PV ON" red="0" green="0" blue="255" />
-              </on_color>
-              <on_label>ON</on_label>
-              <permutation_matrix>
-                <row>
-                  <col>1.0</col>
-                  <col>0.0</col>
-                </row>
-                <row>
-                  <col>0.0</col>
-                  <col>1.0</col>
-                </row>
-              </permutation_matrix>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <stretch_to_fit>false</stretch_to_fit>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparency>true</transparency>
-              <visible>true</visible>
-              <widget_type>Boolean Symbol Image Monitor</widget_type>
-              <width>87</width>
-              <wuid>7dc994ca:14b12277eae:-5a22</wuid>
-              <x>6</x>
-              <y>0</y>
+              <y>90</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -13053,7 +11233,7 @@ $(pv_value)</tooltip>
           <include_parent_macros>true</include_parent_macros>
         </macros>
         <name>Faceplate</name>
-        <opi_file></opi_file>
+        <opi_file>../templates/ControlPane.opi</opi_file>
         <resize_behaviour>0</resize_behaviour>
         <rules />
         <scale_options>
