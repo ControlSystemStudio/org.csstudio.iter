@@ -1526,7 +1526,7 @@ $(pv_value)</tooltip>
             <foreground_color>
               <color name="IO Foreground" red="0" green="0" blue="0" />
             </foreground_color>
-            <height>183</height>
+            <height>132</height>
             <lock_children>false</lock_children>
             <macros>
               <include_parent_macros>true</include_parent_macros>
@@ -1544,68 +1544,10 @@ $(pv_value)</tooltip>
             <transparent>true</transparent>
             <visible>true</visible>
             <widget_type>Grouping Container</widget_type>
-            <width>163</width>
+            <width>123</width>
             <wuid>7dc994ca:14b12277eae:-5b0d</wuid>
-            <x>1891</x>
-            <y>470</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <alpha>255</alpha>
-              <anti_alias>true</anti_alias>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bg_gradient_color>
-                <color red="255" green="255" blue="255" />
-              </bg_gradient_color>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>true</enabled>
-              <fg_gradient_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </fg_gradient_color>
-              <fill_level>100.0</fill_level>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO Shape Fill" red="166" green="166" blue="166" />
-              </foreground_color>
-              <gradient>false</gradient>
-              <height>75</height>
-              <horizontal_fill>true</horizontal_fill>
-              <line_color>
-                <color name="IO Line" red="0" green="0" blue="0" />
-              </line_color>
-              <line_style>0</line_style>
-              <line_width>1</line_width>
-              <name>VG-6016</name>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparent>false</transparent>
-              <visible>true</visible>
-              <widget_type>Ellipse</widget_type>
-              <width>75</width>
-              <wuid>7dc994ca:14b12277eae:-5b0c</wuid>
-              <x>87</x>
-              <y>0</y>
-            </widget>
+            <x>1960</x>
+            <y>512</y>
             <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
@@ -1629,7 +1571,7 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <format_type>0</format_type>
-              <height>37</height>
+              <height>35</height>
               <horizontal_alignment>1</horizontal_alignment>
               <name>VG-6016</name>
               <precision>0</precision>
@@ -1645,18 +1587,18 @@ $(pv_value)</tooltip>
               </scale_options>
               <scripts />
               <show_units>true</show_units>
-              <text>###</text>
+              <text>##.###</text>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <transparent>false</transparent>
               <vertical_alignment>1</vertical_alignment>
               <visible>true</visible>
               <widget_type>Text Update</widget_type>
-              <width>62</width>
+              <width>122</width>
               <wrap_words>false</wrap_words>
               <wuid>7dc994ca:14b12277eae:-5b0b</wuid>
-              <x>92</x>
-              <y>17</y>
+              <x>0</x>
+              <y>0</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -1729,8 +1671,49 @@ $(pv_value)</tooltip>
               <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5b09</wuid>
-              <x>90</x>
-              <y>105</y>
+              <x>21</x>
+              <y>63</y>
+            </widget>
+            <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+              <actions hook="false" hook_all="false" />
+              <auto_size>true</auto_size>
+              <background_color>
+                <color name="IO Background" red="235" green="235" blue="235" />
+              </background_color>
+              <border_color>
+                <color name="IO Border" red="0" green="0" blue="0" />
+              </border_color>
+              <border_style>0</border_style>
+              <border_width>2</border_width>
+              <enabled>false</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
+              </font>
+              <foreground_color>
+                <color name="IO Text Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <height>33</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <name>VG-6017</name>
+              <rules />
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts />
+              <show_scrollbar>false</show_scrollbar>
+              <text>VG-6016</text>
+              <tooltip></tooltip>
+              <transparent>true</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <visible>true</visible>
+              <widget_type>Label</widget_type>
+              <width>112</width>
+              <wrap_words>true</wrap_words>
+              <wuid>7dc994ca:14b12277eae:-5b0a</wuid>
+              <x>10</x>
+              <y>41</y>
             </widget>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -1751,7 +1734,7 @@ $(pv_value)</tooltip>
             <foreground_color>
               <color name="IO Foreground" red="0" green="0" blue="0" />
             </foreground_color>
-            <height>201</height>
+            <height>136</height>
             <lock_children>false</lock_children>
             <macros>
               <include_parent_macros>true</include_parent_macros>
@@ -1769,10 +1752,10 @@ $(pv_value)</tooltip>
             <transparent>true</transparent>
             <visible>true</visible>
             <widget_type>Grouping Container</widget_type>
-            <width>158</width>
+            <width>135</width>
             <wuid>7dc994ca:14b12277eae:-5b07</wuid>
-            <x>2016</x>
-            <y>425</y>
+            <x>2068</x>
+            <y>458</y>
             <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
@@ -1844,66 +1827,8 @@ $(pv_value)</tooltip>
               <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5b06</wuid>
-              <x>86</x>
-              <y>100</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <alpha>255</alpha>
-              <anti_alias>true</anti_alias>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bg_gradient_color>
-                <color red="255" green="255" blue="255" />
-              </bg_gradient_color>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>true</enabled>
-              <fg_gradient_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </fg_gradient_color>
-              <fill_level>100.0</fill_level>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO Shape Fill" red="166" green="166" blue="166" />
-              </foreground_color>
-              <gradient>false</gradient>
-              <height>75</height>
-              <horizontal_fill>true</horizontal_fill>
-              <line_color>
-                <color name="IO Line" red="0" green="0" blue="0" />
-              </line_color>
-              <line_style>0</line_style>
-              <line_width>1</line_width>
-              <name>VG-6017</name>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparent>false</transparent>
-              <visible>true</visible>
-              <widget_type>Ellipse</widget_type>
-              <width>75</width>
-              <wuid>7dc994ca:14b12277eae:-5b05</wuid>
-              <x>82</x>
-              <y>0</y>
+              <x>34</x>
+              <y>67</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -1928,7 +1853,7 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <format_type>0</format_type>
-              <height>37</height>
+              <height>35</height>
               <horizontal_alignment>1</horizontal_alignment>
               <name>VG-6017</name>
               <precision>0</precision>
@@ -1944,18 +1869,18 @@ $(pv_value)</tooltip>
               </scale_options>
               <scripts />
               <show_units>true</show_units>
-              <text>###</text>
+              <text>##.###</text>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <transparent>false</transparent>
               <vertical_alignment>1</vertical_alignment>
               <visible>true</visible>
               <widget_type>Text Update</widget_type>
-              <width>62</width>
+              <width>122</width>
               <wrap_words>false</wrap_words>
               <wuid>7dc994ca:14b12277eae:-5b04</wuid>
-              <x>90</x>
-              <y>17</y>
+              <x>0</x>
+              <y>0</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -1986,7 +1911,7 @@ $(pv_value)</tooltip>
               </scale_options>
               <scripts />
               <show_scrollbar>false</show_scrollbar>
-              <text>VG-6016</text>
+              <text>VG-6017</text>
               <tooltip></tooltip>
               <transparent>true</transparent>
               <vertical_alignment>1</vertical_alignment>
@@ -1994,9 +1919,9 @@ $(pv_value)</tooltip>
               <widget_type>Label</widget_type>
               <width>112</width>
               <wrap_words>true</wrap_words>
-              <wuid>7dc994ca:14b12277eae:-5b0a</wuid>
-              <x>13</x>
-              <y>167</y>
+              <wuid>7dc994ca:14b12277eae:-5b03</wuid>
+              <x>22</x>
+              <y>34</y>
             </widget>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
@@ -2303,64 +2228,6 @@ $(pv_value)</tooltip>
               <x>250</x>
               <y>126</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <alpha>255</alpha>
-              <anti_alias>true</anti_alias>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bg_gradient_color>
-                <color red="255" green="255" blue="255" />
-              </bg_gradient_color>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>true</enabled>
-              <fg_gradient_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </fg_gradient_color>
-              <fill_level>100.0</fill_level>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO Shape Fill" red="166" green="166" blue="166" />
-              </foreground_color>
-              <gradient>false</gradient>
-              <height>75</height>
-              <horizontal_fill>true</horizontal_fill>
-              <line_color>
-                <color name="IO Line" red="0" green="0" blue="0" />
-              </line_color>
-              <line_style>0</line_style>
-              <line_width>1</line_width>
-              <name>VG-500x</name>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparent>false</transparent>
-              <visible>true</visible>
-              <widget_type>Ellipse</widget_type>
-              <width>75</width>
-              <wuid>7dc994ca:14b12277eae:-5afc</wuid>
-              <x>165</x>
-              <y>0</y>
-            </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
@@ -2407,7 +2274,7 @@ $(pv_value)</tooltip>
               <vertical_alignment>1</vertical_alignment>
               <visible>true</visible>
               <widget_type>Text Update</widget_type>
-              <width>62</width>
+              <width>122</width>
               <wrap_words>false</wrap_words>
               <wuid>7dc994ca:14b12277eae:-5afb</wuid>
               <x>170</x>
@@ -5784,64 +5651,6 @@ $(pv_value)</tooltip>
             <wuid>7dc994ca:14b12277eae:-5aa0</wuid>
             <x>1238</x>
             <y>1415</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <alpha>255</alpha>
-              <anti_alias>true</anti_alias>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bg_gradient_color>
-                <color red="255" green="255" blue="255" />
-              </bg_gradient_color>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>true</enabled>
-              <fg_gradient_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </fg_gradient_color>
-              <fill_level>100.0</fill_level>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO Shape Fill" red="166" green="166" blue="166" />
-              </foreground_color>
-              <gradient>false</gradient>
-              <height>75</height>
-              <horizontal_fill>true</horizontal_fill>
-              <line_color>
-                <color name="IO Line" red="0" green="0" blue="0" />
-              </line_color>
-              <line_style>0</line_style>
-              <line_width>1</line_width>
-              <name>PI-8015</name>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparent>false</transparent>
-              <visible>true</visible>
-              <widget_type>Ellipse</widget_type>
-              <width>75</width>
-              <wuid>7dc994ca:14b12277eae:-5a9f</wuid>
-              <x>90</x>
-              <y>0</y>
-            </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
@@ -6018,11 +5827,11 @@ $(pv_value)</tooltip>
               <vertical_alignment>1</vertical_alignment>
               <visible>true</visible>
               <widget_type>Text Update</widget_type>
-              <width>62</width>
+              <width>131</width>
               <wrap_words>false</wrap_words>
               <wuid>7dc994ca:14b12277eae:-5a9c</wuid>
-              <x>96</x>
-              <y>19</y>
+              <x>58</x>
+              <y>36</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -7422,7 +7231,7 @@ $(pv_value)</tooltip>
             <foreground_color>
               <color name="IO Foreground" red="0" green="0" blue="0" />
             </foreground_color>
-            <height>210</height>
+            <height>124</height>
             <lock_children>false</lock_children>
             <macros>
               <include_parent_macros>true</include_parent_macros>
@@ -7440,68 +7249,10 @@ $(pv_value)</tooltip>
             <transparent>true</transparent>
             <visible>true</visible>
             <widget_type>Grouping Container</widget_type>
-            <width>233</width>
+            <width>123</width>
             <wuid>7dc994ca:14b12277eae:-5a72</wuid>
-            <x>2148</x>
-            <y>370</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <alpha>255</alpha>
-              <anti_alias>true</anti_alias>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bg_gradient_color>
-                <color red="255" green="255" blue="255" />
-              </bg_gradient_color>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>true</enabled>
-              <fg_gradient_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </fg_gradient_color>
-              <fill_level>100.0</fill_level>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO Shape Fill" red="166" green="166" blue="166" />
-              </foreground_color>
-              <gradient>false</gradient>
-              <height>75</height>
-              <horizontal_fill>true</horizontal_fill>
-              <line_color>
-                <color name="IO Line" red="0" green="0" blue="0" />
-              </line_color>
-              <line_style>0</line_style>
-              <line_width>1</line_width>
-              <name>VG-6018</name>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparent>false</transparent>
-              <visible>true</visible>
-              <widget_type>Ellipse</widget_type>
-              <width>75</width>
-              <wuid>7dc994ca:14b12277eae:-5a71</wuid>
-              <x>62</x>
-              <y>0</y>
-            </widget>
+            <x>2195</x>
+            <y>415</y>
             <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
@@ -7525,7 +7276,7 @@ $(pv_value)</tooltip>
                 <color name="IO InputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <format_type>0</format_type>
-              <height>37</height>
+              <height>35</height>
               <horizontal_alignment>1</horizontal_alignment>
               <name>VG-6018</name>
               <precision>0</precision>
@@ -7541,18 +7292,18 @@ $(pv_value)</tooltip>
               </scale_options>
               <scripts />
               <show_units>true</show_units>
-              <text>###</text>
+              <text>##.###</text>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
               <transparent>false</transparent>
               <vertical_alignment>1</vertical_alignment>
               <visible>true</visible>
               <widget_type>Text Update</widget_type>
-              <width>62</width>
+              <width>122</width>
               <wrap_words>false</wrap_words>
               <wuid>7dc994ca:14b12277eae:-5a70</wuid>
-              <x>67</x>
-              <y>17</y>
+              <x>0</x>
+              <y>0</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateMonitorWidget" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -7625,8 +7376,8 @@ $(pv_value)</tooltip>
               <widget_type>Multistate Symbol Image Monitor</widget_type>
               <width>68</width>
               <wuid>7dc994ca:14b12277eae:-5a6f</wuid>
-              <x>65</x>
-              <y>100</y>
+              <x>18</x>
+              <y>55</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -7666,49 +7417,8 @@ $(pv_value)</tooltip>
               <width>112</width>
               <wrap_words>true</wrap_words>
               <wuid>7dc994ca:14b12277eae:-5a6e</wuid>
-              <x>120</x>
-              <y>117</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <auto_size>true</auto_size>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>false</enabled>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
-              </font>
-              <foreground_color>
-                <color name="IO Text Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>33</height>
-              <horizontal_alignment>0</horizontal_alignment>
-              <name>VG-6018</name>
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_scrollbar>false</show_scrollbar>
-              <text>VG-6017</text>
-              <tooltip></tooltip>
-              <transparent>true</transparent>
-              <vertical_alignment>1</vertical_alignment>
-              <visible>true</visible>
-              <widget_type>Label</widget_type>
-              <width>112</width>
-              <wrap_words>true</wrap_words>
-              <wuid>7dc994ca:14b12277eae:-5b03</wuid>
-              <x>0</x>
-              <y>176</y>
+              <x>5</x>
+              <y>34</y>
             </widget>
           </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -9421,122 +9131,6 @@ $(pv_value)</tooltip>
             <wuid>7dc994ca:14b12277eae:-5a45</wuid>
             <x>1361</x>
             <y>950</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <alpha>255</alpha>
-              <anti_alias>true</anti_alias>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bg_gradient_color>
-                <color red="255" green="255" blue="255" />
-              </bg_gradient_color>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>true</enabled>
-              <fg_gradient_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </fg_gradient_color>
-              <fill_level>100.0</fill_level>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO Shape Fill" red="166" green="166" blue="166" />
-              </foreground_color>
-              <gradient>false</gradient>
-              <height>75</height>
-              <horizontal_fill>true</horizontal_fill>
-              <line_color>
-                <color name="IO Line" red="0" green="0" blue="0" />
-              </line_color>
-              <line_style>0</line_style>
-              <line_width>1</line_width>
-              <name>Pressure_Measures</name>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparent>false</transparent>
-              <visible>true</visible>
-              <widget_type>Ellipse</widget_type>
-              <width>75</width>
-              <wuid>7dc994ca:14b12277eae:-5a44</wuid>
-              <x>5</x>
-              <y>110</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <alpha>255</alpha>
-              <anti_alias>true</anti_alias>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bg_gradient_color>
-                <color red="255" green="255" blue="255" />
-              </bg_gradient_color>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>true</enabled>
-              <fg_gradient_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </fg_gradient_color>
-              <fill_level>100.0</fill_level>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO Shape Fill" red="166" green="166" blue="166" />
-              </foreground_color>
-              <gradient>false</gradient>
-              <height>75</height>
-              <horizontal_fill>true</horizontal_fill>
-              <line_color>
-                <color name="IO Line" red="0" green="0" blue="0" />
-              </line_color>
-              <line_style>0</line_style>
-              <line_width>1</line_width>
-              <name>Pressure_Measures</name>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparent>false</transparent>
-              <visible>true</visible>
-              <widget_type>Ellipse</widget_type>
-              <width>75</width>
-              <wuid>7dc994ca:14b12277eae:-5a43</wuid>
-              <x>77</x>
-              <y>110</y>
-            </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
@@ -9593,122 +9187,6 @@ $(pv_value)</tooltip>
               <x>150</x>
               <y>145</y>
             </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <alpha>255</alpha>
-              <anti_alias>true</anti_alias>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bg_gradient_color>
-                <color red="255" green="255" blue="255" />
-              </bg_gradient_color>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>true</enabled>
-              <fg_gradient_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </fg_gradient_color>
-              <fill_level>100.0</fill_level>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO Shape Fill" red="166" green="166" blue="166" />
-              </foreground_color>
-              <gradient>false</gradient>
-              <height>75</height>
-              <horizontal_fill>true</horizontal_fill>
-              <line_color>
-                <color name="IO Line" red="0" green="0" blue="0" />
-              </line_color>
-              <line_style>0</line_style>
-              <line_width>1</line_width>
-              <name>Pressure_Measures</name>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparent>false</transparent>
-              <visible>true</visible>
-              <widget_type>Ellipse</widget_type>
-              <width>75</width>
-              <wuid>7dc994ca:14b12277eae:-5a41</wuid>
-              <x>2</x>
-              <y>212</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <alpha>255</alpha>
-              <anti_alias>true</anti_alias>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bg_gradient_color>
-                <color red="255" green="255" blue="255" />
-              </bg_gradient_color>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>true</enabled>
-              <fg_gradient_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </fg_gradient_color>
-              <fill_level>100.0</fill_level>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO Shape Fill" red="166" green="166" blue="166" />
-              </foreground_color>
-              <gradient>false</gradient>
-              <height>75</height>
-              <horizontal_fill>true</horizontal_fill>
-              <line_color>
-                <color name="IO Line" red="0" green="0" blue="0" />
-              </line_color>
-              <line_style>0</line_style>
-              <line_width>1</line_width>
-              <name>Pressure_Measures</name>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparent>false</transparent>
-              <visible>true</visible>
-              <widget_type>Ellipse</widget_type>
-              <width>75</width>
-              <wuid>7dc994ca:14b12277eae:-5a40</wuid>
-              <x>75</x>
-              <y>212</y>
-            </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
@@ -9764,122 +9242,6 @@ $(pv_value)</tooltip>
               <wuid>7dc994ca:14b12277eae:-5a3f</wuid>
               <x>147</x>
               <y>247</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <alpha>255</alpha>
-              <anti_alias>true</anti_alias>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bg_gradient_color>
-                <color red="255" green="255" blue="255" />
-              </bg_gradient_color>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>true</enabled>
-              <fg_gradient_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </fg_gradient_color>
-              <fill_level>100.0</fill_level>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO Shape Fill" red="166" green="166" blue="166" />
-              </foreground_color>
-              <gradient>false</gradient>
-              <height>75</height>
-              <horizontal_fill>true</horizontal_fill>
-              <line_color>
-                <color name="IO Line" red="0" green="0" blue="0" />
-              </line_color>
-              <line_style>0</line_style>
-              <line_width>1</line_width>
-              <name>Pressure_Measures</name>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparent>false</transparent>
-              <visible>true</visible>
-              <widget_type>Ellipse</widget_type>
-              <width>75</width>
-              <wuid>7dc994ca:14b12277eae:-5a3e</wuid>
-              <x>0</x>
-              <y>0</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <alpha>255</alpha>
-              <anti_alias>true</anti_alias>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bg_gradient_color>
-                <color red="255" green="255" blue="255" />
-              </bg_gradient_color>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>true</enabled>
-              <fg_gradient_color>
-                <color name="IO Foreground" red="0" green="0" blue="0" />
-              </fg_gradient_color>
-              <fill_level>100.0</fill_level>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO Shape Fill" red="166" green="166" blue="166" />
-              </foreground_color>
-              <gradient>false</gradient>
-              <height>75</height>
-              <horizontal_fill>true</horizontal_fill>
-              <line_color>
-                <color name="IO Line" red="0" green="0" blue="0" />
-              </line_color>
-              <line_style>0</line_style>
-              <line_width>1</line_width>
-              <name>Pressure_Measures</name>
-              <pv_name></pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparent>false</transparent>
-              <visible>true</visible>
-              <widget_type>Ellipse</widget_type>
-              <width>75</width>
-              <wuid>7dc994ca:14b12277eae:-5a3d</wuid>
-              <x>72</x>
-              <y>0</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
               <actions hook="false" hook_all="false" />
@@ -9983,166 +9345,10 @@ $(pv_value)</tooltip>
               <vertical_alignment>1</vertical_alignment>
               <visible>true</visible>
               <widget_type>Text Update</widget_type>
-              <width>62</width>
-              <wrap_words>false</wrap_words>
-              <wuid>7dc994ca:14b12277eae:-5a3b</wuid>
-              <x>10</x>
-              <y>232</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <auto_size>false</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO InputPV Bg" red="235" green="235" blue="235" />
-              </background_color>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Button" red="178" green="178" blue="178" />
-              </border_color>
-              <border_style>1</border_style>
-              <border_width>1</border_width>
-              <enabled>true</enabled>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <format_type>0</format_type>
-              <height>37</height>
-              <horizontal_alignment>1</horizontal_alignment>
-              <name>Pressure_Measures</name>
-              <precision>0</precision>
-              <precision_from_pv>true</precision_from_pv>
-              <pv_name>sim://noise</pv_name>
-              <pv_value />
-              <rotation_angle>0.0</rotation_angle>
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_units>true</show_units>
-              <text>###</text>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparent>false</transparent>
-              <vertical_alignment>1</vertical_alignment>
-              <visible>true</visible>
-              <widget_type>Text Update</widget_type>
-              <width>62</width>
-              <wrap_words>false</wrap_words>
-              <wuid>7dc994ca:14b12277eae:-5a3a</wuid>
-              <x>10</x>
-              <y>127</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <auto_size>false</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO InputPV Bg" red="235" green="235" blue="235" />
-              </background_color>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Button" red="178" green="178" blue="178" />
-              </border_color>
-              <border_style>1</border_style>
-              <border_width>1</border_width>
-              <enabled>true</enabled>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <format_type>0</format_type>
-              <height>37</height>
-              <horizontal_alignment>1</horizontal_alignment>
-              <name>Pressure_Measures</name>
-              <precision>0</precision>
-              <precision_from_pv>true</precision_from_pv>
-              <pv_name>sim://noise</pv_name>
-              <pv_value />
-              <rotation_angle>0.0</rotation_angle>
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_units>true</show_units>
-              <text>###</text>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparent>false</transparent>
-              <vertical_alignment>1</vertical_alignment>
-              <visible>true</visible>
-              <widget_type>Text Update</widget_type>
-              <width>62</width>
-              <wrap_words>false</wrap_words>
-              <wuid>7dc994ca:14b12277eae:-5a39</wuid>
-              <x>7</x>
-              <y>17</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <auto_size>false</auto_size>
-              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO InputPV Bg" red="235" green="235" blue="235" />
-              </background_color>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Button" red="178" green="178" blue="178" />
-              </border_color>
-              <border_style>1</border_style>
-              <border_width>1</border_width>
-              <enabled>true</enabled>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <format_type>0</format_type>
-              <height>37</height>
-              <horizontal_alignment>1</horizontal_alignment>
-              <name>Pressure_Measures</name>
-              <precision>0</precision>
-              <precision_from_pv>true</precision_from_pv>
-              <pv_name>sim://noise</pv_name>
-              <pv_value />
-              <rotation_angle>0.0</rotation_angle>
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_units>true</show_units>
-              <text>###</text>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <transparent>false</transparent>
-              <vertical_alignment>1</vertical_alignment>
-              <visible>true</visible>
-              <widget_type>Text Update</widget_type>
-              <width>62</width>
+              <width>131</width>
               <wrap_words>false</wrap_words>
               <wuid>7dc994ca:14b12277eae:-5a38</wuid>
-              <x>82</x>
+              <x>16</x>
               <y>17</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
@@ -10191,10 +9397,10 @@ $(pv_value)</tooltip>
               <vertical_alignment>1</vertical_alignment>
               <visible>true</visible>
               <widget_type>Text Update</widget_type>
-              <width>62</width>
+              <width>131</width>
               <wrap_words>false</wrap_words>
               <wuid>7dc994ca:14b12277eae:-5a37</wuid>
-              <x>82</x>
+              <x>16</x>
               <y>127</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
@@ -10243,10 +9449,10 @@ $(pv_value)</tooltip>
               <vertical_alignment>1</vertical_alignment>
               <visible>true</visible>
               <widget_type>Text Update</widget_type>
-              <width>62</width>
+              <width>131</width>
               <wrap_words>false</wrap_words>
               <wuid>7dc994ca:14b12277eae:-5a36</wuid>
-              <x>82</x>
+              <x>16</x>
               <y>230</y>
             </widget>
           </widget>
@@ -10362,64 +9568,6 @@ $(pv_value)</tooltip>
             <x>1748</x>
             <y>1305</y>
           </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <alarm_pulsing>false</alarm_pulsing>
-            <alpha>255</alpha>
-            <anti_alias>true</anti_alias>
-            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <bg_gradient_color>
-              <color red="255" green="255" blue="255" />
-            </bg_gradient_color>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>0</border_style>
-            <border_width>2</border_width>
-            <enabled>true</enabled>
-            <fg_gradient_color>
-              <color name="IO Foreground" red="0" green="0" blue="0" />
-            </fg_gradient_color>
-            <fill_level>100.0</fill_level>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <foreground_color>
-              <color name="IO Shape Fill" red="166" green="166" blue="166" />
-            </foreground_color>
-            <gradient>false</gradient>
-            <height>75</height>
-            <horizontal_fill>true</horizontal_fill>
-            <line_color>
-              <color name="IO Line" red="0" green="0" blue="0" />
-            </line_color>
-            <line_style>0</line_style>
-            <line_width>1</line_width>
-            <name>Measures</name>
-            <pv_name></pv_name>
-            <pv_value />
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <transparent>false</transparent>
-            <visible>true</visible>
-            <widget_type>Ellipse</widget_type>
-            <width>75</width>
-            <wuid>7dc994ca:14b12277eae:-5a2d</wuid>
-            <x>2321</x>
-            <y>982</y>
-          </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
             <actions hook="false" hook_all="false" />
             <alarm_pulsing>false</alarm_pulsing>
@@ -10519,7 +9667,7 @@ $(pv_value)</tooltip>
               <color name="IO InputPV Fg" red="0" green="0" blue="0" />
             </foreground_color>
             <format_type>0</format_type>
-            <height>37</height>
+            <height>35</height>
             <horizontal_alignment>1</horizontal_alignment>
             <name>Measures</name>
             <precision>0</precision>
@@ -10535,14 +9683,14 @@ $(pv_value)</tooltip>
             </scale_options>
             <scripts />
             <show_units>true</show_units>
-            <text>###</text>
+            <text>##.###</text>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <transparent>false</transparent>
             <vertical_alignment>1</vertical_alignment>
             <visible>true</visible>
             <widget_type>Text Update</widget_type>
-            <width>62</width>
+            <width>122</width>
             <wrap_words>false</wrap_words>
             <wuid>7dc994ca:14b12277eae:-5a2b</wuid>
             <x>2326</x>
@@ -10673,64 +9821,6 @@ $(pv_value)</tooltip>
             <x>1772</x>
             <y>677</y>
           </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <alarm_pulsing>false</alarm_pulsing>
-            <alpha>255</alpha>
-            <anti_alias>true</anti_alias>
-            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <bg_gradient_color>
-              <color red="255" green="255" blue="255" />
-            </bg_gradient_color>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>0</border_style>
-            <border_width>2</border_width>
-            <enabled>true</enabled>
-            <fg_gradient_color>
-              <color name="IO Foreground" red="0" green="0" blue="0" />
-            </fg_gradient_color>
-            <fill_level>100.0</fill_level>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <foreground_color>
-              <color name="IO Shape Fill" red="166" green="166" blue="166" />
-            </foreground_color>
-            <gradient>false</gradient>
-            <height>75</height>
-            <horizontal_fill>true</horizontal_fill>
-            <line_color>
-              <color name="IO Line" red="0" green="0" blue="0" />
-            </line_color>
-            <line_style>0</line_style>
-            <line_width>1</line_width>
-            <name>Measures</name>
-            <pv_name></pv_name>
-            <pv_value />
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <transparent>false</transparent>
-            <visible>true</visible>
-            <widget_type>Ellipse</widget_type>
-            <width>75</width>
-            <wuid>7dc994ca:14b12277eae:-5a27</wuid>
-            <x>2181</x>
-            <y>982</y>
-          </widget>
           <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
             <actions hook="false" hook_all="false" />
             <alarm_pulsing>false</alarm_pulsing>
@@ -10754,7 +9844,7 @@ $(pv_value)</tooltip>
               <color name="IO InputPV Fg" red="0" green="0" blue="0" />
             </foreground_color>
             <format_type>0</format_type>
-            <height>37</height>
+            <height>35</height>
             <horizontal_alignment>1</horizontal_alignment>
             <name>Measures</name>
             <precision>0</precision>
@@ -10770,14 +9860,14 @@ $(pv_value)</tooltip>
             </scale_options>
             <scripts />
             <show_units>true</show_units>
-            <text>###</text>
+            <text>##.###</text>
             <tooltip>$(pv_name)
 $(pv_value)</tooltip>
             <transparent>false</transparent>
             <vertical_alignment>1</vertical_alignment>
             <visible>true</visible>
             <widget_type>Text Update</widget_type>
-            <width>62</width>
+            <width>122</width>
             <wrap_words>false</wrap_words>
             <wuid>7dc994ca:14b12277eae:-5a26</wuid>
             <x>2186</x>
