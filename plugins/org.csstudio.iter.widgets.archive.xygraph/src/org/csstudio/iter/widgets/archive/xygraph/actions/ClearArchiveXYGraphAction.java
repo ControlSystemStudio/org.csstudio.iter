@@ -11,7 +11,7 @@ import org.csstudio.opibuilder.widgets.actions.ClearXYGraphAction;
 
 /**
  * Clear XY Graph.
- * 
+ *
  * @author Xihui Chen
  *
  */

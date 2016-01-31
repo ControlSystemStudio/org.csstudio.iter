@@ -43,7 +43,7 @@ import org.diirt.vtype.VType;
 
 /**
  * The Archive XYGraph editpart
- * 
+ *
  * @author lamberm (Sopra)
  *
  */
@@ -145,7 +145,7 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
 
     /**
      * update the graph with data from DB and loading cache
-     * 
+     *
      * @param pvSamples data from db to plot
      * @param dataProvider to set data in datapprovider
      * @param traceIndex index of the trace

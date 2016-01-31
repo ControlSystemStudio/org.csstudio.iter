@@ -22,7 +22,7 @@ import org.csstudio.trends.databrowser2.model.RequestType;
 
 /**
  * archive job for RDB and ArchiveXYGraph
- * 
+ *
  * @author lamberm (sopra)
  *
  */
@@ -32,7 +32,7 @@ public class XYArchiveFetchJob extends ArchiveFetchJob {
 
     /**
      * Main constructor
-     * 
+     *
      * @param pv name of the pv
      * @param archiveDataSource list of URL (RDB)
      * @param start beginning of the search
@@ -52,7 +52,7 @@ public class XYArchiveFetchJob extends ArchiveFetchJob {
 
     /**
      * Create a {@link PVItem} with the name and url of the archive RDB
-     * 
+     *
      * @param pv name of the PV
      * @param archiveDataSource list of URL for the RDB
      * @return {@link PVItem}
@@ -72,7 +72,7 @@ public class XYArchiveFetchJob extends ArchiveFetchJob {
 
     /**
      * method provide an object for the listener {@link ArchiveFetchJobListener}
-     * 
+     *
      * @param pvName name of the pv
      * @param completeListener listener to call when finish
      * @return the listener
