@@ -1,215 +1,155 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <databrowser>
-    <title>
-        <text>Tank Level Control</text>
-        <color>
-            <red>0</red>
-            <green>0</green>
-            <blue>255</blue>
-        </color>
-        <font>1|Sans|12.0|1|GTK|1|</font>
-    </title>
-    <graph_settings>
-        <show_title>true</show_title>
-        <show_legend>false</show_legend>
-        <show_plot_area_border>true</show_plot_area_border>
-        <transparent>false</transparent>
-    </graph_settings>
+    <title>Tank Level </title>
+    <save_changes>true</save_changes>
+    <show_legend>true</show_legend>
+    <show_toolbar>true</show_toolbar>
+    <grid>true</grid>
     <scroll>true</scroll>
     <update_period>3.0</update_period>
-    <start>-10 minutes 0.0 seconds</start>
+    <scroll_step>5</scroll_step>
+    <start>-10.08 min</start>
     <end>now</end>
-    <time_axis>
-        <axis>
-            <name>Time</name>
-            <font>1|Sans|10.0|1|GTK|1|</font>
-            <scale_font>1|Sans|10.0|0|GTK|1|</scale_font>
-            <color>
-                <red>77</red>
-                <green>77</green>
-                <blue>77</blue>
-            </color>
-            <min>1.367850017623E12</min>
-            <max>1.367850617623E12</max>
-            <log_scale>false</log_scale>
-            <autoscale>true</autoscale>
-            <visible>true</visible>
-            <grid_line>
-                <show_grid_line>true</show_grid_line>
-                <dash_grid_line>true</dash_grid_line>
-                <color>
-                    <red>200</red>
-                    <green>200</green>
-                    <blue>200</blue>
-                </color>
-            </grid_line>
-            <format>
-                <auto_format>true</auto_format>
-                <time_format>true</time_format>
-                <format_pattern>HH:mm:ss</format_pattern>
-            </format>
-        </axis>
-    </time_axis>
+    <archive_rescale>NONE</archive_rescale>
     <background>
         <red>229</red>
         <green>229</green>
         <blue>229</blue>
     </background>
-    <archive_rescale>NONE</archive_rescale>
+    <title_font>DejaVu Sans Mono|26|0</title_font>
+    <label_font>DejaVu Sans Mono|20|0</label_font>
+    <scale_font>DejaVu Sans Mono|20|0</scale_font>
+    <legend_font>DejaVu Sans Mono|20|0</legend_font>
     <axes>
         <axis>
+            <visible>true</visible>
             <name>m3</name>
-            <font>1|Sans|10.0|1|GTK|1|</font>
-            <scale_font>1|Sans|10.0|0|GTK|1|</scale_font>
+            <use_axis_name>true</use_axis_name>
+            <use_trace_names>false</use_trace_names>
+            <right>false</right>
             <color>
                 <red>77</red>
                 <green>77</green>
                 <blue>77</blue>
             </color>
+            <label_font>|10|1</label_font>
+            <scale_font>DejaVu Sans Mono|20|0</scale_font>
             <min>0.0</min>
             <max>100.0</max>
-            <log_scale>false</log_scale>
+            <grid>false</grid>
             <autoscale>false</autoscale>
-            <visible>true</visible>
-            <grid_line>
-                <show_grid_line>true</show_grid_line>
-                <dash_grid_line>true</dash_grid_line>
-                <color>
-                    <red>200</red>
-                    <green>200</green>
-                    <blue>200</blue>
-                </color>
-            </grid_line>
-            <format>
-                <auto_format>true</auto_format>
-                <time_format>false</time_format>
-                <format_pattern>############.##</format_pattern>
-            </format>
+            <log_scale>false</log_scale>
         </axis>
         <axis>
+            <visible>false</visible>
             <name>TEST-BST0:TANK-LEVEL.LOW</name>
-            <font>1|Sans|10.0|1|GTK|1|</font>
-            <scale_font>1|Sans|10.0|0|GTK|1|</scale_font>
+            <use_axis_name>false</use_axis_name>
+            <use_trace_names>false</use_trace_names>
+            <right>false</right>
             <color>
                 <red>242</red>
                 <green>26</green>
                 <blue>26</blue>
             </color>
-            <min>20.0</min>
-            <max>21.0</max>
+            <label_font>|10|1</label_font>
+            <scale_font>DejaVu Sans Mono|20|0</scale_font>
+            <min>0.0</min>
+            <max>100.0</max>
+            <grid>false</grid>
+            <autoscale>false</autoscale>
             <log_scale>false</log_scale>
-            <autoscale>true</autoscale>
-            <visible>false</visible>
-            <grid_line>
-                <show_grid_line>false</show_grid_line>
-                <dash_grid_line>true</dash_grid_line>
-                <color>
-                    <red>200</red>
-                    <green>200</green>
-                    <blue>200</blue>
-                </color>
-            </grid_line>
-            <format>
-                <auto_format>true</auto_format>
-                <time_format>false</time_format>
-                <format_pattern>############.##</format_pattern>
-            </format>
         </axis>
         <axis>
+            <visible>false</visible>
             <name>TEST-BST0:TANK-LEVEL.HIGH</name>
-            <font>1|Sans|10.0|1|GTK|1|</font>
-            <scale_font>1|Sans|10.0|0|GTK|1|</scale_font>
+            <use_axis_name>false</use_axis_name>
+            <use_trace_names>false</use_trace_names>
+            <right>false</right>
             <color>
                 <red>33</red>
                 <green>179</green>
                 <blue>33</blue>
             </color>
-            <min>80.0</min>
-            <max>80.1</max>
+            <label_font>|10|1</label_font>
+            <scale_font>DejaVu Sans Mono|20|0</scale_font>
+            <min>0.0</min>
+            <max>100.0</max>
+            <grid>false</grid>
+            <autoscale>false</autoscale>
             <log_scale>false</log_scale>
-            <autoscale>true</autoscale>
-            <visible>false</visible>
-            <grid_line>
-                <show_grid_line>false</show_grid_line>
-                <dash_grid_line>true</dash_grid_line>
-                <color>
-                    <red>200</red>
-                    <green>200</green>
-                    <blue>200</blue>
-                </color>
-            </grid_line>
-            <format>
-                <auto_format>true</auto_format>
-                <time_format>false</time_format>
-                <format_pattern>##.####</format_pattern>
-            </format>
         </axis>
     </axes>
     <annotations>
     </annotations>
     <pvlist>
         <pv>
-            <name>TEST-BST0:TANK-LEVEL</name>
             <display_name>TEST-BST0:TANK-LEVEL</display_name>
             <visible>true</visible>
+            <name>TEST-BST0:TANK-LEVEL</name>
             <axis>0</axis>
-            <linewidth>2</linewidth>
             <color>
                 <red>21</red>
                 <green>21</green>
                 <blue>196</blue>
             </color>
             <trace_type>AREA</trace_type>
+            <linewidth>2</linewidth>
+            <point_type>NONE</point_type>
+            <point_size>2</point_size>
             <waveform_index>0</waveform_index>
             <period>0.0</period>
             <ring_size>5000</ring_size>
             <request>OPTIMIZED</request>
             <archive>
-                <name>RDB</name>
+                <name>Archive RDB</name>
                 <url>jdbc:postgresql://localhost/css_archive_3_0_0</url>
                 <key>1</key>
             </archive>
         </pv>
         <pv>
-            <name>TEST-BST0:TANK-LEVEL.LOW</name>
             <display_name>TEST-BST0:TANK-LEVEL.LOW</display_name>
             <visible>true</visible>
+            <name>TEST-BST0:TANK-LEVEL.LOW</name>
             <axis>0</axis>
-            <linewidth>2</linewidth>
             <color>
                 <red>242</red>
                 <green>26</green>
                 <blue>26</blue>
             </color>
             <trace_type>AREA</trace_type>
+            <linewidth>2</linewidth>
+            <point_type>NONE</point_type>
+            <point_size>2</point_size>
             <waveform_index>0</waveform_index>
             <period>0.0</period>
             <ring_size>5000</ring_size>
             <request>OPTIMIZED</request>
             <archive>
-                <name>RDB</name>
+                <name>Archive RDB</name>
                 <url>jdbc:postgresql://localhost/css_archive_3_0_0</url>
                 <key>1</key>
             </archive>
         </pv>
         <pv>
-            <name>TEST-BST0:TANK-LEVEL.HIGH</name>
             <display_name>TEST-BST0:TANK-LEVEL.HIGH</display_name>
             <visible>true</visible>
+            <name>TEST-BST0:TANK-LEVEL.HIGH</name>
             <axis>0</axis>
-            <linewidth>2</linewidth>
             <color>
                 <red>255</red>
                 <green>165</green>
                 <blue>0</blue>
             </color>
             <trace_type>AREA</trace_type>
+            <linewidth>2</linewidth>
+            <point_type>NONE</point_type>
+            <point_size>2</point_size>
             <waveform_index>0</waveform_index>
             <period>0.0</period>
             <ring_size>5000</ring_size>
             <request>OPTIMIZED</request>
             <archive>
-                <name>RDB</name>
+                <name>Archive RDB</name>
                 <url>jdbc:postgresql://localhost/css_archive_3_0_0</url>
                 <key>1</key>
             </archive>
