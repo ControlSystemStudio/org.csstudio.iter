@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OPIBuilder Patch
+Bundle-SymbolicName: org.csstudio.iter.opibuilder.patch;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: ITER
+Eclipse-PatchFragment: true
+Fragment-Host: org.csstudio.opibuilder;bundle-version="5.0.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: patch.jar
+Import-Package: org.csstudio.opibuilder.editparts,
+ org.csstudio.ui.resources.alarms,
+ org.diirt.datasource;version="3.0.2",
+ org.diirt.datasource.expression;version="3.0.2",
+ org.diirt.datasource.formula;version="3.0.2"
+Export-Package: org.csstudio.opibuilder.actions,
+ org.csstudio.opibuilder.editparts,
+ org.csstudio.opibuilder.preferences,
+ org.csstudio.opibuilder.util

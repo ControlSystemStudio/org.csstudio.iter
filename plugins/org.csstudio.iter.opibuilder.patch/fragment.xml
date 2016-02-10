@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.csstudio.opibuilder.beastAlarmPopupMenu"
+            objectClass="org.csstudio.opibuilder.editparts.AbstractPVWidgetEditPart">
+         <visibility>
+            <and>
+               <objectState
+                     name="executionMode"
+                     value="RUN_MODE">
+               </objectState>
+               <objectState
+                     name="beastAlarmPVActionable"
+                     value="true">
+               </objectState>
+            </and>
+         </visibility>
+         <menu
+               id="org.csstudio.opibuilder.beastSubMenu"
+               label="BEAST Alarm"
+               path="additions">
+            <separator
+                  name="beastsub1">
+            </separator>
+         </menu>
+         <action
+               class="org.csstudio.opibuilder.actions.AcknowledgeAlarmAction"
+               enablesFor="1"
+               id="org.csstudio.opibuilder.acknowledgeAlarmAction"
+               label="Acknowledge Alarm"
+               menubarPath="org.csstudio.opibuilder.beastSubMenu/beastsub1"
+               tooltip="If the widget is connected to a BEAST AlarmPV, acknowledges/unacknowledges this PV&apos;s alarm">
+         </action>
+      </objectContribution>
+   </extension>
+
+</fragment>
