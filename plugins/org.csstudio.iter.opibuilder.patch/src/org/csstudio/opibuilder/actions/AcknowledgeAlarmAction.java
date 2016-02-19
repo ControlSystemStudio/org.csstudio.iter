@@ -7,6 +7,7 @@
  ******************************************************************************/
 package org.csstudio.opibuilder.actions;
 
+import org.csstudio.opibuilder.editparts.AbstractBaseEditPart;
 import org.csstudio.opibuilder.editparts.AbstractPVWidgetEditPart;
 import org.csstudio.opibuilder.editparts.PVWidgetEditpartDelegate;
 import org.csstudio.opibuilder.model.IPVWidgetModel;
@@ -25,30 +26,32 @@ public class AcknowledgeAlarmAction implements IObjectActionDelegate {
 
     @Override
     public void run(IAction action) {
-        final AbstractPVWidgetEditPart selectedWidget = getSelectedWidget();
+        final AbstractBaseEditPart selectedWidget = getSelectedWidget();
 
-        if(selectedWidget == null) return;
+        if(selectedWidget == null || selectedWidget.getWidgetModel() == null) return;
+        if (!(selectedWidget.getWidgetModel() instanceof IPVWidgetModel) || !(selectedWidget instanceof AbstractPVWidgetEditPart)) return;
 
-        PVWidgetEditpartDelegate pvDelegate = selectedWidget.getPVWidgetEditpartDelegate();
-        if (!pvDelegate.isBeastAlarmAndConnected()) return;
+        PVWidgetEditpartDelegate pvDelegate = ((AbstractPVWidgetEditPart) selectedWidget).getPVWidgetEditpartDelegate();
+        if (pvDelegate.isBeastAlarmAndConnected() == false) return;
 
         pvDelegate.toggleAlarmAcknowledgement();
     }
 
-    private void updateAction(IAction action) {
-        final AbstractPVWidgetEditPart selectedWidget = getSelectedWidget();
+    private boolean updateAction(IAction action) {
+        final AbstractBaseEditPart selectedWidget = getSelectedWidget();
 
-        if(selectedWidget == null || selectedWidget.getWidgetModel() == null) return;
-        if (!(selectedWidget.getWidgetModel() instanceof IPVWidgetModel)) return;
+        if(selectedWidget == null || selectedWidget.getWidgetModel() == null) return false;
+        if (!(selectedWidget.getWidgetModel() instanceof IPVWidgetModel) || !(selectedWidget instanceof AbstractPVWidgetEditPart)) return false;
 
-        PVWidgetEditpartDelegate pvDelegate = selectedWidget.getPVWidgetEditpartDelegate();
+        PVWidgetEditpartDelegate pvDelegate = ((AbstractPVWidgetEditPart) selectedWidget).getPVWidgetEditpartDelegate();
 
         if (!pvDelegate.isBeastAlarmAndConnected()) {
-            // cannot ack/unack: in this case the menu shouldn't be shown, but we'll change the text just in case
+            // cannot ack/unack
             action.setEnabled(false);
             action.setImageDescriptor(null);
             action.setText("Cannot ACK - not connected");
-            return;
+            action.setToolTipText("");
+            return true;
         }
 
         if (pvDelegate.getBeastAlarmInfo().isLatchedAlarmOK()) {
@@ -56,33 +59,38 @@ public class AcknowledgeAlarmAction implements IObjectActionDelegate {
         }
 
         action.setEnabled(true);
-        // choose icon to be shown, in the same way it's chosen in the AlarmTable widget
-        action.setImageDescriptor(getImageDescriptor(pvDelegate.getBeastAlarmInfo().getCurrentSeverity(),
-                pvDelegate.getBeastAlarmInfo().getLatchedSeverity()));
+        action.setImageDescriptor(getImageDescriptor(pvDelegate.getBeastAlarmInfo().getCurrentSeverity(), pvDelegate.getBeastAlarmInfo().getLatchedSeverity()));
+        action.setToolTipText("Test tooltip:\nLatched Severity: " + pvDelegate.getBeastAlarmInfo().getLatchedSeverity().getDisplayName()
+                + "\nCurrent Severity: " + pvDelegate.getBeastAlarmInfo().getCurrentSeverity().getDisplayName());
 
         String actionDesc = String.format("%1$sAcknowledge %2$s: %3$s",
                 pvDelegate.getBeastAlarmInfo().isAcknowledged() ? "Un-" : "",
                         pvDelegate.isBeastAlarmNode() ? "NODE" : "PV",
                                 pvDelegate.getBeastAlarmInfo().getBeastChannelNameWithoutScheme());
         action.setText(actionDesc);
+        return true;
     }
 
     @Override
     public void selectionChanged(IAction action, ISelection selection) {
         if (selection instanceof IStructuredSelection) {
             this.selection = (IStructuredSelection) selection;
-            updateAction(action);
+            if (!updateAction(action)) {
+                action.setEnabled(false);
+                action.setImageDescriptor(null);
+                action.setText("[invalid selection for Beast action]");
+            }
         }
     }
 
     @Override
     public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-        updateAction(action);
+        // nothing to do, we don't need a context for this action
     }
 
-    private AbstractPVWidgetEditPart getSelectedWidget(){
-        if(selection.getFirstElement() instanceof AbstractPVWidgetEditPart){
-            return (AbstractPVWidgetEditPart)selection.getFirstElement();
+    private AbstractBaseEditPart getSelectedWidget(){
+        if(selection != null && selection.getFirstElement() instanceof AbstractBaseEditPart){
+            return (AbstractBaseEditPart)selection.getFirstElement();
         }else
             return null;
     }
