@@ -11,6 +11,8 @@ import org.csstudio.opibuilder.OPIBuilderPlugin;
 import org.csstudio.opibuilder.model.AbstractContainerModel;
 import org.csstudio.opibuilder.properties.IWidgetPropertyChangeHandler;
 import org.csstudio.opibuilder.widgets.editparts.NativeTextEditpartDelegate;
+import org.csstudio.opibuilder.widgets.editparts.TextInputEditpart;
+import org.csstudio.opibuilder.widgets.model.TextInputModel;
 import org.csstudio.opibuilder.widgets.util.SingleSourceHelper;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.swt.SWT;
@@ -29,10 +31,13 @@ import org.eclipse.swt.widgets.Listener;
 public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegate {
     private Color backgroundFocusColor = null;
     private Color originalBackgroundColor = null;
+    private TextInputEditpart editpart;
+    private TextInputModel model;
 
     public NativeLabeledTextEditpartDelegate(LabeledTextInputEditpart editpart, LabeledTextInputModel model) {
         super(editpart, model);
-
+        this.editpart = editpart;
+        this.model = model;
         this.backgroundFocusColor = new Color(Display.getDefault(), model.getBackgroundFocusColor());
     }
 
