@@ -23,8 +23,6 @@ import org.eclipse.jface.window.IShellProvider;
 import org.eclipse.jface.window.SameShellProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.DisposeEvent;
-import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Font;
@@ -33,7 +31,6 @@ import org.eclipse.swt.graphics.FontMetrics;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
-import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -409,24 +406,6 @@ public abstract class Dialog extends Window {
 		}
 	};
 
-    /**
-     * Constructs a new dummy shell which can be used as a parent to dialogs that are to be shown on top of the full
-     * screen workbench window. This shell needs to be disposed of when no longer needed.
-     *
-     * @param display the parent display
-     * @return a shell
-     */
-    public static Shell createDummyShell(Shell parentShell) {
-        final Shell shell = new Shell(parentShell.getDisplay(), SWT.NO_TRIM);
-        int size = 20;
-        shell.setSize(size,size);
-        Rectangle windowBounds = parentShell.getBounds();
-        shell.setLocation(new Point(windowBounds.width/2 - size/2, windowBounds.height/2 - size/2));
-        return shell;
-    }
-
-    private Shell shellToDispose;
-
 	/**
 	 * Creates a dialog instance. Note that the window will have no visual
 	 * representation (no widgets) until it is told to open. By default,
@@ -438,10 +417,6 @@ public abstract class Dialog extends Window {
 	 */
 	protected Dialog(Shell parentShell) {
 		this(new SameShellProvider(parentShell));
-		if (parentShell != null) {
-		    shellToDispose = createDummyShell(parentShell);
-		}
-		setParentShell(shellToDispose);
 		if (parentShell == null && Policy.DEBUG_DIALOG_NO_PARENT) {
 			Policy.getLog().log(
 					new Status(IStatus.INFO, Policy.JFACE, IStatus.INFO, this
@@ -1120,14 +1095,6 @@ public abstract class Dialog extends Window {
 	public void create() {
 		super.create();
 		applyDialogFont(buttonBar);
-		getShell().addDisposeListener(new DisposeListener() {
-            @Override
-            public void widgetDisposed(DisposeEvent e) {
-                if (shellToDispose != null) {
-                    shellToDispose.dispose();
-                }
-            }
-        });
 	}
 
 	/**
