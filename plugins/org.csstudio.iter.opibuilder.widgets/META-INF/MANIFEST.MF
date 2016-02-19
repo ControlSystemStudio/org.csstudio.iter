@@ -5,20 +5,20 @@ Bundle-SymbolicName: org.csstudio.iter.opibuilder.widgets;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.csstudio.iter.opibuilder.widgets.OPIWidgets
 Bundle-Vendor: ITER
-Require-Bundle: org.eclipse.ui,
+Require-Bundle: org.eclipse.ui;resolution:=optional,
  org.eclipse.core.runtime,
  org.csstudio.opibuilder.widgets;bundle-version="3.4.4",
  org.csstudio.opibuilder,
  org.csstudio.swt.widgets;bundle-version="2.1.4",
  org.diirt.vtype;bundle-version="3.0.1",
  org.csstudio.simplepv;bundle-version="1.0.0",
- org.eclipse.ui.views;bundle-version="3.8.0",
+ org.eclipse.ui.views;bundle-version="3.8.0";resolution:=optional,
  org.eclipse.rap.ui;resolution:=optional,
  org.eclipse.rap.ui.views;resolution:=optional,
  org.eclipse.rap.gef;resolution:=optional,
  org.eclipse.rap.draw2d;resolution:=optional,
  org.eclipse.rap.draw2d.compatibility;resolution:=optional,
- org.eclipse.draw2d;bundle-version="3.10.0",
- org.eclipse.gef
+ org.eclipse.draw2d;resolution:=optional,
+ org.eclipse.gef;resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

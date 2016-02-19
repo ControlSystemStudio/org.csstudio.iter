@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.csstudio.opibuilder.runmode.OPIRunner"
+            contributorClass="org.csstudio.opibuilder.runmode.OPIRunnerToolBarContributor"
+            default="true"
+            extensions="opi"
+            icon="icons/OPIRunner.png"
+            id="org.csstudio.opibuilder.OPIRunner"
+            name="OPI Runtime">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.csstudio.opibuilder.runmode.OPIPerspective"
+            icon="icons/OPIBuilder.png"
+            id="org.csstudio.opibuilder.OPIRuntime.perspective"
+            name="OPI Runtime">
+      </perspective>
+   </extension>
+   <extension point="org.eclipse.ui.activities">  
+      <activity id="org.csstudio.opibuilder.iter.activity" name="HideOPIViewActivity">
+         <enabledWhen>  
+            <with variable="activePartId">
+               <equals
+                     value="unknownPart">
+               </equals>    
+                       
+            </with>
+         </enabledWhen>
+      </activity>
+      <activityPatternBinding
+            activityId="org.csstudio.opibuilder.iter.activity"
+            isEqualityPattern="true"
+            pattern="org.csstudio.opibuilder/org.csstudio.opibuilder.DisplayLauncher">  
+      </activityPatternBinding>
+      <activityPatternBinding
+            activityId="org.csstudio.opibuilder.iter.activity"
+            isEqualityPattern="true"
+            pattern="org.csstudio.opibuilder/org.csstudio.opibuilder.ShellLauncher">
+      </activityPatternBinding>
+      <activityPatternBinding
+            activityId="org.csstudio.opibuilder.iter.activity"
+            isEqualityPattern="false"
+            pattern="org.csstudio.opibuilder/org.csstudio.opibuilder.opiView.*">
+      </activityPatternBinding>
+      <activityPatternBinding
+            activityId="org.csstudio.opibuilder.iter.activity"
+            isEqualityPattern="true"
+            pattern="org.csstudio.opibuilder/org.csstudio.opibuilder.opiShellSummary">
+      </activityPatternBinding>
+      <activityPatternBinding
+            activityId="org.csstudio.opibuilder.iter.activity"
+            isEqualityPattern="true"
+            pattern="org.csstudio.opibuilder/org.csstudio.opibuilder.views">
+      </activityPatternBinding>
+      <activityPatternBinding
+            activityId="org.csstudio.opibuilder.iter.activity"
+            isEqualityPattern="true"
+            pattern="org.csstudio.opibuilder/org.csstudio.opibuilder.placeHolder">
+      </activityPatternBinding>
+   </extension>
+</fragment>

@@ -6,9 +6,11 @@
  * http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
 package org.csstudio.iter.css.product;
+import org.csstudio.iter.css.product.util.WorkbenchUtil;
 import org.csstudio.opibuilder.actions.CompactModeAction;
 import org.csstudio.opibuilder.util.WorkbenchWindowService;
 import org.csstudio.utility.product.ApplicationWorkbenchWindowAdvisor;
+import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.internal.WorkbenchWindow;
 
@@ -47,6 +49,8 @@ public class ITERWorkbenchWindowAdvisor extends ApplicationWorkbenchWindowAdviso
     public void postWindowOpen() {
         super.postWindowOpen();
         WorkbenchWindow window = (WorkbenchWindow)getWindowConfigurer().getWindow();
+        MApplication application = (MApplication) window.getService(MApplication.class);
+        WorkbenchUtil.removeUnwantedViews(application);
 
         if (!toolbarWasVisible) {
             //put a runnable on the display queue, so it gets updated the last, when the correct menu bar is set
