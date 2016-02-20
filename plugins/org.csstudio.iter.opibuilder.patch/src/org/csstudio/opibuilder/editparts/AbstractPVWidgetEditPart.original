@@ -5,14 +5,13 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  ******************************************************************************/
-package org.csstudio.opibuilder.editparts;
+package org.csstudio.opibuilder.persistence;
 
 import org.csstudio.csdata.ProcessVariable;
 import org.csstudio.opibuilder.dnd.DropPVtoPVWidgetEditPolicy;
 import org.csstudio.simplepv.IPV;
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.ui.IActionFilter;
 import org.diirt.vtype.VType;
 
 /**The abstract edit part for all PV armed widgets.
@@ -79,18 +78,6 @@ public abstract class AbstractPVWidgetEditPart extends AbstractBaseEditPart impl
         if(key == ProcessVariable.class){
             return new ProcessVariable(getPVName());
         }
-		// context-menu for BEAST Alarm
-        if (key == IActionFilter.class)
-            return new BaseEditPartActionFilter(){
-            @Override
-            public boolean testAttribute(Object target, String name, String value) {
-                if ("beastAlarmPVActionable".equals(name) && "TRUE".equalsIgnoreCase(value)) {
-                    return getPVWidgetEditpartDelegate().isBeastAlarmAndActionable();
-                }
-                return super.testAttribute(target, name, value);
-            }
-        };
-
         return super.getAdapter(key);
     }
 
