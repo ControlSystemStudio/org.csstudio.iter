@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.csstudio.archive.reader.UnknownChannelException;
 import org.csstudio.archive.reader.rdb.ConnectionCache;
 import org.csstudio.trends.databrowser2.archive.ArchiveFetchJob;
 import org.csstudio.trends.databrowser2.archive.ArchiveFetchJobListener;
@@ -42,7 +43,7 @@ public class XYArchiveFetchJob extends ArchiveFetchJob {
      */
     public XYArchiveFetchJob(String pv, List<String> archiveDataSource, Instant start, Instant end,
         XYArchiveJobCompleteListener listener) throws Exception {
-        super(getPVItem(pv, archiveDataSource), start, end, getArchiveFetchJobListener(pv, listener), true, false);
+        super(getPVItem(pv, archiveDataSource), start, end, getArchiveFetchJobListener(pv, listener), true);
         ConnectionCache.clean();
     }
 
@@ -78,8 +79,10 @@ public class XYArchiveFetchJob extends ArchiveFetchJob {
         return new ArchiveFetchJobListener() {
             @Override
             public void archiveFetchFailed(ArchiveFetchJob job, ArchiveDataSource archive, Exception error) {
-                LOGGER.log(Level.WARNING,
-                    "Archive fetch failed for pv '" + pvName + "' and url '" + archive.getUrl() + "'", error);
+                if (!(error instanceof UnknownChannelException)) {
+                    LOGGER.log(Level.WARNING,
+                        "Archive fetch failed for pv '" + pvName + "' and url '" + archive.getUrl() + "'", error);
+                }
             }
 
             @Override
