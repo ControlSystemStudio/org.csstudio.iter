@@ -1,49 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.csstudio.iter.core.util.feature"
-      label="CSS Core Component"
-      version="4.0.0.qualifier"
-      provider-name="ITER">
+      id="org.csstudio.iter.opibuilder.rap.feature"
+      label="Feature"
+      version="1.0.0.qualifier"
+      provider-name="Jaka Bobnar (jaka.bobnar@cosylab.com)">
 
-   <copyright>
-      Copyright (c) : 2010-2016 ITER Organization,
-CS 90 046
-13067 St. Paul-lez-Durance Cedex
-France
-   </copyright>
-
-   <license url="">
-      This product is part of ITER CODAC software.
-For the terms and conditions of redistribution or use of this software
-refer to the file ITER-LICENSE.TXT located in the top level directory
-of the distribution package.
-   </license>
-
-   <includes
-         id="org.csstudio.jdbc.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.jms.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.diirt.feature"
-         version="0.0.0"/>
-
-   <plugin
-         id="com.google.guava"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.antlr.runtime"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <description>
+      Provides a the set of plugins needed to build the opibuilder.rap WAR product.
+   </description>
 
    <plugin
          id="org.csstudio.apputil"
@@ -53,7 +17,21 @@ of the distribution package.
          unpack="false"/>
 
    <plugin
-         id="org.csstudio.auth"
+         id="org.csstudio.apputil.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.archive.reader"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.archive.vtype"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -61,6 +39,13 @@ of the distribution package.
 
    <plugin
          id="org.csstudio.autocomplete"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.autocomplete.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -88,35 +73,21 @@ of the distribution package.
          unpack="false"/>
 
    <plugin
-         id="org.csstudio.logging"
+         id="org.csstudio.logbook"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.csstudio.servicelocator"
+         id="org.csstudio.openfile"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.csstudio.platform.libs.easymock"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.csstudio.platform.libs.jmock"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.csstudio.remote"
+         id="org.csstudio.platform.libs.epics"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -124,6 +95,13 @@ of the distribution package.
 
    <plugin
          id="org.csstudio.security"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.security.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -144,7 +122,14 @@ of the distribution package.
          unpack="false"/>
 
    <plugin
-         id="org.csstudio.utility.jms"
+         id="org.csstudio.simplepv.vtypepv"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.ui.menu"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -179,35 +164,7 @@ of the distribution package.
          unpack="false"/>
 
    <plugin
-         id="org.csstudio.utility.test"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.csstudio.workspace"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.csstudio.iter.passwordprovider"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="javax.mail"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.commons.lang"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -228,22 +185,7 @@ of the distribution package.
          unpack="false"/>
 
    <plugin
-         id="org.slf4j.api"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.slf4j.slf4j-jdk14"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"
-         unpack="false"/>
-
-   <plugin
-         id="org.diirt.service"
+         id="org.csstudio.utility.singlesource.rap"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -269,5 +211,76 @@ of the distribution package.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="org.csstudio.jre6.fragment"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.trends.databrowser2"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.iter.authorizationprovider"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.alarm.beast"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.alarm.beast.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.alarm.beast.ui.alarmtable"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.ui.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.alarm.beast.notifier"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.logging"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.iter.opibuilder.patch"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
 
 </feature>
