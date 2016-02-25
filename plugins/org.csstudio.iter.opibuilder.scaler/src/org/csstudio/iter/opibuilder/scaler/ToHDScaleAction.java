@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010-2015 ITER Organization.
+ * Copyright (c) 2010-2016 ITER Organization.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,7 +14,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.jface.dialogs.MessageDialog;
 
 /**
- * 
+ *
  * <code>ToHDScaleAction</code> is an action that checks if the selected files are
  * in 4K format and scales them with a factor of 0.5.
  *
@@ -22,11 +22,11 @@ import org.eclipse.jface.dialogs.MessageDialog;
  *
  */
 public class ToHDScaleAction extends ScaleAction {
-    
+
     /**
      * Checks if the dimension is acceptable for transformation and returns true if it is or false otherwise.
-     * 
-     * @param dim the dimension to check 
+     *
+     * @param dim the dimension to check
      * @return true if dimensio is accepted or false if denied
      */
     protected boolean isDimensionOK(Dimension dim) {
@@ -54,7 +54,7 @@ public class ToHDScaleAction extends ScaleAction {
             } catch (Exception e) {
                 error = true;
             }
-            
+
             if (error) {
                 MessageDialog.openError(parent, "Invalid OPI File", "File " + file.getName() + " is not a "
                         + "valid OPI file. The display dimension could not be verified. "
@@ -64,11 +64,11 @@ public class ToHDScaleAction extends ScaleAction {
         }
         return true;
     }
-    
+
     protected String getScaleName() {
         return "Full HD scale";
     }
-    
+
     /*
      * (non-Javadoc)
      * @see org.csstudio.iter.opibuilder.scaler.ScaleAction#getScale()

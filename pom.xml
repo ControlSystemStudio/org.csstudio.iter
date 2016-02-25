@@ -16,19 +16,19 @@
     </prerequisites>
 
     <properties>
-        <global-version>4.2.0-SNAPSHOT</global-version>
+        <global-version>4.3.2-SNAPSHOT</global-version>
         <assembly-version>2.4</assembly-version>
         <replacer-version>1.4.1</replacer-version>
+        <cs-studio.version>4.3</cs-studio.version>
         <tycho.version>0.22.0</tycho.version>
         <tycho-extras.version>0.22.0</tycho-extras.version>
         <tycho-groupid>org.eclipse.tycho</tycho-groupid>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <baselineMode>fail</baselineMode>
         <pydev-site>http://www.pydev.org/updates/</pydev-site>
-	    <!--pydev-site>http://update-production-pydev.s3.amazonaws.com/pydev/updates</pydev-site-->
-        <svn-site>http://subclipse.tigris.org/update_1.8.x</svn-site>
-        <orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20140114142710/repository</orbit-site>
-        <efx-site>http://download.eclipse.org/efxclipse/runtime-released/1.2.0/site</efx-site>
+        <svn-site>http://subclipse.tigris.org/update_1.12.x</svn-site>
+        <orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20150519210750/repository</orbit-site>
+        <efx-site>http://download.eclipse.org/efxclipse/runtime-released/2.1.0/site</efx-site>
     </properties>
 
     <groupId>org.csstudio</groupId>
@@ -54,12 +54,12 @@
                 </property>
             </activation>
             <properties>
-                <eclipse-site>http://download.eclipse.org/releases/luna</eclipse-site>
-                <eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.4</eclipse-update-site>
+                <eclipse-site>http://download.eclipse.org/releases/mars</eclipse-site>
+                <eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.5</eclipse-update-site>
                 <rap-site>http://download.eclipse.org/rt/rap/3.0</rap-site>
-                <rap-gef-site>http://download.eclipse.org/rt/rap/incubator/nightly/gef/20150122-1538</rap-gef-site>
-                <rap-e4-site>http://download.eclipse.org/rt/rap/incubator/nightly/e4/target/site</rap-e4-site>
-                <swtbot-site>http://download.eclipse.org/technology/swtbot/luna/dev-build/update-site</swtbot-site>
+                <rap-gef-site>http://download.eclipse.org/rt/rap/incubator/nightly/gef/20150327-1849</rap-gef-site>
+                <rap-e4-site>http://download.eclipse.org/rt/rap/incubator/3.0/e4/target/site</rap-e4-site>
+                <swtbot-site>http://download.eclipse.org/technology/swtbot/mars/dev-build/update-site</swtbot-site>
                 <platform-version>[4.4,4.5)</platform-version>
             </properties>
         </profile>
@@ -72,25 +72,31 @@
             </activation>
             <repositories>
                 <repository>
-                    <id>css-core</id>
-                    <url>http://download.controlsystemstudio.org/updates/4.1</url>
+                    <id>diirt</id>
+                    <url>http://diirt.download.controlsystemstudio.org/diirt/3.0.2</url>
                     <layout>p2</layout>
                 </repository>
                 <repository>
+                    <id>css-core</id>
+                    <url>http://download.controlsystemstudio.org/core/${cs-studio.version}</url>
+                    <layout>p2</layout>
+                </repository>
+                <!-- Just make this something valid, doesn't matter what. Thirparty tag is needed by jenkins, but no when building locally -->
+                <repository>
                     <id>thirdparty</id>
-                    <url>${eclipse-site}</url>
+                    <url>http://download.controlsystemstudio.org/applications/${cs-studio.version}</url>
                     <layout>p2</layout>
                 </repository>
                 <repository>
                     <id>csstudio-thirdparty</id>
-                    <url>http://download.controlsystemstudio.org/thirdparty/4.1</url>
+                    <url>http://download.controlsystemstudio.org/thirdparty/${cs-studio.version}</url>
                     <layout>p2</layout>
                 </repository>
-                <!--repository>
-                    <id>maven-osgi-bundles</id>
-                    <url>http://download.controlsystemstudio.org/maven-osgi-bundles/4.1</url>
+                <repository>
+                    <id>csstudio-maven-osgi-bundles</id>
+                    <url>http://download.controlsystemstudio.org/maven-osgi-bundles/${cs-studio.version}</url>
                     <layout>p2</layout>
-                </repository-->
+                </repository>
             </repositories>
         </profile>
     </profiles>
@@ -181,12 +187,6 @@
           </dependency-resolution>
 
           <filters>
-              <!-- This is how features/plugins can be ignored. -->
-              <!--<filter>
-                <type>eclipse-plugin</type>
-                <id>artifactId</id>
-                <removeAll />
-              </filter>-->
           </filters>
 
           <environments>
@@ -196,26 +196,6 @@
               <ws>gtk</ws>
               <arch>x86_64</arch>
             </environment>
-              <!--environment>
-                <os>linux</os>
-                <ws>gtk</ws>
-                <arch>x86</arch>
-              </environment>
-              <environment>
-                <os>macosx</os>
-                <ws>cocoa</ws>
-                <arch>x86</arch>
-              </environment>
-              <environment>
-                <os>win32</os>
-                <ws>win32</ws>
-                <arch>x86</arch>
-              </environment>
-              <environment>
-                <os>win32</os>
-                <ws>win32</ws>
-                <arch>x86_64</arch>
-              </environment-->
           </environments>
         </configuration>
       </plugin>

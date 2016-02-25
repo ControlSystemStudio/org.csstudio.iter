@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="Generation action set"
+            visible="true"
+            id="org.csstudio.help.generationSets">
+         <action
+               label="&amp;Help Generation"
+               class="org.csstudio.help.generation.HelpGenerationAction"
+               tooltip="Help generation"
+               menubarPath="help/group.tutorials"
+               id="help.generation">
+         </action>
+      </actionSet>
+   </extension>
+</plugin>

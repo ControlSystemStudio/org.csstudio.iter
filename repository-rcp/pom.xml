@@ -40,6 +40,21 @@
             </goals>
           </execution>
           <execution>
+            <id>org.eclipse.jface</id>
+            <phase>process-resources</phase>
+            <configuration>
+              <failOnError>false</failOnError>
+              <target>
+                <echo message="Copying patched org.eclipse.jface plugin to ${project.build.directory}" />
+                <copy verbose="true" file="${project.build.directory}/../../plugins/org.eclipse.jface/target/org.eclipse.jface-3.11.0.v20150602-1400.jar" 
+                                tofile="${project.build.directory}/products/org.csstudio.iter.product.css.product/org.eclipse.jface_3.11.0.v20150602-1400.jar"/>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          <execution>
             <id>configuration</id>
             <phase>process-resources</phase>
             <configuration>

@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  SDD Generated Configuration
+  CODAC-VERSION: 5.2b5
+  WARNING: This is an automatically generated file. PLEASE DO NOT MODIFY.
+-->
+<display typeId="org.csstudio.opibuilder.Display" version="1.0">
+    <widget_type>Display</widget_type>
+    <macros>
+        <include_parent_macros>true</include_parent_macros>
+    </macros>
+    <width>3236</width>
+    <rules />
+    <scripts />
+    <show_ruler>true</show_ruler>
+    <height>1760</height>
+    <show_edit_range>true</show_edit_range>
+    <name>CTRL-SUP-SYSM</name>
+    <grid_space>6</grid_space>
+    <snap_to_geometry>true</snap_to_geometry>
+    <show_grid>true</show_grid>
+    <y>0</y>
+    <actions hook="false" />
+    <foreground_color>
+        <color name="IO Foreground" />
+    </foreground_color>
+    <background_color>
+        <color name="IO Background" />
+    </background_color>
+    <x>0</x>
+  
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+
+   
+  <auto_scale_widgets>
+    <auto_scale_widgets>false</auto_scale_widgets>
+    <min_width>-1</min_width>
+    <min_height>-1</min_height>
+  </auto_scale_widgets>
+
+
+
+    <!-- ************************************************************************************************************************************************ -->
+    <!-- ++++++++++ Start Top 2 Rows  ++++++++++ -->
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0">
+        <enabled>true</enabled>
+        <widget_type>Grouping Container</widget_type>
+        <macros>
+            <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <visible>true</visible>
+        <border_style>0</border_style>
+        <rules />
+        <lock_children>true</lock_children>
+        <scripts />
+        <border_width>2</border_width>
+        <name>groupHeading</name>
+        <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <transparent>true</transparent>
+        <show_scrollbar>false</show_scrollbar>
+        <actions hook="false" />
+        <y>0</y>
+        <foreground_color>
+            <color red="192" green="192" blue="192" />
+        </foreground_color>
+        <background_color>
+            <color red="240" green="240" blue="240" />
+        </background_color>
+        <x>0</x>
+        <tooltip />
+        <width>1243</width>
+        <height>50</height>
+    </widget>
+    <!-- ++++++++++ End Top 2 Rows  ++++++++++ -->
+    <!-- ************************************************************************************************************************************************ -->
+    <!-- ++++++++++ Start Cubicles Summary Table  ++++++++++ -->
+  
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip/>
+      <horizontal_alignment>0</horizontal_alignment>
+      <rules/>
+      <enabled>false</enabled>
+      
+      <transparent>true</transparent>
+      <auto_size>true</auto_size>
+      <text>Cubicles</text>
+      <scripts/>
+      <height>13</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Label</widget_type>
+      <wrap_words>true</wrap_words>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <width>40</width>
+      <x>6</x>
+      <name>Label Template</name>
+      <y>54</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO Text Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="10" style="0">IO Label</opifont.name>
+      </font>
+    </widget>
+
+  
+  
+    <widget typeId="org.csstudio.opibuilder.widgets.table" version="1.0">
+        <visible>true</visible>
+        <default_content>
+               
+        </default_content>
+        <scripts>
+            <path pathString="scripts/CubiclesTableSelectionMonitor.js" checkConnect="true" sfe="false" seoe="false">
+                <pv trig="true">1</pv>
+            </path>
+            <path pathString="scripts/DisplayPVValuesInCubicleOverview.js" checkConnect="false" sfe="false" seoe="false">
+              
+            </path>
+        </scripts>
+        <height>300</height>
+        <name>Table</name>
+        <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <background_color>
+            <color red="240" green="240" blue="240" />
+        </background_color>
+        <foreground_color>
+            <color red="192" green="192" blue="192" />
+        </foreground_color>
+        <column_header_visible>true</column_header_visible>
+        <widget_type>Table</widget_type>
+        <enabled>true</enabled>
+        <font>
+            <opifont.name fontName="DejaVu Sans Mono-regular" height="10" style="0">IO Scale</opifont.name>
+        </font>
+        <width>1400</width>
+        <border_style>0</border_style>
+        <column_headers>
+            <row>
+                <col>Name</col>
+                <col>50</col>
+                <col>no</col>
+            </row>
+            <row>
+                <col>Physical Name</col>
+                <col>120</col>
+                <col></col>
+            </row>
+            <row>
+                <col>Description</col>
+                <col>120</col>
+                <col>no</col>
+            </row>
+            <row>
+                <col>CUBHLTS</col>
+                <col>100</col>
+                <col>no</col>
+            </row>
+            <row>
+                <col>PLCHLTS</col>
+                <col>100</col>
+                <col>no</col>
+            </row>
+        </column_headers>
+        <editable>false</editable>
+        <rules />
+        <border_width>2</border_width>
+        <border_color>
+            <color red="0" green="128" blue="255" />
+        </border_color>
+        <columns_count>7</columns_count>
+        <actions hook="false" hook_all="false" />
+        <y>125</y>
+        <tooltip></tooltip>
+        <x>6</x>
+    </widget>
+    <!-- ++++++++++ End Cubicles Summary Table  ++++++++++ -->
+    <!-- ++++++++++ Start PLCs Summary Table  ++++++++++ -->
+  
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip/>
+      <horizontal_alignment>0</horizontal_alignment>
+      <rules/>
+      <enabled>false</enabled>
+      
+      <transparent>true</transparent>
+      <auto_size>true</auto_size>
+      <text>PLCs</text>
+      <scripts/>
+      <height>13</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Label</widget_type>
+      <wrap_words>true</wrap_words>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <width>26</width>
+      <x>6</x>
+      <name>Label Template</name>
+      <y>500</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO Text Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="10" style="0">IO Label</opifont.name>
+      </font>
+    </widget>
+
+  
+  
+    <widget typeId="org.csstudio.opibuilder.widgets.table" version="1.0">
+        <visible>true</visible>
+        <default_content>
+            
+            <row>
+                <col>P0</col>
+                <col>PLC000</col>
+                <col>PLC for test</col>
+                <col></col>
+                <col></col>
+                <col></col>
+                <col></col>
+            </row>
+        
+        </default_content>
+        <scripts>
+            <path pathString="scripts/PLCsTableSelectionMonitor.js" checkConnect="true" sfe="false" seoe="false">
+                <pv trig="true">1</pv>
+            </path>
+            <path pathString="scripts/DisplayPVValuesInPLCOverview.js" checkConnect="false" sfe="false" seoe="false">
+            	      	
+                <pv trig="true">CTRL-SUP-SYSM:P0-PLCHLTS</pv>
+       	      	
+                <pv trig="true">CTRL-SUP-SYSM:P0-ALIVEC</pv>
+       	       	       		<pv trig="true">loc://CTRL-SUP-SYSM:P0-EVTHLTS(N.A.)</pv>
+       	       		<pv trig="true">loc://CTRL-SUP-SYSM:P0-FRAMEC(N.A.)</pv>
+       	       	
+           
+            </path>
+        </scripts>
+        <height>300</height>
+        <name>Table_1</name>
+        <scale_options>
+           <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <background_color>
+            <color red="240" green="240" blue="240" />
+        </background_color>
+        <foreground_color>
+            <color red="192" green="192" blue="192" />
+        </foreground_color>
+        <column_header_visible>true</column_header_visible>
+        <widget_type>Table</widget_type>
+        <enabled>true</enabled>
+        <font>
+            <opifont.name fontName="DejaVu Sans Mono-regular" height="10" style="0">IO Scale</opifont.name>
+        </font>
+        <width>1400</width>
+        <border_style>0</border_style>
+        <column_headers>
+            <row>
+                <col>Name</col>
+                <col>50</col>
+                <col>no</col>
+            </row>
+            <row>
+                <col>Physical Name</col>
+                <col>120</col>
+                <col></col>
+            </row>
+            <row>
+                <col>Description</col>
+                <col>120</col>
+                <col>no</col>
+            </row>
+            <row>
+                <col>PLCHLTS</col>
+                <col>100</col>
+                <col>no</col>
+            </row>
+            <row>
+                <col>ALIVEC</col>
+                <col>100</col>
+                <col>no</col>
+            </row>
+            <row>
+                <col>EVTHLTS</col>
+                <col>100</col>
+                <col>no</col>
+            </row>
+            <row>
+                <col>FRAMEC</col>
+                <col>100</col>
+                <col>no</col>
+            </row>
+        </column_headers>
+        <editable>false</editable>
+        <rules />
+        <border_width>2</border_width>
+        <border_color>
+            <color red="0" green="128" blue="255" />
+        </border_color>
+        <columns_count>5</columns_count>
+        <actions hook="false" hook_all="false" />
+        <y>550</y>
+        <tooltip></tooltip>
+        <x>6</x>
+    </widget>
+    <!-- ++++++++++ End PLCs Summary Table  ++++++++++ -->
+    <!-- ++++++++++ Start Control Units Summary Table  ++++++++++ -->
+  
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <border_style>0</border_style>
+      <tooltip/>
+      <horizontal_alignment>0</horizontal_alignment>
+      <rules/>
+      <enabled>false</enabled>
+      
+      <transparent>true</transparent>
+      <auto_size>true</auto_size>
+      <text>Control Units</text>
+      <scripts/>
+      <height>13</height>
+      <border_width>2</border_width>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <visible>true</visible>
+      <vertical_alignment>1</vertical_alignment>
+      <border_color>
+        <color blue="0" green="0" name="IO Border" red="0"/>
+      </border_color>
+      <widget_type>Label</widget_type>
+      <wrap_words>true</wrap_words>
+      <background_color>
+        <color blue="235" green="235" name="IO Background" red="235"/>
+      </background_color>
+      <width>59</width>
+      <x>6</x>
+      <name>Label Template</name>
+      <y>900</y>
+      <foreground_color>
+        <color blue="0" green="0" name="IO Text Fg" red="0"/>
+      </foreground_color>
+      <actions hook="false" hook_all="false"/>
+      <show_scrollbar>false</show_scrollbar>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="10" style="0">IO Label</opifont.name>
+      </font>
+    </widget>
+
+  
+   
+    <widget typeId="org.csstudio.opibuilder.widgets.table" version="1.0">
+        <visible>true</visible>
+        <default_content>
+            
+            <row>
+                <col>H0</col>
+                <col>PSH000</col>
+                <col>PSH test</col>
+                <col></col>
+                <col></col>
+                <col></col>
+                <col></col>
+                <col>Plant System Host</col>
+            </row>
+         
+        </default_content>
+        <scripts>
+            <path pathString="scripts/ControlUnitsTableSelectionMonitor.js" checkConnect="true" sfe="false" seoe="false">
+                <pv trig="true">1</pv>
+            </path>
+            <path pathString="scripts/DisplayPVValuesInOverview.js" checkConnect="false" sfe="false" seoe="false">
+              	      	
+                <pv trig="true">CTRL-SUP-SYSM:H0-SYSHLTS</pv>
+       	      	
+                <pv trig="true">CTRL-SUP-SYSM:H0CORE-IOCHLTS</pv>
+       	      	
+                <pv trig="true">CTRL-SUP-SYSM:H0SYSM-IOCHLTS</pv>
+       	      	
+                <pv trig="true">CTRL-SUP-SYSM:H0PLC-IOCHLTS</pv>
+       	            
+            </path>
+        </scripts>
+        <height>300</height>
+        <name>Table_2</name>
+        <scale_options>
+           <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <background_color>
+            <color red="240" green="240" blue="240" />
+        </background_color>
+        <foreground_color>
+            <color red="192" green="192" blue="192" />
+        </foreground_color>
+        <column_header_visible>true</column_header_visible>
+        <widget_type>Table</widget_type>
+        <enabled>true</enabled>
+        <font>
+            <opifont.name fontName="DejaVu Sans Mono-regular" height="10" style="0">IO Scale</opifont.name>
+        </font>
+        <width>1400</width>
+        <border_style>0</border_style>
+        <column_headers>
+            <row>
+                <col>Name</col>
+                <col>50</col>
+                <col>no</col>
+            </row>
+            <row>
+                <col>Physical Name</col>
+                <col>120</col>
+                <col></col>
+            </row>
+            <row>
+                <col>Description</col>
+                <col>120</col>
+                <col>no</col>
+            </row>
+            <row>
+                <col>SYSHLTS</col>
+                <col>150</col>
+                <col>no</col>
+            </row>
+            <row>
+                <col>CORE-IOCHLTS</col>
+                <col>100</col>
+                <col>no</col>
+            </row>
+            <row>
+                <col>SYSM-IOCHLTS</col>
+                <col>100</col>
+                <col>no</col>
+            </row>
+            <row>
+                <col>PLC-IOCHLTS</col>
+                <col>100</col>
+                <col>no</col>
+            </row>
+            <row>
+                <col>Type</col>
+                <col>100</col>
+                <col>no</col>
+            </row>
+        </column_headers>
+        <editable>false</editable>
+        <rules />
+        <border_width>2</border_width>
+        <border_color>
+            <color red="0" green="128" blue="255" />
+        </border_color>
+        <columns_count>7</columns_count>
+        <actions hook="false" hook_all="false" />
+        <y>950</y>
+        <tooltip></tooltip>
+        <x>6</x>
+    </widget>
+    <!-- ++++++++++ End Control Units Summary Table  ++++++++++ -->
+    <!-- ++++++++++ Start I&C Project Info Container  ++++++++++ -->
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0">
+        <enabled>true</enabled>
+        <widget_type>Grouping Container</widget_type>
+        <macros>
+            <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <visible>true</visible>
+        <width>1243</width>
+        <border_style>0</border_style>
+        <rules />
+        <lock_children>true</lock_children>
+        <scripts />
+        <height>48</height>
+        <border_width>2</border_width>
+        <name>groupICProjectInfo</name>
+        <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <transparent>true</transparent>
+        <show_scrollbar>false</show_scrollbar>
+        <actions hook="false" />
+        <y>1400</y>
+        <foreground_color>
+            <color red="192" green="192" blue="192" />
+        </foreground_color>
+        <background_color>
+            <color red="240" green="240" blue="240" />
+        </background_color>
+        <x>0</x>
+        <tooltip />
+        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+            <visible>true</visible>
+            <vertical_alignment>1</vertical_alignment>
+            <show_units>false</show_units>
+            <auto_size>false</auto_size>
+            <scripts />
+            <height>48</height>
+            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+            <name>txtICProjectInfo</name>
+            <format_type>0</format_type>
+            <precision_from_pv>false</precision_from_pv>
+            <transparent>false</transparent>
+            <pv_name />
+            <background_color>
+                <color name="IO StatusBar Bg" />
+            </background_color>
+            <foreground_color>
+                <color name="IO StatusBar Fg" />
+            </foreground_color>
+            <widget_type>Text Update</widget_type>
+            <enabled>true</enabled>
+            <text>	I&amp;C Project Name: TEST, Version: 6</text>
+            <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+            <precision>0</precision>
+            <font>
+                <opifont.name>IO Output 2</opifont.name>
+            </font>
+            <width>1242</width>
+            <border_style>0</border_style>
+            <rules />
+            <border_width>2</border_width>
+            <border_color>
+                <color name="IO Border" />
+            </border_color>
+            <horizontal_alignment>0</horizontal_alignment>
+            <y>0</y>
+            <actions hook="false" />
+            <tooltip />
+            <x>0</x>
+        </widget>
+    </widget>
+    <!-- ++++++++++ End I&C Project Info Container  ++++++++++ -->
+    <!-- ************************************************************************************************************************************************ -->
+</display>

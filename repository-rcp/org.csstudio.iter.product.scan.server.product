@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Scan Server" uid="org.csstudio.iter.product.scan.server.product" id="org.csstudio.iter.scan.server.product.product" application="org.csstudio.scan.server.application" version="4.2.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Scan Server" uid="org.csstudio.iter.product.scan.server.product" id="org.csstudio.iter.scan.server.product.product" application="org.csstudio.scan.server.application" version="4.3.2.qualifier" useFeatures="true" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
@@ -9,7 +9,8 @@
    <launcherArgs>
       <programArgs>--launcher.suppressErrors
       </programArgs>
-      <vmArgs>-Djava.awt.headless=true
+      <vmArgs>-Ddiirt.home=/opt/codac/css/scan-server/configuration/diirt
+-Djava.awt.headless=true
 -Xms64m
 -Xmx256m
 -Declipse.exitdata=
@@ -33,7 +34,7 @@
    <license>
         <url>https://portal.iter.org/departments/CHD/CODAC/dev/Pages/trunk.aspx</url>
         <text>
-   Copyright (c) : 2010-2015 ITER Organization,
+   Copyright (c) : 2010-2016 ITER Organization,
 CS 90 046
 13067 St. Paul-lez-Durance Cedex
 France
@@ -50,6 +51,7 @@ of the distribution package.
 
    <features>
       <feature id="org.csstudio.iter.scan.server.app.feature"/>
+      <feature id="org.csstudio.iter.product.configuration.feature"/>
    </features>
 
    <configurations>

@@ -1,52 +1,11 @@
 #/
-## Generated date: Thu Dec 19 15:57:35 UTC 2013
+## Generated date: Tue Jan 19 09:12:16 UTC 2016
 #/
 
 #/
 ## Organization (ITER) specific plugin preferences
 #/
 
-#/
-## Core plugins preferences
-#/
-
-#/
-## org.csstudio.auth 
-#/
-#/ Specify where the secure storage should locate.
-#/ It can be either "INSTALL_LOCATION" or "CONFIGURATION_LOCATION".
-#/ By default it is "CONFIGURATION_LOCATION".
-# org.csstudio.auth/secure_storage_location=CONFIGURATION_LOCATION
-
-#<< org.csstudio.auth/secure_storage_location=CONFIGURATION_LOCATION
-
-#/
-## org.csstudio.autocomplete 
-#/
-#/ # Default preferences for this plugin
-#/ 
-#/ Default max result per provider
-# org.csstudio.autocomplete/default_max_results=10
-#/ 
-#/ Define ordered provider list by type and maximum number of expected results by provider
-#/ providers.TYPE=provider_name[,max_results];provider_name[,max_results]...
-#/ providers.ANOTHER_TYPE=provider_name[,max_results];provider_name[,max_results]...
-#/ Example:
-#/ providers.PV= History; SDD Database, 5; DB Files, 5
-# org.csstudio.autocomplete/providers.PV=History,10
-# org.csstudio.autocomplete/providers.Formula=History,10
-#/ 
-#/ Top results separators
-# org.csstudio.autocomplete/max_top_results=3
-# org.csstudio.autocomplete/separators=-.(
-
-#<< org.csstudio.autocomplete/default_max_results=10
-#<< org.csstudio.autocomplete/max_top_results=3
-#<< org.csstudio.autocomplete/providers.Formula=History,10
-#<< org.csstudio.autocomplete/providers.PV=History,10
-#<< org.csstudio.autocomplete/separators=-.(
-
-#/
 ## org.csstudio.logging 
 #/
 #/ Logging preferences
@@ -101,76 +60,6 @@ org.csstudio.logging/jms_level=SEVERE
 #<< org.csstudio.logging/jms_url=
 
 #/
-## org.csstudio.platform.libs.epics 
-#/
-#/ # For most of these parameters,
-#/ # refer to the EPICS Channel Access
-#/ # documentation for details
-#/ 
-#/ Use the pure-Java CAJ library, or the binaries for JNI JCA
-#/ (when using JNI, the appropriate binaries may have to be added to lib/..)
-# org.csstudio.platform.libs.epics/use_pure_java=true
-#/ 
-#/ Subscribe to changes in "VALUE", "ARCHIVE" deadband, or "ALARM" state?
-# org.csstudio.platform.libs.epics/monitor=VALUE
-#/ 
-#/ Support the DBE_PROPERTY subscription?
-# org.csstudio.platform.libs.epics/support_dbe_property=false
-#/ 
-#/ PVManager optional configuration.
-#/ 
-#/ These properties map to the configuration options specified in
-#/ http://pvmanager.sourceforge.net/apidocs/org/epics/pvmanager/jca/JCADataSourceBuilder.html
-#/ 
-#/ Use DBE_PROPERTY for metadata notification
-# org.csstudio.platform.libs.epics/dbe_property_supported=false
-#/ Honor zero precision for numeric value (or ignore it)
-# org.csstudio.platform.libs.epics/honor_zero_precision=true
-#/ For RTYP fields, only subscribe to the value (no alarm or timestamp)
-# org.csstudio.platform.libs.epics/rtyp_value_only=true
-#/ Use the dynamic array support (Auto/Enabled/Disabled)
-# org.csstudio.platform.libs.epics/var_array_support=Auto
-#/ 
-#/ JCA/CAJ properties
-#/ 
-#/ EPICS Channel Access address list.
-#/ Space-separated list of IP addresses for individual servers or subnets (...255)
-# org.csstudio.platform.libs.epics/addr_list=
-#/ 
-#/ Use automatic address list _in addition_ to the addr_list?
-# org.csstudio.platform.libs.epics/auto_addr_list=true
-#/ 
-#/ Connection timeout (seconds)
-# org.csstudio.platform.libs.epics/conn_tmo=30.0
-#/ 
-#/ Beacon period (seconds)
-# org.csstudio.platform.libs.epics/beacon_period=15.0
-#/ 
-#/ CA Repeater port
-# org.csstudio.platform.libs.epics/repeater_port=5065
-#/ 
-#/ CA Server port
-# org.csstudio.platform.libs.epics/server_port=5064
-#/ 
-#/ Maximum buffer size for transfer of arrays
-# org.csstudio.platform.libs.epics/max_array_bytes=16384
-
-#<< org.csstudio.platform.libs.epics/addr_list=
-#<< org.csstudio.platform.libs.epics/auto_addr_list=true
-#<< org.csstudio.platform.libs.epics/beacon_period=15.0
-#<< org.csstudio.platform.libs.epics/conn_tmo=30.0
-#<< org.csstudio.platform.libs.epics/dbe_property_supported=false
-#<< org.csstudio.platform.libs.epics/honor_zero_precision=true
-#<< org.csstudio.platform.libs.epics/max_array_bytes=16384
-#<< org.csstudio.platform.libs.epics/monitor=VALUE
-#<< org.csstudio.platform.libs.epics/repeater_port=5065
-#<< org.csstudio.platform.libs.epics/rtyp_value_only=true
-#<< org.csstudio.platform.libs.epics/server_port=5064
-#<< org.csstudio.platform.libs.epics/support_dbe_property=false
-#<< org.csstudio.platform.libs.epics/use_pure_java=true
-#<< org.csstudio.platform.libs.epics/var_array_support=Auto
-
-#/
 ## org.csstudio.security 
 #/
 #/ Security Settings
@@ -183,8 +72,18 @@ org.csstudio.logging/jms_level=SEVERE
 #/ Use a JAAS config file as in normal use of JAAS
 #/ 
 #/ Path to JAAS configuration file
+#/ 
 #/ When located inside a plugin, use
 #/ "platform:/plugin/name.of.plugin/path/within/plugin.conf"
+#/ 
+#/ When a file "my_jaas_settings.conf" is placed
+#/ inside the product's "configuration/" directory, use
+#/ "platform:/config/my_jaas_settings.conf"
+#/ 
+#/ For plain files, use either
+#/ "file:/full/path/to/my_jaas_settings.conf"
+#/ or just
+#/ "/full/path/to/my_jaas_settings.conf"
 # org.csstudio.security/jaas_config_file=platform:/plugin/org.csstudio.security/jaas.conf
 #/ 
 #/ Name of a JAAS login configuration to use.
@@ -288,37 +187,26 @@ org.csstudio.logging/jms_level=SEVERE
 #<< org.csstudio.security/ldap_group_base=ou=Groups
 #<< org.csstudio.security/ldap_group_url=ldap://localhost/dc=css-demo,dc=org
 #<< org.csstudio.security/secure_preference_location=Default
+org.csstudio.security/secure_preference_location=Install
 
 #/
-## org.csstudio.simplepv 
+## org.csstudio.utility.olog 
 #/
-#/ Default PV Factory to use
-# org.csstudio.simplepv/default_pvfactory=pvmanager
-
-#<< org.csstudio.simplepv/default_pvfactory=pvmanager
-
-#/
-## org.csstudio.utility.pv 
-#/
-#/ Default PV type
-# org.csstudio.utility.pv/default_type=epics
-
-#<< org.csstudio.utility.pv/default_type=epics
-
-#/
-## org.csstudio.utility.pvmanager.loc 
-#/
+#/ Default Preferences
 #/ 
-#/ Local variables that are not specifically initialized have an initial value of null, i.e. undefined.
-#/ This compatibility option can be used to create them with an initial value of 0.
-#/ A warning will be logged because the compatibility option may be removed in the future.
-# org.csstudio.utility.pvmanager.loc/org.csstudio.utility.pvmanager.loc/zero_initialization=false
+#/ olog webservice url
+# org.csstudio.utility.olog/olog_url=https://localhost:8181/Olog/resources
+#/ 
+#/ authentication
+# org.csstudio.utility.olog/use_authentication=false
+# org.csstudio.utility.olog/user=username
+# org.csstudio.utility.olog/password=
 
-#<< org.csstudio.utility.pvmanager.loc/org.csstudio.utility.pvmanager.loc/zero_initialization=false
+#<< org.csstudio.utility.olog/olog_url=https://localhost:8181/Olog/resources
+#<< org.csstudio.utility.olog/password=
+#<< org.csstudio.utility.olog/use_authentication=false
+#<< org.csstudio.utility.olog/user=username
 
-#/
-## Application plugins preferences
-#/
 
 #/
 ## org.csstudio.alarm.beast 
@@ -413,11 +301,13 @@ org.csstudio.logging/jms_level=SEVERE
 #<< org.csstudio.alarm.beast/gui_update_suppression_millis=1000
 #<< org.csstudio.alarm.beast/jms_idle_timeout=10
 #<< org.csstudio.alarm.beast/jms_password=$alarm
+org.csstudio.alarm.beast/jms_password=
 #<< org.csstudio.alarm.beast/jms_url=failover:(tcp://localhost:61616)
 #<< org.csstudio.alarm.beast/jms_user=alarm
 #<< org.csstudio.alarm.beast/max_context_menu_entries=10
 #<< org.csstudio.alarm.beast/pv_start_delay=0
 #<< org.csstudio.alarm.beast/rdb_password=$alarm
+org.csstudio.alarm.beast/rdb_password=
 #<< org.csstudio.alarm.beast/rdb_schema=ALARM
 org.csstudio.alarm.beast/rdb_schema=
 #<< org.csstudio.alarm.beast/rdb_url=jdbc:mysql://localhost/ALARM
@@ -438,8 +328,41 @@ org.csstudio.alarm.beast/root_component=CODAC_AlarmHandler
 #/ This threshold represents a number of actions per minute per action type
 #/ (= per implementation of org.csstudio.alarm.beast.notifier.model.IAutomatedAction)
 # org.csstudio.alarm.beast.notifier/timer_threshold=100
+#/ 
+#/ Log level of plugins listed in Application class
+# org.csstudio.alarm.beast.notifier/verbose_log.level=WARNING
+#/ 
+#/ Notify only on alarms that have a higher severity,
+#/ skipping follow-up notifications for 'OK' and acknowledged alarms?
+#/ 
+#/ Comparison of time lines
+#/ ------------------------
+#/ 
+#/ In any case we start with
+#/ 1) Alarm PV triggers, delay expires -> notification
+#/ 
+#/ Original behavior, notify_escalating_alarms_only = false
+#/ 2.a) Acknowledged -> Another notification "ack"
+#/ 2.b) Alarm PV OK, then acknowledged -> Another "OK" plus "ack" notification
+#/ 
+#/ New behavior, notify_escalating_alarms_only = true
+#/ 2.a) Acknowledged -> Nothing
+#/ 2.b) Alarm PV OK, then acknowledged -> Nothing
+# org.csstudio.alarm.beast.notifier/notify_escalating_alarms_only=false
 
+#<< org.csstudio.alarm.beast.notifier/notify_escalating_alarms_only=false
 #<< org.csstudio.alarm.beast.notifier/timer_threshold=100
+#<< org.csstudio.alarm.beast.notifier/verbose_log.level=WARNING
+
+#/
+## org.csstudio.alarm.beast.notifier.logbook 
+#/
+#/ Default Preferences
+# org.csstudio.alarm.beast.notifier.logbook/Default.logbook=CODAC
+# org.csstudio.alarm.beast.notifier.logbook/Default.level=Info
+
+#<< org.csstudio.alarm.beast.notifier.logbook/Default.level=Info
+#<< org.csstudio.alarm.beast.notifier.logbook/Default.logbook=CODAC
 
 #/
 ## org.csstudio.email 
@@ -455,9 +378,19 @@ org.csstudio.alarm.beast/root_component=CODAC_AlarmHandler
 # org.csstudio.email/smtp_sender=
 
 #<< org.csstudio.email/smtp_host=
-org.csstudio.email/smtp_host=mail2.codac.iter.org
+org.csstudio.email/smtp_host=mail.codac.iter.org
 #<< org.csstudio.email/smtp_sender=
 org.csstudio.email/smtp_sender=CSS Alarm Notifier <css-alarm-notifier@codac.iter.org>
+
+#/
+
+#/
+## Core plugins preferences
+#/
+
+#/
+## Application plugins preferences
+#/
 
 #/
 ## Unused preferences

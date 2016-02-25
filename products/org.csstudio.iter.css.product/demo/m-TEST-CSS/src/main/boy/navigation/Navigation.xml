@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+
+ <navigation xmlns:xi="http://www.w3.org/2001/XInclude" >
+     <CBS name="ITER" description="ITER Global Supervision" enabled="true" opi_file="./../ITER.opi LEVEL=ITER" deprecated="false" alarm_root="/CODAC_AlarmHandler/CWS" >
+         <CBS name="CWS" description="Water Cooling, PBS{26}" enabled="true" opi_file="./../ITER-CWS.opi LEVEL=ITER-CWS" deprecated="false" alarm_root="/CODAC_AlarmHandler/CWS" >
+             <CBS name="TCPH" description="" enabled="true" opi_file="./../ITER-CWS-TCPH.opi LEVEL=ITER-CWS-TCPH" deprecated="false" alarm_root="/CODAC_AlarmHandler/CWS/CWS-TCPH" >
+                 <xi:include href="ITER-CWS-TCPH-Fxxx.xml" >
+                     <xi:fallback ></xi:fallback>
+</xi:include>
+</CBS>
+</CBS>
+</CBS>
+</navigation>

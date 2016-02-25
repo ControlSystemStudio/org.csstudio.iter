@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Copyright (c) 2010-2015 ITER Organization.
+* Copyright (c) 2010-2016 ITER Organization.
 * All rights reserved. This program and the accompanying materials
 * are made available under the terms of the Eclipse Public License v1.0
 * which accompanies this distribution, and is available at
@@ -28,62 +28,61 @@ import org.eclipse.core.runtime.CoreException;
 
 public class DbUtil {
 
-	private static Pattern record_pattern = Pattern.compile("^\\s*record\\s*\\(");
-	private static Pattern comment_pattern = Pattern.compile("#.*");
+    private static Pattern record_pattern = Pattern.compile("^\\s*record\\s*\\(");
+    private static Pattern comment_pattern = Pattern.compile("#.*");
 
-	public static List<Record> parseDb(String dbFile)
-			throws RecognitionException, DbParsingException {
-		if (dbFile == null || !isEPICSDB(dbFile))
-			return Collections.emptyList();
-		CharStream cs = new ANTLRStringStream(dbFile);
-		DbRecordLexer lexer = new DbRecordLexer(cs);
-		CommonTokenStream tokens = new CommonTokenStream(lexer);
-		RecordDbParser parser = new RecordDbParser();
-		parser.parse(tokens);
-		parser.transform();
-		Template t = parser.getEpicsDb();
-		return t.getEPICSRecords();
-		// return parseTokens(tokens);
-	}
+    public static List<Record> parseDb(String dbFile) throws RecognitionException, DbParsingException {
+        if (dbFile == null || !isEPICSDB(dbFile))
+            return Collections.emptyList();
+        CharStream cs = new ANTLRStringStream(dbFile);
+        DbRecordLexer lexer = new DbRecordLexer(cs);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        RecordDbParser parser = new RecordDbParser();
+        parser.parse(tokens);
+        parser.transform();
+        Template t = parser.getEpicsDb();
+        return t.getEPICSRecords();
+        // return parseTokens(tokens);
+    }
 
-	public static String readFile(IFile file) throws IOException, CoreException {
-		if (file == null)
-			return null;
-		Matcher matcher = null;
-		StringBuilder out = new StringBuilder();
-		BufferedReader br = new BufferedReader(new InputStreamReader(file.getContents()));
-		for (String line = br.readLine(); line != null; line = br.readLine()) {
-			String newLine = line;
-			matcher = comment_pattern.matcher(line);
-			if (matcher.find()) {
-				if (line.contains("\"")) {
-					int index = 0;
-					boolean quoted = false;
-					while (index < line.length()) {
-						char c = line.charAt(index);
-						if (c == '"')
-							quoted = !quoted;
-						if (c == '#' && !quoted) {
-							newLine = line.substring(0, index);
-							break;
-						}
-						index++;
-					}
-				} else {
-					newLine = line.substring(0, matcher.start());
-				}
-			}
-			out.append(newLine + "\n");
-		}
-		br.close();
-		return out.toString();
-	}
+    public static String readFile(IFile file) throws IOException, CoreException {
+        if (file == null)
+            return null;
+        Matcher matcher = null;
+        StringBuilder out = new StringBuilder();
+        BufferedReader br = new BufferedReader(new InputStreamReader(file.getContents()));
+        for (String line = br.readLine(); line != null; line = br.readLine()) {
+            String newLine = line;
+            matcher = comment_pattern.matcher(line);
+            if (matcher.find()) {
+                if (line.contains("\"")) {
+                    int index = 0;
+                    boolean quoted = false;
+                    while (index < line.length()) {
+                        char c = line.charAt(index);
+                        if (c == '"')
+                            quoted = !quoted;
+                        if (c == '#' && !quoted) {
+                            newLine = line.substring(0, index);
+                            break;
+                        }
+                        index++;
+                    }
+                } else {
+                    newLine = line.substring(0, matcher.start());
+                }
+            }
+            out.append(newLine + "\n");
+        }
+        br.close();
+        return out.toString();
+    }
 
-	public static boolean isEPICSDB(String fileContent) {
-		Matcher matcher = record_pattern.matcher(fileContent);
-		if (matcher.find())
-			return true;
-		return false;
-	}
+    public static boolean isEPICSDB(String fileContent) {
+        Matcher matcher = record_pattern.matcher(fileContent);
+        if (matcher.find())
+            return true;
+        return false;
+    }
 
 }

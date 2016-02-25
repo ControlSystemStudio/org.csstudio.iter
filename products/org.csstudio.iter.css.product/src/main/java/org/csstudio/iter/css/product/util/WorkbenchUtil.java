@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010-2015 ITER Organization.
+ * Copyright (c) 2010-2016 ITER Organization.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,6 +26,8 @@ import org.eclipse.core.commands.contexts.ContextManager;
 import org.eclipse.core.runtime.dynamichelpers.IExtensionChangeHandler;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
+import org.eclipse.e4.ui.model.application.MApplication;
+import org.eclipse.e4.ui.model.application.descriptor.basic.MPartDescriptor;
 import org.eclipse.jface.bindings.Binding;
 import org.eclipse.jface.bindings.BindingManager;
 import org.eclipse.jface.bindings.Scheme;
@@ -40,57 +42,67 @@ import org.eclipse.ui.keys.IBindingService;
 
 public class WorkbenchUtil {
 
-	private static final String APPLIED_SYSTEM_FONT = "appliedSystemFont";
-	
-	private static final String[] HIDE_MESSAGE_STARTS_WITH = new String[] {
-			"Keybinding conflicts occurred.  They may interfere with normal accelerator operation.",
-			"Invalid preference page path: XML Syntax",
-			"Job found still running after platform shutdown." };
+    private static final String APPLIED_SYSTEM_FONT = "appliedSystemFont";
 
-	public static final String[] IGNORE_PERSPECTIVES = new String[] {
-	// "org.eclipse.debug.ui.DebugPerspective", // Used by Pydev
-	"org.eclipse.wst.xml.ui.perspective" };
-	
-	private static final String[] VERBOSE_PACKAGES = new String[] {
-	        "com.sun.jersey.core.spi.component",
-	        "com.sun.jersey.core.spi.component.ProviderServices",
-	        "com.sun.jersey.spi.service.ServiceFinder" };
-	
-	private static final List<Logger> strongRefLoggers = new ArrayList<>();
+    private static final String[] HIDE_MESSAGE_STARTS_WITH = new String[] {
+            "Keybinding conflicts occurred.  They may interfere with normal accelerator operation.",
+            "Invalid preference page path: XML Syntax",
+            "Job found still running after platform shutdown." };
 
-	private static class HideUnWantedLogFilter implements Filter {
+    public static final String[] IGNORE_PERSPECTIVES = new String[] {
+    // "org.eclipse.debug.ui.DebugPerspective", // Used by Pydev
+    "org.eclipse.wst.xml.ui.perspective" };
 
-		private Filter previousFilter;
+    private static final String[] VERBOSE_PACKAGES = new String[] {
+            "com.sun.jersey.core.spi.component",
+            "com.sun.jersey.core.spi.component.ProviderServices",
+            "com.sun.jersey.spi.service.ServiceFinder" };
 
-		public HideUnWantedLogFilter(Filter previousFilter) {
-			this.previousFilter = previousFilter;
-		}
+    private static final String[] IGNORE_VIEWS = new String[] {
+        "org.csstudio.opibuilder.placeHolder",
+        "org.csstudio.opibuilder.opiShellSummary",
+        "org.csstudio.opibuilder.opiView",
+        "org.csstudio.opibuilder.opiViewLEFT",
+        "org.csstudio.opibuilder.opiViewRIGHT",
+        "org.csstudio.opibuilder.opiViewTOP",
+        "org.csstudio.opibuilder.opiViewBOTTOM"
+        };
 
-		@Override
-		public boolean isLoggable(LogRecord record) {
-			if (record.getMessage() != null) {
-				for (String hideMsgStartsWith : HIDE_MESSAGE_STARTS_WITH) {
-					if (record.getMessage().startsWith(hideMsgStartsWith)) {
-						return false;
-					}
-				}
-			}
-			if (previousFilter == null) {
-				return true;
-			}
-			return previousFilter.isLoggable(record);
-		}
-	};
+    private static final List<Logger> strongRefLoggers = new ArrayList<>();
 
-	public static void removeUnWantedLog() {
-		// Hide unwanted message from log
-		Logger rootLogger = Logger.getLogger("");
-		rootLogger.setFilter(new HideUnWantedLogFilter(rootLogger.getFilter()));
-		for (Handler handler : rootLogger.getHandlers()) {
-			handler.setFilter(new HideUnWantedLogFilter(handler.getFilter()));
-		}
-		
-		// Set upper log level on too verbose packages
+    private static class HideUnWantedLogFilter implements Filter {
+
+        private Filter previousFilter;
+
+        public HideUnWantedLogFilter(Filter previousFilter) {
+            this.previousFilter = previousFilter;
+        }
+
+        @Override
+        public boolean isLoggable(LogRecord record) {
+            if (record.getMessage() != null) {
+                for (String hideMsgStartsWith : HIDE_MESSAGE_STARTS_WITH) {
+                    if (record.getMessage().startsWith(hideMsgStartsWith)) {
+                        return false;
+                    }
+                }
+            }
+            if (previousFilter == null) {
+                return true;
+            }
+            return previousFilter.isLoggable(record);
+        }
+    };
+
+    public static void removeUnWantedLog() {
+        // Hide unwanted message from log
+        Logger rootLogger = Logger.getLogger("");
+        rootLogger.setFilter(new HideUnWantedLogFilter(rootLogger.getFilter()));
+        for (Handler handler : rootLogger.getHandlers()) {
+            handler.setFilter(new HideUnWantedLogFilter(handler.getFilter()));
+        }
+
+        // Set upper log level on too verbose packages
         Level verboseLogLevel;
         try {
             verboseLogLevel = Preferences.getVerboseLogLevel();
@@ -106,180 +118,205 @@ public class WorkbenchUtil {
             //keep strong references to all loggers. Otherwise the LogMaager will flush them out
             strongRefLoggers.add(logger);
         }
-	}
+    }
 
-	/**
-	 * Removes the unwanted perspectives from your RCP application
-	 */
-	public static void removeUnWantedPerspectives() {
+    /**
+     * Removes the unwanted perspectives from your RCP application
+     */
+    public static void removeUnWantedPerspectives() {
 
-		IPerspectiveRegistry perspectiveRegistry = PlatformUI.getWorkbench()
-				.getPerspectiveRegistry();
-		IPerspectiveDescriptor[] perspectiveDescriptors = perspectiveRegistry
-				.getPerspectives();
-		List<String> ignoredPerspectives = Arrays.asList(IGNORE_PERSPECTIVES);
-		List<IPerspectiveDescriptor> removePerspectiveDesc = new ArrayList<IPerspectiveDescriptor>();
+        IPerspectiveRegistry perspectiveRegistry = PlatformUI.getWorkbench()
+                .getPerspectiveRegistry();
+        IPerspectiveDescriptor[] perspectiveDescriptors = perspectiveRegistry
+                .getPerspectives();
+        List<String> ignoredPerspectives = Arrays.asList(IGNORE_PERSPECTIVES);
+        List<IPerspectiveDescriptor> removePerspectiveDesc = new ArrayList<IPerspectiveDescriptor>();
 
-		// Add the perspective descriptors with the matching perspective ids to
-		// the list
-		for (IPerspectiveDescriptor perspectiveDescriptor : perspectiveDescriptors) {
-			if (ignoredPerspectives.contains(perspectiveDescriptor.getId())) {
-				removePerspectiveDesc.add(perspectiveDescriptor);
-				//fix for RCP 4, where IExtensionChangeHandler#removeExtension is not implemented
-				//we could create a new PerspectiveDescriptor, but that would require access to the restricted
-				//eclipse code, which some compilers might not like. Instead use reflection to force deletion 
-				//of a perspective
-				if ("org.eclipse.ui.internal.registry.PerspectiveDescriptor".equals(perspectiveDescriptor.getClass().getName())) {
-				    try {
-    				    Field f = perspectiveDescriptor.getClass().getDeclaredField("configElement");
-    				    f.setAccessible(true);
-    				    f.set(perspectiveDescriptor, null);
-				    } catch (NoSuchFieldException | IllegalAccessException e) {
-				        //ignore: we don't care this will happen only if the Eclipse internals change
-				    } 				    
-				}
-				perspectiveRegistry.deletePerspective(perspectiveDescriptor);
-			}
-		}
+        // Add the perspective descriptors with the matching perspective ids to
+        // the list
+        for (IPerspectiveDescriptor perspectiveDescriptor : perspectiveDescriptors) {
+            if (ignoredPerspectives.contains(perspectiveDescriptor.getId())) {
+                removePerspectiveDesc.add(perspectiveDescriptor);
+                //fix for RCP 4, where IExtensionChangeHandler#removeExtension is not implemented
+                //we could create a new PerspectiveDescriptor, but that would require access to the restricted
+                //eclipse code, which some compilers might not like. Instead use reflection to force deletion
+                //of a perspective
+                if ("org.eclipse.ui.internal.registry.PerspectiveDescriptor".equals(perspectiveDescriptor.getClass().getName())) {
+                    try {
+                        Field f = perspectiveDescriptor.getClass().getDeclaredField("configElement");
+                        f.setAccessible(true);
+                        f.set(perspectiveDescriptor, null);
+                    } catch (NoSuchFieldException | IllegalAccessException e) {
+                        //ignore: we don't care this will happen only if the Eclipse internals change
+                    }
+                }
+                perspectiveRegistry.deletePerspective(perspectiveDescriptor);
+            }
+        }
 
-		//just in case for any backward compatibility reasons, do the RCP 3 magic
-		// If the list is non-empty then remove all such perspectives from the
-		// IExtensionChangeHandler
-		if (perspectiveRegistry instanceof IExtensionChangeHandler
-				&& !removePerspectiveDesc.isEmpty()) {
-			IExtensionChangeHandler extChgHandler = (IExtensionChangeHandler) perspectiveRegistry;
-			extChgHandler
-					.removeExtension(null, removePerspectiveDesc.toArray());
-			
-		}
-	}
+        //just in case for any backward compatibility reasons, do the RCP 3 magic
+        // If the list is non-empty then remove all such perspectives from the
+        // IExtensionChangeHandler
+        if (perspectiveRegistry instanceof IExtensionChangeHandler
+                && !removePerspectiveDesc.isEmpty()) {
+            IExtensionChangeHandler extChgHandler = (IExtensionChangeHandler) perspectiveRegistry;
+            extChgHandler
+                    .removeExtension(null, removePerspectiveDesc.toArray());
 
-	/**
-	 * Unbind F11 KeyBinding of org.eclipse.debug.ui to avoid conflict with
-	 * org.csstudio.opibuilder plugin
-	 */
-	public static void unbindDuplicateBindings() {
-		IBindingService bindingService = (IBindingService) PlatformUI
-				.getWorkbench().getAdapter(IBindingService.class);
-		BindingManager localChangeManager = new BindingManager(
-				new ContextManager(), new CommandManager());
-		
-		final Scheme[] definedSchemes = bindingService.getDefinedSchemes();
-		try {
-			for (int i = 0; i < definedSchemes.length; i++) {
-				final Scheme scheme = definedSchemes[i];
-				final Scheme copy = localChangeManager
-						.getScheme(scheme.getId());
-				copy.define(scheme.getName(), scheme.getDescription(),
-						scheme.getParentId());
-			}
-			localChangeManager
-					.setActiveScheme(bindingService.getActiveScheme());
-		} catch (final NotDefinedException e) {
-			e.printStackTrace();
-		}
-		localChangeManager.setLocale(bindingService.getLocale());
-		localChangeManager.setPlatform(bindingService.getPlatform());
-		localChangeManager.setBindings(bindingService.getBindings());
-		
-		KeyBinding opiFullScreenBinding = null;
-		int nbBinding = 0;
+        }
+    }
 
-		Binding[] bArray = bindingService.getBindings();
-		if (bArray != null) {
-			for (Binding binding : bArray) {
-				if (binding instanceof KeyBinding) {
-					KeyBinding kBind = (KeyBinding) binding;
-					if (kBind.getParameterizedCommand() != null
-							&& kBind.getParameterizedCommand().getCommand() != null) {
-						String id = kBind.getParameterizedCommand().getCommand().getId();
-						if ("org.eclipse.debug.ui.commands.DebugLast".equals(id)
-								|| "org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace".equals(id)) {
-							KeySequence triggerSequence = kBind
-									.getKeySequence();
-							String contextId = kBind.getContextId();
-							String schemeId = kBind.getSchemeId();
-							KeyBinding deleteBinding = new KeyBinding(
-									triggerSequence, null, schemeId, contextId,
-									null, null, null, Binding.USER);
-							localChangeManager.addBinding(deleteBinding);
-							try {
-								bindingService.savePreferences(
-										localChangeManager.getActiveScheme(),
-										localChangeManager.getBindings());
-							} catch (IOException e) {
-								e.printStackTrace();
-							}
-						} else if ("org.csstudio.opibuilder.actions.fullscreen"
-								.equals(kBind.getParameterizedCommand()
-										.getCommand().getId())) {
-							if (opiFullScreenBinding == null)
-								opiFullScreenBinding = kBind;
-							nbBinding++;
-						}
-					}
-				}
-			}
-		}
+    /**
+     * Unbind F11 KeyBinding of org.eclipse.debug.ui to avoid conflict with
+     * org.csstudio.opibuilder plugin
+     */
+    public static void unbindDuplicateBindings() {
+        IBindingService bindingService = (IBindingService) PlatformUI
+                .getWorkbench().getAdapter(IBindingService.class);
+        BindingManager localChangeManager = new BindingManager(
+                new ContextManager(), new CommandManager());
 
-		// Rebind OPI runner full screen command if it exists only one time
-		if (nbBinding == 1 && opiFullScreenBinding != null) {
-			KeySequence triggerSequence = opiFullScreenBinding.getKeySequence();
-			String contextId = opiFullScreenBinding.getContextId();
-			String schemeId = opiFullScreenBinding.getSchemeId();
+        final Scheme[] definedSchemes = bindingService.getDefinedSchemes();
+        try {
+            for (int i = 0; i < definedSchemes.length; i++) {
+                final Scheme scheme = definedSchemes[i];
+                final Scheme copy = localChangeManager
+                        .getScheme(scheme.getId());
+                copy.define(scheme.getName(), scheme.getDescription(),
+                        scheme.getParentId());
+            }
+            localChangeManager
+                    .setActiveScheme(bindingService.getActiveScheme());
+        } catch (final NotDefinedException e) {
+            e.printStackTrace();
+        }
+        localChangeManager.setLocale(bindingService.getLocale());
+        localChangeManager.setPlatform(bindingService.getPlatform());
+        localChangeManager.setBindings(bindingService.getBindings());
 
-			KeyBinding updateBinding = new KeyBinding(triggerSequence,
-					opiFullScreenBinding.getParameterizedCommand(), schemeId,
-					contextId, null, null, null, Binding.USER);
-			localChangeManager.addBinding(updateBinding);
-			try {
-				bindingService.savePreferences(
-						localChangeManager.getActiveScheme(),
-						localChangeManager.getBindings());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	/**
-	 * Force the default font for all those fonts that we know are not using the system font.
-	 * The method has to be called before the workbench is created to have any effect.
-	 */
-	public static void setupSystemFonts() {
-	    String s = Activator.getDefault().getPreferenceStore().getString(APPLIED_SYSTEM_FONT);
-	    FontData[] fd = JFaceResources.getDefaultFont().getFontData();
-	    String font = fd[0].toString();
-	    //apply the system font if the system font has never been applied 
-	    //yet or if it is different than the previously applied font 
-	    if (s == null || s.isEmpty() || !font.equals(s)) {
-    	    IEclipsePreferences sc = InstanceScope.INSTANCE.getNode("org.eclipse.ui.workbench");
-    	    String oldF = sc.get(JFaceResources.BANNER_FONT,"");
-    	    //only apply the new system font, if the font for that settings has not been changed by the user
-    	    if (oldF.equals(s)) {
-    	        sc.put(JFaceResources.BANNER_FONT, font);
-    	    }
-    	    oldF = sc.get(JFaceResources.DIALOG_FONT,"");
-    	    if (oldF.equals(s)) {
-    	        sc.put(JFaceResources.DIALOG_FONT, font);
-    	    }
-    	    oldF = sc.get(JFaceResources.TEXT_FONT,"");
-    	    if (oldF.equals(s)) {
-    	        sc.put(JFaceResources.TEXT_FONT, font);
-    	    }
-    	    oldF = sc.get(JFaceResources.HEADER_FONT,"");
-    	    if (oldF.equals(s)) {
-    	        sc.put(JFaceResources.HEADER_FONT, font);
-    	    }
-    	    oldF = sc.get("org.eclipse.ui.workbench.texteditor.blockSelectionModeFont","");
-    	    if (oldF.equals(s)) {
-    	        sc.put("org.eclipse.ui.workbench.texteditor.blockSelectionModeFont", font);
-    	    }
-    	    oldF = sc.get("org.eclipse.jface.consoleFont","");
-    	    if (oldF.equals(s)) {
-    	        sc.put("org.eclipse.jface.consoleFont", font);
-    	    }
-    	    Activator.getDefault().getPreferenceStore().setValue(APPLIED_SYSTEM_FONT, font);
-	    }
-	}
+        KeyBinding opiFullScreenBinding = null;
+        int nbBinding = 0;
+
+        Binding[] bArray = bindingService.getBindings();
+        if (bArray != null) {
+            for (Binding binding : bArray) {
+                if (binding instanceof KeyBinding) {
+                    KeyBinding kBind = (KeyBinding) binding;
+                    if (kBind.getParameterizedCommand() != null
+                            && kBind.getParameterizedCommand().getCommand() != null) {
+                        String id = kBind.getParameterizedCommand().getCommand().getId();
+                        if ("org.eclipse.debug.ui.commands.DebugLast".equals(id)
+                                || "org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace".equals(id)) {
+                            KeySequence triggerSequence = kBind
+                                    .getKeySequence();
+                            String contextId = kBind.getContextId();
+                            String schemeId = kBind.getSchemeId();
+                            KeyBinding deleteBinding = new KeyBinding(
+                                    triggerSequence, null, schemeId, contextId,
+                                    null, null, null, Binding.USER);
+                            localChangeManager.addBinding(deleteBinding);
+                            try {
+                                bindingService.savePreferences(
+                                        localChangeManager.getActiveScheme(),
+                                        localChangeManager.getBindings());
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        } else if ("org.csstudio.opibuilder.actions.fullscreen"
+                                .equals(kBind.getParameterizedCommand()
+                                        .getCommand().getId())) {
+                            if (opiFullScreenBinding == null)
+                                opiFullScreenBinding = kBind;
+                            nbBinding++;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Rebind OPI runner full screen command if it exists only one time
+        if (nbBinding == 1 && opiFullScreenBinding != null) {
+            KeySequence triggerSequence = opiFullScreenBinding.getKeySequence();
+            String contextId = opiFullScreenBinding.getContextId();
+            String schemeId = opiFullScreenBinding.getSchemeId();
+
+            KeyBinding updateBinding = new KeyBinding(triggerSequence,
+                    opiFullScreenBinding.getParameterizedCommand(), schemeId,
+                    contextId, null, null, null, Binding.USER);
+            localChangeManager.addBinding(updateBinding);
+            try {
+                bindingService.savePreferences(
+                        localChangeManager.getActiveScheme(),
+                        localChangeManager.getBindings());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * Force the default font for all those fonts that we know are not using the system font.
+     * The method has to be called before the workbench is created to have any effect.
+     */
+    public static void setupSystemFonts() {
+        String s = Activator.getDefault().getPreferenceStore().getString(APPLIED_SYSTEM_FONT);
+        FontData[] fd = JFaceResources.getDefaultFont().getFontData();
+        String font = fd[0].toString();
+        //apply the system font if the system font has never been applied
+        //yet or if it is different than the previously applied font
+        if (s == null || s.isEmpty() || !font.equals(s)) {
+            IEclipsePreferences sc = InstanceScope.INSTANCE.getNode("org.eclipse.ui.workbench");
+            String oldF = sc.get(JFaceResources.BANNER_FONT,"");
+            //only apply the new system font, if the font for that settings has not been changed by the user
+            if (oldF.equals(s)) {
+                sc.put(JFaceResources.BANNER_FONT, font);
+            }
+            oldF = sc.get(JFaceResources.DIALOG_FONT,"");
+            if (oldF.equals(s)) {
+                sc.put(JFaceResources.DIALOG_FONT, font);
+            }
+            oldF = sc.get(JFaceResources.TEXT_FONT,"");
+            if (oldF.equals(s)) {
+                sc.put(JFaceResources.TEXT_FONT, font);
+            }
+            oldF = sc.get(JFaceResources.HEADER_FONT,"");
+            if (oldF.equals(s)) {
+                sc.put(JFaceResources.HEADER_FONT, font);
+            }
+            oldF = sc.get("org.eclipse.ui.workbench.texteditor.blockSelectionModeFont","");
+            if (oldF.equals(s)) {
+                sc.put("org.eclipse.ui.workbench.texteditor.blockSelectionModeFont", font);
+            }
+            oldF = sc.get("org.eclipse.jface.consoleFont","");
+            if (oldF.equals(s)) {
+                sc.put("org.eclipse.jface.consoleFont", font);
+            }
+            Activator.getDefault().getPreferenceStore().setValue(APPLIED_SYSTEM_FONT, font);
+        }
+    }
+
+    /**
+     * Remove unwanted views from CSS.
+     *
+     * @param application the application object from which views will be removed
+     */
+    public static void removeUnwantedViews(MApplication application) {
+        if (application == null) {
+            return;
+        }
+        //Because of some unknown reasons the activities do not remove the views from the Show View dialog. Therefore,
+        //we try to brute force remove the view from the application
+        List<MPartDescriptor> descriptors = application.getDescriptors();
+        List<String> views = Arrays.asList(IGNORE_VIEWS);
+        List<MPartDescriptor> toRemove = new ArrayList<>();
+        for (MPartDescriptor d : descriptors) {
+            if (views.contains(d.getElementId())) {
+                toRemove.add(d);
+            }
+        }
+        for (MPartDescriptor p : toRemove) {
+            descriptors.remove(p);
+        }
+
+    }
 }

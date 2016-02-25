@@ -1,0 +1,252 @@
+
+record(mbbi, "$(COMPONENT)-ALRM")
+{
+	field(TWSV, "MAJOR")
+	field(ONVL, "1")
+	field(ONST, "T")
+	field(ONSV, "MAJOR")
+	field(DESC, "ALARM INDICATION")
+	field(ZRVL, "0")
+	field(INP, "0")
+	field(TWST, "I")
+	field(TWVL, "2")
+	field(ZRSV, "NO_ALARM")
+	field(FLNK, "$(COMPONENT)-YENUMc")
+	field(PINI, "YES")
+}
+
+record(calcout, "$(COMPONENT)-ALRMc")
+{
+	field(OUT, "$(COMPONENT)-ALRM PP MS")
+	field(CALC, "A?1:(B?2:0)")
+	field(INPB, "$(COMPONENT)-INTLK MS")
+	field(OOPT, "Every Time")
+	field(INPA, "$(COMPONENT)-TRIP MS")
+	field(DESC, "ALARM INDICATION CALC")
+}
+
+record(bo, "$(COMPONENT)-AUMD")
+{
+	field(ONAM, "ON")
+	field(PINI, "YES")
+	field(DESC, "AUTO MODE")
+	field(DOL, "1")
+	field(ZNAM, "OFF")
+	field(FLNK, "$(COMPONENT)-CTRLMDc")
+}
+
+record(ao, "$(COMPONENT)-CO")
+{
+	field(DRVH, "100")
+	field(HOPR, "100")
+	field(DOL, "40")
+	field(LOPR, "0")
+	field(PINI, "YES")
+	field(PREC, "2")
+	field(DRVL, "0")
+	field(FLNK, "$(COMPONENT)-YENUMc")
+	field(DESC, "OUTPUT VALUE")
+	field(EGU, "%")
+}
+
+record(ai, "$(COMPONENT)-COH")
+{
+	field(INP, "75")
+	field(HOPR, "100")
+	field(LOPR, "0")
+	field(DESC, "OPEN THRESHOLD")
+	field(PREC, "2")
+	field(EGU, "%")
+	field(PINI, "YES")
+	field(FLNK, "$(COMPONENT)-YENUMc")
+}
+
+record(ai, "$(COMPONENT)-COL")
+{
+	field(HOPR, "100")
+	field(PINI, "YES")
+	field(FLNK, "$(COMPONENT)-YENUMc")
+	field(LOPR, "0")
+	field(INP, "25")
+	field(PREC, "2")
+	field(DESC, "CLOSE THRESHOLD")
+	field(EGU, "%")
+}
+
+record(mbbi, "$(COMPONENT)-CTRLMD")
+{
+	field(ONST, "F")
+	field(ONVL, "1")
+	field(THST, "M")
+	field(THVL, "3")
+	field(FLNK, "$(COMPONENT)-YENUMc")
+	field(PINI, "YES")
+	field(TWST, "L")
+	field(INP, "0")
+	field(DESC, "CONTROL MODE")
+	field(TWVL, "2")
+	field(ZRVL, "0")
+}
+
+record(calcout, "$(COMPONENT)-CTRLMDc")
+{
+	field(INPC, "$(COMPONENT)-MAMD MS")
+	field(DESC, "ALARM INDICATION CALC")
+	field(OOPT, "Every Time")
+	field(INPD, "$(COMPONENT)-AUMD MS")
+	field(OUT, "$(COMPONENT)-CTRLMD PP MS")
+	field(INPA, "$(COMPONENT)-FOMD MS")
+	field(CALC, "A?1:(B?2:(C?3)):0")
+	field(INPB, "$(COMPONENT)-LOMD MS")
+}
+
+record(mbbi, "$(COMPONENT)-DQ")
+{
+	field(DESC, "DATA QUALITY")
+	field(PINI, "YES")
+	field(ONSV, "INVALID")
+	field(ONVL, "1")
+	field(INP, "0")
+	field(ONST, "E")
+	field(ZRSV, "NO_ALARM")
+	field(ZRVL, "0")
+	field(TWSV, "MINOR")
+	field(TWVL, "2")
+	field(TWST, "S")
+	field(FLNK, "$(COMPONENT)-YENUMc")
+}
+
+record(calcout, "$(COMPONENT)-DQc")
+{
+	field(DESC, "DATA QUALITY CALC")
+	field(CALC, "A?1:(B?2:0)")
+	field(INPB, "$(COMPONENT)-IOSIM MS")
+	field(OUT, "$(COMPONENT)-DQ PP MS")
+	field(OOPT, "Every Time")
+	field(INPA, "$(COMPONENT)-IOERR MS")
+}
+
+record(ai, "$(COMPONENT)-FB")
+{
+	field(EGU, "%")
+	field(DESC, "FEEDBACK")
+	field(PREC, "2")
+	field(PINI, "YES")
+	field(LOPR, "0")
+	field(HOPR, "100")
+	field(INP, "40")
+	field(FLNK, "$(COMPONENT)-YENUMc")
+}
+
+record(bo, "$(COMPONENT)-FOMD")
+{
+	field(DOL, "0")
+	field(PINI, "YES")
+	field(DESC, "FORCE MODE")
+	field(FLNK, "$(COMPONENT)-CTRLMDc")
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+}
+
+record(bi, "$(COMPONENT)-INTLK")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(OSV, "MAJOR")
+	field(DESC, "CONVENTIONAL INTERLOCK")
+	field(ZNAM, "NO INTERLOCK")
+	field(FLNK, "$(COMPONENT)-ALRMc")
+	field(ZSV, "NO_ALARM")
+	field(INP, "0")
+	field(ONAM, "INTERLOCK")
+}
+
+record(bi, "$(COMPONENT)-IOERR")
+{
+	field(SCAN, "1 second")
+	field(ONAM, "IO ERROR")
+	field(DESC, "IO ERROR")
+	field(ZSV, "NO_ALARM")
+	field(FLNK, "$(COMPONENT)-DQc")
+	field(ZNAM, "IO OK")
+	field(PINI, "YES")
+	field(OSV, "INVALID")
+	field(INP, "0")
+}
+
+record(bi, "$(COMPONENT)-IOSIM")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(ZNAM, "IO CONNECTED")
+	field(DESC, "IO SIMULATED")
+	field(INP, "0")
+	field(OSV, "MINOR")
+	field(ZSV, "NO_ALARM")
+	field(FLNK, "$(COMPONENT)-DQc")
+	field(ONAM, "IO SIMULATED")
+}
+
+record(bo, "$(COMPONENT)-LOMD")
+{
+	field(ZNAM, "OFF")
+	field(FLNK, "$(COMPONENT)-CTRLMDc")
+	field(PINI, "YES")
+	field(DOL, "0")
+	field(ONAM, "ON")
+	field(DESC, "LOCAL MODE")
+}
+
+record(bo, "$(COMPONENT)-MAMD")
+{
+	field(ONAM, "ON")
+	field(ZNAM, "OFF")
+	field(DOL, "0")
+	field(DESC, "MANUAL MODE")
+	field(PINI, "YES")
+	field(FLNK, "$(COMPONENT)-CTRLMDc")
+}
+
+record(bi, "$(COMPONENT)-TRIP")
+{
+	field(ONAM, "TRIPPED")
+	field(FLNK, "$(COMPONENT)-ALRMc")
+	field(INP, "0")
+	field(SCAN, "1 second")
+	field(ZSV, "NO_ALARM")
+	field(OSV, "MAJOR")
+	field(DESC, "PIS INTERLOCK")
+	field(PINI, "YES")
+	field(ZNAM, "NON TRIPPED")
+}
+
+record(mbbi, "$(COMPONENT)-YENUM")
+{
+	field(FRST, "HALF-OPEN")
+	field(DESC, "$(TAG)")
+	field(PINI, "YES")
+	field(ZRST, "CLOSED")
+	field(ONVL, "1")
+	field(ZRVL, "0")
+	field(INP, "1")
+	field(FRVL, "4")
+	field(TWVL, "2")
+	field(ONST, "OPEN")
+	field(THVL, "3")
+	field(TWST, "OPENING")
+	field(THST, "CLOSING")
+}
+
+record(calcout, "$(COMPONENT)-YENUMc")
+{
+	field(INPB, "$(COMPONENT)-COH MS")
+	field(DESC, "DATA QUALITY CALC")
+	field(OUT, "$(COMPONENT)-YENUM PP MS")
+	field(CALC, "A>B?1:(A<C?0:(D>B?2:(D<C?3))):4")
+	field(INPC, "$(COMPONENT)-COL MS")
+	field(INPD, "$(COMPONENT)-CO MS")
+	field(OOPT, "Every Time")
+	field(INPA, "$(COMPONENT)-FB MS")
+	field(INPF, "$(COMPONENT)-ALRM MS")
+	field(INPE, "$(COMPONENT)-DQ MS")
+}

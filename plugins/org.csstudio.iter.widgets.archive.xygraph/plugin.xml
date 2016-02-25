@@ -10,7 +10,7 @@
             icon="icons/XYGraph.gif"
             model_class="org.csstudio.iter.widgets.archive.xygraph.model.ArchiveXYGraphModel"
             name="Archive XY Graph"
-            typeId="org.csstudio.iter.widgets.archive.archiveXYGraph">
+            typeId="org.csstudio.opibuilder.widgets.xyGraph">
       </widget>
    </extension>
    <extension
@@ -36,5 +36,10 @@
                tooltip="Clear Graph">
          </action>
       </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.help.toc">
+      <toc file="toc.xml">
+      </toc>
    </extension>
 </plugin>

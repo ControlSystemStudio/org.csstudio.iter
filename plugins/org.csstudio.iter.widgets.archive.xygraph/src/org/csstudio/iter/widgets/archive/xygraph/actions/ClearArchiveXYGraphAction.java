@@ -7,12 +7,11 @@
  ******************************************************************************/
 package org.csstudio.iter.widgets.archive.xygraph.actions;
 
-import org.csstudio.iter.widgets.archive.xygraph.editparts.ArchiveXYGraphEditPart;
-import org.csstudio.opibuilder.actions.AbstractWidgetTargetAction;
 import org.csstudio.opibuilder.widgets.actions.ClearXYGraphAction;
-import org.eclipse.jface.action.IAction;
 
-/**Clear XY Graph.
+/**
+ * Clear XY Graph.
+ *
  * @author Xihui Chen
  *
  */

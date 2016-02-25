@@ -6,7 +6,7 @@
       provider-name="ITER">
 
    <copyright>
-      Copyright (c) : 2010-2015 ITER Organization,
+      Copyright (c) : 2010-2016 ITER Organization,
 CS 90 046
 13067 St. Paul-lez-Durance Cedex
 France
@@ -38,32 +38,6 @@ of the distribution package.
    <includes
          id="org.eclipse.help"
          version="0.0.0"/>
-
-   <requires>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.epics.util" version="0.1.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.ndarray" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.runtime" version="3.7.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.java" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.scan" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.scan.log" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.junit"/>
-      <import plugin="org.junit" version="4.8.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.java" version="3.2.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.utility.httpd" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.logging" version="3.2.1" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.apputil" version="3.0.1" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.numjy" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.scan" version="4.0.0" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.scan.log" version="3.2.2" match="greaterOrEqual"/>
-      <import plugin="org.csstudio.vtype.pv" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="javax.servlet" version="3.0.0" match="equivalent"/>
-      <import plugin="org.eclipse.osgi.services"/>
-      <import plugin="org.eclipse.equinox.http.jetty"/>
-      <import plugin="org.epics.util" version="0.3.2" match="greaterOrEqual"/>
-      <import plugin="org.python.jython" version="2.7.0" match="greaterOrEqual"/>
-      <import plugin="org.epics.vtype" version="2.7.1" match="greaterOrEqual"/>
-   </requires>
 
    <plugin
          id="org.python.jython"
@@ -115,6 +89,27 @@ of the distribution package.
 
    <plugin
          id="org.eclipse.ui.forms"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.diirt.util"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.filesystem"
          download-size="0"
          install-size="0"
          version="0.0.0"

@@ -1,13 +1,9 @@
 #/
-## Generated date: Thu Dec 19 15:55:42 UTC 2013
+## Generated date: Tue Jan 19 09:05:57 UTC 2016
 #/
 
 #/
 ## Organization (ITER) specific plugin preferences
-#/
-
-#/
-## Core plugins preferences
 #/
 
 #/
@@ -101,76 +97,138 @@ org.csstudio.logging/jms_level=SEVERE
 #<< org.csstudio.logging/jms_url=
 
 #/
-## org.csstudio.platform.libs.epics 
+## org.csstudio.scan 
 #/
-#/ # For most of these parameters,
-#/ # refer to the EPICS Channel Access
-#/ # documentation for details
+#/ Preference settings for the scan system
 #/ 
-#/ Use the pure-Java CAJ library, or the binaries for JNI JCA
-#/ (when using JNI, the appropriate binaries may have to be added to lib/..)
-# org.csstudio.platform.libs.epics/use_pure_java=true
+#/ This combines settings for various pieces of the scan system,
+#/ including for example settings specific to the scan server
+#/ or the scan client that are not useful to the respective 'other'
 #/ 
-#/ Subscribe to changes in "VALUE", "ARCHIVE" deadband, or "ALARM" state?
-# org.csstudio.platform.libs.epics/monitor=VALUE
+#/ Path to the scan configuration.
+#/ See org.csstudio.scan/examples/scan_config.xml for example,
+#/ and org.csstudio.scan/examples/scan_config.xsd for schema.
 #/ 
-#/ Support the DBE_PROPERTY subscription?
-# org.csstudio.platform.libs.epics/support_dbe_property=false
+#/ May be empty.
 #/ 
-#/ PVManager optional configuration.
+#/ Paths starting with "/" must refer to absolute locations
+#/ in the local file system.
 #/ 
-#/ These properties map to the configuration options specified in
-#/ http://pvmanager.sourceforge.net/apidocs/org/epics/pvmanager/jca/JCADataSourceBuilder.html
+#/ Paths starting with "platform:/plugin/org...." must refer
+#/ to a location within a plugin.
+# org.csstudio.scan/scan_config=platform:/plugin/org.csstudio.scan/examples/scan_config.xml
 #/ 
-#/ Use DBE_PROPERTY for metadata notification
-# org.csstudio.platform.libs.epics/dbe_property_supported=false
-#/ Honor zero precision for numeric value (or ignore it)
-# org.csstudio.platform.libs.epics/honor_zero_precision=true
-#/ For RTYP fields, only subscribe to the value (no alarm or timestamp)
-# org.csstudio.platform.libs.epics/rtyp_value_only=true
-#/ Use the dynamic array support (Auto/Enabled/Disabled)
-# org.csstudio.platform.libs.epics/var_array_support=Auto
+#/ For backwards compatibility, if defined, the legacy beamline_config simulation_config
+#/ will be used.
 #/ 
-#/ JCA/CAJ properties
+#/ PV alias names:
+#/ beamline_config=platform:/plugin/org.csstudio.scan/examples/beamline.xml
 #/ 
-#/ EPICS Channel Access address list.
-#/ Space-separated list of IP addresses for individual servers or subnets (...255)
-# org.csstudio.platform.libs.epics/addr_list=
+#/ Simulation settings:
+#/ simulation_config=platform:/plugin/org.csstudio.scan/examples/simulation.xml
 #/ 
-#/ Use automatic address list _in addition_ to the addr_list?
-# org.csstudio.platform.libs.epics/auto_addr_list=true
+#/ They are now deprecated, and their content has been combined into one scan_config.
 #/ 
-#/ Connection timeout (seconds)
-# org.csstudio.platform.libs.epics/conn_tmo=30.0
+#/ Name of host where scan server is running
+# org.csstudio.scan/server_host=localhost
 #/ 
-#/ Beacon period (seconds)
-# org.csstudio.platform.libs.epics/beacon_period=15.0
+#/ TCP port of scan server REST interface
+# org.csstudio.scan/server_port=4810
 #/ 
-#/ CA Repeater port
-# org.csstudio.platform.libs.epics/repeater_port=5065
+#/ Poll period [millisecs] of the scan client (scan monitor, plot, ...)
+# org.csstudio.scan/scan_client_poll_period=1000
 #/ 
-#/ CA Server port
-# org.csstudio.platform.libs.epics/server_port=5064
 #/ 
-#/ Maximum buffer size for transfer of arrays
-# org.csstudio.platform.libs.epics/max_array_bytes=16384
+#/ ---- Only used by Scan Server
+#/ 
+#/ Scan commands executed before and after the 'main' scan
+#/ 
+#/ Paths starting with "platform:/plugin/org...." must refer
+#/ to a location within a plugin
+#/ 
+#/ May list several comma-separated pre and post scans
+# org.csstudio.scan/pre_scan=platform:/plugin/org.csstudio.scan/examples/pre_scan.scn
+# org.csstudio.scan/post_scan=platform:/plugin/org.csstudio.scan/examples/post_scan.scn
+#/ 
+#/ Search paths for scan scripts and 'included' scans.
+#/ May contain several comma-separated paths.
+#/ "platform:/plugin/name.of.plugin/path_in_plugin" may be used
+#/ as long as the plugin is expanded.
+#/ Jython will not work with jar-ed up plugins, only
+#/ paths into expanded scan server plugins.
+# org.csstudio.scan/script_paths=platform:/plugin/org.csstudio.numjy/jython,platform:/plugin/org.csstudio.scan/examples
+#/ 
+#/ If memory consumption of scan server is above this percentage,
+#/ older scans are removed whenever a new scan is added
+# org.csstudio.scan/old_scan_removal_memory_threshold=50
+#/ 
+#/ If memory consumption of scan server is above this percentage,
+#/ data logger will not add more samples to the in-memory logger
+# org.csstudio.scan/data_logger_memory_threshold=80
+#/ 
+#/ Prefix to scan server status PVs
+#/ When empty, no status PVs will be updated
+# org.csstudio.scan/status_pv_prefix=Demo:Scan:
+#/ 
+#/ Scan server device name macros
+#/ "macro=value, macro=value"
+# org.csstudio.scan/macros=DemoDevice=motor_x
+#/ 
+#/ Log command timeout [seconds]
+#/ Log commands actively read the current value of each device to log,
+#/ not relying on the last received monitor to be up-do-date-enough.
+#/ This timeout is used when performing those reads.
+#/ The value applies to each device, i.e. a Log command for logging the values
+#/ of 5 devices could overall consume 5 times the timeout.
+# org.csstudio.scan/log_command_read_timeout=20
+#/ 
+#/ Value check timeout [seconds]
+#/ Set and Loop commands have a timeout that is used
+#/ to wait for completion or
+#/ to wait for the readback to match.
+#/ When using completion _and_ checking a readback,
+#/ the readback check does not use the full timeout but instead
+#/ checks if the value matches "right away" after completion has been confirmed.
+#/ This check, however, needs to read the current value of the PV,
+#/ so it also needs some timeout
+# org.csstudio.scan/value_check_timeout=20
 
-#<< org.csstudio.platform.libs.epics/addr_list=
-org.csstudio.platform.libs.epics/addr_list=127.0.0.1
-#<< org.csstudio.platform.libs.epics/auto_addr_list=true
-#<< org.csstudio.platform.libs.epics/beacon_period=15.0
-#<< org.csstudio.platform.libs.epics/conn_tmo=30.0
-#<< org.csstudio.platform.libs.epics/dbe_property_supported=false
-#<< org.csstudio.platform.libs.epics/honor_zero_precision=true
-#<< org.csstudio.platform.libs.epics/max_array_bytes=16384
-org.csstudio.platform.libs.epics/max_array_bytes=460000
-#<< org.csstudio.platform.libs.epics/monitor=VALUE
-#<< org.csstudio.platform.libs.epics/repeater_port=5065
-#<< org.csstudio.platform.libs.epics/rtyp_value_only=true
-#<< org.csstudio.platform.libs.epics/server_port=5064
-#<< org.csstudio.platform.libs.epics/support_dbe_property=false
-#<< org.csstudio.platform.libs.epics/use_pure_java=true
-#<< org.csstudio.platform.libs.epics/var_array_support=Auto
+#<< org.csstudio.scan/data_logger_memory_threshold=80
+#<< org.csstudio.scan/log_command_read_timeout=20
+#<< org.csstudio.scan/macros=DemoDevice=motor_x
+org.csstudio.scan/macros=
+#<< org.csstudio.scan/old_scan_removal_memory_threshold=50
+#<< org.csstudio.scan/post_scan=platform:/plugin/org.csstudio.scan/examples/post_scan.scn
+org.csstudio.scan/post_scan=
+#<< org.csstudio.scan/pre_scan=platform:/plugin/org.csstudio.scan/examples/pre_scan.scn
+org.csstudio.scan/pre_scan=
+#<< org.csstudio.scan/scan_client_poll_period=1000
+#<< org.csstudio.scan/scan_config=platform:/plugin/org.csstudio.scan/examples/scan_config.xml
+#<< org.csstudio.scan/script_paths=platform:/plugin/org.csstudio.numjy/jython,platform:/plugin/org.csstudio.scan/examples
+org.csstudio.scan/script_paths=
+#<< org.csstudio.scan/server_host=localhost
+#<< org.csstudio.scan/server_port=4810
+#<< org.csstudio.scan/status_pv_prefix=Demo:Scan:
+org.csstudio.scan/status_pv_prefix=
+#<< org.csstudio.scan/value_check_timeout=20
+#>>
+org.csstudio.scan/beamline_config=platform:/plugin/org.csstudio.iter.scan.server.product/config/scan_config.xml
+
+#/
+## org.csstudio.scan.log.derby 
+#/
+#/ Derby log settings
+#/ 
+#/ Directory where Derby files are kept: Database, derby.log, ...
+# org.csstudio.scan.log.derby/database_directory=/tmp/scan_log_db
+#/ 
+#/ TCP port for Derby network server
+#/ Set to <0 to disable the network server
+# org.csstudio.scan.log.derby/server_port=1527
+
+#<< org.csstudio.scan.log.derby/database_directory=/tmp/scan_log_db
+org.csstudio.scan.log.derby/database_directory=/tmp/css-scan-server_log_db
+#<< org.csstudio.scan.log.derby/server_port=1527
 
 #/
 ## org.csstudio.security 
@@ -185,8 +243,18 @@ org.csstudio.platform.libs.epics/max_array_bytes=460000
 #/ Use a JAAS config file as in normal use of JAAS
 #/ 
 #/ Path to JAAS configuration file
+#/ 
 #/ When located inside a plugin, use
 #/ "platform:/plugin/name.of.plugin/path/within/plugin.conf"
+#/ 
+#/ When a file "my_jaas_settings.conf" is placed
+#/ inside the product's "configuration/" directory, use
+#/ "platform:/config/my_jaas_settings.conf"
+#/ 
+#/ For plain files, use either
+#/ "file:/full/path/to/my_jaas_settings.conf"
+#/ or just
+#/ "/full/path/to/my_jaas_settings.conf"
 # org.csstudio.security/jaas_config_file=platform:/plugin/org.csstudio.security/jaas.conf
 #/ 
 #/ Name of a JAAS login configuration to use.
@@ -308,130 +376,24 @@ org.csstudio.platform.libs.epics/max_array_bytes=460000
 #<< org.csstudio.utility.pv/default_type=epics
 
 #/
-## org.csstudio.utility.pvmanager.loc 
+## org.csstudio.vtype.pv 
 #/
-#/ 
-#/ Local variables that are not specifically initialized have an initial value of null, i.e. undefined.
-#/ This compatibility option can be used to create them with an initial value of 0.
-#/ A warning will be logged because the compatibility option may be removed in the future.
-# org.csstudio.utility.pvmanager.loc/org.csstudio.utility.pvmanager.loc/zero_initialization=false
+#/ Default PV Type
+# org.csstudio.vtype.pv/default_type=ca
 
-#<< org.csstudio.utility.pvmanager.loc/org.csstudio.utility.pvmanager.loc/zero_initialization=false
+#<< org.csstudio.vtype.pv/default_type=ca
+
+#/
+## Core plugins preferences
+#/
 
 #/
 ## Application plugins preferences
 #/
 
 #/
-## org.csstudio.scan 
-#/
-#/ Preference settings for the scan system
-#/ 
-#/ This combines settings for various pieces of the scan system,
-#/ including for example settings specific to the scan server
-#/ or the scan client that are not useful to the respective 'other'
-#/ 
-#/ Split? Or easier to maintain when combined?
-#/ 
-#/ Path to the default beamline information file.
-#/ 
-#/ Paths starting with "/" must refer to absolute locations
-#/ in the local file system.
-#/ 
-#/ Paths starting with "platform:/plugin/org...." must refer
-#/ to a location within a plugin
-# org.csstudio.scan/beamline_config=platform:/plugin/org.csstudio.scan/examples/beamline.xml
-#/ 
-#/ Name of host where scan server is running
-# org.csstudio.scan/server_host=localhost
-#/ 
-#/ TCP port of scan server REST interface
-# org.csstudio.scan/server_port=4810
-#/ 
-#/ Poll period [millisecs] of the scan client (scan monitor, plot, ...)
-# org.csstudio.scan/scan_client_poll_period=1000
-#/ 
-#/ 
-#/ ---- Only used by Scan Server
-#/ 
-#/ Scan commands executed before and after the 'main' scan
-#/ 
-#/ Paths starting with "platform:/plugin/org...." must refer
-#/ to a location within a plugin
-#/ 
-#/ May list several comma-separated pre and post scans
-# org.csstudio.scan/pre_scan=platform:/plugin/org.csstudio.scan/examples/pre_scan.scn
-# org.csstudio.scan/post_scan=platform:/plugin/org.csstudio.scan/examples/post_scan.scn
-#/ 
-#/ Path to simulation specification file.
-#/ If defined as empty, beamline_config will be used.
-# org.csstudio.scan/simulation_config=platform:/plugin/org.csstudio.scan/examples/simulation.xml
-#/ 
-#/ Search paths for scan scripts and 'included' scans.
-#/ May contain several comma-separated paths.
-#/ "platform:/plugin/name.of.plugin/path_in_plugin" may be used
-#/ as long as the plugin is expanded.
-#/ Jython will not work with jar-ed up plugins, only
-#/ paths into expanded scan server plugins.
-# org.csstudio.scan/script_paths=platform:/plugin/org.csstudio.scan/examples
-#/ 
-#/ If memory consumption of scan server is above this percentage,
-#/ older scans are removed whenever a new scan is added
-# org.csstudio.scan/old_scan_removal_memory_threshold=50
-#/ 
-#/ If memory consumption of scan server is above this percentage,
-#/ data logger will not add more samples to the in-memory logger
-# org.csstudio.scan/data_logger_memory_threshold=80
-#/ 
-#/ Prefix to scan server status PVs
-#/ When empty, no status PVs will be updated
-# org.csstudio.scan/status_pv_prefix=Demo:Scan:
-#/ 
-#/ Scan server device name macros
-#/ "macro=value, macro=value"
-# org.csstudio.scan/macros=DemoDevice=motor_x
-#/ 
-#/ Minimum PV update period [seconds]
-# org.csstudio.scan/pv_min_update_period=0.01
-
-#<< org.csstudio.scan/beamline_config=platform:/plugin/org.csstudio.scan/examples/beamline.xml
-org.csstudio.scan/beamline_config=platform:/plugin/org.csstudio.iter.scan.server.product/config/scan_config.xml
-#<< org.csstudio.scan/data_logger_memory_threshold=80
-#<< org.csstudio.scan/macros=DemoDevice=motor_x
-org.csstudio.scan/macros=
-#<< org.csstudio.scan/old_scan_removal_memory_threshold=50
-#<< org.csstudio.scan/post_scan=platform:/plugin/org.csstudio.scan/examples/post_scan.scn
-org.csstudio.scan/post_scan=
-#<< org.csstudio.scan/pre_scan=platform:/plugin/org.csstudio.scan/examples/pre_scan.scn
-org.csstudio.scan/pre_scan=
-#<< org.csstudio.scan/pv_min_update_period=0.01
-#<< org.csstudio.scan/scan_client_poll_period=1000
-#<< org.csstudio.scan/script_paths=platform:/plugin/org.csstudio.scan/examples
-org.csstudio.scan/script_paths=
-#<< org.csstudio.scan/server_host=localhost
-#<< org.csstudio.scan/server_port=4810
-#<< org.csstudio.scan/simulation_config=platform:/plugin/org.csstudio.scan/examples/simulation.xml
-org.csstudio.scan/simulation_config=platform:/plugin/org.csstudio.iter.scan.server.product/config/simulation.xml
-#<< org.csstudio.scan/status_pv_prefix=Demo:Scan:
-org.csstudio.scan/status_pv_prefix=
-
-#/
-## org.csstudio.scan.log.derby 
-#/
-#/ Derby log settings
-#/ 
-#/ Directory where Derby files are kept: Database, derby.log, ...
-# org.csstudio.scan.log.derby/database_directory=/tmp/scan_log_db
-#/ 
-#/ TCP port for Derby network server
-#/ Set to <0 to disable the network server
-# org.csstudio.scan.log.derby/server_port=1527
-
-#<< org.csstudio.scan.log.derby/database_directory=/tmp/scan_log_db
-org.csstudio.scan.log.derby/database_directory=/tmp/css-scan-server_log_db
-#<< org.csstudio.scan.log.derby/server_port=1527
-
-#/
 ## Unused preferences
 #/
 
+#>>
+org.eclipse.ui/SHOW_PROGRESS_ON_STARTUP=false
