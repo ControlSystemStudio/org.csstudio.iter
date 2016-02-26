@@ -1,4 +1,4 @@
-ITER Control System Studio version ITER-CODAC-CORE-5.2.0-4.3.2
+ITER Control System Studio version ITER-CODAC-CORE-5.2.0-4.3.3
 
 Control System Studio is an Eclipse-based collection of tools
 to monitor and operate large scale control systems, such as the
@@ -15,5 +15,5 @@ cs-studio-thirdparty: 9e7b6c5
 <https://github.com/css-iter/cs-studio-thirdparty/tree/9e7b6c5>  
 diirt: 004e0cf  
 <https://github.com/css-iter/diirt/tree/004e0cf>  
-cs-studio: e644455  
-<https://github.com/css-iter/cs-studio/tree/e644455>  
+cs-studio: 589a614  
+<https://github.com/css-iter/cs-studio/tree/589a614>  
