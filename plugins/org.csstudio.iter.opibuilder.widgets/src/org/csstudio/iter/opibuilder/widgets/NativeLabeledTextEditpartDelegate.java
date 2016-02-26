@@ -124,10 +124,10 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
                             text.getShell().forceFocus();
                             break;
                         case NEXT:
-                            SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_NEXT);
+                            SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_PREVIOUS);
                             break;
                         case PREVIOUS:
-                            SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_PREVIOUS);
+                            SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_NEXT);
                             break;
                         case KEEP:
                         default:
