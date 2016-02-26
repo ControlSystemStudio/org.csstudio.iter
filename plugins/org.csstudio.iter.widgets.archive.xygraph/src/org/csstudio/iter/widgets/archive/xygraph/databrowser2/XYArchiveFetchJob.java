@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.csstudio.archive.reader.UnknownChannelException;
 import org.csstudio.archive.reader.rdb.ConnectionCache;
 import org.csstudio.trends.databrowser2.archive.ArchiveFetchJob;
 import org.csstudio.trends.databrowser2.archive.ArchiveFetchJobListener;
@@ -41,12 +42,8 @@ public class XYArchiveFetchJob extends ArchiveFetchJob {
      * @throws Exception
      */
     public XYArchiveFetchJob(String pv, List<String> archiveDataSource, Instant start, Instant end,
-            XYArchiveJobCompleteListener listener) throws Exception {
-        super(getPVItem(pv, archiveDataSource), start, end, getArchiveFetchJobListener(pv, listener));
-
-        this.displayUnknowChannelException = false;
-        this.concurrency = true;
-
+        XYArchiveJobCompleteListener listener) throws Exception {
+        super(getPVItem(pv, archiveDataSource), start, end, getArchiveFetchJobListener(pv, listener), true);
         ConnectionCache.clean();
     }
 
@@ -78,12 +75,14 @@ public class XYArchiveFetchJob extends ArchiveFetchJob {
      * @return the listener
      */
     private static ArchiveFetchJobListener getArchiveFetchJobListener(String pvName,
-            XYArchiveJobCompleteListener completeListener) {
+        XYArchiveJobCompleteListener completeListener) {
         return new ArchiveFetchJobListener() {
             @Override
             public void archiveFetchFailed(ArchiveFetchJob job, ArchiveDataSource archive, Exception error) {
-                LOGGER.log(Level.WARNING,
+                if (!(error instanceof UnknownChannelException)) {
+                    LOGGER.log(Level.WARNING,
                         "Archive fetch failed for pv '" + pvName + "' and url '" + archive.getUrl() + "'", error);
+                }
             }
 
             @Override
