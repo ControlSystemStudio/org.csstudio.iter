@@ -33,6 +33,7 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
     private Color originalBackgroundColor = null;
     private TextInputEditpart editpart;
     private TextInputModel model;
+    private boolean skipTraverse;
 
     public NativeLabeledTextEditpartDelegate(LabeledTextInputEditpart editpart, LabeledTextInputModel model) {
         super(editpart, model);
@@ -134,6 +135,17 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
                             break;
                         }
                     }
+                });
+                text.addTraverseListener(e -> {
+                    if (skipTraverse) return;
+                    e.doit = false;
+                    skipTraverse = true;
+                    if (e.stateMask == 0) {
+                        SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_PREVIOUS);
+                    } else {
+                        SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_NEXT);
+                    }
+                    skipTraverse = false;
                 });
             }
             //Recover text if editing aborted.
