@@ -189,13 +189,13 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                             ((String)sp.getPropertyValue()).trim().length() <=0)
                         continue;
 
-	                /* BeastDataSource channels should not be configured as PVs.
-	                 * If a Beast channel is set for PVName, it can only provide Alarm Sensitivity functionality, not values etc.
-	                 * This is to prevent Alarm Tree Node BeastDS channels to be registered as PVs, because they will not be
-	                 * found and the widget will (incorrectly) have the Disconnected state.
-	                 *
-	                 * To this end, we will ensure any PVs starting with "beast://" are not added to the pvMap.
-	                 */
+                    /* BeastDataSource channels should not be configured as PVs.
+                     * If a Beast channel is set for PVName, it can only provide Alarm Sensitivity functionality, not values etc.
+                     * This is to prevent Alarm Tree Node BeastDS channels to be registered as PVs, because they will not be
+                     * found and the widget will (incorrectly) have the Disconnected state.
+                     *
+                     * To this end, we will ensure any PVs starting with "beast://" are not added to the pvMap.
+                     */
                     if (((String)sp.getPropertyValue()).toLowerCase().startsWith(BEAST_SCHEMA))
                         continue;
 
