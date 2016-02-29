@@ -18,7 +18,7 @@ import org.eclipse.core.runtime.preferences.IPreferencesService;
 
 /**
  * utility class to get url from databrowser2 preference
- * 
+ *
  * @author lamberm (Sopra)
  *
  */
@@ -32,7 +32,7 @@ public class DataSourceUrl {
 
     /**
      * get the default url from preferences of org.csstudio.trends.databrowser2's service
-     * 
+     *
      * @return a jdbc url
      */
     public static String getDefaultURL() {
@@ -45,7 +45,7 @@ public class DataSourceUrl {
 
     /**
      * return the list of url order by key
-     * 
+     *
      * @return
      */
     public static List<String> getURLs() {

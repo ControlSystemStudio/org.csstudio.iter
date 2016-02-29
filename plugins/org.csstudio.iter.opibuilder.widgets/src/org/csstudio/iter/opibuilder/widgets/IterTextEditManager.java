@@ -36,6 +36,7 @@ public class IterTextEditManager extends TextEditManager {
 
     private Color backgroundFocusColor;
     private boolean confirmOnFocusLost;
+    private boolean multiLine;
 
     /**
      * @param backgroundFocusColor The color to be used for the CellEditor's background. If null, the Figure's background color is used.
@@ -43,7 +44,7 @@ public class IterTextEditManager extends TextEditManager {
      */
     public IterTextEditManager(AbstractBaseEditPart source, CellEditorLocator locator, boolean multiline, Color backgroundFocusColor, boolean confirmOnFocusLost) {
         super(source, locator, multiline);
-
+        this.multiLine = multiline;
         this.backgroundFocusColor = backgroundFocusColor;
         this.confirmOnFocusLost = confirmOnFocusLost;
     }

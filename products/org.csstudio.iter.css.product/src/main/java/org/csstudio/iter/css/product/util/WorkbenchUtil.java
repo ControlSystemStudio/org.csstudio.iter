@@ -26,6 +26,8 @@ import org.eclipse.core.commands.contexts.ContextManager;
 import org.eclipse.core.runtime.dynamichelpers.IExtensionChangeHandler;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
+import org.eclipse.e4.ui.model.application.MApplication;
+import org.eclipse.e4.ui.model.application.descriptor.basic.MPartDescriptor;
 import org.eclipse.jface.bindings.Binding;
 import org.eclipse.jface.bindings.BindingManager;
 import org.eclipse.jface.bindings.Scheme;
@@ -55,6 +57,16 @@ public class WorkbenchUtil {
             "com.sun.jersey.core.spi.component",
             "com.sun.jersey.core.spi.component.ProviderServices",
             "com.sun.jersey.spi.service.ServiceFinder" };
+
+    private static final String[] IGNORE_VIEWS = new String[] {
+        "org.csstudio.opibuilder.placeHolder",
+        "org.csstudio.opibuilder.opiShellSummary",
+        "org.csstudio.opibuilder.opiView",
+        "org.csstudio.opibuilder.opiViewLEFT",
+        "org.csstudio.opibuilder.opiViewRIGHT",
+        "org.csstudio.opibuilder.opiViewTOP",
+        "org.csstudio.opibuilder.opiViewBOTTOM"
+        };
 
     private static final List<Logger> strongRefLoggers = new ArrayList<>();
 
@@ -281,5 +293,30 @@ public class WorkbenchUtil {
             }
             Activator.getDefault().getPreferenceStore().setValue(APPLIED_SYSTEM_FONT, font);
         }
+    }
+
+    /**
+     * Remove unwanted views from CSS.
+     *
+     * @param application the application object from which views will be removed
+     */
+    public static void removeUnwantedViews(MApplication application) {
+        if (application == null) {
+            return;
+        }
+        //Because of some unknown reasons the activities do not remove the views from the Show View dialog. Therefore,
+        //we try to brute force remove the view from the application
+        List<MPartDescriptor> descriptors = application.getDescriptors();
+        List<String> views = Arrays.asList(IGNORE_VIEWS);
+        List<MPartDescriptor> toRemove = new ArrayList<>();
+        for (MPartDescriptor d : descriptors) {
+            if (views.contains(d.getElementId())) {
+                toRemove.add(d);
+            }
+        }
+        for (MPartDescriptor p : toRemove) {
+            descriptors.remove(p);
+        }
+
     }
 }

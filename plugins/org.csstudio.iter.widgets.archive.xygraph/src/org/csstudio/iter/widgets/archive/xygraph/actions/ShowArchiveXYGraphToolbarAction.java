@@ -11,7 +11,7 @@ import org.csstudio.opibuilder.widgets.actions.ShowXYGraphToolbarAction;
 
 /**
  * Show/Hide XYGraph Toolbar
- * 
+ *
  * @author Xihui Chen
  *
  */

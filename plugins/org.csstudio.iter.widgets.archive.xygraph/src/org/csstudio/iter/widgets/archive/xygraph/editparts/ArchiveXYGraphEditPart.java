@@ -37,19 +37,35 @@ import org.csstudio.swt.xygraph.figures.ToolbarArmedXYGraph;
 import org.csstudio.swt.xygraph.figures.Trace;
 import org.csstudio.trends.databrowser2.model.PVSamples;
 import org.csstudio.ui.util.thread.UIBundlingThread;
-import org.eclipse.draw2d.IFigure;
 import org.diirt.util.time.Timestamp;
 import org.diirt.vtype.VType;
+import org.eclipse.draw2d.IFigure;
 
 /**
  * The Archive XYGraph editpart
- * 
+ *
  * @author lamberm (Sopra)
  *
  */
 public class ArchiveXYGraphEditPart extends XYGraphEditPart {
 
     private Map<Integer, List<VType>> cacheDuringLoad = new HashMap<>();
+
+    private static final Long DEFAULT_MAX;
+    static {
+        long v = 100;
+        try {
+            Field f = XYGraphModel.class.getDeclaredField("DEFAULT_MAX");
+            f.setAccessible(true);
+            Object obj = f.get(null);
+            if (obj instanceof Number) {
+               v = ((Number)obj).longValue();
+            }
+        } catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
+            //ignore
+        }
+        DEFAULT_MAX = v;
+    }
 
     @Override
     public ArchiveXYGraphModel getWidgetModel() {
@@ -145,7 +161,7 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
 
     /**
      * update the graph with data from DB and loading cache
-     * 
+     *
      * @param pvSamples data from db to plot
      * @param dataProvider to set data in datapprovider
      * @param traceIndex index of the trace
@@ -301,8 +317,8 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
             // loop on trace to draw curve with 2 points with the begin point and end point
             ToolbarArmedXYGraph figure = ((ToolbarArmedXYGraph) ArchiveXYGraphEditPart.this.getFigure());
             long timeRangeUpper = (long) figure.getXYGraph().getXAxisList().get(0).getRange().getUpper();
-            final Integer max = (int) ArchiveXYGraphModel.DEFAULT_MAX;
-            if (timeRangeUpper != max) {
+            //FIXME Is this correct? The if clause seems a bit odd...
+            if (DEFAULT_MAX.compareTo(timeRangeUpper) != 0) {
                 for (Trace traceTmp : traceList) {
                     int countPoint = traceTmp.getDataProvider().getSize();
                     if (countPoint == 2) {
@@ -323,5 +339,4 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
             return false;
         }
     }
-
 }

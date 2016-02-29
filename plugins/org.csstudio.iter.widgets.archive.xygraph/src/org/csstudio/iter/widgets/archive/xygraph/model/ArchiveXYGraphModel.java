@@ -19,7 +19,7 @@ import org.csstudio.opibuilder.widgets.model.XYGraphModel;
 
 /**
  * The model for XYGraph
- * 
+ *
  * @author Xihui Chen
  */
 public class ArchiveXYGraphModel extends XYGraphModel {

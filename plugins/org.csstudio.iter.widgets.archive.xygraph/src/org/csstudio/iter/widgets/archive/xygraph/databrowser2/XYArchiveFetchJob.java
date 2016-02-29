@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.csstudio.archive.reader.UnknownChannelException;
 import org.csstudio.archive.reader.rdb.ConnectionCache;
 import org.csstudio.trends.databrowser2.archive.ArchiveFetchJob;
 import org.csstudio.trends.databrowser2.archive.ArchiveFetchJobListener;
@@ -22,7 +23,7 @@ import org.csstudio.trends.databrowser2.model.RequestType;
 
 /**
  * archive job for RDB and ArchiveXYGraph
- * 
+ *
  * @author lamberm (sopra)
  *
  */
@@ -32,7 +33,7 @@ public class XYArchiveFetchJob extends ArchiveFetchJob {
 
     /**
      * Main constructor
-     * 
+     *
      * @param pv name of the pv
      * @param archiveDataSource list of URL (RDB)
      * @param start beginning of the search
@@ -41,18 +42,14 @@ public class XYArchiveFetchJob extends ArchiveFetchJob {
      * @throws Exception
      */
     public XYArchiveFetchJob(String pv, List<String> archiveDataSource, Instant start, Instant end,
-            XYArchiveJobCompleteListener listener) throws Exception {
-        super(getPVItem(pv, archiveDataSource), start, end, getArchiveFetchJobListener(pv, listener));
-
-        this.displayUnknowChannelException = false;
-        this.concurrency = true;
-
+        XYArchiveJobCompleteListener listener) throws Exception {
+        super(getPVItem(pv, archiveDataSource), start, end, getArchiveFetchJobListener(pv, listener), true);
         ConnectionCache.clean();
     }
 
     /**
      * Create a {@link PVItem} with the name and url of the archive RDB
-     * 
+     *
      * @param pv name of the PV
      * @param archiveDataSource list of URL for the RDB
      * @return {@link PVItem}
@@ -72,18 +69,20 @@ public class XYArchiveFetchJob extends ArchiveFetchJob {
 
     /**
      * method provide an object for the listener {@link ArchiveFetchJobListener}
-     * 
+     *
      * @param pvName name of the pv
      * @param completeListener listener to call when finish
      * @return the listener
      */
     private static ArchiveFetchJobListener getArchiveFetchJobListener(String pvName,
-            XYArchiveJobCompleteListener completeListener) {
+        XYArchiveJobCompleteListener completeListener) {
         return new ArchiveFetchJobListener() {
             @Override
             public void archiveFetchFailed(ArchiveFetchJob job, ArchiveDataSource archive, Exception error) {
-                LOGGER.log(Level.WARNING,
+                if (!(error instanceof UnknownChannelException)) {
+                    LOGGER.log(Level.WARNING,
                         "Archive fetch failed for pv '" + pvName + "' and url '" + archive.getUrl() + "'", error);
+                }
             }
 
             @Override
