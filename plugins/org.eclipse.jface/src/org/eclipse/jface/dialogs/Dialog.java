@@ -417,10 +417,16 @@ public abstract class Dialog extends Window {
      * @return a shell
      */
     public static Shell createDummyShell(Shell parentShell) {
-        final Shell shell = new Shell(parentShell.getDisplay(), SWT.NO_TRIM);
+        final Shell shell = new Shell(parentShell == null ? Display.getDefault() : parentShell.getDisplay(),
+            SWT.NO_TRIM);
         int size = 20;
         shell.setSize(size,size);
-        Rectangle windowBounds = parentShell.getBounds();
+        Rectangle windowBounds;
+        if (parentShell == null) {
+            windowBounds = shell.getDisplay().getBounds();
+        } else {
+            windowBounds = parentShell.getBounds();
+        }
         shell.setLocation(new Point(windowBounds.width/2 - size/2, windowBounds.height/2 - size/2));
         return shell;
     }
@@ -438,9 +444,7 @@ public abstract class Dialog extends Window {
 	 */
 	protected Dialog(Shell parentShell) {
 		this(new SameShellProvider(parentShell));
-		if (parentShell != null) {
-		    shellToDispose = createDummyShell(parentShell);
-		}
+		shellToDispose = createDummyShell(parentShell);
 		setParentShell(shellToDispose);
 		if (parentShell == null && Policy.DEBUG_DIALOG_NO_PARENT) {
 			Policy.getLog().log(
