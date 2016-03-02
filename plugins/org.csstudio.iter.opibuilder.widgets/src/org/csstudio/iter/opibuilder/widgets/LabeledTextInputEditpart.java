@@ -9,6 +9,7 @@ package org.csstudio.iter.opibuilder.widgets;
 
 import org.csstudio.iter.opibuilder.widgets.LabeledTextInputModel;
 import org.csstudio.opibuilder.widgets.editparts.Draw2DTextInputEditpartDelegate;
+import org.csstudio.opibuilder.widgets.editparts.ITextInputEditPartDelegate;
 import org.csstudio.opibuilder.widgets.editparts.LabelCellEditorLocator;
 import org.csstudio.opibuilder.widgets.editparts.TextInputEditpart;
 import org.csstudio.swt.widgets.figures.TextInputFigure;
@@ -42,6 +43,7 @@ public class LabeledTextInputEditpart extends TextInputEditpart {
     protected IFigure doCreateFigure() {
         initFields();
 
+        ITextInputEditPartDelegate delegate;
         if(shouldBeTextInputFigure()){
             TextInputFigure textInputFigure = (TextInputFigure) createTextFigure();
             initTextFigure(textInputFigure);
@@ -52,6 +54,7 @@ public class LabeledTextInputEditpart extends TextInputEditpart {
             delegate = new NativeLabeledTextEditpartDelegate(this, getWidgetModel());
         }
 
+        setDelegate(delegate);
         getPVWidgetEditpartDelegate().setUpdateSuppressTime(-1);
         updatePropSheet();
 
