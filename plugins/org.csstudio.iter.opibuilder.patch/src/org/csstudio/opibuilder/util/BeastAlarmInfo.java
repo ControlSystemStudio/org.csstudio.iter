@@ -172,7 +172,7 @@ public final class BeastAlarmInfo {
      *          {@code false} for acknowledged or OK state
      */
     public boolean isCurrentAlarmActive() {
-    	return currentSeverity.isActive();
+        return currentSeverity.isActive();
     }
 
     /**

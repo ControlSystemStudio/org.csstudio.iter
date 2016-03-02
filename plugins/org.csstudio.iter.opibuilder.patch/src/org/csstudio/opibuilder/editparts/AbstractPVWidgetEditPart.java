@@ -79,7 +79,7 @@ public abstract class AbstractPVWidgetEditPart extends AbstractBaseEditPart impl
         if(key == ProcessVariable.class){
             return new ProcessVariable(getPVName());
         }
-		// context-menu for BEAST Alarm
+        // context-menu for BEAST Alarm
         if (key == IActionFilter.class)
             return new BaseEditPartActionFilter(){
             @Override

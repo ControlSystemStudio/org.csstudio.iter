@@ -88,7 +88,9 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
     /**
      * Method will add to each trace param with plot datasource the plot point from db.
      */
+    @SuppressWarnings("unchecked")
     private void addValuesFromDatasource() {
+        List<Trace> traceList = getTraceList();
         for (int i = 0; i < getWidgetModel().getTracesAmount(); i++) {
             String pv = "";
             try {
@@ -261,8 +263,14 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
         }
     }
 
-    @Override
-    protected void setYValue(Trace trace, CircularBufferDataProvider dataProvider, VType y_value) {
+    private void setXValue(CircularBufferDataProvider dataProvider, VType value) {
+        if(VTypeHelper.getSize(value) > 1){
+            dataProvider.setCurrentXDataArray(VTypeHelper.getDoubleArray(value));
+        }else
+            dataProvider.setCurrentXData(VTypeHelper.getDouble(value));
+    }
+
+    private void setYValue(Trace trace, CircularBufferDataProvider dataProvider, VType y_value) {
         if (VTypeHelper.getSize(y_value) == 1 && trace.getXAxis().isDateEnabled() && dataProvider.isChronological()) {
             long time = yValueTimeStampToLong(y_value);
             // verification that the last add is before the next that will be added
@@ -307,6 +315,7 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
 
         @Override
         public boolean handleChange(Object oldValue, Object newValue, IFigure refreshableFigure) {
+            List<Trace> traceList = getTraceList();
             Trace trace = traceList.get(traceIndex);
 
             List<VType> samples = cacheDuringLoad.get(new Integer(traceIndex));

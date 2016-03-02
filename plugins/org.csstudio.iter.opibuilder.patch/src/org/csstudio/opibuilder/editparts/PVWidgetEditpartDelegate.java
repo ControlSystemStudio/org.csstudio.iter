@@ -131,8 +131,8 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
      * is not useful. Ignore the old pv value will help to reduce memory usage.
      */
     private boolean ignoreOldPVValue =true;
-    private boolean isBackColorAlarmSensitive;
 
+    private boolean isBackColorAlarmSensitive;
     private boolean isBorderAlarmSensitive;
     private boolean isForeColorAlarmSensitive;
     private AlarmSeverity alarmSeverity = AlarmSeverity.NONE;
@@ -167,8 +167,6 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
      */
     public PVWidgetEditpartDelegate(AbstractBaseEditPart editpart) {
         this.editpart = editpart;
-
-
     }
 
     public IPVWidgetModel getWidgetModel() {
@@ -189,13 +187,13 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                             ((String)sp.getPropertyValue()).trim().length() <=0)
                         continue;
 
-	                /* BeastDataSource channels should not be configured as PVs.
-	                 * If a Beast channel is set for PVName, it can only provide Alarm Sensitivity functionality, not values etc.
-	                 * This is to prevent Alarm Tree Node BeastDS channels to be registered as PVs, because they will not be
-	                 * found and the widget will (incorrectly) have the Disconnected state.
-	                 *
-	                 * To this end, we will ensure any PVs starting with "beast://" are not added to the pvMap.
-	                 */
+                    /* BeastDataSource channels should not be configured as PVs.
+                     * If a Beast channel is set for PVName, it can only provide Alarm Sensitivity functionality, not values etc.
+                     * This is to prevent Alarm Tree Node BeastDS channels to be registered as PVs, because they will not be
+                     * found and the widget will (incorrectly) have the Disconnected state.
+                     *
+                     * To this end, we will ensure any PVs starting with "beast://" are not added to the pvMap.
+                     */
                     if (((String)sp.getPropertyValue()).toLowerCase().startsWith(BEAST_SCHEMA))
                         continue;
 
@@ -1047,6 +1045,29 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
     public AlarmSeverity getAlarmSeverity() {
         return alarmSeverity;
     }
+    
+    public void processBeastAlarmState() {
+        boolean blinking = WidgetBlinker.INSTANCE.isBlinking(this);
+
+        // for calling blinker.add() & fireAlarmSeverityChanged (from within resetBeastBlink)  on the UI thread,
+        // otherwise SWT will error out
+        Display display = getEditpartDisplay();
+        if (display.isDisposed()) return;
+
+        // The widget will Blink only when the PV is currently in alarm and has not yet been acknowledged
+        if (isBeastAlarmAndConnected() && isBeastAlarmActiveUnack()) {
+            if (!blinking) {
+                // add() must be run on the display thread because it starts the blinking when the first widget is added
+                display.syncExec(() -> WidgetBlinker.INSTANCE.add(this));
+            }
+        } else if (blinking) {
+            // this branch also stops this widget's blinking in case of disconnection from the Alarm Server
+            // (isBeastAlarmAndConnected() will be false after such a ConnectionChanged event is received)
+            WidgetBlinker.INSTANCE.remove(this);
+            resetBeastBlink(false);
+        }
+        display.asyncExec(() -> fireAlarmSeverityChanged(alarmSeverity, getEditpartFigure()));
+    }
 
     private void createBeastAlarmListener(String overridePvName) {
         if (alarmPV != null)
@@ -1083,32 +1104,36 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                         public void pvChanged(PVReaderEvent<Object> event) {
                             String pvName = pvWidget.getWidgetModel().getPVName();
                             BeastAlarmInfo beast = pvWidget.getBeastAlarmInfo();
+                            boolean wasChannelConnected, channelConnected;
 
+                            synchronized (beast) {
+                                wasChannelConnected = beast.isBeastChannelConnected();
+                            }
+                            channelConnected = event.getPvReader().isConnected();
+                            
                             if (event.isExceptionChanged()) {
                                 Exception e = event.getPvReader().lastException();
                                 log.fine("BeastAlarmListener (" + pvName + ") received an EXCEPTION: " + e.toString());
                             }
 
-                            // if we receive a ValueChanged event we know we're connected even if we
-                            // never received the ConnectionChanged event (with isConnected being true)
-                            if (event.isConnectionChanged() || (!beast.isBeastChannelConnected() && event.isValueChanged())) {
-                                boolean connected = event.getPvReader().isConnected();
-
-                                if (!connected && event.isValueChanged()) {
-                                    // the PVReader says it's not connected but we received a VAL event !
-                                    // force to TRUE since we received a ValueChanged event..
-                                    connected = true;
-                                }
-
+                            if (event.isConnectionChanged()) {
                                 synchronized (beast) {
-                                    beast.setBeastChannelConnected(connected);
+                                    beast.setBeastChannelConnected(channelConnected);
                                 }
                                 // isBeastAlarm will only be true if we successfully connected to it at least once
-                                if (connected) pvWidget.setIsBeastAlarm(connected);
+                                if (channelConnected)
+                                    pvWidget.setIsBeastAlarm(true);
                             }
-                            if (!event.isValueChanged() || event.getPvReader().getValue() == null)
+                            
+                            if (!event.isValueChanged() || event.getPvReader().getValue() == null) {
+                                // even if we didn't receive a ValueChanged event, we might have to update UI
+                                // on connection state changes
+                                if (wasChannelConnected != channelConnected)
+                                    pvWidget.processBeastAlarmState();
+                                    
                                 return;
-
+                            }
+                            
                             if (isFirstValueEvent) {
                                 // We will only check 'format' of incoming message and find the columns we need
                                 // the first time we receive a ValueChanged event
@@ -1143,33 +1168,18 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
 
                             List<String> data = (List<String>) table.getColumnData(1);
 
+                            AlarmSeverity beastSeverity;
                             synchronized (beast) {
                                 beast.setLatchedSeverity(BeastAlarmSeverityLevel.parse(data.get(latchedSeverityIdx)));
                                 beast.setCurrentSeverity(BeastAlarmSeverityLevel.parse(data.get(currentSeverityIdx)));
+                                beastSeverity = beast.getCurrentAlarmSeverity();
                             }
 
-                            AlarmSeverity beastSeverity = beast.getCurrentAlarmSeverity();
                             if (pvWidget.getAlarmSeverity() != beastSeverity) {
                                 pvWidget.setAlarmSeverity(beastSeverity);
                             }
 
-                            // call blink & fireAlarmSeverityChanged on the UI thread, otherwise SWT will error out
-                            Display display = pvWidget.getEditpartDisplay();
-                            if (display.isDisposed()) return;
-
-                            // The widget will Blink only when the PV is currently in alarm and has not yet been acknowledged
-                            boolean blinking = WidgetBlinker.INSTANCE.isBlinking(pvWidget);
-                            if (pvWidget.isBeastAlarmAndConnected() && pvWidget.isBeastAlarmActiveUnack()) {
-                                if (!blinking)
-                                    display.syncExec(() -> WidgetBlinker.INSTANCE.add(pvWidget));
-                            } else if (blinking) {
-                                display.syncExec(() -> WidgetBlinker.INSTANCE.remove(pvWidget));
-                                pvWidget.resetBeastBlink(false);
-                            }
-
-                            display.asyncExec(() ->
-                                pvWidget.fireAlarmSeverityChanged(beastSeverity, pvWidget.getEditpartFigure())
-                            );
+                            pvWidget.processBeastAlarmState();
                         }
                     }).asynchWriteAndMaxReadRate(TimeDuration.ofHertz(25));
         }
@@ -1177,7 +1187,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
 //            // retry after a delay ?
 //        }
         catch (Exception e) {
-            log.warning("BeastAlarmListener instantiation failed: " + e.toString());
+            log.warning("BeastAlarmListener instantiation failed for channel " + alarmPVName + " (" + e.toString() + ")");
         }
     }
 }

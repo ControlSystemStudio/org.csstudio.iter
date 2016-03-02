@@ -105,11 +105,11 @@ public class InterpreterUtils {
         }
         // Code copies from Pydev when the user chooses a Jython interpreter
         // - these are the defaults.
-        final File jydir = BundleUtils.getBundleLocation("org.csstudio.iter.pydev.configurator");
+        final File jydir = BundleUtils.getBundleLocation("org.python.jython");
         File exeFile = new File(jydir, "jython.jar");
         if (!exeFile.exists()) {
-            // by jbobnar: the latest org.python.jython no longer includes the jython.jar. Instead the contents
-            // of jython.jar are unpacked, so the bundle works like the jython jar
+            //by jbobnar: the latest org.python.jython no longer includes the jython.jar. Instead the contents
+            //of jython.jar are unpacked, so the bundle works like the jython jar
             exeFile = jydir;
         }
 

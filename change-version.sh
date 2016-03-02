@@ -31,6 +31,11 @@ function update() {
     sed -i "s|\(version=\"\)[^<>]*\(.qualifier\"\)|\1${ver}\2|" ${repository}/org.csstudio.iter.product.${product}.product
 }
 
+function updateVersion() {
+    pom_file=$1
+    sed -i "s|\(<version>\)[^<>]*\(-SNAPSHOT</version>\)|\1${ver}\2|" ${pom_file}
+}
+
 update "alarm.beast.server" "alarm-server" 0
 update "alarm.beast.configtool" "alarm-configtool" 0
 update "alarm.beast.annunciator" "alarm-annunciator" 1
@@ -42,5 +47,10 @@ update "jms2rdb" "jms2rdb" 0
 update "scan.server" "scan-server" 1
 update "utility.jmssendcmd" "jms-send" 0
 sed -i "s|\(version=\"\)[^<>]*\(.qualifier\"\)|\1${ver}\2|" repository-rcp/org.csstudio.iter.product.opivalidation.product
-sed -i "s|\(<global-version>\)[^<>]*\(-SNAPSHOT</global-version>\)|\1${ver}\2|" pom.xml
-
+updateVersion "pom.xml"
+updateVersion "features/pom.xml"
+updateVersion "plugins/pom.xml"
+updateVersion "products/pom.xml"
+updateVersion "rap/pom.xml"
+updateVersion "repository/pom.xml"
+updateVersion "repository-rcp/pom.xml"

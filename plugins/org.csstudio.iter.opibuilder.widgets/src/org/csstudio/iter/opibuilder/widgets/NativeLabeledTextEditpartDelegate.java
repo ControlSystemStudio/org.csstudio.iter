@@ -27,12 +27,15 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Text;
 
 public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegate {
     private Color backgroundFocusColor = null;
     private Color originalBackgroundColor = null;
     private TextInputEditpart editpart;
     private TextInputModel model;
+    private Text text;
+    private boolean skipTraverse;
 
     public NativeLabeledTextEditpartDelegate(LabeledTextInputEditpart editpart, LabeledTextInputModel model) {
         super(editpart, model);
@@ -42,12 +45,18 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
     }
 
     @Override
+    protected void setText(Text text) {
+        this.text = text;
+        super.setText(text);
+    }
+
+    @Override
     protected void finalize() throws Throwable {
         if (this.backgroundFocusColor != null) this.backgroundFocusColor.dispose();
         super.finalize();
     }
 
-    protected FocusAdapter getTextFocusListener(NativeLabeledTextFigure figure){
+    private FocusAdapter getTextFocusListener(NativeLabeledTextFigure figure){
         return new FocusAdapter() {
             @Override
             public void focusLost(FocusEvent e) {
@@ -92,7 +101,7 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
         int textStyle = getTextFigureStyle();
 
         final NativeLabeledTextFigure figure = new NativeLabeledTextFigure(editpart, textStyle);
-        text = figure.getTextSWTWidget();
+        setText(figure.getTextSWTWidget());
 
         if(!model.isReadOnly()){
             if(model.isMultilineInput()){
@@ -124,16 +133,27 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
                             text.getShell().forceFocus();
                             break;
                         case NEXT:
-                            SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_NEXT);
+                            SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_PREVIOUS);
                             break;
                         case PREVIOUS:
-                            SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_PREVIOUS);
+                            SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_NEXT);
                             break;
                         case KEEP:
                         default:
                             break;
                         }
                     }
+                });
+                text.addTraverseListener(e -> {
+                    if (skipTraverse) return;
+                    e.doit = false;
+                    skipTraverse = true;
+                    if (e.stateMask == 0) {
+                        SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_PREVIOUS);
+                    } else {
+                        SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_NEXT);
+                    }
+                    skipTraverse = false;
                 });
             }
             //Recover text if editing aborted.

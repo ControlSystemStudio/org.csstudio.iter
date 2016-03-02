@@ -27,9 +27,21 @@
    </plugins>
 
    <features>
-      <feature id="org.csstudio.archive.reader.rdb.feature"/>
-      <feature id="org.csstudio.applications.opibuilder.rap.feature"/>
       <feature id="org.csstudio.jdbc.feature"/>
+      <feature id="org.csstudio.archive.reader.rdb.feature"/>
+      <feature id="org.csstudio.jms.feature"/>
+      <feature id="org.eclipse.core.rap.feature"/>
+      <feature id="org.csstudio.iter.test.feature"/>
+      <feature id="org.csstudio.core.utility.rap.feature"/>
+      <feature id="org.csstudio.email.feature"/>
+      <feature id="org.csstudio.iter.batik.feature"/>
+      <feature id="org.csstudio.iter.opibuilder.rap.feature"/>
+      <feature id="org.csstudio.applications.opibuilder.rap.feature"/>
+      <feature id="org.csstudio.trends.databrowser2.opiwidget.feature"/>
+      <feature id="org.csstudio.alarm.beast.ui.alarmtable.opiwidget.feature"/>
+      <feature id="org.csstudio.utilities.rap.feature"/>
+      <feature id="org.diirt.feature"/>
+      <feature id="org.eclipse.core.rap.basic.feature"/>
    </features>
 
    <configurations>
@@ -54,6 +66,11 @@
       <plugin id="org.apache.felix.gogo.command" autoStart="true" startLevel="0" />
       <plugin id="org.apache.felix.gogo.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.apache.felix.gogo.shell" autoStart="true" startLevel="0" />
+      <plugin id="org.csstudio.alarm.beast" autoStart="true" startLevel="0" />
+      <plugin id="org.csstudio.alarm.beast.notifier" autoStart="true" startLevel="0" />
+      <plugin id="org.csstudio.alarm.beast.ui" autoStart="true" startLevel="0" />
+      <plugin id="org.csstudio.alarm.beast.ui.alarmtable" autoStart="true" startLevel="0" />
+      <plugin id="org.csstudio.alarm.beast.ui.alarmtable.opiwidget" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.apputil" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.apputil.ui" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.archive.rdb" autoStart="true" startLevel="0" />
@@ -66,14 +83,18 @@
       <plugin id="org.csstudio.data" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.email" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.email.ui" autoStart="true" startLevel="0" />
+      <plugin id="org.csstudio.iter.authorizationprovider" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.java" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.logbook" autoStart="true" startLevel="0" />
+      <plugin id="org.csstudio.logging" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.openfile" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.opibuilder" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.opibuilder.widgets" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.opibuilder.widgets.symbol" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.platform.libs.epics" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.platform.libs.jdbc" autoStart="true" startLevel="0" />
+      <plugin id="org.csstudio.platform.libs.jms" autoStart="true" startLevel="0" />
+      <plugin id="org.csstudio.platform.utility.jms" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.platform.utility.rdb" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.rap.core" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.rap.rtplot" autoStart="true" startLevel="0" />
@@ -88,6 +109,7 @@
       <plugin id="org.csstudio.trends.databrowser2" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.trends.databrowser2.opiwidget" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.ui.menu" autoStart="true" startLevel="0" />
+      <plugin id="org.csstudio.ui.resources" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.utility.batik" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.utility.pv" autoStart="true" startLevel="0" />
       <plugin id="org.csstudio.utility.pv.epics" autoStart="true" startLevel="0" />
@@ -116,6 +138,7 @@
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.e4.core.contexts" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.e4.core.di" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.e4.core.di.annotations" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.e4.core.services" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.e4.ui.model.workbench" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.emf.common" autoStart="true" startLevel="0" />

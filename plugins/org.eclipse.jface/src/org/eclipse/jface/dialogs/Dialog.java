@@ -18,6 +18,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.util.Geometry;
 import org.eclipse.jface.util.Policy;
 import org.eclipse.jface.window.IShellProvider;
 import org.eclipse.jface.window.SameShellProvider;
@@ -417,11 +418,22 @@ public abstract class Dialog extends Window {
      * @return a shell
      */
     public static Shell createDummyShell(Shell parentShell) {
-        final Shell shell = new Shell(parentShell.getDisplay(), SWT.NO_TRIM);
+        if (parentShell != null && !parentShell.getFullScreen()) {
+            //if the parent is not in full screen, just use that as a parent
+            return parentShell;
+        }
+        final Shell shell = new Shell(parentShell == null ? Display.getCurrent() : parentShell.getDisplay(),
+            SWT.NO_TRIM);
         int size = 20;
         shell.setSize(size,size);
-        Rectangle windowBounds = parentShell.getBounds();
-        shell.setLocation(new Point(windowBounds.width/2 - size/2, windowBounds.height/2 - size/2));
+        Rectangle windowBounds;
+        if (parentShell == null) {
+            windowBounds = shell.getDisplay().getBounds();
+        } else {
+            windowBounds = parentShell.getBounds();
+        }
+        shell.setLocation(new Point(windowBounds.x + windowBounds.width/2 - size/2,
+            windowBounds.y + windowBounds.height/2 - size/2));
         return shell;
     }
 
@@ -438,10 +450,11 @@ public abstract class Dialog extends Window {
 	 */
 	protected Dialog(Shell parentShell) {
 		this(new SameShellProvider(parentShell));
-		if (parentShell != null) {
-		    shellToDispose = createDummyShell(parentShell);
+		Shell shell = createDummyShell(parentShell);
+		if (shell != parentShell) {
+		    shellToDispose = shell;
+		    setParentShell(shellToDispose);
 		}
-		setParentShell(shellToDispose);
 		if (parentShell == null && Policy.DEBUG_DIALOG_NO_PARENT) {
 			Policy.getLog().log(
 					new Status(IStatus.INFO, Policy.JFACE, IStatus.INFO, this
@@ -1295,7 +1308,15 @@ public abstract class Dialog extends Window {
 	 */
 	@Override
 	protected Point getInitialLocation(Point initialSize) {
-		Point result = super.getInitialLocation(initialSize);
+	    Point result;
+	    if (shellToDispose != null) {
+	        result = Geometry.centerPoint(shellToDispose.getBounds());
+	        if (getShell() != null) {
+	            result = new Point(result.x - initialSize.x/2, result.y - initialSize.y/2);
+	        }
+	    } else {
+	        result = super.getInitialLocation(initialSize);
+	    }
 		if ((getDialogBoundsStrategy() & DIALOG_PERSISTLOCATION)!= 0) {
 			IDialogSettings settings = getDialogBoundsSettings();
 			if (settings != null) {
