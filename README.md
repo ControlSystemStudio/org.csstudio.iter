@@ -7,8 +7,8 @@ between different laboratories and universities.
 
 In order to build these sources the following repositories are required:
 
-org.csstudio.iter: bdeb79d  
-<https://github.com/css-iter/org.csstudio.iter/tree/bdeb79d>  
+org.csstudio.iter: 8ba4d97  
+<https://github.com/css-iter/org.csstudio.iter/tree/8ba4d97>  
 maven-osgi-bundles: dfe1bb5  
 <https://github.com/css-iter/maven-osgi-bundles/tree/dfe1bb5>  
 cs-studio-thirdparty: a3a2f90  
