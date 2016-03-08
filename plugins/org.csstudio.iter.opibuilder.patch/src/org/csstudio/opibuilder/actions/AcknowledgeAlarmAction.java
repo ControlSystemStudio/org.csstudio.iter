@@ -60,12 +60,10 @@ public class AcknowledgeAlarmAction implements IObjectActionDelegate {
 
         action.setEnabled(true);
         action.setImageDescriptor(getImageDescriptor(pvDelegate.getBeastAlarmInfo().getCurrentSeverity(), pvDelegate.getBeastAlarmInfo().getLatchedSeverity()));
-        action.setToolTipText("Test tooltip:\nLatched Severity: " + pvDelegate.getBeastAlarmInfo().getLatchedSeverity().getDisplayName()
-                + "\nCurrent Severity: " + pvDelegate.getBeastAlarmInfo().getCurrentSeverity().getDisplayName());
 
         String actionDesc = String.format("%1$sAcknowledge %2$s: %3$s",
                 pvDelegate.getBeastAlarmInfo().isAcknowledged() ? "Un-" : "",
-                        pvDelegate.isBeastAlarmNode() ? "NODE" : "PV",
+                        pvDelegate.isBeastAlarmNode() ? ("NODE (" + pvDelegate.getBeastAlarmInfo().getAlarmPVsCount() + ")" ): "PV",
                                 pvDelegate.getBeastAlarmInfo().getBeastChannelNameWithoutScheme());
         action.setText(actionDesc);
         return true;

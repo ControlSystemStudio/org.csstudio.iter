@@ -20,6 +20,8 @@ public final class BeastAlarmInfo {
     private boolean isBeastChannelConnected;
     private BeastAlarmSeverityLevel latchedSeverity;
     private BeastAlarmSeverityLevel currentSeverity;
+    private int alarmPVsCount;
+
     /**
      * The blinking "state" for the Beast Alarm alert: 0 = default color, 1 = severity color.
      */
@@ -200,5 +202,21 @@ public final class BeastAlarmInfo {
      */
     public void setBeastChannelConnected(boolean connected) {
         isBeastChannelConnected = connected;
+    }
+
+    /**
+     * Get the number of PVs in alarm state.
+     * @return The number of PVs whose Latched severity is not {@code SeverityLevel.OK}.
+     */
+    public int getAlarmPVsCount() {
+        return alarmPVsCount;
+    }
+
+    /**
+     * Set the number of PVs in alarm state.
+     * @param count The number of PVs whose Latched severity is not {@code SeverityLevel.OK}.
+     */
+    public void setAlarmPVsCount(int count) {
+        alarmPVsCount = count;
     }
 }
