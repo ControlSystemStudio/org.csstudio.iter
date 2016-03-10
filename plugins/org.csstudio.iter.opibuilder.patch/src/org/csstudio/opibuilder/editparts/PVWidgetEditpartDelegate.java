@@ -1079,6 +1079,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
             isBeastAlarm = false;
             isBeastAlarmNode = false;
             beastInfo.setBeastChannelConnected(false);
+            beastInfo.setAlarmPVsCount(0);
             return;
         }
 
@@ -1097,7 +1098,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                     .timeout(TimeDuration.ofMillis(10000))
                     .readListener(new PVReaderListener<Object>() {
                         private boolean isFirstValueEvent = true;
-                        private int latchedSeverityIdx = -1, currentSeverityIdx = -1;
+                        private int latchedSeverityIdx = -1, currentSeverityIdx = -1, alarmsCountIdx = -1;
 
                         @SuppressWarnings("unchecked")
                         @Override
@@ -1157,12 +1158,16 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                                         latchedSeverityIdx = i;
                                     if ("CurrentStatus".equalsIgnoreCase(keys.get(i)))
                                         currentSeverityIdx = i;
+                                    if ("AlarmPVsCount".equalsIgnoreCase(keys.get(i)))
+                                        alarmsCountIdx = i;
                                 }
                                 if (latchedSeverityIdx == -1 || currentSeverityIdx == -1) {
                                     log.severe("BeastAlarmListener (" + pvName + "): missing Latched or Current alarm status");
                                     return;
                                 }
-
+                                if (alarmsCountIdx == -1)
+                                    log.warning("BeastAlarmListener (" + pvName + "): missing data for number of PVs in alarm - this information will not be available");
+                                
                                 isFirstValueEvent = false;
                             }
 
@@ -1173,6 +1178,8 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                                 beast.setLatchedSeverity(BeastAlarmSeverityLevel.parse(data.get(latchedSeverityIdx)));
                                 beast.setCurrentSeverity(BeastAlarmSeverityLevel.parse(data.get(currentSeverityIdx)));
                                 beastSeverity = beast.getCurrentAlarmSeverity();
+                                if (alarmsCountIdx != -1)
+                                    beast.setAlarmPVsCount(Integer.parseInt(data.get(alarmsCountIdx)));
                             }
 
                             if (pvWidget.getAlarmSeverity() != beastSeverity) {
