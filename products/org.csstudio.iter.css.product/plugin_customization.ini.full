@@ -177,7 +177,7 @@ org.csstudio.logging.ui/color_warning=250, 12, 14
 #/ be ignored!
 #/ 
 #/ Format:
-#/ 	ModuleClass Flag option1=value1 option2=value2 ...; ModuleClass Flag ModuleOptions; ...
+#/ ModuleClass Flag option1=value1 option2=value2 ...; ModuleClass Flag ModuleOptions; ...
 #/ ModuleClass, Flag and value options are in the same format as in auth.conf, but all on one line.
 #/ Value strings must be quoted.
 #/ 
@@ -1960,13 +1960,13 @@ org.csstudio.utility.olog/olog_url=http://localhost:8080/Olog/resources
 #/ by default the Position is set to bottom and the instance number is set to single
 #/ 
 # org.csstudio.utility.product/cs_studio_perspective=org.csstudio.diag.pvmanager.probe:org.csstudio.diag.pvmanager.probe:left:multiple;\
-# 					  org.csstudio.diag.probe:org.csstudio.diag.probe.Probe:left:multiple;\
-# 					  org.csstudio.utility.clock:org.csstudio.utility.clock.ClockView::;\
-# 					  org.csstudio.trends.databrowser2:org.csstudio.trends.databrowser.archiveview.ArchiveView::;\
-# 					  org.csstudio.alarm.beast:org.csstudio.alarm.beast.ui.alarmtree.View::;\
-# 					  org.csstudio.alarm.beast:org.csstudio.alarm.beast.ui.alarmtable.view::;\
-# 					  org.csstudio.diag.pvutil:org.csstudio.diag.pvutil.view.PVUtilView:left:;\
-# 					  org.csstudio.opibuilder:org.csstudio.opibuilder.opiView:center:multiple;
+#                     org.csstudio.diag.probe:org.csstudio.diag.probe.Probe:left:multiple;\
+#                     org.csstudio.utility.clock:org.csstudio.utility.clock.ClockView::;\
+#                     org.csstudio.trends.databrowser2:org.csstudio.trends.databrowser.archiveview.ArchiveView::;\
+#                     org.csstudio.alarm.beast:org.csstudio.alarm.beast.ui.alarmtree.View::;\
+#                     org.csstudio.alarm.beast:org.csstudio.alarm.beast.ui.alarmtable.view::;\
+#                     org.csstudio.diag.pvutil:org.csstudio.diag.pvutil.view.PVUtilView:left:;\
+#                     org.csstudio.opibuilder:org.csstudio.opibuilder.opiView:center:multiple;
 #/ 
 #/ list of perspectives to be added to the perspective shortcut
 #/ pluginId:perspectiveId;pluginId2:perspectiveId2
@@ -1978,27 +1978,27 @@ org.csstudio.utility.olog/olog_url=http://localhost:8080/Olog/resources
 
 #<< org.csstudio.utility.product/branding_plugin_id=org.csstudio.utility.product
 #<< org.csstudio.utility.product/cs_studio_perspective=org.csstudio.diag.pvmanager.probe:org.csstudio.diag.pvmanager.probe:left:multiple;\
-#<< 					  org.csstudio.diag.probe:org.csstudio.diag.probe.Probe:left:multiple;\
-#<< 					  org.csstudio.utility.clock:org.csstudio.utility.clock.ClockView::;\
-#<< 					  org.csstudio.trends.databrowser2:org.csstudio.trends.databrowser.archiveview.ArchiveView::;\
-#<< 					  org.csstudio.alarm.beast:org.csstudio.alarm.beast.ui.alarmtree.View::;\
-#<< 					  org.csstudio.alarm.beast:org.csstudio.alarm.beast.ui.alarmtable.view::;\
-#<< 					  org.csstudio.diag.pvutil:org.csstudio.diag.pvutil.view.PVUtilView:left:;\
-#<< 					  org.csstudio.opibuilder:org.csstudio.opibuilder.opiView:center:multiple;
+#<<                       org.csstudio.diag.probe:org.csstudio.diag.probe.Probe:left:multiple;\
+#<<                       org.csstudio.utility.clock:org.csstudio.utility.clock.ClockView::;\
+#<<                       org.csstudio.trends.databrowser2:org.csstudio.trends.databrowser.archiveview.ArchiveView::;\
+#<<                       org.csstudio.alarm.beast:org.csstudio.alarm.beast.ui.alarmtree.View::;\
+#<<                       org.csstudio.alarm.beast:org.csstudio.alarm.beast.ui.alarmtable.view::;\
+#<<                       org.csstudio.diag.pvutil:org.csstudio.diag.pvutil.view.PVUtilView:left:;\
+#<<                       org.csstudio.opibuilder:org.csstudio.opibuilder.opiView:center:multiple;
 org.csstudio.utility.product/cs_studio_perspective=org.csstudio.diag.pvmanager.probe:org.csstudio.diag.pvmanager.probe:left:multiple;\
-	org.csstudio.diag.probe:org.csstudio.diag.probe.Probe:left:multiple;\
-	org.csstudio.utility.clock:org.csstudio.utility.clock.ClockView: : ;\
-	org.csstudio.trends.databrowser2:org.csstudio.trends.databrowser.archiveview.ArchiveView:left: ;\
-	org.csstudio.alarm.beast.ui.alarmtree:org.csstudio.alarm.beast.ui.alarmtree.View:left: ;\
-	org.csstudio.alarm.beast.ui.alarmtable:org.csstudio.alarm.beast.ui.alarmtable.view: : ;
+    org.csstudio.diag.probe:org.csstudio.diag.probe.Probe:left:multiple;\
+    org.csstudio.utility.clock:org.csstudio.utility.clock.ClockView: : ;\
+    org.csstudio.trends.databrowser2:org.csstudio.trends.databrowser.archiveview.ArchiveView:left: ;\
+    org.csstudio.alarm.beast.ui.alarmtree:org.csstudio.alarm.beast.ui.alarmtree.View:left: ;\
+    org.csstudio.alarm.beast.ui.alarmtable:org.csstudio.alarm.beast.ui.alarmtable.view: : ;
 #<< org.csstudio.utility.product/perspective_shortcut=org.csstudio.trends.databrowser:org.csstudio.trends.databrowser.Perspective
 org.csstudio.utility.product/perspective_shortcut=org.csstudio.opibuilder.editor:org.csstudio.opibuilder.opieditor; \
-	de.desy.language.snl.ui:de.desy.language.snl.ui.SNLDEvelopment; \
-	org.csstudio.scan.ui.scantree:org.csstudio.scan.ui.scantree.perspective
+    de.desy.language.snl.ui:de.desy.language.snl.ui.SNLDEvelopment; \
+    org.csstudio.scan.ui.scantree:org.csstudio.scan.ui.scantree.perspective
 #<< org.csstudio.utility.product/view_shortcut=org.csstudio.utility.clock:org.csstudio.utility.clock.ClockView
 org.csstudio.utility.product/view_shortcut=org.csstudio.diag.pvmanager.probe:org.csstudio.diag.pvmanager.probe; \
-	org.csstudio.diag.pvfields:org.csstudio.diag.pvfields.view.PVFieldsView; \
-	org.csstudio.diag.epics.pvtree:org.csstudio.diag.epics.pvtree.PVTreeView;
+    org.csstudio.diag.pvfields:org.csstudio.diag.pvfields.view.PVFieldsView; \
+    org.csstudio.diag.epics.pvtree:org.csstudio.diag.epics.pvtree.PVTreeView;
 
 #/
 ## org.csstudio.utility.pv 
