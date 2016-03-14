@@ -16,48 +16,53 @@ importPackage(Packages.java.lang)
 	// getting the current cbs level for this screen
 	var current_cbs = widget.getMacroValue("LEVEL");
 	var depth = getLevelDepth(current_cbs);
+
+	// getting the type of OPI: USER or ALARM
+	var opi_type = widget.getMacroValue("OPI_TYPE");
+	if (opi_type == null || opi_type != "ALARM") {
+		opi_type = "USER";
+	}
 	
 	// getting the input xml file path
 	var xml_input = widget.getMacroValue("INPUT");
 	// getting the navigation xml file from the user navigation folder
 	if (xml_input == null) {
 		xml_input = "../navigation/Navigation.xml";
-		// getting the default navigation xml file from the templates
-		if (xml_input == null) {
-			xml_input = "Navigation.xml";
-		}
 	}
 	// loading XML document and getting the root element
 	// the result is a JDOM Element
 	var root = FileUtil.loadXMLFile(xml_input, widget);
-
-	// browsing the CBS tree structure starting from 0 to max depth
-	listCBS(root, 0, depth);
+	if (root) {
+		// browsing the CBS tree structure starting from 0 to max depth
+		listCBS(root, 0, depth);
+	}
 
 // ---
 
 // recursive list function on CBS tree
 function listCBS(current, depth, max_depth){
-	var cbs = current.getChildren();	
-	var itr = cbs.iterator();
-	while (itr.hasNext() && depth <= max_depth) {
-	    var elt = itr.next();
-	    if (isEltCurrentCBS(elt, current_cbs)) {
-		    if (depth == 0){
-			    // adding the Home button for level 0 - ITER overview
-		    	addHomeButton(elt);
-		    } else {
-		    	// adding an Up button for intermediate levels
-		    	addUpButton(elt);
-		    }
-		    
-	    	if (depth == max_depth) {
-	    		// adding mimic specific levels for the last level
-			    addMimicButtons(elt);
+	var cbs = current.getChildren();
+	if (cbs) {
+		var itr = cbs.iterator();
+		while (itr.hasNext() && depth <= max_depth) {
+		    var elt = itr.next();
+		    if (isEltCurrentCBS(elt, current_cbs)) {
+			    if (depth == 0){
+				    // adding the Home button for level 0 - ITER overview
+			    	addHomeButton(elt);
+			    } else {
+			    	// adding an Up button for intermediate levels
+			    	addUpButton(elt);
+			    }
+			    
+		    	if (depth == max_depth) {
+		    		// adding mimic specific levels for the last level
+				    addMimicButtons(elt);
+		    	}
+		    	listCBS(elt, depth+1, max_depth);
+		    	depth = max_depth + 1;
 	    	}
-	    	listCBS(elt, depth+1, max_depth);
-	    	depth = max_depth + 1;
-    	}
+		}
 	}
 }
 
@@ -76,109 +81,108 @@ function isEltCurrentCBS(elt, level) {
 	if (getLevelDepth(level) == 0) {
 		return true;
 	}
-	if (level == "" || !level || !elt.getAttributeValue("name")) {
-		return false;
-	}
 	var currentLevel = elt.getAttributeValue("name");
-	var words = level.split("-");
-	var i = 0;
-	for (i in words) {
-	  if (words[i].search(currentLevel) >= 0) {
-	  	return true;
-	  }
+	if (currentLevel) {
+		var words = level.split("-");
+		var i = 0;
+		for (i in words) {
+		  if (words[i].search(currentLevel) >= 0) {
+		  	return true;
+		  }
+		 }
 	 }
 	 return false;
 }
 
 function getGeneralNavigationContainer() {
-	var container = display.getWidget("GENERAL NAVIGATION BAR");
-	return container;
+	return display.getWidget("GENERAL NAVIGATION BAR");
 }
 
 function getGeneralNavigationContainerHeight() {
-	var container = getGeneralNavigationContainer();
-	return container.getPropertyValue("height");
+	return getGeneralNavigationContainer().getPropertyValue("height");
 }
 
 function getGeneralNavigationContainerWidth() {
-	var container = getGeneralNavigationContainer();
-	return container.getPropertyValue("width");
+	return getGeneralNavigationContainer().getPropertyValue("width");
 }
 
 function getMimicNavigationContainer() {
-	return widget;
+	return display.getWidget("MIMIC SPECIFIC - NAVIGATION AREA");
 }
 
 function getMimicNavigationContainerHeight() {
-	return widget.getPropertyValue("height");
+	return getMimicNavigationContainer().getPropertyValue("height");
 }
 
 function getMimicNavigationContainerWidth() {
-	return widget.getPropertyValue("width");
+	return getMimicNavigationContainer().getPropertyValue("width");
 }
 
 function getLineOneNavigationContainer() {
-	var container = getMimicNavigationContainer().getWidget("OneLineNavigation");
-	return container;
+	return getMimicNavigationContainer().getWidget("OneLineNavigation");
 }
 
 function getLineTwoNavigationContainer() {
-	var container = getMimicNavigationContainer().getWidget("TwoLineNavigation");
-	return container;
+	return getMimicNavigationContainer().getWidget("TwoLineNavigation");
 }
 
 function addHomeButton(elt) {
+	//if no name defined, ITER is the default cbs name
 	var cbs_name = !elt.getAttributeValue("name") ? "ITER" : elt.getAttributeValue("name");
 	
 	//creating the linking container that display the HOME button
 	var linkingContainer = createHomeButtonContainer();
+	if (linkingContainer) {
+	    // reading attribute from element using JDOM
+	    // adding macros CBS and OPI_FILE to the container
+		linkingContainer.addMacro("CBS", cbs_name);	
+		linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));	
+		linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
+		addOPImacros(linkingContainer, elt);	
 	
-    // reading attribute from element using JDOM
-    // adding macros CBS and OPI_FILE to the container
-	linkingContainer.addMacro("CBS", cbs_name);	
-	linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));	
-	linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
-	addOPImacros(linkingContainer, elt);	
-
-	// adding the linking container to the navigation widget
-	var container = getGeneralNavigationContainer();
-	container.addChildToRight(linkingContainer);
-	
-	// setting the navigation button properties
- 	var button = container.getWidget(cbs_name);	
-	setButton(button, elt);
+		// adding the linking container to the navigation widget
+		getGeneralNavigationContainer().addChildToRight(linkingContainer);
+		
+		// setting the navigation button properties
+	 	var button = getGeneralNavigationContainer().getWidget(cbs_name);	
+	 	button.setPropertyValue("height", getGeneralNavigationContainerHeight());
+	 	button.setPropertyValue("width", getGeneralNavigationContainerWidth()/3);
+		setButton(button, elt);
+	}
 }
 
 function createHomeButtonContainer() {
 	height = getGeneralNavigationContainerHeight();
-	width = getMimicNavigationContainerWidth();
-	return createButtonContainer("NavigationHomeButton.opi", width/10, height);
+	width = getGeneralNavigationContainerWidth()/3;
+	return createButtonContainer("NavigationHomeButton.opi", width, height);
 }
 
 function addUpButton(elt) {
 	//creating the linking container that display the Up button
 	var linkingContainer = createUpButtonContainer();
-				
-    // reading attribute from element using JDOM
-    // adding macros CBS and OPI_FILE to the container
-	linkingContainer.addMacro("CBS", elt.getAttributeValue("name"));	
-	linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));	
-	linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
-	addOPImacros(linkingContainer, elt);	
-
-	// adding the linking container to the navigation widget
-	var container = getGeneralNavigationContainer();
-	container.addChildToRight(linkingContainer);
-
-	// setting the navigation button properties
- 	var button = container.getWidget(elt.getAttributeValue("name"));	
-	setButton(button, elt);
+	if (linkingContainer) {			
+	    // reading attribute from element using JDOM
+	    // adding macros CBS and OPI_FILE to the container
+		linkingContainer.addMacro("CBS", elt.getAttributeValue("name"));	
+		linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));	
+		linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
+		addOPImacros(linkingContainer, elt);	
+	
+		// adding the linking container to the navigation widget
+		getGeneralNavigationContainer().addChildToRight(linkingContainer);
+	
+		// setting the navigation button properties
+	 	var button = getGeneralNavigationContainer().getWidget(elt.getAttributeValue("name"));	
+	 	button.setPropertyValue("height", getGeneralNavigationContainerHeight());
+	 	button.setPropertyValue("width", (getGeneralNavigationContainerWidth()*2/3)/5);
+		setButton(button, elt);
+	}
 }
 
 function createUpButtonContainer() {
 	height = getGeneralNavigationContainerHeight();
 	width = getGeneralNavigationContainerWidth();
-	home = getMimicNavigationContainerWidth()/10;
+	home = getGeneralNavigationContainerWidth()/3;
 	return createButtonContainer("NavigationUpButton.opi", (width - home)/5, height);
 }
 
@@ -192,12 +196,13 @@ function addMimicButtons(root) {
 			
 	// default button size for maximum 10 buttons on one line
 	height = getMimicNavigationContainerHeight();
-	width = getMimicNavigationContainerWidth()/nbButtonsPerLine;
+	width = (getMimicNavigationContainerWidth()/nbButtonsPerLine)-1;
 	
 	// if more than 10 buttons required, 2 lines of buttons are needed
 	if (nbButtons > nbButtonsPerLine) {
 		container = getLineOneNavigationContainer();
 		height = height/2;
+		// if more than 20 buttons, they have to fit on 2 lines
 		if (nbButtons > (2 * nbButtonsPerLine)) {
 			nbButtonsPerLine = Math.ceil(nbButtons/2);
 			width = getMimicNavigationContainerWidth()/nbButtonsPerLine - 1;
@@ -244,23 +249,31 @@ function addMimicButtons(root) {
 }
 
 function getOPI_FILE(elt) {
-	var attribute = elt.getAttributeValue("opi_file");
-
-	if (attribute && attribute.search(".opi") > 0) {
-    	// suppressing the extension .opi
-    	return attribute.substring(0, attribute.search(".opi"));
+	var attribute = "";
+	if (opi_type == "USER") {
+		// getting the opi file from the navigation xml configuration file
+		attribute = elt.getAttributeValue("opi_file");
+	
+		if (attribute && attribute.search(".opi") > 0) {
+	    	// suppressing the extension .opi
+	    	return attribute.substring(0, attribute.search(".opi"));
+	    }
+	    return attribute;
+    } else {
+    	// getting the opi file from a macro
+		attribute = widget.getMacroValue("OPI_FILE");
+	    return attribute;
     }
-    return attribute;
 }
 
 function getALARM_ROOT(elt) {
-	var attribute = elt.getAttributeValue("alarm_root");
-
-    return attribute;
+    return elt.getAttributeValue("alarm_root");
 }
 
 function addOPImacros(container, elt) {
+	// getting the opi file from the navigation xml configuration file (even for alarms list)
 	var attribute = elt.getAttributeValue("opi_file");
+	
 	if (attribute) {
 		var words = attribute.match(/(?:[^\s']+|'[^']*')+/g);
 	
