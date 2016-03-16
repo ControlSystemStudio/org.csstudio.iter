@@ -1198,7 +1198,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                                 pvWidget.setAlarmSeverity(beastSeverity);
                             }
                             
-                            // if this is an Alarm Node PV, update the tooltip
+                            // if this is an Alarm Node PV, update the number_alarms property
                             if (pvWidget.isBeastAlarmNode()) {
                                 AbstractWidgetModel model = (AbstractWidgetModel) pvWidget.getWidgetModel();
                                 model.setPropertyValue(PROP_NUMBER_ALARMS, alarmsCount);
