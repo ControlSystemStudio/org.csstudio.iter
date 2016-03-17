@@ -24,8 +24,10 @@ import org.csstudio.opibuilder.preferences.BeastPreferencesHelper;
 import org.csstudio.opibuilder.preferences.PreferencesHelper;
 import org.csstudio.opibuilder.properties.AbstractWidgetProperty;
 import org.csstudio.opibuilder.properties.IWidgetPropertyChangeHandler;
+import org.csstudio.opibuilder.properties.IntegerProperty;
 import org.csstudio.opibuilder.properties.PVValueProperty;
 import org.csstudio.opibuilder.properties.StringProperty;
+import org.csstudio.opibuilder.properties.WidgetPropertyCategory;
 import org.csstudio.opibuilder.util.AlarmRepresentationScheme;
 import org.csstudio.opibuilder.util.BOYPVFactory;
 import org.csstudio.opibuilder.util.BeastAlarmInfo;
@@ -878,6 +880,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
     private boolean isBeastAlarm = false;
     private boolean isBeastAlarmNode = false; // is this an Alarm Node instead of a PV ?
     private final BeastAlarmInfo beastInfo = new BeastAlarmInfo();
+    private static final String PROP_NUMBER_ALARMS = "number_alarms";//$NON-NLS-1$
 
     /**
      * Returns whether BEAST Alarm functionality is enabled and available (listener connected to the BeastDataSource).
@@ -1079,7 +1082,14 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
             isBeastAlarm = false;
             isBeastAlarmNode = false;
             beastInfo.setBeastChannelConnected(false);
+            beastInfo.setAlarmPVsCount(0);
             return;
+        }
+        AbstractWidgetModel model = (AbstractWidgetModel)getWidgetModel(); 
+        if (model.getProperty(PROP_NUMBER_ALARMS) == null) {
+            // add a property for the number of active Beast alarms of Node "PVs"
+            model.addProperty(new IntegerProperty(PROP_NUMBER_ALARMS, "Number of Beast alarms", WidgetPropertyCategory.Basic, 0));
+            model.setPropertyVisible(PROP_NUMBER_ALARMS, false);
         }
 
         log.fine("Starting BeastAlarmListener for channel " + alarmPVName);
@@ -1097,7 +1107,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                     .timeout(TimeDuration.ofMillis(10000))
                     .readListener(new PVReaderListener<Object>() {
                         private boolean isFirstValueEvent = true;
-                        private int latchedSeverityIdx = -1, currentSeverityIdx = -1;
+                        private int latchedSeverityIdx = -1, currentSeverityIdx = -1, alarmsCountIdx = -1;
 
                         @SuppressWarnings("unchecked")
                         @Override
@@ -1157,26 +1167,41 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                                         latchedSeverityIdx = i;
                                     if ("CurrentStatus".equalsIgnoreCase(keys.get(i)))
                                         currentSeverityIdx = i;
+                                    if ("AlarmPVsCount".equalsIgnoreCase(keys.get(i)))
+                                        alarmsCountIdx = i;
                                 }
                                 if (latchedSeverityIdx == -1 || currentSeverityIdx == -1) {
                                     log.severe("BeastAlarmListener (" + pvName + "): missing Latched or Current alarm status");
                                     return;
                                 }
-
+                                if (alarmsCountIdx == -1)
+                                    log.warning("BeastAlarmListener (" + pvName + "): missing data for number of PVs in alarm - this information will not be available");
+                                
                                 isFirstValueEvent = false;
                             }
 
                             List<String> data = (List<String>) table.getColumnData(1);
 
                             AlarmSeverity beastSeverity;
+                            int alarmsCount = 0;
                             synchronized (beast) {
                                 beast.setLatchedSeverity(BeastAlarmSeverityLevel.parse(data.get(latchedSeverityIdx)));
                                 beast.setCurrentSeverity(BeastAlarmSeverityLevel.parse(data.get(currentSeverityIdx)));
                                 beastSeverity = beast.getCurrentAlarmSeverity();
+                                if (alarmsCountIdx != -1) {
+                                    alarmsCount = Integer.parseInt(data.get(alarmsCountIdx));
+                                    beast.setAlarmPVsCount(alarmsCount);
+                                }
                             }
 
                             if (pvWidget.getAlarmSeverity() != beastSeverity) {
                                 pvWidget.setAlarmSeverity(beastSeverity);
+                            }
+                            
+                            // if this is an Alarm Node PV, update the number_alarms property
+                            if (pvWidget.isBeastAlarmNode()) {
+                                AbstractWidgetModel model = (AbstractWidgetModel) pvWidget.getWidgetModel();
+                                model.setPropertyValue(PROP_NUMBER_ALARMS, alarmsCount);
                             }
 
                             pvWidget.processBeastAlarmState();
