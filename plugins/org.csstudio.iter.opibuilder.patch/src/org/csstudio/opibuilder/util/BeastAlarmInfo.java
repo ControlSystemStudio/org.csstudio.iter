@@ -66,7 +66,7 @@ public final class BeastAlarmInfo {
      * @return the Latched Severity of the BEAST alarm, see {@link BeastAlarmSeverityLevel}.
      */
     public BeastAlarmSeverityLevel getLatchedSeverity() {
-        return currentSeverity;
+        return latchedSeverity;
     }
 
     /**
