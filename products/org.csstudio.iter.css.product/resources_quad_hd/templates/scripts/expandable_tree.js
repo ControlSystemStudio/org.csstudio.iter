@@ -24,17 +24,14 @@ importPackage(Packages.java.lang)
 	// getting the navigation xml file from the user navigation folder
 	if (xml_input == null) {
 		xml_input = "../navigation/Navigation.xml";
-		// getting the default navigation xml file from the templates
-		if (xml_input == null) {
-			xml_input = "Navigation.xml";
-		}
 	}
 	// loading XML document and getting the root element
 	// the result is a JDOM Element
 	var root = FileUtil.loadXMLFile(xml_input, widget);
-
-	// browsing the CBS tree structure starting from root
-	buildCBSMap(root, 0);
+	if (root) {
+		// browsing the CBS tree structure starting from root
+		buildCBSMap(root, 0);
+	}
 
 // ---
 
@@ -54,8 +51,8 @@ function buildCBSMap(root, indent){
 		linkingContainer.setPropertyValue("opi_file", "CBSMapElt.opi");
 		linkingContainer.setPropertyValue("border_style", 0);
 
-		linkingContainer.setPropertyValue("height", resolution_4k ? 40 : 20);
-		linkingContainer.setPropertyValue("width", resolution_4k ? 3000 - indent * INDENT_WIDTH : 1500 - indent * INDENT_WIDTH);
+		linkingContainer.setPropertyValue("height", resolution_4k ? 60 : 35);
+		linkingContainer.setPropertyValue("width", resolution_4k ? 3200 - indent * INDENT_WIDTH : 1600 - indent * INDENT_WIDTH);
 	    
 	    // no indent needed for root 
 	    if (indent > 0) {
@@ -63,12 +60,20 @@ function buildCBSMap(root, indent){
 	    }
 	    
 	    if (isEltCurrentCBS(elt, current_cbs)) {
-			linkingContainer.setPropertyValue("background_color", "IO PV ON");
+			linkingContainer.setPropertyValue("background_color", "IO Grid");
+	    } else {
+			linkingContainer.setPropertyValue("background_color", "IO Background");
 	    }
 		
+		// adding the CBS description as widget tooltip
+ 		if (~elt.getAttributeValue("enabled").indexOf("true")) {
+			linkingContainer.setPropertyValue("tooltip", elt.getAttributeValue("description"));
+		} else {
+			linkingContainer.setPropertyValue("tooltip", elt.getAttributeValue("description") + " not enabled");
+		}
+		
 	    // adding macros CBS and OPI_FILE to the container
-	    var labelText = elt.getAttributeValue("name") + " - " + elt.getAttributeValue("description");
-		linkingContainer.addMacro("CBS", labelText);
+		linkingContainer.addMacro("CBS", elt.getAttributeValue("name"));
 
 		linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));	
 		linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
@@ -78,13 +83,8 @@ function buildCBSMap(root, indent){
 	    widget.addChildToBottom(linkingContainer);
 	
 		// setting the CBS label properties
-	 	var label = widget.getWidget(labelText);	
- 		label.setPropertyValue("enabled", elt.getAttributeValue("enabled"));
- 		if (~elt.getAttributeValue("enabled").indexOf("true")) {
-			label.setPropertyValue("tooltip", labelText);
-		} else {
-			label.setPropertyValue("tooltip", labelText + " not enabled");
-		}
+	 	var button = widget.getWidget(elt.getAttributeValue("name"));	
+ 		button.setPropertyValue("enabled", elt.getAttributeValue("enabled"));
     
 		buildCBSMap(elt, indent+1);
  	}
@@ -128,9 +128,11 @@ function getALARM_ROOT(elt) {
 }
 
 function addOPImacros(container, elt) {
+	// getting the opi file from the navigation xml configuration file (even for alarms list)
 	var attribute = elt.getAttributeValue("opi_file");
+	
 	if (attribute) {
-		var words = attribute.split(" ");
+		var words = attribute.match(/(?:[^\s']+|'[^']*')+/g);
 	
 		var i=0;
 		for (i in words) {
