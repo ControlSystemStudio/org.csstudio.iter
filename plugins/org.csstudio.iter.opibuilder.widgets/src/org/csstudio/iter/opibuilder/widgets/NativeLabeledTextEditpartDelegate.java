@@ -8,10 +8,9 @@
 package org.csstudio.iter.opibuilder.widgets;
 
 import org.csstudio.opibuilder.OPIBuilderPlugin;
-import org.csstudio.opibuilder.model.AbstractContainerModel;
-import org.csstudio.opibuilder.properties.IWidgetPropertyChangeHandler;
 import org.csstudio.opibuilder.widgets.editparts.NativeTextEditpartDelegate;
 import org.csstudio.opibuilder.widgets.editparts.TextInputEditpart;
+import org.csstudio.opibuilder.widgets.figures.NativeTextFigure;
 import org.csstudio.opibuilder.widgets.model.TextInputModel;
 import org.csstudio.opibuilder.widgets.util.SingleSourceHelper;
 import org.eclipse.draw2d.IFigure;
@@ -20,12 +19,9 @@ import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
-import org.eclipse.swt.events.MouseAdapter;
-import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
@@ -56,7 +52,7 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
         super.finalize();
     }
 
-    private FocusAdapter getTextFocusListener(NativeLabeledTextFigure figure){
+    private FocusAdapter getTextFocusListener(NativeTextFigure figure){
         return new FocusAdapter() {
             @Override
             public void focusLost(FocusEvent e) {
@@ -81,15 +77,12 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
                 else if(text.isEnabled())
                     outputText(text.getText());
 
-//                figure.setBackgroundColor(originalBackgroundColor);
                 text.setBackground(originalBackgroundColor);
                 originalBackgroundColor = null;
             }
 
             @Override
             public void focusGained(FocusEvent e) {
-//                if (originalBackgroundColor == null) originalBackgroundColor = figure.getBackgroundColor();
-//                figure.setBackgroundColor(backgroundFocusColor);
                 if (originalBackgroundColor == null) originalBackgroundColor = text.getBackground();
                 text.setBackground(backgroundFocusColor);
             }
@@ -100,8 +93,9 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
     public IFigure doCreateFigure() {
         int textStyle = getTextFigureStyle();
 
-        final NativeLabeledTextFigure figure = new NativeLabeledTextFigure(editpart, textStyle);
-        setText(figure.getTextSWTWidget());
+//        final NativeLabeledTextFigure figure = new NativeLabeledTextFigure(editpart, textStyle);
+        final NativeTextFigure figure = new NativeTextFigure(editpart, textStyle);
+        setText(figure.getSWTWidget());
 
         if(!model.isReadOnly()){
             if(model.isMultilineInput()){
@@ -168,7 +162,7 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
             text.addFocusListener(getTextFocusListener(figure));
         }
 
-        Label label = figure.getLabelSWTWidget();
+/*        Label label = figure.getLabelSWTWidget();
         if (label != null)
             label.addMouseListener(new MouseAdapter() {
                 @Override
@@ -181,7 +175,7 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
                       }
                    }
             });
-
+*/
         return figure;
     }
 
@@ -189,17 +183,7 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
     public void registerPropertyChangeHandlers() {
         super.registerPropertyChangeHandlers();
 
-/*        PropertyChangeListener listener = new PropertyChangeListener() {
-            @Override
-            public void propertyChange(PropertyChangeEvent evt) {
-                ((NativeLabeledTextFigure) editpart.getFigure()).layoutLabeledInput();
-            }
-        };
-        model.getProperty(LabeledTextInputModel.PROP_INPUT_LABEL_STACKING).addPropertyChangeListener(listener);
-        model.getProperty(LabeledTextInputModel.PROP_INPUT_LABEL_TEXT).addPropertyChangeListener(listener);
-*/
-        IWidgetPropertyChangeHandler handler = new IWidgetPropertyChangeHandler() {
-
+/*        IWidgetPropertyChangeHandler handler = new IWidgetPropertyChangeHandler() {
             @Override
             public boolean handleChange(Object oldValue, Object newValue, IFigure figure) {
                 AbstractContainerModel parent = model.getParent();
@@ -211,11 +195,11 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
         };
         editpart.setPropertyChangeHandler(LabeledTextInputModel.PROP_INPUT_LABEL_STACKING, handler);
         editpart.setPropertyChangeHandler(LabeledTextInputModel.PROP_INPUT_LABEL_TEXT, handler);
-
+*/
     }
 
     @Override
     public void performAutoSize() {
-        model.setSize(((NativeLabeledTextFigure)editpart.getFigure()).getAutoSizeDimension());
+        model.setSize(((NativeTextFigure)editpart.getFigure()).getAutoSizeDimension());
     }
 }
