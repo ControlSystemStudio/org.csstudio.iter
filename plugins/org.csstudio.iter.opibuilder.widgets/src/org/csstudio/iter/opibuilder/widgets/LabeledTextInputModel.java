@@ -90,7 +90,7 @@ public class LabeledTextInputModel extends LabeledTextInputModelDelegate {
     }
 
     /**
-     * Binds the the text input and label models to the properties of this model. This method has to be called every
+     * Binds the text input and label models to the properties of this model. This method has to be called every
      * time when the edit part is recreated. It also has to be called when the model is created in order to create the
      * initial figure correctly.
      */

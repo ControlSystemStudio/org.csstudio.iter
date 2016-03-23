@@ -28,6 +28,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartListener;
+import org.eclipse.gef.EditPolicy;
 import org.eclipse.swt.graphics.Font;
 
 /**
@@ -133,6 +134,9 @@ public class LabeledTextInputEditPart extends AbstractWidgetEditPart {
         getWidgetModel().getProperty(TextInputModel.PROP_STYLE).addPropertyChangeListener(evt -> recreateWidget());
         for (String s : LabeledTextInputModel.PROPERTIES_TO_REHANDLE) {
             setPropertyChangeHandler(s, (o,a,n) -> recreateWidget());
+        }
+        for (Object part : getChildren()) {
+            ((EditPart)part).removeEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE);
         }
         initialized = true;
     }
