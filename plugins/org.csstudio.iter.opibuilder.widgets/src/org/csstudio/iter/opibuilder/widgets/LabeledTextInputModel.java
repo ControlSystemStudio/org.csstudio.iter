@@ -7,125 +7,128 @@
  ******************************************************************************/
 package org.csstudio.iter.opibuilder.widgets;
 
-import org.csstudio.opibuilder.properties.BooleanProperty;
-import org.csstudio.opibuilder.properties.ColorProperty;
-import org.csstudio.opibuilder.properties.ComboProperty;
-import org.csstudio.opibuilder.properties.StringProperty;
-import org.csstudio.opibuilder.properties.WidgetPropertyCategory;
-import org.csstudio.opibuilder.util.MediaService;
+import org.csstudio.opibuilder.widgets.model.ActionButtonModel.Style;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.csstudio.opibuilder.model.AbstractContainerModel;
+import org.csstudio.opibuilder.model.AbstractWidgetModel;
+import org.csstudio.opibuilder.properties.AbstractWidgetProperty;
+import org.csstudio.opibuilder.util.OPIColor;
+import org.csstudio.opibuilder.util.OPIFont;
+import org.csstudio.opibuilder.widgets.model.LabelModel;
 import org.csstudio.opibuilder.widgets.model.TextInputModel;
+import org.csstudio.swt.widgets.figures.LabelFigure.H_ALIGN;
+import org.csstudio.swt.widgets.figures.LabelFigure.V_ALIGN;
 import org.eclipse.swt.graphics.RGB;
 
 /**
- * An override for the default Model for the text input widget.
- * Differences with the default TextInputModel:
- *     - it provides a property for a different background color when the text input has focus (used to paint the CellEditor's background)
- *  - it provides a property to enable confirmation (saving) of value to the PV on focus loss (without pressing ENTER)
  *
- *  It must be used together with LabeledTextInputEditpart and IterTextEditManager.
- *  The TypeID is the same as for the TextInputModel (and defined with the same id in plugin.xml) so that this widget implementation
- *  replaces the default TextInput widget.
+ * <code>LabeledTextInputModel</code> is the a text input model extension which in addition to the input field also
+ * displays a label. The label can be positioned to the left or above the input field. There are other properties that
+ * can be set for the label, such as font color and size, text alignment and gap.
  *
- * @author Boris Versic
+ * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
  *
  */
-public class LabeledTextInputModel extends TextInputModel {
+public class LabeledTextInputModel extends LabeledTextInputModelDelegate {
 
-    /** The background color when this control has focus */
-    public static final String PROP_COLOR_BACKGROUND_FOCUS = "background_focus_color";//$NON-NLS-1$
+    static final List<String> PROPERTIES_TO_REHANDLE = Arrays.asList(TextInputModel.PROP_SHOW_NATIVE_BORDER,
+        TextInputModel.PROP_MULTILINE_INPUT, TextInputModel.PROP_WRAP_WORDS, TextInputModel.PROP_SHOW_H_SCROLL,
+        TextInputModel.PROP_SHOW_V_SCROLL, TextInputModel.PROP_PASSWORD_INPUT, TextInputModel.PROP_ALIGN_H);
 
-    /** Confirm (store value) at focus lost */
-    public static final String PROP_CONFIRM_FOCUS_LOST = "confirm_focus_lost"; //$NON-NLS-1$
+    private LabeledTextInputModelDelegate textModel;
+    private LabelModel labelModel;
 
-    /** Text of the (optional) label for this input field */
-    public static final String PROP_INPUT_LABEL_TEXT = "input_label_text"; //$NON-NLS-1$
-
-    /** Setting for the label's placement.
-     *  Determines whether the label should be stacked vertically (above) or horizontally (on the left) */
-    public static final String PROP_INPUT_LABEL_STACKING = "input_label_stacking"; //$NON-NLS-1$
-
-    public enum INPUT_LABEL_STACKING {
-        VERTICAL("Vertical (above)"),
-        HORIZONTAL("Horizontal (beside on left)");
-
-        private String description;
-        private INPUT_LABEL_STACKING(String description) {
-            this.description = description;
+    /**
+     * Constructs and returns the model for the text input field.
+     *
+     * @return the text input field
+     */
+    LabeledTextInputModelDelegate getTextModel() {
+        if (textModel == null) {
+            textModel = new LabeledTextInputModelDelegate(){};
+            textModel.getProperty(TextInputModel.PROP_STYLE).setPropertyValue(Style.NATIVE.ordinal());
+            textModel.setX(0);
+            textModel.setY(30);
+            textModel.setWidth(30);
+            textModel.setHeight(30);
         }
-
-        @Override
-        public String toString() {
-            return description;
-        }
-
-        public static String[] stringValues(){
-            String[] result = new String[values().length];
-            int i =0 ;
-            for(INPUT_LABEL_STACKING f : values()){
-                result[i++] = f.toString();
-            }
-            return result;
-        }
-
-        public static int getDefault() {
-            return VERTICAL.ordinal();
-        };
+        return textModel;
     }
 
-    public LabeledTextInputModel() {
+    /**
+     * Constructs a new returns the model for the label.
+     *
+     * @return the label model
+     */
+    LabelModel getLabelModel() {
+        if (labelModel == null) {
+            labelModel = new LabelModel();
+            labelModel.setX(0);
+            labelModel.setY(0);
+            labelModel.setWidth(30);
+            labelModel.setHeight(30);
+            labelModel.setPropertyValue(LabelModel.PROP_ALIGN_H, H_ALIGN.CENTER);
+            labelModel.setPropertyValue(LabelModel.PROP_ALIGN_V, V_ALIGN.BOTTOM);
+        }
+        return labelModel;
+    }
+
+    @Override
+    public void setParent(AbstractContainerModel parent) {
+        getLabelModel().setParent(parent);
+        getTextModel().setParent(parent);
+        super.setParent(parent);
     }
 
     @Override
     protected void configureProperties() {
         super.configureProperties();
-
-        addProperty(new ColorProperty(PROP_COLOR_BACKGROUND_FOCUS, "Background Focus Color",
-                WidgetPropertyCategory.Display, "Minor"));
-
-        addProperty(new BooleanProperty(PROP_CONFIRM_FOCUS_LOST, "Confirm on Focus Lost",
-                WidgetPropertyCategory.Behavior, true));
-
-        addProperty(new StringProperty(PROP_INPUT_LABEL_TEXT, "Label Text",
-                WidgetPropertyCategory.Display, "", true));
-
-        addProperty(new ComboProperty(PROP_INPUT_LABEL_STACKING, "Label Stacking mode",
-                WidgetPropertyCategory.Position, INPUT_LABEL_STACKING.stringValues(), INPUT_LABEL_STACKING.getDefault()));
-
+        setUpPropertyListeners();
     }
 
-    public RGB getBackgroundFocusColor(){
-        return getRGBFromColorProperty(PROP_COLOR_BACKGROUND_FOCUS);
+    /**
+     * Binds the the text input and label models to the properties of this model. This method has to be called every
+     * time when the edit part is recreated. It also has to be called when the model is created in order to create the
+     * initial figure correctly.
+     */
+    void setUpPropertyListeners() {
+        final LabeledTextInputModelDelegate textModel = getTextModel();
+        final LabelModel labelModel = getLabelModel();
+        for (String s : getAllPropertyIDs()) {
+            if (AbstractWidgetModel.PROP_XPOS.equals(s) || AbstractWidgetModel.PROP_YPOS.equals(s)
+                || AbstractWidgetModel.PROP_WIDTH.equals(s) || AbstractWidgetModel.PROP_HEIGHT.equals(s)) {
+                // this guys are managed by the edit part when doing layout
+                continue;
+            }
+            final String propId = s;
+            AbstractWidgetProperty thisProperty = getProperty(propId);
+            if (LabeledTextInputModelDelegate.PROP_LABEL_TEXT.equals(s)) {
+                thisProperty.addPropertyChangeListener(evt -> labelModel.setText(String.valueOf(evt.getNewValue())));
+                labelModel.setText(String.valueOf(thisProperty.getRawPropertyValue()));
+            } else if (LabeledTextInputModelDelegate.PROP_LABEL_COLOR.equals(s)) {
+                thisProperty.addPropertyChangeListener(evt -> labelModel.setForegroundColor((RGB) evt.getNewValue()));
+                labelModel.setForegroundColor(((OPIColor) thisProperty.getRawPropertyValue()).getRGBValue());
+            } else if (LabeledTextInputModelDelegate.PROP_LABEL_FONT.equals(s)) {
+                thisProperty.addPropertyChangeListener(evt -> labelModel.setFont((OPIFont) evt.getNewValue()));
+                labelModel.setFont((OPIFont) thisProperty.getRawPropertyValue());
+            } else {
+                // not all properties are relevant to the text model, but who cares - they're ignored
+                thisProperty.addPropertyChangeListener(evt -> textModel.setPropertyValue(propId, evt.getNewValue()));
+                textModel.setPropertyValue(propId, thisProperty.getRawPropertyValue());
+            }
+        }
     }
 
-    public void setBackgroundFocusColor(RGB color){
-        setPropertyValue(PROP_COLOR_BACKGROUND_FOCUS, color);
-    }
-
-    public void setBackgroundFocusColor(String colorName) {
-        setBackgroundFocusColor(MediaService.getInstance().getOPIColor(colorName).getRGBValue());
-    }
-
-    public boolean isConfirmOnFocusLost(){
-        return (Boolean)getPropertyValue(PROP_CONFIRM_FOCUS_LOST);
-    }
-
-    public void setConfirmOnFocusLost(boolean confirm){
-        setPropertyValue(PROP_CONFIRM_FOCUS_LOST, confirm);
-    }
-
-    public String getInputLabelText(){
-        return (String)getCastedPropertyValue(PROP_INPUT_LABEL_TEXT);
-    }
-
-    public void setInputLabelText(String labelText){
-        setPropertyValue(PROP_INPUT_LABEL_TEXT, labelText);
-    }
-
-    public void setText(String labelText, boolean fire){
-        getProperty(PROP_INPUT_LABEL_TEXT).setPropertyValue(labelText, fire);
-    }
-
-    public INPUT_LABEL_STACKING getInputLabelStacking(){
-        return INPUT_LABEL_STACKING.values()[(int)getPropertyValue(PROP_INPUT_LABEL_STACKING)];
+    /*
+     * (non-Javadoc)
+     *
+     * @see org.csstudio.opibuilder.widgets.model.TextInputModel#getTypeID()
+     */
+    @Override
+    public String getTypeID() {
+        return "org.csstudio.opibuilder.widgets.TextInput";
     }
 }

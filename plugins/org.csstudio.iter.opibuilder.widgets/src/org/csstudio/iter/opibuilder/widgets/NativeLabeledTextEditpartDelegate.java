@@ -21,8 +21,6 @@ import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
 public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegate {
@@ -33,49 +31,67 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
     private Text text;
     private boolean skipTraverse;
 
-    public NativeLabeledTextEditpartDelegate(LabeledTextInputEditpart editpart, LabeledTextInputModel model) {
+    public NativeLabeledTextEditpartDelegate(LabeledTextInputEditPartDelegate editpart,
+        LabeledTextInputModelDelegate model) {
         super(editpart, model);
         this.editpart = editpart;
         this.model = model;
         this.backgroundFocusColor = new Color(Display.getDefault(), model.getBackgroundFocusColor());
     }
 
+    /*
+     * (non-Javadoc)
+     *
+     * @see org.csstudio.opibuilder.widgets.editparts.NativeTextEditpartDelegate#setText(org.eclipse.swt.widgets.Text)
+     */
     @Override
     protected void setText(Text text) {
         this.text = text;
         super.setText(text);
     }
 
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#finalize()
+     */
     @Override
     protected void finalize() throws Throwable {
-        if (this.backgroundFocusColor != null) this.backgroundFocusColor.dispose();
+        if (this.backgroundFocusColor != null)
+            this.backgroundFocusColor.dispose();
         super.finalize();
     }
 
-    private FocusAdapter getTextFocusListener(NativeTextFigure figure){
+    private FocusAdapter getTextFocusListener(NativeTextFigure figure) {
         return new FocusAdapter() {
             @Override
             public void focusLost(FocusEvent e) {
-                // This listener will also be triggered when ENTER is pressed to store the value (even when FOCUS_TRAVERSE is set to KEEP).
+                // This listener will also be triggered when ENTER is pressed to store the value (even when
+                // FOCUS_TRAVERSE is set to KEEP).
                 // When ConfirmOnFocusLost is TRUE, this will cause a bug: the value will be reset to the old value.
-                // This is because at this point the value of text.getText() will be the old value, set in NativeTextEditpartDelegate.outputText().
-                // Only after the value is successfully set on the PV will the model (and thus text) be updated to the new value.
+                // This is because at this point the value of text.getText() will be the old value, set in
+                // NativeTextEditpartDelegate.outputText().
+                // Only after the value is successfully set on the PV will the model (and thus text) be updated to the
+                // new value.
                 // In such a case, focusLost must not call outputText with the value in text.getText().
-                if (((LabeledTextInputModel)model).isConfirmOnFocusLost()) {
+                if (((LabeledTextInputModelDelegate) model).isConfirmOnFocusLost()) {
                     if (text.getText().equals(model.getText())) {
-                        // either there is no change or ENTER/CTRL+ENTER was pressed to store it but the figure & model were not yet updated.
+                        // either there is no change or ENTER/CTRL+ENTER was pressed to store it but the figure & model
+                        // were not yet updated.
                         text.setBackground(originalBackgroundColor);
                         originalBackgroundColor = null;
                         return;
                     }
                 }
 
-                //On mobile, lost focus should output text since there is not enter hit or ctrl key.
-                //If ConfirmOnFocusLost is set, lost focus should also output text.
-                if(editpart.getPV() != null && !OPIBuilderPlugin.isMobile(text.getDisplay()) && ((LabeledTextInputModel)model).isConfirmOnFocusLost() == false)
+                // On mobile, lost focus should output text since there is not enter hit or ctrl key.
+                // If ConfirmOnFocusLost is set, lost focus should also output text.
+                if (editpart.getPV() != null && !OPIBuilderPlugin.isMobile(text.getDisplay())
+                    && ((LabeledTextInputModelDelegate) model).isConfirmOnFocusLost() == false) {
                     text.setText(model.getText());
-                else if(text.isEnabled())
+                } else if (text.isEnabled()) {
                     outputText(text.getText());
+                }
 
                 text.setBackground(originalBackgroundColor);
                 originalBackgroundColor = null;
@@ -83,32 +99,35 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
 
             @Override
             public void focusGained(FocusEvent e) {
-                if (originalBackgroundColor == null) originalBackgroundColor = text.getBackground();
+                if (originalBackgroundColor == null) {
+                    originalBackgroundColor = text.getBackground();
+                }
                 text.setBackground(backgroundFocusColor);
             }
         };
     }
 
+    /*
+     * (non-Javadoc)
+     *
+     * @see org.csstudio.opibuilder.widgets.editparts.NativeTextEditpartDelegate#doCreateFigure()
+     */
     @Override
     public IFigure doCreateFigure() {
         int textStyle = getTextFigureStyle();
-
-//        final NativeLabeledTextFigure figure = new NativeLabeledTextFigure(editpart, textStyle);
         final NativeTextFigure figure = new NativeTextFigure(editpart, textStyle);
         setText(figure.getSWTWidget());
-
-        if(!model.isReadOnly()){
-            if(model.isMultilineInput()){
+        if (!model.isReadOnly()) {
+            if (model.isMultilineInput()) {
                 text.addKeyListener(new KeyAdapter() {
                     @Override
                     public void keyPressed(KeyEvent keyEvent) {
                         if (keyEvent.character == '\r') { // Return key
-                            if (text != null && !text.isDisposed()
-                                    && (text.getStyle() & SWT.MULTI) != 0) {
+                            if (text != null && !text.isDisposed() && (text.getStyle() & SWT.MULTI) != 0) {
                                 if ((keyEvent.stateMask & SWT.CTRL) != 0) {
                                     outputText(text.getText());
-                                    keyEvent.doit=false;
-                                    //force focus to parent (base composite) so that the Text widget will lose it
+                                    keyEvent.doit = false;
+                                    // force focus to parent (base composite) so that the Text widget will lose it
                                     text.getParent().forceFocus();
                                 }
                             }
@@ -116,14 +135,13 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
                         }
                     }
                 });
-            }else {
-                text.addListener (SWT.DefaultSelection, new Listener () {
-                    public void handleEvent (Event e) {
-                        outputText(text.getText());
-                        switch (model.getFocusTraverse()) {
+            } else {
+                text.addListener(SWT.DefaultSelection, e -> {
+                    outputText(text.getText());
+                    switch (model.getFocusTraverse()) {
                         case LOSE:
-                            // setFocus() gave the focus to the 'lowest first' child control that could accept it, which can be the same text,
-                            // making LOSE and KEEP 'Next focus' behave the same way
+                            // setFocus() gave the focus to the 'lowest first' child control that could accept it, which
+                            // can be the same text, making LOSE and KEEP 'Next focus' behave the same way
                             text.getShell().forceFocus();
                             break;
                         case NEXT:
@@ -135,11 +153,11 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
                         case KEEP:
                         default:
                             break;
-                        }
                     }
                 });
                 text.addTraverseListener(e -> {
-                    if (skipTraverse) return;
+                    if (skipTraverse)
+                        return;
                     e.doit = false;
                     skipTraverse = true;
                     if (e.stateMask == 0) {
@@ -150,56 +168,40 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
                     skipTraverse = false;
                 });
             }
-            //Recover text if editing aborted.
+            // Recover text if editing aborted.
             text.addKeyListener(new KeyAdapter() {
                 @Override
                 public void keyPressed(KeyEvent keyEvent) {
-                    if(keyEvent.character == SWT.ESC){
+                    if (keyEvent.character == SWT.ESC) {
                         text.setText(model.getText());
                     }
                 }
             });
             text.addFocusListener(getTextFocusListener(figure));
         }
-
-/*        Label label = figure.getLabelSWTWidget();
-        if (label != null)
-            label.addMouseListener(new MouseAdapter() {
-                @Override
-                   public void mouseUp(MouseEvent event) {
-                      super.mouseUp(event);
-
-                      if (event.getSource() instanceof Label) {
-                         Label label = (Label)event.getSource();
-                         label.forceFocus();
-                      }
-                   }
-            });
-*/
         return figure;
     }
 
+    /*
+     * (non-Javadoc)
+     *
+     * @see org.csstudio.opibuilder.widgets.editparts.NativeTextEditpartDelegate#performAutoSize()
+     */
+    @Override
+    public void performAutoSize() {
+        model.setSize(((NativeTextFigure) editpart.getFigure()).getAutoSizeDimension());
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see org.csstudio.opibuilder.widgets.editparts.NativeTextEditpartDelegate#registerPropertyChangeHandlers()
+     */
     @Override
     public void registerPropertyChangeHandlers() {
         super.registerPropertyChangeHandlers();
-
-/*        IWidgetPropertyChangeHandler handler = new IWidgetPropertyChangeHandler() {
-            @Override
-            public boolean handleChange(Object oldValue, Object newValue, IFigure figure) {
-                AbstractContainerModel parent = model.getParent();
-                parent.removeChild(model);
-                parent.addChild(model);
-                parent.selectWidget(model, true);
-                return false;
-            }
-        };
-        editpart.setPropertyChangeHandler(LabeledTextInputModel.PROP_INPUT_LABEL_STACKING, handler);
-        editpart.setPropertyChangeHandler(LabeledTextInputModel.PROP_INPUT_LABEL_TEXT, handler);
-*/
-    }
-
-    @Override
-    public void performAutoSize() {
-        model.setSize(((NativeTextFigure)editpart.getFigure()).getAutoSizeDimension());
+        for (String s : LabeledTextInputModel.PROPERTIES_TO_REHANDLE) {
+            editpart.removeAllPropertyChangeHandlers(s);
+        }
     }
 }

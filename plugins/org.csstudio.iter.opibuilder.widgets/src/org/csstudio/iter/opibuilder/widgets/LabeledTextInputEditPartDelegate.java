@@ -7,11 +7,11 @@
  ******************************************************************************/
 package org.csstudio.iter.opibuilder.widgets;
 
-import org.csstudio.iter.opibuilder.widgets.LabeledTextInputModel;
 import org.csstudio.opibuilder.widgets.editparts.Draw2DTextInputEditpartDelegate;
 import org.csstudio.opibuilder.widgets.editparts.ITextInputEditPartDelegate;
 import org.csstudio.opibuilder.widgets.editparts.LabelCellEditorLocator;
 import org.csstudio.opibuilder.widgets.editparts.TextInputEditpart;
+import org.csstudio.opibuilder.widgets.model.TextInputModel;
 import org.csstudio.swt.widgets.figures.TextInputFigure;
 import org.eclipse.draw2d.Figure;
 import org.eclipse.draw2d.IFigure;
@@ -28,15 +28,12 @@ import org.eclipse.swt.widgets.Display;
  *
  * @author Boris Versic
  */
-public class LabeledTextInputEditpart extends TextInputEditpart {
+public class LabeledTextInputEditPartDelegate extends TextInputEditpart {
 
-    public LabeledTextInputEditpart() {
-        super();
-    }
 
     @Override
-    public LabeledTextInputModel getWidgetModel() {
-        return (LabeledTextInputModel) getModel();
+    public LabeledTextInputModelDelegate getWidgetModel() {
+        return (LabeledTextInputModelDelegate) getModel();
     }
 
     @Override
@@ -62,8 +59,14 @@ public class LabeledTextInputEditpart extends TextInputEditpart {
     }
 
     @Override
+    protected void registerPropertyChangeHandlers() {
+        super.registerPropertyChangeHandlers();
+        getWidgetModel().getProperty(TextInputModel.PROP_STYLE).removeAllPropertyChangeListeners();
+    }
+
+    @Override
     protected void performDirectEdit() {
-        final LabeledTextInputModel model = getWidgetModel();
+        final LabeledTextInputModelDelegate model = getWidgetModel();
         new IterTextEditManager(this, new LabelCellEditorLocator(
                 (Figure) getFigure()), getWidgetModel().isMultilineInput(),
                 new Color(Display.getDefault(), model.getBackgroundFocusColor()), model.isConfirmOnFocusLost()).show();

@@ -24,10 +24,11 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * An subclass of BOY's TextEditManager with support for ITER-specific behaviour and appearance.
  * Differences with the default TextEditManager:
- *     - it can set a configurable background color (for the direct edit CellEditor) when the text input has focus
- *  - it can confirm (save) the value to the PV on focus loss (without pressing ENTER)
- *
- *  It must be used together with LabeledTextInputEditpart and LabeledTextInputModel.
+ * <ul>
+ * <li>it can set a configurable background color (for the direct edit CellEditor) when the text input has focus</li>
+ * <li>it can confirm (save) the value to the PV on focus loss (without pressing ENTER)</li>
+ * </ul>
+ * It must be used together with LabeledTextInputEditpart and LabeledTextInputModel.
  *
  * @author Boris Versic
  *
