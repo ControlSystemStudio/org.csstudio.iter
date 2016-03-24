@@ -14,6 +14,7 @@ import org.csstudio.iter.opibuilder.widgets.LabeledTextInputModelDelegate.LabelA
 import org.csstudio.iter.opibuilder.widgets.LabeledTextInputModelDelegate.LabelPosition;
 import org.csstudio.opibuilder.editparts.AbstractBaseEditPart;
 import org.csstudio.opibuilder.editparts.AbstractWidgetEditPart;
+import org.csstudio.opibuilder.editparts.ExecutionMode;
 import org.csstudio.opibuilder.model.AbstractContainerModel;
 import org.csstudio.opibuilder.model.AbstractWidgetModel;
 import org.csstudio.opibuilder.widgets.editparts.LabelEditPart;
@@ -92,7 +93,7 @@ public class LabeledTextInputEditPart extends AbstractWidgetEditPart {
         } else {
             part = super.createChild(model);
         }
-        if (part instanceof AbstractBaseEditPart) {
+        if (part instanceof AbstractBaseEditPart && getExecutionMode() == ExecutionMode.EDIT_MODE) {
             ((AbstractBaseEditPart)part).setSelectable(false);
         }
         return part;
