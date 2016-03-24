@@ -78,8 +78,8 @@ public class LabeledTextInputModel extends LabeledTextInputModelDelegate {
 
     @Override
     public void setParent(AbstractContainerModel parent) {
-        getLabelModel().setParent(parent);
-        getTextModel().setParent(parent);
+//        getLabelModel().setParent(parent);
+//        getTextModel().setParent(parent);
         super.setParent(parent);
     }
 

@@ -101,7 +101,7 @@ public class LabeledTextInputEditPart extends AbstractWidgetEditPart {
                 public void selectedStateChanged(EditPart part) {
                     setSelected(part.getSelected());
                     if (getSelected() != SELECTED_NONE) {
-                        getWidgetModel().getParent().selectWidget(getWidgetModel(), false);
+                        getWidgetModel().getParent().selectWidget(getWidgetModel(), true);
                     }
                 }
             });
