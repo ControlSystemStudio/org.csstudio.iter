@@ -418,9 +418,15 @@ public abstract class Dialog extends Window {
      * @return a shell
      */
     public static Shell createDummyShell(Shell parentShell) {
-        if (parentShell != null && !parentShell.getFullScreen()) {
-            //if the parent is not in full screen, just use that as a parent
-            return parentShell;
+        if (parentShell != null) {
+            final boolean[] fullScreen = new boolean[1];
+            parentShell.getDisplay().syncExec(() -> {
+                fullScreen[0] = parentShell.getFullScreen();
+            });
+            if (!fullScreen[0]) {
+                //if the parent is not in full screen, just use that as a parent
+                return parentShell;
+            }
         }
         final Shell shell = new Shell(parentShell == null ? Display.getCurrent() : parentShell.getDisplay(),
             SWT.NO_TRIM);
