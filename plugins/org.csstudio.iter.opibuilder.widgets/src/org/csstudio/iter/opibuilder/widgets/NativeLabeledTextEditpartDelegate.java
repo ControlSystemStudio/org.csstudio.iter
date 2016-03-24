@@ -12,15 +12,13 @@ import org.csstudio.opibuilder.widgets.editparts.NativeTextEditpartDelegate;
 import org.csstudio.opibuilder.widgets.editparts.TextInputEditpart;
 import org.csstudio.opibuilder.widgets.figures.NativeTextFigure;
 import org.csstudio.opibuilder.widgets.model.TextInputModel;
-import org.csstudio.opibuilder.widgets.util.SingleSourceHelper;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
-import org.eclipse.swt.events.KeyAdapter;
-import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
 public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegate {
@@ -29,7 +27,6 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
     private TextInputEditpart editpart;
     private TextInputModel model;
     private Text text;
-    private boolean skipTraverse;
 
     public NativeLabeledTextEditpartDelegate(LabeledTextInputEditPartDelegate editpart,
         LabeledTextInputModelDelegate model) {
@@ -37,17 +34,6 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
         this.editpart = editpart;
         this.model = model;
         this.backgroundFocusColor = new Color(Display.getDefault(), model.getBackgroundFocusColor());
-    }
-
-    /*
-     * (non-Javadoc)
-     *
-     * @see org.csstudio.opibuilder.widgets.editparts.NativeTextEditpartDelegate#setText(org.eclipse.swt.widgets.Text)
-     */
-    @Override
-    protected void setText(Text text) {
-        this.text = text;
-        super.setText(text);
     }
 
     /*
@@ -114,82 +100,21 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
      */
     @Override
     public IFigure doCreateFigure() {
-        int textStyle = getTextFigureStyle();
-        final NativeTextFigure figure = new NativeTextFigure(editpart, textStyle);
-        setText(figure.getSWTWidget());
-        if (!model.isReadOnly()) {
-            if (model.isMultilineInput()) {
-                text.addKeyListener(new KeyAdapter() {
-                    @Override
-                    public void keyPressed(KeyEvent keyEvent) {
-                        if (keyEvent.character == '\r') { // Return key
-                            if (text != null && !text.isDisposed() && (text.getStyle() & SWT.MULTI) != 0) {
-                                if ((keyEvent.stateMask & SWT.CTRL) != 0) {
-                                    outputText(text.getText());
-                                    keyEvent.doit = false;
-                                    // force focus to parent (base composite) so that the Text widget will lose it
-                                    text.getParent().forceFocus();
-                                }
-                            }
+        NativeTextFigure figure = (NativeTextFigure)super.doCreateFigure();
+        text = figure.getSWTWidget();
 
-                        }
-                    }
-                });
-            } else {
-                text.addListener(SWT.DefaultSelection, e -> {
-                    outputText(text.getText());
-                    switch (model.getFocusTraverse()) {
-                        case LOSE:
-                            // setFocus() gave the focus to the 'lowest first' child control that could accept it, which
-                            // can be the same text, making LOSE and KEEP 'Next focus' behave the same way
-                            text.getShell().forceFocus();
-                            break;
-                        case NEXT:
-                            SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_PREVIOUS);
-                            break;
-                        case PREVIOUS:
-                            SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_NEXT);
-                            break;
-                        case KEEP:
-                        default:
-                            break;
-                    }
-                });
-                text.addTraverseListener(e -> {
-                    if (skipTraverse || e.character == '\r')
-                        return;
-                    e.doit = false;
-                    skipTraverse = true;
-                    if (e.stateMask == 0) {
-                        SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_PREVIOUS);
-                    } else {
-                        SingleSourceHelper.swtControlTraverse(text, SWT.TRAVERSE_TAB_NEXT);
-                    }
-                    skipTraverse = false;
-                });
+        if (!model.isReadOnly()) {
+            Listener[] listeners1 = text.getListeners(SWT.FocusIn);
+            Listener[] listeners2 = text.getListeners(SWT.FocusOut);
+            for (Listener l : listeners1) {
+                text.removeListener(SWT.FocusIn, l);
             }
-            // Recover text if editing aborted.
-            text.addKeyListener(new KeyAdapter() {
-                @Override
-                public void keyPressed(KeyEvent keyEvent) {
-                    if (keyEvent.character == SWT.ESC) {
-                        text.setText(model.getText());
-                    }
-                }
-            });
+            for (Listener l : listeners2) {
+                text.removeListener(SWT.FocusOut, l);
+            }
             text.addFocusListener(getTextFocusListener(figure));
         }
         return figure;
-    }
-
-    /*
-     * (non-Javadoc)
-     *
-     * @see org.csstudio.opibuilder.widgets.editparts.NativeTextEditpartDelegate#performAutoSize()
-     */
-    @Override
-    public void performAutoSize() {
-        model.setSize(((NativeTextFigure) editpart.getFigure()).getAutoSizeDimension());
     }
 
     /*
