@@ -7,6 +7,7 @@
  ******************************************************************************/
 package org.csstudio.iter.opibuilder.widgets;
 
+import org.csstudio.opibuilder.editparts.AbstractBaseEditPart;
 import org.csstudio.opibuilder.widgets.editparts.Draw2DTextInputEditpartDelegate;
 import org.csstudio.opibuilder.widgets.editparts.ITextInputEditPartDelegate;
 import org.csstudio.opibuilder.widgets.editparts.LabelCellEditorLocator;
@@ -54,6 +55,7 @@ public class LabeledTextInputEditPartDelegate extends TextInputEditpart {
         setDelegate(delegate);
         getPVWidgetEditpartDelegate().setUpdateSuppressTime(-1);
         updatePropSheet();
+        this.setSelectable(false); // ensures clicking on the Text portion in the Editor only selects the parent (the "widget"), not the parent & the child widget
 
         return delegate.doCreateFigure();
     }
