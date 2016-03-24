@@ -35,7 +35,8 @@ public class LabeledTextInputModel extends LabeledTextInputModelDelegate {
 
     static final List<String> PROPERTIES_TO_REHANDLE = Arrays.asList(TextInputModel.PROP_SHOW_NATIVE_BORDER,
         TextInputModel.PROP_MULTILINE_INPUT, TextInputModel.PROP_WRAP_WORDS, TextInputModel.PROP_SHOW_H_SCROLL,
-        TextInputModel.PROP_SHOW_V_SCROLL, TextInputModel.PROP_PASSWORD_INPUT, TextInputModel.PROP_ALIGN_H);
+        TextInputModel.PROP_SHOW_V_SCROLL, TextInputModel.PROP_PASSWORD_INPUT, TextInputModel.PROP_ALIGN_H,
+        TextInputModel.PROP_STYLE);
 
     private LabeledTextInputModelDelegate textModel;
     private LabelModel labelModel;
@@ -122,6 +123,27 @@ public class LabeledTextInputModel extends LabeledTextInputModelDelegate {
                 // not all properties are relevant to the text model, but who cares - they're ignored
                 thisProperty.addPropertyChangeListener(evt -> textModel.setPropertyValue(propId, evt.getNewValue()));
                 textModel.setPropertyValue(propId, thisProperty.getRawPropertyValue());
+            }
+        }
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see org.csstudio.opibuilder.model.AbstractWidgetModel#setPropertyValue(java.lang.Object, java.lang.Object,
+     * boolean)
+     */
+    @Override
+    public void setPropertyValue(Object id, Object value, boolean forceFire) {
+        super.setPropertyValue(id, value, forceFire);
+        if (!forceFire) {
+            getTextModel().setPropertyValue(id, value, forceFire);
+            if (LabeledTextInputModelDelegate.PROP_LABEL_TEXT.equals(id)) {
+                getLabelModel().setPropertyValue(PROP_TEXT, value, forceFire);
+            } else if (LabeledTextInputModelDelegate.PROP_LABEL_COLOR.equals(id)) {
+                getLabelModel().setPropertyValue(PROP_COLOR_FOREGROUND, value, forceFire);
+            } else if (LabeledTextInputModelDelegate.PROP_LABEL_FONT.equals(id)) {
+                getLabelModel().setPropertyValue(PROP_FONT, value, forceFire);
             }
         }
     }

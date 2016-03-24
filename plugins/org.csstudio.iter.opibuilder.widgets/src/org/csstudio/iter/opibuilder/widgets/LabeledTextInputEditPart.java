@@ -18,7 +18,6 @@ import org.csstudio.opibuilder.model.AbstractContainerModel;
 import org.csstudio.opibuilder.model.AbstractWidgetModel;
 import org.csstudio.opibuilder.widgets.editparts.LabelEditPart;
 import org.csstudio.opibuilder.widgets.model.LabelModel;
-import org.csstudio.opibuilder.widgets.model.TextInputModel;
 import org.csstudio.swt.widgets.figures.GroupingContainerFigure;
 import org.csstudio.swt.widgets.figures.TextFigure;
 import org.csstudio.swt.widgets.figures.TextFigure.H_ALIGN;
@@ -127,7 +126,6 @@ public class LabeledTextInputEditPart extends AbstractWidgetEditPart {
         getWidgetModel().getProperty(LabeledTextInputModelDelegate.PROP_LABEL_TEXT)
             .addPropertyChangeListener(evt -> resizeChildren());
         resizeChildren();
-        getWidgetModel().getProperty(TextInputModel.PROP_STYLE).addPropertyChangeListener(evt -> recreateWidget());
         for (String s : LabeledTextInputModel.PROPERTIES_TO_REHANDLE) {
             setPropertyChangeHandler(s, (o,a,n) -> recreateWidget());
         }
