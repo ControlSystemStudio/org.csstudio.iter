@@ -21,6 +21,13 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
+/**
+ *
+ * <code>NativeLabeledTextEditpartDelegate</code> adds additional focus lost functionality to the native widget.
+ *
+ * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
+ *
+ */
 public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegate {
     private Color backgroundFocusColor = null;
     private Color originalBackgroundColor = null;
@@ -28,7 +35,7 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
     private TextInputModel model;
     private Text text;
 
-    public NativeLabeledTextEditpartDelegate(LabeledTextInputEditPartDelegate editpart,
+    NativeLabeledTextEditpartDelegate(LabeledTextInputEditPartDelegate editpart,
         LabeledTextInputModelDelegate model) {
         super(editpart, model);
         this.editpart = editpart;
