@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.csstudio.iter.opibuilder.widgets.LabeledTextInputModelDelegate.LabelAlignment;
 import org.csstudio.iter.opibuilder.widgets.LabeledTextInputModelDelegate.LabelPosition;
+import org.csstudio.opibuilder.editparts.AbstractBaseEditPart;
 import org.csstudio.opibuilder.editparts.AbstractWidgetEditPart;
 import org.csstudio.opibuilder.model.AbstractContainerModel;
 import org.csstudio.opibuilder.model.AbstractWidgetModel;
@@ -27,7 +28,6 @@ import org.eclipse.draw2d.FigureUtilities;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
-import org.eclipse.gef.EditPartListener;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.swt.graphics.Font;
 
@@ -93,20 +93,16 @@ public class LabeledTextInputEditPart extends AbstractWidgetEditPart {
         } else {
             part = super.createChild(model);
         }
-        if (part != null) {
-            // when any of the two subwidgets is selected, shift the focus to this widget in order to be able to
-            // resize it an move it around
-            part.addEditPartListener(new EditPartListener.Stub() {
-                @Override
-                public void selectedStateChanged(EditPart part) {
-                    setSelected(part.getSelected());
-                    if (getSelected() != SELECTED_NONE) {
-                        getWidgetModel().getParent().selectWidget(getWidgetModel(), true);
-                    }
-                }
-            });
+        if (part instanceof AbstractBaseEditPart) {
+            ((AbstractBaseEditPart)part).setSelectable(false);
         }
         return part;
+    }
+
+    @Override
+    protected void addChild(EditPart child, int index) {
+        super.addChild(child, index);
+        child.setParent(getParent());
     }
 
     /*

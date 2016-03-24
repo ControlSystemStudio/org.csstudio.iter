@@ -7,8 +7,6 @@
  ******************************************************************************/
 package org.csstudio.iter.opibuilder.widgets;
 
-import org.csstudio.opibuilder.widgets.model.ActionButtonModel.Style;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,6 +15,7 @@ import org.csstudio.opibuilder.model.AbstractWidgetModel;
 import org.csstudio.opibuilder.properties.AbstractWidgetProperty;
 import org.csstudio.opibuilder.util.OPIColor;
 import org.csstudio.opibuilder.util.OPIFont;
+import org.csstudio.opibuilder.widgets.model.ActionButtonModel.Style;
 import org.csstudio.opibuilder.widgets.model.LabelModel;
 import org.csstudio.opibuilder.widgets.model.TextInputModel;
 import org.csstudio.swt.widgets.figures.LabelFigure.H_ALIGN;
@@ -48,7 +47,7 @@ public class LabeledTextInputModel extends LabeledTextInputModelDelegate {
      */
     LabeledTextInputModelDelegate getTextModel() {
         if (textModel == null) {
-            textModel = new LabeledTextInputModelDelegate(){};
+            textModel = new LabeledTextInputModelDelegate();
             textModel.getProperty(TextInputModel.PROP_STYLE).setPropertyValue(Style.NATIVE.ordinal());
             textModel.setX(0);
             textModel.setY(30);
@@ -76,22 +75,27 @@ public class LabeledTextInputModel extends LabeledTextInputModelDelegate {
         return labelModel;
     }
 
-    @Override
-    public void setParent(AbstractContainerModel parent) {
-//        getLabelModel().setParent(parent);
-//        getTextModel().setParent(parent);
-        super.setParent(parent);
-    }
-
+    /*
+     * (non-Javadoc)
+     *
+     * @see org.csstudio.iter.opibuilder.widgets.LabeledTextInputModelDelegate#configureProperties()
+     */
     @Override
     protected void configureProperties() {
         super.configureProperties();
         setUpPropertyListeners();
     }
 
+    @Override
+    public void setParent(AbstractContainerModel parent) {
+        getLabelModel().setParent(parent);
+        getTextModel().setParent(parent);
+        super.setParent(parent);
+    }
+
     /**
-     * Binds the text input and label models to the properties of this model. This method has to be called every
-     * time when the edit part is recreated. It also has to be called when the model is created in order to create the
+     * Binds the text input and label models to the properties of this model. This method has to be called every time
+     * when the edit part is recreated. It also has to be called when the model is created in order to create the
      * initial figure correctly.
      */
     void setUpPropertyListeners() {

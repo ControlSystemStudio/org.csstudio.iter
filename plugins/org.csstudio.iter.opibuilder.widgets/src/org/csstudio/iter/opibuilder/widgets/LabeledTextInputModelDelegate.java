@@ -31,7 +31,7 @@ import org.eclipse.swt.graphics.RGB;
  * @author Boris Versic
  *
  */
-public abstract class LabeledTextInputModelDelegate extends TextInputModel {
+public class LabeledTextInputModelDelegate extends TextInputModel {
 
     /** The background color when this control has focus */
     public static final String PROP_COLOR_BACKGROUND_FOCUS = "background_focus_color";//$NON-NLS-1$
@@ -171,5 +171,10 @@ public abstract class LabeledTextInputModelDelegate extends TextInputModel {
 
     public LabelPosition getLabelPosition() {
         return LabelPosition.values()[(int) getPropertyValue(PROP_LABEL_POSITION)];
+    }
+
+    @Override
+    public String getTypeID() {
+        return "ElmerFudd";
     }
 }
