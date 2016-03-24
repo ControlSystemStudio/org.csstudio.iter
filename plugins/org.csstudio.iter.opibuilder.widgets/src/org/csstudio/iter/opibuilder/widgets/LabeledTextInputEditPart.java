@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.csstudio.iter.opibuilder.widgets.LabeledTextInputModelDelegate.LabelAlignment;
 import org.csstudio.iter.opibuilder.widgets.LabeledTextInputModelDelegate.LabelPosition;
+import org.csstudio.opibuilder.editparts.AbstractBaseEditPart;
 import org.csstudio.opibuilder.editparts.AbstractWidgetEditPart;
 import org.csstudio.opibuilder.model.AbstractContainerModel;
 import org.csstudio.opibuilder.model.AbstractWidgetModel;
@@ -92,6 +93,7 @@ public class LabeledTextInputEditPart extends AbstractWidgetEditPart {
             ((LabeledTextInputEditPartDelegate) part).setExecutionMode(getExecutionMode());
         } else {
             part = super.createChild(model);
+            ((AbstractBaseEditPart)part).setSelectable(false); // ensures clicking on the Label only selects the parent (container), not both
         }
         if (part != null) {
             // when any of the two subwidgets is selected, shift the focus to this widget in order to be able to
