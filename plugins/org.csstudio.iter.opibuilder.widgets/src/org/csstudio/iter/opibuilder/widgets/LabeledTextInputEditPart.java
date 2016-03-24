@@ -92,7 +92,6 @@ public class LabeledTextInputEditPart extends AbstractWidgetEditPart {
             ((LabeledTextInputEditPartDelegate) part).setExecutionMode(getExecutionMode());
         } else {
             part = super.createChild(model);
-            ((AbstractBaseEditPart)part).setSelectable(false); // ensures clicking on the Label only selects the parent (container), not both
         }
         if (part instanceof AbstractBaseEditPart) {
             ((AbstractBaseEditPart)part).setSelectable(false);
