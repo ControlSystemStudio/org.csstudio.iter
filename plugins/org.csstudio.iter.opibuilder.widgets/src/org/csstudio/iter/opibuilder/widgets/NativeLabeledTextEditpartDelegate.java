@@ -156,7 +156,7 @@ public class NativeLabeledTextEditpartDelegate extends NativeTextEditpartDelegat
                     }
                 });
                 text.addTraverseListener(e -> {
-                    if (skipTraverse)
+                    if (skipTraverse || e.character == '\r')
                         return;
                     e.doit = false;
                     skipTraverse = true;
