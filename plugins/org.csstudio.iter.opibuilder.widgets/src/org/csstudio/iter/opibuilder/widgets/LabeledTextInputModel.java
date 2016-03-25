@@ -114,7 +114,8 @@ public class LabeledTextInputModel extends LabeledTextInputModelDelegate {
                 thisProperty.addPropertyChangeListener(evt -> labelModel.setText(String.valueOf(evt.getNewValue())));
                 labelModel.setText(String.valueOf(thisProperty.getRawPropertyValue()));
             } else if (LabeledTextInputModelDelegate.PROP_LABEL_COLOR.equals(s)) {
-                thisProperty.addPropertyChangeListener(evt -> labelModel.setForegroundColor((RGB) evt.getNewValue()));
+                thisProperty.addPropertyChangeListener(
+                    evt -> labelModel.setForegroundColor(((OPIColor) evt.getNewValue()).getRGBValue()));
                 labelModel.setForegroundColor(((OPIColor) thisProperty.getRawPropertyValue()).getRGBValue());
             } else if (LabeledTextInputModelDelegate.PROP_LABEL_FONT.equals(s)) {
                 thisProperty.addPropertyChangeListener(evt -> labelModel.setFont((OPIFont) evt.getNewValue()));
@@ -141,7 +142,9 @@ public class LabeledTextInputModel extends LabeledTextInputModelDelegate {
             if (LabeledTextInputModelDelegate.PROP_LABEL_TEXT.equals(id)) {
                 getLabelModel().setPropertyValue(PROP_TEXT, value, forceFire);
             } else if (LabeledTextInputModelDelegate.PROP_LABEL_COLOR.equals(id)) {
-                getLabelModel().setPropertyValue(PROP_COLOR_FOREGROUND, value, forceFire);
+                RGB rgb = value instanceof RGB ? (RGB) value
+                    : value instanceof OPIColor ? ((OPIColor) value).getRGBValue() : null;
+                getLabelModel().setPropertyValue(PROP_COLOR_FOREGROUND, rgb, forceFire);
             } else if (LabeledTextInputModelDelegate.PROP_LABEL_FONT.equals(id)) {
                 getLabelModel().setPropertyValue(PROP_FONT, value, forceFire);
             }
