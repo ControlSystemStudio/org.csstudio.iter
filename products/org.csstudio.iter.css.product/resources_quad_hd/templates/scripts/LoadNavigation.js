@@ -305,7 +305,7 @@ function createButtonContainer(opi_container, width, height) {
 function setButton(button, elt) {
     // reading value of children in XML using JDOM
 	// setting navigation button properties 
- 	button.setPropertyValue("tooltip", elt.getAttributeValue("description"));
+ 	button.setPropertyValue("tooltip", elt.getAttributeValue("description") + " ($(number_alarms) alarm(s))");
  	button.setPropertyValue("enabled", elt.getAttributeValue("enabled"));
  	if (elt.getAttributeValue("deprecated") && elt.getAttributeValue("deprecated").search("true") >= 0) {
  		button.setPropertyValue("foreground_color", "Invalid");
