@@ -11,10 +11,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.csstudio.opibuilder.model.AbstractContainerModel;
+import org.csstudio.opibuilder.model.AbstractPVWidgetModel;
 import org.csstudio.opibuilder.model.AbstractWidgetModel;
 import org.csstudio.opibuilder.properties.AbstractWidgetProperty;
 import org.csstudio.opibuilder.util.OPIColor;
 import org.csstudio.opibuilder.util.OPIFont;
+import org.csstudio.opibuilder.visualparts.BorderStyle;
 import org.csstudio.opibuilder.widgets.model.ActionButtonModel.Style;
 import org.csstudio.opibuilder.widgets.model.LabelModel;
 import org.csstudio.opibuilder.widgets.model.TextInputModel;
@@ -72,6 +74,13 @@ public class LabeledTextInputModel extends LabeledTextInputModelDelegate {
             labelModel.setHeight(30);
             labelModel.setPropertyValue(LabelModel.PROP_ALIGN_H, H_ALIGN.CENTER);
             labelModel.setPropertyValue(LabelModel.PROP_ALIGN_V, V_ALIGN.BOTTOM);
+            labelModel.setPropertyValue(LabelModel.PROP_BORDER_ALARMSENSITIVE, false);
+            labelModel.setPropertyValue(LabelModel.PROP_BACKCOLOR_ALARMSENSITIVE,false);
+            labelModel.setPropertyValue(LabelModel.PROP_FORECOLOR_ALARMSENSITIVE, false);
+            labelModel.setPropertyValue(LabelModel.PROP_ALARM_PULSING, false);
+            labelModel.setBorderStyle(BorderStyle.NONE);
+            labelModel.setTooltip("");
+            labelModel.setName("");
         }
         return labelModel;
     }
@@ -121,6 +130,11 @@ public class LabeledTextInputModel extends LabeledTextInputModelDelegate {
                 thisProperty.addPropertyChangeListener(evt -> labelModel.setFont((OPIFont) evt.getNewValue()));
                 labelModel.setFont((OPIFont) thisProperty.getRawPropertyValue());
             } else {
+                if (AbstractWidgetModel.PROP_NAME.equals(s) || AbstractPVWidgetModel.PROP_PVNAME.equals(s)
+                    || AbstractPVWidgetModel.PROP_PVVALUE.equals(s)) {
+                    thisProperty.addPropertyChangeListener(evt -> labelModel.setPropertyValue(propId, evt.getNewValue()));
+                    labelModel.setPropertyValue(propId, thisProperty.getRawPropertyValue());
+                }
                 // not all properties are relevant to the text model, but who cares - they're ignored
                 thisProperty.addPropertyChangeListener(evt -> textModel.setPropertyValue(propId, evt.getNewValue()));
                 textModel.setPropertyValue(propId, thisProperty.getRawPropertyValue());
@@ -147,6 +161,9 @@ public class LabeledTextInputModel extends LabeledTextInputModelDelegate {
                 getLabelModel().setPropertyValue(PROP_COLOR_FOREGROUND, rgb, forceFire);
             } else if (LabeledTextInputModelDelegate.PROP_LABEL_FONT.equals(id)) {
                 getLabelModel().setPropertyValue(PROP_FONT, value, forceFire);
+            } else if (AbstractWidgetModel.PROP_NAME.equals(id) || AbstractPVWidgetModel.PROP_PVNAME.equals(id)
+                || AbstractPVWidgetModel.PROP_PVVALUE.equals(id)) {
+                getLabelModel().setPropertyValue(id, value, forceFire);
             }
         }
     }
