@@ -1048,7 +1048,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
     public AlarmSeverity getAlarmSeverity() {
         return alarmSeverity;
     }
-    
+
     public void processBeastAlarmState() {
         boolean blinking = WidgetBlinker.INSTANCE.isBlinking(this);
 
@@ -1085,7 +1085,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
             beastInfo.setAlarmPVsCount(0);
             return;
         }
-        AbstractWidgetModel model = (AbstractWidgetModel)getWidgetModel(); 
+        AbstractWidgetModel model = (AbstractWidgetModel)getWidgetModel();
         if (model.getProperty(PROP_NUMBER_ALARMS) == null) {
             // add a property for the number of active Beast alarms of Node "PVs"
             model.addProperty(new IntegerProperty(PROP_NUMBER_ALARMS, "Number of Beast alarms", WidgetPropertyCategory.Basic, 0));
@@ -1120,7 +1120,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                                 wasChannelConnected = beast.isBeastChannelConnected();
                             }
                             channelConnected = event.getPvReader().isConnected();
-                            
+
                             if (event.isExceptionChanged()) {
                                 Exception e = event.getPvReader().lastException();
                                 log.fine("BeastAlarmListener (" + pvName + ") received an EXCEPTION: " + e.toString());
@@ -1134,16 +1134,16 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                                 if (channelConnected)
                                     pvWidget.setIsBeastAlarm(true);
                             }
-                            
+
                             if (!event.isValueChanged() || event.getPvReader().getValue() == null) {
                                 // even if we didn't receive a ValueChanged event, we might have to update UI
                                 // on connection state changes
                                 if (wasChannelConnected != channelConnected)
                                     pvWidget.processBeastAlarmState();
-                                    
+
                                 return;
                             }
-                            
+
                             if (isFirstValueEvent) {
                                 // We will only check 'format' of incoming message and find the columns we need
                                 // the first time we receive a ValueChanged event
@@ -1163,20 +1163,20 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
 
                                 List<String> keys = (List<String>) table.getColumnData(0);
                                 for (int i = 0; i < keys.size(); i++) {
-                                    if ("AlarmStatus".equalsIgnoreCase(keys.get(i)))
+                                    if ("AlarmSeverity".equalsIgnoreCase(keys.get(i)))
                                         latchedSeverityIdx = i;
-                                    if ("CurrentStatus".equalsIgnoreCase(keys.get(i)))
+                                    if ("CurrentSeverity".equalsIgnoreCase(keys.get(i)))
                                         currentSeverityIdx = i;
                                     if ("AlarmPVsCount".equalsIgnoreCase(keys.get(i)))
                                         alarmsCountIdx = i;
                                 }
                                 if (latchedSeverityIdx == -1 || currentSeverityIdx == -1) {
-                                    log.severe("BeastAlarmListener (" + pvName + "): missing Latched or Current alarm status");
+                                    log.severe("BeastAlarmListener (" + pvName + "): missing Latched or Current alarm severity");
                                     return;
                                 }
                                 if (alarmsCountIdx == -1)
                                     log.warning("BeastAlarmListener (" + pvName + "): missing data for number of PVs in alarm - this information will not be available");
-                                
+
                                 isFirstValueEvent = false;
                             }
 
@@ -1197,7 +1197,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                             if (pvWidget.getAlarmSeverity() != beastSeverity) {
                                 pvWidget.setAlarmSeverity(beastSeverity);
                             }
-                            
+
                             // if this is an Alarm Node PV, update the number_alarms property
                             if (pvWidget.isBeastAlarmNode()) {
                                 AbstractWidgetModel model = (AbstractWidgetModel) pvWidget.getWidgetModel();
