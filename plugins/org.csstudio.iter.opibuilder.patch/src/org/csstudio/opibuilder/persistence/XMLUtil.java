@@ -38,7 +38,6 @@ import org.csstudio.opibuilder.preferences.PreferencesHelper;
 import org.csstudio.opibuilder.util.ConsoleService;
 import org.csstudio.opibuilder.util.ErrorHandlerUtil;
 import org.csstudio.opibuilder.util.MacrosInput;
-import org.csstudio.opibuilder.util.OPIBuilderMacroUtil;
 import org.csstudio.opibuilder.util.ResourceUtil;
 import org.csstudio.opibuilder.util.SingleSourceHelper;
 import org.csstudio.opibuilder.util.WidgetDescriptor;
