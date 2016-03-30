@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.0.0.201601080907</boy_version>
+  <boy_version>5.1.0.201603291311</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -151,7 +151,7 @@
       <show_scrollbar>false</show_scrollbar>
       <tooltip></tooltip>
       <transparent>true</transparent>
-      <visible>true</visible>
+      <visible>false</visible>
       <widget_type>Grouping Container</widget_type>
       <width>569</width>
       <wuid>-c8fae15:14918e4e678:-7adb</wuid>
@@ -1864,319 +1864,12 @@ $(trace_1_y_pv_value)</tooltip>
       <show_scrollbar>false</show_scrollbar>
       <tooltip></tooltip>
       <transparent>true</transparent>
-      <visible>false</visible>
+      <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
       <width>569</width>
       <wuid>-c8fae15:14918e4e678:-7ad9</wuid>
       <x>2</x>
       <y>2</y>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-        <actions hook="false" hook_all="false" />
-        <background_color>
-          <color name="IO Area Background" red="221" green="223" blue="229" />
-        </background_color>
-        <border_color>
-          <color name="IO Border" red="0" green="0" blue="0" />
-        </border_color>
-        <border_style>13</border_style>
-        <border_width>2</border_width>
-        <enabled>true</enabled>
-        <fc>false</fc>
-        <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
-        </font>
-        <foreground_color>
-          <color name="IO Foreground" red="0" green="0" blue="0" />
-        </foreground_color>
-        <height>160</height>
-        <lock_children>false</lock_children>
-        <macros>
-          <include_parent_macros>true</include_parent_macros>
-        </macros>
-        <name>Processing Modes </name>
-        <rules />
-        <scale_options>
-          <width_scalable>false</width_scalable>
-          <height_scalable>false</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <scripts />
-        <show_scrollbar>false</show_scrollbar>
-        <tooltip></tooltip>
-        <transparent>true</transparent>
-        <visible>true</visible>
-        <widget_type>Grouping Container</widget_type>
-        <width>564</width>
-        <wuid>-2bbc820e:15036dc4f91:-4239</wuid>
-        <x>0</x>
-        <y>495</y>
-        <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
-          <actions hook="false" hook_all="true">
-            <action type="WRITE_PV">
-              <pv_name>${pv_name}</pv_name>
-              <value>1</value>
-              <timeout>10</timeout>
-              <confirm_message>Are you sure you want to switch ${COMPONENT} in AUTO mode?</confirm_message>
-              <description>switch ${COMPONENT} in AUTO mode</description>
-            </action>
-            <action type="WRITE_PV">
-              <pv_name>${pv_name}</pv_name>
-              <value>0</value>
-              <timeout>10</timeout>
-              <confirm_message>Are you sure you want to exit the AUTO mode?</confirm_message>
-              <description>exit the AUTO mode</description>
-            </action>
-          </actions>
-          <alarm_pulsing>false</alarm_pulsing>
-          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <bit>-1</bit>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>6</border_style>
-          <border_width>2</border_width>
-          <confirm_message>Are your sure you want to do this?</confirm_message>
-          <data_type>0</data_type>
-          <effect_3d>true</effect_3d>
-          <enabled>true</enabled>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-          </font>
-          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>50</height>
-          <name>AUMD_REQUEST</name>
-          <off_color>
-            <color name="IO PV OFF" red="149" green="125" blue="71" />
-          </off_color>
-          <off_label>AUTO</off_label>
-          <on_color>
-            <color name="IO PV ON" red="0" green="0" blue="255" />
-          </on_color>
-          <on_label>AUTO</on_label>
-          <password></password>
-          <push_action_index>0</push_action_index>
-          <pv_name>${COMPONENT}-AUMD</pv_name>
-          <pv_value />
-          <released_action_index>1</released_action_index>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_boolean_label>true</show_boolean_label>
-          <show_confirm_dialog>1</show_confirm_dialog>
-          <show_led>true</show_led>
-          <square_button>true</square_button>
-          <toggle_button>true</toggle_button>
-          <tooltip>Click to enter/exit the AUTO mode on ${COMPONENT}</tooltip>
-          <visible>true</visible>
-          <widget_type>Boolean Button</widget_type>
-          <width>220</width>
-          <wuid>-2bbc820e:15036dc4f91:-4238</wuid>
-          <x>0</x>
-          <y>15</y>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
-          <actions hook="false" hook_all="true">
-            <action type="WRITE_PV">
-              <pv_name>${pv_name}</pv_name>
-              <value>1</value>
-              <timeout>10</timeout>
-              <confirm_message>Are you sure you want to switch ${COMPONENT} in MANUAL mode?</confirm_message>
-              <description>switch ${COMPONENT} in MANUAL mode</description>
-            </action>
-            <action type="WRITE_PV">
-              <pv_name>${pv_name}</pv_name>
-              <value>0</value>
-              <timeout>10</timeout>
-              <confirm_message>Are you sure you want to exit the MANUAL mode?</confirm_message>
-              <description>exit the MANUAL mode</description>
-            </action>
-          </actions>
-          <alarm_pulsing>false</alarm_pulsing>
-          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <bit>-1</bit>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>6</border_style>
-          <border_width>2</border_width>
-          <confirm_message>Are your sure you want to do this?</confirm_message>
-          <data_type>0</data_type>
-          <effect_3d>true</effect_3d>
-          <enabled>true</enabled>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-          </font>
-          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>50</height>
-          <name>MAMD_REQUEST</name>
-          <off_color>
-            <color name="IO PV OFF" red="149" green="125" blue="71" />
-          </off_color>
-          <off_label>MANUAL</off_label>
-          <on_color>
-            <color name="IO PV ON" red="0" green="0" blue="255" />
-          </on_color>
-          <on_label>MANUAL</on_label>
-          <password></password>
-          <push_action_index>0</push_action_index>
-          <pv_name>${COMPONENT}-MAMD</pv_name>
-          <pv_value />
-          <released_action_index>1</released_action_index>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_boolean_label>true</show_boolean_label>
-          <show_confirm_dialog>1</show_confirm_dialog>
-          <show_led>true</show_led>
-          <square_button>true</square_button>
-          <toggle_button>true</toggle_button>
-          <tooltip>Click to enter/exit the MANUAL mode on ${COMPONENT}</tooltip>
-          <visible>true</visible>
-          <widget_type>Boolean Button</widget_type>
-          <width>220</width>
-          <wuid>-2bbc820e:15036dc4f91:-4237</wuid>
-          <x>245</x>
-          <y>15</y>
-        </widget>
-      </widget>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-        <actions hook="false" hook_all="false" />
-        <background_color>
-          <color name="IO Area Background" red="221" green="223" blue="229" />
-        </background_color>
-        <border_color>
-          <color name="IO Border" red="0" green="0" blue="0" />
-        </border_color>
-        <border_style>13</border_style>
-        <border_width>2</border_width>
-        <enabled>true</enabled>
-        <fc>false</fc>
-        <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
-        </font>
-        <foreground_color>
-          <color name="IO Foreground" red="0" green="0" blue="0" />
-        </foreground_color>
-        <height>160</height>
-        <lock_children>false</lock_children>
-        <macros>
-          <include_parent_macros>true</include_parent_macros>
-        </macros>
-        <name>Interlock</name>
-        <rules />
-        <scale_options>
-          <width_scalable>false</width_scalable>
-          <height_scalable>false</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <scripts />
-        <show_scrollbar>false</show_scrollbar>
-        <tooltip></tooltip>
-        <transparent>true</transparent>
-        <visible>true</visible>
-        <widget_type>Grouping Container</widget_type>
-        <width>564</width>
-        <wuid>-2bbc820e:15036dc4f91:-4236</wuid>
-        <x>0</x>
-        <y>655</y>
-        <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
-          <actions hook="false" hook_all="true">
-            <action type="WRITE_PV">
-              <pv_name>${pv_name}</pv_name>
-              <value>1</value>
-              <timeout>10</timeout>
-              <confirm_message>Are you sure you want to enter in force mode on ${COMPONENT}?</confirm_message>
-              <description>force mode for ${COMPONENT} interlock</description>
-            </action>
-            <action type="WRITE_PV">
-              <pv_name>${pv_name}</pv_name>
-              <value>0</value>
-              <timeout>10</timeout>
-              <confirm_message>Are you sure you want to terminate the force mode on ${COMPONENT}?</confirm_message>
-              <description>terminate ${COMPONENT} interlock force mode</description>
-            </action>
-          </actions>
-          <alarm_pulsing>false</alarm_pulsing>
-          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <bit>-1</bit>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>6</border_style>
-          <border_width>2</border_width>
-          <confirm_message>Are your sure you want to do this?</confirm_message>
-          <data_type>0</data_type>
-          <effect_3d>true</effect_3d>
-          <enabled>true</enabled>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-          </font>
-          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>50</height>
-          <name>FOMD_REQUEST</name>
-          <off_color>
-            <color name="IO PV OFF" red="149" green="125" blue="71" />
-          </off_color>
-          <off_label>FORCE MODE</off_label>
-          <on_color>
-            <color name="IO PV ON" red="0" green="0" blue="255" />
-          </on_color>
-          <on_label>FORCE MODE</on_label>
-          <password></password>
-          <push_action_index>0</push_action_index>
-          <pv_name>${COMPONENT}-FOMD</pv_name>
-          <pv_value />
-          <released_action_index>1</released_action_index>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_boolean_label>true</show_boolean_label>
-          <show_confirm_dialog>1</show_confirm_dialog>
-          <show_led>true</show_led>
-          <square_button>true</square_button>
-          <toggle_button>true</toggle_button>
-          <tooltip>Click to enter/terminate the force mode on ${COMPONENT}</tooltip>
-          <visible>true</visible>
-          <widget_type>Boolean Button</widget_type>
-          <width>483</width>
-          <wuid>-2bbc820e:15036dc4f91:-4235</wuid>
-          <x>5</x>
-          <y>13</y>
-        </widget>
-      </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
         <actions hook="false" hook_all="false" />
         <background_color>
@@ -2217,67 +1910,6 @@ $(trace_1_y_pv_value)</tooltip>
         <wuid>376504e8:15080d00df9:-733a</wuid>
         <x>0</x>
         <y>0</y>
-        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
-          <actions hook="false" hook_all="false">
-            <action type="WRITE_PV">
-              <pv_name>$(pv_name)</pv_name>
-              <value>1</value>
-              <timeout>10</timeout>
-              <confirm_message></confirm_message>
-              <description></description>
-            </action>
-          </actions>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>6</border_style>
-          <border_width>2</border_width>
-          <enabled>true</enabled>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-          </font>
-          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>50</height>
-          <image>../../templates/pictures/Start_16.png</image>
-          <name>Submit</name>
-          <push_action_index>0</push_action_index>
-          <pv_name>loc://$(DID)_Submit1(0)</pv_name>
-          <pv_value />
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts>
-            <path pathString="scripts/submit.js" checkConnect="true" sfe="true" seoe="false">
-              <pv trig="true">$(pv_name)</pv>
-              <pv trig="false">loc://$(COMPONENT)-CO(-1)</pv>
-              <pv trig="false">${COMPONENT}-CO</pv>
-              <pv trig="false">loc://$(COMPONENT)-COBak(140)</pv>
-              <pv trig="false">loc://$(COMPONENT)-COSt(0)</pv>
-            </path>
-            <path pathString="scripts/simul.js" checkConnect="true" sfe="false" seoe="false">
-              <pv trig="true">${COMPONENT}-CO</pv>
-              <pv trig="false">${COMPONENT}-FB</pv>
-              <pv trig="false">loc://$(COMPONENT)-COSt(0)</pv>
-            </path>
-          </scripts>
-          <style>1</style>
-          <text>Submit</text>
-          <toggle_button>false</toggle_button>
-          <tooltip>Submit new position</tooltip>
-          <visible>true</visible>
-          <widget_type>Action Button</widget_type>
-          <width>200</width>
-          <wuid>273d7733:152403ddd90:-34c0</wuid>
-          <x>117</x>
-          <y>89</y>
-        </widget>
         <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
           <actions hook="false" hook_all="false" />
           <background_color>
@@ -2528,18 +2160,29 @@ $(pv_value)</tooltip>
             <format_type>0</format_type>
             <height>42</height>
             <horizontal_alignment>0</horizontal_alignment>
-            <input_label_stacking>0</input_label_stacking>
-            <input_label_text></input_label_text>
+            <label_alignment>1</label_alignment>
+            <label_color>
+              <color red="0" green="0" blue="0" />
+            </label_color>
+            <label_font>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+            </label_font>
+            <label_gap>2</label_gap>
+            <label_position>0</label_position>
+            <label_text></label_text>
             <limits_from_pv>true</limits_from_pv>
+            <maximum>1.7976931348623157E308</maximum>
+            <minimum>-1.7976931348623157E308</minimum>
             <multiline_input>false</multiline_input>
             <name>New Position</name>
-            <next_focus>0</next_focus>
+            <next_focus>2</next_focus>
             <password_input>false</password_input>
             <precision>0</precision>
             <precision_from_pv>true</precision_from_pv>
             <pv_name>loc://${COMPONENT}-CO(-1)</pv_name>
             <pv_value />
             <read_only>false</read_only>
+            <rotation_angle>0.0</rotation_angle>
             <rules>
               <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
                 <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
@@ -2590,11 +2233,15 @@ $(pv_value)</tooltip>
                 <pv trig="false">loc://$(COMPONENT)-COSt(0)</pv>
               </path>
             </scripts>
+            <selector_type>0</selector_type>
+            <show_h_scroll>false</show_h_scroll>
             <show_native_border>false</show_native_border>
             <show_units>true</show_units>
+            <show_v_scroll>false</show_v_scroll>
             <style>1</style>
             <text>###.## %</text>
             <tooltip></tooltip>
+            <transparent>false</transparent>
             <visible>true</visible>
             <widget_type>Text Input</widget_type>
             <width>150</width>
@@ -2752,6 +2399,67 @@ $(pv_value)</tooltip>
             <y>32</y>
           </widget>
         </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+          <actions hook="false" hook_all="false">
+            <action type="WRITE_PV">
+              <pv_name>$(pv_name)</pv_name>
+              <value>1</value>
+              <timeout>10</timeout>
+              <confirm_message></confirm_message>
+              <description></description>
+            </action>
+          </actions>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>6</border_style>
+          <border_width>2</border_width>
+          <enabled>true</enabled>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <foreground_color>
+            <color name="IO Foreground" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>50</height>
+          <image>../../templates/pictures/Start_16.png</image>
+          <name>Submit</name>
+          <push_action_index>0</push_action_index>
+          <pv_name>loc://$(DID)_Submit1(0)</pv_name>
+          <pv_value />
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts>
+            <path pathString="scripts/submit.js" checkConnect="true" sfe="true" seoe="false">
+              <pv trig="true">$(pv_name)</pv>
+              <pv trig="false">loc://$(COMPONENT)-CO(-1)</pv>
+              <pv trig="false">${COMPONENT}-CO</pv>
+              <pv trig="false">loc://$(COMPONENT)-COBak(140)</pv>
+              <pv trig="false">loc://$(COMPONENT)-COSt(0)</pv>
+            </path>
+            <path pathString="scripts/simul.js" checkConnect="true" sfe="false" seoe="false">
+              <pv trig="true">${COMPONENT}-CO</pv>
+              <pv trig="false">${COMPONENT}-FB</pv>
+              <pv trig="false">loc://$(COMPONENT)-COSt(0)</pv>
+            </path>
+          </scripts>
+          <style>1</style>
+          <text>Submit</text>
+          <toggle_button>false</toggle_button>
+          <tooltip>Submit new position</tooltip>
+          <visible>true</visible>
+          <widget_type>Action Button</widget_type>
+          <width>200</width>
+          <wuid>273d7733:152403ddd90:-34c0</wuid>
+          <x>117</x>
+          <y>89</y>
+        </widget>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
         <actions hook="false" hook_all="false" />
@@ -2772,7 +2480,7 @@ $(pv_value)</tooltip>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <height>272</height>
-        <lock_children>true</lock_children>
+        <lock_children>false</lock_children>
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
@@ -2813,7 +2521,7 @@ $(pv_value)</tooltip>
           </foreground_color>
           <height>33</height>
           <horizontal_alignment>0</horizontal_alignment>
-          <name>Label Template</name>
+          <name>Current</name>
           <rules />
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -2854,7 +2562,7 @@ $(pv_value)</tooltip>
           </foreground_color>
           <height>33</height>
           <horizontal_alignment>0</horizontal_alignment>
-          <name>Label Template_1</name>
+          <name>New</name>
           <rules />
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -2905,18 +2613,29 @@ $(pv_value)</tooltip>
           <format_type>0</format_type>
           <height>42</height>
           <horizontal_alignment>0</horizontal_alignment>
-          <input_label_stacking>0</input_label_stacking>
-          <input_label_text></input_label_text>
+          <label_alignment>1</label_alignment>
+          <label_color>
+            <color red="0" green="0" blue="0" />
+          </label_color>
+          <label_font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+          </label_font>
+          <label_gap>2</label_gap>
+          <label_position>0</label_position>
+          <label_text></label_text>
           <limits_from_pv>true</limits_from_pv>
+          <maximum>1.7976931348623157E308</maximum>
+          <minimum>-1.7976931348623157E308</minimum>
           <multiline_input>false</multiline_input>
           <name>ROCUP_REQ</name>
-          <next_focus>0</next_focus>
+          <next_focus>2</next_focus>
           <password_input>false</password_input>
           <precision>0</precision>
           <precision_from_pv>true</precision_from_pv>
           <pv_name>loc://${COMPONENT}-COH(-1)</pv_name>
           <pv_value />
           <read_only>false</read_only>
+          <rotation_angle>0.0</rotation_angle>
           <rules>
             <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
               <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
@@ -2967,11 +2686,15 @@ $(pv_value)</tooltip>
               <pv trig="false">loc://$(COMPONENT)-COHSt(0)</pv>
             </path>
           </scripts>
+          <selector_type>0</selector_type>
+          <show_h_scroll>false</show_h_scroll>
           <show_native_border>false</show_native_border>
           <show_units>true</show_units>
+          <show_v_scroll>false</show_v_scroll>
           <style>1</style>
           <text>######</text>
           <tooltip></tooltip>
+          <transparent>false</transparent>
           <visible>true</visible>
           <widget_type>Text Input</widget_type>
           <width>201</width>
@@ -3062,18 +2785,29 @@ $(pv_value)</tooltip>
           <format_type>0</format_type>
           <height>42</height>
           <horizontal_alignment>0</horizontal_alignment>
-          <input_label_stacking>0</input_label_stacking>
-          <input_label_text></input_label_text>
+          <label_alignment>1</label_alignment>
+          <label_color>
+            <color red="0" green="0" blue="0" />
+          </label_color>
+          <label_font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+          </label_font>
+          <label_gap>2</label_gap>
+          <label_position>0</label_position>
+          <label_text></label_text>
           <limits_from_pv>true</limits_from_pv>
+          <maximum>1.7976931348623157E308</maximum>
+          <minimum>-1.7976931348623157E308</minimum>
           <multiline_input>false</multiline_input>
           <name>ROCDN_REQ</name>
-          <next_focus>0</next_focus>
+          <next_focus>2</next_focus>
           <password_input>false</password_input>
           <precision>0</precision>
           <precision_from_pv>true</precision_from_pv>
           <pv_name>loc://${COMPONENT}-COL(-1)</pv_name>
           <pv_value />
           <read_only>false</read_only>
+          <rotation_angle>0.0</rotation_angle>
           <rules>
             <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
               <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
@@ -3124,11 +2858,15 @@ $(pv_value)</tooltip>
               <pv trig="false">loc://$(COMPONENT)-COLSt(0)</pv>
             </path>
           </scripts>
+          <selector_type>0</selector_type>
+          <show_h_scroll>false</show_h_scroll>
           <show_native_border>false</show_native_border>
           <show_units>true</show_units>
+          <show_v_scroll>false</show_v_scroll>
           <style>1</style>
           <text>######</text>
           <tooltip>MANUAL REQUESTED VALUE</tooltip>
+          <transparent>false</transparent>
           <visible>true</visible>
           <widget_type>Text Input</widget_type>
           <width>201</width>
@@ -3332,6 +3070,517 @@ $(pv_value)</tooltip>
           <y>141</y>
         </widget>
       </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+        <actions hook="false" hook_all="false" />
+        <background_color>
+          <color name="IO Area Background" red="221" green="223" blue="229" />
+        </background_color>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <border_style>13</border_style>
+        <border_width>2</border_width>
+        <enabled>true</enabled>
+        <fc>false</fc>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+        </font>
+        <foreground_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </foreground_color>
+        <height>160</height>
+        <lock_children>false</lock_children>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <name>Processing Modes </name>
+        <rules />
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts />
+        <show_scrollbar>false</show_scrollbar>
+        <tooltip></tooltip>
+        <transparent>true</transparent>
+        <visible>true</visible>
+        <widget_type>Grouping Container</widget_type>
+        <width>564</width>
+        <wuid>-2bbc820e:15036dc4f91:-4239</wuid>
+        <x>0</x>
+        <y>495</y>
+        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+          <actions hook="false" hook_all="false">
+            <action type="WRITE_PV">
+              <pv_name>${pv_name}</pv_name>
+              <value>1</value>
+              <timeout>10</timeout>
+              <confirm_message>Are you sure you want to switch ${COMPONENT} in AUTO mode?</confirm_message>
+              <description>switch ${COMPONENT} in AUTO mode</description>
+            </action>
+            <action type="WRITE_PV">
+              <pv_name>${pv_name}</pv_name>
+              <value>0</value>
+              <timeout>10</timeout>
+              <confirm_message>Are you sure you want to exit the AUTO mode?</confirm_message>
+              <description>exit the AUTO mode</description>
+            </action>
+          </actions>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>6</border_style>
+          <border_width>2</border_width>
+          <enabled>true</enabled>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <foreground_color>
+            <color name="IO Foreground" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>50</height>
+          <image></image>
+          <name>AUMD_REQUEST</name>
+          <push_action_index>0</push_action_index>
+          <pv_name>${COMPONENT}-AUMD</pv_name>
+          <pv_value />
+          <release_action_index>1</release_action_index>
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts />
+          <style>1</style>
+          <text>AUTO</text>
+          <toggle_button>true</toggle_button>
+          <tooltip>Click to enter/exit the AUTO mode on ${COMPONENT}</tooltip>
+          <visible>true</visible>
+          <widget_type>Action Button</widget_type>
+          <width>165</width>
+          <wuid>-2bbc820e:15036dc4f91:-4238</wuid>
+          <x>56</x>
+          <y>15</y>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
+          <actions hook="false" hook_all="true">
+            <action type="WRITE_PV">
+              <pv_name>${pv_name}</pv_name>
+              <value>1</value>
+              <timeout>10</timeout>
+              <confirm_message>Are you sure you want to switch ${COMPONENT} in AUTO mode?</confirm_message>
+              <description>switch ${COMPONENT} in AUTO mode</description>
+            </action>
+            <action type="WRITE_PV">
+              <pv_name>${pv_name}</pv_name>
+              <value>0</value>
+              <timeout>10</timeout>
+              <confirm_message>Are you sure you want to exit the AUTO mode?</confirm_message>
+              <description>exit the AUTO mode</description>
+            </action>
+          </actions>
+          <alarm_pulsing>false</alarm_pulsing>
+          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <bit>0</bit>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>0</border_style>
+          <border_width>2</border_width>
+          <bulb_border>3</bulb_border>
+          <bulb_border_color>
+            <color name="IO Button" red="178" green="178" blue="178" />
+          </bulb_border_color>
+          <data_type>0</data_type>
+          <effect_3d>true</effect_3d>
+          <enabled>true</enabled>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <foreground_color>
+            <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>40</height>
+          <name>AUMD_REQUEST</name>
+          <off_color>
+            <color name="IO PV OFF" red="149" green="125" blue="71" />
+          </off_color>
+          <off_label>OFF</off_label>
+          <on_color>
+            <color name="IO PV ON" red="0" green="0" blue="255" />
+          </on_color>
+          <on_label>ON</on_label>
+          <pv_name>${COMPONENT}-AUMD</pv_name>
+          <pv_value />
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts />
+          <show_boolean_label>false</show_boolean_label>
+          <square_led>false</square_led>
+          <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          <visible>true</visible>
+          <widget_type>LED</widget_type>
+          <width>40</width>
+          <wuid>1a0c502f:153c29f5b85:-616a</wuid>
+          <x>5</x>
+          <y>20</y>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+          <actions hook="false" hook_all="false">
+            <action type="WRITE_PV">
+              <pv_name>${pv_name}</pv_name>
+              <value>1</value>
+              <timeout>10</timeout>
+              <confirm_message>Are you sure you want to switch ${COMPONENT} in MANUAL mode?</confirm_message>
+              <description>switch ${COMPONENT} in MANUAL mode</description>
+            </action>
+            <action type="WRITE_PV">
+              <pv_name>${pv_name}</pv_name>
+              <value>0</value>
+              <timeout>10</timeout>
+              <confirm_message>Are you sure you want to exit the MANUAL mode?</confirm_message>
+              <description>exit the MANUAL mode</description>
+            </action>
+          </actions>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>6</border_style>
+          <border_width>2</border_width>
+          <enabled>true</enabled>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <foreground_color>
+            <color name="IO Foreground" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>50</height>
+          <image></image>
+          <name>MAMD_REQUEST</name>
+          <push_action_index>0</push_action_index>
+          <pv_name>${COMPONENT}-MAMD</pv_name>
+          <pv_value />
+          <release_action_index>1</release_action_index>
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts />
+          <style>1</style>
+          <text>MANUAL</text>
+          <toggle_button>true</toggle_button>
+          <tooltip>Click to enter/exit the MANUAL mode on ${COMPONENT}</tooltip>
+          <visible>true</visible>
+          <widget_type>Action Button</widget_type>
+          <width>165</width>
+          <wuid>-2bbc820e:15036dc4f91:-4237</wuid>
+          <x>316</x>
+          <y>15</y>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
+          <actions hook="false" hook_all="true">
+            <action type="WRITE_PV">
+              <pv_name>${pv_name}</pv_name>
+              <value>1</value>
+              <timeout>10</timeout>
+              <confirm_message>Are you sure you want to switch ${COMPONENT} in AUTO mode?</confirm_message>
+              <description>switch ${COMPONENT} in AUTO mode</description>
+            </action>
+            <action type="WRITE_PV">
+              <pv_name>${pv_name}</pv_name>
+              <value>0</value>
+              <timeout>10</timeout>
+              <confirm_message>Are you sure you want to exit the AUTO mode?</confirm_message>
+              <description>exit the AUTO mode</description>
+            </action>
+          </actions>
+          <alarm_pulsing>false</alarm_pulsing>
+          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <bit>0</bit>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>0</border_style>
+          <border_width>2</border_width>
+          <bulb_border>3</bulb_border>
+          <bulb_border_color>
+            <color name="IO Button" red="178" green="178" blue="178" />
+          </bulb_border_color>
+          <data_type>0</data_type>
+          <effect_3d>true</effect_3d>
+          <enabled>true</enabled>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <foreground_color>
+            <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>40</height>
+          <name>MAMD_REQUEST</name>
+          <off_color>
+            <color name="IO PV OFF" red="149" green="125" blue="71" />
+          </off_color>
+          <off_label>OFF</off_label>
+          <on_color>
+            <color name="IO PV ON" red="0" green="0" blue="255" />
+          </on_color>
+          <on_label>ON</on_label>
+          <pv_name>${COMPONENT}-MAMD</pv_name>
+          <pv_value />
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts />
+          <show_boolean_label>false</show_boolean_label>
+          <square_led>false</square_led>
+          <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          <visible>true</visible>
+          <widget_type>LED</widget_type>
+          <width>40</width>
+          <wuid>1a0c502f:153c29f5b85:-5fc1</wuid>
+          <x>265</x>
+          <y>20</y>
+        </widget>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+        <actions hook="false" hook_all="false" />
+        <background_color>
+          <color name="IO Area Background" red="221" green="223" blue="229" />
+        </background_color>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <border_style>13</border_style>
+        <border_width>2</border_width>
+        <enabled>true</enabled>
+        <fc>false</fc>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+        </font>
+        <foreground_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </foreground_color>
+        <height>160</height>
+        <lock_children>false</lock_children>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <name>Interlock</name>
+        <rules />
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts />
+        <show_scrollbar>false</show_scrollbar>
+        <tooltip></tooltip>
+        <transparent>true</transparent>
+        <visible>true</visible>
+        <widget_type>Grouping Container</widget_type>
+        <width>564</width>
+        <wuid>-2bbc820e:15036dc4f91:-4236</wuid>
+        <x>0</x>
+        <y>655</y>
+        <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
+          <actions hook="false" hook_all="true">
+            <action type="WRITE_PV">
+              <pv_name>${pv_name}</pv_name>
+              <value>1</value>
+              <timeout>10</timeout>
+              <confirm_message>Are you sure you want to switch ${COMPONENT} in AUTO mode?</confirm_message>
+              <description>switch ${COMPONENT} in AUTO mode</description>
+            </action>
+            <action type="WRITE_PV">
+              <pv_name>${pv_name}</pv_name>
+              <value>0</value>
+              <timeout>10</timeout>
+              <confirm_message>Are you sure you want to exit the AUTO mode?</confirm_message>
+              <description>exit the AUTO mode</description>
+            </action>
+          </actions>
+          <alarm_pulsing>false</alarm_pulsing>
+          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <bit>0</bit>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>0</border_style>
+          <border_width>2</border_width>
+          <bulb_border>3</bulb_border>
+          <bulb_border_color>
+            <color name="IO Button" red="178" green="178" blue="178" />
+          </bulb_border_color>
+          <data_type>0</data_type>
+          <effect_3d>true</effect_3d>
+          <enabled>true</enabled>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <foreground_color>
+            <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>40</height>
+          <name>FOMD_REQUEST</name>
+          <off_color>
+            <color name="IO PV OFF" red="149" green="125" blue="71" />
+          </off_color>
+          <off_label>OFF</off_label>
+          <on_color>
+            <color name="IO PV ON" red="0" green="0" blue="255" />
+          </on_color>
+          <on_label>ON</on_label>
+          <pv_name>${COMPONENT}-FOMD</pv_name>
+          <pv_value />
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts />
+          <show_boolean_label>false</show_boolean_label>
+          <square_led>false</square_led>
+          <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          <visible>true</visible>
+          <widget_type>LED</widget_type>
+          <width>40</width>
+          <wuid>1a0c502f:153c29f5b85:393b</wuid>
+          <x>5</x>
+          <y>18</y>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+          <actions hook="false" hook_all="false">
+            <action type="WRITE_PV">
+              <pv_name>${pv_name}</pv_name>
+              <value>1</value>
+              <timeout>10</timeout>
+              <confirm_message>Are you sure you want to enter in force mode on ${COMPONENT}?</confirm_message>
+              <description>force mode for ${COMPONENT} interlock</description>
+            </action>
+            <action type="WRITE_PV">
+              <pv_name>${pv_name}</pv_name>
+              <value>0</value>
+              <timeout>10</timeout>
+              <confirm_message>Are you sure you want to terminate the force mode on ${COMPONENT}?</confirm_message>
+              <description>terminate ${COMPONENT} interlock force mode</description>
+            </action>
+          </actions>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>6</border_style>
+          <border_width>2</border_width>
+          <enabled>true</enabled>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <foreground_color>
+            <color name="IO Foreground" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>50</height>
+          <image></image>
+          <name>FOMD_REQUEST</name>
+          <push_action_index>0</push_action_index>
+          <pv_name>${COMPONENT}-FOMD</pv_name>
+          <pv_value />
+          <release_action_index>1</release_action_index>
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts />
+          <style>1</style>
+          <text>FORCE MODE</text>
+          <toggle_button>true</toggle_button>
+          <tooltip>Click to enter/terminate the force mode on ${COMPONENT}</tooltip>
+          <visible>true</visible>
+          <widget_type>Action Button</widget_type>
+          <width>423</width>
+          <wuid>-2bbc820e:15036dc4f91:-4235</wuid>
+          <x>58</x>
+          <y>13</y>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+          <actions hook="false" hook_all="false" />
+          <auto_size>true</auto_size>
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>0</border_style>
+          <border_width>2</border_width>
+          <enabled>false</enabled>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+          <foreground_color>
+            <color name="IO Text Fg" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>66</height>
+          <horizontal_alignment>0</horizontal_alignment>
+          <name>Label Template</name>
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts />
+          <show_scrollbar>false</show_scrollbar>
+          <text>double click
+to enter the text</text>
+          <tooltip></tooltip>
+          <transparent>true</transparent>
+          <vertical_alignment>1</vertical_alignment>
+          <visible>true</visible>
+          <widget_type>Label</widget_type>
+          <width>272</width>
+          <wrap_words>true</wrap_words>
+          <wuid>1a0c502f:153c29f5b85:39af</wuid>
+          <x>227</x>
+          <y>108</y>
+        </widget>
+      </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -3417,7 +3666,7 @@ $(pv_value)</tooltip>
           <actions hook="false" hook_all="false" />
           <alarm_pulsing>false</alarm_pulsing>
           <auto_size>false</auto_size>
-          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+          <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
@@ -3449,7 +3698,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <scripts />
           <selected_color>
-            <color red="77" green="77" blue="77" />
+            <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
           </selected_color>
           <tooltip>$(pv_name)
 $(pv_value)</tooltip>
@@ -3464,7 +3713,7 @@ $(pv_value)</tooltip>
           <actions hook="false" hook_all="false" />
           <alarm_pulsing>false</alarm_pulsing>
           <auto_size>false</auto_size>
-          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+          <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
@@ -3496,7 +3745,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <scripts />
           <selected_color>
-            <color red="77" green="77" blue="77" />
+            <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
           </selected_color>
           <tooltip>Forced Mode</tooltip>
           <visible>true</visible>
@@ -3551,7 +3800,7 @@ $(pv_value)</tooltip>
           <actions hook="false" hook_all="false" />
           <alarm_pulsing>false</alarm_pulsing>
           <auto_size>false</auto_size>
-          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+          <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
@@ -3583,7 +3832,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <scripts />
           <selected_color>
-            <color red="77" green="77" blue="77" />
+            <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
           </selected_color>
           <tooltip>FULL STOP INTERLOCK
 $(pv_name)
@@ -3599,7 +3848,7 @@ $(pv_value)</tooltip>
           <actions hook="false" hook_all="false" />
           <alarm_pulsing>false</alarm_pulsing>
           <auto_size>false</auto_size>
-          <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+          <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
@@ -3631,7 +3880,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <scripts />
           <selected_color>
-            <color red="77" green="77" blue="77" />
+            <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
           </selected_color>
           <tooltip>TRIP
 $(pv_name)
