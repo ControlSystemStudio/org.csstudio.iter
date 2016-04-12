@@ -65,12 +65,7 @@ function buildCBSMap(root, indent){
 			linkingContainer.setPropertyValue("background_color", "IO Background");
 	    }
 		
-		// adding the CBS description as widget tooltip
- 		if (~elt.getAttributeValue("enabled").indexOf("true")) {
-			linkingContainer.setPropertyValue("tooltip", elt.getAttributeValue("description"));
-		} else {
-			linkingContainer.setPropertyValue("tooltip", elt.getAttributeValue("description") + " not enabled");
-		}
+		linkingContainer.setPropertyValue("tooltip", "Click directly on the OPIs map buttons to open the related screen");
 		
 	    // adding macros CBS and OPI_FILE to the container
 		linkingContainer.addMacro("CBS", elt.getAttributeValue("name"));
@@ -85,6 +80,7 @@ function buildCBSMap(root, indent){
 		// setting the CBS label properties
 	 	var button = widget.getWidget(elt.getAttributeValue("name"));	
  		button.setPropertyValue("enabled", elt.getAttributeValue("enabled"));
+	 	button.setPropertyValue("tooltip", elt.getAttributeValue("description") + " ($(number_alarms) alarm(s))");
     
 		buildCBSMap(elt, indent+1);
  	}
