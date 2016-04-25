@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.0.0.201601211726</boy_version>
+  <boy_version>5.1.0.201603301601</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -2584,7 +2584,7 @@ $(pv_value)</tooltip>
             <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
               <actions hook="false" hook_all="false" />
               <alarm_pulsing>false</alarm_pulsing>
-              <auto_size>true</auto_size>
+              <auto_size>false</auto_size>
               <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
               <background_color>
                 <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
@@ -2609,11 +2609,21 @@ $(pv_value)</tooltip>
                 <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
               </foreground_color>
               <format_type>0</format_type>
-              <height>39</height>
+              <height>87</height>
               <horizontal_alignment>0</horizontal_alignment>
-              <input_label_stacking>0</input_label_stacking>
-              <input_label_text></input_label_text>
+              <label_alignment>0</label_alignment>
+              <label_color>
+                <color name="IO Foreground" red="0" green="0" blue="0" />
+              </label_color>
+              <label_font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </label_font>
+              <label_gap>10</label_gap>
+              <label_position>0</label_position>
+              <label_text>Input</label_text>
               <limits_from_pv>true</limits_from_pv>
+              <maximum>1.7976931348623157E308</maximum>
+              <minimum>-1.7976931348623157E308</minimum>
               <multiline_input>false</multiline_input>
               <name>Text Input Template</name>
               <next_focus>2</next_focus>
@@ -2623,6 +2633,7 @@ $(pv_value)</tooltip>
               <pv_name>loc://toto(10687.891)</pv_name>
               <pv_value />
               <read_only>false</read_only>
+              <rotation_angle>0.0</rotation_angle>
               <rules />
               <scale_options>
                 <width_scalable>false</width_scalable>
@@ -2630,18 +2641,22 @@ $(pv_value)</tooltip>
                 <keep_wh_ratio>false</keep_wh_ratio>
               </scale_options>
               <scripts />
-              <show_native_border>false</show_native_border>
+              <selector_type>0</selector_type>
+              <show_h_scroll>false</show_h_scroll>
+              <show_native_border>true</show_native_border>
               <show_units>true</show_units>
+              <show_v_scroll>false</show_v_scroll>
               <style>1</style>
               <text>######</text>
               <tooltip>$(pv_name)
 $(pv_value)</tooltip>
+              <transparent>false</transparent>
               <visible>true</visible>
               <widget_type>Text Input</widget_type>
-              <width>103</width>
+              <width>182</width>
               <wuid>-7451d5cb:14a622a4ef9:-60b2</wuid>
-              <x>843</x>
-              <y>31</y>
+              <x>789</x>
+              <y>10</y>
             </widget>
             <widget typeId="org.csstudio.opibuilder.widgets.spinner" version="1.0.0">
               <actions hook="false" hook_all="false" />

@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.0.0.201601211726</boy_version>
+  <boy_version>5.1.0.201603301601</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -18,6 +18,7 @@
   <height>2080</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
+    <ALARM_ROOT>/CODAC_AlarmHandler</ALARM_ROOT>
   </macros>
   <name>Control Area Demonstration</name>
   <rules />
@@ -1404,7 +1405,7 @@ Select the tab Help to have more information.</text>
             <color name="IO Foreground" red="0" green="0" blue="0" />
           </foreground_color>
           <height>186</height>
-          <lock_children>true</lock_children>
+          <lock_children>false</lock_children>
           <macros>
             <include_parent_macros>true</include_parent_macros>
           </macros>
@@ -1550,7 +1551,7 @@ Select the tab Help to have more information.</text>
             <y>152</y>
           </widget>
         </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
           <actions hook="true" hook_all="true">
             <action type="WRITE_PV">
               <pv_name>loc://$(DID)_FACEPLATE("")</pv_name>
@@ -1560,47 +1561,6 @@ Select the tab Help to have more information.</text>
               <description>Load the component faceplate</description>
             </action>
           </actions>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>6</border_style>
-          <border_width>2</border_width>
-          <enabled>true</enabled>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-          </font>
-          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>75</height>
-          <image></image>
-          <name>VG-4100</name>
-          <push_action_index>0</push_action_index>
-          <pv_name></pv_name>
-          <pv_value />
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <style>1</style>
-          <text>PID</text>
-          <toggle_button>false</toggle_button>
-          <tooltip>Click to open the PID Faceplate</tooltip>
-          <visible>true</visible>
-          <widget_type>Action Button</widget_type>
-          <width>199</width>
-          <wuid>709c32be:14f44ddda13:-7e56</wuid>
-          <x>2026</x>
-          <y>332</y>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <auto_size>true</auto_size>
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
@@ -1609,16 +1569,20 @@ Select the tab Help to have more information.</text>
           </border_color>
           <border_style>0</border_style>
           <border_width>2</border_width>
-          <enabled>false</enabled>
+          <enabled>true</enabled>
+          <fc>false</fc>
           <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
           </font>
           <foreground_color>
-            <color name="IO Text Fg" red="0" green="0" blue="0" />
+            <color name="IO Foreground" red="0" green="0" blue="0" />
           </foreground_color>
-          <height>33</height>
-          <horizontal_alignment>0</horizontal_alignment>
-          <name>Component Tag</name>
+          <height>186</height>
+          <lock_children>false</lock_children>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+          </macros>
+          <name>VG-4100</name>
           <rules />
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -1627,17 +1591,103 @@ Select the tab Help to have more information.</text>
           </scale_options>
           <scripts />
           <show_scrollbar>false</show_scrollbar>
-          <text>VG-4100</text>
           <tooltip></tooltip>
           <transparent>true</transparent>
-          <vertical_alignment>1</vertical_alignment>
           <visible>true</visible>
-          <widget_type>Label</widget_type>
-          <width>112</width>
-          <wrap_words>true</wrap_words>
-          <wuid>3a1bdc54:15269923a2c:-61c2</wuid>
-          <x>2070</x>
-          <y>429</y>
+          <widget_type>Grouping Container</widget_type>
+          <width>199</width>
+          <wuid>15f5ffcd:1543e70edab:-38ef</wuid>
+          <x>2026</x>
+          <y>276</y>
+          <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+            <actions hook="true" hook_all="true">
+              <action type="WRITE_PV">
+                <pv_name>loc://$(DID)_FACEPLATE("")</pv_name>
+                <value>faceplates/PIDFaceplate.opi MODE=PI-5003 COMPONENT=VG-4100 HELP="Manual of the Valve"</value>
+                <timeout>10</timeout>
+                <confirm_message></confirm_message>
+                <description>Load the component faceplate</description>
+              </action>
+            </actions>
+            <border_alarm_sensitive>false</border_alarm_sensitive>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <border_style>6</border_style>
+            <border_width>2</border_width>
+            <enabled>true</enabled>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+            </font>
+            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+            <foreground_color>
+              <color name="IO Foreground" red="0" green="0" blue="0" />
+            </foreground_color>
+            <height>75</height>
+            <image></image>
+            <name>VG-4100</name>
+            <push_action_index>0</push_action_index>
+            <pv_name></pv_name>
+            <pv_value />
+            <rules />
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <scripts />
+            <style>1</style>
+            <text>PID</text>
+            <toggle_button>false</toggle_button>
+            <tooltip>Click to open the PID Faceplate</tooltip>
+            <visible>true</visible>
+            <widget_type>Action Button</widget_type>
+            <width>199</width>
+            <wuid>709c32be:14f44ddda13:-7e56</wuid>
+            <x>0</x>
+            <y>49</y>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+            <actions hook="false" hook_all="false" />
+            <auto_size>true</auto_size>
+            <background_color>
+              <color name="IO Background" red="235" green="235" blue="235" />
+            </background_color>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <border_style>0</border_style>
+            <border_width>2</border_width>
+            <enabled>false</enabled>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+            </font>
+            <foreground_color>
+              <color name="IO Text Fg" red="0" green="0" blue="0" />
+            </foreground_color>
+            <height>33</height>
+            <horizontal_alignment>0</horizontal_alignment>
+            <name>Component Tag</name>
+            <rules />
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <scripts />
+            <show_scrollbar>false</show_scrollbar>
+            <text>VG-4100</text>
+            <tooltip></tooltip>
+            <transparent>true</transparent>
+            <vertical_alignment>1</vertical_alignment>
+            <visible>true</visible>
+            <widget_type>Label</widget_type>
+            <width>112</width>
+            <wrap_words>true</wrap_words>
+            <wuid>3a1bdc54:15269923a2c:-61c2</wuid>
+            <x>44</x>
+            <y>152</y>
+          </widget>
         </widget>
       </widget>
     </widget>
@@ -1663,7 +1713,6 @@ Select the tab Help to have more information.</text>
       <lock_children>false</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
-        <ALARM_ROOT></ALARM_ROOT>
       </macros>
       <name>ACTIVE ALARM BUTTONS</name>
       <rules />

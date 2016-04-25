@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.0.0.201512210936</boy_version>
+  <boy_version>5.1.0.201603301601</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -18,6 +18,7 @@
   <height>2080</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
+    <ALARM_ROOT>/CODAC_AlarmHandler</ALARM_ROOT>
   </macros>
   <name>Navigation Pane Demonstration</name>
   <rules />
@@ -180,7 +181,6 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <show_scrollbar>false</show_scrollbar>
           <text>GLOBAL STATUSES</text>
           <tooltip>GLOBAL STATUSES</tooltip>
           <transparent>true</transparent>
@@ -302,7 +302,6 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <show_scrollbar>false</show_scrollbar>
           <text>NAVIGATION PANE DEMONSTRATION SCREEN</text>
           <tooltip>MIMIC TITLE</tooltip>
           <transparent>true</transparent>
@@ -384,7 +383,6 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <show_scrollbar>false</show_scrollbar>
           <text>UTC - TIME</text>
           <tooltip>UTC - TIME</tooltip>
           <transparent>true</transparent>
@@ -633,12 +631,10 @@
                 <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <off_label>Not healthy</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <on_label>Healthy</on_label>
-              <on_state></on_state>
               <pv_name>sim://const(1)</pv_name>
               <pv_value />
               <rules />
@@ -775,12 +771,10 @@ $(pv_value)</tooltip>
                 <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <off_label>Not healthy</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <on_label>Healthy</on_label>
-              <on_state></on_state>
               <pv_name>sim://const(0)</pv_name>
               <pv_value />
               <rules />
@@ -917,12 +911,10 @@ $(pv_value)</tooltip>
                 <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <off_label>Not healthy</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <on_label>Healthy</on_label>
-              <on_state></on_state>
               <pv_name>sim://const(1)</pv_name>
               <pv_value />
               <rules />
@@ -1059,12 +1051,10 @@ $(pv_value)</tooltip>
                 <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
               </off_color>
               <off_label>Not healthy</off_label>
-              <off_state></off_state>
               <on_color>
                 <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
               </on_color>
               <on_label>Healthy</on_label>
-              <on_state></on_state>
               <pv_name>sim://const(0)</pv_name>
               <pv_value />
               <rules />
@@ -1580,7 +1570,6 @@ Use the navigation pane buttons to continue the demonstration.</text>
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
-        <show_scrollbar>false</show_scrollbar>
         <text></text>
         <tooltip>CONTROL AREA - FACEPLATES</tooltip>
         <transparent>true</transparent>
