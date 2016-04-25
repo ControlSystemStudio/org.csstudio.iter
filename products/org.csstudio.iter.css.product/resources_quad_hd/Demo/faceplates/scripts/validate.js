@@ -42,7 +42,7 @@ function validate() {
 	var valid = OK;
 	
 	// Check bad input
-	if (!request) {
+	if (isNaN(request)) {
 			valid = BADINPUT;	
 	} else {
 		// Check out of range input

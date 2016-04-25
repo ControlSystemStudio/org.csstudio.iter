@@ -18,7 +18,7 @@ var
 	request_pv  = pvs[0],
 	init_value  = PVUtil.getDouble(pvs[1]),
 	high        = PVUtil.getDouble(pvs[2]),
-    low         = PVUtil.getDouble(pvs[3]);
+    low         = PVUtil.getDouble(pvs[3]),
 	flag        = pvs[4],
 	OK          = 1,
 	UNCHANGED	= 2,
@@ -42,8 +42,8 @@ flag.setValue(valid);
 function validate() {
 	var valid = OK;
 	
-	// Check bad input
-	if (!request) {
+	// Check bad input - Not a number (NaN)
+	if (isNaN(request)) {
 			valid = BADINPUT;	
 	} else {
 		// Check out of range input
