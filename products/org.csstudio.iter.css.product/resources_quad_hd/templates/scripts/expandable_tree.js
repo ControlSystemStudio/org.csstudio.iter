@@ -51,7 +51,7 @@ function buildCBSMap(root, indent){
 		linkingContainer.setPropertyValue("opi_file", "CBSMapElt.opi");
 		linkingContainer.setPropertyValue("border_style", 0);
 
-		linkingContainer.setPropertyValue("height", resolution_4k ? 60 : 35);
+		linkingContainer.setPropertyValue("height", resolution_4k ? 92 : 46);
 		linkingContainer.setPropertyValue("width", resolution_4k ? 3200 - indent * INDENT_WIDTH : 1600 - indent * INDENT_WIDTH);
 	    
 	    // no indent needed for root 
@@ -65,7 +65,7 @@ function buildCBSMap(root, indent){
 			linkingContainer.setPropertyValue("background_color", "IO Background");
 	    }
 		
-		linkingContainer.setPropertyValue("tooltip", "Click directly on the OPIs map buttons to open the related screen");
+		linkingContainer.setPropertyValue("tooltip", "Click on the OPIs map menu button and select which OPI to open");
 		
 	    // adding macros CBS and OPI_FILE to the container
 		linkingContainer.addMacro("CBS", elt.getAttributeValue("name"));
@@ -78,10 +78,10 @@ function buildCBSMap(root, indent){
 	    widget.addChildToBottom(linkingContainer);
 	
 		// setting the CBS label properties
-	 	var button = widget.getWidget(elt.getAttributeValue("name"));	
- 		button.setPropertyValue("enabled", elt.getAttributeValue("enabled"));
+	 	var button = widget.getWidget(elt.getAttributeValue("name"));
+	 	button.setPropertyValue("enabled", elt.getAttributeValue("enabled"));
 	 	button.setPropertyValue("tooltip", elt.getAttributeValue("description") + " ($(number_alarms) alarm(s))");
-    
+
 		buildCBSMap(elt, indent+1);
  	}
 }
