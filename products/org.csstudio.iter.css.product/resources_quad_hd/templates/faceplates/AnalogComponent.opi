@@ -1836,12 +1836,12 @@
             </scale_options>
             <scripts>
               <path pathString="scripts/init.js" checkConnect="true" sfe="false" seoe="false">
-                <pv trig="false">loc://_$(COMPONENT)_MPosR(-1)</pv>
+                <pv trig="false">$(pv_name)</pv>
                 <pv trig="true">loc://$(COMPONENT)_MPosRSt(52)</pv>
                 <pv trig="true">loc://$(COMPONENT)_MPosRV(0)</pv>
               </path>
               <path pathString="scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
-                <pv trig="true">loc://_$(COMPONENT)_MPosR(-1)</pv>
+                <pv trig="true">$(pv_name)</pv>
                 <pv trig="false">loc://$(COMPONENT)_MPosRSt(52)</pv>
                 <pv trig="false">loc://$(COMPONENT)_PMaxRange(150.0)</pv>
                 <pv trig="false">loc://$(COMPONENT)_PMinRange(0.0)</pv>
@@ -2284,8 +2284,8 @@
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>174</height>
-        <lock_children>true</lock_children>
+        <height>225</height>
+        <lock_children>false</lock_children>
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
@@ -2364,7 +2364,7 @@
             <border_style>1</border_style>
             <border_width>1</border_width>
             <confirm_focus_lost>true</confirm_focus_lost>
-            <confirm_message>Are you sure you want to change this?</confirm_message>
+            <confirm_message></confirm_message>
             <enabled>true</enabled>
             <font>
               <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
@@ -2395,17 +2395,64 @@
             <password_input>false</password_input>
             <precision>0</precision>
             <precision_from_pv>true</precision_from_pv>
-            <pv_name>loc://$(COMPONENT)_PLiOn(100)</pv_name>
+            <pv_name>loc://$(COMPONENT)_PLiOnR(-1)</pv_name>
             <pv_value />
             <read_only>false</read_only>
             <rotation_angle>0.0</rotation_angle>
-            <rules />
+            <rules>
+              <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
+                  <value>
+                    <color name="IO Valid Entry" red="0" green="0" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pv2&lt;=0">
+                  <value>
+                    <color name="IO Invalid Entry" red="250" green="12" blue="14" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+                <pv trig="true">loc://$(COMPONENT)_PLiOn(100)</pv>
+                <pv trig="true">loc://$(COMPONENT)_PLiOnRSt(0)</pv>
+              </rule>
+              <rule name="InfoErrorTooltip" prop_id="tooltip" out_exp="false">
+                <exp bool_exp="pv0==1">
+                  <value>New position $(pv_value) is valid and ready to be submitted</value>
+                </exp>
+                <exp bool_exp="pv0==-1">
+                  <value>New position $(pv_value) is invalid and cannot be converted to a value</value>
+                </exp>
+                <exp bool_exp="pv0==-2">
+                  <value>New position $(pv_value) is invalid as greater than the high limit</value>
+                </exp>
+                <exp bool_exp="pv0==-3">
+                  <value>New position $(pv_value) is invalid as lower than the low limit</value>
+                </exp>
+                <exp bool_exp="pv0==2">
+                  <value>New position $(pv_value) unchanged</value>
+                </exp>
+                <pv trig="true">loc://$(COMPONENT)_PLiOnRSt(0)</pv>
+              </rule>
+            </rules>
             <scale_options>
               <width_scalable>false</width_scalable>
               <height_scalable>false</height_scalable>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
-            <scripts />
+            <scripts>
+              <path pathString="scripts/init.js" checkConnect="true" sfe="false" seoe="false">
+                <pv trig="false">$(pv_name)</pv>
+                <pv trig="true">loc://$(COMPONENT)_PLiOn(100)</pv>
+                <pv trig="true">loc://$(COMPONENT)_PliOnRSt(0)</pv>
+              </path>
+              <path pathString="scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
+                <pv trig="true">$(pv_name)</pv>
+                <pv trig="false">loc://$(COMPONENT)_PLiOn(100)</pv>
+                <pv trig="false">loc://$(COMPONENT)_PMaxRange(150.0)</pv>
+                <pv trig="false">loc://$(COMPONENT)_PMinRange(0.0)</pv>
+                <pv trig="false">loc://$(COMPONENT)_PLiOnRSt(0)</pv>
+              </path>
+            </scripts>
             <selector_type>0</selector_type>
             <show_h_scroll>false</show_h_scroll>
             <show_native_border>false</show_native_border>
@@ -2413,8 +2460,7 @@
             <show_v_scroll>false</show_v_scroll>
             <style>1</style>
             <text>######</text>
-            <tooltip>PLiOn	FLOAT32	Parameter Limit On
-	Limit above which the actuator status is "On". Must be between Range Min and Range Max.</tooltip>
+            <tooltip>PLiOn - FLOAT32 Parameter Limit On - Limit above which the actuator status is On. Must be between Range Min and Range Max</tooltip>
             <transparent>false</transparent>
             <visible>true</visible>
             <widget_type>Text Input</widget_type>
@@ -2482,7 +2528,7 @@
             <border_style>1</border_style>
             <border_width>1</border_width>
             <confirm_focus_lost>true</confirm_focus_lost>
-            <confirm_message>Are you sure you want to change this?</confirm_message>
+            <confirm_message></confirm_message>
             <enabled>true</enabled>
             <font>
               <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
@@ -2513,17 +2559,64 @@
             <password_input>false</password_input>
             <precision>0</precision>
             <precision_from_pv>true</precision_from_pv>
-            <pv_name>loc://$(COMPONENT)_PLiOff(50)</pv_name>
+            <pv_name>loc://$(COMPONENT)_PLiOffR(-1)</pv_name>
             <pv_value />
             <read_only>false</read_only>
             <rotation_angle>0.0</rotation_angle>
-            <rules />
+            <rules>
+              <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
+                <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
+                  <value>
+                    <color name="IO Valid Entry" red="0" green="0" blue="255" />
+                  </value>
+                </exp>
+                <exp bool_exp="pv2&lt;=0">
+                  <value>
+                    <color name="IO Invalid Entry" red="250" green="12" blue="14" />
+                  </value>
+                </exp>
+                <pv trig="true">$(pv_name)</pv>
+                <pv trig="true">loc://$(COMPONENT)_PLiOn(100)</pv>
+                <pv trig="true">loc://$(COMPONENT)_PLiOnRSt(0)</pv>
+              </rule>
+              <rule name="InfoErrorTooltip" prop_id="tooltip" out_exp="false">
+                <exp bool_exp="pv0==1">
+                  <value>New position $(pv_value) is valid and ready to be submitted</value>
+                </exp>
+                <exp bool_exp="pv0==-1">
+                  <value>New position $(pv_value) is invalid and cannot be converted to a value</value>
+                </exp>
+                <exp bool_exp="pv0==-2">
+                  <value>New position $(pv_value) is invalid as greater than the high limit</value>
+                </exp>
+                <exp bool_exp="pv0==-3">
+                  <value>New position $(pv_value) is invalid as lower than the low limit</value>
+                </exp>
+                <exp bool_exp="pv0==2">
+                  <value>New position $(pv_value) unchanged</value>
+                </exp>
+                <pv trig="true">loc://$(COMPONENT)_PLiOffRSt(0)</pv>
+              </rule>
+            </rules>
             <scale_options>
               <width_scalable>false</width_scalable>
               <height_scalable>false</height_scalable>
               <keep_wh_ratio>false</keep_wh_ratio>
             </scale_options>
-            <scripts />
+            <scripts>
+              <path pathString="scripts/init.js" checkConnect="true" sfe="false" seoe="false">
+                <pv trig="false">$(pv_name)</pv>
+                <pv trig="true">loc://$(COMPONENT)_PLiOff(50)</pv>
+                <pv trig="true">loc://$(COMPONENT)_PliOffRSt(0)</pv>
+              </path>
+              <path pathString="scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
+                <pv trig="true">$(pv_name)</pv>
+                <pv trig="false">loc://$(COMPONENT)_PLiOff(50)</pv>
+                <pv trig="false">loc://$(COMPONENT)_PMaxRange(150.0)</pv>
+                <pv trig="false">loc://$(COMPONENT)_PMinRange(0.0)</pv>
+                <pv trig="false">loc://$(COMPONENT)_PLiOffRSt(0)</pv>
+              </path>
+            </scripts>
             <selector_type>0</selector_type>
             <show_h_scroll>false</show_h_scroll>
             <show_native_border>false</show_native_border>
@@ -2531,8 +2624,7 @@
             <show_v_scroll>false</show_v_scroll>
             <style>1</style>
             <text>######</text>
-            <tooltip>PLiOff	FLOAT32	Parameter Limit Off
-	Limit below which the actuator status is "Off". Must be between Range Min and Range Max.</tooltip>
+            <tooltip>PLiOff - FLOAT32 Parameter Limit Off - Limit below which the actuator status is Off. Must be between Range Min and Range Max</tooltip>
             <transparent>false</transparent>
             <visible>true</visible>
             <widget_type>Text Input</widget_type>
@@ -2541,6 +2633,66 @@
             <x>0</x>
             <y>0</y>
           </widget>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+          <actions hook="false" hook_all="false">
+            <action type="WRITE_PV">
+              <pv_name>loc://$(COMPONENT)_submit2(0)</pv_name>
+              <value>1</value>
+              <timeout>10</timeout>
+              <confirm_message></confirm_message>
+              <description></description>
+            </action>
+          </actions>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>6</border_style>
+          <border_width>2</border_width>
+          <enabled>true</enabled>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <foreground_color>
+            <color name="IO Foreground" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>50</height>
+          <image>../pictures/Start_16.png</image>
+          <name>Submit</name>
+          <push_action_index>0</push_action_index>
+          <pv_name>loc://$(COMPONENT)_submit2(0)</pv_name>
+          <pv_value />
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts>
+            <path pathString="scripts/submit.js" checkConnect="true" sfe="true" seoe="false">
+              <pv trig="true">$(pv_name)</pv>
+              <pv trig="false">loc://$(COMPONENT)_PLiOnR(-1)</pv>
+              <pv trig="false">loc://$(COMPONENT)_PLiOn(100)</pv>
+              <pv trig="false">loc://$(COMPONENT)_PLiOnBak(0)</pv>
+              <pv trig="false">loc://$(COMPONENT)_PLiOnRSt(0)</pv>
+              <pv trig="false">loc://$(COMPONENT)_PLiOffR(-1)</pv>
+              <pv trig="false">loc://$(COMPONENT)_PLiOff(50)</pv>
+              <pv trig="false">loc://$(COMPONENT)_PLiOffBak(0)</pv>
+              <pv trig="false">loc://$(COMPONENT)_PLiOffRSt(0)</pv>
+            </path>
+          </scripts>
+          <style>1</style>
+          <text>Submit</text>
+          <toggle_button>false</toggle_button>
+          <tooltip>$(name)</tooltip>
+          <visible>true</visible>
+          <widget_type>Action Button</widget_type>
+          <width>200</width>
+          <wuid>5e14e8a:15456632a8b:-4b5</wuid>
+          <x>118</x>
+          <y>98</y>
         </widget>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -2562,7 +2714,7 @@
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <height>160</height>
-        <lock_children>true</lock_children>
+        <lock_children>false</lock_children>
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
@@ -2582,7 +2734,7 @@
         <width>555</width>
         <wuid>15f5ffcd:1543e70edab:-76ac</wuid>
         <x>5</x>
-        <y>456</y>
+        <y>513</y>
         <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
           <actions hook="false" hook_all="false">
             <action type="WRITE_PV">
@@ -2881,7 +3033,7 @@ $(pv_value)</tooltip>
         <width>555</width>
         <wuid>15f5ffcd:1543e70edab:-76a7</wuid>
         <x>5</x>
-        <y>616</y>
+        <y>673</y>
         <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
           <actions hook="false" hook_all="true">
             <action type="WRITE_PV">
