@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.0.0.201601211726</boy_version>
+  <boy_version>5.1.0.201603301601</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -484,8 +484,8 @@
         <border_color>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
-        <border_style>5</border_style>
-        <border_width>1</border_width>
+        <border_style>0</border_style>
+        <border_width>2</border_width>
         <enabled>true</enabled>
         <fc>false</fc>
         <font>
@@ -494,13 +494,20 @@
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>102</height>
-        <lock_children>false</lock_children>
+        <height>1760</height>
+        <lock_children>true</lock_children>
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
-        <name>PLANT SYSTEM AUXILIARIES STATUSES</name>
-        <rules />
+        <name>Information Layer</name>
+        <rules>
+          <rule name="MakeLayerVisible" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0==0">
+              <value>false</value>
+            </exp>
+            <pv trig="true">loc://$(DID)_INFO_SHOW(0)</pv>
+          </rule>
+        </rules>
         <scale_options>
           <width_scalable>false</width_scalable>
           <height_scalable>false</height_scalable>
@@ -512,611 +519,10 @@
         <transparent>true</transparent>
         <visible>true</visible>
         <widget_type>Grouping Container</widget_type>
-        <width>1142</width>
-        <wuid>333eae9e:14951f153e9:-6053</wuid>
+        <width>3236</width>
+        <wuid>107a734f:149e1662949:-533f</wuid>
         <x>0</x>
         <y>0</y>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>1</border_width>
-          <enabled>true</enabled>
-          <fc>false</fc>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>98</height>
-          <lock_children>true</lock_children>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <name>Auxiliaries</name>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <tooltip>Plant System Auxiliaries Statuses</tooltip>
-          <transparent>true</transparent>
-          <visible>true</visible>
-          <widget_type>Grouping Container</widget_type>
-          <width>1138</width>
-          <wuid>449e4f94:1499a5cd010:-2b78</wuid>
-          <x>0</x>
-          <y>0</y>
-          <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>0</border_style>
-            <border_width>1</border_width>
-            <enabled>true</enabled>
-            <fc>false</fc>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-            </font>
-            <foreground_color>
-              <color name="IO Foreground" red="0" green="0" blue="0" />
-            </foreground_color>
-            <height>41</height>
-            <lock_children>true</lock_children>
-            <macros>
-              <include_parent_macros>true</include_parent_macros>
-            </macros>
-            <name>Auxiliary 1 Status</name>
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <show_scrollbar>false</show_scrollbar>
-            <tooltip>Compressed Air</tooltip>
-            <transparent>true</transparent>
-            <visible>true</visible>
-            <widget_type>Grouping Container</widget_type>
-            <width>285</width>
-            <wuid>449e4f94:1499a5cd010:-2b77</wuid>
-            <x>5</x>
-            <y>5</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bit>0</bit>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <bulb_border>3</bulb_border>
-              <bulb_border_color>
-                <color red="150" green="150" blue="150" />
-              </bulb_border_color>
-              <data_type>0</data_type>
-              <effect_3d>true</effect_3d>
-              <enabled>true</enabled>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>40</height>
-              <name>Auxiliary 1 Status</name>
-              <off_color>
-                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-              </off_color>
-              <off_label>Not healthy</off_label>
-              <on_color>
-                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-              </on_color>
-              <on_label>Healthy</on_label>
-              <pv_name>sim://const(1)</pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <square_led>true</square_led>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <visible>true</visible>
-              <widget_type>LED</widget_type>
-              <width>40</width>
-              <wuid>449e4f94:1499a5cd010:-2b76</wuid>
-              <x>0</x>
-              <y>0</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <auto_size>true</auto_size>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>false</enabled>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
-              </font>
-              <foreground_color>
-                <color name="IO Text Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>33</height>
-              <horizontal_alignment>0</horizontal_alignment>
-              <name>Auxiliary 1 Status</name>
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_scrollbar>false</show_scrollbar>
-              <text>Compressed Air</text>
-              <tooltip></tooltip>
-              <transparent>true</transparent>
-              <vertical_alignment>1</vertical_alignment>
-              <visible>true</visible>
-              <widget_type>Label</widget_type>
-              <width>224</width>
-              <wrap_words>true</wrap_words>
-              <wuid>449e4f94:1499a5cd010:-2b75</wuid>
-              <x>60</x>
-              <y>5</y>
-            </widget>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>0</border_style>
-            <border_width>1</border_width>
-            <enabled>true</enabled>
-            <fc>false</fc>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-            </font>
-            <foreground_color>
-              <color name="IO Foreground" red="0" green="0" blue="0" />
-            </foreground_color>
-            <height>41</height>
-            <lock_children>true</lock_children>
-            <macros>
-              <include_parent_macros>true</include_parent_macros>
-            </macros>
-            <name>Auxiliary 2 Status</name>
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <show_scrollbar>false</show_scrollbar>
-            <tooltip>Demineralized Water</tooltip>
-            <transparent>true</transparent>
-            <visible>true</visible>
-            <widget_type>Grouping Container</widget_type>
-            <width>365</width>
-            <wuid>449e4f94:1499a5cd010:-2b74</wuid>
-            <x>5</x>
-            <y>50</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bit>0</bit>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <bulb_border>3</bulb_border>
-              <bulb_border_color>
-                <color red="150" green="150" blue="150" />
-              </bulb_border_color>
-              <data_type>0</data_type>
-              <effect_3d>true</effect_3d>
-              <enabled>true</enabled>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>40</height>
-              <name>Auxiliary 2 Status</name>
-              <off_color>
-                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-              </off_color>
-              <off_label>Not healthy</off_label>
-              <on_color>
-                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-              </on_color>
-              <on_label>Healthy</on_label>
-              <pv_name>sim://const(0)</pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <square_led>true</square_led>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <visible>true</visible>
-              <widget_type>LED</widget_type>
-              <width>40</width>
-              <wuid>449e4f94:1499a5cd010:-2b73</wuid>
-              <x>0</x>
-              <y>0</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <auto_size>true</auto_size>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>false</enabled>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
-              </font>
-              <foreground_color>
-                <color name="IO Text Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>33</height>
-              <horizontal_alignment>0</horizontal_alignment>
-              <name>Auxiliary 2 Status</name>
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_scrollbar>false</show_scrollbar>
-              <text>Demineralized Water</text>
-              <tooltip></tooltip>
-              <transparent>true</transparent>
-              <vertical_alignment>1</vertical_alignment>
-              <visible>true</visible>
-              <widget_type>Label</widget_type>
-              <width>304</width>
-              <wrap_words>true</wrap_words>
-              <wuid>449e4f94:1499a5cd010:-2b72</wuid>
-              <x>60</x>
-              <y>5</y>
-            </widget>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>0</border_style>
-            <border_width>1</border_width>
-            <enabled>true</enabled>
-            <fc>false</fc>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-            </font>
-            <foreground_color>
-              <color name="IO Foreground" red="0" green="0" blue="0" />
-            </foreground_color>
-            <height>41</height>
-            <lock_children>true</lock_children>
-            <macros>
-              <include_parent_macros>true</include_parent_macros>
-            </macros>
-            <name>Auxiliary 3 Status</name>
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <show_scrollbar>false</show_scrollbar>
-            <tooltip>Helium Gas</tooltip>
-            <transparent>true</transparent>
-            <visible>true</visible>
-            <widget_type>Grouping Container</widget_type>
-            <width>221</width>
-            <wuid>449e4f94:1499a5cd010:-2b71</wuid>
-            <x>400</x>
-            <y>5</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bit>0</bit>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <bulb_border>3</bulb_border>
-              <bulb_border_color>
-                <color red="150" green="150" blue="150" />
-              </bulb_border_color>
-              <data_type>0</data_type>
-              <effect_3d>true</effect_3d>
-              <enabled>true</enabled>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>40</height>
-              <name>Auxiliary 3 Status</name>
-              <off_color>
-                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-              </off_color>
-              <off_label>Not healthy</off_label>
-              <on_color>
-                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-              </on_color>
-              <on_label>Healthy</on_label>
-              <pv_name>sim://const(1)</pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <square_led>true</square_led>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <visible>true</visible>
-              <widget_type>LED</widget_type>
-              <width>40</width>
-              <wuid>449e4f94:1499a5cd010:-2b70</wuid>
-              <x>0</x>
-              <y>0</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <auto_size>true</auto_size>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>false</enabled>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
-              </font>
-              <foreground_color>
-                <color name="IO Text Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>33</height>
-              <horizontal_alignment>0</horizontal_alignment>
-              <name>Auxiliary 3 Status</name>
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_scrollbar>false</show_scrollbar>
-              <text>Helium Gas</text>
-              <tooltip></tooltip>
-              <transparent>true</transparent>
-              <vertical_alignment>1</vertical_alignment>
-              <visible>true</visible>
-              <widget_type>Label</widget_type>
-              <width>160</width>
-              <wrap_words>true</wrap_words>
-              <wuid>449e4f94:1499a5cd010:-2b6f</wuid>
-              <x>60</x>
-              <y>5</y>
-            </widget>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>0</border_style>
-            <border_width>1</border_width>
-            <enabled>true</enabled>
-            <fc>false</fc>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-            </font>
-            <foreground_color>
-              <color name="IO Foreground" red="0" green="0" blue="0" />
-            </foreground_color>
-            <height>41</height>
-            <lock_children>true</lock_children>
-            <macros>
-              <include_parent_macros>true</include_parent_macros>
-            </macros>
-            <name>Auxiliary 4 Status</name>
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <show_scrollbar>false</show_scrollbar>
-            <tooltip>Nitrogen Gas</tooltip>
-            <transparent>true</transparent>
-            <visible>true</visible>
-            <widget_type>Grouping Container</widget_type>
-            <width>253</width>
-            <wuid>449e4f94:1499a5cd010:-2b6e</wuid>
-            <x>400</x>
-            <y>50</y>
-            <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <alarm_pulsing>false</alarm_pulsing>
-              <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <bit>0</bit>
-              <border_alarm_sensitive>false</border_alarm_sensitive>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <bulb_border>3</bulb_border>
-              <bulb_border_color>
-                <color red="150" green="150" blue="150" />
-              </bulb_border_color>
-              <data_type>0</data_type>
-              <effect_3d>true</effect_3d>
-              <enabled>true</enabled>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-              </font>
-              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-              <foreground_color>
-                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>40</height>
-              <name>Auxiliary 4 Status</name>
-              <off_color>
-                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
-              </off_color>
-              <off_label>Not healthy</off_label>
-              <on_color>
-                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
-              </on_color>
-              <on_label>Healthy</on_label>
-              <pv_name>sim://const(0)</pv_name>
-              <pv_value />
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_boolean_label>false</show_boolean_label>
-              <square_led>true</square_led>
-              <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-              <visible>true</visible>
-              <widget_type>LED</widget_type>
-              <width>40</width>
-              <wuid>449e4f94:1499a5cd010:-2b6d</wuid>
-              <x>0</x>
-              <y>0</y>
-            </widget>
-            <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-              <actions hook="false" hook_all="false" />
-              <auto_size>true</auto_size>
-              <background_color>
-                <color name="IO Background" red="235" green="235" blue="235" />
-              </background_color>
-              <border_color>
-                <color name="IO Border" red="0" green="0" blue="0" />
-              </border_color>
-              <border_style>0</border_style>
-              <border_width>2</border_width>
-              <enabled>false</enabled>
-              <font>
-                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Normal</opifont.name>
-              </font>
-              <foreground_color>
-                <color name="IO Text Fg" red="0" green="0" blue="0" />
-              </foreground_color>
-              <height>33</height>
-              <horizontal_alignment>0</horizontal_alignment>
-              <name>Auxiliary 4 Status</name>
-              <rules />
-              <scale_options>
-                <width_scalable>false</width_scalable>
-                <height_scalable>false</height_scalable>
-                <keep_wh_ratio>false</keep_wh_ratio>
-              </scale_options>
-              <scripts />
-              <show_scrollbar>false</show_scrollbar>
-              <text>Nitrogen Gas</text>
-              <tooltip></tooltip>
-              <transparent>true</transparent>
-              <vertical_alignment>1</vertical_alignment>
-              <visible>true</visible>
-              <widget_type>Label</widget_type>
-              <width>192</width>
-              <wrap_words>true</wrap_words>
-              <wuid>449e4f94:1499a5cd010:-2b6c</wuid>
-              <x>60</x>
-              <y>5</y>
-            </widget>
-          </widget>
-        </widget>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
         <actions hook="false" hook_all="false" />
@@ -1127,7 +533,7 @@ $(pv_value)</tooltip>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <border_style>0</border_style>
-        <border_width>1</border_width>
+        <border_width>2</border_width>
         <enabled>true</enabled>
         <fc>false</fc>
         <font>
@@ -1141,7 +547,7 @@ $(pv_value)</tooltip>
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
-        <name>MAIN DISPLAY AREA - MIMIC</name>
+        <name>Priority Layer</name>
         <rules />
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -1155,11 +561,53 @@ $(pv_value)</tooltip>
         <visible>true</visible>
         <widget_type>Grouping Container</widget_type>
         <width>3236</width>
-        <wuid>-57352fd0:149859b9257:-6f78</wuid>
+        <wuid>107a734f:149e1662949:-533e</wuid>
         <x>0</x>
         <y>0</y>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+        <actions hook="false" hook_all="false" />
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <border_style>0</border_style>
+        <border_width>2</border_width>
+        <enabled>true</enabled>
+        <fc>false</fc>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+        </font>
+        <foreground_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </foreground_color>
+        <height>1760</height>
+        <lock_children>false</lock_children>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <name>Static Data Layer</name>
+        <rules />
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts />
+        <show_scrollbar>false</show_scrollbar>
+        <tooltip></tooltip>
+        <transparent>true</transparent>
+        <visible>true</visible>
+        <widget_type>Grouping Container</widget_type>
+        <width>3236</width>
+        <wuid>107a734f:149e1662949:-5341</wuid>
+        <x>0</x>
+        <y>0</y>
+        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
           <actions hook="false" hook_all="false" />
+          <auto_size>false</auto_size>
           <background_color>
             <color name="IO Background" red="235" green="235" blue="235" />
           </background_color>
@@ -1168,68 +616,16 @@ $(pv_value)</tooltip>
           </border_color>
           <border_style>0</border_style>
           <border_width>2</border_width>
-          <enabled>true</enabled>
-          <fc>false</fc>
+          <enabled>false</enabled>
           <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+            <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
           </font>
           <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
+            <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
-          <height>1760</height>
-          <lock_children>true</lock_children>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <name>Information Layer</name>
-          <rules>
-            <rule name="MakeLayerVisible" prop_id="visible" out_exp="false">
-              <exp bool_exp="pv0==0">
-                <value>false</value>
-              </exp>
-              <pv trig="true">loc://$(DID)_INFO_SHOW(0)</pv>
-            </rule>
-          </rules>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <tooltip></tooltip>
-          <transparent>true</transparent>
-          <visible>true</visible>
-          <widget_type>Grouping Container</widget_type>
-          <width>3236</width>
-          <wuid>107a734f:149e1662949:-533f</wuid>
-          <x>0</x>
-          <y>0</y>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>true</enabled>
-          <fc>false</fc>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>1760</height>
-          <lock_children>false</lock_children>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <name>Priority Layer</name>
+          <height>250</height>
+          <horizontal_alignment>0</horizontal_alignment>
+          <name>Comment1</name>
           <rules />
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -1238,192 +634,113 @@ $(pv_value)</tooltip>
           </scale_options>
           <scripts />
           <show_scrollbar>false</show_scrollbar>
-          <tooltip></tooltip>
-          <transparent>true</transparent>
-          <visible>true</visible>
-          <widget_type>Grouping Container</widget_type>
-          <width>3236</width>
-          <wuid>107a734f:149e1662949:-533e</wuid>
-          <x>0</x>
-          <y>0</y>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>true</enabled>
-          <fc>false</fc>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>1760</height>
-          <lock_children>false</lock_children>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <name>Static Data Layer</name>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <tooltip></tooltip>
-          <transparent>true</transparent>
-          <visible>true</visible>
-          <widget_type>Grouping Container</widget_type>
-          <width>3236</width>
-          <wuid>107a734f:149e1662949:-5341</wuid>
-          <x>0</x>
-          <y>0</y>
-          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <auto_size>false</auto_size>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>0</border_style>
-            <border_width>2</border_width>
-            <enabled>false</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
-            </font>
-            <foreground_color>
-              <color name="IO Text Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <height>250</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <name>Comment1</name>
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <show_scrollbar>false</show_scrollbar>
-            <text>Additional information regarding the status of the component, the data quality, the alarm severity and the control mode can be displayed around the symbol according to the following structure.
+          <text>Additional information regarding the status of the component, the data quality, the alarm severity and the control mode can be displayed around the symbol according to the following structure.
 
 Please click on the "Show Info" check box on the top right of the mimic area to display the " Information" layer of the super object, which is hidden by default.</text>
-            <tooltip>MAIN DISPLAY AREA - MIMIC</tooltip>
-            <transparent>true</transparent>
-            <vertical_alignment>1</vertical_alignment>
-            <visible>true</visible>
-            <widget_type>Label</widget_type>
-            <width>3235</width>
-            <wrap_words>true</wrap_words>
-            <wuid>107a734f:149e1662949:-532a</wuid>
-            <x>0</x>
-            <y>500</y>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <auto_size>false</auto_size>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>0</border_style>
-            <border_width>2</border_width>
-            <enabled>false</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
-            </font>
-            <foreground_color>
-              <color name="IO Text Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <height>350</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <name>Comment2</name>
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <show_scrollbar>false</show_scrollbar>
-            <text>The TAG name of the component shall be placed above the component symbol, while numerical indicators, such as the measurements and local statuses, are located below the symbol. Numerical indicators shall always be displayed with relevant unit.
+          <tooltip>MAIN DISPLAY AREA - MIMIC</tooltip>
+          <transparent>true</transparent>
+          <vertical_alignment>1</vertical_alignment>
+          <visible>true</visible>
+          <widget_type>Label</widget_type>
+          <width>3235</width>
+          <wrap_words>true</wrap_words>
+          <wuid>107a734f:149e1662949:-532a</wuid>
+          <x>0</x>
+          <y>500</y>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+          <actions hook="false" hook_all="false" />
+          <auto_size>false</auto_size>
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>0</border_style>
+          <border_width>2</border_width>
+          <enabled>false</enabled>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+          </font>
+          <foreground_color>
+            <color name="IO Text Fg" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>350</height>
+          <horizontal_alignment>0</horizontal_alignment>
+          <name>Comment2</name>
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts />
+          <show_scrollbar>false</show_scrollbar>
+          <text>The TAG name of the component shall be placed above the component symbol, while numerical indicators, such as the measurements and local statuses, are located below the symbol. Numerical indicators shall always be displayed with relevant unit.
 
 The top left corner is allocated for reporting additional information about the data quality or source.
 
 The top right corner is allocated for reporting alarm severity or the presence of interlocks.
 
 The bottom right corner is allocated for reporting the current control mode for the device, where appropriate.</text>
-            <tooltip>MAIN DISPLAY AREA - MIMIC</tooltip>
-            <transparent>true</transparent>
-            <vertical_alignment>1</vertical_alignment>
-            <visible>true</visible>
-            <widget_type>Label</widget_type>
-            <width>3235</width>
-            <wrap_words>true</wrap_words>
-            <wuid>-29204d8b:152781f0007:-1bd4</wuid>
-            <x>0</x>
-            <y>1050</y>
-          </widget>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.checkbox" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <alarm_pulsing>false</alarm_pulsing>
-          <auto_size>true</auto_size>
-          <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <bit>0</bit>
-          <border_alarm_sensitive>false</border_alarm_sensitive>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>true</enabled>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-          </font>
-          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-          <foreground_color>
-            <color name="IO Text Fg" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>45</height>
-          <label>Show Info</label>
-          <name>Show/Hide Tickbox</name>
-          <pv_name>loc://$(DID)_INFO_SHOW(0)</pv_name>
-          <pv_value />
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <selected_color>
-            <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
-          </selected_color>
-          <tooltip>Show/Hide the Information Layer</tooltip>
+          <tooltip>MAIN DISPLAY AREA - MIMIC</tooltip>
+          <transparent>true</transparent>
+          <vertical_alignment>1</vertical_alignment>
           <visible>true</visible>
-          <widget_type>Check Box</widget_type>
-          <width>200</width>
-          <wuid>-29204d8b:152781f0007:-2691</wuid>
-          <x>3000</x>
-          <y>0</y>
+          <widget_type>Label</widget_type>
+          <width>3235</width>
+          <wrap_words>true</wrap_words>
+          <wuid>-29204d8b:152781f0007:-1bd4</wuid>
+          <x>0</x>
+          <y>1050</y>
         </widget>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.checkbox" version="1.0.0">
+        <actions hook="false" hook_all="false" />
+        <alarm_pulsing>false</alarm_pulsing>
+        <auto_size>true</auto_size>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <bit>0</bit>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <border_style>0</border_style>
+        <border_width>2</border_width>
+        <enabled>true</enabled>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        </font>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <foreground_color>
+          <color name="IO Text Fg" red="0" green="0" blue="0" />
+        </foreground_color>
+        <height>45</height>
+        <label>Show Info</label>
+        <name>Show/Hide Tickbox</name>
+        <pv_name>loc://$(DID)_INFO_SHOW(0)</pv_name>
+        <pv_value />
+        <rules />
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts />
+        <selected_color>
+          <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+        </selected_color>
+        <tooltip>Show/Hide the Information Layer</tooltip>
+        <visible>true</visible>
+        <widget_type>Check Box</widget_type>
+        <width>200</width>
+        <wuid>-29204d8b:152781f0007:-2691</wuid>
+        <x>3000</x>
+        <y>0</y>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -1755,4 +1072,26 @@ The bottom right corner is allocated for reporting the current control mode for 
     <x>933</x>
     <y>894</y>
   </widget>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <anti_alias>true</anti_alias>
+    <arrow_length>15</arrow_length>
+    <arrows>0</arrows>
+    <fill_arrow>true</fill_arrow>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+    <line_style>0</line_style>
+    <line_width>4</line_width>
+    <name>Connection Template</name>
+    <points />
+    <router>0</router>
+    <src_path>-29204d8b:152781f0007:-2563_662c2614:15231392d5a:2473_662c2614:15231392d5a:2492</src_path>
+    <src_term>RIGHT</src_term>
+    <src_wuid>376504e8:1507eff0ec5:2a4b</src_wuid>
+    <tgt_path>-29204d8b:152781f0007:-2560_662c2614:15231392d5a:2473_662c2614:15231392d5a:2492</tgt_path>
+    <tgt_term>LEFT</tgt_term>
+    <tgt_wuid>376504e8:1507eff0ec5:2a4b</tgt_wuid>
+    <widget_type>connection</widget_type>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+  </connection>
 </display>

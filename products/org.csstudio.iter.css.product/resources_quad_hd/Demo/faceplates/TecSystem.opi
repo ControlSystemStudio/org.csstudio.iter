@@ -1350,7 +1350,7 @@ $(trace_0_y_pv_value)</tooltip>
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts>
-            <path pathString="scripts/submit.js" checkConnect="true" sfe="true" seoe="false">
+            <path pathString="../../templates/faceplates/scripts/submit.js" checkConnect="true" sfe="true" seoe="false">
               <pv trig="true">loc://$(DID)_Submit(0)</pv>
               <pv trig="false">loc://_$(COMPONENT)-TT1MSPo(-1)</pv>
               <pv trig="false">loc://$(COMPONENT)-TT1MSPo(140)</pv>
@@ -1379,1320 +1379,7 @@ $(trace_0_y_pv_value)</tooltip>
           <width>200</width>
           <wuid>-4f7e792e:14d24101041:-225a</wuid>
           <x>19</x>
-          <y>608</y>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>true</enabled>
-          <fc>false</fc>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>40</height>
-          <lock_children>false</lock_children>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <name>TT1</name>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <tooltip></tooltip>
-          <transparent>true</transparent>
-          <visible>true</visible>
-          <widget_type>Grouping Container</widget_type>
-          <width>490</width>
-          <wuid>-3f662702:14f8cf0a35a:-688b</wuid>
-          <x>-2</x>
-          <y>163</y>
-          <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <alarm_pulsing>false</alarm_pulsing>
-            <auto_size>false</auto_size>
-            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Area Background" red="221" green="223" blue="229" />
-            </background_color>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <border_color>
-              <color name="IO Button" red="178" green="178" blue="178" />
-            </border_color>
-            <border_style>1</border_style>
-            <border_width>1</border_width>
-            <enabled>true</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <format_type>0</format_type>
-            <height>40</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <name>TT1</name>
-            <precision>0</precision>
-            <precision_from_pv>true</precision_from_pv>
-            <pv_name>loc://$(COMPONENT)-TT1AtSPo(140)</pv_name>
-            <pv_value />
-            <rotation_angle>0.0</rotation_angle>
-            <rules>
-              <rule name="SetpointNotReached" prop_id="background_color" out_exp="false">
-                <exp bool_exp="pv2 &amp;&amp; pv3 == 0 &amp;&amp; pv1 != pv0">
-                  <value>
-                    <color name="IO Stopped Symbol Fill" red="255" green="255" blue="255" />
-                  </value>
-                </exp>
-                <pv trig="false">loc://$(COMPONENT)-TT1MSPo(140)</pv>
-                <pv trig="false">$(pv_name)</pv>
-                <pv trig="true">loc://$(DID)_Submit(0)</pv>
-                <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
-              </rule>
-            </rules>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts>
-              <path pathString="scripts/simul.js" checkConnect="true" sfe="true" seoe="false">
-                <pv trig="true">loc://$(COMPONENT)-TT1MSPo(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
-              </path>
-              <path pathString="scripts/end.js" checkConnect="true" sfe="false" seoe="false">
-                <pv trig="false">loc://$(COMPONENT)-TT1MSPo(140)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
-              </path>
-            </scripts>
-            <show_units>true</show_units>
-            <text>######</text>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <transparent>false</transparent>
-            <vertical_alignment>1</vertical_alignment>
-            <visible>true</visible>
-            <widget_type>Text Update</widget_type>
-            <width>130</width>
-            <wrap_words>false</wrap_words>
-            <wuid>-4f7e792e:14d24101041:-210b</wuid>
-            <x>215</x>
-            <y>0</y>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <alarm_pulsing>false</alarm_pulsing>
-            <auto_size>false</auto_size>
-            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Area Background" red="221" green="223" blue="229" />
-            </background_color>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <border_color>
-              <color name="IO Button" red="178" green="178" blue="178" />
-            </border_color>
-            <border_style>1</border_style>
-            <border_width>1</border_width>
-            <enabled>true</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <format_type>0</format_type>
-            <height>40</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <name>TT1</name>
-            <precision>0</precision>
-            <precision_from_pv>true</precision_from_pv>
-            <pv_name>loc://$(COMPONENT)-TT1SPoH(150)</pv_name>
-            <pv_value />
-            <rotation_angle>0.0</rotation_angle>
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <show_units>true</show_units>
-            <text>######</text>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <transparent>false</transparent>
-            <vertical_alignment>1</vertical_alignment>
-            <visible>true</visible>
-            <widget_type>Text Update</widget_type>
-            <width>130</width>
-            <wrap_words>false</wrap_words>
-            <wuid>-3f662702:14f8cf0a35a:-69c2</wuid>
-            <x>360</x>
-            <y>0</y>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
-            <actions hook="false" hook_all="false" />
-            <alarm_pulsing>false</alarm_pulsing>
-            <auto_size>false</auto_size>
-            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
-            </background_color>
-            <background_focus_color>
-              <color name="IO Focus Entry" red="198" green="217" blue="241" />
-            </background_focus_color>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>1</border_style>
-            <border_width>1</border_width>
-            <confirm_focus_lost>true</confirm_focus_lost>
-            <confirm_message></confirm_message>
-            <enabled>true</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <foreground_color>
-              <color name="IO Foreground" red="0" green="0" blue="0" />
-            </foreground_color>
-            <format_type>0</format_type>
-            <height>40</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <label_alignment>1</label_alignment>
-            <label_color>
-              <color name="IO Foreground" red="0" green="0" blue="0" />
-            </label_color>
-            <label_font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </label_font>
-            <label_gap>10</label_gap>
-            <label_position>1</label_position>
-            <label_text>TT1</label_text>
-            <limits_from_pv>true</limits_from_pv>
-            <maximum>1.7976931348623157E308</maximum>
-            <minimum>-1.7976931348623157E308</minimum>
-            <multiline_input>false</multiline_input>
-            <name>TT1</name>
-            <next_focus>2</next_focus>
-            <password_input>false</password_input>
-            <precision>0</precision>
-            <precision_from_pv>true</precision_from_pv>
-            <pv_name>loc://_$(COMPONENT)-TT1MSPo(-1)</pv_name>
-            <pv_value />
-            <read_only>false</read_only>
-            <rotation_angle>0.0</rotation_angle>
-            <rules>
-              <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
-                <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
-                  <value>
-                    <color name="IO Valid Entry" red="0" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pv2&lt;=0">
-                  <value>
-                    <color name="IO Invalid Entry" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
-              </rule>
-              <rule name="InfoErrorTooltip" prop_id="tooltip" out_exp="false">
-                <exp bool_exp="pv0==1">
-                  <value>Alarm Setpoint $(pv_value) is valid and ready to be submitted</value>
-                </exp>
-                <exp bool_exp="pv0==-1">
-                  <value>Alarm Setpoint $(pv_value) is invalid and cannot be converted to a value</value>
-                </exp>
-                <exp bool_exp="pv0==-2">
-                  <value>Alarm Setpoint $(pv_value) is invalid as greater than the trip setpoint</value>
-                </exp>
-                <exp bool_exp="pv0==2">
-                  <value>Alarm Setpoint $(pv_value) unchanged</value>
-                </exp>
-                <pv trig="true">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
-              </rule>
-            </rules>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts>
-              <path pathString="scripts/init.js" checkConnect="true" sfe="false" seoe="false">
-                <pv trig="false">loc://_$(COMPONENT)-TT1MSPo(-1)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
-              </path>
-              <path pathString="scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
-                <pv trig="true">loc://_$(COMPONENT)-TT1MSPo(-1)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT1SPoH(150)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
-              </path>
-            </scripts>
-            <selector_type>0</selector_type>
-            <show_h_scroll>false</show_h_scroll>
-            <show_native_border>true</show_native_border>
-            <show_units>true</show_units>
-            <show_v_scroll>false</show_v_scroll>
-            <style>1</style>
-            <text>######</text>
-            <tooltip>$(COMPONENT) Alarm Setpoint Input</tooltip>
-            <transparent>false</transparent>
-            <visible>true</visible>
-            <widget_type>Text Input</widget_type>
-            <width>190</width>
-            <wuid>-4f7e792e:14d24101041:-246b</wuid>
-            <x>0</x>
-            <y>0</y>
-          </widget>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>true</enabled>
-          <fc>false</fc>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>97</height>
-          <lock_children>false</lock_children>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <name>Header</name>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <tooltip></tooltip>
-          <transparent>true</transparent>
-          <visible>true</visible>
-          <widget_type>Grouping Container</widget_type>
-          <width>436</width>
-          <wuid>-3f662702:14f8cf0a35a:-687d</wuid>
-          <x>55</x>
-          <y>17</y>
-          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <auto_size>false</auto_size>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>0</border_style>
-            <border_width>2</border_width>
-            <enabled>false</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="1">IO Label bold</opifont.name>
-            </font>
-            <foreground_color>
-              <color name="IO Text Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <height>95</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <name>New</name>
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <show_scrollbar>false</show_scrollbar>
-            <text>New
-Setpoint</text>
-            <tooltip>MPosR	FLOAT32	Manual Position Request
-	Value of the position requested by operator</tooltip>
-            <transparent>true</transparent>
-            <vertical_alignment>2</vertical_alignment>
-            <visible>true</visible>
-            <widget_type>Label</widget_type>
-            <width>135</width>
-            <wrap_words>true</wrap_words>
-            <wuid>-4f7e792e:14d24101041:-216e</wuid>
-            <x>0</x>
-            <y>0</y>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <auto_size>false</auto_size>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>0</border_style>
-            <border_width>2</border_width>
-            <enabled>false</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="1">IO Label bold</opifont.name>
-            </font>
-            <foreground_color>
-              <color name="IO Text Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <height>96</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <name>Current</name>
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <show_scrollbar>false</show_scrollbar>
-            <text>Actual
-Setpoint</text>
-            <tooltip>MPosRSt	FLOAT32	Manual Position Request Status
-        Manual Position request status</tooltip>
-            <transparent>true</transparent>
-            <vertical_alignment>2</vertical_alignment>
-            <visible>true</visible>
-            <widget_type>Label</widget_type>
-            <width>137</width>
-            <wrap_words>true</wrap_words>
-            <wuid>-4f7e792e:14d24101041:-216d</wuid>
-            <x>160</x>
-            <y>0</y>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <auto_size>false</auto_size>
-            <background_color>
-              <color name="IO Background" red="235" green="235" blue="235" />
-            </background_color>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>0</border_style>
-            <border_width>2</border_width>
-            <enabled>false</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="1">IO Label bold</opifont.name>
-            </font>
-            <foreground_color>
-              <color name="IO Text Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <height>96</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <name>Trip</name>
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <show_scrollbar>false</show_scrollbar>
-            <text>Trip High Limit</text>
-            <tooltip>MPosRSt	FLOAT32	Manual Position Request Status
-        Manual Position request status</tooltip>
-            <transparent>true</transparent>
-            <vertical_alignment>2</vertical_alignment>
-            <visible>true</visible>
-            <widget_type>Label</widget_type>
-            <width>130</width>
-            <wrap_words>true</wrap_words>
-            <wuid>-3f662702:14f8cf0a35a:-69c3</wuid>
-            <x>305</x>
-            <y>0</y>
-          </widget>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>true</enabled>
-          <fc>false</fc>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>40</height>
-          <lock_children>false</lock_children>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <name>TT2</name>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <tooltip></tooltip>
-          <transparent>true</transparent>
-          <visible>true</visible>
-          <widget_type>Grouping Container</widget_type>
-          <width>490</width>
-          <wuid>-3f662702:14f8cf0a35a:-686f</wuid>
-          <x>1</x>
-          <y>274</y>
-          <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <alarm_pulsing>false</alarm_pulsing>
-            <auto_size>false</auto_size>
-            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Area Background" red="221" green="223" blue="229" />
-            </background_color>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <border_color>
-              <color name="IO Button" red="178" green="178" blue="178" />
-            </border_color>
-            <border_style>1</border_style>
-            <border_width>1</border_width>
-            <enabled>true</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <format_type>0</format_type>
-            <height>40</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <name>TT2</name>
-            <precision>0</precision>
-            <precision_from_pv>true</precision_from_pv>
-            <pv_name>loc://$(COMPONENT)-TT2AtSPo(140)</pv_name>
-            <pv_value />
-            <rotation_angle>0.0</rotation_angle>
-            <rules>
-              <rule name="SetpointNotReached" prop_id="background_color" out_exp="false">
-                <exp bool_exp="pv2 &amp;&amp; pv3 == 0 &amp;&amp; pv1 != pv0">
-                  <value>
-                    <color name="IO Stopped Symbol Fill" red="255" green="255" blue="255" />
-                  </value>
-                </exp>
-                <pv trig="false">loc://$(COMPONENT)-TT2MSPo(140)</pv>
-                <pv trig="false">$(pv_name)</pv>
-                <pv trig="true">loc://$(DID)_Submit(0)</pv>
-                <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
-              </rule>
-            </rules>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts>
-              <path pathString="scripts/simul.js" checkConnect="true" sfe="true" seoe="false">
-                <pv trig="true">loc://$(COMPONENT)-TT2MSPo(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
-              </path>
-              <path pathString="scripts/end.js" checkConnect="true" sfe="false" seoe="false">
-                <pv trig="false">loc://$(COMPONENT)-TT2MSPo(140)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
-              </path>
-            </scripts>
-            <show_units>true</show_units>
-            <text>######</text>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <transparent>false</transparent>
-            <vertical_alignment>1</vertical_alignment>
-            <visible>true</visible>
-            <widget_type>Text Update</widget_type>
-            <width>130</width>
-            <wrap_words>false</wrap_words>
-            <wuid>-4f7e792e:14d24101041:-2107</wuid>
-            <x>215</x>
-            <y>0</y>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <alarm_pulsing>false</alarm_pulsing>
-            <auto_size>false</auto_size>
-            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Area Background" red="221" green="223" blue="229" />
-            </background_color>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <border_color>
-              <color name="IO Button" red="178" green="178" blue="178" />
-            </border_color>
-            <border_style>1</border_style>
-            <border_width>1</border_width>
-            <enabled>true</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <format_type>0</format_type>
-            <height>40</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <name>TT2</name>
-            <precision>0</precision>
-            <precision_from_pv>true</precision_from_pv>
-            <pv_name>loc://$(COMPONENT)-TT2SPoH(150)</pv_name>
-            <pv_value />
-            <rotation_angle>0.0</rotation_angle>
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <show_units>true</show_units>
-            <text>######</text>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <transparent>false</transparent>
-            <vertical_alignment>1</vertical_alignment>
-            <visible>true</visible>
-            <widget_type>Text Update</widget_type>
-            <width>130</width>
-            <wrap_words>false</wrap_words>
-            <wuid>-3f662702:14f8cf0a35a:-69c1</wuid>
-            <x>360</x>
-            <y>0</y>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
-            <actions hook="false" hook_all="false" />
-            <alarm_pulsing>false</alarm_pulsing>
-            <auto_size>false</auto_size>
-            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
-            </background_color>
-            <background_focus_color>
-              <color name="IO Focus Entry" red="198" green="217" blue="241" />
-            </background_focus_color>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>1</border_style>
-            <border_width>1</border_width>
-            <confirm_focus_lost>true</confirm_focus_lost>
-            <confirm_message></confirm_message>
-            <enabled>true</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <foreground_color>
-              <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <format_type>0</format_type>
-            <height>40</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <label_alignment>1</label_alignment>
-            <label_color>
-              <color name="IO Foreground" red="0" green="0" blue="0" />
-            </label_color>
-            <label_font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </label_font>
-            <label_gap>10</label_gap>
-            <label_position>1</label_position>
-            <label_text>TT2</label_text>
-            <limits_from_pv>true</limits_from_pv>
-            <maximum>1.7976931348623157E308</maximum>
-            <minimum>-1.7976931348623157E308</minimum>
-            <multiline_input>false</multiline_input>
-            <name>TT2</name>
-            <next_focus>2</next_focus>
-            <password_input>false</password_input>
-            <precision>0</precision>
-            <precision_from_pv>true</precision_from_pv>
-            <pv_name>loc://_$(COMPONENT)-TT2MSPo(-1)</pv_name>
-            <pv_value />
-            <read_only>false</read_only>
-            <rotation_angle>0.0</rotation_angle>
-            <rules>
-              <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
-                <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
-                  <value>
-                    <color name="IO Valid Entry" red="0" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pv2&lt;=0">
-                  <value>
-                    <color name="IO Invalid Entry" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
-              </rule>
-              <rule name="InfoErrorTooltip" prop_id="tooltip" out_exp="false">
-                <exp bool_exp="pv0==1">
-                  <value>Alarm Setpoint $(pv_value) is valid and ready to be submitted</value>
-                </exp>
-                <exp bool_exp="pv0==-1">
-                  <value>Alarm Setpoint $(pv_value) is invalid and cannot be converted to a value</value>
-                </exp>
-                <exp bool_exp="pv0==-2">
-                  <value>Alarm Setpoint $(pv_value) is invalid as greater than the trip setpoint</value>
-                </exp>
-                <exp bool_exp="pv0==2">
-                  <value>Alarm Setpoint $(pv_value) unchanged</value>
-                </exp>
-                <pv trig="true">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
-              </rule>
-            </rules>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts>
-              <path pathString="scripts/init.js" checkConnect="true" sfe="false" seoe="false">
-                <pv trig="false">loc://_$(COMPONENT)-TT2MSPo(-1)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
-              </path>
-              <path pathString="scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
-                <pv trig="true">loc://_$(COMPONENT)-TT2MSPo(-1)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT2SPoH(150)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
-              </path>
-            </scripts>
-            <selector_type>0</selector_type>
-            <show_h_scroll>false</show_h_scroll>
-            <show_native_border>true</show_native_border>
-            <show_units>true</show_units>
-            <show_v_scroll>false</show_v_scroll>
-            <style>1</style>
-            <text>######</text>
-            <tooltip>$(COMPONENT) Alarm Setpoint Input</tooltip>
-            <transparent>false</transparent>
-            <visible>true</visible>
-            <widget_type>Text Input</widget_type>
-            <width>190</width>
-            <wuid>-4f7e792e:14d24101041:-2467</wuid>
-            <x>0</x>
-            <y>0</y>
-          </widget>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>true</enabled>
-          <fc>false</fc>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>40</height>
-          <lock_children>false</lock_children>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <name>TT3</name>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <tooltip></tooltip>
-          <transparent>true</transparent>
-          <visible>true</visible>
-          <widget_type>Grouping Container</widget_type>
-          <width>490</width>
-          <wuid>-3f662702:14f8cf0a35a:-6861</wuid>
-          <x>1</x>
-          <y>378</y>
-          <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <alarm_pulsing>false</alarm_pulsing>
-            <auto_size>false</auto_size>
-            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Area Background" red="221" green="223" blue="229" />
-            </background_color>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <border_color>
-              <color name="IO Button" red="178" green="178" blue="178" />
-            </border_color>
-            <border_style>1</border_style>
-            <border_width>1</border_width>
-            <enabled>true</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <format_type>0</format_type>
-            <height>40</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <name>TT3</name>
-            <precision>0</precision>
-            <precision_from_pv>true</precision_from_pv>
-            <pv_name>loc://$(COMPONENT)-TT3AtSPo(140)</pv_name>
-            <pv_value />
-            <rotation_angle>0.0</rotation_angle>
-            <rules>
-              <rule name="SetpointNotReached" prop_id="background_color" out_exp="false">
-                <exp bool_exp="pv2 &amp;&amp; pv3 == 0 &amp;&amp; pv1 != pv0">
-                  <value>
-                    <color name="IO Stopped Symbol Fill" red="255" green="255" blue="255" />
-                  </value>
-                </exp>
-                <pv trig="false">loc://$(COMPONENT)-TT3MSPo(140)</pv>
-                <pv trig="false">$(pv_name)</pv>
-                <pv trig="true">loc://$(DID)_Submit(0)</pv>
-                <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
-              </rule>
-            </rules>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts>
-              <path pathString="scripts/simul.js" checkConnect="true" sfe="true" seoe="false">
-                <pv trig="true">loc://$(COMPONENT)-TT3MSPo(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
-              </path>
-              <path pathString="scripts/end.js" checkConnect="true" sfe="false" seoe="false">
-                <pv trig="false">loc://$(COMPONENT)-TT3MSPo(140)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
-              </path>
-            </scripts>
-            <show_units>true</show_units>
-            <text>######</text>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <transparent>false</transparent>
-            <vertical_alignment>1</vertical_alignment>
-            <visible>true</visible>
-            <widget_type>Text Update</widget_type>
-            <width>130</width>
-            <wrap_words>false</wrap_words>
-            <wuid>-4f7e792e:14d24101041:-2103</wuid>
-            <x>215</x>
-            <y>0</y>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <alarm_pulsing>false</alarm_pulsing>
-            <auto_size>false</auto_size>
-            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Area Background" red="221" green="223" blue="229" />
-            </background_color>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <border_color>
-              <color name="IO Button" red="178" green="178" blue="178" />
-            </border_color>
-            <border_style>1</border_style>
-            <border_width>1</border_width>
-            <enabled>true</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <format_type>0</format_type>
-            <height>40</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <name>TT3</name>
-            <precision>0</precision>
-            <precision_from_pv>true</precision_from_pv>
-            <pv_name>loc://$(COMPONENT)-TT3SPoH(150)</pv_name>
-            <pv_value />
-            <rotation_angle>0.0</rotation_angle>
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <show_units>true</show_units>
-            <text>######</text>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <transparent>false</transparent>
-            <vertical_alignment>1</vertical_alignment>
-            <visible>true</visible>
-            <widget_type>Text Update</widget_type>
-            <width>130</width>
-            <wrap_words>false</wrap_words>
-            <wuid>-3f662702:14f8cf0a35a:-69c0</wuid>
-            <x>360</x>
-            <y>0</y>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
-            <actions hook="false" hook_all="false" />
-            <alarm_pulsing>false</alarm_pulsing>
-            <auto_size>false</auto_size>
-            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
-            </background_color>
-            <background_focus_color>
-              <color name="IO Focus Entry" red="198" green="217" blue="241" />
-            </background_focus_color>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>1</border_style>
-            <border_width>1</border_width>
-            <confirm_focus_lost>true</confirm_focus_lost>
-            <confirm_message></confirm_message>
-            <enabled>true</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <foreground_color>
-              <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <format_type>0</format_type>
-            <height>40</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <label_alignment>1</label_alignment>
-            <label_color>
-              <color name="IO Foreground" red="0" green="0" blue="0" />
-            </label_color>
-            <label_font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </label_font>
-            <label_gap>10</label_gap>
-            <label_position>1</label_position>
-            <label_text>TT3</label_text>
-            <limits_from_pv>true</limits_from_pv>
-            <maximum>1.7976931348623157E308</maximum>
-            <minimum>-1.7976931348623157E308</minimum>
-            <multiline_input>false</multiline_input>
-            <name>TT3</name>
-            <next_focus>2</next_focus>
-            <password_input>false</password_input>
-            <precision>0</precision>
-            <precision_from_pv>true</precision_from_pv>
-            <pv_name>loc://_$(COMPONENT)-TT3MSPo(-1)</pv_name>
-            <pv_value />
-            <read_only>false</read_only>
-            <rotation_angle>0.0</rotation_angle>
-            <rules>
-              <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
-                <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
-                  <value>
-                    <color name="IO Valid Entry" red="0" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pv2&lt;=0">
-                  <value>
-                    <color name="IO Invalid Entry" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
-              </rule>
-              <rule name="InfoErrorTooltip" prop_id="tooltip" out_exp="false">
-                <exp bool_exp="pv0==1">
-                  <value>Alarm Setpoint $(pv_value) is valid and ready to be submitted</value>
-                </exp>
-                <exp bool_exp="pv0==-1">
-                  <value>Alarm Setpoint $(pv_value) is invalid and cannot be converted to a value</value>
-                </exp>
-                <exp bool_exp="pv0==-2">
-                  <value>Alarm Setpoint $(pv_value) is invalid as greater than the trip setpoint</value>
-                </exp>
-                <exp bool_exp="pv0==2">
-                  <value>Alarm Setpoint $(pv_value) unchanged</value>
-                </exp>
-                <pv trig="true">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
-              </rule>
-            </rules>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts>
-              <path pathString="scripts/init.js" checkConnect="true" sfe="false" seoe="false">
-                <pv trig="false">loc://_$(COMPONENT)-TT3MSPo(-1)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
-              </path>
-              <path pathString="scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
-                <pv trig="true">loc://_$(COMPONENT)-TT3MSPo(-1)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT3SPoH(150)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
-              </path>
-            </scripts>
-            <selector_type>0</selector_type>
-            <show_h_scroll>false</show_h_scroll>
-            <show_native_border>true</show_native_border>
-            <show_units>true</show_units>
-            <show_v_scroll>false</show_v_scroll>
-            <style>1</style>
-            <text>######</text>
-            <tooltip>$(COMPONENT) Alarm Setpoint Input</tooltip>
-            <transparent>false</transparent>
-            <visible>true</visible>
-            <widget_type>Text Input</widget_type>
-            <width>190</width>
-            <wuid>-4f7e792e:14d24101041:-245f</wuid>
-            <x>0</x>
-            <y>0</y>
-          </widget>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>true</enabled>
-          <fc>false</fc>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>40</height>
-          <lock_children>false</lock_children>
-          <macros>
-            <include_parent_macros>true</include_parent_macros>
-          </macros>
-          <name>TT4</name>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <tooltip></tooltip>
-          <transparent>true</transparent>
-          <visible>true</visible>
-          <widget_type>Grouping Container</widget_type>
-          <width>490</width>
-          <wuid>-3f662702:14f8cf0a35a:-6853</wuid>
-          <x>1</x>
-          <y>486</y>
-          <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <alarm_pulsing>false</alarm_pulsing>
-            <auto_size>false</auto_size>
-            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Area Background" red="221" green="223" blue="229" />
-            </background_color>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <border_color>
-              <color name="IO Button" red="178" green="178" blue="178" />
-            </border_color>
-            <border_style>1</border_style>
-            <border_width>1</border_width>
-            <enabled>true</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <format_type>0</format_type>
-            <height>40</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <name>TT4</name>
-            <precision>0</precision>
-            <precision_from_pv>true</precision_from_pv>
-            <pv_name>loc://$(COMPONENT)-TT4AtSPo(60)</pv_name>
-            <pv_value />
-            <rotation_angle>0.0</rotation_angle>
-            <rules>
-              <rule name="SetpointNotReached" prop_id="background_color" out_exp="false">
-                <exp bool_exp="pv2 &amp;&amp; pv3 == 0 &amp;&amp; pv1 != pv0">
-                  <value>
-                    <color name="IO Stopped Symbol Fill" red="255" green="255" blue="255" />
-                  </value>
-                </exp>
-                <pv trig="false">loc://$(COMPONENT)-TT4MSPo(60)</pv>
-                <pv trig="false">$(pv_name)</pv>
-                <pv trig="true">loc://$(DID)_Submit(0)</pv>
-                <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
-              </rule>
-            </rules>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts>
-              <path pathString="scripts/simul.js" checkConnect="true" sfe="true" seoe="false">
-                <pv trig="true">loc://$(COMPONENT)-TT4MSPo(60)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
-              </path>
-              <path pathString="scripts/end.js" checkConnect="true" sfe="false" seoe="false">
-                <pv trig="false">loc://$(COMPONENT)-TT4MSPo(60)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
-              </path>
-            </scripts>
-            <show_units>true</show_units>
-            <text>######</text>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <transparent>false</transparent>
-            <vertical_alignment>1</vertical_alignment>
-            <visible>true</visible>
-            <widget_type>Text Update</widget_type>
-            <width>130</width>
-            <wrap_words>false</wrap_words>
-            <wuid>-4f7e792e:14d24101041:-20ff</wuid>
-            <x>215</x>
-            <y>0</y>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-            <actions hook="false" hook_all="false" />
-            <alarm_pulsing>false</alarm_pulsing>
-            <auto_size>false</auto_size>
-            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO Area Background" red="221" green="223" blue="229" />
-            </background_color>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <border_color>
-              <color name="IO Button" red="178" green="178" blue="178" />
-            </border_color>
-            <border_style>1</border_style>
-            <border_width>1</border_width>
-            <enabled>true</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <foreground_color>
-              <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <format_type>0</format_type>
-            <height>40</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <name>TT4</name>
-            <precision>0</precision>
-            <precision_from_pv>true</precision_from_pv>
-            <pv_name>loc://$(COMPONENT)-TT4SPoH(80)</pv_name>
-            <pv_value />
-            <rotation_angle>0.0</rotation_angle>
-            <rules />
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts />
-            <show_units>true</show_units>
-            <text>######</text>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-            <transparent>false</transparent>
-            <vertical_alignment>1</vertical_alignment>
-            <visible>true</visible>
-            <widget_type>Text Update</widget_type>
-            <width>130</width>
-            <wrap_words>false</wrap_words>
-            <wuid>-3f662702:14f8cf0a35a:-69bf</wuid>
-            <x>360</x>
-            <y>0</y>
-          </widget>
-          <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
-            <actions hook="false" hook_all="false" />
-            <alarm_pulsing>false</alarm_pulsing>
-            <auto_size>false</auto_size>
-            <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-            <background_color>
-              <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
-            </background_color>
-            <background_focus_color>
-              <color name="IO Focus Entry" red="198" green="217" blue="241" />
-            </background_focus_color>
-            <border_alarm_sensitive>false</border_alarm_sensitive>
-            <border_color>
-              <color name="IO Border" red="0" green="0" blue="0" />
-            </border_color>
-            <border_style>1</border_style>
-            <border_width>1</border_width>
-            <confirm_focus_lost>true</confirm_focus_lost>
-            <confirm_message></confirm_message>
-            <enabled>true</enabled>
-            <font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </font>
-            <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-            <foreground_color>
-              <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
-            </foreground_color>
-            <format_type>0</format_type>
-            <height>40</height>
-            <horizontal_alignment>0</horizontal_alignment>
-            <label_alignment>1</label_alignment>
-            <label_color>
-              <color name="IO Foreground" red="0" green="0" blue="0" />
-            </label_color>
-            <label_font>
-              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-            </label_font>
-            <label_gap>10</label_gap>
-            <label_position>1</label_position>
-            <label_text>TT4</label_text>
-            <limits_from_pv>true</limits_from_pv>
-            <maximum>1.7976931348623157E308</maximum>
-            <minimum>-1.7976931348623157E308</minimum>
-            <multiline_input>false</multiline_input>
-            <name>TT4</name>
-            <next_focus>2</next_focus>
-            <password_input>false</password_input>
-            <precision>0</precision>
-            <precision_from_pv>true</precision_from_pv>
-            <pv_name>loc://_$(COMPONENT)-TT4MSPo(-1)</pv_name>
-            <pv_value />
-            <read_only>false</read_only>
-            <rotation_angle>0.0</rotation_angle>
-            <rules>
-              <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
-                <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
-                  <value>
-                    <color name="IO Valid Entry" red="0" green="0" blue="255" />
-                  </value>
-                </exp>
-                <exp bool_exp="pv2&lt;=0">
-                  <value>
-                    <color name="IO Invalid Entry" red="250" green="12" blue="14" />
-                  </value>
-                </exp>
-                <pv trig="true">$(pv_name)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
-              </rule>
-              <rule name="InfoErrorTooltip" prop_id="tooltip" out_exp="false">
-                <exp bool_exp="pv0==1">
-                  <value>Alarm Setpoint $(pv_value) is valid and ready to be submitted</value>
-                </exp>
-                <exp bool_exp="pv0==-1">
-                  <value>Alarm Setpoint $(pv_value) is invalid and cannot be converted to a value</value>
-                </exp>
-                <exp bool_exp="pv0==-2">
-                  <value>Alarm Setpoint $(pv_value) is invalid as greater than the trip setpoint</value>
-                </exp>
-                <exp bool_exp="pv0==2">
-                  <value>Alarm Setpoint $(pv_value) unchanged</value>
-                </exp>
-                <pv trig="true">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
-              </rule>
-            </rules>
-            <scale_options>
-              <width_scalable>false</width_scalable>
-              <height_scalable>false</height_scalable>
-              <keep_wh_ratio>false</keep_wh_ratio>
-            </scale_options>
-            <scripts>
-              <path pathString="scripts/init.js" checkConnect="true" sfe="false" seoe="false">
-                <pv trig="false">loc://_$(COMPONENT)-TT4MSPo(-1)</pv>
-                <pv trig="true">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
-              </path>
-              <path pathString="scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
-                <pv trig="true">loc://_$(COMPONENT)-TT4MSPo(-1)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT4SPoH(80)</pv>
-                <pv trig="false">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
-              </path>
-            </scripts>
-            <selector_type>0</selector_type>
-            <show_h_scroll>false</show_h_scroll>
-            <show_native_border>true</show_native_border>
-            <show_units>true</show_units>
-            <show_v_scroll>false</show_v_scroll>
-            <style>1</style>
-            <text>######</text>
-            <tooltip>$(COMPONENT) Alarm Setpoint Input</tooltip>
-            <transparent>false</transparent>
-            <visible>true</visible>
-            <widget_type>Text Input</widget_type>
-            <width>190</width>
-            <wuid>-4f7e792e:14d24101041:-2459</wuid>
-            <x>0</x>
-            <y>0</y>
-          </widget>
+          <y>680</y>
         </widget>
         <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
           <actions hook="false" hook_all="false">
@@ -2731,7 +1418,7 @@ $(pv_value)</tooltip>
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts>
-            <path pathString="scripts/cancel.js" checkConnect="true" sfe="true" seoe="false">
+            <path pathString="../../templates/faceplates/scripts/cancel.js" checkConnect="true" sfe="true" seoe="false">
               <pv trig="true">loc://$(DID)_Cancel(0)</pv>
               <pv trig="false">loc://_$(COMPONENT)-TT1MSPo(-1)</pv>
               <pv trig="false">loc://$(COMPONENT)-TT1MSPo(140)</pv>
@@ -2760,7 +1447,1438 @@ $(pv_value)</tooltip>
           <width>200</width>
           <wuid>-6101ebb:14ffa02c014:-7ea5</wuid>
           <x>275</x>
-          <y>608</y>
+          <y>680</y>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.checkbox" version="1.0.0">
+          <actions hook="false" hook_all="false" />
+          <alarm_pulsing>false</alarm_pulsing>
+          <auto_size>true</auto_size>
+          <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <bit>0</bit>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>0</border_style>
+          <border_width>2</border_width>
+          <enabled>true</enabled>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          </font>
+          <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+          <foreground_color>
+            <color name="IO Text Fg" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>45</height>
+          <label>$(name)</label>
+          <name>Alarm relay enabled</name>
+          <pv_name>loc://_$(COMPONENT)-TTAct(0)</pv_name>
+          <pv_value />
+          <rules>
+            <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
+              <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
+                <value>
+                  <color name="IO Valid Entry" red="0" green="0" blue="255" />
+                </value>
+              </exp>
+              <exp bool_exp="pv2&lt;=0">
+                <value>
+                  <color name="IO Invalid Entry" red="250" green="12" blue="14" />
+                </value>
+              </exp>
+              <pv trig="true">$(pv_name)</pv>
+              <pv trig="true">loc://$(COMPONENT)-TTAct(1)</pv>
+              <pv trig="true">loc://$(COMPONENT)-TTActSt(0)</pv>
+            </rule>
+          </rules>
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts>
+            <path pathString="../../templates/faceplates/scripts/init.js" checkConnect="true" sfe="false" seoe="false">
+              <pv trig="false">$(pv_name)</pv>
+              <pv trig="true">loc://$(COMPONENT)-TTAct(1)</pv>
+              <pv trig="false">loc://$(COMPONENT)-TTActSt(0)</pv>
+            </path>
+          </scripts>
+          <selected_color>
+            <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+          </selected_color>
+          <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+          <visible>true</visible>
+          <widget_type>Check Box</widget_type>
+          <width>483</width>
+          <wuid>-14a921ec:134b2495e46:-7f36</wuid>
+          <x>0</x>
+          <y>36</y>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+          <actions hook="false" hook_all="false" />
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>0</border_style>
+          <border_width>2</border_width>
+          <enabled>true</enabled>
+          <fc>false</fc>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          </font>
+          <foreground_color>
+            <color name="IO Foreground" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>509</height>
+          <lock_children>true</lock_children>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+          </macros>
+          <name>Input Form</name>
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts />
+          <show_scrollbar>false</show_scrollbar>
+          <tooltip></tooltip>
+          <transparent>true</transparent>
+          <visible>true</visible>
+          <widget_type>Grouping Container</widget_type>
+          <width>493</width>
+          <wuid>6d19b04f:15451b32d14:-344</wuid>
+          <x>0</x>
+          <y>130</y>
+          <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+            <actions hook="false" hook_all="false" />
+            <background_color>
+              <color name="IO Background" red="235" green="235" blue="235" />
+            </background_color>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <border_style>0</border_style>
+            <border_width>2</border_width>
+            <enabled>true</enabled>
+            <fc>false</fc>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+            </font>
+            <foreground_color>
+              <color name="IO Foreground" red="0" green="0" blue="0" />
+            </foreground_color>
+            <height>40</height>
+            <lock_children>false</lock_children>
+            <macros>
+              <include_parent_macros>true</include_parent_macros>
+            </macros>
+            <name>TT1</name>
+            <rules />
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <scripts />
+            <show_scrollbar>false</show_scrollbar>
+            <tooltip></tooltip>
+            <transparent>true</transparent>
+            <visible>true</visible>
+            <widget_type>Grouping Container</widget_type>
+            <width>490</width>
+            <wuid>-3f662702:14f8cf0a35a:-688b</wuid>
+            <x>0</x>
+            <y>146</y>
+            <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+              <actions hook="false" hook_all="false" />
+              <alarm_pulsing>false</alarm_pulsing>
+              <auto_size>false</auto_size>
+              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+              <background_color>
+                <color name="IO Area Background" red="221" green="223" blue="229" />
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color name="IO Button" red="178" green="178" blue="178" />
+              </border_color>
+              <border_style>1</border_style>
+              <border_width>1</border_width>
+              <enabled>true</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </font>
+              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+              <foreground_color>
+                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <format_type>0</format_type>
+              <height>40</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <name>TT1</name>
+              <precision>0</precision>
+              <precision_from_pv>true</precision_from_pv>
+              <pv_name>loc://$(COMPONENT)-TT1AtSPo(140)</pv_name>
+              <pv_value />
+              <rotation_angle>0.0</rotation_angle>
+              <rules>
+                <rule name="SetpointNotReached" prop_id="background_color" out_exp="false">
+                  <exp bool_exp="pv2 &amp;&amp; pv3 == 0 &amp;&amp; pv1 != pv0">
+                    <value>
+                      <color name="IO Stopped Symbol Fill" red="255" green="255" blue="255" />
+                    </value>
+                  </exp>
+                  <pv trig="false">loc://$(COMPONENT)-TT1MSPo(140)</pv>
+                  <pv trig="false">$(pv_name)</pv>
+                  <pv trig="true">loc://$(DID)_Submit(0)</pv>
+                  <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
+                </rule>
+              </rules>
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts>
+                <path pathString="../../templates/faceplates/scripts/simul.js" checkConnect="true" sfe="true" seoe="false">
+                  <pv trig="true">loc://$(COMPONENT)-TT1MSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
+                </path>
+                <path pathString="../../templates/faceplates/scripts/end.js" checkConnect="true" sfe="true" seoe="false">
+                  <pv trig="false">loc://$(COMPONENT)-TT1MSPo(140)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
+                </path>
+              </scripts>
+              <show_units>true</show_units>
+              <text>######</text>
+              <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+              <transparent>false</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <visible>true</visible>
+              <widget_type>Text Update</widget_type>
+              <width>130</width>
+              <wrap_words>false</wrap_words>
+              <wuid>-4f7e792e:14d24101041:-210b</wuid>
+              <x>215</x>
+              <y>0</y>
+            </widget>
+            <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+              <actions hook="false" hook_all="false" />
+              <alarm_pulsing>false</alarm_pulsing>
+              <auto_size>false</auto_size>
+              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+              <background_color>
+                <color name="IO Area Background" red="221" green="223" blue="229" />
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color name="IO Button" red="178" green="178" blue="178" />
+              </border_color>
+              <border_style>1</border_style>
+              <border_width>1</border_width>
+              <enabled>true</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </font>
+              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+              <foreground_color>
+                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <format_type>0</format_type>
+              <height>40</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <name>TT1</name>
+              <precision>0</precision>
+              <precision_from_pv>true</precision_from_pv>
+              <pv_name>loc://$(COMPONENT)-TT1SPoH(150)</pv_name>
+              <pv_value />
+              <rotation_angle>0.0</rotation_angle>
+              <rules />
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts />
+              <show_units>true</show_units>
+              <text>######</text>
+              <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+              <transparent>false</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <visible>true</visible>
+              <widget_type>Text Update</widget_type>
+              <width>130</width>
+              <wrap_words>false</wrap_words>
+              <wuid>-3f662702:14f8cf0a35a:-69c2</wuid>
+              <x>360</x>
+              <y>0</y>
+            </widget>
+            <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+              <actions hook="false" hook_all="false" />
+              <alarm_pulsing>false</alarm_pulsing>
+              <auto_size>false</auto_size>
+              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+              <background_color>
+                <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+              </background_color>
+              <background_focus_color>
+                <color name="IO Focus Entry" red="198" green="217" blue="241" />
+              </background_focus_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color name="IO Border" red="0" green="0" blue="0" />
+              </border_color>
+              <border_style>1</border_style>
+              <border_width>1</border_width>
+              <confirm_focus_lost>true</confirm_focus_lost>
+              <confirm_message></confirm_message>
+              <enabled>true</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </font>
+              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+              <foreground_color>
+                <color name="IO Foreground" red="0" green="0" blue="0" />
+              </foreground_color>
+              <format_type>0</format_type>
+              <height>40</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <label_alignment>1</label_alignment>
+              <label_color>
+                <color name="IO Foreground" red="0" green="0" blue="0" />
+              </label_color>
+              <label_font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </label_font>
+              <label_gap>10</label_gap>
+              <label_position>1</label_position>
+              <label_text>TT1</label_text>
+              <limits_from_pv>true</limits_from_pv>
+              <maximum>1.7976931348623157E308</maximum>
+              <minimum>-1.7976931348623157E308</minimum>
+              <multiline_input>false</multiline_input>
+              <name>TT1</name>
+              <next_focus>2</next_focus>
+              <password_input>false</password_input>
+              <precision>0</precision>
+              <precision_from_pv>true</precision_from_pv>
+              <pv_name>loc://_$(COMPONENT)-TT1MSPo(-1)</pv_name>
+              <pv_value />
+              <read_only>false</read_only>
+              <rotation_angle>0.0</rotation_angle>
+              <rules>
+                <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
+                  <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
+                    <value>
+                      <color name="IO Valid Entry" red="0" green="0" blue="255" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv2&lt;=0">
+                    <value>
+                      <color name="IO Invalid Entry" red="250" green="12" blue="14" />
+                    </value>
+                  </exp>
+                  <pv trig="true">$(pv_name)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
+                </rule>
+                <rule name="InfoErrorTooltip" prop_id="tooltip" out_exp="false">
+                  <exp bool_exp="pv0==1">
+                    <value>Alarm Setpoint $(pv_value) is valid and ready to be submitted</value>
+                  </exp>
+                  <exp bool_exp="pv0==-1">
+                    <value>Alarm Setpoint $(pv_value) is invalid and cannot be converted to a value</value>
+                  </exp>
+                  <exp bool_exp="pv0==-2">
+                    <value>Alarm Setpoint $(pv_value) is invalid as greater than the trip setpoint</value>
+                  </exp>
+                  <exp bool_exp="pv0==2">
+                    <value>Alarm Setpoint $(pv_value) unchanged</value>
+                  </exp>
+                  <pv trig="true">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
+                </rule>
+              </rules>
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts>
+                <path pathString="../../templates/faceplates/scripts/init.js" checkConnect="true" sfe="false" seoe="false">
+                  <pv trig="false">$(pv_name)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
+                </path>
+                <path pathString="../../templates/faceplates/scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
+                  <pv trig="true">$(pv_name)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT1AtSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT1SPoH(150)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT1SPoL(0)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT1MSPoSt(0)</pv>
+                </path>
+              </scripts>
+              <selector_type>0</selector_type>
+              <show_h_scroll>false</show_h_scroll>
+              <show_native_border>true</show_native_border>
+              <show_units>true</show_units>
+              <show_v_scroll>false</show_v_scroll>
+              <style>1</style>
+              <text>######</text>
+              <tooltip>$(COMPONENT) Alarm Setpoint Input</tooltip>
+              <transparent>false</transparent>
+              <visible>true</visible>
+              <widget_type>Text Input</widget_type>
+              <width>190</width>
+              <wuid>-4f7e792e:14d24101041:-246b</wuid>
+              <x>0</x>
+              <y>0</y>
+            </widget>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+            <actions hook="false" hook_all="false" />
+            <background_color>
+              <color name="IO Background" red="235" green="235" blue="235" />
+            </background_color>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <border_style>0</border_style>
+            <border_width>2</border_width>
+            <enabled>true</enabled>
+            <fc>false</fc>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+            </font>
+            <foreground_color>
+              <color name="IO Foreground" red="0" green="0" blue="0" />
+            </foreground_color>
+            <height>97</height>
+            <lock_children>false</lock_children>
+            <macros>
+              <include_parent_macros>true</include_parent_macros>
+            </macros>
+            <name>Header</name>
+            <rules />
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <scripts />
+            <show_scrollbar>false</show_scrollbar>
+            <tooltip></tooltip>
+            <transparent>true</transparent>
+            <visible>true</visible>
+            <widget_type>Grouping Container</widget_type>
+            <width>436</width>
+            <wuid>-3f662702:14f8cf0a35a:-687d</wuid>
+            <x>57</x>
+            <y>0</y>
+            <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+              <actions hook="false" hook_all="false" />
+              <auto_size>false</auto_size>
+              <background_color>
+                <color name="IO Background" red="235" green="235" blue="235" />
+              </background_color>
+              <border_color>
+                <color name="IO Border" red="0" green="0" blue="0" />
+              </border_color>
+              <border_style>0</border_style>
+              <border_width>2</border_width>
+              <enabled>false</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="1">IO Label bold</opifont.name>
+              </font>
+              <foreground_color>
+                <color name="IO Text Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <height>95</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <name>New</name>
+              <rules />
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts />
+              <show_scrollbar>false</show_scrollbar>
+              <text>New
+Setpoint</text>
+              <tooltip>MPosR	FLOAT32	Manual Position Request
+	Value of the position requested by operator</tooltip>
+              <transparent>true</transparent>
+              <vertical_alignment>2</vertical_alignment>
+              <visible>true</visible>
+              <widget_type>Label</widget_type>
+              <width>135</width>
+              <wrap_words>true</wrap_words>
+              <wuid>-4f7e792e:14d24101041:-216e</wuid>
+              <x>0</x>
+              <y>0</y>
+            </widget>
+            <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+              <actions hook="false" hook_all="false" />
+              <auto_size>false</auto_size>
+              <background_color>
+                <color name="IO Background" red="235" green="235" blue="235" />
+              </background_color>
+              <border_color>
+                <color name="IO Border" red="0" green="0" blue="0" />
+              </border_color>
+              <border_style>0</border_style>
+              <border_width>2</border_width>
+              <enabled>false</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="1">IO Label bold</opifont.name>
+              </font>
+              <foreground_color>
+                <color name="IO Text Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <height>96</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <name>Current</name>
+              <rules />
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts />
+              <show_scrollbar>false</show_scrollbar>
+              <text>Actual
+Setpoint</text>
+              <tooltip>MPosRSt	FLOAT32	Manual Position Request Status
+        Manual Position request status</tooltip>
+              <transparent>true</transparent>
+              <vertical_alignment>2</vertical_alignment>
+              <visible>true</visible>
+              <widget_type>Label</widget_type>
+              <width>137</width>
+              <wrap_words>true</wrap_words>
+              <wuid>-4f7e792e:14d24101041:-216d</wuid>
+              <x>160</x>
+              <y>0</y>
+            </widget>
+            <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+              <actions hook="false" hook_all="false" />
+              <auto_size>false</auto_size>
+              <background_color>
+                <color name="IO Background" red="235" green="235" blue="235" />
+              </background_color>
+              <border_color>
+                <color name="IO Border" red="0" green="0" blue="0" />
+              </border_color>
+              <border_style>0</border_style>
+              <border_width>2</border_width>
+              <enabled>false</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="1">IO Label bold</opifont.name>
+              </font>
+              <foreground_color>
+                <color name="IO Text Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <height>96</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <name>Trip</name>
+              <rules />
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts />
+              <show_scrollbar>false</show_scrollbar>
+              <text>Trip High Limit</text>
+              <tooltip>MPosRSt	FLOAT32	Manual Position Request Status
+        Manual Position request status</tooltip>
+              <transparent>true</transparent>
+              <vertical_alignment>2</vertical_alignment>
+              <visible>true</visible>
+              <widget_type>Label</widget_type>
+              <width>130</width>
+              <wrap_words>true</wrap_words>
+              <wuid>-3f662702:14f8cf0a35a:-69c3</wuid>
+              <x>305</x>
+              <y>0</y>
+            </widget>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+            <actions hook="false" hook_all="false" />
+            <background_color>
+              <color name="IO Background" red="235" green="235" blue="235" />
+            </background_color>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <border_style>0</border_style>
+            <border_width>2</border_width>
+            <enabled>true</enabled>
+            <fc>false</fc>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+            </font>
+            <foreground_color>
+              <color name="IO Foreground" red="0" green="0" blue="0" />
+            </foreground_color>
+            <height>40</height>
+            <lock_children>false</lock_children>
+            <macros>
+              <include_parent_macros>true</include_parent_macros>
+            </macros>
+            <name>TT2</name>
+            <rules />
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <scripts />
+            <show_scrollbar>false</show_scrollbar>
+            <tooltip></tooltip>
+            <transparent>true</transparent>
+            <visible>true</visible>
+            <widget_type>Grouping Container</widget_type>
+            <width>490</width>
+            <wuid>-3f662702:14f8cf0a35a:-686f</wuid>
+            <x>3</x>
+            <y>257</y>
+            <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+              <actions hook="false" hook_all="false" />
+              <alarm_pulsing>false</alarm_pulsing>
+              <auto_size>false</auto_size>
+              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+              <background_color>
+                <color name="IO Area Background" red="221" green="223" blue="229" />
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color name="IO Button" red="178" green="178" blue="178" />
+              </border_color>
+              <border_style>1</border_style>
+              <border_width>1</border_width>
+              <enabled>true</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </font>
+              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+              <foreground_color>
+                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <format_type>0</format_type>
+              <height>40</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <name>TT2</name>
+              <precision>0</precision>
+              <precision_from_pv>true</precision_from_pv>
+              <pv_name>loc://$(COMPONENT)-TT2AtSPo(140)</pv_name>
+              <pv_value />
+              <rotation_angle>0.0</rotation_angle>
+              <rules>
+                <rule name="SetpointNotReached" prop_id="background_color" out_exp="false">
+                  <exp bool_exp="pv2 &amp;&amp; pv3 == 0 &amp;&amp; pv1 != pv0">
+                    <value>
+                      <color name="IO Stopped Symbol Fill" red="255" green="255" blue="255" />
+                    </value>
+                  </exp>
+                  <pv trig="false">loc://$(COMPONENT)-TT2MSPo(140)</pv>
+                  <pv trig="false">$(pv_name)</pv>
+                  <pv trig="true">loc://$(DID)_Submit(0)</pv>
+                  <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
+                </rule>
+              </rules>
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts>
+                <path pathString="../../templates/faceplates/scripts/simul.js" checkConnect="true" sfe="true" seoe="false">
+                  <pv trig="true">loc://$(COMPONENT)-TT2MSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
+                </path>
+                <path pathString="../../templates/faceplates/scripts/end.js" checkConnect="true" sfe="true" seoe="false">
+                  <pv trig="false">loc://$(COMPONENT)-TT2MSPo(140)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
+                </path>
+              </scripts>
+              <show_units>true</show_units>
+              <text>######</text>
+              <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+              <transparent>false</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <visible>true</visible>
+              <widget_type>Text Update</widget_type>
+              <width>130</width>
+              <wrap_words>false</wrap_words>
+              <wuid>-4f7e792e:14d24101041:-2107</wuid>
+              <x>215</x>
+              <y>0</y>
+            </widget>
+            <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+              <actions hook="false" hook_all="false" />
+              <alarm_pulsing>false</alarm_pulsing>
+              <auto_size>false</auto_size>
+              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+              <background_color>
+                <color name="IO Area Background" red="221" green="223" blue="229" />
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color name="IO Button" red="178" green="178" blue="178" />
+              </border_color>
+              <border_style>1</border_style>
+              <border_width>1</border_width>
+              <enabled>true</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </font>
+              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+              <foreground_color>
+                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <format_type>0</format_type>
+              <height>40</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <name>TT2</name>
+              <precision>0</precision>
+              <precision_from_pv>true</precision_from_pv>
+              <pv_name>loc://$(COMPONENT)-TT2SPoH(150)</pv_name>
+              <pv_value />
+              <rotation_angle>0.0</rotation_angle>
+              <rules />
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts />
+              <show_units>true</show_units>
+              <text>######</text>
+              <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+              <transparent>false</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <visible>true</visible>
+              <widget_type>Text Update</widget_type>
+              <width>130</width>
+              <wrap_words>false</wrap_words>
+              <wuid>-3f662702:14f8cf0a35a:-69c1</wuid>
+              <x>360</x>
+              <y>0</y>
+            </widget>
+            <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+              <actions hook="false" hook_all="false" />
+              <alarm_pulsing>false</alarm_pulsing>
+              <auto_size>false</auto_size>
+              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+              <background_color>
+                <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+              </background_color>
+              <background_focus_color>
+                <color name="IO Focus Entry" red="198" green="217" blue="241" />
+              </background_focus_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color name="IO Border" red="0" green="0" blue="0" />
+              </border_color>
+              <border_style>1</border_style>
+              <border_width>1</border_width>
+              <confirm_focus_lost>true</confirm_focus_lost>
+              <confirm_message></confirm_message>
+              <enabled>true</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </font>
+              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+              <foreground_color>
+                <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <format_type>0</format_type>
+              <height>40</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <label_alignment>1</label_alignment>
+              <label_color>
+                <color name="IO Foreground" red="0" green="0" blue="0" />
+              </label_color>
+              <label_font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </label_font>
+              <label_gap>10</label_gap>
+              <label_position>1</label_position>
+              <label_text>TT2</label_text>
+              <limits_from_pv>true</limits_from_pv>
+              <maximum>1.7976931348623157E308</maximum>
+              <minimum>-1.7976931348623157E308</minimum>
+              <multiline_input>false</multiline_input>
+              <name>TT2</name>
+              <next_focus>2</next_focus>
+              <password_input>false</password_input>
+              <precision>0</precision>
+              <precision_from_pv>true</precision_from_pv>
+              <pv_name>loc://_$(COMPONENT)-TT2MSPo(-1)</pv_name>
+              <pv_value />
+              <read_only>false</read_only>
+              <rotation_angle>0.0</rotation_angle>
+              <rules>
+                <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
+                  <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
+                    <value>
+                      <color name="IO Valid Entry" red="0" green="0" blue="255" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv2&lt;=0">
+                    <value>
+                      <color name="IO Invalid Entry" red="250" green="12" blue="14" />
+                    </value>
+                  </exp>
+                  <pv trig="true">$(pv_name)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
+                </rule>
+                <rule name="InfoErrorTooltip" prop_id="tooltip" out_exp="false">
+                  <exp bool_exp="pv0==1">
+                    <value>Alarm Setpoint $(pv_value) is valid and ready to be submitted</value>
+                  </exp>
+                  <exp bool_exp="pv0==-1">
+                    <value>Alarm Setpoint $(pv_value) is invalid and cannot be converted to a value</value>
+                  </exp>
+                  <exp bool_exp="pv0==-2">
+                    <value>Alarm Setpoint $(pv_value) is invalid as greater than the trip setpoint</value>
+                  </exp>
+                  <exp bool_exp="pv0==2">
+                    <value>Alarm Setpoint $(pv_value) unchanged</value>
+                  </exp>
+                  <pv trig="true">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
+                </rule>
+              </rules>
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts>
+                <path pathString="../../templates/faceplates/scripts/init.js" checkConnect="true" sfe="false" seoe="false">
+                  <pv trig="false">$(pv_name)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
+                </path>
+                <path pathString="../../templates/faceplates/scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
+                  <pv trig="true">loc://_$(COMPONENT)-TT2MSPo(-1)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT2AtSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT2SPoH(150)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT2SPoL(0)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT2MSPoSt(0)</pv>
+                </path>
+              </scripts>
+              <selector_type>0</selector_type>
+              <show_h_scroll>false</show_h_scroll>
+              <show_native_border>true</show_native_border>
+              <show_units>true</show_units>
+              <show_v_scroll>false</show_v_scroll>
+              <style>1</style>
+              <text>######</text>
+              <tooltip>$(COMPONENT) Alarm Setpoint Input</tooltip>
+              <transparent>false</transparent>
+              <visible>true</visible>
+              <widget_type>Text Input</widget_type>
+              <width>190</width>
+              <wuid>-4f7e792e:14d24101041:-2467</wuid>
+              <x>0</x>
+              <y>0</y>
+            </widget>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+            <actions hook="false" hook_all="false" />
+            <background_color>
+              <color name="IO Background" red="235" green="235" blue="235" />
+            </background_color>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <border_style>0</border_style>
+            <border_width>2</border_width>
+            <enabled>true</enabled>
+            <fc>false</fc>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+            </font>
+            <foreground_color>
+              <color name="IO Foreground" red="0" green="0" blue="0" />
+            </foreground_color>
+            <height>40</height>
+            <lock_children>false</lock_children>
+            <macros>
+              <include_parent_macros>true</include_parent_macros>
+            </macros>
+            <name>TT3</name>
+            <rules />
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <scripts />
+            <show_scrollbar>false</show_scrollbar>
+            <tooltip></tooltip>
+            <transparent>true</transparent>
+            <visible>true</visible>
+            <widget_type>Grouping Container</widget_type>
+            <width>490</width>
+            <wuid>-3f662702:14f8cf0a35a:-6861</wuid>
+            <x>3</x>
+            <y>361</y>
+            <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+              <actions hook="false" hook_all="false" />
+              <alarm_pulsing>false</alarm_pulsing>
+              <auto_size>false</auto_size>
+              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+              <background_color>
+                <color name="IO Area Background" red="221" green="223" blue="229" />
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color name="IO Button" red="178" green="178" blue="178" />
+              </border_color>
+              <border_style>1</border_style>
+              <border_width>1</border_width>
+              <enabled>true</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </font>
+              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+              <foreground_color>
+                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <format_type>0</format_type>
+              <height>40</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <name>TT3</name>
+              <precision>0</precision>
+              <precision_from_pv>true</precision_from_pv>
+              <pv_name>loc://$(COMPONENT)-TT3AtSPo(140)</pv_name>
+              <pv_value />
+              <rotation_angle>0.0</rotation_angle>
+              <rules>
+                <rule name="SetpointNotReached" prop_id="background_color" out_exp="false">
+                  <exp bool_exp="pv2 &amp;&amp; pv3 == 0 &amp;&amp; pv1 != pv0">
+                    <value>
+                      <color name="IO Stopped Symbol Fill" red="255" green="255" blue="255" />
+                    </value>
+                  </exp>
+                  <pv trig="false">loc://$(COMPONENT)-TT3MSPo(140)</pv>
+                  <pv trig="false">$(pv_name)</pv>
+                  <pv trig="true">loc://$(DID)_Submit(0)</pv>
+                  <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
+                </rule>
+              </rules>
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts>
+                <path pathString="../../templates/faceplates/scripts/simul.js" checkConnect="true" sfe="true" seoe="false">
+                  <pv trig="true">loc://$(COMPONENT)-TT3MSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
+                </path>
+                <path pathString="../../templates/faceplates/scripts/end.js" checkConnect="true" sfe="true" seoe="false">
+                  <pv trig="false">loc://$(COMPONENT)-TT3MSPo(140)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
+                </path>
+              </scripts>
+              <show_units>true</show_units>
+              <text>######</text>
+              <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+              <transparent>false</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <visible>true</visible>
+              <widget_type>Text Update</widget_type>
+              <width>130</width>
+              <wrap_words>false</wrap_words>
+              <wuid>-4f7e792e:14d24101041:-2103</wuid>
+              <x>215</x>
+              <y>0</y>
+            </widget>
+            <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+              <actions hook="false" hook_all="false" />
+              <alarm_pulsing>false</alarm_pulsing>
+              <auto_size>false</auto_size>
+              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+              <background_color>
+                <color name="IO Area Background" red="221" green="223" blue="229" />
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color name="IO Button" red="178" green="178" blue="178" />
+              </border_color>
+              <border_style>1</border_style>
+              <border_width>1</border_width>
+              <enabled>true</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </font>
+              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+              <foreground_color>
+                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <format_type>0</format_type>
+              <height>40</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <name>TT3</name>
+              <precision>0</precision>
+              <precision_from_pv>true</precision_from_pv>
+              <pv_name>loc://$(COMPONENT)-TT3SPoH(150)</pv_name>
+              <pv_value />
+              <rotation_angle>0.0</rotation_angle>
+              <rules />
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts />
+              <show_units>true</show_units>
+              <text>######</text>
+              <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+              <transparent>false</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <visible>true</visible>
+              <widget_type>Text Update</widget_type>
+              <width>130</width>
+              <wrap_words>false</wrap_words>
+              <wuid>-3f662702:14f8cf0a35a:-69c0</wuid>
+              <x>360</x>
+              <y>0</y>
+            </widget>
+            <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+              <actions hook="false" hook_all="false" />
+              <alarm_pulsing>false</alarm_pulsing>
+              <auto_size>false</auto_size>
+              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+              <background_color>
+                <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+              </background_color>
+              <background_focus_color>
+                <color name="IO Focus Entry" red="198" green="217" blue="241" />
+              </background_focus_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color name="IO Border" red="0" green="0" blue="0" />
+              </border_color>
+              <border_style>1</border_style>
+              <border_width>1</border_width>
+              <confirm_focus_lost>true</confirm_focus_lost>
+              <confirm_message></confirm_message>
+              <enabled>true</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </font>
+              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+              <foreground_color>
+                <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <format_type>0</format_type>
+              <height>40</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <label_alignment>1</label_alignment>
+              <label_color>
+                <color name="IO Foreground" red="0" green="0" blue="0" />
+              </label_color>
+              <label_font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </label_font>
+              <label_gap>10</label_gap>
+              <label_position>1</label_position>
+              <label_text>TT3</label_text>
+              <limits_from_pv>true</limits_from_pv>
+              <maximum>1.7976931348623157E308</maximum>
+              <minimum>-1.7976931348623157E308</minimum>
+              <multiline_input>false</multiline_input>
+              <name>TT3</name>
+              <next_focus>2</next_focus>
+              <password_input>false</password_input>
+              <precision>0</precision>
+              <precision_from_pv>true</precision_from_pv>
+              <pv_name>loc://_$(COMPONENT)-TT3MSPo(-1)</pv_name>
+              <pv_value />
+              <read_only>false</read_only>
+              <rotation_angle>0.0</rotation_angle>
+              <rules>
+                <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
+                  <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
+                    <value>
+                      <color name="IO Valid Entry" red="0" green="0" blue="255" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv2&lt;=0">
+                    <value>
+                      <color name="IO Invalid Entry" red="250" green="12" blue="14" />
+                    </value>
+                  </exp>
+                  <pv trig="true">$(pv_name)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
+                </rule>
+                <rule name="InfoErrorTooltip" prop_id="tooltip" out_exp="false">
+                  <exp bool_exp="pv0==1">
+                    <value>Alarm Setpoint $(pv_value) is valid and ready to be submitted</value>
+                  </exp>
+                  <exp bool_exp="pv0==-1">
+                    <value>Alarm Setpoint $(pv_value) is invalid and cannot be converted to a value</value>
+                  </exp>
+                  <exp bool_exp="pv0==-2">
+                    <value>Alarm Setpoint $(pv_value) is invalid as greater than the trip setpoint</value>
+                  </exp>
+                  <exp bool_exp="pv0==2">
+                    <value>Alarm Setpoint $(pv_value) unchanged</value>
+                  </exp>
+                  <pv trig="true">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
+                </rule>
+              </rules>
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts>
+                <path pathString="../../templates/faceplates/scripts/init.js" checkConnect="true" sfe="false" seoe="false">
+                  <pv trig="false">$(pv_name)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
+                </path>
+                <path pathString="../../templates/faceplates/scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
+                  <pv trig="true">loc://_$(COMPONENT)-TT3MSPo(-1)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT3AtSPo(140)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT3SPoH(150)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT2SPoL(0)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT3MSPoSt(0)</pv>
+                </path>
+              </scripts>
+              <selector_type>0</selector_type>
+              <show_h_scroll>false</show_h_scroll>
+              <show_native_border>true</show_native_border>
+              <show_units>true</show_units>
+              <show_v_scroll>false</show_v_scroll>
+              <style>1</style>
+              <text>######</text>
+              <tooltip>$(COMPONENT) Alarm Setpoint Input</tooltip>
+              <transparent>false</transparent>
+              <visible>true</visible>
+              <widget_type>Text Input</widget_type>
+              <width>190</width>
+              <wuid>-4f7e792e:14d24101041:-245f</wuid>
+              <x>0</x>
+              <y>0</y>
+            </widget>
+          </widget>
+          <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+            <actions hook="false" hook_all="false" />
+            <background_color>
+              <color name="IO Background" red="235" green="235" blue="235" />
+            </background_color>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <border_style>0</border_style>
+            <border_width>2</border_width>
+            <enabled>true</enabled>
+            <fc>false</fc>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+            </font>
+            <foreground_color>
+              <color name="IO Foreground" red="0" green="0" blue="0" />
+            </foreground_color>
+            <height>40</height>
+            <lock_children>false</lock_children>
+            <macros>
+              <include_parent_macros>true</include_parent_macros>
+            </macros>
+            <name>TT4</name>
+            <rules />
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <scripts />
+            <show_scrollbar>false</show_scrollbar>
+            <tooltip></tooltip>
+            <transparent>true</transparent>
+            <visible>true</visible>
+            <widget_type>Grouping Container</widget_type>
+            <width>490</width>
+            <wuid>-3f662702:14f8cf0a35a:-6853</wuid>
+            <x>3</x>
+            <y>469</y>
+            <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+              <actions hook="false" hook_all="false" />
+              <alarm_pulsing>false</alarm_pulsing>
+              <auto_size>false</auto_size>
+              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+              <background_color>
+                <color name="IO Area Background" red="221" green="223" blue="229" />
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color name="IO Button" red="178" green="178" blue="178" />
+              </border_color>
+              <border_style>1</border_style>
+              <border_width>1</border_width>
+              <enabled>true</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </font>
+              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+              <foreground_color>
+                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <format_type>0</format_type>
+              <height>40</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <name>TT4</name>
+              <precision>0</precision>
+              <precision_from_pv>true</precision_from_pv>
+              <pv_name>loc://$(COMPONENT)-TT4AtSPo(60)</pv_name>
+              <pv_value />
+              <rotation_angle>0.0</rotation_angle>
+              <rules>
+                <rule name="SetpointNotReached" prop_id="background_color" out_exp="false">
+                  <exp bool_exp="pv2 &amp;&amp; pv3 == 0 &amp;&amp; pv1 != pv0">
+                    <value>
+                      <color name="IO Stopped Symbol Fill" red="255" green="255" blue="255" />
+                    </value>
+                  </exp>
+                  <pv trig="false">loc://$(COMPONENT)-TT4MSPo(60)</pv>
+                  <pv trig="false">$(pv_name)</pv>
+                  <pv trig="true">loc://$(DID)_Submit(0)</pv>
+                  <pv trig="true">sim://ramp(0,1,1,0.5)</pv>
+                </rule>
+              </rules>
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts>
+                <path pathString="../../templates/faceplates/scripts/simul.js" checkConnect="true" sfe="true" seoe="false">
+                  <pv trig="true">loc://$(COMPONENT)-TT4MSPo(60)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
+                </path>
+                <path pathString="../../templates/faceplates/scripts/end.js" checkConnect="true" sfe="true" seoe="false">
+                  <pv trig="false">loc://$(COMPONENT)-TT4MSPo(60)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
+                </path>
+              </scripts>
+              <show_units>true</show_units>
+              <text>######</text>
+              <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+              <transparent>false</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <visible>true</visible>
+              <widget_type>Text Update</widget_type>
+              <width>130</width>
+              <wrap_words>false</wrap_words>
+              <wuid>-4f7e792e:14d24101041:-20ff</wuid>
+              <x>215</x>
+              <y>0</y>
+            </widget>
+            <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+              <actions hook="false" hook_all="false" />
+              <alarm_pulsing>false</alarm_pulsing>
+              <auto_size>false</auto_size>
+              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+              <background_color>
+                <color name="IO Area Background" red="221" green="223" blue="229" />
+              </background_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color name="IO Button" red="178" green="178" blue="178" />
+              </border_color>
+              <border_style>1</border_style>
+              <border_width>1</border_width>
+              <enabled>true</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </font>
+              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+              <foreground_color>
+                <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <format_type>0</format_type>
+              <height>40</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <name>TT4</name>
+              <precision>0</precision>
+              <precision_from_pv>true</precision_from_pv>
+              <pv_name>loc://$(COMPONENT)-TT4SPoH(80)</pv_name>
+              <pv_value />
+              <rotation_angle>0.0</rotation_angle>
+              <rules />
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts />
+              <show_units>true</show_units>
+              <text>######</text>
+              <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+              <transparent>false</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <visible>true</visible>
+              <widget_type>Text Update</widget_type>
+              <width>130</width>
+              <wrap_words>false</wrap_words>
+              <wuid>-3f662702:14f8cf0a35a:-69bf</wuid>
+              <x>360</x>
+              <y>0</y>
+            </widget>
+            <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
+              <actions hook="false" hook_all="false" />
+              <alarm_pulsing>false</alarm_pulsing>
+              <auto_size>false</auto_size>
+              <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+              <background_color>
+                <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
+              </background_color>
+              <background_focus_color>
+                <color name="IO Focus Entry" red="198" green="217" blue="241" />
+              </background_focus_color>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color name="IO Border" red="0" green="0" blue="0" />
+              </border_color>
+              <border_style>1</border_style>
+              <border_width>1</border_width>
+              <confirm_focus_lost>true</confirm_focus_lost>
+              <confirm_message></confirm_message>
+              <enabled>true</enabled>
+              <font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </font>
+              <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+              <foreground_color>
+                <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+              </foreground_color>
+              <format_type>0</format_type>
+              <height>40</height>
+              <horizontal_alignment>0</horizontal_alignment>
+              <label_alignment>1</label_alignment>
+              <label_color>
+                <color name="IO Foreground" red="0" green="0" blue="0" />
+              </label_color>
+              <label_font>
+                <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+              </label_font>
+              <label_gap>10</label_gap>
+              <label_position>1</label_position>
+              <label_text>TT4</label_text>
+              <limits_from_pv>true</limits_from_pv>
+              <maximum>1.7976931348623157E308</maximum>
+              <minimum>-1.7976931348623157E308</minimum>
+              <multiline_input>false</multiline_input>
+              <name>TT4</name>
+              <next_focus>2</next_focus>
+              <password_input>false</password_input>
+              <precision>0</precision>
+              <precision_from_pv>true</precision_from_pv>
+              <pv_name>loc://_$(COMPONENT)-TT4MSPo(-1)</pv_name>
+              <pv_value />
+              <read_only>false</read_only>
+              <rotation_angle>0.0</rotation_angle>
+              <rules>
+                <rule name="InputStatus" prop_id="foreground_color" out_exp="false">
+                  <exp bool_exp="pv0!=pv1 &amp;&amp; pv2==1">
+                    <value>
+                      <color name="IO Valid Entry" red="0" green="0" blue="255" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv2&lt;=0">
+                    <value>
+                      <color name="IO Invalid Entry" red="250" green="12" blue="14" />
+                    </value>
+                  </exp>
+                  <pv trig="true">$(pv_name)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
+                </rule>
+                <rule name="InfoErrorTooltip" prop_id="tooltip" out_exp="false">
+                  <exp bool_exp="pv0==1">
+                    <value>Alarm Setpoint $(pv_value) is valid and ready to be submitted</value>
+                  </exp>
+                  <exp bool_exp="pv0==-1">
+                    <value>Alarm Setpoint $(pv_value) is invalid and cannot be converted to a value</value>
+                  </exp>
+                  <exp bool_exp="pv0==-2">
+                    <value>Alarm Setpoint $(pv_value) is invalid as greater than the trip setpoint</value>
+                  </exp>
+                  <exp bool_exp="pv0==2">
+                    <value>Alarm Setpoint $(pv_value) unchanged</value>
+                  </exp>
+                  <pv trig="true">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
+                </rule>
+              </rules>
+              <scale_options>
+                <width_scalable>false</width_scalable>
+                <height_scalable>false</height_scalable>
+                <keep_wh_ratio>false</keep_wh_ratio>
+              </scale_options>
+              <scripts>
+                <path pathString="../../templates/faceplates/scripts/init.js" checkConnect="true" sfe="false" seoe="false">
+                  <pv trig="false">$(pv_name)</pv>
+                  <pv trig="true">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
+                </path>
+                <path pathString="../../templates/faceplates/scripts/validate.js" checkConnect="true" sfe="true" seoe="false">
+                  <pv trig="true">$(pv_name)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT4AtSPo(60)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT4SPoH(80)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT4SPoL(0)</pv>
+                  <pv trig="false">loc://$(COMPONENT)-TT4MSPoSt(0)</pv>
+                </path>
+              </scripts>
+              <selector_type>0</selector_type>
+              <show_h_scroll>false</show_h_scroll>
+              <show_native_border>true</show_native_border>
+              <show_units>true</show_units>
+              <show_v_scroll>false</show_v_scroll>
+              <style>1</style>
+              <text>######</text>
+              <tooltip>$(COMPONENT) Alarm Setpoint Input</tooltip>
+              <transparent>false</transparent>
+              <visible>true</visible>
+              <widget_type>Text Input</widget_type>
+              <width>190</width>
+              <wuid>-4f7e792e:14d24101041:-2459</wuid>
+              <x>0</x>
+              <y>0</y>
+            </widget>
+          </widget>
         </widget>
       </widget>
     </widget>
