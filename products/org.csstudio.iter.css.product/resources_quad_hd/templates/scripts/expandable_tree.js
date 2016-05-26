@@ -17,7 +17,8 @@ importPackage(Packages.java.lang)
 	var INDENT_WIDTH = resolution_4k ? 100 : 50;
 
 	// getting the current cbs level for this screen
-	var current_cbs = widget.getMacroValue("LEVEL");
+	var current_level = widget.getMacroValue("LEVEL");
+	var level = "";
 
 	// getting the input xml file path
 	var xml_input = widget.getMacroValue("INPUT");
@@ -37,6 +38,8 @@ importPackage(Packages.java.lang)
 
 // recursive list function on CBS tree
 function buildCBSMap(root, indent){
+
+	var upLevel = "";
 	
 	var cbs = root.getChildren();	
 	
@@ -59,7 +62,7 @@ function buildCBSMap(root, indent){
 			linkingContainer.setPropertyValue("x", indent * INDENT_WIDTH);
 	    }
 	    
-	    if (isEltCurrentCBS(elt, current_cbs)) {
+	    if (isEltCurrentCBS(elt)) {
 			linkingContainer.setPropertyValue("background_color", "IO Grid");
 	    } else {
 			linkingContainer.setPropertyValue("background_color", "IO Background");
@@ -70,6 +73,10 @@ function buildCBSMap(root, indent){
 	    // adding macros CBS and OPI_FILE to the container
 		linkingContainer.addMacro("CBS", elt.getAttributeValue("name"));
 
+		upLevel = level;
+		level += elt.getAttributeValue("name");
+		linkingContainer.addMacro("CBS_PATH", level);	
+
 		linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));	
 		linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
 		addOPImacros(linkingContainer, elt);	
@@ -78,15 +85,16 @@ function buildCBSMap(root, indent){
 	    widget.addChildToBottom(linkingContainer);
 	
 		// setting the CBS label properties
-	 	var button = widget.getWidget(elt.getAttributeValue("name"));
+	 	var button = widget.getWidget(level);
 	 	button.setPropertyValue("enabled", elt.getAttributeValue("enabled"));
 	 	button.setPropertyValue("tooltip", elt.getAttributeValue("description") + " ($(number_alarms) alarm(s))");
 
 		buildCBSMap(elt, indent+1);
+		level = upLevel;
  	}
 }
 
-function isEltCurrentCBS(elt, level) {
+function isEltCurrentCBS(elt) {
 	var attribute = elt.getAttributeValue("opi_file");
 	if (attribute) {
 		var words = attribute.split(" ");
@@ -99,7 +107,7 @@ function isEltCurrentCBS(elt, level) {
 		    	var macro_name = macros[0];
 		    	if (macro_name == "LEVEL") {
 			    	var macro_value = (macros[1] == null) ? "" : macros[1];
-			    	return ~level.indexOf(macro_value);
+			    	return ~current_level.indexOf(macro_value);
 		       	}
 		    }
 		}

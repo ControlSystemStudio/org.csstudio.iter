@@ -14,8 +14,9 @@ importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
 importPackage(Packages.java.lang)
 
 	// getting the current cbs level for this screen
-	var current_cbs = widget.getMacroValue("LEVEL");
-	var depth = getLevelDepth(current_cbs);
+	var current_level = widget.getMacroValue("LEVEL");
+	var depth = getLevelDepth(current_level);
+	var level = "";
 
 	// getting the type of OPI: USER or ALARM
 	var opi_type = widget.getMacroValue("OPI_TYPE");
@@ -46,7 +47,7 @@ function listCBS(current, depth, max_depth){
 		var itr = cbs.iterator();
 		while (itr.hasNext() && depth <= max_depth) {
 		    var elt = itr.next();
-		    if (isEltCurrentCBS(elt, current_cbs)) {
+		    if (isEltCurrentCBS(elt)) {
 			    if (depth == 0){
 				    // adding the Home button for level 0 - ITER overview
 			    	addHomeButton(elt);
@@ -66,30 +67,26 @@ function listCBS(current, depth, max_depth){
 	}
 }
 
-function getLevelDepth(level) {
-	if (level == "" || !level) {
+function getLevelDepth() {
+	if (current_level == "" || !current_level) {
 		// CBS 0 is not specified or empty name
 		return 0;
 	}
 	// getting the number of levels 
 	// for instance UTIL-S15-AG07 has 3 CBS levels - ITER is CBS0
-	var words = level.split("-");
+	var words = current_level.split("-");
 	return words.length - 1;
 }
 
-function isEltCurrentCBS(elt, level) {
-	if (getLevelDepth(level) == 0) {
+function isEltCurrentCBS(elt) {
+	if (getLevelDepth() == 0) {
 		return true;
 	}
-	var currentLevel = elt.getAttributeValue("name");
-	if (currentLevel) {
-		var words = level.split("-");
-		var i = 0;
-		for (i in words) {
-		  if (words[i].search(currentLevel) >= 0) {
-		  	return true;
-		  }
-		 }
+	
+	var iLevel = level + elt.getAttributeValue("name");
+	if (iLevel && current_level.startsWith(iLevel)) {
+	  	level = iLevel + "-";
+	  	return true;
 	 }
 	 return false;
 }
@@ -158,12 +155,15 @@ function createHomeButtonContainer() {
 }
 
 function addUpButton(elt) {
+	var iLevel = level.substr(0, level.length-1);
+	
 	//creating the linking container that display the Up button
 	var linkingContainer = createUpButtonContainer();
 	if (linkingContainer) {			
 	    // reading attribute from element using JDOM
 	    // adding macros CBS and OPI_FILE to the container
 		linkingContainer.addMacro("CBS", elt.getAttributeValue("name"));	
+		linkingContainer.addMacro("CBS_PATH", iLevel);	
 		linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));	
 		linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
 		addOPImacros(linkingContainer, elt);	
@@ -172,7 +172,7 @@ function addUpButton(elt) {
 		getGeneralNavigationContainer().addChildToRight(linkingContainer);
 	
 		// setting the navigation button properties
-	 	var button = getGeneralNavigationContainer().getWidget(elt.getAttributeValue("name"));	
+	 	var button = getGeneralNavigationContainer().getWidget(iLevel);	
 	 	button.setPropertyValue("height", getGeneralNavigationContainerHeight());
 	 	button.setPropertyValue("width", (getGeneralNavigationContainerWidth()*2/3)/5);
 		setButton(button, elt);
