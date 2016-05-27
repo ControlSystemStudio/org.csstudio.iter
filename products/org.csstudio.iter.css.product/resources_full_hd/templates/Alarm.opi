@@ -17,7 +17,8 @@
   <height>1040</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
-    <TITLE>Emtpy Canvas</TITLE>
+    <TITLE>${ALARM_PV} ALARM PAGE</TITLE>
+    <ALARM_ROOT>${ALARM_PATH}/${ALARM_PV}</ALARM_ROOT>
   </macros>
   <name>${TITLE}</name>
   <rules/>
@@ -418,8 +419,8 @@
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
-        <name>Mimic</name>
-        <opi_file>Empty_mimic.opi</opi_file>
+        <name>ALARM PAGE</name>
+        <opi_file>AlarmPage.opi</opi_file>
         <resize_behaviour>1</resize_behaviour>
         <rules/>
         <scale_options>
@@ -540,6 +541,7 @@
       <lock_children>false</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
+        <LEGEND>AlarmFaceplate.opi</LEGEND>
       </macros>
       <name>CONTROL AREA FACEPLATES</name>
       <rules/>
@@ -621,7 +623,6 @@
       <lock_children>false</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
-        <INPUT>Navigation.xml</INPUT>
       </macros>
       <name>NAVIGATION PANE</name>
       <rules/>

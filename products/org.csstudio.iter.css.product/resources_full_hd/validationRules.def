@@ -153,7 +153,7 @@ show_boolean_label=RW
 effect_3D=RW
 
 #! BOOLEAN CONTROL WIDGETS
-toggle_button=RO
+toggle_button=RW
 push_action_index=RW
 release_action_index=RW
 show_confirm_dialog=RO
@@ -162,8 +162,9 @@ password=RO
 
 #! LED
 square_led=RW
-led.on_color=WRITE [IO Invalid Level Alarm; IO High Level Alarm; IO Medium Level Alarm; IO Normal Level Alarm]
-led.off_color=WRITE [IO Invalid Level Alarm; IO High Level Alarm; IO Medium Level Alarm; IO Normal Level Alarm]
+led.on_color=WRITE [IO PV ON; IO Invalid Level Alarm; IO High Level Alarm; IO Medium Level Alarm; IO Normal Level Alarm]
+led.off_color=WRITE [IO PV OFF; IO Invalid Level Alarm; IO High Level Alarm; IO Medium Level Alarm; IO Normal Level Alarm]
+led.rules=RO
 
 #! IMAGE BOOLEAN INDICATOR
 on_image=WRITE
@@ -336,6 +337,11 @@ show_v_scroll=RO
 background_focus_color=RO
 confirm_focus_lost=RO
 next_focus=RO
+label_color=RO
+label_font=WRITE [IO Title; IO SubTitle; IO Label bold; IO Label]
+show_native_border=RO
+show_v_scroll=RO
+show_h_scroll=RO
 
 #! SPINNER
 format=RW

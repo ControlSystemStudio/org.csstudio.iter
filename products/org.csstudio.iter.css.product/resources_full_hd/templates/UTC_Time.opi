@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
-  <actions hook="false" hook_all="false" />
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <actions hook="false" hook_all="false"/>
   <auto_scale_widgets>
     <auto_scale_widgets>false</auto_scale_widgets>
     <min_width>-1</min_width>
@@ -8,20 +7,20 @@
   </auto_scale_widgets>
   <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
   <background_color>
-    <color name="IO Background" red="235" green="235" blue="235" />
+    <color blue="235" green="235" name="IO Background" red="235"/>
   </background_color>
-  <boy_version>5.0.0.codac_core_5_2b5</boy_version>
+  <boy_version>5.0.0.201601290821</boy_version>
   <foreground_color>
-    <color name="IO Grid" red="215" green="215" blue="215" />
+    <color blue="215" green="215" name="IO Grid" red="215"/>
   </foreground_color>
   <grid_space>1</grid_space>
   <height>49</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <name></name>
-  <rules />
-  <scripts />
+  <name/>
+  <rules/>
+  <scripts/>
   <show_close_button>true</show_close_button>
   <show_edit_range>true</show_edit_range>
   <show_grid>true</show_grid>
@@ -33,12 +32,12 @@
   <x>0</x>
   <y>0</y>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-    <actions hook="false" hook_all="false" />
+    <actions hook="false" hook_all="false"/>
     <background_color>
-      <color name="IO Area Background" red="221" green="223" blue="229" />
+      <color blue="229" green="223" name="IO Area Background" red="221"/>
     </background_color>
     <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
+      <color blue="0" green="0" name="IO Border" red="0"/>
     </border_color>
     <border_style>0</border_style>
     <border_width>1</border_width>
@@ -48,7 +47,7 @@
       <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
     </font>
     <foreground_color>
-      <color name="IO Foreground" red="0" green="0" blue="0" />
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
     </foreground_color>
     <height>49</height>
     <lock_children>false</lock_children>
@@ -56,13 +55,13 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <name>UTC Time</name>
-    <rules />
+    <rules/>
     <scale_options>
       <width_scalable>false</width_scalable>
       <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
-    <scripts />
+    <scripts/>
     <show_scrollbar>false</show_scrollbar>
     <tooltip>UTC Time in seconds</tooltip>
     <transparent>false</transparent>
@@ -72,15 +71,67 @@
     <wuid>1843be06:14936992576:-7d76</wuid>
     <x>0</x>
     <y>0</y>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <actions hook="false" hook_all="false"/>
+      <alarm_pulsing>false</alarm_pulsing>
+      <auto_size>false</auto_size>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color blue="229" green="223" name="IO Area Background" red="221"/>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color blue="178" green="178" name="IO Button" red="178"/>
+      </border_color>
+      <border_style>1</border_style>
+      <border_width>1</border_width>
+      <enabled>true</enabled>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color blue="0" green="0" name="IO InputPV Fg" red="0"/>
+      </foreground_color>
+      <format_type>0</format_type>
+      <height>49</height>
+      <horizontal_alignment>0</horizontal_alignment>
+      <name>UTC Time</name>
+      <precision>0</precision>
+      <precision_from_pv>true</precision_from_pv>
+      <pv_name>sys://time</pv_name>
+      <pv_value/>
+      <rotation_angle>0.0</rotation_angle>
+      <rules/>
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts/>
+      <show_units>true</show_units>
+      <text>2014/12/31 12:00:00</text>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <transparent>false</transparent>
+      <vertical_alignment>1</vertical_alignment>
+      <visible>true</visible>
+      <widget_type>Text Update</widget_type>
+      <width>191</width>
+      <wrap_words>false</wrap_words>
+      <wuid>56bdcf55:1490ddf160e:-7dc8</wuid>
+      <x>2</x>
+      <y>0</y>
+    </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Image" version="1.0.0">
-      <actions hook="false" hook_all="false" />
+      <actions hook="false" hook_all="false"/>
       <align_to_nearest_second>true</align_to_nearest_second>
       <auto_size>true</auto_size>
       <background_color>
-        <color name="IO Background" red="235" green="235" blue="235" />
+        <color blue="235" green="235" name="IO Background" red="235"/>
       </background_color>
       <border_color>
-        <color name="IO Border" red="0" green="0" blue="0" />
+        <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
       <border_style>0</border_style>
       <border_width>2</border_width>
@@ -96,9 +147,9 @@
         <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
       </font>
       <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
+        <color blue="0" green="0" name="IO Foreground" red="0"/>
       </foreground_color>
-      <height>24</height>
+      <height>42</height>
       <image_file>pictures/IterLogo.png</image_file>
       <name>ITER Logo</name>
       <no_animation>false</no_animation>
@@ -112,74 +163,22 @@
           <col>1.0</col>
         </row>
       </permutation_matrix>
-      <rules />
+      <rules/>
       <scale_options>
         <width_scalable>false</width_scalable>
         <height_scalable>false</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
-      <scripts />
+      <scripts/>
       <stretch_to_fit>false</stretch_to_fit>
-      <tooltip></tooltip>
-      <transparency>false</transparency>
+      <tooltip/>
+      <transparency>true</transparency>
       <visible>true</visible>
       <widget_type>Image</widget_type>
-      <width>50</width>
+      <width>89</width>
       <wuid>-57352fd0:149859b9257:-3316</wuid>
-      <x>227</x>
-      <y>13</y>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <alarm_pulsing>false</alarm_pulsing>
-      <auto_size>false</auto_size>
-      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
-      <background_color>
-        <color name="IO Area Background" red="221" green="223" blue="229" />
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <border_color>
-        <color name="IO Button" red="178" green="178" blue="178" />
-      </border_color>
-      <border_style>1</border_style>
-      <border_width>1</border_width>
-      <enabled>true</enabled>
-      <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
-      </font>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <foreground_color>
-        <color name="IO InputPV Fg" red="0" green="0" blue="0" />
-      </foreground_color>
-      <format_type>0</format_type>
-      <height>49</height>
-      <horizontal_alignment>0</horizontal_alignment>
-      <name>UTC Time</name>
-      <precision>0</precision>
-      <precision_from_pv>true</precision_from_pv>
-      <pv_name>sys://time</pv_name>
-      <pv_value />
-      <rotation_angle>0.0</rotation_angle>
-      <rules />
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_units>true</show_units>
-      <text>2014/12/31 12:00:00</text>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <transparent>false</transparent>
-      <vertical_alignment>1</vertical_alignment>
-      <visible>true</visible>
-      <widget_type>Text Update</widget_type>
-      <width>191</width>
-      <wrap_words>false</wrap_words>
-      <wuid>56bdcf55:1490ddf160e:-7dc8</wuid>
-      <x>2</x>
-      <y>0</y>
+      <x>197</x>
+      <y>3</y>
     </widget>
   </widget>
 </display>

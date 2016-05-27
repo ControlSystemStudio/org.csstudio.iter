@@ -10,13 +10,33 @@ refer to the file ITER-LICENSE.TXT located in the top level directory
 of the distribution package.
 */
 
+/*
+V1.0 Feb 2016 - cancel the submitted input
+pvs[0]		: the first PV is the trigger PV - Cancel button has been clicked on
+pvs[i+1]	: input field PV
+pvs[i+2]	: PV to be written
+pvs[i+3]	: PV value backup
+pvs[i+4]	: input field flag
+
+V2.0 June 2016 - ...
+*/
+
 importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
 importPackage(Packages.org.csstudio.platform.data);
 importPackage(Packages.org.eclipse.jface.dialogs);
 
-var Submitted        = 2;
-var Canceled         = 3;
-var flag	 		 = 0;
+// Input flag enumeration
+var OK          = 1,
+	UNCHANGED	= 2,
+	SUBMITTED   = 3,
+	CANCELED    = 4,
+	ENDED       = 5,
+	NOK         = 0,
+	BADINPUT	= -1,
+	RANGEOVER	= -2,
+	RANGEUNDER	= -3;
+
+var flag	 	= NOK;
 
 //First PV is the trigger PV - Submit button has been clicked on
 i = 1;
@@ -24,19 +44,19 @@ i = 1;
 //For all input PVs send the new value
 while (i < pvs.length) {
 	
-	flag = PVUtil.getLong(pvs[i+3]);
+	flag_value = PVUtil.getLong(pvs[i+3]);
 	
 	//Only if a new value was submitted
-	if (flag == Submitted) {
+	if (flag_value == SUBMITTED) {
 			
-		//Write the previous value
+		//Restore the previous value
 		pvs[i+1].setValue(PVUtil.getDouble(pvs[i+2]));
 		
 		//Backup the canceled value
 		pvs[i+2].setValue(PVUtil.getDouble(pvs[i]));
 		
-		//Update the status to Canceled
-		pvs[i+3].setValue(Canceled);
+		//Update the status to CANCELED
+		pvs[i+3].setValue(CANCELED);
 	
 	}
 	

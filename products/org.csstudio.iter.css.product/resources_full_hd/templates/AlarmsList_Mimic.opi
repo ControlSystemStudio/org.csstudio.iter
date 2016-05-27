@@ -14,12 +14,11 @@
     <color blue="215" green="215" name="IO Grid" red="215"/>
   </foreground_color>
   <grid_space>1</grid_space>
-  <height>94</height>
+  <height>880</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
-    <TITLE>Overview</TITLE>
   </macros>
-  <name>Navigation Pane</name>
+  <name>MAIN DISPLAY AREA - MIMIC</name>
   <rules/>
   <scripts/>
   <show_close_button>true</show_close_button>
@@ -28,20 +27,20 @@
   <show_ruler>true</show_ruler>
   <snap_to_geometry>true</snap_to_geometry>
   <widget_type>Display</widget_type>
-  <width>1620</width>
+  <width>1618</width>
   <wuid>-14a921ec:134b2495e46:-7f53</wuid>
   <x>0</x>
   <y>0</y>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
     <actions hook="false" hook_all="false"/>
     <background_color>
-      <color blue="229" green="223" name="IO Area Background" red="221"/>
+      <color blue="235" green="235" name="IO Background" red="235"/>
     </background_color>
     <border_color>
       <color blue="0" green="0" name="IO Border" red="0"/>
     </border_color>
     <border_style>0</border_style>
-    <border_width>2</border_width>
+    <border_width>1</border_width>
     <enabled>true</enabled>
     <fc>false</fc>
     <font>
@@ -50,30 +49,26 @@
     <foreground_color>
       <color blue="0" green="0" name="IO Foreground" red="0"/>
     </foreground_color>
-    <height>94</height>
+    <height>880</height>
     <lock_children>false</lock_children>
     <macros>
       <include_parent_macros>true</include_parent_macros>
     </macros>
-    <name>NAVIGATION PANE</name>
+    <name>MAIN DISPLAY AREA - MIMIC</name>
     <rules/>
     <scale_options>
       <width_scalable>false</width_scalable>
       <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
-    <scripts>
-      <path checkConnect="true" pathString="scripts/LoadNavigation.js" seoe="false" sfe="false">
-        <pv trig="true">loc://$(DID)_loadNavigation(1)</pv>
-      </path>
-    </scripts>
+    <scripts/>
     <show_scrollbar>false</show_scrollbar>
     <tooltip/>
-    <transparent>false</transparent>
+    <transparent>true</transparent>
     <visible>true</visible>
     <widget_type>Grouping Container</widget_type>
-    <width>1620</width>
-    <wuid>5a6cdd3b:14ba14b8319:-7b65</wuid>
+    <width>1618</width>
+    <wuid>-28c93393:14b0cb4ebee:-6a50</wuid>
     <x>0</x>
     <y>0</y>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -84,8 +79,8 @@
       <border_color>
         <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
-      <border_style>5</border_style>
-      <border_width>1</border_width>
+      <border_style>0</border_style>
+      <border_width>2</border_width>
       <enabled>true</enabled>
       <fc>false</fc>
       <font>
@@ -94,13 +89,20 @@
       <foreground_color>
         <color blue="0" green="0" name="IO Foreground" red="0"/>
       </foreground_color>
-      <height>92</height>
+      <height>880</height>
       <lock_children>false</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
-      <name>GENERAL NAVIGATION BAR</name>
-      <rules/>
+      <name>Information Layer</name>
+      <rules>
+        <rule name="MakeLayerVisible" out_exp="false" prop_id="visible">
+          <exp bool_exp="pv0==0">
+            <value>false</value>
+          </exp>
+          <pv trig="true">loc://$(DID)_INFO_SHOW(0)</pv>
+        </rule>
+      </rules>
       <scale_options>
         <width_scalable>false</width_scalable>
         <height_scalable>false</height_scalable>
@@ -108,25 +110,25 @@
       </scale_options>
       <scripts/>
       <show_scrollbar>false</show_scrollbar>
-      <tooltip/>
+      <tooltip>$(name)</tooltip>
       <transparent>true</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
-      <width>380</width>
-      <wuid>5a6cdd3b:14ba14b8319:-7b64</wuid>
+      <width>1908</width>
+      <wuid>-1e0f3b69:149c8d6d12f:-432f</wuid>
       <x>0</x>
       <y>0</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <actions hook="false" hook_all="false"/>
       <background_color>
-        <color blue="229" green="223" name="IO Area Background" red="221"/>
+        <color blue="235" green="235" name="IO Background" red="235"/>
       </background_color>
       <border_color>
         <color blue="0" green="0" name="IO Border" red="0"/>
       </border_color>
-      <border_style>5</border_style>
-      <border_width>1</border_width>
+      <border_style>0</border_style>
+      <border_width>2</border_width>
       <enabled>true</enabled>
       <fc>false</fc>
       <font>
@@ -135,12 +137,12 @@
       <foreground_color>
         <color blue="0" green="0" name="IO Foreground" red="0"/>
       </foreground_color>
-      <height>92</height>
+      <height>880</height>
       <lock_children>false</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
-      <name>MIMIC SPECIFIC - NAVIGATION AREA</name>
+      <name>Static Data Layer</name>
       <rules/>
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -149,38 +151,50 @@
       </scale_options>
       <scripts/>
       <show_scrollbar>false</show_scrollbar>
-      <tooltip/>
-      <transparent>false</transparent>
+      <tooltip>$(name)</tooltip>
+      <transparent>true</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
-      <width>1238</width>
-      <wuid>5a6cdd3b:14ba14b8319:-7b61</wuid>
-      <x>380</x>
+      <width>1908</width>
+      <wuid>14e9e75e:15331210859:-5d89</wuid>
+      <x>0</x>
       <y>0</y>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <widget typeId="org.csstudio.alarm.beast.ui.alarmtable" version="1.0.0">
         <actions hook="false" hook_all="false"/>
         <background_color>
-          <color blue="235" green="235" name="IO Background" red="235"/>
+          <color blue="229" green="223" name="IO Area Background" red="221"/>
         </background_color>
         <border_color>
           <color blue="0" green="0" name="IO Border" red="0"/>
         </border_color>
         <border_style>0</border_style>
-        <border_width>2</border_width>
+        <border_width>1</border_width>
+        <columns>
+          <column id="ACK" visible="true" weight="0" width="20"/>
+          <column id="ICON" visible="true" weight="0" width="20"/>
+          <column id="DESCRIPTION" visible="true" weight="100" width="143"/>
+          <column id="TIME" visible="true" weight="40" width="240"/>
+          <column id="CURRENT_SEVERITY" visible="true" weight="30" width="50"/>
+          <column id="CURRENT_STATUS" visible="true" weight="30" width="45"/>
+          <column id="PV" visible="true" weight="50" width="80"/>
+          <column id="VALUE" visible="true" weight="30" width="45"/>
+          <column id="ID" visible="true" weight="100" width="80"/>
+          <column id="SEVERITY" visible="false" weight="30" width="50"/>
+          <column id="STATUS" visible="false" weight="30" width="45"/>
+          <column id="ACTION" visible="false" weight="100" width="80"/>
+        </columns>
+        <columns_headers_visible>true</columns_headers_visible>
         <enabled>true</enabled>
-        <fc>false</fc>
+        <filter_item>${ALARM_ROOT}</filter_item>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
         </font>
         <foreground_color>
           <color blue="0" green="0" name="IO Foreground" red="0"/>
         </foreground_color>
-        <height>45</height>
-        <lock_children>false</lock_children>
-        <macros>
-          <include_parent_macros>true</include_parent_macros>
-        </macros>
-        <name>OneLineNavigation</name>
+        <height>880</height>
+        <max_number_of_alarms>1024</max_number_of_alarms>
+        <name>Alarms List</name>
         <rules/>
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -188,56 +202,22 @@
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts/>
-        <show_scrollbar>false</show_scrollbar>
-        <tooltip/>
-        <transparent>true</transparent>
+        <separate_tables>false</separate_tables>
+        <sort_ascending>false</sort_ascending>
+        <sorting_column>4</sorting_column>
+        <table_header_visible>false</table_header_visible>
+        <table_weight_acknowledge>80</table_weight_acknowledge>
+        <table_weight_unacknowledge>20</table_weight_unacknowledge>
+        <time_format>yyyy-MM-dd HH:mm:ss</time_format>
+        <tooltip>List of active alarms on ${ALARM_ROOT}</tooltip>
+        <unacknowledged_blinking>true</unacknowledged_blinking>
         <visible>true</visible>
-        <widget_type>Grouping Container</widget_type>
-        <width>1236</width>
-        <wuid>4138734d:14ba27a630d:-7ce2</wuid>
+        <widget_type>Alarm Table</widget_type>
+        <width>1908</width>
+        <writable>true</writable>
+        <wuid>f036186:1533843e7b9:-5455</wuid>
         <x>0</x>
         <y>0</y>
-      </widget>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-        <actions hook="false" hook_all="false"/>
-        <background_color>
-          <color blue="235" green="235" name="IO Background" red="235"/>
-        </background_color>
-        <border_color>
-          <color blue="0" green="0" name="IO Border" red="0"/>
-        </border_color>
-        <border_style>0</border_style>
-        <border_width>2</border_width>
-        <enabled>true</enabled>
-        <fc>false</fc>
-        <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
-        </font>
-        <foreground_color>
-          <color blue="0" green="0" name="IO Foreground" red="0"/>
-        </foreground_color>
-        <height>45</height>
-        <lock_children>false</lock_children>
-        <macros>
-          <include_parent_macros>true</include_parent_macros>
-        </macros>
-        <name>TwoLineNavigation</name>
-        <rules/>
-        <scale_options>
-          <width_scalable>false</width_scalable>
-          <height_scalable>false</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <scripts/>
-        <show_scrollbar>false</show_scrollbar>
-        <tooltip/>
-        <transparent>true</transparent>
-        <visible>true</visible>
-        <widget_type>Grouping Container</widget_type>
-        <width>1236</width>
-        <wuid>4138734d:14ba27a630d:-7cd4</wuid>
-        <x>0</x>
-        <y>45</y>
       </widget>
     </widget>
   </widget>

@@ -10,19 +10,33 @@ refer to the file ITER-LICENSE.TXT located in the top level directory
 of the distribution package.
 */
 
+/*
+V1.0 Feb 2016 - submission of the input
+pvs[0]		: the first PV is the trigger PV - Submit button has been clicked on
+pvs[i+1]	: input field PV
+pvs[i+2]	: PV to be written
+pvs[i+3]	: PV value backup
+pvs[i+4]	: input field flag
+
+V2.0 June 2016 - ...
+*/
+
 importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
 importPackage(Packages.org.csstudio.platform.data);
 importPackage(Packages.org.eclipse.jface.dialogs);
 
-var 
-	Submitted         	= 2,
-	new_value,old_value	= 0,
-	OK          = 1,
-	NOK         = 0,
+// Input flag enumeration
+var OK          = 1,
 	UNCHANGED	= 2,
+	SUBMITTED   = 3,
+	CANCELED    = 4,
+	ENDED       = 5,
+	NOK         = 0,
 	BADINPUT	= -1,
 	RANGEOVER	= -2,
-	RANGEUNDER	= -3,
+	RANGEUNDER	= -3;
+
+var new_value,old_value	= 0,
 	valid		= NOK;
 
 // Validate all input fields
@@ -50,7 +64,7 @@ if (valid) {
 			pvs[i+1].setValue(new_value);
 			
 			//Update the status to Submitted
-			pvs[i+3].setValue(Submitted);
+			pvs[i+3].setValue(SUBMITTED);
 		
 		}
 	
@@ -61,8 +75,7 @@ if (valid) {
 }
 
 function validateForm() {
-	var 
-		valid	= OK,
+	var valid	= OK,
 		i 		= 1;
 	
 	// For all input fields
@@ -83,8 +96,7 @@ function checkValidity(pv) {
 }
 
 function displayErrorMsg() {
-	var 
-		valid		= -1,
+	var valid		= NOK,
 		errorMsg	= new Array(),
 		popupMsg	= "",
 		pv_name		= "",
