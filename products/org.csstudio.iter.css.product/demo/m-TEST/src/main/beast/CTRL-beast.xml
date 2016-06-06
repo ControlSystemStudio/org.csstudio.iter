@@ -146,7 +146,8 @@
 						<title>Force the interlock</title>
 
 						<details>Force the setpoint of the device in presence of
-							conventional control interlock</details>
+							conventional control interlock
+						</details>
 					</guidance>
 				</pv>
 
@@ -159,7 +160,8 @@
 						<title>Force the I/O</title>
 
 						<details>Put the I/O in simulation mode - the hardware I/Os
-							measured values are substitued with simulated values</details>
+							measured values are substitued with simulated values
+						</details>
 					</guidance>
 				</pv>
 
@@ -172,7 +174,8 @@
 						<title>Force the interlock</title>
 
 						<details>Force the setpoint of the device in presence of
-							conventional control interlock</details>
+							conventional control interlock
+						</details>
 					</guidance>
 				</pv>
 
@@ -185,7 +188,8 @@
 						<title>Force I/O</title>
 
 						<details>Put the I/O in simulation mode - the hardware I/Os
-							measured values are substitued with simulated values</details>
+							measured values are substitued with simulated values
+						</details>
 					</guidance>
 				</pv>
 			</component>
@@ -193,7 +197,8 @@
 			<component name="CTRL-SUP-SYSM">
 				<pv name="CTRL-SUP-SYSM:H0-SYSHLTS">
 					<description>Any one of CPU, MEM, Disk or FD of the host is in
-						alarm state</description>
+						alarm state
+					</description>
 
 					<latching>true</latching>
 
@@ -210,31 +215,47 @@
 						<title>System resources related to the alarm</title>
 
 						<details>
-							1 - CPU utilization high (CPUUTL) : CPU utilization is high
-							2 - Memory utilization high (MEMUTL) : Memory utilization is high
+							1 - CPU utilization high (CPUUTL) : CPU utilization is
+							high
+							2 - Memory utilization high (MEMUTL) : Memory utilization is
+							high
 							3 - CPU, Mem util high (CPUUTL, MEMUTL) : CPU and Memory
 							utilizations are high
-							4 - Disk utilization high (DISKUTL) : Disk utilizations are high
-							5 - CPU, Disk util high (CPUUTL,DISKUTL) : CPU and Disk
+							4 - Disk utilization high (DISKUTL) : Disk
 							utilizations are high
-							6 - Mem, Disk util high (MEMUTL,DISKUTL) : Memory and Disk
+							5 - CPU, Disk util high (CPUUTL,DISKUTL) :
+							CPU and Disk
 							utilizations are high
-							7 - CPU, Mem, Disk util high (CPUUTL,MEMUTL,DISKUTL) :
-							CPU/Memory/Disk utilizations are high
-							8 - FD utilization high (FDUTL) : FD utilization is high
-							9 - CPU, FD util high (CPUUTL,FDUTL) : CPU and FD are in alarm
+							6 - Mem, Disk util high
+							(MEMUTL,DISKUTL) : Memory and Disk
+							utilizations are high
+							7 - CPU,
+							Mem, Disk util high (CPUUTL,MEMUTL,DISKUTL) :
+							CPU/Memory/Disk
+							utilizations are high
+							8 - FD utilization high (FDUTL) : FD
+							utilization is high
+							9 - CPU, FD util high (CPUUTL,FDUTL) : CPU and
+							FD are in alarm
 							state
-							10 - Mem, FD util high (MEMUTL,FDUTL) : Memory and FD are in alarm
+							10 - Mem, FD util high (MEMUTL,FDUTL) :
+							Memory and FD are in alarm
 							state
-							11 - CPU, Mem, FD alarm (CPUUTL,MEMUTL,FDUTL) : CPU/Memory/FD are
+							11 - CPU, Mem, FD alarm
+							(CPUUTL,MEMUTL,FDUTL) : CPU/Memory/FD are
 							in alarm state
-							12 - Disk, FD util high (DISKUTL,FDUTL) : Disk and FD are in alarm
+							12 - Disk,
+							FD util high (DISKUTL,FDUTL) : Disk and FD are in alarm
 							state
-							13 - CPU, Disk, FD alarm (CPUUTL,DISKUTL,FDUTL) : CPU/Disk/FD are
-							in alarm state
-							14 - Mem, Disk, FD alarm (MEMUTL,DISKUTL,FDUTL) : Memory/Disk/FD
+							13 -
+							CPU, Disk, FD alarm (CPUUTL,DISKUTL,FDUTL) : CPU/Disk/FD are
+							in
+							alarm state
+							14 - Mem, Disk, FD alarm (MEMUTL,DISKUTL,FDUTL) :
+							Memory/Disk/FD
 							are in alarm state
-							15 - CPU,Mem,Disk,FD alarm (CPUUTL,MEMUTL,DISKUTL,FDUTL) :
+							15 - CPU,Mem,Disk,FD alarm
+							(CPUUTL,MEMUTL,DISKUTL,FDUTL) :
 							CPU/Memory/Disk/FD alarm
 						</details>
 					</guidance>
@@ -243,22 +264,27 @@
 						<title>Corrective action</title>
 
 						<details>If any load is remained in high continuously, please
-							contact maintenance service</details>
+							contact maintenance service
+						</details>
 					</guidance>
 
 					<guidance>
 						<title>Temporary actions to suppress</title>
 
 						<details>
-							Change the alarm limits or severity for each load in alarm state.
+							Change the alarm limits or severity for each load in
+							alarm state.
 
 							Ex1) alarm limits
-							% caput CTRL-SUP-SYSM:H0-CPUUTL.HIGH 90
+							% caput CTRL-SUP-SYSM:H0-CPUUTL.HIGH
+							90
 							% caput CTRL-SUP-SYSM:H0-CPUUTL.HIHI 100
 
 							Ex2) alarm severity
-							% caput CTRL-SUP-SYSM:H0-MEMUTL.HSV NO_ALARM
-							% caput CTRL-SUP-SYSM:H0-MEMUTL.HHSV NO_ALARM
+							%
+							caput CTRL-SUP-SYSM:H0-MEMUTL.HSV NO_ALARM
+							% caput
+							CTRL-SUP-SYSM:H0-MEMUTL.HHSV NO_ALARM
 						</details>
 					</guidance>
 				</pv>
@@ -283,12 +309,18 @@
 
 						<details>
 							1 - CPU load high (CPUUTL) : CPU utilization is high
-							2 - Mem load high (MEMUTL) : Memory utilization is high
-							3 - CPU n Mem load high (CPUUTL, MEMUTL) : CPU and Memory high
-							4 - FD load high (FDUTL) : FD utilization is high
-							5 - CPU n FD load high (CPUUTL,FDUTL) : CPU/FD high
-							6 - Mem n FD load high (MEMUTL,FDUTL) : Memory/FD high
-							7 - CPU,Mem,FD load high (CPUUTL,MEMUTL,FDUTL) : CPU/Memory/FD
+							2 -
+							Mem load high (MEMUTL) : Memory utilization is high
+							3 - CPU n Mem
+							load high (CPUUTL, MEMUTL) : CPU and Memory high
+							4 - FD load high
+							(FDUTL) : FD utilization is high
+							5 - CPU n FD load high
+							(CPUUTL,FDUTL) : CPU/FD high
+							6 - Mem n FD load high (MEMUTL,FDUTL)
+							: Memory/FD high
+							7 - CPU,Mem,FD load high (CPUUTL,MEMUTL,FDUTL) :
+							CPU/Memory/FD
 							high
 						</details>
 					</guidance>
@@ -297,22 +329,28 @@
 						<title>Corrective action</title>
 
 						<details>If any load is remained in high continuously, contact
-							maintenance service</details>
+							maintenance service
+						</details>
 					</guidance>
 
 					<guidance>
 						<title>Temporary action to suppress</title>
 
 						<details>
-							Change the alarm limits or severity for each load in alarm state.
+							Change the alarm limits or severity for each load in
+							alarm state.
 
 							Ex1) alarm limits
-							% caput CTRL-SUP-SYSM:H0CORE-CPUUTL.HIGH 90
-							% caput CTRL-SUP-SYSM:H0CORE-CPUUTL.HIHI 100
+							% caput
+							CTRL-SUP-SYSM:H0CORE-CPUUTL.HIGH 90
+							% caput
+							CTRL-SUP-SYSM:H0CORE-CPUUTL.HIHI 100
 
 							Ex2) alarm severity
-							% caput CTRL-SUP-SYSM:H0CORE-MEMUTL.HSV NO_ALARM
-							% caput CTRL-SUP-SYSM:H0CORE-MEMUTL.HHSV NO_ALARM
+							% caput
+							CTRL-SUP-SYSM:H0CORE-MEMUTL.HSV NO_ALARM
+							% caput
+							CTRL-SUP-SYSM:H0CORE-MEMUTL.HHSV NO_ALARM
 						</details>
 					</guidance>
 				</pv>
@@ -337,12 +375,18 @@
 
 						<details>
 							1 - CPU load high (CPUUTL) : CPU utilization is high
-							2 - Mem load high (MEMUTL) : Memory utilization is high
-							3 - CPU n Mem load high (CPUUTL, MEMUTL) : CPU and Memory high
-							4 - FD load high (FDUTL) : FD utilization is high
-							5 - CPU n FD load high (CPUUTL,FDUTL) : CPU/FD high
-							6 - Mem n FD load high (MEMUTL,FDUTL) : Memory/FD high
-							7 - CPU,Mem,FD load high (CPUUTL,MEMUTL,FDUTL) : CPU/Memory/FD
+							2 -
+							Mem load high (MEMUTL) : Memory utilization is high
+							3 - CPU n Mem
+							load high (CPUUTL, MEMUTL) : CPU and Memory high
+							4 - FD load high
+							(FDUTL) : FD utilization is high
+							5 - CPU n FD load high
+							(CPUUTL,FDUTL) : CPU/FD high
+							6 - Mem n FD load high (MEMUTL,FDUTL)
+							: Memory/FD high
+							7 - CPU,Mem,FD load high (CPUUTL,MEMUTL,FDUTL) :
+							CPU/Memory/FD
 							high
 						</details>
 					</guidance>
@@ -351,22 +395,28 @@
 						<title>Corrective action</title>
 
 						<details>If any load is remained in high continuously, contact
-							maintenance service</details>
+							maintenance service
+						</details>
 					</guidance>
 
 					<guidance>
 						<title>Temporary action to suppress</title>
 
 						<details>
-							Change the alarm limits or severity for each load in alarm state.
+							Change the alarm limits or severity for each load in
+							alarm state.
 
 							Ex1) alarm limits
-							% caput CTRL-SUP-SYSM:H0PLC-CPUUTL.HIGH 90
-							% caput CTRL-SUP-SYSM:H0PLC-CPUUTL.HIHI 100
+							% caput
+							CTRL-SUP-SYSM:H0PLC-CPUUTL.HIGH 90
+							% caput
+							CTRL-SUP-SYSM:H0PLC-CPUUTL.HIHI 100
 
 							Ex2) alarm severity
-							% caput CTRL-SUP-SYSM:H0PLC-MEMUTL.HSV NO_ALARM
-							% caput CTRL-SUP-SYSM:H0PLC-MEMUTL.HHSV NO_ALARM
+							% caput
+							CTRL-SUP-SYSM:H0PLC-MEMUTL.HSV NO_ALARM
+							% caput
+							CTRL-SUP-SYSM:H0PLC-MEMUTL.HHSV NO_ALARM
 						</details>
 					</guidance>
 				</pv>
@@ -391,12 +441,18 @@
 
 						<details>
 							1 - CPU load high (CPUUTL) : CPU utilization is high
-							2 - Mem load high (MEMUTL) : Memory utilization is high
-							3 - CPU n Mem load high (CPUUTL, MEMUTL) : CPU and Memory high
-							4 - FD load high (FDUTL) : FD utilization is high
-							5 - CPU n FD load high (CPUUTL,FDUTL) : CPU/FD high
-							6 - Mem n FD load high (MEMUTL,FDUTL) : Memory/FD high
-							7 - CPU,Mem,FD load high (CPUUTL,MEMUTL,FDUTL) : CPU/Memory/FD
+							2 -
+							Mem load high (MEMUTL) : Memory utilization is high
+							3 - CPU n Mem
+							load high (CPUUTL, MEMUTL) : CPU and Memory high
+							4 - FD load high
+							(FDUTL) : FD utilization is high
+							5 - CPU n FD load high
+							(CPUUTL,FDUTL) : CPU/FD high
+							6 - Mem n FD load high (MEMUTL,FDUTL)
+							: Memory/FD high
+							7 - CPU,Mem,FD load high (CPUUTL,MEMUTL,FDUTL) :
+							CPU/Memory/FD
 							high
 						</details>
 					</guidance>
@@ -405,29 +461,36 @@
 						<title>Corrective action</title>
 
 						<details>If any load is remained in high continuously, contact
-							maintenance service</details>
+							maintenance service
+						</details>
 					</guidance>
 
 					<guidance>
 						<title>Temporary action to suppress</title>
 
 						<details>
-							Change the alarm limits or severity for each load in alarm state.
+							Change the alarm limits or severity for each load in
+							alarm state.
 
 							Ex1) alarm limits
-							% caput CTRL-SUP-SYSM:H0SYSM-CPUUTL.HIGH 90
-							% caput CTRL-SUP-SYSM:H0SYSM-CPUUTL.HIHI 100
+							% caput
+							CTRL-SUP-SYSM:H0SYSM-CPUUTL.HIGH 90
+							% caput
+							CTRL-SUP-SYSM:H0SYSM-CPUUTL.HIHI 100
 
 							Ex2) alarm severity
-							% caput CTRL-SUP-SYSM:H0SYSM-MEMUTL.HSV NO_ALARM
-							% caput CTRL-SUP-SYSM:H0SYSM-MEMUTL.HHSV NO_ALARM
+							% caput
+							CTRL-SUP-SYSM:H0SYSM-MEMUTL.HSV NO_ALARM
+							% caput
+							CTRL-SUP-SYSM:H0SYSM-MEMUTL.HHSV NO_ALARM
 						</details>
 					</guidance>
 				</pv>
 
 				<pv name="CTRL-SUP-SYSM:P0-PLCHLTS">
 					<description>Connection or frame of the communication for PLC
-						configuration and state is invalid</description>
+						configuration and state is invalid
+					</description>
 
 					<latching>true</latching>
 
@@ -437,7 +500,8 @@
 						<title>PLC communication failed</title>
 
 						<details>The connection for configuration and state to PLC was
-							broken or the frame is not correct</details>
+							broken or the frame is not correct
+						</details>
 					</guidance>
 
 					<guidance>
@@ -445,12 +509,15 @@
 
 						<details>
 							Timestamp update error (TIME)
-							Data block header, footer or length mismatch (FERROR)
+							Data block header, footer or
+							length mismatch (FERROR)
 							Data block version mismatch (FVERS)
-							Data block alive counter update error (ALIVEC)
+							Data
+							block alive counter update error (ALIVEC)
 							Frame lost due (FLOST)
 							PLC communication broken (CFGSTAT)
-							Lost a redundant CPU (CPU0-ALIVE, CPU1-ALIVE)
+							Lost a redundant CPU
+							(CPU0-ALIVE, CPU1-ALIVE)
 						</details>
 					</guidance>
 
@@ -458,7 +525,8 @@
 						<title>Corrective action</title>
 
 						<details> Check whether the PLC is running\n Check whether network
-							is ok\n Contact maintenance service (if needed)</details>
+							is ok\n Contact maintenance service (if needed)
+						</details>
 					</guidance>
 				</pv>
 			</component>
@@ -466,7 +534,9 @@
 			<component name="CTRL-SUP-BEAS">
 				<component name="CTRL-SUP-BEAS">
 					<pv name="CTRL-SUP-BEAS:HIGH-SWITCH">
-						<description>Whenever the HIGH switch gets wet, the pump will be forced ON</description>
+						<description>Whenever the HIGH switch gets wet, the pump will be
+							forced ON
+						</description>
 
 						<latching>true</latching>
 
@@ -475,7 +545,9 @@
 						<guidance>
 							<title>In the event that the MID switch has failed</title>
 
-							<details>The tank level has continued to increase and has reached the HIGH level generating a MAJOR alarm</details>
+							<details>The tank level has continued to increase and has reached
+								the HIGH level generating a MAJOR alarm
+							</details>
 						</guidance>
 
 						<guidance>
@@ -483,8 +555,10 @@
 
 							<details>The MID switch fails to operate: defective switch,
 								blocked switch or damaged wiring.
-								As a consequence the pump remaining dormant, the tank will
-								overflow, causing inconvenience and damage to property.
+								As a consequence the pump
+								remaining dormant, the tank will
+								overflow, causing inconvenience
+								and damage to property.
 							</details>
 						</guidance>
 
@@ -497,7 +571,9 @@
 						<guidance>
 							<title>Time for response</title>
 
-							<details>The tank will overflow if the pump fails to be forced ON in 10 minutes</details>
+							<details>The tank will overflow if the pump fails to be forced ON
+								in 10 minutes
+							</details>
 						</guidance>
 
 						<display>
@@ -524,14 +600,17 @@
 
 							<details>mailto:someone@iter.org,someone_else@iter.org?subject=*MID
 								Switch fails to maintain the tank level&amp;body=*{0} alarm -
-								Tank Switch is {1}</details>
+								Tank Switch is {1}
+							</details>
 
 							<delay>5</delay>
 						</automated_action>
 					</pv>
 
 					<pv name="CTRL-SUP-BEAS:LOW-SWITCH">
-						<description>Whenever the LOW switch becomes dry, the pump will be forced OFF</description>
+						<description>Whenever the LOW switch becomes dry, the pump will be
+							forced OFF
+						</description>
 
 						<latching>true</latching>
 
@@ -540,7 +619,9 @@
 						<guidance>
 							<title>In the event that the MID switch has failed</title>
 
-							<details>The tank level has continued to decrease and has reached the LOW level generating a MAJOR alarm</details>
+							<details>The tank level has continued to decrease and has reached
+								the LOW level generating a MAJOR alarm
+							</details>
 						</guidance>
 
 						<guidance>
@@ -549,15 +630,19 @@
 							<details>The MID switch fails. The outcome is simple, the pump
 								will drain the tank until it is empty, whereupon it will try to
 								pump air indefinitely and burn out.
-								Unfortunately, every time a MID switch fails for too long, a new pump may have
-								to be installed
+								Unfortunately, every time a
+								MID switch fails for too long, a new pump may have
+								to be
+								installed
 							</details>
 						</guidance>
 
 						<guidance>
 							<title>Corrective action</title>
 
-							<details>Change the MID Switch and check if the pump has already burned out</details>
+							<details>Change the MID Switch and check if the pump has already
+								burned out
+							</details>
 						</guidance>
 
 						<guidance>
@@ -596,6 +681,76 @@
 						</automated_action>
 					</pv>
 				</component>
+			</component>
+			<component name="CTRL-SUP-BEAU">
+				<pv name="CTRL-SUP-BEAU:AI1">
+					<description>Analog Alarm Limits</description>
+
+					<latching>true</latching>
+				</pv>
+
+				<pv name="CTRL-SUP-BEAU:AI2">
+					<description>Analog Alarm Limits</description>
+
+					<latching>true</latching>
+
+				</pv>
+
+				<pv name="CTRL-SUP-BEAU:AI3">
+					<description>Analog Alarm Limits</description>
+
+					<latching>true</latching>
+
+				</pv>
+
+				<pv name="CTRL-SUP-BEAU:ARCHIVE">
+					<description>Archive Event</description>
+
+					<latching>true</latching>
+
+				</pv>
+
+				<pv name="CTRL-SUP-BEAU:BI">
+					<description>Alarm State BI</description>
+
+					<latching>true</latching>
+
+				</pv>
+
+				<pv name="CTRL-SUP-BEAU:LONGIN">
+					<description>Longin Alarm Limits</description>
+
+					<latching>true</latching>
+
+				</pv>
+
+				<pv name="CTRL-SUP-BEAU:MBBI">
+					<description>MBBI Alarm State</description>
+
+					<latching>true</latching>
+
+				</pv>
+
+				<pv name="CTRL-SUP-BEAU:RAMP1">
+					<description>RAMP Alarm Limits</description>
+
+					<latching>true</latching>
+
+				</pv>
+
+				<pv name="CTRL-SUP-BEAU:RAMP2">
+					<description>RAMP Alarm Limits</description>
+
+					<latching>true</latching>
+
+				</pv>
+
+				<pv name="CTRL-SUP-BEAU:WAVEFORM">
+					<description>Waveform Alarm Limits</description>
+
+					<latching>true</latching>
+
+				</pv>
 			</component>
 
 
