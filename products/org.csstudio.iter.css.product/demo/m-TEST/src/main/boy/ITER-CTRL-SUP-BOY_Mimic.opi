@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.0.0.201601211726</boy_version>
+  <boy_version>5.1.0.codac_core_5_3b3</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -202,7 +202,15 @@
       <x>457</x>
       <y>90</y>
       <widget typeId="org.csstudio.opibuilder.widgets.tank" version="1.0.0">
-        <actions hook="false" hook_all="false" />
+        <actions hook="true" hook_all="true">
+          <action type="WRITE_PV">
+            <pv_name>loc://$(DID)_FACEPLATE("")</pv_name>
+            <value>faceplates/AnalogProbe.opi PROBE_PV=$(pv_name) COMPONENT=$(name)</value>
+            <timeout>10</timeout>
+            <confirm_message></confirm_message>
+            <description>Load the component faceplate</description>
+          </action>
+        </actions>
         <alarm_pulsing>false</alarm_pulsing>
         <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
@@ -366,7 +374,15 @@ $(pv_value)</tooltip>
       <x>999</x>
       <y>158</y>
       <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
-        <actions hook="false" hook_all="false" />
+        <actions hook="true" hook_all="true">
+          <action type="WRITE_PV">
+            <pv_name>loc://$(DID)_FACEPLATE("")</pv_name>
+            <value>faceplates/DigitalInProbe.opi PROBE_PV=$(pv_name) COMPONENT=$(name)</value>
+            <timeout>10</timeout>
+            <confirm_message></confirm_message>
+            <description>Load the component faceplate</description>
+          </action>
+        </actions>
         <alarm_pulsing>false</alarm_pulsing>
         <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
@@ -424,7 +440,15 @@ $(pv_value)</tooltip>
         <y>0</y>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
-        <actions hook="false" hook_all="false" />
+        <actions hook="true" hook_all="true">
+          <action type="WRITE_PV">
+            <pv_name>loc://$(DID)_FACEPLATE("")</pv_name>
+            <value>faceplates/DigitalInProbe.opi PROBE_PV=$(pv_name) COMPONENT=$(name)</value>
+            <timeout>10</timeout>
+            <confirm_message></confirm_message>
+            <description>Load the component faceplate</description>
+          </action>
+        </actions>
         <alarm_pulsing>false</alarm_pulsing>
         <align_to_nearest_second>true</align_to_nearest_second>
         <auto_size>true</auto_size>
@@ -541,7 +565,15 @@ $(pv_value)</tooltip>
       <x>999</x>
       <y>417</y>
       <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
-        <actions hook="false" hook_all="false" />
+        <actions hook="true" hook_all="true">
+          <action type="WRITE_PV">
+            <pv_name>loc://$(DID)_FACEPLATE("")</pv_name>
+            <value>faceplates/DigitalOutProbe.opi PROBE_PV=$(pv_name) COMPONENT=$(name)</value>
+            <timeout>10</timeout>
+            <confirm_message></confirm_message>
+            <description>Load the component faceplate</description>
+          </action>
+        </actions>
         <alarm_pulsing>false</alarm_pulsing>
         <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
@@ -1109,7 +1141,7 @@ $(trace_0_y_pv_value)</tooltip>
           <transparent>true</transparent>
           <visible>true</visible>
           <widget_type>Grouping Container</widget_type>
-          <width>857</width>
+          <width>806</width>
           <wuid>-7c21f2fb:1520c4b5b67:-6ba8</wuid>
           <x>2</x>
           <y>2</y>
@@ -1237,7 +1269,7 @@ $(pv_value)</tooltip>
           <transparent>true</transparent>
           <visible>false</visible>
           <widget_type>Grouping Container</widget_type>
-          <width>857</width>
+          <width>806</width>
           <wuid>-7c21f2fb:1520c4b5b67:-6ba5</wuid>
           <x>2</x>
           <y>2</y>
@@ -1666,15 +1698,28 @@ $(trace_0_y_pv_value)</tooltip>
         <format_type>0</format_type>
         <height>35</height>
         <horizontal_alignment>0</horizontal_alignment>
-        <input_label_stacking>0</input_label_stacking>
-        <input_label_text></input_label_text>
+        <label_alignment>1</label_alignment>
+        <label_color>
+          <color red="0" green="0" blue="0" />
+        </label_color>
+        <label_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
+        </label_font>
+        <label_gap>2</label_gap>
+        <label_position>0</label_position>
+        <label_text></label_text>
         <limits_from_pv>true</limits_from_pv>
+        <maximum>1.7976931348623157E308</maximum>
+        <minimum>-1.7976931348623157E308</minimum>
         <multiline_input>false</multiline_input>
         <name>Array</name>
+        <next_focus>0</next_focus>
+        <password_input>false</password_input>
         <precision>0</precision>
         <precision_from_pv>true</precision_from_pv>
         <pv_name>CTRL-SUP-BOY:SETPOINT</pv_name>
         <pv_value />
+        <read_only>false</read_only>
         <rotation_angle>0.0</rotation_angle>
         <rules />
         <scale_options>
@@ -1684,7 +1729,10 @@ $(trace_0_y_pv_value)</tooltip>
         </scale_options>
         <scripts />
         <selector_type>0</selector_type>
+        <show_h_scroll>false</show_h_scroll>
+        <show_native_border>true</show_native_border>
         <show_units>true</show_units>
+        <show_v_scroll>false</show_v_scroll>
         <style>0</style>
         <text>######</text>
         <tooltip>$(pv_name)
@@ -1786,7 +1834,7 @@ $(pv_value)</tooltip>
       <auto_size>false</auto_size>
       <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <background_color>
-        <color red="240" green="240" blue="240" />
+        <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
       <bit>0</bit>
       <boolean_label_position>5</boolean_label_position>
@@ -1847,7 +1895,7 @@ $(pv_value)</tooltip>
       <stretch_to_fit>true</stretch_to_fit>
       <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-      <transparency>true</transparency>
+      <transparency>false</transparency>
       <visible>true</visible>
       <widget_type>Boolean Symbol Image Monitor</widget_type>
       <width>136</width>
@@ -1874,7 +1922,7 @@ $(pv_value)</tooltip>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
       <height>390</height>
-      <lock_children>true</lock_children>
+      <lock_children>false</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
@@ -1896,7 +1944,15 @@ $(pv_value)</tooltip>
       <x>34</x>
       <y>95</y>
       <widget typeId="org.csstudio.opibuilder.widgets.gauge" version="1.0.0">
-        <actions hook="false" hook_all="false" />
+        <actions hook="true" hook_all="true">
+          <action type="WRITE_PV">
+            <pv_name>loc://$(DID)_FACEPLATE("")</pv_name>
+            <value>faceplates/AnalogInProbe.opi PROBE_PV=$(pv_name) COMPONENT=$(name)</value>
+            <timeout>10</timeout>
+            <confirm_message></confirm_message>
+            <description>Load the component faceplate</description>
+          </action>
+        </actions>
         <alarm_pulsing>false</alarm_pulsing>
         <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
@@ -2016,6 +2072,144 @@ $(pv_value)</tooltip>
         <x>13</x>
         <y>0</y>
       </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <actions hook="true" hook_all="true">
+        <action type="WRITE_PV">
+          <pv_name>loc://$(DID)_FACEPLATE("")</pv_name>
+          <value>faceplates/AnalogInProbe.opi PROBE_PV=$(pv_name) COMPONENT=$(name)</value>
+          <timeout>10</timeout>
+          <confirm_message></confirm_message>
+          <description>Load the component faceplate</description>
+        </action>
+      </actions>
+      <alarm_pulsing>false</alarm_pulsing>
+      <auto_size>false</auto_size>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color name="IO Button" red="178" green="178" blue="178" />
+      </border_color>
+      <border_style>1</border_style>
+      <border_width>1</border_width>
+      <enabled>true</enabled>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+      </foreground_color>
+      <format_type>0</format_type>
+      <height>35</height>
+      <horizontal_alignment>0</horizontal_alignment>
+      <name>Text Update Template</name>
+      <precision>0</precision>
+      <precision_from_pv>true</precision_from_pv>
+      <pv_name>CTRL-SUP-BOY:AI1</pv_name>
+      <pv_value />
+      <rotation_angle>0.0</rotation_angle>
+      <rules />
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <show_units>true</show_units>
+      <text>######</text>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <transparent>false</transparent>
+      <vertical_alignment>1</vertical_alignment>
+      <visible>true</visible>
+      <widget_type>Text Update</widget_type>
+      <width>248</width>
+      <wrap_words>false</wrap_words>
+      <wuid>5fa5eb48:1552ed86064:-77e8</wuid>
+      <x>82</x>
+      <y>691</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.multistate.MultistateControlWidget" version="1.0.0">
+      <actions hook="false" hook_all="false" />
+      <alarm_pulsing>false</alarm_pulsing>
+      <align_to_nearest_second>true</align_to_nearest_second>
+      <auto_size>true</auto_size>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <boolean_label_position>5</boolean_label_position>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <border_style>0</border_style>
+      <border_width>2</border_width>
+      <confirm_message>Are you sure you want to do this?</confirm_message>
+      <crop_bottom>0</crop_bottom>
+      <crop_left>0</crop_left>
+      <crop_right>0</crop_right>
+      <crop_top>0</crop_top>
+      <degree>0</degree>
+      <enabled>true</enabled>
+      <flip_horizontal>false</flip_horizontal>
+      <flip_vertical>false</flip_vertical>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+      </foreground_color>
+      <height>68</height>
+      <image_file>SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Control Valve 0.svg</image_file>
+      <items />
+      <items_from_pv>true</items_from_pv>
+      <name>Multistate Symbol Image Control Template</name>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color name="IO PV OFF" red="149" green="125" blue="71" />
+      </off_color>
+      <on_color>
+        <color name="IO PV ON" red="0" green="0" blue="255" />
+      </on_color>
+      <password></password>
+      <permutation_matrix>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+      </permutation_matrix>
+      <push_action_index>0</push_action_index>
+      <pv_name>CTRL-SUP-BOY:VC001-YENUM</pv_name>
+      <pv_value />
+      <rules />
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <show_boolean_label>true</show_boolean_label>
+      <show_confirm_dialog>false</show_confirm_dialog>
+      <stretch_to_fit>false</stretch_to_fit>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <transparency>false</transparency>
+      <visible>true</visible>
+      <widget_type>Multistate Symbol Image Control</widget_type>
+      <width>68</width>
+      <wuid>-27573bda:1552f0c4132:-7f89</wuid>
+      <x>574</x>
+      <y>675</y>
     </widget>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.checkbox" version="1.0.0">
