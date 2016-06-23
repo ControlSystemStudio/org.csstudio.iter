@@ -1,0 +1,46 @@
+<diagram name="SNL-Diagram">
+  <stateData>
+    <stateSet name="limit_detection" location_x="20" location_y="20" width="2000" height="400" />
+    <state name="limit_detection.init" location_x="50" location_y="85" width="400" height="200" />
+    <state name="limit_detection.low" location_x="800" location_y="85" width="400" height="200" />
+    <state name="limit_detection.high" location_x="1500" location_y="85" width="400" height="200" />
+    <stateSet name="generate_signal" location_x="20" location_y="435" width="2000" height="527" />
+    <state name="generate_signal.init" location_x="50" location_y="565" width="400" height="200" />
+    <state name="generate_signal.sine" location_x="500" location_y="565" width="400" height="200" />
+    <state name="generate_signal.square" location_x="1050" location_y="565" width="400" height="200" />
+    <state name="generate_signal.triangle" location_x="1500" location_y="565" width="400" height="200" />
+    <stateSet name="channel_status_check" location_x="20" location_y="970" width="2000" height="400" />
+    <state name="channel_status_check.init" location_x="50" location_y="1035" width="400" height="200" />
+    <state name="channel_status_check.status_check" location_x="1500" location_y="1035" width="400" height="200" />
+  </stateData>
+  <connectionData>
+    <connection name="limit_detection.init.(pvConnectCount() == pvChannelCount())" />
+    <connection name="limit_detection.low.(ao_monitor &gt; HIGH)" />
+    <connection name="limit_detection.low.(pvConnectCount() &lt; pvChannelCount())" />
+    <connection name="limit_detection.high.(ao_monitor &lt; LOW)" />
+    <connection name="limit_detection.high.(pvConnectCount() &lt; pvChannelCount())" />
+    <connection name="generate_signal.init.(efTest(connectedFlag) &amp;&amp; waveform == SINE)">
+      <point location_x="306" location_y="847" />
+      <point location_x="492" location_y="847" />
+      <point location_x="736" location_y="856" />
+    </connection>
+    <connection name="generate_signal.init.(efTest(connectedFlag) &amp;&amp; waveform == SQUARE)">
+      <point location_x="318" location_y="890" />
+      <point location_x="1242" location_y="902" />
+    </connection>
+    <connection name="generate_signal.init.(efTest(connectedFlag) &amp;&amp; waveform == TRIANGLE)">
+      <point location_x="336" location_y="949" />
+      <point location_x="1286" location_y="951" />
+    </connection>
+    <connection name="generate_signal.sine.(efTestAndClear(waveformFlag) || efTestAndClear(disconnectedFlag))">
+      <point location_x="726" location_y="495" />
+    </connection>
+    <connection name="generate_signal.square.(efTestAndClear(waveformFlag) || efTestAndClear(disconnectedFlag))">
+      <point location_x="990" location_y="520" />
+    </connection>
+    <connection name="generate_signal.triangle.(efTestAndClear(waveformFlag) || efTestAndClear(disconnectedFlag))">
+      <point location_x="758" location_y="550" />
+    </connection>
+    <connection name="channel_status_check.init.(efTest(connectedFlag))" />
+  </connectionData>
+</diagram>

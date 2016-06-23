@@ -752,8 +752,34 @@
 
 				</pv>
 			</component>
-
-
+            <component name="CTRL-SUP-CSS">
+                <pv name="CTRL-SUP-CSS:ACQ-STATE">
+                    <description>Acquisition not started</description>
+                    <latching>true</latching>
+                    <command>
+                        <title>Switch On</title>
+                        <details>caput CTRL-SUP-CSS:START-ACQ 1</details>
+                    </command>
+                </pv>
+                <pv name="CTRL-SUP-CSS:TEMP">
+                    <description>Temperature problem</description>
+                    <latching>true</latching>
+                    <delay>5.0</delay>
+                    <count>3</count>
+                    <guidance>
+                        <title>Temperature problem</title>
+                        <details>Temperature outside the limits;&#10;Purpose of alarm: The controlled temperature is outside the limits;&#10;Alarm response action: Try to switch off the equipment;&#10;Failure consequence: If the alarm does not recover within 15 minutes,&#10;the system will be stopped;&#10;Operator response time available: 10 minutes;&#10;Alarm limits: HIHI=9 MAJOR, HIGH=8 MINOR, LOW=-8 MINOR, LOLO=-9 MAJOR;&#10;Engineer to contact: operator in duty;&#10;Alternate help:&#10;https://localhost:8080/doc/html/relnotes-css.html</details>
+                    </guidance>
+                    <display>
+                        <title>More Information</title>
+                        <details>http://localhost:8080/doc/html/relnotes-css.html</details>
+                    </display>
+                    <command>
+                        <title>Switch Off the acquistion</title>
+                        <details>caput CTRL-SUP-CSS:START-ACQ 0</details>
+                    </command>
+                </pv>
+            </component>
 		</component>
 	</component>
 </config>
