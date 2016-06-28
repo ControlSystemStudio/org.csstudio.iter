@@ -12,9 +12,9 @@
     <end>now</end>
     <archive_rescale>NONE</archive_rescale>
     <background>
-        <red>229</red>
-        <green>229</green>
-        <blue>229</blue>
+        <red>235</red>
+        <green>235</green>
+        <blue>235</blue>
     </background>
     <title_font>DejaVu Sans Mono|26|0</title_font>
     <label_font>DejaVu Sans Mono|20|0</label_font>
@@ -32,8 +32,6 @@
                 <green>105</green>
                 <blue>20</blue>
             </color>
-            <label_font>DejaVu LGC Sans Mono|20|0</label_font>
-            <scale_font>Sans|10|0</scale_font>
             <min>0.0</min>
             <max>100.0</max>
             <grid>true</grid>
@@ -51,8 +49,6 @@
                 <green>0</green>
                 <blue>0</blue>
             </color>
-            <label_font>|10|0</label_font>
-            <scale_font>|10|0</scale_font>
             <min>0.1</min>
             <max>100.0</max>
             <grid>false</grid>

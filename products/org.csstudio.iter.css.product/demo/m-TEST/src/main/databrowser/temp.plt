@@ -32,8 +32,6 @@
                 <green>21</green>
                 <blue>196</blue>
             </color>
-            <label_font>DejaVu Sans Mono|26|0</label_font>
-            <scale_font>DejaVu Sans Mono|20|0</scale_font>
             <min>-12.0</min>
             <max>12.0</max>
             <grid>true</grid>
@@ -51,8 +49,6 @@
                 <green>26</green>
                 <blue>26</blue>
             </color>
-            <label_font>DejaVu Sans Mono|26|0</label_font>
-            <scale_font>DejaVu Sans Mono|20|0</scale_font>
             <min>-8.475768610132976</min>
             <max>8.871307905961284</max>
             <grid>false</grid>
@@ -70,8 +66,6 @@
                 <green>179</green>
                 <blue>33</blue>
             </color>
-            <label_font>DejaVu Sans Mono|26|0</label_font>
-            <scale_font>DejaVu Sans Mono|20|0</scale_font>
             <min>8.0</min>
             <max>9.0</max>
             <grid>false</grid>

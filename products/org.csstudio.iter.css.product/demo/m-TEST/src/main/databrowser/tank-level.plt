@@ -8,13 +8,13 @@
     <scroll>true</scroll>
     <update_period>3.0</update_period>
     <scroll_step>5</scroll_step>
-    <start>-10.08 min</start>
+    <start>-10.15 min</start>
     <end>now</end>
     <archive_rescale>NONE</archive_rescale>
     <background>
-        <red>229</red>
-        <green>229</green>
-        <blue>229</blue>
+        <red>235</red>
+        <green>235</green>
+        <blue>235</blue>
     </background>
     <title_font>DejaVu Sans Mono|26|0</title_font>
     <label_font>DejaVu Sans Mono|20|0</label_font>
@@ -32,17 +32,15 @@
                 <green>77</green>
                 <blue>77</blue>
             </color>
-            <label_font>|10|1</label_font>
-            <scale_font>DejaVu Sans Mono|20|0</scale_font>
             <min>0.0</min>
             <max>100.0</max>
-            <grid>false</grid>
+            <grid>true</grid>
             <autoscale>false</autoscale>
             <log_scale>false</log_scale>
         </axis>
         <axis>
             <visible>false</visible>
-            <name>TEST-BST0:TANK-LEVEL.LOW</name>
+            <name>CTRL-SUP-BEAS:TANK-LEVEL.LOW</name>
             <use_axis_name>false</use_axis_name>
             <use_trace_names>false</use_trace_names>
             <right>false</right>
@@ -51,8 +49,6 @@
                 <green>26</green>
                 <blue>26</blue>
             </color>
-            <label_font>|10|1</label_font>
-            <scale_font>DejaVu Sans Mono|20|0</scale_font>
             <min>0.0</min>
             <max>100.0</max>
             <grid>false</grid>
@@ -61,7 +57,7 @@
         </axis>
         <axis>
             <visible>false</visible>
-            <name>TEST-BST0:TANK-LEVEL.HIGH</name>
+            <name>CTRL-SUP-BEAS:TANK-LEVEL.HIGH</name>
             <use_axis_name>false</use_axis_name>
             <use_trace_names>false</use_trace_names>
             <right>false</right>
@@ -70,8 +66,6 @@
                 <green>179</green>
                 <blue>33</blue>
             </color>
-            <label_font>|10|1</label_font>
-            <scale_font>DejaVu Sans Mono|20|0</scale_font>
             <min>0.0</min>
             <max>100.0</max>
             <grid>false</grid>
@@ -83,9 +77,9 @@
     </annotations>
     <pvlist>
         <pv>
-            <display_name>TEST-BST0:TANK-LEVEL</display_name>
+            <display_name>CTRL-SUP-BEAS:TANK-LEVEL</display_name>
             <visible>true</visible>
-            <name>TEST-BST0:TANK-LEVEL</name>
+            <name>CTRL-SUP-BEAS:TANK-LEVEL</name>
             <axis>0</axis>
             <color>
                 <red>21</red>
@@ -100,16 +94,11 @@
             <period>0.0</period>
             <ring_size>5000</ring_size>
             <request>OPTIMIZED</request>
-            <archive>
-                <name>Archive RDB</name>
-                <url>jdbc:postgresql://localhost/css_archive_3_0_0</url>
-                <key>1</key>
-            </archive>
         </pv>
         <pv>
-            <display_name>TEST-BST0:TANK-LEVEL.LOW</display_name>
+            <display_name>CTRL-SUP-BEAS:TANK-LEVEL.LOW</display_name>
             <visible>true</visible>
-            <name>TEST-BST0:TANK-LEVEL.LOW</name>
+            <name>CTRL-SUP-BEAS:TANK-LEVEL.LOW</name>
             <axis>0</axis>
             <color>
                 <red>242</red>
@@ -124,16 +113,11 @@
             <period>0.0</period>
             <ring_size>5000</ring_size>
             <request>OPTIMIZED</request>
-            <archive>
-                <name>Archive RDB</name>
-                <url>jdbc:postgresql://localhost/css_archive_3_0_0</url>
-                <key>1</key>
-            </archive>
         </pv>
         <pv>
-            <display_name>TEST-BST0:TANK-LEVEL.HIGH</display_name>
+            <display_name>CTRL-SUP-BEAS:TANK-LEVEL.HIGH</display_name>
             <visible>true</visible>
-            <name>TEST-BST0:TANK-LEVEL.HIGH</name>
+            <name>CTRL-SUP-BEAS:TANK-LEVEL.HIGH</name>
             <axis>0</axis>
             <color>
                 <red>255</red>
@@ -148,11 +132,6 @@
             <period>0.0</period>
             <ring_size>5000</ring_size>
             <request>OPTIMIZED</request>
-            <archive>
-                <name>Archive RDB</name>
-                <url>jdbc:postgresql://localhost/css_archive_3_0_0</url>
-                <key>1</key>
-            </archive>
         </pv>
     </pvlist>
 </databrowser>

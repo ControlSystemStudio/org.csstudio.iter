@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.1.0.201603290809</boy_version>
+  <boy_version>5.1.0.codac_core_5_3b4</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -90,7 +90,7 @@
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
-      <height>576</height>
+      <height>632</height>
       <name>Alarm VTable</name>
       <pv_name>beast://${ALARM_ROOT}</pv_name>
       <pv_result_prefix></pv_result_prefix>
@@ -101,54 +101,13 @@
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <scripts />
-      <tooltip>$(number_alarms) alarm(s) on ${ALARM_ROOT}</tooltip>
+      <tooltip>Alarm ROOT ${ALARM_ROOT}</tooltip>
       <visible>true</visible>
       <widget_type>VTable Display</widget_type>
-      <width>1501</width>
+      <width>1705</width>
       <wuid>-49ebfd7d:153ae0cc8c8:-7b46</wuid>
-      <x>0</x>
-      <y>0</y>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <actions hook="false" hook_all="false" />
-      <auto_size>true</auto_size>
-      <background_color>
-        <color name="IO Background" red="235" green="235" blue="235" />
-      </background_color>
-      <border_color>
-        <color name="IO Border" red="0" green="0" blue="0" />
-      </border_color>
-      <border_style>0</border_style>
-      <border_width>2</border_width>
-      <enabled>false</enabled>
-      <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
-      </font>
-      <foreground_color>
-        <color name="IO Text Fg" red="0" green="0" blue="0" />
-      </foreground_color>
-      <height>33</height>
-      <horizontal_alignment>0</horizontal_alignment>
-      <name>$(number_alarms) alarm(s) on ${ALARM_ROOT}</name>
-      <rules />
-      <scale_options>
-        <width_scalable>false</width_scalable>
-        <height_scalable>false</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <scripts />
-      <show_scrollbar>false</show_scrollbar>
-      <text>$(number_alarms) alarm(s) on ${ALARM_ROOT}</text>
-      <tooltip>${name}</tooltip>
-      <transparent>true</transparent>
-      <vertical_alignment>1</vertical_alignment>
-      <visible>true</visible>
-      <widget_type>Label</widget_type>
-      <width>672</width>
-      <wrap_words>true</wrap_words>
-      <wuid>-49ebfd7d:153ae0cc8c8:-7383</wuid>
-      <x>21</x>
-      <y>621</y>
+      <x>50</x>
+      <y>50</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -166,14 +125,14 @@
       <border_width>1</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
       </font>
       <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
         <color name="IO InputPV Fg" red="0" green="0" blue="0" />
       </foreground_color>
       <format_type>0</format_type>
-      <height>35</height>
+      <height>41</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>ALARM_ROOT</name>
       <precision>0</precision>
@@ -189,17 +148,17 @@
       </scale_options>
       <scripts />
       <show_units>true</show_units>
-      <text>$(number_alarms) alarm(s) on ${ALARM_ROOT}</text>
+      <text>Alarms List of ${ALARM_ROOT}</text>
       <tooltip>$(number_alarms) alarm(s) on ${ALARM_ROOT}</tooltip>
       <transparent>false</transparent>
       <vertical_alignment>1</vertical_alignment>
       <visible>true</visible>
       <widget_type>Text Update</widget_type>
-      <width>1274</width>
+      <width>1442</width>
       <wrap_words>false</wrap_words>
       <wuid>-49ebfd7d:153ae0cc8c8:-737f</wuid>
-      <x>21</x>
-      <y>699</y>
+      <x>50</x>
+      <y>735</y>
     </widget>
     <widget typeId="org.csstudio.alarm.beast.ui.alarmtable" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -255,10 +214,10 @@
       <unacknowledged_blinking>true</unacknowledged_blinking>
       <visible>true</visible>
       <widget_type>Alarm Table</widget_type>
-      <width>3236</width>
+      <width>3150</width>
       <writable>true</writable>
       <wuid>-49ebfd7d:153ae0cc8c8:-5e9b</wuid>
-      <x>0</x>
+      <x>50</x>
       <y>800</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="2.0.0">
@@ -413,6 +372,57 @@ $(pv_name): $(pv_value)</tooltip>
       <wuid>2ad50f5:153c22f86c6:-7f0a</wuid>
       <x>1806</x>
       <y>166</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+      <actions hook="false" hook_all="false" />
+      <alarm_pulsing>false</alarm_pulsing>
+      <auto_size>false</auto_size>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color name="IO InputPV Bg" red="235" green="235" blue="235" />
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color name="IO Button" red="178" green="178" blue="178" />
+      </border_color>
+      <border_style>1</border_style>
+      <border_width>1</border_width>
+      <enabled>true</enabled>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+      </foreground_color>
+      <format_type>0</format_type>
+      <height>41</height>
+      <horizontal_alignment>0</horizontal_alignment>
+      <name>ALARM_ROOT_1</name>
+      <precision>0</precision>
+      <precision_from_pv>true</precision_from_pv>
+      <pv_name>beast://${ALARM_ROOT}</pv_name>
+      <pv_value />
+      <rotation_angle>0.0</rotation_angle>
+      <rules />
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <show_units>true</show_units>
+      <text>Alarm root information of ${ALARM_ROOT}</text>
+      <tooltip>$(number_alarms) alarm(s) on ${ALARM_ROOT}</tooltip>
+      <transparent>false</transparent>
+      <vertical_alignment>1</vertical_alignment>
+      <visible>true</visible>
+      <widget_type>Text Update</widget_type>
+      <width>1442</width>
+      <wrap_words>false</wrap_words>
+      <wuid>-190a6b8f:1557c3cec99:-4829</wuid>
+      <x>50</x>
+      <y>0</y>
     </widget>
   </widget>
 </display>

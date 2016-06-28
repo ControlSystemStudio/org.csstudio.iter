@@ -5,35 +5,35 @@
   </config_log>
   <comment><text>Initialisation of the test</text></comment>
   <set>
-    <device>CWS-TCPH-Fxxx:SIMULATION</device>
+    <device>CTRL-SUP-CSS:SIMULATION</device>
     <value>1.0</value>
     <completion>true</completion>
     <wait>false</wait>
     <tolerance>0.1</tolerance>
   </set>
   <set>
-    <device>CWS-TCPH-Fxxx:START-ACQ</device>
+    <device>CTRL-SUP-CSS:START-ACQ</device>
     <value>1.0</value>
     <completion>true</completion>
     <wait>false</wait>
     <tolerance>0.1</tolerance>
   </set>
   <set>
-    <device>CWS-TCPH-Fxxx:WAVEFORM-TYPE</device>
+    <device>CTRL-SUP-CSS:WAVEFORM-TYPE</device>
     <value>1.0</value>
     <completion>true</completion>
     <wait>false</wait>
     <tolerance>0.1</tolerance>
   </set>
   <set>
-    <device>CWS-TCPH-Fxxx:AMPL</device>
+    <device>CTRL-SUP-CSS:AMPL</device>
     <value>10.0</value>
     <completion>true</completion>
     <wait>false</wait>
     <tolerance>0.1</tolerance>
   </set>
   <set>
-    <device>CWS-TCPH-Fxxx:FREQ</device>
+    <device>CTRL-SUP-CSS:FREQ</device>
     <value>0.1</value>
     <completion>true</completion>
     <wait>false</wait>
@@ -43,14 +43,14 @@
     <seconds>10.0</seconds>
   </delay>
   <loop>
-    <device>CWS-TCPH-Fxxx:AMPL</device>
+    <device>CTRL-SUP-CSS:AMPL</device>
     <start>10.0</start>
     <end>20.0</end>
     <step>5.0</step>
     <tolerance>0.5</tolerance>
     <body>
       <loop>
-        <device>CWS-TCPH-Fxxx:FREQ</device>
+        <device>CTRL-SUP-CSS:FREQ</device>
         <start>0.1</start>
         <end>1.0</end>
         <step>0.1</step>
@@ -61,10 +61,10 @@
           </delay>
           <log>
             <devices>
-              <device>CWS-TCPH-Fxxx:AMPL</device>
-              <device>CWS-TCPH-Fxxx:FREQ</device>
-              <device>CWS-TCPH-Fxxx:WAVEFORM-TYPE</device>
-              <device>CWS-TCPH-Fxxx:START-ACQ</device>
+              <device>CTRL-SUP-CSS:AMPL</device>
+              <device>CTRL-SUP-CSS:FREQ</device>
+              <device>CTRL-SUP-CSS:WAVEFORM-TYPE</device>
+              <device>CTRL-SUP-CSS:START-ACQ</device>
             </devices>
           </log>
         </body>
@@ -72,7 +72,7 @@
     </body>
   </loop>
   <set>
-    <device>CWS-TCPH-Fxxx:START-ACQ</device>
+    <device>CTRL-SUP-CSS:START-ACQ</device>
     <value>0.0</value>
     <completion>true</completion>
     <wait>false</wait>
