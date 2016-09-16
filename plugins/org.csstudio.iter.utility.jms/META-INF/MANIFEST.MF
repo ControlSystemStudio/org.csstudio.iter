@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jms
+Bundle-SymbolicName: org.csstudio.iter.utility.jms
+Bundle-Version: 2.0.0.qualifier
+Bundle-Activator: org.csstudio.iter.utility.jms.Activator
+Bundle-Vendor: Markus Moeller <markus.moeller@desy.de>
+Require-Bundle: org.eclipse.core.runtime,
+ org.csstudio.platform.libs.jms;bundle-version="5.4.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.csstudio.iter.utility.jms,
+ org.csstudio.iter.utility.jms.consumer,
+ org.csstudio.iter.utility.jms.publisher,
+ org.csstudio.iter.utility.jms.sharedconnection

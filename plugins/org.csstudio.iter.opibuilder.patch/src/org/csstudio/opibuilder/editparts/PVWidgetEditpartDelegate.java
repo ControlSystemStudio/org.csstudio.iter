@@ -64,6 +64,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
+import java.time.Duration;
 
 public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
 //    private interface AlarmSeverity extends ISeverity{
@@ -1104,7 +1105,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
         try {
             alarmPV = PVManager
                     .readAndWrite(expr)
-                    .timeout(TimeDuration.ofMillis(10000))
+                    .timeout(Duration.ofMillis(10000))
                     .readListener(new PVReaderListener<Object>() {
                         private boolean isFirstValueEvent = true;
                         private int latchedSeverityIdx = -1, currentSeverityIdx = -1, alarmsCountIdx = -1;

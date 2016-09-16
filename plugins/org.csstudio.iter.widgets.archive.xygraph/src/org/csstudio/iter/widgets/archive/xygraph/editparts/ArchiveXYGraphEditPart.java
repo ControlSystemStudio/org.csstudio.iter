@@ -37,9 +37,9 @@ import org.csstudio.swt.xygraph.figures.ToolbarArmedXYGraph;
 import org.csstudio.swt.xygraph.figures.Trace;
 import org.csstudio.trends.databrowser2.model.PVSamples;
 import org.csstudio.ui.util.thread.UIBundlingThread;
-import org.diirt.util.time.Timestamp;
 import org.diirt.vtype.VType;
 import org.eclipse.draw2d.IFigure;
+import java.time.Instant;
 
 /**
  * The Archive XYGraph editpart
@@ -206,7 +206,7 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
                     if (diffFromNow > timeSpan) {
                         if (vtype instanceof ArchiveVType) {
                             try {
-                                Timestamp startTS = TimestampHelper.fromMillisecs(start.toEpochMilli());
+                                Instant startTS = TimestampHelper.fromMillisecs(start.toEpochMilli());
                                 Field field = ArchiveVType.class.getDeclaredField("timestamp");
                                 field.setAccessible(true);
                                 field.set(vtype, startTS);
@@ -295,8 +295,8 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
         if (y_value == null) {
             return Long.MAX_VALUE;
         }
-        Timestamp timestamp = VTypeHelper.getTimestamp(y_value);
-        return timestamp.getSec() * 1000 + timestamp.getNanoSec() / 1000000;
+        Instant timestamp = VTypeHelper.getTimestamp(y_value);
+        return timestamp.getEpochSecond() * 1000 + timestamp.getNano() / 1000000;
     }
 
     class TracePropertyChangeHandler implements IWidgetPropertyChangeHandler {
