@@ -28,6 +28,8 @@ import gov.aps.jca.cas.ServerContext;
 
 import java.net.InetSocketAddress;
 
+import com.cosylab.epics.caj.cas.CAJServerContext;
+
 
 
 /**
@@ -79,14 +81,12 @@ public class SnooperServer {
      */
     private void initialize() throws CAException {
 
-        // Get the JCALibrary instance.
-        JCALibrary jca = JCALibrary.getInstance();
-
         // Create server implementation
         SnopperServerImpl server = new SnopperServerImpl();
 
         // Create a context with default configuration values.
-        context = jca.createServerContext(JCALibrary.CHANNEL_ACCESS_SERVER_JAVA, server);
+        context = new CAJServerContext();
+        context.initialize(server);
 
         // Display basic information about the context.
         //System.out.println(context.getVersion().getVersionString());
