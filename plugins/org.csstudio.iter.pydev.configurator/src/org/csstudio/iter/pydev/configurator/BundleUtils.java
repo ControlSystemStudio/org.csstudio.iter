@@ -43,12 +43,14 @@ public class BundleUtils {
         final File plugins = new File(eclipseDir + "/plugins/");
         if (plugins.exists()) {
             final File[] fa = plugins.listFiles();
-            for (int i = 0; i < fa.length; i++) {
-                final File file = fa[i];
-                if (file.getName().equals(bundle.getSymbolicName()))
-                    return file;
-                if (file.getName().startsWith(bundle.getSymbolicName() + "_"))
-                    return file;
+            if (fa != null) {
+                for (int i = 0; i < fa.length; i++) {
+                    final File file = fa[i];
+                    if (file.getName().equals(bundle.getSymbolicName()))
+                        return file;
+                    if (file.getName().startsWith(bundle.getSymbolicName() + "_"))
+                        return file;
+                }
             }
         }
         throw new IOException("Cannot locate bundle " + bundle.getSymbolicName());

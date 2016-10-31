@@ -27,6 +27,7 @@ public class DbdReaderUnitTest {
             new DbdReader(null);
             Assert.fail();
         } catch (Exception e) {
+            Assert.fail(e.getMessage());
         }
         try {
             DbdReader reader = new DbdReader("resources/test");

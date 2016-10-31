@@ -31,12 +31,13 @@ public class Activator implements BundleActivator {
     }
 
     @Override
-    public void start(BundleContext context) throws Exception {
-        bundleContext = context;
+    public synchronized void start(BundleContext context) throws Exception {
+        Activator.bundleContext = context;
     }
 
     @Override
-    public void stop(BundleContext arg0) throws Exception {
+    public synchronized void stop(BundleContext context) throws Exception {
+        Activator.bundleContext = null;
     }
 
 }

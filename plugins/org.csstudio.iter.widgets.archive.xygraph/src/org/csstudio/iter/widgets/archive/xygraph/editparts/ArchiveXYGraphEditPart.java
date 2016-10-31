@@ -62,7 +62,8 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
                v = ((Number)obj).longValue();
             }
         } catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
-            //ignore
+            Activator.getLogger().log(Level.WARNING, "Error while setting default value");
+            Activator.getLogger().log(Level.WARNING, e.getMessage());
         }
         DEFAULT_MAX = v;
     }
@@ -94,7 +95,7 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
         for (int i = 0; i < getWidgetModel().getTracesAmount(); i++) {
             String pv = "";
             try {
-                cacheDuringLoad.put(new Integer(i), new ArrayList<VType>());
+                cacheDuringLoad.put(Integer.valueOf(i), new ArrayList<VType>());
                 Boolean pltDataSource = (Boolean) getWidgetModel()
                         .getProperty(ArchiveXYGraphModel.PROP_PLOT_DATA_SOURCE).getPropertyValue();
 
@@ -318,7 +319,7 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
             List<Trace> traceList = getTraceList();
             Trace trace = traceList.get(traceIndex);
 
-            List<VType> samples = cacheDuringLoad.get(new Integer(traceIndex));
+            List<VType> samples = cacheDuringLoad.get(Integer.valueOf(traceIndex));
             if (samples != null && newValue instanceof VType) {
                 samples.add((VType) newValue);
             }

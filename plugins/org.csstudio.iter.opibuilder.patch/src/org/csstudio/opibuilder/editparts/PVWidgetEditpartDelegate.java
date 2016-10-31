@@ -222,8 +222,8 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
     public void startPVs() {
         pvsHaveBeenStarted = true;
         //the pv should be started at the last minute
-        for(String pvPropId : pvMap.keySet()){
-            IPV pv = pvMap.get(pvPropId);
+        for(Map.Entry<String, IPV> entry : pvMap.entrySet()){
+            IPV pv = entry.getValue();
             try {
                 pv.start();
             } catch (Exception e) {
@@ -251,8 +251,9 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                 pv.stop();
             pvsHaveBeenStarted = false;
         }
-            for(String pvPropID : pvListenerMap.keySet()){
-                pvMap.get(pvPropID).removeListener(pvListenerMap.get(pvPropID));
+            for(Map.Entry<String, IPVListener> entry  : pvListenerMap.entrySet()){
+                String pvPropID = entry.getKey();
+                pvMap.get(pvPropID).removeListener(entry.getValue());
             }
 
             pvMap.clear();

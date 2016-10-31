@@ -62,7 +62,7 @@ public class StartupLauncher implements IStartup {
                     event.getDelta().accept(new IResourceDeltaVisitor() {
                         public boolean visit(IResourceDelta delta) {
                             IResource resource = delta.getResource();
-                            if (resource.getType() != IResource.FILE)
+                            if (resource == null || resource.getType() != IResource.FILE)
                                 return true;
                             if (resource.getFileExtension() != null
                                     && resource.getFileExtension().toLowerCase().equals("db")) {

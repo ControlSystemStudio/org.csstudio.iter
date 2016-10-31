@@ -142,9 +142,10 @@ public class ArchiveRDBProvider implements IAutoCompleteProvider {
         Matcher m = null;
         // map name => description
         Map<String, String> matchingNames = new TreeMap<String, String>();
-        for (ArchiveDataSource ds : readers.keySet()) {
+        for (Map.Entry<ArchiveDataSource, ArchiveReader> entry : readers.entrySet()) {
+        	ArchiveDataSource ds = entry.getKey();
             try {
-                String[] names = readers.get(ds).getNamesByPattern(ds.getKey(), "*" + pvDesc.getName() + "*");
+                String[] names = entry.getValue().getNamesByPattern(ds.getKey(), "*" + pvDesc.getName() + "*");
                 if (names != null) {
                     for (String name : names) {
                         if (matchingNames.size() <= limit) {

@@ -49,13 +49,14 @@ public class DBContext implements Serializable {
 
     public List<Record> findRecord(String name) {
         List<Record> result = new ArrayList<Record>();
-        for (String rec : records.keySet()) {
+        for (Map.Entry<String, List<Record>> entry : records.entrySet()) {
+            String rec = entry.getKey();
             // replace macro by .*
             final String regexp = rec.replaceAll("\\$\\([a-zA-Z0-9]+\\)", ".*");
             Pattern p = Pattern.compile(regexp);
             Matcher m = p.matcher(name);
             if (m.matches())
-                result.addAll(records.get(rec));
+                result.addAll(entry.getValue());
         }
         return result;
     }

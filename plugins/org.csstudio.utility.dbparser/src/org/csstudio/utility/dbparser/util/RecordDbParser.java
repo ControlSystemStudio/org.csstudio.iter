@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.antlr.runtime.CommonTokenStream;
+import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.Token;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeAdaptor;
@@ -60,7 +61,7 @@ public class RecordDbParser {
             DbRecordParser.top_return r = parser.top();
             CommonTree tree = (CommonTree) r.getTree();
             this.setCommonTree(tree);
-        } catch (Throwable exception) {
+        } catch (RecognitionException exception) {
             exception.printStackTrace();
         }
     }

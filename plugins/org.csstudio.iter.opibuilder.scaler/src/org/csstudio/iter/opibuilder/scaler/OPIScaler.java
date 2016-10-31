@@ -194,6 +194,9 @@ public final class OPIScaler {
             System.out.println("Output file '" + outFile + "' already exists. Would you like to overwrite it (y/N)?");
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             String line = br.readLine();
+            if (line == null) {
+                line = "";
+            }
             line = line.trim().toLowerCase();
             if (line.isEmpty() || line.charAt(0) != 'y') {
                 System.out.println("Bye Bye!");

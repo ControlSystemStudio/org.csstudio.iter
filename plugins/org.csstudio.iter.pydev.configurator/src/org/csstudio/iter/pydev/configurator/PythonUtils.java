@@ -13,9 +13,29 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.preferences.IPreferencesService;
 import org.osgi.framework.Version;
 
 public class PythonUtils {
+
+    public static String getPythonPath() {
+        String config = "";
+        final IPreferencesService service = Platform.getPreferencesService();
+        if (service != null) {
+            config = service.getString(Activator.ID, "python_path", "", null);
+        }
+        return config;
+    }
+
+    public static String getDiamondPyPath() {
+        String config = "";
+        final IPreferencesService service = Platform.getPreferencesService();
+        if (service != null) {
+            config = service.getString(Activator.ID, "diamond_py_path", "", null);
+        }
+        return config;
+    }
 
     /**
      * Attempts to determine probable python interpreter path to be used with edna. The pydev extensions also attempt to
@@ -42,9 +62,10 @@ public class PythonUtils {
 
         // Sometimes can find old default interpreter on linux
         if (PythonUtils.isLinuxOS()) {
-            final File python = new File("/usr/bin/python");
+            final String python_path = PythonUtils.getPythonPath();
+            final File python = new File(python_path);
             if (python.exists())
-                return "/usr/bin/python";
+                return python.getAbsolutePath();
         }
 
         // Some kind of default which we hope works.
@@ -75,9 +96,9 @@ public class PythonUtils {
     private static String getExecutable(final String dirPath, final String execName) {
 
         final File dir = new File(dirPath);
-        if (!dir.exists())
+        if (dir == null || !dir.exists())
             return null;
-        if (!dir.isDirectory())
+        if (dir == null || !dir.isDirectory())
             return null;
 
         final Pattern pattern = Pattern.compile(execName + "(\\d+\\.?\\d*)");
@@ -182,19 +203,15 @@ public class PythonUtils {
         }
 
         // ESRF path
-        final String esrfPath;
-        if ("64".equals(System.getProperty("sun.arch.data.model"))) {
-            esrfPath = "python";
-        } else {
-            esrfPath = "python";
-        }
+        final String esrfPath = "python";
 
         final File esrfPy = new File(esrfPath);
         if (esrfPy.exists()) {
             return esrfPy.getAbsolutePath();
         }
 
-        final File diamondPy = new File("/dls_sw/prod/tools/RHEL5/bin/python2.6");
+        final String diamondPy_home = PythonUtils.getDiamondPyPath();
+        final File diamondPy = new File(diamondPy_home);
         if (diamondPy.exists()) {
             return diamondPy.getAbsolutePath();
         }

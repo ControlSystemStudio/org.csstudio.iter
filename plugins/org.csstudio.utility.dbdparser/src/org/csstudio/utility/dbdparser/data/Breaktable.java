@@ -28,7 +28,7 @@ public class Breaktable {
     }
 
     public Float[][] getValues() {
-        return values;
+        return values.clone();
     }
 
     @Override

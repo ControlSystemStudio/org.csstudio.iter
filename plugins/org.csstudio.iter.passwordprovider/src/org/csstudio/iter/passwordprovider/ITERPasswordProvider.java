@@ -10,7 +10,9 @@ package org.csstudio.iter.passwordprovider;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.logging.Level;
 
 import javax.crypto.spec.PBEKeySpec;
@@ -31,8 +33,12 @@ public class ITERPasswordProvider extends PasswordProvider {
             File keyFile = new File(path);
             BufferedReader reader = new BufferedReader(new FileReader(keyFile));
             key = reader.readLine();
-            reader.close();
-        } catch (Exception e) {
+            if ( reader != null ) {
+                reader.close();
+            }
+        } catch (IOException e) {
+            Activator.getLogger().log(Level.SEVERE, "Error reading password: " + e.getMessage());
+        } catch (URISyntaxException e) {
             Activator.getLogger().log(Level.SEVERE, "Error reading password: " + e.getMessage());
         }
         return new PBEKeySpec(key.toCharArray());
