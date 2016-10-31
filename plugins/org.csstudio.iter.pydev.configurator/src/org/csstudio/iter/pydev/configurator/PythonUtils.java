@@ -96,9 +96,7 @@ public class PythonUtils {
     private static String getExecutable(final String dirPath, final String execName) {
 
         final File dir = new File(dirPath);
-        if (dir == null || !dir.exists())
-            return null;
-        if (dir == null || !dir.isDirectory())
+        if (dir == null || !dir.exists() || !dir.isDirectory())
             return null;
 
         final Pattern pattern = Pattern.compile(execName + "(\\d+\\.?\\d*)");
@@ -106,7 +104,7 @@ public class PythonUtils {
         String found = null;
         Version version = new Version("0.0.0");
         for (File file : dir.listFiles()) {
-            if (!file.isFile())
+            if (file == null || !file.isFile())
                 continue;
             // if (!file.canExecute()) continue;
 
