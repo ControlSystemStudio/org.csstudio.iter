@@ -21,14 +21,15 @@
         <diirt.version>3.1.5</diirt.version>
         <cs-studio.version>4.4</cs-studio.version>
         <tycho.version>0.22.0</tycho.version>
-        <tycho-extras.version>0.22.0</tycho-extras.version>
+        <tycho-extras.version>${tycho.version}</tycho-extras.version>
         <tycho-groupid>org.eclipse.tycho</tycho-groupid>
+        <!-- pydev version 5.2.0 is last version supporting eclipse mars -->
+        <pydev.version>5.2.0</pydev.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <baselineMode>fail</baselineMode>
-        <pydev-site>https://dl.bintray.com/fabioz/pydev/old/</pydev-site>
-        <!--pydev-site>http://www.pydev.org/updates/</pydev-site  we need version 4.4.0, because 4.5.0 does not work-->
+        <pydev-site>https://dl.bintray.com/fabioz/pydev/${pydev.version}</pydev-site>
         <svn-site>http://subclipse.tigris.org/update_1.12.x</svn-site>
-        <orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20150519210750/repository</orbit-site>
+        <orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/repository</orbit-site>
         <efx-site>http://download.eclipse.org/efxclipse/runtime-released/2.1.0/site</efx-site>
     </properties>
 
