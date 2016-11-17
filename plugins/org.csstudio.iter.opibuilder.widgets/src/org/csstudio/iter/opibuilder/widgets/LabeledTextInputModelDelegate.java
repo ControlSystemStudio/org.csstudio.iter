@@ -175,6 +175,6 @@ public class LabeledTextInputModelDelegate extends TextInputModel {
 
     @Override
     public String getTypeID() {
-        return "ElmerFudd";
+        return "org.csstudio.opibuilder.widgets.TextInput";
     }
 }
