@@ -13,7 +13,7 @@ import java.util.List;
 import org.csstudio.iter.opibuilder.widgets.LabeledTextInputModelDelegate.LabelAlignment;
 import org.csstudio.iter.opibuilder.widgets.LabeledTextInputModelDelegate.LabelPosition;
 import org.csstudio.opibuilder.editparts.AbstractBaseEditPart;
-import org.csstudio.opibuilder.editparts.AbstractWidgetEditPart;
+import org.csstudio.opibuilder.editparts.AbstractPVWidgetEditPart;
 import org.csstudio.opibuilder.editparts.ExecutionMode;
 import org.csstudio.opibuilder.model.AbstractContainerModel;
 import org.csstudio.opibuilder.model.AbstractWidgetModel;
@@ -37,7 +37,7 @@ import org.eclipse.swt.graphics.Font;
  * @author <a href="mailto:jaka.bobnar@cosylab.com">Jaka Bobnar</a>
  *
  */
-public class LabeledTextInputEditPart extends AbstractWidgetEditPart {
+public class LabeledTextInputEditPart extends AbstractPVWidgetEditPart {
 
     private boolean initialized = false;
     /*
