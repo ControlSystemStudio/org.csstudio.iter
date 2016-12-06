@@ -135,21 +135,6 @@ public class EarlyStartup implements IStartup {
                     e.printStackTrace();
                 }
 
-                if (confChanged) {
-                    Display.getDefault().asyncExec(new Runnable() {
-                        @Override
-                        public void run() {
-                            MessageDialog dialog = new MessageDialog(null, "Restart required", null,
-                                    "Python Configuration has been updated automatically and requires a restart.",
-                                    MessageDialog.QUESTION, new String[] { "Restart Now", "Restart Later" }, 0);
-                            int result = dialog.open();
-                            if (result == 0) {
-                                PlatformUI.getWorkbench().restart();
-                            }
-                        }
-                    });
-                }
-
                 return Status.OK_STATUS;
             }
         };
