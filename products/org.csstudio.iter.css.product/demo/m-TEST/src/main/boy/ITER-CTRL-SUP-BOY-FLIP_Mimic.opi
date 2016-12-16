@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.0.0.codac_core_5_2b4</boy_version>
+  <boy_version>5.1.0.codac_core_5_4b4</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -227,13 +227,13 @@
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>102</height>
+        <height>103</height>
         <image_file>SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png</image_file>
         <name>Image Flipped</name>
         <no_animation>false</no_animation>
         <permutation_matrix>
           <row>
-            <col>-1.0</col>
+            <col>1.0</col>
             <col>0.0</col>
           </row>
           <row>
@@ -249,13 +249,13 @@
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
+            <pv trig="true">loc://png("SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -269,7 +269,7 @@
         <transparency>false</transparency>
         <visible>true</visible>
         <widget_type>Image</widget_type>
-        <width>63</width>
+        <width>64</width>
         <wuid>-7c21f2fb:1520c4b5b67:-6c9</wuid>
         <x>88</x>
         <y>3</y>
@@ -319,7 +319,7 @@
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
+            <pv trig="true">loc://png("SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -383,7 +383,7 @@
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
+            <pv trig="true">loc://png("SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -447,7 +447,7 @@
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
+            <pv trig="true">loc://png("SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -617,7 +617,7 @@ Vertical</text>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>103</height>
+        <height>102</height>
         <image_file>SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png</image_file>
         <name>Image Flipped</name>
         <no_animation>false</no_animation>
@@ -628,7 +628,7 @@ Vertical</text>
           </row>
           <row>
             <col>0.0</col>
-            <col>1.0</col>
+            <col>-1.0</col>
           </row>
         </permutation_matrix>
         <rules>
@@ -639,13 +639,13 @@ Vertical</text>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
+            <pv trig="true">loc://png("SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -659,7 +659,7 @@ Vertical</text>
         <transparency>false</transparency>
         <visible>true</visible>
         <widget_type>Image</widget_type>
-        <width>64</width>
+        <width>63</width>
         <wuid>-7c21f2fb:1520c4b5b67:-6be</wuid>
         <x>458</x>
         <y>0</y>
@@ -708,7 +708,7 @@ Vertical</text>
       <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
         <actions hook="false" hook_all="false" />
         <alarm_pulsing>false</alarm_pulsing>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO InputPV Bg" red="235" green="235" blue="235" />
         </background_color>
@@ -734,7 +734,7 @@ Vertical</text>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <height>40</height>
-        <name>Flip_1</name>
+        <name>Flip</name>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
@@ -743,9 +743,41 @@ Vertical</text>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <on_label>ON</on_label>
-        <pv_name>sim://ramp(0,1,1,3)</pv_name>
+        <pv_name>CTRL-SUP-BOY:BI</pv_name>
         <pv_value />
-        <rules />
+        <rules>
+          <rule name="Alarm LED ON State Color" prop_id="on_color" out_exp="false">
+            <exp bool_exp="pv0== 0">
+              <value>
+                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 1">
+              <value>
+                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 2">
+              <value>
+                <color name="IO High Level Alarm" red="250" green="12" blue="14" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 3">
+              <value>
+                <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+              </value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+          </rule>
+          <rule name="Alarm LED OFF State Color" prop_id="off_color" out_exp="false">
+            <exp bool_exp="pv0== 3">
+              <value>
+                <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+              </value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+          </rule>
+        </rules>
         <scale_options>
           <width_scalable>false</width_scalable>
           <height_scalable>false</height_scalable>
@@ -933,7 +965,7 @@ $(pv_value)</tooltip>
         <on_label>ON</on_label>
         <permutation_matrix>
           <row>
-            <col>1.0</col>
+            <col>-1.0</col>
             <col>0.0</col>
           </row>
           <row>
@@ -951,13 +983,13 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Pneumatic Valve 0.svg")</pv>
+            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VR Relief Device 0.svg")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -1052,7 +1084,7 @@ $(pv_value)</tooltip>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>102</height>
+        <height>103</height>
         <image_file>SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png</image_file>
         <name>PNG</name>
         <no_animation>false</no_animation>
@@ -1066,7 +1098,7 @@ $(pv_value)</tooltip>
         <on_label>ON</on_label>
         <permutation_matrix>
           <row>
-            <col>-1.0</col>
+            <col>1.0</col>
             <col>0.0</col>
           </row>
           <row>
@@ -1084,7 +1116,7 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
@@ -1106,7 +1138,7 @@ $(pv_value)</tooltip>
         <transparency>false</transparency>
         <visible>true</visible>
         <widget_type>Boolean Symbol Image Monitor</widget_type>
-        <width>63</width>
+        <width>64</width>
         <wuid>-7c21f2fb:1520c4b5b67:-6ba</wuid>
         <x>175</x>
         <y>63</y>
@@ -1278,7 +1310,7 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
         <actions hook="false" hook_all="false" />
         <alarm_pulsing>false</alarm_pulsing>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO InputPV Bg" red="235" green="235" blue="235" />
         </background_color>
@@ -1313,9 +1345,41 @@ $(pv_value)</tooltip>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <on_label>ON</on_label>
-        <pv_name>sim://ramp(0,1,1,3)</pv_name>
+        <pv_name>CTRL-SUP-BOY:BI</pv_name>
         <pv_value />
-        <rules />
+        <rules>
+          <rule name="Alarm LED ON State Color" prop_id="on_color" out_exp="false">
+            <exp bool_exp="pv0== 0">
+              <value>
+                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 1">
+              <value>
+                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 2">
+              <value>
+                <color name="IO High Level Alarm" red="250" green="12" blue="14" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 3">
+              <value>
+                <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+              </value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+          </rule>
+          <rule name="Alarm LED OFF State Color" prop_id="off_color" out_exp="false">
+            <exp bool_exp="pv0== 3">
+              <value>
+                <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+              </value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+          </rule>
+        </rules>
         <scale_options>
           <width_scalable>false</width_scalable>
           <height_scalable>false</height_scalable>
@@ -1385,7 +1449,7 @@ $(pv_value)</tooltip>
           </row>
           <row>
             <col>0.0</col>
-            <col>-1.0</col>
+            <col>1.0</col>
           </row>
         </permutation_matrix>
         <pv_name>loc://bool(1)</pv_name>
@@ -1398,13 +1462,13 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VC On-Off 2-way Pneumatic Valve 0.svg")</pv>
+            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VR Relief Device 0.svg")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -1458,7 +1522,7 @@ $(pv_value)</tooltip>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>102</height>
+        <height>103</height>
         <image_file>SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png</image_file>
         <name>PNG</name>
         <no_animation>false</no_animation>
@@ -1477,7 +1541,7 @@ $(pv_value)</tooltip>
           </row>
           <row>
             <col>0.0</col>
-            <col>-1.0</col>
+            <col>1.0</col>
           </row>
         </permutation_matrix>
         <pv_name>loc://bool(1)</pv_name>
@@ -1490,7 +1554,7 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
@@ -1512,7 +1576,7 @@ $(pv_value)</tooltip>
         <transparency>false</transparency>
         <visible>true</visible>
         <widget_type>Boolean Symbol Image Monitor</widget_type>
-        <width>63</width>
+        <width>64</width>
         <wuid>-7c21f2fb:15211561f9e:-7fa2</wuid>
         <x>817</x>
         <y>63</y>
@@ -1812,7 +1876,7 @@ $(pv_value)</tooltip>
         <password></password>
         <permutation_matrix>
           <row>
-            <col>-1.0</col>
+            <col>1.0</col>
             <col>0.0</col>
           </row>
           <row>
@@ -1832,13 +1896,13 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv>
+            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VR Relief Device 0.svg")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -1895,7 +1959,7 @@ $(pv_value)</tooltip>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>102</height>
+        <height>103</height>
         <image_file>SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png</image_file>
         <name>PNG</name>
         <no_animation>false</no_animation>
@@ -1910,7 +1974,7 @@ $(pv_value)</tooltip>
         <password></password>
         <permutation_matrix>
           <row>
-            <col>-1.0</col>
+            <col>1.0</col>
             <col>0.0</col>
           </row>
           <row>
@@ -1930,13 +1994,13 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
+            <pv trig="true">loc://png("SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -1954,7 +2018,7 @@ $(pv_value)</tooltip>
         <transparency>false</transparency>
         <visible>true</visible>
         <widget_type>Boolean Symbol Image Control</widget_type>
-        <width>63</width>
+        <width>64</width>
         <wuid>-7c21f2fb:1520c4b5b67:-6aa</wuid>
         <x>208</x>
         <y>60</y>
@@ -2095,7 +2159,7 @@ $(pv_value)</tooltip>
           </row>
           <row>
             <col>0.0</col>
-            <col>1.0</col>
+            <col>-1.0</col>
           </row>
         </permutation_matrix>
         <push_action_index>0</push_action_index>
@@ -2110,13 +2174,13 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv>
+            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VR Relief Device 0.svg")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -2173,7 +2237,7 @@ $(pv_value)</tooltip>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>103</height>
+        <height>102</height>
         <image_file>SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png</image_file>
         <name>PNG</name>
         <no_animation>false</no_animation>
@@ -2193,7 +2257,7 @@ $(pv_value)</tooltip>
           </row>
           <row>
             <col>0.0</col>
-            <col>1.0</col>
+            <col>-1.0</col>
           </row>
         </permutation_matrix>
         <push_action_index>0</push_action_index>
@@ -2208,13 +2272,13 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
+            <pv trig="true">loc://png("SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -2232,7 +2296,7 @@ $(pv_value)</tooltip>
         <transparency>false</transparency>
         <visible>true</visible>
         <widget_type>Boolean Symbol Image Control</widget_type>
-        <width>64</width>
+        <width>63</width>
         <wuid>-7c21f2fb:1520c4b5b67:-6a4</wuid>
         <x>850</x>
         <y>61</y>
@@ -2287,7 +2351,7 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
         <actions hook="false" hook_all="false" />
         <alarm_pulsing>false</alarm_pulsing>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO InputPV Bg" red="235" green="235" blue="235" />
         </background_color>
@@ -2322,9 +2386,41 @@ $(pv_value)</tooltip>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <on_label>ON</on_label>
-        <pv_name>sim://ramp(0,1,1,3)</pv_name>
+        <pv_name>CTRL-SUP-BOY:BI</pv_name>
         <pv_value />
-        <rules />
+        <rules>
+          <rule name="Alarm LED ON State Color" prop_id="on_color" out_exp="false">
+            <exp bool_exp="pv0== 0">
+              <value>
+                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 1">
+              <value>
+                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 2">
+              <value>
+                <color name="IO High Level Alarm" red="250" green="12" blue="14" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 3">
+              <value>
+                <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+              </value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+          </rule>
+          <rule name="Alarm LED OFF State Color" prop_id="off_color" out_exp="false">
+            <exp bool_exp="pv0== 3">
+              <value>
+                <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+              </value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+          </rule>
+        </rules>
         <scale_options>
           <width_scalable>false</width_scalable>
           <height_scalable>false</height_scalable>
@@ -2594,7 +2690,7 @@ $(pv_value)</tooltip>
         <password></password>
         <permutation_matrix>
           <row>
-            <col>-1.0</col>
+            <col>1.0</col>
             <col>0.0</col>
           </row>
           <row>
@@ -2613,13 +2709,13 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv>
+            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VR Relief Device 0.svg")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -2673,7 +2769,7 @@ $(pv_value)</tooltip>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>102</height>
+        <height>103</height>
         <image_file>SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png</image_file>
         <items />
         <items_from_pv>true</items_from_pv>
@@ -2688,7 +2784,7 @@ $(pv_value)</tooltip>
         <password></password>
         <permutation_matrix>
           <row>
-            <col>-1.0</col>
+            <col>1.0</col>
             <col>0.0</col>
           </row>
           <row>
@@ -2707,13 +2803,13 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
+            <pv trig="true">loc://png("SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -2730,7 +2826,7 @@ $(pv_value)</tooltip>
         <transparency>false</transparency>
         <visible>true</visible>
         <widget_type>Multistate Symbol Image Control</widget_type>
-        <width>63</width>
+        <width>64</width>
         <wuid>-7c21f2fb:1520c4b5b67:-69d</wuid>
         <x>208</x>
         <y>50</y>
@@ -2738,7 +2834,7 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.combo" version="1.0.0">
         <actions hook="false" hook_all="false" />
         <alarm_pulsing>false</alarm_pulsing>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
         </background_color>
@@ -2911,7 +3007,7 @@ $(pv_value)</tooltip>
           </row>
           <row>
             <col>0.0</col>
-            <col>1.0</col>
+            <col>-1.0</col>
           </row>
         </permutation_matrix>
         <push_action_index>0</push_action_index>
@@ -2925,13 +3021,13 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv>
+            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VR Relief Device 0.svg")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -2985,7 +3081,7 @@ $(pv_value)</tooltip>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>103</height>
+        <height>102</height>
         <image_file>SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png</image_file>
         <items />
         <items_from_pv>true</items_from_pv>
@@ -3005,7 +3101,7 @@ $(pv_value)</tooltip>
           </row>
           <row>
             <col>0.0</col>
-            <col>1.0</col>
+            <col>-1.0</col>
           </row>
         </permutation_matrix>
         <push_action_index>0</push_action_index>
@@ -3019,13 +3115,13 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
+            <pv trig="true">loc://png("SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -3042,7 +3138,7 @@ $(pv_value)</tooltip>
         <transparency>false</transparency>
         <visible>true</visible>
         <widget_type>Multistate Symbol Image Control</widget_type>
-        <width>64</width>
+        <width>63</width>
         <wuid>-7c21f2fb:1520c4b5b67:-696</wuid>
         <x>850</x>
         <y>50</y>
@@ -3091,7 +3187,7 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
         <actions hook="false" hook_all="false" />
         <alarm_pulsing>false</alarm_pulsing>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO InputPV Bg" red="235" green="235" blue="235" />
         </background_color>
@@ -3117,7 +3213,7 @@ $(pv_value)</tooltip>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <height>40</height>
-        <name>Flip_1</name>
+        <name>Flip</name>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
@@ -3126,9 +3222,41 @@ $(pv_value)</tooltip>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <on_label>ON</on_label>
-        <pv_name>sim://ramp(0,1,1,3)</pv_name>
+        <pv_name>CTRL-SUP-BOY:BI</pv_name>
         <pv_value />
-        <rules />
+        <rules>
+          <rule name="Alarm LED ON State Color" prop_id="on_color" out_exp="false">
+            <exp bool_exp="pv0== 0">
+              <value>
+                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 1">
+              <value>
+                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 2">
+              <value>
+                <color name="IO High Level Alarm" red="250" green="12" blue="14" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 3">
+              <value>
+                <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+              </value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+          </rule>
+          <rule name="Alarm LED OFF State Color" prop_id="off_color" out_exp="false">
+            <exp bool_exp="pv0== 3">
+              <value>
+                <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+              </value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+          </rule>
+        </rules>
         <scale_options>
           <width_scalable>false</width_scalable>
           <height_scalable>false</height_scalable>
@@ -3314,7 +3442,7 @@ $(pv_value)</tooltip>
         </on_color>
         <permutation_matrix>
           <row>
-            <col>-1.0</col>
+            <col>1.0</col>
             <col>0.0</col>
           </row>
           <row>
@@ -3332,13 +3460,13 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv>
+            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VR Relief Device 0.svg")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -3472,7 +3600,7 @@ $(pv_value)</tooltip>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>102</height>
+        <height>103</height>
         <image_file>SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png</image_file>
         <items />
         <items_from_pv>true</items_from_pv>
@@ -3486,7 +3614,7 @@ $(pv_value)</tooltip>
         </on_color>
         <permutation_matrix>
           <row>
-            <col>-1.0</col>
+            <col>1.0</col>
             <col>0.0</col>
           </row>
           <row>
@@ -3504,13 +3632,13 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
+            <pv trig="true">loc://png("SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -3526,7 +3654,7 @@ $(pv_value)</tooltip>
         <transparency>false</transparency>
         <visible>true</visible>
         <widget_type>Multistate Symbol Image Monitor</widget_type>
-        <width>63</width>
+        <width>64</width>
         <wuid>-7c21f2fb:1520c4b5b67:-691</wuid>
         <x>175</x>
         <y>50</y>
@@ -3581,7 +3709,7 @@ $(pv_value)</tooltip>
           </row>
           <row>
             <col>0.0</col>
-            <col>1.0</col>
+            <col>-1.0</col>
           </row>
         </permutation_matrix>
         <pv_name>CTRL-SUP-BOY:COMPONENT0</pv_name>
@@ -3594,13 +3722,13 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv>
+            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VR Relief Device 0.svg")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -3734,7 +3862,7 @@ $(pv_value)</tooltip>
         <foreground_color>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>103</height>
+        <height>102</height>
         <image_file>SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png</image_file>
         <items />
         <items_from_pv>true</items_from_pv>
@@ -3753,7 +3881,7 @@ $(pv_value)</tooltip>
           </row>
           <row>
             <col>0.0</col>
-            <col>1.0</col>
+            <col>-1.0</col>
           </row>
         </permutation_matrix>
         <pv_name>CTRL-SUP-BOY:COMPONENT0</pv_name>
@@ -3766,13 +3894,13 @@ $(pv_value)</tooltip>
             <exp bool_exp="pv0==1">
               <value>true</value>
             </exp>
-            <pv trig="true">sim://ramp(0,1,1,3)</pv>
+            <pv trig="true">CTRL-SUP-BOY:BI</pv>
           </rule>
           <rule name="image" prop_id="image_file" out_exp="true">
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://png("SymbolLibrary/PNG/Electrical/Protection_and_Cut-Shut_Off-On/JS Combined Disconnector and Earthing Switch Off.png")</pv>
+            <pv trig="true">loc://png("SymbolLibrary/PNG/Fluid/Separators/DS Separator General.png")</pv>
           </rule>
         </rules>
         <scale_options>
@@ -3788,7 +3916,7 @@ $(pv_value)</tooltip>
         <transparency>false</transparency>
         <visible>true</visible>
         <widget_type>Multistate Symbol Image Monitor</widget_type>
-        <width>64</width>
+        <width>63</width>
         <wuid>-7c21f2fb:1520c4b5b67:-68b</wuid>
         <x>740</x>
         <y>50</y>
@@ -3797,7 +3925,7 @@ $(pv_value)</tooltip>
         <actions hook="false" hook_all="false" />
         <alarm_pulsing>false</alarm_pulsing>
         <auto_size>false</auto_size>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO InputPV Bg" red="235" green="235" blue="235" />
         </background_color>
@@ -3889,7 +4017,7 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
         <actions hook="false" hook_all="false" />
         <alarm_pulsing>false</alarm_pulsing>
-        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO InputPV Bg" red="235" green="235" blue="235" />
         </background_color>
@@ -3915,7 +4043,7 @@ $(pv_value)</tooltip>
           <color name="IO InputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <height>40</height>
-        <name>Flip_1</name>
+        <name>Flip</name>
         <off_color>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
@@ -3924,9 +4052,41 @@ $(pv_value)</tooltip>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <on_label>ON</on_label>
-        <pv_name>sim://ramp(0,1,1,3)</pv_name>
+        <pv_name>CTRL-SUP-BOY:BI</pv_name>
         <pv_value />
-        <rules />
+        <rules>
+          <rule name="Alarm LED ON State Color" prop_id="on_color" out_exp="false">
+            <exp bool_exp="pv0== 0">
+              <value>
+                <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 1">
+              <value>
+                <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 2">
+              <value>
+                <color name="IO High Level Alarm" red="250" green="12" blue="14" />
+              </value>
+            </exp>
+            <exp bool_exp="pv0== 3">
+              <value>
+                <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+              </value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+          </rule>
+          <rule name="Alarm LED OFF State Color" prop_id="off_color" out_exp="false">
+            <exp bool_exp="pv0== 3">
+              <value>
+                <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+              </value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+          </rule>
+        </rules>
         <scale_options>
           <width_scalable>false</width_scalable>
           <height_scalable>false</height_scalable>

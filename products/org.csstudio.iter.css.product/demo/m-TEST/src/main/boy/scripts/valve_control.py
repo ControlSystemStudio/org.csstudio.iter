@@ -10,7 +10,7 @@ start = caget('CTRL-SUP-BOY:PERF-SRT.VAL')
 
 init = 40
 firstValve = 101
-lastValve = 204
+lastValve = 350
 tempo = 5
 
 # scan: scan rate for the valve position

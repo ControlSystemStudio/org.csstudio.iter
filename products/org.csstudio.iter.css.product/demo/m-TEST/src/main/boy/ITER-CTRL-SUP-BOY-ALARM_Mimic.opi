@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.0.0.codac_core_5_2b4</boy_version>
+  <boy_version>5.1.0.codac_core_5_4b4</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -242,10 +242,12 @@
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
         <off_label>OFF</off_label>
+        <off_state></off_state>
         <on_color>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <on_label>ON</on_label>
+        <on_state></on_state>
         <permutation_matrix>
           <row>
             <col>1.0</col>
@@ -299,7 +301,7 @@
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://svg("/opt/codac/opi/boy/SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv>
+            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VR Relief Device 0.svg")</pv>
           </rule>
           <rule name="bg" prop_id="backcolor_alarm_sensitive" out_exp="false">
             <exp bool_exp="pv0==0">
@@ -420,10 +422,12 @@ $(pv_value)</tooltip>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
         <off_label>OFF</off_label>
+        <off_state></off_state>
         <on_color>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <on_label>ON</on_label>
+        <on_state></on_state>
         <permutation_matrix>
           <row>
             <col>1.0</col>
@@ -722,10 +726,12 @@ $(pv_value)</tooltip>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
         <off_label>OFF</off_label>
+        <off_state></off_state>
         <on_color>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <on_label>ON</on_label>
+        <on_state></on_state>
         <password></password>
         <permutation_matrix>
           <row>
@@ -782,7 +788,7 @@ $(pv_value)</tooltip>
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://svg("/opt/codac/opi/boy/SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv>
+            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VR Relief Device 0.svg")</pv>
           </rule>
           <rule name="bg" prop_id="backcolor_alarm_sensitive" out_exp="false">
             <exp bool_exp="pv0==0">
@@ -865,10 +871,12 @@ $(pv_value)</tooltip>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
         <off_label>OFF</off_label>
+        <off_state></off_state>
         <on_color>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <on_label>ON</on_label>
+        <on_state></on_state>
         <password></password>
         <permutation_matrix>
           <row>
@@ -1254,7 +1262,7 @@ $(pv_value)</tooltip>
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://svg("/opt/codac/opi/boy/SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv>
+            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VR Relief Device 0.svg")</pv>
           </rule>
           <rule name="bg" prop_id="backcolor_alarm_sensitive" out_exp="false">
             <exp bool_exp="pv0==0">
@@ -1436,7 +1444,7 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.combo" version="1.0.0">
         <actions hook="false" hook_all="false" />
         <alarm_pulsing>false</alarm_pulsing>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
         <background_color>
           <color name="IO OutputPV Bg" red="255" green="255" blue="255" />
         </background_color>
@@ -1455,6 +1463,7 @@ $(pv_value)</tooltip>
           <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
         </foreground_color>
         <height>45</height>
+        <items />
         <items_from_pv>true</items_from_pv>
         <name>Combo Box Template_1</name>
         <pv_name>CTRL-SUP-BOY:COMPONENT0</pv_name>
@@ -1612,7 +1621,7 @@ $(pv_value)</tooltip>
             <exp bool_exp="true">
               <value>pvStr0</value>
             </exp>
-            <pv trig="true">loc://svg("/opt/codac/opi/boy/SymbolLibrary/SVG/Fluid/Valves/VG 3-Positions 2 way-Valves 0.svg")</pv>
+            <pv trig="true">loc://svg("SymbolLibrary/SVG/Fluid/Valves/VR Relief Device 0.svg")</pv>
           </rule>
           <rule name="bg" prop_id="backcolor_alarm_sensitive" out_exp="false">
             <exp bool_exp="pv0==0">
