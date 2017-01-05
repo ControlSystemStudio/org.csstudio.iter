@@ -220,7 +220,7 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
                 }
             }
             Activator.getLogger().log(Level.INFO,
-                    "Trace  " + traceIndex + " refresh with " + listFinal.size() + " datas");
+                    "Trace " + traceIndex + " - " + listFinal.size() + " historical data retrieved");
 
             // clear the cache to not used it anymore
             cacheDuringLoad.replace(traceIndex, null);
