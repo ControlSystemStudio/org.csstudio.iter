@@ -33,6 +33,7 @@ public class Activator implements BundleActivator {
     @Override
     public synchronized void start(BundleContext context) throws Exception {
         Activator.bundleContext = context;
+        ArchiveRDBProvider.startInitTask();
     }
 
     @Override

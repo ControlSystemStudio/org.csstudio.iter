@@ -44,10 +44,13 @@ public class ArchiveRDBProvider implements IAutoCompleteProvider {
 
     final public static String ARCHIVE_PLUGIN_ID = org.csstudio.trends.databrowser2.Activator.PLUGIN_ID;
 
-    private class InitTask implements Runnable {
+    private static Map<ArchiveDataSource, ArchiveReader> readers = Collections
+            .synchronizedMap(
+                    new LinkedHashMap<ArchiveDataSource, ArchiveReader>());
+    private final IPreferenceStore dataBrowserStore;
 
-        @Override
-        public void run() {
+    public static void startInitTask() {
+        new Thread(() -> {
             synchronized (readers) {
                 for (ArchiveReader reader : readers.values())
                     reader.close();
@@ -72,17 +75,10 @@ public class ArchiveRDBProvider implements IAutoCompleteProvider {
                         "Failed to read URLs from Preference Store of "
                                 + ARCHIVE_PLUGIN_ID + ": empty list");
             }
-        }
-
+        }).start();
     }
 
-    private Map<ArchiveDataSource, ArchiveReader> readers;
-    private final IPreferenceStore dataBrowserStore;
-
     public ArchiveRDBProvider() {
-        readers = Collections.synchronizedMap(new LinkedHashMap<ArchiveDataSource, ArchiveReader>());
-        new Thread(new InitTask()).start();
-
         dataBrowserStore = new ScopedPreferenceStore(InstanceScope.INSTANCE, ARCHIVE_PLUGIN_ID);
         dataBrowserStore.addPropertyChangeListener(new IPropertyChangeListener() {
 
@@ -90,7 +86,7 @@ public class ArchiveRDBProvider implements IAutoCompleteProvider {
             public void propertyChange(PropertyChangeEvent event) {
                 if (event.getProperty()
                         .equals(org.csstudio.trends.databrowser2.preferences.Preferences.ARCHIVES))
-                    new Thread(new InitTask()).start();
+                    startInitTask();
             }
         });
 
@@ -99,7 +95,7 @@ public class ArchiveRDBProvider implements IAutoCompleteProvider {
         archiveRDBStore.addPropertyChangeListener(new IPropertyChangeListener() {
             @Override
             public void propertyChange(PropertyChangeEvent event) {
-                    new Thread(new InitTask()).start();
+                startInitTask();
             }
         });
         final IPreferenceStore archiveReaderRDBStore = new ScopedPreferenceStore(
@@ -107,7 +103,7 @@ public class ArchiveRDBProvider implements IAutoCompleteProvider {
         archiveReaderRDBStore.addPropertyChangeListener(new IPropertyChangeListener() {
             @Override
             public void propertyChange(PropertyChangeEvent event) {
-                    new Thread(new InitTask()).start();
+                startInitTask();
             }
         });
     }
