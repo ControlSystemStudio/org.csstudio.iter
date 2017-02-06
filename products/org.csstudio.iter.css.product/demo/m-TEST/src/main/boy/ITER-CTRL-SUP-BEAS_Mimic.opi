@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.1.0.codac_core_5_4b4</boy_version>
+  <boy_version>5.1.0.codac_core_5_4b5</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -152,12 +152,10 @@
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
         <off_label>RESET</off_label>
-        <off_state></off_state>
         <on_color>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <on_label>RESET</on_label>
-        <on_state></on_state>
         <password></password>
         <push_action_index>0</push_action_index>
         <pv_name>CTRL-SUP-BEAS:TANK-MODE</pv_name>
@@ -218,12 +216,10 @@ $(pv_value)</tooltip>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
         <off_label>OFF</off_label>
-        <off_state></off_state>
         <on_color>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <on_label>ON</on_label>
-        <on_state></on_state>
         <pv_name>CTRL-SUP-BEAS:TANK-INTERLOCK</pv_name>
         <pv_value />
         <rules>
@@ -567,11 +563,6 @@ $(pv_value)</tooltip>
             <description></description>
           </action>
         </actions>
-        <alarm_pulsing>false</alarm_pulsing>
-        <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-        <background_color>
-          <color red="240" green="240" blue="240" />
-        </background_color>
         <border_alarm_sensitive>false</border_alarm_sensitive>
         <border_color>
           <color name="IO Border" red="0" green="0" blue="0" />
@@ -742,7 +733,7 @@ $(pv_value)</tooltip>
       <foreground_color>
         <color name="IO Text Fg" red="0" green="0" blue="0" />
       </foreground_color>
-      <height>229</height>
+      <height>193</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>MID-SWITCH</name>
       <rules />
@@ -762,8 +753,8 @@ $(pv_value)</tooltip>
       <width>764</width>
       <wrap_words>true</wrap_words>
       <wuid>9e5edf4:153adc83df4:-7db8</wuid>
-      <x>15</x>
-      <y>812</y>
+      <x>18</x>
+      <y>746</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -936,12 +927,10 @@ $(pv_value)</tooltip>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
         <off_label>DRY</off_label>
-        <off_state></off_state>
         <on_color>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <on_label>WET</on_label>
-        <on_state></on_state>
         <permutation_matrix>
           <row>
             <col>0.0</col>
@@ -1063,12 +1052,10 @@ $(pv_value)</tooltip>
         <color name="IO PV OFF" red="149" green="125" blue="71" />
       </off_color>
       <off_label>OFF</off_label>
-      <off_state></off_state>
       <on_color>
         <color name="IO PV ON" red="0" green="0" blue="255" />
       </on_color>
       <on_label>ON</on_label>
-      <on_state></on_state>
       <permutation_matrix>
         <row>
           <col>1.0</col>
@@ -1363,12 +1350,10 @@ $(pv_value)</tooltip>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
         <off_label>DRY</off_label>
-        <off_state></off_state>
         <on_color>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <on_label>WET</on_label>
-        <on_state></on_state>
         <permutation_matrix>
           <row>
             <col>0.0</col>
@@ -1599,12 +1584,10 @@ $(pv_value)</tooltip>
         <color name="IO PV OFF" red="149" green="125" blue="71" />
       </off_color>
       <off_label>OFF</off_label>
-      <off_state></off_state>
       <on_color>
         <color name="IO PV ON" red="0" green="0" blue="255" />
       </on_color>
       <on_label>ON</on_label>
-      <on_state></on_state>
       <permutation_matrix>
         <row>
           <col>-1.0</col>
@@ -1892,12 +1875,10 @@ $(pv_value)</tooltip>
           <color name="IO PV OFF" red="149" green="125" blue="71" />
         </off_color>
         <off_label>DRY</off_label>
-        <off_state></off_state>
         <on_color>
           <color name="IO PV ON" red="0" green="0" blue="255" />
         </on_color>
         <on_label>WET</on_label>
-        <on_state></on_state>
         <permutation_matrix>
           <row>
             <col>0.0</col>
@@ -1979,6 +1960,37 @@ $(pv_value)</tooltip>
     <line_color>
       <color name="IO Link" red="0" green="0" blue="0" />
     </line_color>
+    <line_jump_add>0</line_jump_add>
+    <line_jump_size>10</line_jump_size>
+    <line_jump_style>0</line_jump_style>
+    <line_style>0</line_style>
+    <line_width>4</line_width>
+    <name>Connection Template</name>
+    <points>
+      <point x="674" y="1508" />
+      <point x="674" y="1254" />
+    </points>
+    <router>0</router>
+    <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
+    <src_term>LEFT</src_term>
+    <src_wuid>-190a6b8f:1557c3cec99:-36e7</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50</tgt_path>
+    <tgt_term>LEFT</tgt_term>
+    <tgt_wuid>9e5edf4:153adc83df4:-7db2</tgt_wuid>
+    <widget_type>connection</widget_type>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <anti_alias>true</anti_alias>
+    <arrow_length>15</arrow_length>
+    <arrows>0</arrows>
+    <fill_arrow>true</fill_arrow>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+    <line_jump_add>0</line_jump_add>
+    <line_jump_size>10</line_jump_size>
+    <line_jump_style>0</line_jump_style>
     <line_style>0</line_style>
     <line_width>4</line_width>
     <name>Connection Template</name>
@@ -2001,28 +2013,9 @@ $(pv_value)</tooltip>
     <line_color>
       <color name="IO Link" red="0" green="0" blue="0" />
     </line_color>
-    <line_style>0</line_style>
-    <line_width>4</line_width>
-    <name>Connection Template</name>
-    <points />
-    <router>0</router>
-    <src_path>-28c93393:14b0cb4ebee:-6a50_9e5edf4:153adc83df4:-7dc3</src_path>
-    <src_term>RIGHT</src_term>
-    <src_wuid>9e5edf4:153adc83df4:-7dc2</src_wuid>
-    <tgt_path>-28c93393:14b0cb4ebee:-6a50</tgt_path>
-    <tgt_term>TOP</tgt_term>
-    <tgt_wuid>-190a6b8f:1557c3cec99:-3a38</tgt_wuid>
-    <widget_type>connection</widget_type>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <anti_alias>true</anti_alias>
-    <arrow_length>15</arrow_length>
-    <arrows>0</arrows>
-    <fill_arrow>true</fill_arrow>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
+    <line_jump_add>0</line_jump_add>
+    <line_jump_size>10</line_jump_size>
+    <line_jump_style>0</line_jump_style>
     <line_style>0</line_style>
     <line_width>4</line_width>
     <name>Connection Template</name>
@@ -2045,6 +2038,9 @@ $(pv_value)</tooltip>
     <line_color>
       <color name="IO Link" red="0" green="0" blue="0" />
     </line_color>
+    <line_jump_add>0</line_jump_add>
+    <line_jump_size>10</line_jump_size>
+    <line_jump_style>0</line_jump_style>
     <line_style>0</line_style>
     <line_width>4</line_width>
     <name>Connection Template</name>
@@ -2067,17 +2063,20 @@ $(pv_value)</tooltip>
     <line_color>
       <color name="IO Link" red="0" green="0" blue="0" />
     </line_color>
+    <line_jump_add>0</line_jump_add>
+    <line_jump_size>10</line_jump_size>
+    <line_jump_style>0</line_jump_style>
     <line_style>0</line_style>
     <line_width>4</line_width>
     <name>Connection Template</name>
     <points />
     <router>0</router>
-    <src_path>-28c93393:14b0cb4ebee:-6a50_-190a6b8f:1557c3cec99:-3a1c</src_path>
-    <src_term>LEFT</src_term>
-    <src_wuid>9e5edf4:153adc83df4:-7db6</src_wuid>
+    <src_path>-28c93393:14b0cb4ebee:-6a50_9e5edf4:153adc83df4:-7dc3</src_path>
+    <src_term>RIGHT</src_term>
+    <src_wuid>9e5edf4:153adc83df4:-7dc2</src_wuid>
     <tgt_path>-28c93393:14b0cb4ebee:-6a50</tgt_path>
     <tgt_term>TOP</tgt_term>
-    <tgt_wuid>9e5edf4:153adc83df4:-7db2</tgt_wuid>
+    <tgt_wuid>-190a6b8f:1557c3cec99:-3a38</tgt_wuid>
     <widget_type>connection</widget_type>
     <wuid>-19d36239:134b27295e1:-7d63</wuid>
   </connection>
@@ -2089,16 +2088,22 @@ $(pv_value)</tooltip>
     <line_color>
       <color name="IO Link" red="0" green="0" blue="0" />
     </line_color>
+    <line_jump_add>0</line_jump_add>
+    <line_jump_size>10</line_jump_size>
+    <line_jump_style>0</line_jump_style>
     <line_style>0</line_style>
     <line_width>4</line_width>
     <name>Connection Template</name>
-    <points />
+    <points>
+      <point x="674" y="901" />
+      <point x="674" y="1254" />
+    </points>
     <router>0</router>
-    <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
+    <src_path>-28c93393:14b0cb4ebee:-6a50_-190a6b8f:1557c3cec99:-3a1c</src_path>
     <src_term>LEFT</src_term>
-    <src_wuid>-190a6b8f:1557c3cec99:-36e7</src_wuid>
+    <src_wuid>9e5edf4:153adc83df4:-7db6</src_wuid>
     <tgt_path>-28c93393:14b0cb4ebee:-6a50</tgt_path>
-    <tgt_term>BOTTOM</tgt_term>
+    <tgt_term>LEFT</tgt_term>
     <tgt_wuid>9e5edf4:153adc83df4:-7db2</tgt_wuid>
     <widget_type>connection</widget_type>
     <wuid>-19d36239:134b27295e1:-7d63</wuid>
