@@ -31,6 +31,7 @@ import org.csstudio.opibuilder.widgets.model.XYGraphModel;
 import org.csstudio.opibuilder.widgets.model.XYGraphModel.TraceProperty;
 import org.csstudio.simplepv.VTypeHelper;
 import org.csstudio.swt.xygraph.dataprovider.CircularBufferDataProvider;
+import org.csstudio.swt.xygraph.dataprovider.CircularBufferDataProvider.UpdateMode;
 import org.csstudio.swt.xygraph.dataprovider.ISample;
 import org.csstudio.swt.xygraph.dataprovider.Sample;
 import org.csstudio.swt.xygraph.figures.ToolbarArmedXYGraph;
@@ -50,6 +51,8 @@ import java.time.Instant;
 public class ArchiveXYGraphEditPart extends XYGraphEditPart {
 
     private Map<Integer, List<VType>> cacheDuringLoad = new HashMap<>();
+
+    private boolean isTriggerMode = false;
 
     private static final Long DEFAULT_MAX;
     static {
@@ -195,6 +198,8 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
                 }
             }
 
+            if(dataProvider.getUpdateMode() == UpdateMode.TRIGGER)
+                isTriggerMode = true;
             // set the data on the graph
             for (VType vtype : listFinal) {
                 if (pvOnXBln) {
@@ -267,13 +272,21 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
     private void setXValue(CircularBufferDataProvider dataProvider, VType value) {
         if(VTypeHelper.getSize(value) > 1){
             dataProvider.setCurrentXDataArray(VTypeHelper.getDoubleArray(value));
-        }else
+            if(isTriggerMode) {
+                dataProvider.addDataArray();
+            }
+        }else {
             dataProvider.setCurrentXData(VTypeHelper.getDouble(value));
+            if(isTriggerMode) {
+                long time = yValueTimeStampToLong(value);
+                dataProvider.addDataPoint(time);
+            }
+        }
     }
 
     private void setYValue(Trace trace, CircularBufferDataProvider dataProvider, VType y_value) {
+        long time = yValueTimeStampToLong(y_value);
         if (VTypeHelper.getSize(y_value) == 1 && trace.getXAxis().isDateEnabled() && dataProvider.isChronological()) {
-            long time = yValueTimeStampToLong(y_value);
             // verification that the last add is before the next that will be added
             int size = dataProvider.getSize() - 1;
             if (size > 0) {
@@ -283,11 +296,20 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
                 }
             }
             dataProvider.setCurrentYData(VTypeHelper.getDouble(y_value), time);
+            if(isTriggerMode) {
+                dataProvider.addDataPoint(time);
+            }
         } else {
             if (VTypeHelper.getSize(y_value) > 1) {
                 dataProvider.setCurrentYDataArray(VTypeHelper.getDoubleArray(y_value));
+                if(isTriggerMode) {
+                    dataProvider.addDataArray();
+                }
             } else {
                 dataProvider.setCurrentYData(VTypeHelper.getDouble(y_value));
+                if(isTriggerMode) {
+                    dataProvider.addDataPoint(time);
+                }
             }
         }
     }
