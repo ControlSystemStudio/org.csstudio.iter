@@ -36,6 +36,8 @@ import org.csstudio.swt.xygraph.dataprovider.ISample;
 import org.csstudio.swt.xygraph.dataprovider.Sample;
 import org.csstudio.swt.xygraph.figures.ToolbarArmedXYGraph;
 import org.csstudio.swt.xygraph.figures.Trace;
+import org.csstudio.swt.xygraph.util.EventManager;
+import org.csstudio.swt.xygraph.util.IEventManagerListener;
 import org.csstudio.trends.databrowser2.model.PVSamples;
 import org.csstudio.ui.util.thread.UIBundlingThread;
 import org.diirt.vtype.VType;
@@ -84,6 +86,16 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
         if (getExecutionMode() == ExecutionMode.RUN_MODE) {
             cacheDuringLoad = new HashMap<>();
             addValuesFromDatasource();
+
+            if(xyGraphFigure instanceof ToolbarArmedXYGraph) {
+                ToolbarArmedXYGraph armedXYGraph = (ToolbarArmedXYGraph) xyGraphFigure;
+                armedXYGraph.getXYGraph().getEventManager().addListener(new IEventManagerListener() {
+                    @Override
+                    public void setFixedRange(double t1, double t2) {
+                        addValuesFromDatasource(t1, t2);
+                    }
+                });
+            }
         }
 
         return xyGraphFigure;
@@ -92,8 +104,12 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
     /**
      * Method will add to each trace param with plot datasource the plot point from db.
      */
-    @SuppressWarnings("unchecked")
     private void addValuesFromDatasource() {
+        addValuesFromDatasource(0, 0);
+    }
+
+    @SuppressWarnings("unchecked")
+    private void addValuesFromDatasource(double t1, double t2) {
         List<Trace> traceList = getTraceList();
         for (int i = 0; i < getWidgetModel().getTracesAmount(); i++) {
             String pv = "";
@@ -112,8 +128,20 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
                 String propID = ArchiveXYGraphModel.makeTracePropID(TraceProperty.YPV.propIDPre, i);
                 pv = (String) getWidgetModel().getProperty(propID).getPropertyValue();
 
-                final Integer timeSpan = (Integer) getWidgetModel().getProperty(ArchiveXYGraphModel.PROP_TIME_SPAN)
-                        .getPropertyValue();
+                Instant te = Instant.EPOCH;
+                Instant ts = Instant.EPOCH;
+                Integer tSp = 0;
+                if (t1 == 0 && t2 == 0) {
+                    tSp = (Integer) getWidgetModel().getProperty(ArchiveXYGraphModel.PROP_TIME_SPAN)
+                            .getPropertyValue();
+                    te = Instant.now();
+                    ts = te.minusSeconds(tSp);
+                } else {
+                    tSp = (int) (t2-t1);
+                    te = Instant.ofEpochMilli((long) t2);
+                    ts = Instant.ofEpochMilli((long) t1);
+                }
+                final Integer timeSpan = tSp;
 
                 // if one required data source is missing we continue the loop
                 if (archiveDataSource == null || archiveDataSource.size() <= 0 || pv == null || pv.length() <= 0
@@ -132,8 +160,8 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
                 }
 
                 // prepare the pv item for the job
-                final Instant end = Instant.now();
-                final Instant start = end.minusSeconds(timeSpan);
+                final Instant end = te;
+                final Instant start = ts;
 
                 // set timespan property
                 final Trace trace = traceList.get(i);
