@@ -18,10 +18,10 @@
   <height>2080</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
-    <TITLE>${ALARM_PV} ALARM PAGE</TITLE>
-    <LEVEL>ITER-CTRL-SUP-BEAS</LEVEL>
+    <TITLE>CTRL-SUP-BEAS</TITLE>
+    <INPUT>./../navigation/Navigation.xml</INPUT>
   </macros>
-  <name>${TITLE}</name>
+  <name>CTRL-SUP-BEAS</name>
   <rules />
   <scripts />
   <show_close_button>true</show_close_button>
@@ -43,11 +43,11 @@
       <color name="IO Border" red="0" green="0" blue="0" />
     </border_color>
     <border_style>0</border_style>
-    <border_width>1</border_width>
+    <border_width>2</border_width>
     <enabled>true</enabled>
     <fc>false</fc>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="12" style="0">IO Normal</opifont.name>
     </font>
     <foreground_color>
       <color name="IO Foreground" red="0" green="0" blue="0" />
@@ -57,7 +57,7 @@
     <macros>
       <include_parent_macros>true</include_parent_macros>
     </macros>
-    <name>DISPLAY CANVAS</name>
+    <name>CTRL-SUP-BEAS</name>
     <rules />
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -66,7 +66,7 @@
     </scale_options>
     <scripts />
     <show_scrollbar>false</show_scrollbar>
-    <tooltip>$(name)</tooltip>
+    <tooltip></tooltip>
     <transparent>true</transparent>
     <visible>true</visible>
     <widget_type>Grouping Container</widget_type>
@@ -83,11 +83,11 @@
         <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
       <border_style>5</border_style>
-      <border_width>1</border_width>
+      <border_width>2</border_width>
       <enabled>true</enabled>
       <fc>false</fc>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="12" style="0">IO Normal</opifont.name>
       </font>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
@@ -106,7 +106,7 @@
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip>$(name)</tooltip>
+      <tooltip></tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -123,11 +123,11 @@
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <border_style>5</border_style>
-        <border_width>1</border_width>
+        <border_width>2</border_width>
         <enabled>true</enabled>
         <fc>false</fc>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="12" style="0">IO Normal</opifont.name>
         </font>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
@@ -146,7 +146,7 @@
         </scale_options>
         <scripts />
         <show_scrollbar>false</show_scrollbar>
-        <tooltip>$(name)</tooltip>
+        <tooltip></tooltip>
         <transparent>false</transparent>
         <visible>true</visible>
         <widget_type>Grouping Container</widget_type>
@@ -166,7 +166,7 @@
           <border_width>2</border_width>
           <enabled>true</enabled>
           <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+            <opifont.name fontName="DejaVu Sans Mono" height="12" style="0">IO Label</opifont.name>
           </font>
           <foreground_color>
             <color name="IO Foreground" red="0" green="0" blue="0" />
@@ -186,7 +186,7 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <tooltip>$(name)</tooltip>
+          <tooltip></tooltip>
           <visible>true</visible>
           <widget_type>Linking Container</widget_type>
           <width>1138</width>
@@ -204,11 +204,11 @@
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <border_style>5</border_style>
-        <border_width>1</border_width>
+        <border_width>2</border_width>
         <enabled>true</enabled>
         <fc>false</fc>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="12" style="0">IO Normal</opifont.name>
         </font>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
@@ -227,7 +227,7 @@
         </scale_options>
         <scripts />
         <show_scrollbar>false</show_scrollbar>
-        <tooltip>$(name)</tooltip>
+        <tooltip></tooltip>
         <transparent>false</transparent>
         <visible>true</visible>
         <widget_type>Grouping Container</widget_type>
@@ -248,14 +248,14 @@
           <border_width>2</border_width>
           <enabled>true</enabled>
           <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+            <opifont.name fontName="DejaVu Sans Mono" height="18" style="0">IO Title</opifont.name>
           </font>
           <foreground_color>
             <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <height>98</height>
           <horizontal_alignment>1</horizontal_alignment>
-          <name>MIMIC TITLE</name>
+          <name>Comment</name>
           <rules />
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -264,7 +264,7 @@
           </scale_options>
           <scripts />
           <text>${TITLE}</text>
-          <tooltip>$(name)</tooltip>
+          <tooltip>MIMIC TITLE</tooltip>
           <transparent>true</transparent>
           <vertical_alignment>1</vertical_alignment>
           <visible>true</visible>
@@ -285,11 +285,11 @@
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
         <border_style>5</border_style>
-        <border_width>1</border_width>
+        <border_width>2</border_width>
         <enabled>true</enabled>
         <fc>false</fc>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="12" style="0">IO Normal</opifont.name>
         </font>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
@@ -308,7 +308,7 @@
         </scale_options>
         <scripts />
         <show_scrollbar>false</show_scrollbar>
-        <tooltip>$(name)</tooltip>
+        <tooltip></tooltip>
         <transparent>false</transparent>
         <visible>true</visible>
         <widget_type>Grouping Container</widget_type>
@@ -328,7 +328,7 @@
           <border_width>2</border_width>
           <enabled>true</enabled>
           <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+            <opifont.name fontName="DejaVu Sans Mono" height="12" style="0">IO Label</opifont.name>
           </font>
           <foreground_color>
             <color name="IO Foreground" red="0" green="0" blue="0" />
@@ -348,7 +348,7 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <tooltip>$(name)</tooltip>
+          <tooltip></tooltip>
           <visible>true</visible>
           <widget_type>Linking Container</widget_type>
           <width>573</width>
@@ -367,11 +367,11 @@
         <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
       <border_style>5</border_style>
-      <border_width>1</border_width>
+      <border_width>2</border_width>
       <enabled>true</enabled>
       <fc>false</fc>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="12" style="0">IO Normal</opifont.name>
       </font>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
@@ -390,7 +390,7 @@
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip>$(name)</tooltip>
+      <tooltip></tooltip>
       <transparent>true</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -410,7 +410,7 @@
         <border_width>2</border_width>
         <enabled>true</enabled>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="12" style="0">IO Label</opifont.name>
         </font>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
@@ -420,8 +420,8 @@
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
-        <name>ALARM PAGE</name>
-        <opi_file>ITER-CTR-SUP-BEAS-HIGH-SWITCH_AlarmPage.opi</opi_file>
+        <name>Mimic</name>
+        <opi_file>ITER-CTRL-SUP-BEAS-EMAIL_Mimic.opi</opi_file>
         <resize_behaviour>1</resize_behaviour>
         <rules />
         <scale_options>
@@ -434,7 +434,7 @@
         <visible>true</visible>
         <widget_type>Linking Container</widget_type>
         <width>3237</width>
-        <wuid>3d76fbac:15461ea55d0:-43be</wuid>
+        <wuid>9e5edf4:153adc83df4:-7888</wuid>
         <x>0</x>
         <y>0</y>
       </widget>
@@ -448,17 +448,17 @@
         <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
       <border_style>5</border_style>
-      <border_width>1</border_width>
+      <border_width>2</border_width>
       <enabled>true</enabled>
       <fc>false</fc>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
       </font>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
       <height>1006</height>
-      <lock_children>false</lock_children>
+      <lock_children>true</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
@@ -471,7 +471,7 @@
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip>$(name)</tooltip>
+      <tooltip>ACTIVE ALARM BUTTONS</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -491,13 +491,13 @@
         <border_width>2</border_width>
         <enabled>true</enabled>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="12" style="0">IO Label</opifont.name>
         </font>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <group_name></group_name>
-        <height>1002</height>
+        <height>501</height>
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
@@ -511,11 +511,11 @@
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
-        <tooltip>$(name)</tooltip>
+        <tooltip></tooltip>
         <visible>true</visible>
         <widget_type>Linking Container</widget_type>
-        <width>576</width>
-        <wuid>-77568aca:14ee42ff2b8:-7d06</wuid>
+        <width>288</width>
+        <wuid>52998e39:14fb2a50e57:-7e3e</wuid>
         <x>0</x>
         <y>0</y>
       </widget>
@@ -529,11 +529,11 @@
         <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
       <border_style>5</border_style>
-      <border_width>1</border_width>
+      <border_width>2</border_width>
       <enabled>true</enabled>
       <fc>false</fc>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">Default</opifont.name>
       </font>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
@@ -542,7 +542,6 @@
       <lock_children>false</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
-        <LEGEND>AlarmFaceplate.opi</LEGEND>
       </macros>
       <name>CONTROL AREA FACEPLATES</name>
       <rules />
@@ -553,7 +552,7 @@
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip>$(name)</tooltip>
+      <tooltip></tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -573,7 +572,7 @@
         <border_width>2</border_width>
         <enabled>true</enabled>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="12" style="0">IO Label</opifont.name>
         </font>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
@@ -593,13 +592,13 @@
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
-        <tooltip>$(name)</tooltip>
+        <tooltip></tooltip>
         <visible>true</visible>
         <widget_type>Linking Container</widget_type>
         <width>575</width>
-        <wuid>-45a5416a:14dddc61744:-6d89</wuid>
-        <x>4</x>
-        <y>14</y>
+        <wuid>-57352fd0:149859b9257:-177b</wuid>
+        <x>0</x>
+        <y>0</y>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -611,11 +610,11 @@
         <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
       <border_style>0</border_style>
-      <border_width>1</border_width>
+      <border_width>2</border_width>
       <enabled>true</enabled>
       <fc>false</fc>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0">IO Title</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="12" style="0">IO Normal</opifont.name>
       </font>
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
@@ -634,7 +633,7 @@
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip>$(name)</tooltip>
+      <tooltip></tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -654,7 +653,7 @@
         <border_width>2</border_width>
         <enabled>true</enabled>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0">IO Label</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="12" style="0">IO Label</opifont.name>
         </font>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
@@ -674,7 +673,7 @@
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
-        <tooltip>$(name)</tooltip>
+        <tooltip></tooltip>
         <visible>true</visible>
         <widget_type>Linking Container</widget_type>
         <width>3241</width>
