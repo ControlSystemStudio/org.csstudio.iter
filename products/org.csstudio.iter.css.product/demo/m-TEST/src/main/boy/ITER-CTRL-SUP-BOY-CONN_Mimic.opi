@@ -10,16 +10,16 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.1.0.qualifier</boy_version>
+  <boy_version>5.1.0.201704201318</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
-  <grid_space>1</grid_space>
-  <height>1040</height>
+  <grid_space>6</grid_space>
+  <height>1761</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <name>IO BOY Widget Schema</name>
+  <name>Widget Connection Tests</name>
   <rules />
   <scripts />
   <show_close_button>true</show_close_button>
@@ -28,7 +28,7 @@
   <show_ruler>true</show_ruler>
   <snap_to_geometry>true</snap_to_geometry>
   <widget_type>Display</widget_type>
-  <width>1915</width>
+  <width>3237</width>
   <wuid>-14a921ec:134b2495e46:-7f53</wuid>
   <x>0</x>
   <y>0</y>
@@ -56,7 +56,7 @@
     </fg_gradient_color>
     <fill_level>100.0</fill_level>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="12" style="0" pixels="false">IO Label</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -71,7 +71,7 @@
     <line_style>0</line_style>
     <line_width>3</line_width>
     <name>Ellipse Template</name>
-    <pv_name></pv_name>
+    <pv_name>CTRL-SUP-BOY:BI</pv_name>
     <pv_value />
     <rules />
     <scale_options>
@@ -87,8 +87,8 @@ $(pv_value)</tooltip>
     <widget_type>Ellipse</widget_type>
     <width>185</width>
     <wuid>3314aa80:15b8012fd39:-7fae</wuid>
-    <x>71</x>
-    <y>434</y>
+    <x>510</x>
+    <y>782</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.polyline" version="1.0.0">
     <actions hook="false" hook_all="false" />
@@ -111,7 +111,7 @@ $(pv_value)</tooltip>
     <fill_arrow>true</fill_arrow>
     <fill_level>100.0</fill_level>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="12" style="0" pixels="false">IO Label</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -123,18 +123,18 @@ $(pv_value)</tooltip>
     <line_width>4</line_width>
     <name>Polyline Template</name>
     <points>
-      <point x="559" y="400" />
-      <point x="661" y="448" />
-      <point x="620" y="537" />
-      <point x="536" y="537" />
-      <point x="616" y="598" />
-      <point x="682" y="534" />
-      <point x="681" y="478" />
-      <point x="681" y="478" />
-      <point x="681" y="478" />
-      <point x="681" y="478" />
+      <point x="998" y="748" />
+      <point x="1100" y="796" />
+      <point x="1059" y="885" />
+      <point x="975" y="885" />
+      <point x="1055" y="946" />
+      <point x="1121" y="882" />
+      <point x="1120" y="826" />
+      <point x="1120" y="826" />
+      <point x="1120" y="826" />
+      <point x="1120" y="826" />
     </points>
-    <pv_name></pv_name>
+    <pv_name>CTRL-SUP-BOY:BI</pv_name>
     <pv_value />
     <rotation_angle>0.0</rotation_angle>
     <rules />
@@ -151,8 +151,8 @@ $(pv_value)</tooltip>
     <widget_type>Polyline</widget_type>
     <width>147</width>
     <wuid>3314aa80:15b8012fd39:-7cee</wuid>
-    <x>536</x>
-    <y>400</y>
+    <x>975</x>
+    <y>748</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
     <actions hook="false" hook_all="false" />
@@ -176,7 +176,7 @@ $(pv_value)</tooltip>
     <effect_3d>true</effect_3d>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="12" style="0" pixels="false">IO Label</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -192,7 +192,7 @@ $(pv_value)</tooltip>
       <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
     </on_color>
     <on_label>ON</on_label>
-    <pv_name></pv_name>
+    <pv_name>CTRL-SUP-BOY:BI</pv_name>
     <pv_value />
     <rules>
       <rule name="Alarm LED ON State Color" prop_id="on_color" out_exp="false">
@@ -241,8 +241,8 @@ $(pv_value)</tooltip>
     <widget_type>LED</widget_type>
     <width>75</width>
     <wuid>3314aa80:15b8012fd39:-7ca6</wuid>
-    <x>110</x>
-    <y>100</y>
+    <x>549</x>
+    <y>448</y>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.LED" version="1.0.0">
     <actions hook="false" hook_all="false" />
@@ -266,7 +266,7 @@ $(pv_value)</tooltip>
     <effect_3d>true</effect_3d>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="12" style="0" pixels="false">IO Label</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
@@ -282,7 +282,7 @@ $(pv_value)</tooltip>
       <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
     </on_color>
     <on_label>ON</on_label>
-    <pv_name></pv_name>
+    <pv_name>CTRL-SUP-BOY:BI</pv_name>
     <pv_value />
     <rules>
       <rule name="Alarm LED ON State Color" prop_id="on_color" out_exp="false">
@@ -331,34 +331,9 @@ $(pv_value)</tooltip>
     <widget_type>LED</widget_type>
     <width>75</width>
     <wuid>3314aa80:15b8012fd39:-7c9e</wuid>
-    <x>582</x>
-    <y>62</y>
+    <x>1021</x>
+    <y>410</y>
   </widget>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <anti_alias>true</anti_alias>
-    <arrow_length>15</arrow_length>
-    <arrows>0</arrows>
-    <fill_arrow>true</fill_arrow>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-    <line_jump_add>1</line_jump_add>
-    <line_jump_size>10</line_jump_size>
-    <line_jump_style>1</line_jump_style>
-    <line_style>0</line_style>
-    <line_width>4</line_width>
-    <name>Connection Template</name>
-    <points />
-    <router>0</router>
-    <src_path></src_path>
-    <src_term>RIGHT</src_term>
-    <src_wuid>3314aa80:15b8012fd39:-7fae</src_wuid>
-    <tgt_path></tgt_path>
-    <tgt_term>3</tgt_term>
-    <tgt_wuid>3314aa80:15b8012fd39:-7cee</tgt_wuid>
-    <widget_type>connection</widget_type>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-  </connection>
   <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
     <anti_alias>true</anti_alias>
     <arrow_length>15</arrow_length>
@@ -381,6 +356,31 @@ $(pv_value)</tooltip>
     <tgt_path></tgt_path>
     <tgt_term>LEFT</tgt_term>
     <tgt_wuid>3314aa80:15b8012fd39:-7c9e</tgt_wuid>
+    <widget_type>connection</widget_type>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <anti_alias>true</anti_alias>
+    <arrow_length>15</arrow_length>
+    <arrows>0</arrows>
+    <fill_arrow>true</fill_arrow>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+    <line_jump_add>1</line_jump_add>
+    <line_jump_size>10</line_jump_size>
+    <line_jump_style>1</line_jump_style>
+    <line_style>0</line_style>
+    <line_width>4</line_width>
+    <name>Connection Template</name>
+    <points />
+    <router>0</router>
+    <src_path></src_path>
+    <src_term>RIGHT</src_term>
+    <src_wuid>3314aa80:15b8012fd39:-7fae</src_wuid>
+    <tgt_path></tgt_path>
+    <tgt_term>3</tgt_term>
+    <tgt_wuid>3314aa80:15b8012fd39:-7cee</tgt_wuid>
     <widget_type>connection</widget_type>
     <wuid>-19d36239:134b27295e1:-7d63</wuid>
   </connection>
