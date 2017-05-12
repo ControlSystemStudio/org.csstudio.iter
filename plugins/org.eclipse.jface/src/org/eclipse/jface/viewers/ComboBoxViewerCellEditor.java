@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2013 Tom Schindl and others.
+ * Copyright (c) 2006, 2015 Tom Schindl and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,8 +25,6 @@ import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.events.TraverseEvent;
-import org.eclipse.swt.events.TraverseListener;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -107,13 +105,10 @@ public class ComboBoxViewerCellEditor extends AbstractComboBoxCellEditor {
 			}
 		});
 
-		comboBox.addTraverseListener(new TraverseListener() {
-			@Override
-			public void keyTraversed(TraverseEvent e) {
-				if (e.detail == SWT.TRAVERSE_ESCAPE
-						|| e.detail == SWT.TRAVERSE_RETURN) {
-					e.doit = false;
-				}
+		comboBox.addTraverseListener(e -> {
+			if (e.detail == SWT.TRAVERSE_ESCAPE
+					|| e.detail == SWT.TRAVERSE_RETURN) {
+				e.doit = false;
 			}
 		});
 

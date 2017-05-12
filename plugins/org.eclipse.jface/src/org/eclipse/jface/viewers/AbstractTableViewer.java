@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2000, 2013 IBM Corporation and others.
+ * Copyright (c) 2000, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,15 +23,17 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.widgets.Control;
-import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Item;
-import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Widget;
 
 /**
  * This is a widget independent class implementors of
  * {@link org.eclipse.swt.widgets.Table} like widgets can use to provide a
  * viewer on top of their widget implementations.
+ * <p>
+ * <strong> This class is not intended to be subclassed outside of the JFace
+ * viewers framework.</strong>
+ * </p>
  *
  * @since 3.3
  */
@@ -59,36 +61,38 @@ public abstract class AbstractTableViewer extends ColumnViewer {
 		 * Add the listener for SetData on the table
 		 */
 		private void addTableListener() {
-			getControl().addListener(SWT.SetData, new Listener() {
+			getControl().addListener(SWT.SetData, event -> {
+				Item item = (Item) event.item;
+				final int index = doIndexOf(item);
 
-				@Override
-				public void handleEvent(Event event) {
-					Item item = (Item) event.item;
-					final int index = doIndexOf(item);
-
-					if (index == -1) {
-						// Should not happen, but the spec for doIndexOf allows returning -1.
-						// See bug 241117.
-						return;
-					}
-
-					Object element = resolveElement(index);
-					if (element == null) {
-						// Didn't find it so make a request
-						// Keep looking if it is not in the cache.
-						IContentProvider contentProvider = getContentProvider();
-						// If we are building lazily then request lookup now
-						if (contentProvider instanceof ILazyContentProvider) {
-							((ILazyContentProvider) contentProvider)
-									.updateElement(index);
-							return;
-						}
-					}
-
-					associate(element, item);
-					updateItem(item, element);
+				if (index == -1) {
+					// Should not happen, but the spec for doIndexOf allows returning -1.
+					// See bug 241117.
+					return;
 				}
 
+				Object element = resolveElement(index);
+				if (element == null) {
+					// Didn't find it so make a request
+					// Keep looking if it is not in the cache.
+					IContentProvider contentProvider = getContentProvider();
+					// If we are building lazily then request lookup now
+					if (contentProvider instanceof ILazyContentProvider) {
+						ILazyContentProvider lazyProvider = (ILazyContentProvider) contentProvider;
+						if (!isBusy()) {
+							lazyProvider.updateElement(index);
+						} else {
+							// In case event is sent during doUpdateItem() we
+							// should run async update to avoid RuntimeException
+							// from ColumnViewer.checkBusy(), see bug 488484
+							getControl().getDisplay().asyncExec(() -> lazyProvider.updateElement(index));
+						}
+						return;
+					}
+				}
+
+				associate(element, item);
+				updateItem(item, element);
 			});
 		}
 
@@ -561,12 +565,7 @@ public abstract class AbstractTableViewer extends ColumnViewer {
 	protected void inputChanged(Object input, Object oldInput) {
 		getControl().setRedraw(false);
 		try {
-			preservingSelection(new Runnable() {
-				@Override
-				public void run() {
-					internalRefresh(getRoot());
-				}
-			});
+			preservingSelection(() -> internalRefresh(getRoot()));
 		} finally {
 			getControl().setRedraw(true);
 		}
@@ -795,12 +794,7 @@ public abstract class AbstractTableViewer extends ColumnViewer {
 		if (elements.length == 0) {
 			return;
 		}
-		preservingSelection(new Runnable() {
-			@Override
-			public void run() {
-				internalRemove(elements);
-			}
-		});
+		preservingSelection(() -> internalRemove(elements));
 	}
 
 	/**
@@ -1042,6 +1036,18 @@ public abstract class AbstractTableViewer extends ColumnViewer {
 				"Cannot get raw children with an ILazyContentProvider");//$NON-NLS-1$
 		return super.getRawChildren(parent);
 
+	}
+
+	/**
+	 * Sets the content provider used by this <code>AbstractTableViewer</code>.
+	 * <p>
+	 * Content providers for abstract table viewers must implement either
+	 * {@link IStructuredContentProvider} or {@link ILazyContentProvider}.
+	 */
+	@Override
+	public void setContentProvider(IContentProvider provider) {
+		// the actual check is in assertContentProviderType
+		super.setContentProvider(provider);
 	}
 
 	@Override

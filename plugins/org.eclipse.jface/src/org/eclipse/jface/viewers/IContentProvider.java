@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2000, 2006 IBM Corporation and others.
+ * Copyright (c) 2000, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,8 +24,12 @@ public interface IContentProvider {
      * The viewer should not be updated during this call, as it is in the process
      * of being disposed.
      * </p>
+     * <p>
+     * The default implementation does nothing.
+     * </p>
      */
-    public void dispose();
+	default public void dispose() {
+	}
 
     /**
      * Notifies this content provider that the given viewer's input
@@ -40,6 +44,9 @@ public interface IContentProvider {
      * The viewer should not be updated during this call, as it might be in the process
      * of being disposed.
      * </p>
+     * <p>
+     * The default implementation does nothing.
+     * </p>
      *
      * @param viewer the viewer
      * @param oldInput the old input element, or <code>null</code> if the viewer
@@ -47,5 +54,6 @@ public interface IContentProvider {
      * @param newInput the new input element, or <code>null</code> if the viewer
      *   does not have an input
      */
-    public void inputChanged(Viewer viewer, Object oldInput, Object newInput);
+	default public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+	}
 }

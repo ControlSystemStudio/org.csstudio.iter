@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2000, 2014 IBM Corporation and others.
+ * Copyright (c) 2000, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -140,13 +140,10 @@ import org.eclipse.swt.widgets.Display;
         synchronized (this) {
             collector = null;
         }
-        display.asyncExec(new Runnable() {
-            @Override
-			public void run() {
-                currentTask = name;
-                getWrappedProgressMonitor().beginTask(name, totalWork);
-            }
-        });
+        display.asyncExec(() -> {
+		    currentTask = name;
+		    getWrappedProgressMonitor().beginTask(name, totalWork);
+		});
     }
 
 	/**
@@ -180,12 +177,7 @@ import org.eclipse.swt.widgets.Display;
         synchronized (this) {
             collector = null;
         }
-        display.asyncExec(new Runnable() {
-            @Override
-			public void run() {
-                getWrappedProgressMonitor().done();
-            }
-        });
+        display.asyncExec(() -> getWrappedProgressMonitor().done());
     }
 
 	@Override
@@ -232,13 +224,10 @@ import org.eclipse.swt.widgets.Display;
 			return;
 		}
 
-        display.asyncExec(new Runnable() {
-            @Override
-			public void run() {
-                ((IProgressMonitorWithBlocking) pm).clearBlocked();
-                Dialog.getBlockedHandler().clearBlocked();
-            }
-        });
+        display.asyncExec(() -> {
+		    ((IProgressMonitorWithBlocking) pm).clearBlocked();
+		    Dialog.getBlockedHandler().clearBlocked();
+		});
     }
 
     @Override
@@ -251,13 +240,10 @@ import org.eclipse.swt.widgets.Display;
 			return;
 		}
 
-        display.asyncExec(new Runnable() {
-            @Override
-			public void run() {
-                ((IProgressMonitorWithBlocking) pm).setBlocked(reason);
-                //Do not give a shell as we want it to block until it opens.
-                Dialog.getBlockedHandler().showBlocked(pm, reason, currentTask);
-            }
-        });
+        display.asyncExec(() -> {
+		    ((IProgressMonitorWithBlocking) pm).setBlocked(reason);
+		    //Do not give a shell as we want it to block until it opens.
+		    Dialog.getBlockedHandler().showBlocked(pm, reason, currentTask);
+		});
     }
 }

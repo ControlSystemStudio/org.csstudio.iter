@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2000, 2013 IBM Corporation and others.
+ * Copyright (c) 2000, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,12 +25,11 @@ import java.io.Reader;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -107,9 +106,9 @@ public class DialogSettings implements IDialogSettings {
      */
     public DialogSettings(String sectionName) {
         name = sectionName;
-        items = new HashMap<String, String>();
-        arrayItems = new HashMap<String, String[]>();
-        sections = new HashMap<String, IDialogSettings>();
+        items = new HashMap<>();
+        arrayItems = new HashMap<>();
+        sections = new HashMap<>();
     }
 
     @Override
@@ -192,13 +191,13 @@ public class DialogSettings implements IDialogSettings {
 	public int getInt(String key) throws NumberFormatException {
         String setting = items.get(key);
         if (setting == null) {
-            //new Integer(null) will throw a NumberFormatException and meet our spec, but this message
-            //is clearer.
+			// Integer.valueOf(null) will throw a NumberFormatException and
+			// meet our spec, but this message is clearer.
             throw new NumberFormatException(
                     "There is no setting associated with the key \"" + key + "\"");//$NON-NLS-1$ //$NON-NLS-2$
         }
 
-        return new Integer(setting).intValue();
+		return Integer.valueOf(setting).intValue();
     }
 
     @Override
@@ -305,7 +304,7 @@ public class DialogSettings implements IDialogSettings {
                 Element child = (Element) l.item(i);
                 String key = child.getAttribute(TAG_KEY);
                 NodeList list = child.getElementsByTagName(TAG_ITEM);
-                List<String> valueList = new ArrayList<String>();
+                List<String> valueList = new ArrayList<>();
                 for (int j = 0; j < list.getLength(); j++) {
                     Element node = (Element) list.item(j);
                     if (child == node.getParentNode()) {
@@ -379,25 +378,25 @@ public class DialogSettings implements IDialogSettings {
     }
 
     private void save(XMLWriter out) throws IOException {
-    	HashMap<String, String> attributes = new HashMap<String, String>(2);
+    	HashMap<String, String> attributes = new HashMap<>(2);
     	attributes.put(TAG_NAME, name == null ? "" : name); //$NON-NLS-1$
         out.startTag(TAG_SECTION, attributes);
         attributes.clear();
 
-        for (Iterator<String> i = items.keySet().iterator(); i.hasNext();) {
-            String key = i.next();
+		for (Entry<String, String> entry : items.entrySet()) {
+			String key = entry.getKey();
             attributes.put(TAG_KEY, key == null ? "" : key); //$NON-NLS-1$
-            String string = items.get(key);
+			String string = entry.getValue();
             attributes.put(TAG_VALUE, string == null ? "" : string); //$NON-NLS-1$
             out.printTag(TAG_ITEM, attributes, true);
         }
 
         attributes.clear();
-        for (Iterator<String> i = arrayItems.keySet().iterator(); i.hasNext();) {
-            String key = i.next();
+		for (Entry<String, String[]> entry : arrayItems.entrySet()) {
+			String key = entry.getKey();
             attributes.put(TAG_KEY, key == null ? "" : key); //$NON-NLS-1$
             out.startTag(TAG_LIST, attributes);
-            String[] value = arrayItems.get(key);
+			String[] value = entry.getValue();
             attributes.clear();
             if (value != null) {
                 for (int index = 0; index < value.length; index++) {
@@ -484,12 +483,12 @@ public class DialogSettings implements IDialogSettings {
     		sb.append('<');
     		sb.append(name);
     		if (parameters != null) {
-				for (Enumeration<String> e = Collections.enumeration(parameters.keySet()); e.hasMoreElements();) {
+				for (Entry<String, String> entry : parameters.entrySet()) {
     				sb.append(" "); //$NON-NLS-1$
-    				String key = e.nextElement();
+					String key = entry.getKey();
     				sb.append(key);
     				sb.append("=\""); //$NON-NLS-1$
-    				sb.append(getEscaped(String.valueOf(parameters.get(key))));
+					sb.append(getEscaped(String.valueOf(entry.getValue())));
     				sb.append("\""); //$NON-NLS-1$
     			}
 			}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2013 IBM Corporation and others.
+ * Copyright (c) 2006, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -101,25 +101,17 @@ public abstract class ToolTip {
 		this.control = control;
 		this.style = style;
 		this.listener = new ToolTipOwnerControlListener();
-		this.shellListener = new Listener() {
-			@Override
-			public void handleEvent(final Event event) {
-				if (ToolTip.this.control != null
-						&& !ToolTip.this.control.isDisposed()) {
-					ToolTip.this.control.getDisplay().asyncExec(new Runnable() {
-
-						@Override
-						public void run() {
-							// Check if the new active shell is the tooltip
-							// itself
-							if (ToolTip.this.control != null && !ToolTip.this.control.isDisposed()
-									&& ToolTip.this.control.getDisplay().getActiveShell() != CURRENT_TOOLTIP) {
-								toolTipHide(CURRENT_TOOLTIP, event);
-							}
-						}
-
-					});
-				}
+		this.shellListener = event -> {
+			if (ToolTip.this.control != null
+					&& !ToolTip.this.control.isDisposed()) {
+				ToolTip.this.control.getDisplay().asyncExec(() -> {
+					// Check if the new active shell is the tooltip
+					// itself
+					if (ToolTip.this.control != null && !ToolTip.this.control.isDisposed()
+							&& ToolTip.this.control.getDisplay().getActiveShell() != CURRENT_TOOLTIP) {
+						toolTipHide(CURRENT_TOOLTIP, event);
+					}
+				});
 			}
 		};
 
@@ -138,7 +130,7 @@ public abstract class ToolTip {
 	 */
 	public void setData(String key, Object value) {
 		if (data == null) {
-			data = new HashMap<String, Object>();
+			data = new HashMap<>();
 		}
 		data.put(key, value);
 	}
@@ -469,25 +461,14 @@ public abstract class ToolTip {
 		control.getShell().addListener(SWT.Deactivate, shellListener);
 
 		if (popupDelay > 0) {
-			control.getDisplay().timerExec(popupDelay, new Runnable() {
-				@Override
-				public void run() {
-					toolTipShow(shell, event);
-				}
-			});
+			control.getDisplay().timerExec(popupDelay, () -> toolTipShow(shell, event));
 		} else {
 			toolTipShow(CURRENT_TOOLTIP, event);
 		}
 
 		if (hideDelay > 0) {
 			control.getDisplay().timerExec(popupDelay + hideDelay,
-					new Runnable() {
-
-						@Override
-						public void run() {
-							toolTipHide(shell, null);
-						}
-					});
+					() -> toolTipHide(shell, null));
 		}
 	}
 
@@ -590,17 +571,12 @@ public abstract class ToolTip {
 		if (CURRENT_TOOLTIP != null && !CURRENT_TOOLTIP.isDisposed()) {
 			// Only change if value really changed
 			if (hideOnMouseDown != this.hideOnMouseDown) {
-				control.getDisplay().syncExec(new Runnable() {
-
-					@Override
-					public void run() {
-						if (CURRENT_TOOLTIP != null
-								&& CURRENT_TOOLTIP.isDisposed()) {
-							toolTipHookByTypeRecursively(CURRENT_TOOLTIP,
-									hideOnMouseDown, SWT.MouseDown);
-						}
+				control.getDisplay().syncExec(() -> {
+					if (CURRENT_TOOLTIP != null
+							&& CURRENT_TOOLTIP.isDisposed()) {
+						toolTipHookByTypeRecursively(CURRENT_TOOLTIP,
+								hideOnMouseDown, SWT.MouseDown);
 					}
-
 				});
 			}
 		}

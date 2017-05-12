@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2000, 2013 IBM Corporation and others.
+ * Copyright (c) 2000, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,6 +8,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *     Steven Spungin <steven@spungin.tv> - Bug 401439
+ *     Lars Vogel <Lars.Vogel@vogella.com> - Bug 475844, 475689
  *******************************************************************************/
 package org.eclipse.jface.viewers;
 
@@ -17,7 +18,6 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.internal.InternalPolicy;
 import org.eclipse.jface.util.Policy;
 import org.eclipse.swt.events.DisposeEvent;
-import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.widgets.Control;
 
 /**
@@ -219,12 +219,7 @@ public abstract class ContentViewer extends Viewer {
      * @param control the control
      */
     protected void hookControl(Control control) {
-        control.addDisposeListener(new DisposeListener() {
-            @Override
-			public void widgetDisposed(DisposeEvent event) {
-                handleDispose(event);
-            }
-        });
+		control.addDisposeListener(this::handleDispose);
     }
 
     /**
@@ -280,9 +275,8 @@ public abstract class ContentViewer extends Viewer {
 					"Need an underlying widget to be able to set the input." + //$NON-NLS-1$
 							"(Has the widget been disposed?)"); //$NON-NLS-1$
 		}
-        Assert
-                .isTrue(getContentProvider() != null,
-                        "ContentViewer must have a content provider when input is set."); //$NON-NLS-1$
+		Assert.isTrue(getContentProvider() != null,
+				"Instances of ContentViewer must have a content provider assigned before the setInput method is called."); //$NON-NLS-1$
 
         Object oldInput = getInput();
         contentProvider.inputChanged(this, oldInput, input);

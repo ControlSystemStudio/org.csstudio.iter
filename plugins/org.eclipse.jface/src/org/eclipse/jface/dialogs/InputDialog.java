@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2000, 2013 IBM Corporation and others.
+ * Copyright (c) 2000, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,8 +12,6 @@ package org.eclipse.jface.dialogs;
 
 import org.eclipse.jface.resource.StringConverter;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -155,12 +153,7 @@ public class InputDialog extends Dialog {
         text = new Text(composite, getInputTextStyle());
         text.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL
                 | GridData.HORIZONTAL_ALIGN_FILL));
-        text.addModifyListener(new ModifyListener() {
-            @Override
-			public void modifyText(ModifyEvent e) {
-                validateInput();
-            }
-        });
+        text.addModifyListener(e -> validateInput());
         errorMessageText = new Text(composite, SWT.READ_ONLY | SWT.WRAP);
         errorMessageText.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL
                 | GridData.HORIZONTAL_ALIGN_FILL));

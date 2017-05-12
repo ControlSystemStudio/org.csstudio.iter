@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     IBM Corporation - initial API and implementation
+ *     Jan-Ove Weichel <janove.weichel@vogella.com> - Bug 475879
  *******************************************************************************/
 package org.eclipse.jface.action;
 
@@ -104,16 +105,7 @@ public class ActionContributionItem extends ContributionItem {
 	 * The listener for changes to the text of the action contributed by an
 	 * external source.
 	 */
-	private final IPropertyChangeListener actionTextListener = new IPropertyChangeListener() {
-
-		/**
-		 * @see IPropertyChangeListener#propertyChange(PropertyChangeEvent)
-		 */
-		@Override
-		public void propertyChange(PropertyChangeEvent event) {
-			update(event.getProperty());
-		}
-	};
+	private final IPropertyChangeListener actionTextListener = event -> update(event.getProperty());
 
 	/**
 	 * Remembers all images in use by this contribution item
@@ -133,12 +125,7 @@ public class ActionContributionItem extends ContributionItem {
 	/**
 	 * Listener for action property change notifications.
 	 */
-	private final IPropertyChangeListener propertyListener = new IPropertyChangeListener() {
-		@Override
-		public void propertyChange(PropertyChangeEvent event) {
-			actionPropertyChange(event);
-		}
-	};
+	private final IPropertyChangeListener propertyListener = event -> actionPropertyChange(event);
 
 	/**
 	 * Listener for SWT tool item widget events.
@@ -177,12 +164,7 @@ public class ActionContributionItem extends ContributionItem {
 			if (display.getThread() == Thread.currentThread()) {
 				update(e.getProperty());
 			} else {
-				display.asyncExec(new Runnable() {
-					@Override
-					public void run() {
-						update(e.getProperty());
-					}
-				});
+				display.asyncExec(() -> update(e.getProperty()));
 			}
 
 		}
@@ -379,21 +361,18 @@ public class ActionContributionItem extends ContributionItem {
 	 */
 	private Listener getButtonListener() {
 		if (buttonListener == null) {
-			buttonListener = new Listener() {
-				@Override
-				public void handleEvent(Event event) {
-					switch (event.type) {
-					case SWT.Dispose:
-						handleWidgetDispose(event);
-						break;
-					case SWT.Selection:
-						Widget ew = event.widget;
-						if (ew != null) {
-							handleWidgetSelection(event, ((Button) ew)
-									.getSelection());
-						}
-						break;
+			buttonListener = event -> {
+				switch (event.type) {
+				case SWT.Dispose:
+					handleWidgetDispose(event);
+					break;
+				case SWT.Selection:
+					Widget ew = event.widget;
+					if (ew != null) {
+						handleWidgetSelection(event, ((Button) ew)
+								.getSelection());
 					}
+					break;
 				}
 			};
 		}
@@ -407,21 +386,18 @@ public class ActionContributionItem extends ContributionItem {
 	 */
 	private Listener getMenuItemListener() {
 		if (menuItemListener == null) {
-			menuItemListener = new Listener() {
-				@Override
-				public void handleEvent(Event event) {
-					switch (event.type) {
-					case SWT.Dispose:
-						handleWidgetDispose(event);
-						break;
-					case SWT.Selection:
-						Widget ew = event.widget;
-						if (ew != null) {
-							handleWidgetSelection(event, ((MenuItem) ew)
-									.getSelection());
-						}
-						break;
+			menuItemListener = event -> {
+				switch (event.type) {
+				case SWT.Dispose:
+					handleWidgetDispose(event);
+					break;
+				case SWT.Selection:
+					Widget ew = event.widget;
+					if (ew != null) {
+						handleWidgetSelection(event, ((MenuItem) ew)
+								.getSelection());
 					}
+					break;
 				}
 			};
 		}
@@ -449,21 +425,18 @@ public class ActionContributionItem extends ContributionItem {
 	 */
 	private Listener getToolItemListener() {
 		if (toolItemListener == null) {
-			toolItemListener = new Listener() {
-				@Override
-				public void handleEvent(Event event) {
-					switch (event.type) {
-					case SWT.Dispose:
-						handleWidgetDispose(event);
-						break;
-					case SWT.Selection:
-						Widget ew = event.widget;
-						if (ew != null) {
-							handleWidgetSelection(event, ((ToolItem) ew)
-									.getSelection());
-						}
-						break;
+			toolItemListener = event -> {
+				switch (event.type) {
+				case SWT.Dispose:
+					handleWidgetDispose(event);
+					break;
+				case SWT.Selection:
+					Widget ew = event.widget;
+					if (ew != null) {
+						handleWidgetSelection(event, ((ToolItem) ew)
+								.getSelection());
 					}
+					break;
 				}
 			};
 		}
@@ -577,14 +550,11 @@ public class ActionContributionItem extends ContributionItem {
 
 				IPropertyChangeListener resultListener = null;
 				if (callback != null) {
-					resultListener = new IPropertyChangeListener() {
-						@Override
-						public void propertyChange(PropertyChangeEvent event) {
-							// Check on result
-							if (event.getProperty().equals(IAction.RESULT)) {
-								if (event.getNewValue() instanceof Boolean) {
-									result = (Boolean) event.getNewValue();
-								}
+					resultListener = event -> {
+						// Check on result
+						if (event.getProperty().equals(IAction.RESULT)) {
+							if (event.getNewValue() instanceof Boolean) {
+								result = (Boolean) event.getNewValue();
 							}
 						}
 					};
@@ -811,7 +781,7 @@ public class ActionContributionItem extends ContributionItem {
 								&& acceleratorText.length() != 0) {
 							toolTip = JFaceResources.format(
 									"Toolbar_Tooltip_Accelerator", //$NON-NLS-1$
-									new Object[] { toolTip, acceleratorText });
+									toolTip, acceleratorText);
 						}
 					}
 
@@ -1210,17 +1180,14 @@ public class ActionContributionItem extends ContributionItem {
 	 */
 	private Listener getMenuCreatorListener() {
 		if (menuCreatorListener == null) {
-			menuCreatorListener = new Listener() {
-				@Override
-				public void handleEvent(Event event) {
-					switch (event.type) {
-					case SWT.Show:
-						handleShowProxy((Menu) event.widget);
-						break;
-					case SWT.Hide:
-						handleHideProxy((Menu) event.widget);
-						break;
-					}
+			menuCreatorListener = event -> {
+				switch (event.type) {
+				case SWT.Show:
+					handleShowProxy((Menu) event.widget);
+					break;
+				case SWT.Hide:
+					handleHideProxy((Menu) event.widget);
+					break;
 				}
 			};
 		}
@@ -1275,23 +1242,20 @@ public class ActionContributionItem extends ContributionItem {
 		// listening for SWT.Show
 		realMenu.notifyListeners(SWT.Show, null);
 
-		final Listener passThrough = new Listener() {
-			@Override
-			public void handleEvent(Event event) {
-				if (!event.widget.isDisposed()) {
-					Widget realItem = (Widget) event.widget.getData();
-					if (!realItem.isDisposed()) {
-						int style = event.widget.getStyle();
-						if (event.type == SWT.Selection
-								&& ((style & (SWT.TOGGLE | SWT.CHECK | SWT.RADIO)) != 0)
-								&& realItem instanceof MenuItem) {
-							((MenuItem) realItem)
-									.setSelection(((MenuItem) event.widget)
-											.getSelection());
-						}
-						event.widget = realItem;
-						realItem.notifyListeners(event.type, event);
+		final Listener passThrough = event -> {
+			if (!event.widget.isDisposed()) {
+				Widget realItem = (Widget) event.widget.getData();
+				if (!realItem.isDisposed()) {
+					int style = event.widget.getStyle();
+					if (event.type == SWT.Selection
+							&& ((style & (SWT.TOGGLE | SWT.CHECK | SWT.RADIO)) != 0)
+							&& realItem instanceof MenuItem) {
+						((MenuItem) realItem)
+								.setSelection(((MenuItem) event.widget)
+										.getSelection());
 					}
+					event.widget = realItem;
+					realItem.notifyListeners(event.type, event);
 				}
 			}
 		};
@@ -1342,19 +1306,16 @@ public class ActionContributionItem extends ContributionItem {
 	 */
 	private void handleHideProxy(final Menu proxy) {
 		proxy.removeListener(SWT.Hide, getMenuCreatorListener());
-		proxy.getDisplay().asyncExec(new Runnable() {
-			@Override
-			public void run() {
-				if (!proxy.isDisposed()) {
-					MenuItem parentItem = proxy.getParentItem();
-					proxy.dispose();
-					parentItem.setMenu(holdMenu);
-				}
-				if (holdMenu != null && !holdMenu.isDisposed()) {
-					holdMenu.notifyListeners(SWT.Hide, null);
-				}
-				holdMenu = null;
+		proxy.getDisplay().asyncExec(() -> {
+			if (!proxy.isDisposed()) {
+				MenuItem parentItem = proxy.getParentItem();
+				proxy.dispose();
+				parentItem.setMenu(holdMenu);
 			}
+			if (holdMenu != null && !holdMenu.isDisposed()) {
+				holdMenu.notifyListeners(SWT.Hide, null);
+			}
+			holdMenu = null;
 		});
 	}
 

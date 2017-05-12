@@ -24,7 +24,7 @@
         <tycho-extras.version>${tycho.version}</tycho-extras.version>
         <tycho-groupid>org.eclipse.tycho</tycho-groupid>
         <!-- pydev version 5.2.0 is last version supporting eclipse mars -->
-        <pydev.version>5.2.0</pydev.version>
+        <pydev.version>5.7.0</pydev.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <baselineMode>fail</baselineMode>
         <pydev-site>https://dl.bintray.com/fabioz/pydev/${pydev.version}</pydev-site>
@@ -62,8 +62,27 @@
                 <rap-gef-site>http://archive.eclipse.org/rt/rap/incubator/nightly/gef/20150327-1849</rap-gef-site>
                 <rap-e4-site>http://download.eclipse.org/rt/rap/incubator/3.0/e4/target/site</rap-e4-site>
                 <swtbot-site>http://download.eclipse.org/technology/swtbot/releases/latest/</swtbot-site>
-                <platform-version>[4.4,4.5,4.6)</platform-version>
+                <platform-version>[4.4,4.6)</platform-version>
             </properties>
+        </profile>
+        <!-- this profile is related to bug 1818 - https://github.com/ControlSystemStudio/cs-studio/issues/1818 
+         org.eclipse.draw2d_3.9.101.201408150207 is forced over never versions 
+         plugin added in org.eclipse.iter.ui.feature
+     -->
+        <profile>
+            <id>issue_1818</id>
+            <activation>
+                <property>
+                    <name>issue_1818</name>
+                </property>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>csstudio-issue-1818</id>
+                    <url>http://download.controlsystemstudio.org/issue/1818</url>
+                    <layout>p2</layout>
+                </repository>
+            </repositories>
         </profile>
         <profile>
             <id>cs-studio</id>

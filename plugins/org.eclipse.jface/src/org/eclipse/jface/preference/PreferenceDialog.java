@@ -10,6 +10,7 @@
  *     Teddy Walker <teddy.walker@googlemail.com>
  *     	- Bug 188056 [Preferences] PreferencePages have to less indent in PreferenceDialog
  *     Stefan Xenos <sxenos@google.com> - Bug 466793
+ *     Jan-Ove Weichel <janove.weichel@vogella.com> - Bug 475879
  *******************************************************************************/
 package org.eclipse.jface.preference;
 
@@ -35,7 +36,6 @@ import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.Policy;
-import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.util.SafeRunnable;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -50,8 +50,6 @@ import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
-import org.eclipse.swt.events.DisposeEvent;
-import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.events.HelpEvent;
 import org.eclipse.swt.events.HelpListener;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -72,7 +70,6 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Layout;
-import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Sash;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Tree;
@@ -343,13 +340,10 @@ public class PreferenceDialog extends TrayDialog implements IPreferencePageConta
 	@Override
 	protected Control createContents(final Composite parent) {
 		final Control[] control = new Control[1];
-		BusyIndicator.showWhile(getShell().getDisplay(), new Runnable() {
-			@Override
-			public void run() {
-				control[0] = PreferenceDialog.super.createContents(parent);
-				// Add the first page
-				selectSavedItem();
-			}
+		BusyIndicator.showWhile(getShell().getDisplay(), () -> {
+			control[0] = PreferenceDialog.super.createContents(parent);
+			// Add the first page
+			selectSavedItem();
 		});
 
 		return control[0];
@@ -441,40 +435,37 @@ public class PreferenceDialog extends TrayDialog implements IPreferencePageConta
 		sash.setBackground(composite.getDisplay().getSystemColor(SWT.COLOR_LIST_BACKGROUND));
 		// the following listener resizes the tree control based on sash deltas.
 		// If necessary, it will also grow/shrink the dialog.
-		sash.addListener(SWT.Selection, new Listener() {
-			@Override
-			public void handleEvent(Event event) {
-				if (event.detail == SWT.DRAG) {
-					return;
-				}
-				int shift = event.x - sash.getBounds().x;
-				GridData data = (GridData) rightControl.getLayoutData();
-				int newWidthHint = data.widthHint + shift;
-				if (newWidthHint < 20) {
-					return;
-				}
-				Point computedSize = getShell().computeSize(SWT.DEFAULT, SWT.DEFAULT);
-				Point currentSize = getShell().getSize();
-				// if the dialog wasn't of a custom size we know we can shrink
-				// it if necessary based on sash movement.
-				boolean customSize = !computedSize.equals(currentSize);
-				data.widthHint = newWidthHint;
-				setLastTreeWidth(newWidthHint);
-				composite.layout(true);
-				// recompute based on new widget size
-				computedSize = getShell().computeSize(SWT.DEFAULT, SWT.DEFAULT);
-				// if the dialog was of a custom size then increase it only if
-				// necessary.
-				if (customSize) {
-					computedSize.x = Math.max(computedSize.x, currentSize.x);
-				}
-				computedSize.y = Math.max(computedSize.y, currentSize.y);
-				if (computedSize.equals(currentSize)) {
-					return;
-				}
-				setShellSize(computedSize.x, computedSize.y);
-				lastShellSize = getShell().getSize();
+		sash.addListener(SWT.Selection, event -> {
+			if (event.detail == SWT.DRAG) {
+				return;
 			}
+			int shift = event.x - sash.getBounds().x;
+			GridData data = (GridData) rightControl.getLayoutData();
+			int newWidthHint = data.widthHint + shift;
+			if (newWidthHint < 20) {
+				return;
+			}
+			Point computedSize = getShell().computeSize(SWT.DEFAULT, SWT.DEFAULT);
+			Point currentSize = getShell().getSize();
+			// if the dialog wasn't of a custom size we know we can shrink
+			// it if necessary based on sash movement.
+			boolean customSize = !computedSize.equals(currentSize);
+			data.widthHint = newWidthHint;
+			setLastTreeWidth(newWidthHint);
+			composite.layout(true);
+			// recompute based on new widget size
+			computedSize = getShell().computeSize(SWT.DEFAULT, SWT.DEFAULT);
+			// if the dialog was of a custom size then increase it only if
+			// necessary.
+			if (customSize) {
+				computedSize.x = Math.max(computedSize.x, currentSize.x);
+			}
+			computedSize.y = Math.max(computedSize.y, currentSize.y);
+			if (computedSize.equals(currentSize)) {
+				return;
+			}
+			setShellSize(computedSize.x, computedSize.y);
+			lastShellSize = getShell().getSize();
 		});
 		return sash;
 	}
@@ -566,30 +557,22 @@ public class PreferenceDialog extends TrayDialog implements IPreferencePageConta
 			}
 		});
 
-		final IPropertyChangeListener fontListener = new IPropertyChangeListener() {
-			@Override
-			public void propertyChange(PropertyChangeEvent event) {
-				if (JFaceResources.BANNER_FONT.equals(event.getProperty())) {
-					updateMessage();
-				}
-				if (JFaceResources.DIALOG_FONT.equals(event.getProperty())) {
-					updateMessage();
-					Font dialogFont = JFaceResources.getDialogFont();
-					updateTreeFont(dialogFont);
-					Control[] children = ((Composite) buttonBar).getChildren();
-					for (int i = 0; i < children.length; i++) {
-						children[i].setFont(dialogFont);
-					}
+		final IPropertyChangeListener fontListener = event -> {
+			if (JFaceResources.BANNER_FONT.equals(event.getProperty())) {
+				updateMessage();
+			}
+			if (JFaceResources.DIALOG_FONT.equals(event.getProperty())) {
+				updateMessage();
+				Font dialogFont = JFaceResources.getDialogFont();
+				updateTreeFont(dialogFont);
+				Control[] children = ((Composite) buttonBar).getChildren();
+				for (int i = 0; i < children.length; i++) {
+					children[i].setFont(dialogFont);
 				}
 			}
 		};
 
-		titleArea.addDisposeListener(new DisposeListener() {
-			@Override
-			public void widgetDisposed(DisposeEvent event) {
-				JFaceResources.getFontRegistry().removeListener(fontListener);
-			}
-		});
+		titleArea.addDisposeListener(event -> JFaceResources.getFontRegistry().removeListener(fontListener));
 		JFaceResources.getFontRegistry().addListener(fontListener);
 		messageArea.setTitleLayoutData(createMessageAreaData());
 		messageArea.setMessageLayoutData(createMessageAreaData());
@@ -667,18 +650,15 @@ public class PreferenceDialog extends TrayDialog implements IPreferencePageConta
 			public void selectionChanged(SelectionChangedEvent event) {
 				final Object selection = getSingleSelection(event.getSelection());
 				if (selection instanceof IPreferenceNode) {
-					BusyIndicator.showWhile(getShell().getDisplay(), new Runnable(){
-						@Override
-						public void run() {
-							if (!isCurrentPageValid()) {
-								handleError();
-							} else if (!showPage((IPreferenceNode) selection)) {
-								// Page flipping wasn't successful
-								handleError();
-							} else {
-								// Everything went well
-								lastSuccessfulNode = (IPreferenceNode) selection;
-							}
+					BusyIndicator.showWhile(getShell().getDisplay(), () -> {
+						if (!isCurrentPageValid()) {
+							handleError();
+						} else if (!showPage((IPreferenceNode) selection)) {
+							// Page flipping wasn't successful
+							handleError();
+						} else {
+							// Everything went well
+							lastSuccessfulNode = (IPreferenceNode) selection;
 						}
 					});
 				}
@@ -834,8 +814,8 @@ public class PreferenceDialog extends TrayDialog implements IPreferencePageConta
 					try {
 						((IPersistentPreferenceStore) store).save();
 					} catch (IOException e) {
-						String message =JFaceResources.format(
-                                "PreferenceDialog.saveErrorMessage", new Object[] { page.getTitle(), e.getMessage() }); //$NON-NLS-1$
+						String message = JFaceResources.format("PreferenceDialog.saveErrorMessage", page.getTitle(), //$NON-NLS-1$
+								e.getMessage());
 			            Policy.getStatusHandler().show(
 			                    new Status(IStatus.ERROR, Policy.JFACE, message, e),
 			                    JFaceResources.getString("PreferenceDialog.saveErrorTitle")); //$NON-NLS-1$

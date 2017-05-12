@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2013 IBM Corporation and others.
+ * Copyright (c) 2006, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,9 +12,9 @@ package org.eclipse.jface.fieldassist;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.eclipse.jface.resource.JFaceColors;
 import org.eclipse.swt.SWT;
@@ -49,13 +49,13 @@ public class FieldAssistColors {
 	 * Keys are background colors, values are the color with the alpha value
 	 * applied
 	 */
-	private static Map<Color, Color> requiredFieldColorMap = new HashMap<Color, Color>();
+	private static Map<Color, Color> requiredFieldColorMap = new HashMap<>();
 
 	/*
 	 * Keys are colors we have created, values are the displays on which they
 	 * were created.
 	 */
-	private static Map<Color, Display> displays = new HashMap<Color, Display>();
+	private static Map<Color, Display> displays = new HashMap<>();
 
 	/**
 	 * Compute the RGB of the color that should be used for the background of a
@@ -142,12 +142,7 @@ public class FieldAssistColors {
 		// If we have never created a color on this display before, install
 		// a dispose exec on the display.
 		if (!displays.containsValue(display)) {
-			display.disposeExec(new Runnable() {
-				@Override
-				public void run() {
-					disposeColors(display);
-				}
-			});
+			display.disposeExec(() -> disposeColors(display));
 		}
 		// Record the color and its display in a map for later disposal.
 		displays.put(color, display);
@@ -158,7 +153,7 @@ public class FieldAssistColors {
 	 * Dispose any colors that were allocated for the given display.
 	 */
 	private static void disposeColors(Display display) {
-		List<Color> toBeRemoved = new ArrayList<Color>(1);
+		List<Color> toBeRemoved = new ArrayList<>(1);
 
 		if (DEBUG) {
 			System.out.println("Display map is " + displays.toString()); //$NON-NLS-1$
@@ -167,36 +162,33 @@ public class FieldAssistColors {
 		}
 
 		// Look for any stored colors that were created on this display
-		for (Iterator<Color> i = displays.keySet().iterator(); i.hasNext();) {
-			Color color = i.next();
+		for (Entry<Color, Display> entry : displays.entrySet()) {
+			Color color = entry.getKey();
+			;
 			if (displays.get(color).equals(display)) {
 				// The color is on this display. Mark it for removal.
 				toBeRemoved.add(color);
 
 				// Now look for any references to it in the required field color
 				// map
-				List<Color> toBeRemovedFromRequiredMap = new ArrayList<Color>(1);
-				for (Iterator<Color> iter = requiredFieldColorMap.keySet().iterator(); iter
-						.hasNext();) {
-					Color bgColor = iter.next();
-					if (requiredFieldColorMap.get(bgColor)
-							.equals(color)) {
+				List<Color> toBeRemovedFromRequiredMap = new ArrayList<>(1);
+				for (Entry<Color, Color> colorMapEntry : requiredFieldColorMap.entrySet()) {
+					Color bgColor = colorMapEntry.getKey();
+					if (colorMapEntry.getValue().equals(color)) {
 						// mark it for removal from the required field color map
 						toBeRemovedFromRequiredMap.add(bgColor);
 					}
 				}
 				// Remove references in the required field map now that
 				// we are done iterating.
-				for (int j = 0; j < toBeRemovedFromRequiredMap.size(); j++) {
-					requiredFieldColorMap.remove(toBeRemovedFromRequiredMap
-							.get(j));
+				for (Color toRemove : toBeRemovedFromRequiredMap) {
+					requiredFieldColorMap.remove(toRemove);
 				}
 			}
 		}
 		// Remove references in the display map now that we are
 		// done iterating
-		for (int i = 0; i < toBeRemoved.size(); i++) {
-			Color color = toBeRemoved.get(i);
+		for (Color color : toBeRemoved) {
 			// Removing from the display map must be done before disposing the
 			// color or else the comparison between this color and the one
 			// in the map will fail.

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2000, 2013 IBM Corporation and others.
+ * Copyright (c) 2000, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Layout;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Monitor;
@@ -150,32 +149,29 @@ public abstract class Window implements IShellProvider {
     /**
      * Object used to locate the default parent for modal shells
      */
-    private static IShellProvider defaultModalParent = new IShellProvider() {
-        @Override
-		public Shell getShell() {
-            Display d = Display.getCurrent();
+    private static IShellProvider defaultModalParent = () -> {
+	    Display d = Display.getCurrent();
 
-            if (d == null) {
-                return null;
-            }
+	    if (d == null) {
+	        return null;
+	    }
 
-            Shell parent = d.getActiveShell();
+	    Shell parent = d.getActiveShell();
 
-            // Make sure we don't pick a parent that has a modal child (this can lock the app)
-            if (parent == null) {
-                // If this is a top-level window, then there must not be any open modal windows.
-                parent = getModalChild(Display.getCurrent().getShells());
-            } else {
-                // If we picked a parent with a modal child, use the modal child instead
-                Shell modalChild = getModalChild(parent.getShells());
-                if (modalChild != null) {
-                    parent = modalChild;
-                }
-            }
+	    // Make sure we don't pick a parent that has a modal child (this can lock the app)
+	    if (parent == null) {
+	        // If this is a top-level window, then there must not be any open modal windows.
+	        parent = getModalChild(Display.getCurrent().getShells());
+	    } else {
+	        // If we picked a parent with a modal child, use the modal child instead
+	        Shell modalChild = getModalChild(parent.getShells());
+	        if (modalChild != null) {
+	            parent = modalChild;
+	        }
+	    }
 
-            return parent;
-        }
-    };
+	    return parent;
+	};
 
 	/**
 	 * Object that returns the parent shell.
@@ -357,7 +353,7 @@ public abstract class Window implements IShellProvider {
 		// The equivalent in the multi-image version seems to be to remove the
 		// disposed images from the array passed to the shell.
 		if (defaultImages != null && defaultImages.length > 0) {
-			ArrayList<Image> nonDisposedImages = new ArrayList<Image>(defaultImages.length);
+			ArrayList<Image> nonDisposedImages = new ArrayList<>(defaultImages.length);
 			for (int i = 0; i < defaultImages.length; ++i) {
 				if (defaultImages[i] != null && !defaultImages[i].isDisposed()) {
 					nonDisposedImages.add(defaultImages[i]);
@@ -485,12 +481,7 @@ public abstract class Window implements IShellProvider {
 		//Create the shell
 		Shell newShell = new Shell(newParent, getShellStyle());
 
-		resizeListener = new Listener() {
-			@Override
-			public void handleEvent(Event e) {
-				resizeHasOccurred = true;
-			}
-		};
+		resizeListener = e -> resizeHasOccurred = true;
 
 		newShell.addListener(SWT.Resize, resizeListener);
 		newShell.setData(this);

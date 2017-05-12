@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2013 IBM Corporation and others.
+ * Copyright (c) 2006, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,6 @@ import org.eclipse.jface.fieldassist.TextControlCreator;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.PaintEvent;
-import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Image;
@@ -39,6 +38,7 @@ import org.eclipse.swt.widgets.Text;
  * @since 3.2
  * @deprecated As of 3.3, this class is no longer necessary.
  *
+ * This class is planned to be deleted, see Bug 475863.
  */
 @Deprecated
 public class ImageAndMessageArea extends Composite {
@@ -90,12 +90,7 @@ public class ImageAndMessageArea extends Composite {
 
 		messageField.getLayoutControl().setLayoutData(gd);
 
-		addPaintListener(new PaintListener() {
-			@Override
-			public void paintControl(PaintEvent e) {
-				onPaint(e);
-			}
-		});
+		addPaintListener(this::onPaint);
 
 		// sets the layout and size to account for the BORDER_MARGIN between
 		// the border drawn around the container and the decorated field.

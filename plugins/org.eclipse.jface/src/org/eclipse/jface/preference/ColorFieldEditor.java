@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2000, 2013 IBM Corporation and others.
+ * Copyright (c) 2000, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,8 +11,6 @@
 package org.eclipse.jface.preference;
 
 import org.eclipse.jface.resource.JFaceResources;
-import org.eclipse.jface.util.IPropertyChangeListener;
-import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;
@@ -139,14 +137,10 @@ public class ColorFieldEditor extends FieldEditor {
 	protected Button getChangeControl(Composite parent) {
 		if (colorSelector == null) {
 			colorSelector = new ColorSelector(parent);
-			colorSelector.addListener(new IPropertyChangeListener() {
-				// forward the property change of the color selector
-				@Override
-				public void propertyChange(PropertyChangeEvent event) {
-					ColorFieldEditor.this.fireValueChanged(event.getProperty(),
-							event.getOldValue(), event.getNewValue());
-					setPresentsDefaultValue(false);
-				}
+			colorSelector.addListener(event -> {
+				ColorFieldEditor.this.fireValueChanged(event.getProperty(),
+						event.getOldValue(), event.getNewValue());
+				setPresentsDefaultValue(false);
 			});
 
 		} else {
