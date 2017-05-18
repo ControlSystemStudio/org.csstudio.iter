@@ -59,7 +59,7 @@
                 <eclipse-site>http://download.eclipse.org/releases/mars</eclipse-site>
                 <eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.5</eclipse-update-site>
                 <rap-site>http://download.eclipse.org/rt/rap/3.0</rap-site>
-                <rap-gef-site>http://download.eclipse.org/rt/rap/incubator/nightly/gef/20150327-1849</rap-gef-site>
+                <rap-gef-site>http://archive.eclipse.org/rt/rap/incubator/nightly/gef/20150327-1849</rap-gef-site>
                 <rap-e4-site>http://download.eclipse.org/rt/rap/incubator/3.0/e4/target/site</rap-e4-site>
                 <swtbot-site>http://download.eclipse.org/technology/swtbot/mars/dev-build/update-site</swtbot-site>
                 <platform-version>[4.4,4.5)</platform-version>
@@ -97,6 +97,21 @@
                 <repository>
                     <id>csstudio-maven-osgi-bundles</id>
                     <url>http://download.controlsystemstudio.org/maven-osgi-bundles/${cs-studio.version}</url>
+                    <layout>p2</layout>
+                </repository>
+            </repositories>
+        </profile>
+        <profile>
+            <id>csstudio-composite-repo-enable</id>
+            <activation>
+                <property>
+                    <name>csstudio.composite.repo</name>
+                </property>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>csstudio-composite-repo</id>
+                    <url>file:${csstudio.composite.repo}</url>
                     <layout>p2</layout>
                 </repository>
             </repositories>
