@@ -18,12 +18,10 @@
   <height>2080</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
-    <TITLE>ITER TOKAMAK MACHINE OVERVIEW</TITLE>
+    <TITLE>CTRL-SUP-BOY - SUPER HMI OBJECTS</TITLE>
     <INPUT>./../navigation/Navigation.xml</INPUT>
-    <ALARM_ROOT>/demo</ALARM_ROOT>
-    <OPI_FILE>ITER_Mimic</OPI_FILE>
   </macros>
-  <name>${TITLE}</name>
+  <name>CTRL-SUP-BOY</name>
   <rules />
   <scripts />
   <show_close_button>true</show_close_button>
@@ -37,7 +35,7 @@
   <x>0</x>
   <y>0</y>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-    <actions hook="false" hook_all="false" />
+    <actions hook="true" hook_all="false" />
     <background_color>
       <color name="IO Background" red="235" green="235" blue="235" />
     </background_color>
@@ -59,7 +57,7 @@
     <macros>
       <include_parent_macros>true</include_parent_macros>
     </macros>
-    <name>DISPLAY CANVAS</name>
+    <name>CTRL-SUP-BOY</name>
     <rules />
     <scale_options>
       <width_scalable>false</width_scalable>
@@ -156,47 +154,6 @@
         <wuid>-2d92a996:148f9384590:-7f7d</wuid>
         <x>0</x>
         <y>0</y>
-        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <auto_size>false</auto_size>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>true</enabled>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>98</height>
-          <horizontal_alignment>1</horizontal_alignment>
-          <name>Comment</name>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <text>GLOBAL STATUSES</text>
-          <tooltip>GLOBAL STATUSES</tooltip>
-          <transparent>true</transparent>
-          <vertical_alignment>1</vertical_alignment>
-          <visible>true</visible>
-          <widget_type>Label</widget_type>
-          <width>1138</width>
-          <wrap_words>false</wrap_words>
-          <wuid>3b161333:14909e4682c:-7f26</wuid>
-          <x>0</x>
-          <y>0</y>
-        </widget>
         <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
           <actions hook="false" hook_all="false" />
           <background_color>
@@ -219,7 +176,7 @@
           <macros>
             <include_parent_macros>true</include_parent_macros>
           </macros>
-          <name>Linking Container Template</name>
+          <name>GlobalStatuses</name>
           <opi_file>templates/GlobalStatuses.opi</opi_file>
           <resize_behaviour>1</resize_behaviour>
           <rules />
@@ -233,7 +190,7 @@
           <visible>true</visible>
           <widget_type>Linking Container</widget_type>
           <width>1138</width>
-          <wuid>-57352fd0:149859b9257:-3092</wuid>
+          <wuid>-6949cace:14c9978aa31:-7822</wuid>
           <x>0</x>
           <y>0</y>
         </widget>
@@ -294,7 +251,7 @@
             <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
           </font>
           <foreground_color>
-            <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+            <color name="IO Text Fg" red="0" green="0" blue="0" />
           </foreground_color>
           <height>98</height>
           <horizontal_alignment>1</horizontal_alignment>
@@ -315,7 +272,7 @@
           <widget_type>Label</widget_type>
           <width>2093</width>
           <wrap_words>false</wrap_words>
-          <wuid>-ae3bbd7:148fa0f526e:-7f3f</wuid>
+          <wuid>-6949cace:14c9978aa31:-761d</wuid>
           <x>0</x>
           <y>0</y>
         </widget>
@@ -360,47 +317,6 @@
         <wuid>-2d92a996:148f9384590:-7f6e</wuid>
         <x>3239</x>
         <y>0</y>
-        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <auto_size>false</auto_size>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>true</enabled>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Foreground" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>98</height>
-          <horizontal_alignment>1</horizontal_alignment>
-          <name>Comment</name>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <text>UTC - TIME</text>
-          <tooltip>UTC - TIME</tooltip>
-          <transparent>true</transparent>
-          <vertical_alignment>1</vertical_alignment>
-          <visible>true</visible>
-          <widget_type>Label</widget_type>
-          <width>573</width>
-          <wrap_words>false</wrap_words>
-          <wuid>56bdcf55:1490ddf160e:-7e1d</wuid>
-          <x>0</x>
-          <y>0</y>
-        </widget>
         <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
           <actions hook="false" hook_all="false" />
           <background_color>
@@ -423,7 +339,7 @@
           <macros>
             <include_parent_macros>true</include_parent_macros>
           </macros>
-          <name>Linking Container Template</name>
+          <name>UTC TIme</name>
           <opi_file>templates/UTC_Time.opi</opi_file>
           <resize_behaviour>1</resize_behaviour>
           <rules />
@@ -437,7 +353,7 @@
           <visible>true</visible>
           <widget_type>Linking Container</widget_type>
           <width>573</width>
-          <wuid>-57352fd0:149859b9257:-309c</wuid>
+          <wuid>-6949cace:14c9978aa31:-76d4</wuid>
           <x>0</x>
           <y>0</y>
         </widget>
@@ -483,7 +399,89 @@
       <wuid>-ae3bbd7:148fa0f526e:-7efd</wuid>
       <x>0</x>
       <y>104</y>
-      <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+        <actions hook="false" hook_all="false" />
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <border_style>5</border_style>
+        <border_width>2</border_width>
+        <enabled>true</enabled>
+        <fc>false</fc>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Normal</opifont.name>
+        </font>
+        <foreground_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </foreground_color>
+        <height>102</height>
+        <lock_children>true</lock_children>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <name>PLANT SYSTEM AUXILIARIES STATUSES</name>
+        <rules />
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts />
+        <show_scrollbar>false</show_scrollbar>
+        <tooltip></tooltip>
+        <transparent>true</transparent>
+        <visible>true</visible>
+        <widget_type>Grouping Container</widget_type>
+        <width>1142</width>
+        <wuid>333eae9e:14951f153e9:-6053</wuid>
+        <x>0</x>
+        <y>0</y>
+        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+          <actions hook="false" hook_all="false" />
+          <auto_size>false</auto_size>
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>0</border_style>
+          <border_width>2</border_width>
+          <enabled>true</enabled>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
+          </font>
+          <foreground_color>
+            <color name="IO Foreground" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>98</height>
+          <horizontal_alignment>1</horizontal_alignment>
+          <name>Comment</name>
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts />
+          <show_scrollbar>false</show_scrollbar>
+          <text>PLANT SYSTEM AUXILIARIES STATUSES</text>
+          <tooltip>PLANT SYSTEM AUXILIARIES STATUSES</tooltip>
+          <transparent>true</transparent>
+          <vertical_alignment>1</vertical_alignment>
+          <visible>true</visible>
+          <widget_type>Label</widget_type>
+          <width>1138</width>
+          <wrap_words>false</wrap_words>
+          <wuid>333eae9e:14951f153e9:-6052</wuid>
+          <x>0</x>
+          <y>0</y>
+        </widget>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
         <actions hook="false" hook_all="false" />
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
@@ -494,20 +492,19 @@
         <border_style>0</border_style>
         <border_width>2</border_width>
         <enabled>true</enabled>
+        <fc>false</fc>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Normal</opifont.name>
         </font>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
-        <group_name></group_name>
         <height>1760</height>
+        <lock_children>false</lock_children>
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
-        <name>MIMIC</name>
-        <opi_file>ITER_Mimic.opi</opi_file>
-        <resize_behaviour>1</resize_behaviour>
+        <name>MAIN DISPLAY AREA - MIMIC</name>
         <rules />
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -515,17 +512,59 @@
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
+        <show_scrollbar>false</show_scrollbar>
         <tooltip></tooltip>
+        <transparent>true</transparent>
         <visible>true</visible>
-        <widget_type>Linking Container</widget_type>
+        <widget_type>Grouping Container</widget_type>
         <width>3236</width>
-        <wuid>5501a0df:15365e4f072:-7ea6</wuid>
+        <wuid>-57352fd0:149859b9257:-6f78</wuid>
         <x>0</x>
         <y>0</y>
+        <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+          <actions hook="false" hook_all="false" />
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>0</border_style>
+          <border_width>2</border_width>
+          <enabled>true</enabled>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+          </font>
+          <foreground_color>
+            <color name="IO Foreground" red="0" green="0" blue="0" />
+          </foreground_color>
+          <group_name></group_name>
+          <height>440</height>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+          </macros>
+          <name>Linked OPI</name>
+          <opi_file>ITER-CTRL-SUP-BOY-CONNECTION_mimic.opi</opi_file>
+          <resize_behaviour>1</resize_behaviour>
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts />
+          <tooltip></tooltip>
+          <visible>true</visible>
+          <widget_type>Linking Container</widget_type>
+          <width>891</width>
+          <wuid>-7c21f2fb:1520c4b5b67:-67d5</wuid>
+          <x>0</x>
+          <y>0</y>
+        </widget>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-      <actions hook="true" hook_all="false" />
+      <actions hook="false" hook_all="false" />
       <background_color>
         <color name="IO Area Background" red="221" green="223" blue="229" />
       </background_color>
@@ -543,7 +582,7 @@
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
       <height>1006</height>
-      <lock_children>false</lock_children>
+      <lock_children>true</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
@@ -582,7 +621,7 @@
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <group_name></group_name>
-        <height>1002</height>
+        <height>501</height>
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
@@ -599,7 +638,7 @@
         <tooltip></tooltip>
         <visible>true</visible>
         <widget_type>Linking Container</widget_type>
-        <width>576</width>
+        <width>288</width>
         <wuid>52998e39:14fb2a50e57:-7e3e</wuid>
         <x>0</x>
         <y>0</y>
@@ -681,7 +720,7 @@
         <visible>true</visible>
         <widget_type>Linking Container</widget_type>
         <width>575</width>
-        <wuid>-57352fd0:149859b9257:-18dd</wuid>
+        <wuid>-57352fd0:149859b9257:-177b</wuid>
         <x>0</x>
         <y>0</y>
       </widget>
@@ -748,7 +787,7 @@
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
-        <name>Navigation Pane Template</name>
+        <name>Navigation Pane</name>
         <opi_file>templates/NavigationPane.opi</opi_file>
         <resize_behaviour>1</resize_behaviour>
         <rules />
@@ -762,7 +801,7 @@
         <visible>true</visible>
         <widget_type>Linking Container</widget_type>
         <width>3241</width>
-        <wuid>-757f7dec:14bb5bc0470:1ca0</wuid>
+        <wuid>-6949cace:14c9978aa31:-7ce3</wuid>
         <x>0</x>
         <y>0</y>
       </widget>
