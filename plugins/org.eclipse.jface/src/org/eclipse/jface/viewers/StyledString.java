@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2008, 2013 IBM Corporation and others.
+ * Copyright (c) 2008, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ import org.eclipse.swt.graphics.TextStyle;
  *
  * @since 3.4
  */
-public class StyledString {
+public class StyledString implements CharSequence {
 
 	/**
 	 * A styler will be asked to apply its styles to one ore more ranges in the
@@ -156,8 +156,25 @@ public class StyledString {
 	 *
 	 * @return the length of the current string
 	 */
+	@Override
 	public int length() {
 		return fBuffer.length();
+	}
+
+	/**
+	 * @since 3.12
+	 */
+	@Override
+	public CharSequence subSequence(int start, int end) {
+		return fBuffer.subSequence(start, end);
+	}
+
+	/**
+	 * @since 3.12
+	 */
+	@Override
+	public char charAt(int index) {
+		return fBuffer.charAt(index);
 	}
 
 	/**

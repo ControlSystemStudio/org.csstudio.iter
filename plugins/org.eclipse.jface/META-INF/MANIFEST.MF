@@ -1,19 +1,11 @@
-Manifest-Version: 2
-Bundle-Name: %pluginName
-Bundle-Version: 3.11.1.v20160128-1644
-Bundle-ClassPath: .
-Bundle-Localization: plugin
-Bundle-Activator: org.eclipse.jface.internal.JFaceActivator
-Bundle-SymbolicName: org.eclipse.jface;singleton:=true
-Require-Bundle: org.eclipse.swt;bundle-version="[3.104.0,4.0.0)";visibility:=reexport,
- org.eclipse.core.commands;bundle-version="[3.4.0,4.0.0)";visibility:=reexport,
- org.eclipse.equinox.common;bundle-version="[3.3.0,4.0.0)",
- org.eclipse.equinox.bidi;bundle-version="[0.10.0,2.0.0)";resolution:=optional
+Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-ActivationPolicy: lazy
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.jface;singleton:=true
+Bundle-Version: 3.12.2.v20170113-2113
+Bundle-ClassPath: .
 Bundle-Vendor: %providerName
-Import-Package: javax.xml.parsers,org.osgi.framework,org.w3c.dom,org.xml.sax
+Bundle-Localization: plugin
 Export-Package: org.eclipse.jface,
  org.eclipse.jface.action,
  org.eclipse.jface.action.images,
@@ -41,3 +33,12 @@ Export-Package: org.eclipse.jface,
  org.eclipse.jface.window,
  org.eclipse.jface.wizard,
  org.eclipse.jface.wizard.images
+Require-Bundle: org.eclipse.swt;bundle-version="[3.104.0,4.0.0)";visibility:=reexport,
+ org.eclipse.core.commands;bundle-version="[3.4.0,4.0.0)";visibility:=reexport,
+ org.eclipse.equinox.common;bundle-version="[3.3.0,4.0.0)",
+ org.eclipse.equinox.bidi;bundle-version="[0.10.0,2.0.0)";resolution:=optional
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: javax.xml.parsers,
+ org.osgi.framework,
+ org.w3c.dom,
+ org.xml.sax

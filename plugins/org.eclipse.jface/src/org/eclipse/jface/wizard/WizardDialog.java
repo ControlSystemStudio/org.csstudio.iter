@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2000, 2013 IBM Corporation and others.
+ * Copyright (c) 2000, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,6 +10,7 @@
  *     Chris Gross (schtoo@schtoo.com) - patch for bug 16179
  *     Eugene Ostroukhov <eugeneo@symbian.org> - Bug 287887 [Wizards] [api] Cancel button has two distinct roles
  *     Paul Adams <padams@ittvis.com> - Bug 202534 - [Dialogs] SWT error in Wizard dialog when help is displayed and "Finish" is pressed
+ *     Jan-Ove Weichel <janove.weichel@vogella.com> - Bug 475879
  *******************************************************************************/
 package org.eclipse.jface.wizard;
 
@@ -43,12 +44,8 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.accessibility.AccessibleAdapter;
 import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.custom.BusyIndicator;
-import org.eclipse.swt.events.HelpEvent;
-import org.eclipse.swt.events.HelpListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.events.TraverseEvent;
-import org.eclipse.swt.events.TraverseListener;
 import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
@@ -93,10 +90,10 @@ public class WizardDialog extends TitleAreaDialog implements IWizardContainer2,
 	private IWizard wizard;
 
 	// Wizards to dispose
-	private ArrayList<IWizard> createdWizards = new ArrayList<IWizard>();
+	private ArrayList<IWizard> createdWizards = new ArrayList<>();
 
 	// Current nested wizards
-	private ArrayList<IWizard> nestedWizards = new ArrayList<IWizard>();
+	private ArrayList<IWizard> nestedWizards = new ArrayList<>();
 
 	// The currently displayed page.
 	private IWizardPage currentPage = null;
@@ -371,24 +368,21 @@ public class WizardDialog extends TitleAreaDialog implements IWizardContainer2,
 			// Install traverse listener once in order to implement 'Enter' and 'Space' key blocking
 			if (timeWhenLastJobFinished == -1) {
 				timeWhenLastJobFinished= 0;
-				getShell().addTraverseListener(new TraverseListener() {
-					@Override
-					public void keyTraversed(TraverseEvent e) {
-						if (e.detail == SWT.TRAVERSE_RETURN || (e.detail == SWT.TRAVERSE_MNEMONIC && e.keyCode == 32)) {
-							// We want to ignore the keystroke when we detect that it has been received within the
-							// delay period after the last operation has finished.  This prevents the user from accidentally
-							// hitting "Enter" or "Space", intending to cancel an operation, but having it processed exactly
-							// when the operation finished, thus traversing the wizard.  If there is another operation still
-							// running, the UI is locked anyway so we are not in this code.  This listener should fire only
-							// after the UI state is restored (which by definition means all jobs are done.
-							// See https://bugs.eclipse.org/bugs/show_bug.cgi?id=287887
-							if (timeWhenLastJobFinished != 0 && System.currentTimeMillis() - timeWhenLastJobFinished < RESTORE_ENTER_DELAY) {
-								e.doit= false;
-								return;
-							}
-							timeWhenLastJobFinished= 0;
-						}}
-				});
+				getShell().addTraverseListener(e -> {
+					if (e.detail == SWT.TRAVERSE_RETURN || (e.detail == SWT.TRAVERSE_MNEMONIC && e.keyCode == 32)) {
+						// We want to ignore the keystroke when we detect that it has been received within the
+						// delay period after the last operation has finished.  This prevents the user from accidentally
+						// hitting "Enter" or "Space", intending to cancel an operation, but having it processed exactly
+						// when the operation finished, thus traversing the wizard.  If there is another operation still
+						// running, the UI is locked anyway so we are not in this code.  This listener should fire only
+						// after the UI state is restored (which by definition means all jobs are done.
+						// See https://bugs.eclipse.org/bugs/show_bug.cgi?id=287887
+						if (timeWhenLastJobFinished != 0 && System.currentTimeMillis() - timeWhenLastJobFinished < RESTORE_ENTER_DELAY) {
+							e.doit= false;
+							return;
+						}
+						timeWhenLastJobFinished= 0;
+					}});
 			}
 		}
 		return savedState;
@@ -483,13 +477,10 @@ public class WizardDialog extends TitleAreaDialog implements IWizardContainer2,
 	protected void configureShell(Shell newShell) {
 		super.configureShell(newShell);
 		// Register help listener on the shell
-		newShell.addHelpListener(new HelpListener() {
-			@Override
-			public void helpRequested(HelpEvent event) {
-				// call perform help on the current page
-				if (currentPage != null) {
-					currentPage.performHelp();
-				}
+		newShell.addHelpListener(event -> {
+			// call perform help on the current page
+			if (currentPage != null) {
+				currentPage.performHelp();
 			}
 		});
 	}
@@ -557,7 +548,7 @@ public class WizardDialog extends TitleAreaDialog implements IWizardContainer2,
 		button.setText(IDialogConstants.CANCEL_LABEL);
 		setButtonLayoutData(button);
 		button.setFont(parent.getFont());
-		button.setData(new Integer(IDialogConstants.CANCEL_ID));
+		button.setData(Integer.valueOf(IDialogConstants.CANCEL_ID));
 		button.addSelectionListener(cancelListener);
 		return button;
 	}
@@ -775,7 +766,7 @@ public class WizardDialog extends TitleAreaDialog implements IWizardContainer2,
 				null,
 				JFaceResources.getString("WizardClosingDialog.message"), //$NON-NLS-1$
 				MessageDialog.QUESTION,
-				new String[] { IDialogConstants.OK_LABEL }, 0) {
+				0, IDialogConstants.OK_LABEL) {
 			@Override
 			protected int getShellStyle() {
 				return super.getShellStyle() | SWT.SHEET;
@@ -1052,7 +1043,7 @@ public class WizardDialog extends TitleAreaDialog implements IWizardContainer2,
 	 * @see #restoreUIState
 	 */
 	private Map<String, Object> saveUIState(boolean keepCancelEnabled) {
-		Map<String, Object> savedState = new HashMap<String, Object>(10);
+		Map<String, Object> savedState = new HashMap<>(10);
 		saveEnableStateAndSet(backButton, savedState, "back", false); //$NON-NLS-1$
 		saveEnableStateAndSet(nextButton, savedState, "next", false); //$NON-NLS-1$
 		saveEnableStateAndSet(finishButton, savedState, "finish", false); //$NON-NLS-1$
@@ -1191,12 +1182,7 @@ public class WizardDialog extends TitleAreaDialog implements IWizardContainer2,
 			updateForPage(page);
 		} else {
 			final IWizardPage finalPage = page;
-			BusyIndicator.showWhile(getContents().getDisplay(), new Runnable() {
-				@Override
-				public void run() {
-					updateForPage(finalPage);
-				}
-			});
+			BusyIndicator.showWhile(getContents().getDisplay(), () -> updateForPage(finalPage));
 		}
 	}
 
@@ -1216,9 +1202,9 @@ public class WizardDialog extends TitleAreaDialog implements IWizardContainer2,
 			page.createControl(pageContainer);
 			// the page is responsible for ensuring the created control is
 			// accessible via getControl.
-			Assert.isNotNull(page.getControl(), JFaceResources.format(
-					JFaceResources.getString("WizardDialog.missingSetControl"), //$NON-NLS-1$
-					new Object[] { page.getName() }));
+			Assert.isNotNull(page.getControl(),
+					JFaceResources.format(JFaceResources.getString("WizardDialog.missingSetControl"), //$NON-NLS-1$
+							page.getName()));
 			// ensure the dialog is large enough for this page
 			updateSize(page);
 		}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2013 IBM Corporation and others.
+ * Copyright (c) 2006, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Layout;
 import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.ScrollBar;
 import org.eclipse.swt.widgets.Scrollable;
 import org.eclipse.swt.widgets.Widget;
 
@@ -66,16 +66,31 @@ public abstract class AbstractColumnLayout extends Layout {
 
 	private boolean relayout = true;
 
-	private Listener resizeListener = new Listener() {
+	private boolean adjustForScrollBar = false;
 
-		@Override
-		public void handleEvent(Event event) {
-			if (!inupdateMode) {
-				updateColumnData(event.widget);
-			}
+	private Listener resizeListener = event -> {
+		if (!inupdateMode) {
+			updateColumnData(event.widget);
 		}
-
 	};
+
+	/**
+	 * Creates a new abstract column layout.
+	 */
+	public AbstractColumnLayout() {
+	}
+
+	/**
+	 * Creates a new abstract column layout.
+	 *
+	 * @param adjustForScrollBar
+	 *            <code>true</code> if the layout should reserve space for the
+	 *            vertical scroll bar
+	 * @since 3.12
+	 */
+	public AbstractColumnLayout(boolean adjustForScrollBar) {
+		this.adjustForScrollBar = adjustForScrollBar;
+	}
 
 	/**
 	 * Adds a new column of data to this table layout.
@@ -111,7 +126,10 @@ public abstract class AbstractColumnLayout extends Layout {
 			int hHint) {
 		Point result = scrollable.computeSize(wHint, hHint);
 
-		int width = 0;
+		int width = scrollable.getBorderWidth() * 2;
+		if (adjustForScrollBar && scrollable.getVerticalBar() != null) {
+			width += scrollable.getVerticalBar().getSize().x;
+		}
 		int size = getColumnCount(scrollable);
 		for (int i = 0; i < size; ++i) {
 			ColumnLayoutData layoutData = getLayoutData(scrollable, i);
@@ -128,8 +146,7 @@ public abstract class AbstractColumnLayout extends Layout {
 				Assert.isTrue(false, "Unknown column layout data"); //$NON-NLS-1$
 			}
 		}
-		if (width > result.x)
-			result.x = width;
+		result.x = width;
 
 		return result;
 	}
@@ -172,6 +189,12 @@ public abstract class AbstractColumnLayout extends Layout {
 				totalWeight += cw.weight;
 			} else {
 				Assert.isTrue(false, "Unknown column layout data"); //$NON-NLS-1$
+			}
+		}
+		if (adjustForScrollBar) {
+			ScrollBar verticalBar = scrollable.getVerticalBar();
+			if (verticalBar != null && scrollable.getScrollbarsMode() == SWT.NONE && !verticalBar.isVisible()) {
+				fixedWidth += verticalBar.getSize().x;
 			}
 		}
 

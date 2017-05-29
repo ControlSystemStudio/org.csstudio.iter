@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2007 IBM Corporation and others.
+ * Copyright (c) 2006, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,7 +12,6 @@
 package org.eclipse.jface.viewers;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  * A viewer sorter that is provided extra context in the form of the path of the
@@ -24,12 +23,12 @@ public class TreePathViewerSorter extends ViewerSorter {
 
 	/**
 	 * Provide a category for the given element that will have the given parent
-	 * path when it is added to the viewer. The provided path is
-	 * relative to the viewer input. The parent path will
-	 * be <code>null</code> when the elements are root elements.
+	 * path when it is added to the viewer. The provided path is relative to the
+	 * viewer input. The parent path will be <code>null</code> when the elements
+	 * are root elements.
 	 * <p>
-	 * By default, the this method calls
-	 * {@link ViewerSorter#category(Object)}. Subclasses may override.
+	 * By default, the this method calls {@code ViewerSorter#category(Object)}.
+	 * Subclasses may override.
 	 *
 	 * @param parentPath
 	 *            the parent path for the element
@@ -48,7 +47,7 @@ public class TreePathViewerSorter extends ViewerSorter {
 	 * be <code>null</code> when the elements are root elements.
 	 * <p>
 	 * By default, the this method calls
-	 * {@link ViewerSorter#sort(Viewer, Object[])}. Subclasses may override.
+	 * {@code ViewerSorter#sort(Viewer, Object[])}. Subclasses may override.
 	 * @param viewer the viewer
 	 * @param parentPath the parent path for the two elements
      * @param e1 the first element
@@ -69,7 +68,7 @@ public class TreePathViewerSorter extends ViewerSorter {
 	 * be <code>null</code> when the elements are root elements.
      * <p>
      * The default implementation of this method calls
-     * {@link ViewerSorter#isSorterProperty(Object, String)}.
+     * {@code ViewerSorter#isSorterProperty(Object, String)}.
      * Subclasses may reimplement.
 	 * @param parentPath the parent path of the element
      * @param element the element
@@ -100,11 +99,6 @@ public class TreePathViewerSorter extends ViewerSorter {
      * @param elements the elements to sort
      */
     public void sort(final Viewer viewer, final TreePath parentPath, Object[] elements) {
-        Arrays.sort(elements, new Comparator() {
-            @Override
-			public int compare(Object a, Object b) {
-                return TreePathViewerSorter.this.compare(viewer, parentPath, a, b);
-            }
-        });
+        Arrays.sort(elements, (a, b) -> TreePathViewerSorter.this.compare(viewer, parentPath, a, b));
     }
 }

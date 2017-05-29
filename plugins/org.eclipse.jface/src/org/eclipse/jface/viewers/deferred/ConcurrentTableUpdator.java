@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2004, 2006 IBM Corporation and others.
+ * Copyright (c) 2004, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -100,15 +100,12 @@ package org.eclipse.jface.viewers.deferred;
      * Runnable that can be posted with an asyncExec to schedule
      * an update to the real table.
      */
-    Runnable uiRunnable = new Runnable() {
-        @Override
-		public void run() {
-            updateScheduled = false;
-            if(!table.getControl().isDisposed()) {
-				updateTable();
-			}
-        }
-    };
+    Runnable uiRunnable = () -> {
+	    updateScheduled = false;
+	    if(!table.getControl().isDisposed()) {
+			updateTable();
+		}
+	};
 
     /**
      * Creates a new table updator

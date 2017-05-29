@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2004, 2010 IBM Corporation and others.
+ * Copyright (c) 2004, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -273,7 +273,7 @@ public final class BindingManager extends HandleObjectManager implements
 	 * to bindings (<code>Binding</code>). This value may be
 	 * <code>null</code> if there is no existing solution.
 	 */
-	private Map prefixTable = null;
+	private Map prefixTable;
 
 	/**
 	 * <p>
@@ -1735,13 +1735,12 @@ public final class BindingManager extends HandleObjectManager implements
 			existingCache = bindingCache;
 			cachedBindings.put(existingCache, existingCache);
 		}
-		Map commandIdsByTrigger = existingCache.getBindingsByTrigger();
-		if (commandIdsByTrigger != null) {
+		if (existingCache.isInitialized()) {
 			if (DEBUG) {
 				Tracing.printTrace("BINDINGS", "Cache hit"); //$NON-NLS-1$ //$NON-NLS-2$
 			}
-			setActiveBindings(commandIdsByTrigger, existingCache
-					.getTriggersByCommandId(), existingCache.getPrefixTable(),
+			setActiveBindings(existingCache.getBindingsByTrigger(), existingCache.getTriggersByCommandId(),
+					existingCache.getPrefixTable(),
 					existingCache.getConflictsByTrigger());
 			return;
 		}
@@ -1752,18 +1751,22 @@ public final class BindingManager extends HandleObjectManager implements
 		}
 
 		// Compute the active bindings.
-		commandIdsByTrigger = new HashMap();
+		final Map commandIdsByTrigger = new HashMap();
 		final Map triggersByParameterizedCommand = new HashMap();
 		final Map conflictsByTrigger = new HashMap();
 		computeBindings(activeContextTree, commandIdsByTrigger,
 				triggersByParameterizedCommand, conflictsByTrigger);
+		final Map newPrefixTable = buildPrefixTable(commandIdsByTrigger);
+
+		// init cache
 		existingCache.setBindingsByTrigger(commandIdsByTrigger);
 		existingCache.setTriggersByCommandId(triggersByParameterizedCommand);
 		existingCache.setConflictsByTrigger(conflictsByTrigger);
+		existingCache.setPrefixTable(newPrefixTable);
+
 		setActiveBindings(commandIdsByTrigger, triggersByParameterizedCommand,
-				buildPrefixTable(commandIdsByTrigger),
+				newPrefixTable,
 				conflictsByTrigger);
-		existingCache.setPrefixTable(prefixTable);
 	}
 
 	/**

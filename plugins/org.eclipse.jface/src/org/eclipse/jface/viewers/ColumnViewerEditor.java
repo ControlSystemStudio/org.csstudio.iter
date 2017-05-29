@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2013 IBM Corporation and others.
+ * Copyright (c) 2006, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,7 +16,6 @@ package org.eclipse.jface.viewers;
 
 import org.eclipse.core.runtime.ListenerList;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
@@ -127,15 +126,10 @@ public abstract class ColumnViewerEditor {
 					.setEnableEditorActivationWithKeyboard(true);
 		}
 		this.feature = feature;
-		this.disposeListener = new DisposeListener() {
-
-			@Override
-			public void widgetDisposed(DisposeEvent e) {
-				if( viewer.isCellEditorActive() ) {
-					cancelEditing();
-				}
+		this.disposeListener = e -> {
+			if( viewer.isCellEditorActive() ) {
+				cancelEditing();
 			}
-
 		};
 		initCellEditorListener();
 	}
@@ -246,15 +240,11 @@ public abstract class ColumnViewerEditor {
 				}
 
 				if (tabeditingListener == null) {
-					tabeditingListener = new TraverseListener() {
-
-						@Override
-						public void keyTraversed(TraverseEvent e) {
-							if ((feature & DEFAULT) != DEFAULT) {
-								processTraverseEvent(cell.getColumnIndex(),
-										viewer.getViewerRowFromItem(cell
-												.getItem()), e);
-							}
+					tabeditingListener = e -> {
+						if ((feature & DEFAULT) != DEFAULT) {
+							processTraverseEvent(cell.getColumnIndex(),
+									viewer.getViewerRowFromItem(cell
+											.getItem()), e);
 						}
 					};
 				}

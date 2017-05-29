@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2008, 2013 IBM Corporation and others.
+ * Copyright (c) 2008, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -72,12 +72,7 @@ public class DecoratingStyledCellLabelProvider extends
 		this.decorationContext = decorationContext != null ? decorationContext
 				: DecorationContext.DEFAULT_CONTEXT;
 
-		this.labelProviderListener = new ILabelProviderListener() {
-			@Override
-			public void labelProviderChanged(LabelProviderChangedEvent event) {
-				fireLabelProviderChanged(event);
-			}
-		};
+		this.labelProviderListener = event -> fireLabelProviderChanged(event);
 		labelProvider.addListener(this.labelProviderListener);
 		if (decorator != null)
 			decorator.addListener(this.labelProviderListener);

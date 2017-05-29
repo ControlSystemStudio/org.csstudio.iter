@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2004, 2013 IBM Corporation and others.
+ * Copyright (c) 2004, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,8 +22,6 @@ import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.util.Util;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.DisposeEvent;
-import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.ModifyEvent;
@@ -553,12 +551,7 @@ public final class KeySequenceText {
 			final Font font = new Font(text.getDisplay(),
 					"Lucida Grande", 13, SWT.NORMAL); //$NON-NLS-1$
 			text.setFont(font);
-			text.addDisposeListener(new DisposeListener() {
-				@Override
-				public void widgetDisposed(DisposeEvent e) {
-					font.dispose();
-				}
-			});
+			text.addDisposeListener(e -> font.dispose());
 		}
 
 		// Add the key listener.
@@ -567,12 +560,7 @@ public final class KeySequenceText {
 
 		final TraversalFilterManager traversalFilterManager = new TraversalFilterManager();
 		text.addFocusListener(traversalFilterManager);
-		text.addDisposeListener(new DisposeListener() {
-			@Override
-			public void widgetDisposed(DisposeEvent e) {
-				traversalFilterManager.dispose();
-			}
-		});
+		text.addDisposeListener(e -> traversalFilterManager.dispose());
 
 		// Add an internal modify listener.
 		text.addModifyListener(updateSequenceListener);
@@ -645,7 +633,7 @@ public final class KeySequenceText {
 		 * Keep track of the text range under which the stroke appears (i.e.,
 		 * startTextIndex->string.length() is the first selected stroke).
 		 */
-		String string = new String();
+		String string = ""; //$NON-NLS-1$
 		List currentStrokes = new ArrayList();
 		int startTextIndex = 0; // keeps track of the start of the stroke
 		final int keyStrokesLength = keyStrokes.length;

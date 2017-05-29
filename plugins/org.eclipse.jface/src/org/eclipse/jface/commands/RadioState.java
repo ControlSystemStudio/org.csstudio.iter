@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2005, 2013 IBM Corporation and others.
+ * Copyright (c) 2005, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -88,7 +88,7 @@ public class RadioState extends ToggleState {
 			 */
 			private final void addMember(final RadioState state) {
 				if (members == null) {
-					members = new HashSet<RadioState>(5);
+					members = new HashSet<>(5);
 				}
 
 				members.add(state);
@@ -174,7 +174,7 @@ public class RadioState extends ToggleState {
 		private static final void registerState(final String identifier,
 				final RadioState state) {
 			if (radioStatesById == null) {
-				radioStatesById = new HashMap<String, RadioGroup>();
+				radioStatesById = new HashMap<>();
 			}
 
 			final Object currentValue = radioStatesById.get(identifier);

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2007, 2011 IBM Corporation and others.
+ * Copyright (c) 2007, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,7 +11,7 @@
 package org.eclipse.jface.internal;
 
 import org.eclipse.jface.util.BidiUtils;
-
+import org.osgi.framework.FrameworkUtil;
 
 /**
  * Internal class used for non-API debug flags.
@@ -81,7 +81,7 @@ public class InternalPolicy {
 	 *
 	 * @since 3.11
 	 */
-	public static boolean DEBUG_LOAD_URL_IMAGE_DESCRIPTOR_2x = false;
+	public static boolean DEBUG_LOAD_URL_IMAGE_DESCRIPTOR_2x = true;
 
 	/**
 	 * (NON-API) Always load the .png image of the "@2x" version, even if the
@@ -98,5 +98,13 @@ public class InternalPolicy {
 	 * @since 3.5
 	 */
 	public static boolean OSGI_AVAILABLE; // default value is false
+
+	static {
+		try {
+			OSGI_AVAILABLE = FrameworkUtil.getBundle(InternalPolicy.class) != null;
+		} catch (Throwable t) {
+			OSGI_AVAILABLE = false;
+		}
+	}
 
 }

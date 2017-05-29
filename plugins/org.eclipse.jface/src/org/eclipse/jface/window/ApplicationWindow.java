@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2000, 2013 IBM Corporation and others.
+ * Copyright (c) 2000, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -753,19 +753,16 @@ public class ApplicationWindow extends Window implements IRunnableContext {
 				}
                 mgr.setCancelEnabled(cancelable);
                 final Exception[] holder = new Exception[1];
-                BusyIndicator.showWhile(display, new Runnable() {
-                    @Override
-					public void run() {
-                        try {
-                            ModalContext.run(runnable, fork, mgr
-                                    .getProgressMonitor(), display);
-                        } catch (InvocationTargetException ite) {
-                            holder[0] = ite;
-                        } catch (InterruptedException ie) {
-                            holder[0] = ie;
-                        }
-                    }
-                });
+                BusyIndicator.showWhile(display, () -> {
+				    try {
+				        ModalContext.run(runnable, fork, mgr
+				                .getProgressMonitor(), display);
+				    } catch (InvocationTargetException ite) {
+				        holder[0] = ite;
+				    } catch (InterruptedException ie) {
+				        holder[0] = ie;
+				    }
+				});
 
                 if (holder[0] != null) {
                     if (holder[0] instanceof InvocationTargetException) {

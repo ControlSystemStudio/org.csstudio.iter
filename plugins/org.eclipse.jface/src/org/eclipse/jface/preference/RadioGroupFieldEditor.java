@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2000, 2013 IBM Corporation and others.
+ * Copyright (c) 2000, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,8 +12,6 @@ package org.eclipse.jface.preference;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.DisposeEvent;
-import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Font;
@@ -262,13 +260,10 @@ public class RadioGroupFieldEditor extends FieldEditor {
                     }
                 });
             }
-            radioBox.addDisposeListener(new DisposeListener() {
-                @Override
-				public void widgetDisposed(DisposeEvent event) {
-                    radioBox = null;
-                    radioButtons = null;
-                }
-            });
+            radioBox.addDisposeListener(event -> {
+			    radioBox = null;
+			    radioButtons = null;
+			});
         } else {
             checkParent(radioBox, parent);
         }

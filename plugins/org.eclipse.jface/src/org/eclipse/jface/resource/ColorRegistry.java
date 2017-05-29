@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2003, 2013 IBM Corporation and others.
+ * Copyright (c) 2003, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,29 +62,24 @@ public class ColorRegistry extends ResourceRegistry {
      * Collection of <code>Color</code> that are now stale to be disposed when
      * it is safe to do so (i.e. on shutdown).
      */
-    private List<Color> staleColors = new ArrayList<Color>();
+    private List<Color> staleColors = new ArrayList<>();
 
     /**
      * Table of known colors, keyed by symbolic color name (key type: <code>String</code>,
      * value type: <code>org.eclipse.swt.graphics.Color</code>.
      */
-    private Map<String, Color> stringToColor = new HashMap<String, Color>(7);
+    private Map<String, Color> stringToColor = new HashMap<>(7);
 
     /**
      * Table of known color data, keyed by symbolic color name (key type:
      * <code>String</code>, value type: <code>org.eclipse.swt.graphics.RGB</code>).
      */
-    private Map<String, RGB> stringToRGB = new HashMap<String, RGB>(7);
+    private Map<String, RGB> stringToRGB = new HashMap<>(7);
 
     /**
      * Runnable that cleans up the manager on disposal of the display.
      */
-    protected Runnable displayRunnable = new Runnable() {
-        @Override
-		public void run() {
-            clearCaches();
-        }
-    };
+    protected Runnable displayRunnable = this::clearCaches;
 
 	private final boolean cleanOnDisplayDisposal;
 

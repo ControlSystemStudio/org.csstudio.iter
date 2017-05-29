@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2000, 2013 IBM Corporation and others.
+ * Copyright (c) 2000, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,8 +13,8 @@ package org.eclipse.jface.preference;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
 /**
@@ -118,7 +118,7 @@ public class PreferenceNode implements IPreferenceNode {
     @Override
 	public void add(IPreferenceNode node) {
         if (subNodes == null) {
-			subNodes = new ArrayList<IPreferenceNode>();
+			subNodes = new ArrayList<>();
 		}
         subNodes.add(node);
     }
@@ -157,9 +157,6 @@ public class PreferenceNode implements IPreferenceNode {
         page.setTitle(label);
     }
 
-    /**
-     * (non-Javadoc) Method declared on IPreferenceNode.
-     */
     @Override
 	public void disposeResources() {
         if (image != null) {
