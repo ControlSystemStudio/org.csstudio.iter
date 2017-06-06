@@ -4,6 +4,7 @@ import static org.diirt.datasource.formula.ExpressionLanguage.formula;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -64,12 +65,9 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
-import java.time.Duration;
 
 public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
-//    private interface AlarmSeverity extends ISeverity{
-//        public void copy(ISeverity severity);
-//    }
+
     private final class WidgetPVListener extends IPVListener.Stub{
         private String pvPropID;
         private boolean isControlPV;
@@ -89,10 +87,6 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
         public void valueChanged(IPV pv) {
 
             final AbstractWidgetModel widgetModel = editpart.getWidgetModel();
-
-            //write access
-//            if(isControlPV)
-//                updateWritable(widgetModel, pv);
 
             if (pv.getValue() != null) {
                 if (ignoreOldPVValue) {
@@ -117,10 +111,12 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
     //when alarm turn back to no_alarm state/
     private static final AbstractBorder BORDER_NO_ALARM = new AbstractBorder() {
 
+        @Override
         public Insets getInsets(IFigure figure) {
             return new Insets(2);
         }
 
+        @Override
         public void paint(IFigure figure, Graphics graphics, Insets insets) {
         }
     };
@@ -134,8 +130,8 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
      * is not useful. Ignore the old pv value will help to reduce memory usage.
      */
     private boolean ignoreOldPVValue =true;
-
     private boolean isBackColorAlarmSensitive;
+
     private boolean isBorderAlarmSensitive;
     private boolean isForeColorAlarmSensitive;
     private AlarmSeverity alarmSeverity = AlarmSeverity.NONE;
@@ -157,8 +153,8 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
     private IPVWidgetModel widgetModel;
     private boolean isAllValuesBuffered;
 
-    private ListenerList setPVValueListeners;
-    private ListenerList alarmSeverityListeners;
+    private ListenerList<ISetPVValueListener> setPVValueListeners;
+    private ListenerList<AlarmSeverityListener> alarmSeverityListeners;
     private boolean isAlarmPulsing = false;
     private ScheduledFuture<?> scheduledFuture;
 
@@ -188,16 +184,6 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
 
                     if(sp.getPropertyValue() == null ||
                             ((String)sp.getPropertyValue()).trim().length() <=0)
-                        continue;
-
-                    /* BeastDataSource channels should not be configured as PVs.
-                     * If a Beast channel is set for PVName, it can only provide Alarm Sensitivity functionality, not values etc.
-                     * This is to prevent Alarm Tree Node BeastDS channels to be registered as PVs, because they will not be
-                     * found and the widget will (incorrectly) have the Disconnected state.
-                     *
-                     * To this end, we will ensure any PVs starting with "beast://" are not added to the pvMap.
-                     */
-                    if (((String)sp.getPropertyValue()).toLowerCase().startsWith(BEAST_SCHEMA))
                         continue;
 
                     try {
@@ -251,16 +237,18 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                 pv.stop();
             pvsHaveBeenStarted = false;
         }
-            for(Map.Entry<String, IPVListener> entry  : pvListenerMap.entrySet()){
-                String pvPropID = entry.getKey();
-                pvMap.get(pvPropID).removeListener(entry.getValue());
-            }
 
-            pvMap.clear();
-            pvListenerMap.clear();
-            stopPulsing();
+        for (Map.Entry<String, IPVListener> entry  : pvListenerMap.entrySet()) {
+            String pvPropID = entry.getKey();
+            pvMap.get(pvPropID).removeListener(entry.getValue());
+        }
+
+        pvMap.clear();
+        pvListenerMap.clear();
+        stopPulsing();
     }
 
+    @Override
     public IPV getControlPV(){
         if(controlPVPropId != null)
             return pvMap.get(controlPVPropId);
@@ -273,6 +261,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
      * @return the PV corresponding to the <code>PV Name</code> property.
      * null if PV Name is not configured for this widget.
      */
+    @Override
     public IPV getPV(){
         return pvMap.get(IPVWidgetModel.PROP_PVNAME);
     }
@@ -281,6 +270,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
      * @param pvPropId the PV property id.
      * @return the corresponding pv for the pvPropId. null if the pv doesn't exist.
      */
+    @Override
     public IPV getPV(String pvPropId){
         return pvMap.get(pvPropId);
     }
@@ -289,6 +279,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
      * @param pvPropId the property id of the PV. It is "pv_name" for the main PV.
      * @return the {@link IValue} of the PV.
      */
+    @Override
     public VType getPVValue(String pvPropId){
         final IPV pv = pvMap.get(pvPropId);
         if(pv != null){
@@ -334,6 +325,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
             updateSuppressTimer = new OPITimer();
         if(timerTask == null)
             timerTask = new Runnable() {
+                @Override
                 public void run() {
                     AbstractWidgetProperty pvValueProperty =
                             editpart.getWidgetModel().getProperty(controlPVValuePropId);
@@ -359,12 +351,14 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
         initUpdateSuppressTimer();
     }
 
+    @Override
     public boolean isPVControlWidget(){
         return controlPVPropId!=null;
     }
 
     public void registerBasePropertyChangeHandlers() {
         IWidgetPropertyChangeHandler borderHandler = new IWidgetPropertyChangeHandler(){
+            @Override
             public boolean handleChange(Object oldValue, Object newValue,
                     IFigure figure) {
                 editpart.setFigureBorder(editpart.calculateBorder());
@@ -377,6 +371,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
 
         // value
         IWidgetPropertyChangeHandler valueHandler = new IWidgetPropertyChangeHandler() {
+            @Override
             public boolean handleChange(final Object oldValue,
                     final Object newValue,
                     final IFigure figure) {
@@ -451,6 +446,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
             public PVNamePropertyChangeHandler(String pvNamePropID) {
                 this.pvNamePropID = pvNamePropID;
             }
+            @Override
             public boolean handleChange(Object oldValue, Object newValue,
                     IFigure figure) {
                 IPV oldPV = pvMap.get(pvNamePropID);
@@ -462,12 +458,6 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                 pvMap.remove(pvNamePropID);
                 String newPVName = ((String)newValue).trim();
                 if(newPVName.length() <= 0)
-                    return false;
-
-                /* Ensure any PVs starting with "beast://" are not added to the pvMap.
-                 * See comment in doActivate().
-                 */
-                if (newPVName.toLowerCase().startsWith(BEAST_SCHEMA))
                     return false;
 
                 try {
@@ -515,6 +505,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
             });
 
         IWidgetPropertyChangeHandler backColorHandler = new IWidgetPropertyChangeHandler(){
+            @Override
             public boolean handleChange(Object oldValue, Object newValue, IFigure figure) {
                 saveBackColor = ((OPIColor)newValue).getSWTColor();
                 return false;
@@ -523,6 +514,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
         editpart.setPropertyChangeHandler(AbstractWidgetModel.PROP_COLOR_BACKGROUND, backColorHandler);
 
         IWidgetPropertyChangeHandler foreColorHandler = new IWidgetPropertyChangeHandler(){
+            @Override
             public boolean handleChange(Object oldValue, Object newValue, IFigure figure) {
                 saveForeColor = ((OPIColor)newValue).getSWTColor();
                 return false;
@@ -532,6 +524,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
 
         IWidgetPropertyChangeHandler backColorAlarmSensitiveHandler = new IWidgetPropertyChangeHandler() {
 
+            @Override
             public boolean handleChange(Object oldValue, Object newValue, IFigure figure) {
                 isBackColorAlarmSensitive = (Boolean)newValue;
                 figure.setBackgroundColor(calculateBackColor());
@@ -542,6 +535,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
 
         IWidgetPropertyChangeHandler foreColorAlarmSensitiveHandler = new IWidgetPropertyChangeHandler() {
 
+            @Override
             public boolean handleChange(Object oldValue, Object newValue, IFigure figure) {
                 isForeColorAlarmSensitive = (Boolean)newValue;
                 figure.setForegroundColor(calculateForeColor());
@@ -553,6 +547,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
 
         IWidgetPropertyChangeHandler alarmPulsingHandler = new IWidgetPropertyChangeHandler() {
 
+            @Override
             public boolean handleChange(Object oldValue, Object newValue, IFigure figure) {
                 isAlarmPulsing = (Boolean)newValue;
                 stopPulsing();
@@ -577,9 +572,11 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
     public synchronized void startPulsing() {
         stopPulsing();
         Runnable pulsingTask = new Runnable() {
+            @Override
             public void run() {
                 UIBundlingThread.getInstance().addRunnable(new Runnable() {
 
+                    @Override
                     public void run() {
                         synchronized (PVWidgetEditpartDelegate.this) {
                             // Change the colours of all alarm sensitive components
@@ -620,39 +617,40 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
         isBorderAlarmSensitive = getWidgetModel().isBorderAlarmSensitve();
         if(!isBorderAlarmSensitive)
             return null;
+        else {
+            Border alarmBorder;
+            switch (borderSeverity) {
+            case NONE:
+                if(editpart.getWidgetModel().getBorderStyle() == BorderStyle.NONE)
+                    alarmBorder = BORDER_NO_ALARM;
+                else
+                    alarmBorder = BorderFactory.createBorder(
+                            editpart.getWidgetModel().getBorderStyle(),
+                            editpart.getWidgetModel().getBorderWidth(),
+                            editpart.getWidgetModel().getBorderColor(),
+                            editpart.getWidgetModel().getName());
+                break;
+            case MAJOR:
+                alarmBorder = AlarmRepresentationScheme.getMajorBorder(editpart.getWidgetModel().getBorderStyle());
+                break;
+            case MINOR:
+                alarmBorder = AlarmRepresentationScheme.getMinorBorder(editpart.getWidgetModel().getBorderStyle());
+                break;
+            case INVALID:
+            case UNDEFINED:
+            default:
+                alarmBorder = AlarmRepresentationScheme.getInvalidBorder(editpart.getWidgetModel().getBorderStyle());
+                break;
+            }
 
-        Border alarmBorder;
-
-        switch (borderSeverity) {
-        case NONE:
-            if(editpart.getWidgetModel().getBorderStyle() == BorderStyle.NONE)
-                alarmBorder = BORDER_NO_ALARM;
-            else
-                alarmBorder = BorderFactory.createBorder(
-                        editpart.getWidgetModel().getBorderStyle(),
-                        editpart.getWidgetModel().getBorderWidth(),
-                        editpart.getWidgetModel().getBorderColor(),
-                        editpart.getWidgetModel().getName());
-            break;
-        case MAJOR:
-            alarmBorder = AlarmRepresentationScheme.getMajorBorder(editpart.getWidgetModel().getBorderStyle());
-            break;
-        case MINOR:
-            alarmBorder = AlarmRepresentationScheme.getMinorBorder(editpart.getWidgetModel().getBorderStyle());
-            break;
-        case INVALID:
-        case UNDEFINED:
-        default:
-            alarmBorder = AlarmRepresentationScheme.getInvalidBorder(editpart.getWidgetModel().getBorderStyle());
-            break;
+            return alarmBorder;
         }
-
-        return alarmBorder;
     }
 
     public Border calculateBorder() {
-        if (!getWidgetModel().isBorderAlarmSensitve() || !isBeastAlarmAndConnected() || !isBeastAlarmActiveUnack())
-            return calculateBorder(alarmSeverity);
+        // TODO check how should an acknowledged alarm filed be displayed??
+        //if (!getWidgetModel().isBorderAlarmSensitve() || !isBeastAlarmAndConnected() || !isBeastAlarmActiveUnack())
+        //    return calculateBorder(alarmSeverity);
 
         // this widget should Blink
         AlarmSeverity borderSeverity = alarmSeverity;
@@ -679,37 +677,37 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
     public Color calculateAlarmColor(boolean isSensitive, Color saveColor) {
         if (!isSensitive) {
             return saveColor;
-        }
-        synchronized(beastInfo) {
-            // if this widget should blink and the current blink color is the default one, return it early
-            if (isBeastAlarmAndConnected() && isBeastAlarmActiveUnack() && beastInfo.getBeastAlertBlinkState() == 0)
-                return saveColor;
-            // otherwise normally calculate the severity color and return it
-        }
-
-        RGB alarmColor = AlarmRepresentationScheme.getAlarmColor(alarmSeverity);
-
-        if (alarmColor != null) {
-            // Alarm severity is either "Major", "Minor" or "Invalid".
-            if (isAlarmPulsing &&
-                    (alarmSeverity == AlarmSeverity.MINOR || alarmSeverity == AlarmSeverity.MAJOR)) {
-                double alpha = 0.3;
-                int period;
-                if (alarmSeverity == AlarmSeverity.MINOR) {
-                    period = PreferencesHelper.getPulsingAlarmMinorPeriod();
-                } else {
-                    period = PreferencesHelper.getPulsingAlarmMajorPeriod();
-                }
-                alpha += Math.abs(System.currentTimeMillis() % period - period / 2) / (double) period;
-                alarmColor = new RGB(
-                        (int) (saveColor.getRed() * alpha + alarmColor.red * (1-alpha)),
-                        (int) (saveColor.getGreen() * alpha + alarmColor.green * (1-alpha)),
-                        (int) (saveColor.getBlue() * alpha + alarmColor.blue * (1-alpha)));
-            }
-            return CustomMediaFactory.getInstance().getColor(alarmColor);
         } else {
-            // Alarm severity is "OK".
-            return saveColor;
+            synchronized(beastInfo) {
+                // if this widget should blink and the current blink color is the default one, return it early
+                if (isBeastAlarmAndConnected() && isBeastAlarmActiveUnack() && beastInfo.getBeastAlertBlinkState() == 0)
+                    return saveColor;
+                // otherwise normally calculate the severity color and return it
+            }
+
+            RGB alarmColor = AlarmRepresentationScheme.getAlarmColor(alarmSeverity);
+            if (alarmColor != null) {
+                // Alarm severity is either "Major", "Minor" or "Invalid".
+                if (isAlarmPulsing &&
+                        (alarmSeverity == AlarmSeverity.MINOR || alarmSeverity == AlarmSeverity.MAJOR)) {
+                    double alpha = 0.3;
+                    int period;
+                    if (alarmSeverity == AlarmSeverity.MINOR) {
+                        period = PreferencesHelper.getPulsingAlarmMinorPeriod();
+                    } else {
+                        period = PreferencesHelper.getPulsingAlarmMajorPeriod();
+                    }
+                    alpha += Math.abs(System.currentTimeMillis() % period - period / 2) / (double) period;
+                    alarmColor = new RGB(
+                            (int) (saveColor.getRed() * alpha + alarmColor.red * (1-alpha)),
+                            (int) (saveColor.getGreen() * alpha + alarmColor.green * (1-alpha)),
+                            (int) (saveColor.getBlue() * alpha + alarmColor.blue * (1-alpha)));
+                }
+                return CustomMediaFactory.getInstance().getColor(alarmColor);
+            } else {
+                // Alarm severity is "OK".
+                return saveColor;
+            }
         }
     }
 
@@ -717,6 +715,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
      * @param pvPropId
      * @param value
      */
+    @Override
     public void setPVValue(String pvPropId, Object value){
         fireSetPVValue(pvPropId, value);
         final IPV pv = pvMap.get(pvPropId);
@@ -736,6 +735,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                 pv.setValue(value);
             } catch (final Exception e) {
                 UIBundlingThread.getInstance().addRunnable(new Runnable(){
+                    @Override
                     public void run() {
                         String message =
                             "Failed to write PV:" + pv.getName();
@@ -775,7 +775,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
     @Override
     public void addSetPVValueListener(ISetPVValueListener listener) {
         if(setPVValueListeners == null){
-            setPVValueListeners = new ListenerList();
+            setPVValueListeners = new ListenerList<>();
         }
         setPVValueListeners.add(listener);
     }
@@ -804,6 +804,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
             if(lastWriteAccess.get()){
                 UIBundlingThread.getInstance().addRunnable(
                         editpart.getViewer().getControl().getDisplay(),new Runnable(){
+                    @Override
                     public void run() {
                         setControlEnabled(true);
                     }
@@ -811,6 +812,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
             } else {
                 UIBundlingThread.getInstance().addRunnable(
                         editpart.getViewer().getControl().getDisplay(),new Runnable(){
+                    @Override
                     public void run() {
                         setControlEnabled(false);
                     }
@@ -843,7 +845,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
 
     public void addAlarmSeverityListener(AlarmSeverityListener listener) {
         if(alarmSeverityListeners == null){
-            alarmSeverityListeners = new ListenerList();
+            alarmSeverityListeners = new ListenerList<>();
         }
         alarmSeverityListeners.add(listener);
     }
@@ -1079,7 +1081,9 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
             alarmPV.close();
 
         String alarmPVName = getBeastAlarmChannelName(overridePvName);
-        if (alarmPVName.isEmpty()) {
+        final String pvName = getPVName();
+        // do no set up the alarmPv for an alarm PV.
+        if (alarmPVName.isEmpty() || ((pvName != null) && pvName.toLowerCase().startsWith(BEAST_SCHEMA))) {
             alarmPV = null;
             isBeastAlarm = false;
             isBeastAlarmNode = false;
