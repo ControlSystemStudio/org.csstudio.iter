@@ -1,153 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
-  <modelVersion>4.0.0</modelVersion>
-
-  <parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.csstudio</groupId>
+        <artifactId>iter</artifactId>
+        <version>4.5.1-SNAPSHOT</version>
+    </parent>
     <groupId>org.csstudio</groupId>
-    <artifactId>iter</artifactId>
-    <version>4.5.1-SNAPSHOT</version>
-  </parent>
-
-  <groupId>org.csstudio</groupId>
-  <artifactId>iter-repository-rcp</artifactId>
-  <packaging>eclipse-repository</packaging>
-
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <version>1.7</version>
-        <executions>
-          <execution>
-            <id>icons</id>
-            <phase>process-resources</phase>
-            <configuration>
-              <failOnError>true</failOnError>
-              <target>
-                <echo message="Copying icons into tycho target directory ${project.build.directory}" />
-                <copy verbose="false" todir="${project.build.directory}/products/org.csstudio.iter.product.css.product">
-                  <fileset dir="${project.build.directory}/../../products">
-                    <include name="org.csstudio.iter.css.product/icons/**" />
-                  </fileset>
-                </copy>
-              </target>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>org.eclipse.jface</id>
-            <phase>process-resources</phase>
-            <configuration>
-              <failOnError>false</failOnError>
-              <target>
-                <echo message="Copying patched org.eclipse.jface plugin to ${project.build.directory}" />
-                <copy verbose="true" file="${project.build.directory}/../../plugins/org.eclipse.jface/target/org.eclipse.jface-3.12.2.v20170113-2113.jar" 
-                                tofile="${project.build.directory}/products/org.csstudio.iter.product.css.product/org.eclipse.jface_3.12.2.v20170113-2113.jar"/>
-              </target>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution> 
-          <execution>
-            <id>configuration</id>
-            <phase>process-resources</phase>
-            <configuration>
-              <failOnError>false</failOnError>
-              <target>
-                <echo message="Copying configuration files into tycho target directory ${project.build.directory}/rootfiles" />
-                <!-- Create the directory so that p2.inf will be able to complete without issues -->
-                <mkdir dir="${project.build.directory}/rootfiles"/>
-                <!-- Copy the files if they exist. If they don't no problem, they won't be included, which is standard for the official release -->
-                <copy verbose="false" todir="${project.build.directory}/rootfiles">
-                  <fileset dir="${project.build.directory}/../../../m-css-common/src/main/conf">
-                    <include name="css.key"/>
-                    <include name="secure_store.dat"/>
-                  </fileset>
-                </copy>
-              </target>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>${tycho-groupid}</groupId>
-        <artifactId>tycho-p2-director-plugin</artifactId>
-        <version>${tycho.version}</version>
-        <configuration>
-    <formats>
-        <linux>tar.gz</linux>
-    </formats>
-          <products>
-            <product>
-              <id>org.csstudio.iter.product.css.product</id>
-              <rootFolder>iter-css-${project.version}</rootFolder>
-              <archiveFileName>iter-css-${project.version}</archiveFileName>
-              <attachId>iter-css</attachId>
-            </product>
-            <product>
-              <id>org.csstudio.iter.product.opivalidation.product</id>
-              <rootFolder>opivalidation-${project.version}</rootFolder>
-              <archiveFileName>opivalidation-${project.version}</archiveFileName>
-              <attachId>opivalidation</attachId>
-            </product>
-            <product>
-              <id>org.csstudio.iter.product.alarm.beast.notifier.product</id>
-              <rootFolder>alarm-notifier-${project.version}</rootFolder>
-              <archiveFileName>alarm-notifier-${project.version}</archiveFileName>
-              <attachId>alarm-notifier</attachId>
-            </product>
-            <product>
-              <id>org.csstudio.iter.product.alarm.beast.annunciator.product</id>
-              <rootFolder>alarm-annunciator-${project.version}</rootFolder>
-              <archiveFileName>alarm-annunciator-${project.version}</archiveFileName>
-              <attachId>alarm-annunciator</attachId>
-            </product>
-            <product>
-              <id>org.csstudio.iter.product.scan.server.product</id>
-              <rootFolder>scan-server-${project.version}</rootFolder>
-              <archiveFileName>scan-server-${project.version}</archiveFileName>
-              <attachId>scan-server</attachId>
-            </product>
-          </products>
-        </configuration>
-        <executions>
-          <!-- Create products listed above.
+    <artifactId>iter-repository-rcp</artifactId>
+    <packaging>eclipse-repository</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <id>icons</id>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <failOnError>true</failOnError>
+                            <target>
+                                <echo message="Copying icons into tycho target directory ${project.build.directory}"/>
+                                <copy todir="${project.build.directory}/products/org.csstudio.iter.product.css.product" verbose="false">
+                                    <fileset dir="${project.build.directory}/../../products">
+                                        <include name="org.csstudio.iter.css.product/icons/**"/>
+                                    </fileset>
+                                </copy>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <!-- Copy the ported SWT-GTK plugin from oxygen RC2 -->
+                    <execution>
+                        <id>swt-gtk-port</id>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <failOnError>false</failOnError>
+                            <target>
+                                <echo message="Copying ported org.eclipse.swt.gtk.linux.x86_64_3.105.3.v20170228-0512.jar to ${project.build.directory}"/>
+                                <copy file="${project.build.directory}/../../plugins/org.eclipse.swt.gtk.linux.x86_64_3.105.3.v20170228-0512.jar" tofile="${project.build.directory}/products/org.csstudio.iter.product.css.product/org.eclipse.swt.gtk.linux.x86_64_3.105.3.v20170228-0512.jar" verbose="true"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>configuration</id>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <failOnError>false</failOnError>
+                            <target>
+                                <echo message="Copying configuration files into tycho target directory ${project.build.directory}/rootfiles"/>
+                                <!-- Create the directory so that p2.inf will be able to complete without issues -->
+                                <mkdir dir="${project.build.directory}/rootfiles"/>
+                                <!-- Copy the files if they exist. If they don't no problem, they won't be included, which is standard for the official release -->
+                                <copy todir="${project.build.directory}/rootfiles" verbose="false">
+                                    <fileset dir="${project.build.directory}/../../../m-css-common/src/main/conf">
+                                        <include name="css.key"/>
+                                        <include name="secure_store.dat"/>
+                                    </fileset>
+                                </copy>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>${tycho-groupid}</groupId>
+                <artifactId>tycho-p2-director-plugin</artifactId>
+                <version>${tycho.version}</version>
+                <configuration>
+                    <formats>
+                        <linux>tar.gz</linux>
+                    </formats>
+                    <products>
+                        <product>
+                            <id>org.csstudio.iter.product.css.product</id>
+                            <rootFolder>iter-css-${project.version}</rootFolder>
+                            <archiveFileName>iter-css-${project.version}</archiveFileName>
+                            <attachId>iter-css</attachId>
+                        </product>
+                        <product>
+                            <id>org.csstudio.iter.product.opivalidation.product</id>
+                            <rootFolder>opivalidation-${project.version}</rootFolder>
+                            <archiveFileName>opivalidation-${project.version}</archiveFileName>
+                            <attachId>opivalidation</attachId>
+                        </product>
+                        <product>
+                            <id>org.csstudio.iter.product.alarm.beast.notifier.product</id>
+                            <rootFolder>alarm-notifier-${project.version}</rootFolder>
+                            <archiveFileName>alarm-notifier-${project.version}</archiveFileName>
+                            <attachId>alarm-notifier</attachId>
+                        </product>
+                        <product>
+                            <id>org.csstudio.iter.product.alarm.beast.annunciator.product</id>
+                            <rootFolder>alarm-annunciator-${project.version}</rootFolder>
+                            <archiveFileName>alarm-annunciator-${project.version}</archiveFileName>
+                            <attachId>alarm-annunciator</attachId>
+                        </product>
+                        <product>
+                            <id>org.csstudio.iter.product.scan.server.product</id>
+                            <rootFolder>scan-server-${project.version}</rootFolder>
+                            <archiveFileName>scan-server-${project.version}</archiveFileName>
+                            <attachId>scan-server</attachId>
+                        </product>
+                    </products>
+                </configuration>
+                <executions>
+                    <!-- Create products listed above.
                In addition, features listed in category.xml
                turn into installable features.
             -->
-          <execution>
-            <id>materialize-products</id>
-            <goals>
-              <goal>materialize-products</goal>
-            </goals>
-          </execution>
-          <!-- Zip the products -->
-          <execution>
-            <id>archive-products</id>
-            <goals>
-              <goal>archive-products</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>${tycho-groupid}</groupId>
-        <artifactId>tycho-p2-repository-plugin</artifactId>
-        <version>${tycho.version}</version>
-        <configuration>
-          <includeAllDependencies>true</includeAllDependencies>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+                    <execution>
+                        <id>materialize-products</id>
+                        <goals>
+                            <goal>materialize-products</goal>
+                        </goals>
+                    </execution>
+                    <!-- Zip the products -->
+                    <execution>
+                        <id>archive-products</id>
+                        <goals>
+                            <goal>archive-products</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>${tycho-groupid}</groupId>
+                <artifactId>tycho-p2-repository-plugin</artifactId>
+                <version>${tycho.version}</version>
+                <configuration>
+                    <includeAllDependencies>true</includeAllDependencies>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
