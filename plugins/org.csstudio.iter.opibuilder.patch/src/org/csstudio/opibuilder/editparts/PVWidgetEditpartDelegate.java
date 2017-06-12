@@ -1066,9 +1066,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
             alarmPV.close();
 
         String alarmPVName = getBeastAlarmChannelName(overridePvName);
-        final String pvName = getPVName();
-        // do no set up the alarmPv for an alarm PV.
-        if (alarmPVName.isEmpty() || ((pvName != null) && pvName.toLowerCase().startsWith(BEAST_SCHEMA))) {
+        if (alarmPVName.isEmpty()) {
             alarmPV = null;
             isBeastAlarm = false;
             isBeastAlarmNode = false;
