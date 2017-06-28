@@ -1,39 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <commands>
-  <comment><text>Test sequence to start, run and stop the acquisition</text></comment>
+  <comment>
+    <text>Test sequence to start, run and stop the acquisition</text>
+  </comment>
   <config_log>
+    <automatic>false</automatic>
   </config_log>
-  <comment><text>Initialisation of the test</text></comment>
+  <comment>
+    <text>Initialisation of the test</text>
+  </comment>
   <set>
-    <device>CTRL-SUP-CSS:SIMULATION</device>
+    <device>CWS-TCPH-Fxxx:SIMULATION</device>
     <value>1.0</value>
     <completion>true</completion>
     <wait>false</wait>
     <tolerance>0.1</tolerance>
   </set>
   <set>
-    <device>CTRL-SUP-CSS:START-ACQ</device>
+    <device>CWS-TCPH-Fxxx:START-ACQ</device>
     <value>1.0</value>
     <completion>true</completion>
     <wait>false</wait>
     <tolerance>0.1</tolerance>
   </set>
   <set>
-    <device>CTRL-SUP-CSS:WAVEFORM-TYPE</device>
+    <device>CWS-TCPH-Fxxx:WAVEFORM-TYPE</device>
     <value>1.0</value>
     <completion>true</completion>
     <wait>false</wait>
     <tolerance>0.1</tolerance>
   </set>
   <set>
-    <device>CTRL-SUP-CSS:AMPL</device>
+    <device>CWS-TCPH-Fxxx:AMPL</device>
     <value>10.0</value>
     <completion>true</completion>
     <wait>false</wait>
     <tolerance>0.1</tolerance>
   </set>
   <set>
-    <device>CTRL-SUP-CSS:FREQ</device>
+    <device>CWS-TCPH-Fxxx:FREQ</device>
     <value>0.1</value>
     <completion>true</completion>
     <wait>false</wait>
@@ -43,14 +48,14 @@
     <seconds>10.0</seconds>
   </delay>
   <loop>
-    <device>CTRL-SUP-CSS:AMPL</device>
+    <device>CWS-TCPH-Fxxx:AMPL</device>
     <start>10.0</start>
     <end>20.0</end>
     <step>5.0</step>
     <tolerance>0.5</tolerance>
     <body>
       <loop>
-        <device>CTRL-SUP-CSS:FREQ</device>
+        <device>CWS-TCPH-Fxxx:FREQ</device>
         <start>0.1</start>
         <end>1.0</end>
         <step>0.1</step>
@@ -61,18 +66,21 @@
           </delay>
           <log>
             <devices>
-              <device>CTRL-SUP-CSS:AMPL</device>
-              <device>CTRL-SUP-CSS:FREQ</device>
-              <device>CTRL-SUP-CSS:WAVEFORM-TYPE</device>
-              <device>CTRL-SUP-CSS:START-ACQ</device>
+              <device>CWS-TCPH-Fxxx:AMPL</device>
+              <device>CWS-TCPH-Fxxx:FREQ</device>
+              <device>CWS-TCPH-Fxxx:WAVEFORM-TYPE</device>
+              <device>CWS-TCPH-Fxxx:START-ACQ</device>
             </devices>
           </log>
         </body>
       </loop>
     </body>
   </loop>
+  <delay>
+    <seconds>5.0</seconds>
+  </delay>
   <set>
-    <device>CTRL-SUP-CSS:START-ACQ</device>
+    <device>CWS-TCPH-Fxxx:START-ACQ</device>
     <value>0.0</value>
     <completion>true</completion>
     <wait>false</wait>
