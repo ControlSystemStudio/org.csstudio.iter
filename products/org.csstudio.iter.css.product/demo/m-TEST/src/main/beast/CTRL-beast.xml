@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- Alarm configuration Root: demo CODAC-VERSION: 5.2b5 WARNING: This is 
 	an automatically generated file. PLEASE DO NOT MODIFY. -->
-<config name="demo">
+<config name="CODAC_AlarmHandler">
     <component name="CTRL">
         <component name="CTRL-SUP">
             <component name="CTRL-SUP-BOY">
@@ -144,8 +144,8 @@
                         <details>The tank will overflow if the pump fails to be forced ON in 10 minutes</details>
                     </guidance>
                     <display>
-                        <title>Pump Control System</title>
-                        <details>/m-TEST/boy/ITER-CTR-SUP-BEAS-HIGH-SWITCH_Alarm.opi &quot;ALARM_PV=CTRL-SUP-BEAS:HIGH-SWITCH, ALARM_PATH=/demo/CTRL/CTRL-SUP/CTRL-SUP-BEAS, ALARM_GUIDANCE1_TITLE=In the event that the MID switch has failed, ALARM_GUIDANCE1_DETAILS=The tank level has continued to increase and has reached the HIGH level generating a MAJOR alarm&quot;</details>
+                        <title>Alarm Page</title>
+                        <details>/m-TEST/boy/alarmpages/ITER-CTR-SUP-BEAS-HIGH-SWITCH_Alarm.opi &quot;LEVEL=ITER-CTRL-SUP-BEAS-ACK, ALARM_PV=CTRL-SUP-BEAS:HIGH-SWITCH, ALARM_PATH=/CODAC_AlarmHandler/CTRL/CTRL-SUP/CTRL-SUP-BEAS, ALARM_GUIDANCE1_TITLE=In the event that the MID switch has failed, ALARM_GUIDANCE1_DETAILS=The tank level has continued to increase and has reached the HIGH level generating a MAJOR alarm&quot;</details>
                     </display>
                     <display>
                         <title>Archived Tank Level Plot</title>
@@ -182,8 +182,8 @@
                         <details>The pump will burn out in 30 minutes</details>
                     </guidance>
                     <display>
-                        <title>Pump Control System</title>
-                        <details>/m-TEST/boy/ITER-CTR-SUP-BEAS-LOW-SWITCH_Alarm.opi &quot;ALARM_PV=CTRL-SUP-BEAS:LOW-SWITCH, ALARM_PATH=/demo/CTRL/CTRL-SUP/CTRL-SUP-BEAS, ALARM_GUIDANCE1_TITLE=In the event that the MID switch has failed, ALARM_GUIDANCE1_DETAILS=The tank level has continued to decrease and has reached the LOW level generating a MAJOR alarm&quot;</details>
+                        <title>Alarm Page</title>
+                        <details>/m-TEST/boy/alarmpages/ITER-CTR-SUP-BEAS-LOW-SWITCH_Alarm.opi &quot;LEVEL=ITER-CTRL-SUP-BEAS-ACK, ALARM_PV=CTRL-SUP-BEAS:LOW-SWITCH, ALARM_PATH=/CODAC_AlarmHandler/CTRL/CTRL-SUP/CTRL-SUP-BEAS, ALARM_GUIDANCE1_TITLE=In the event that the MID switch has failed, ALARM_GUIDANCE1_DETAILS=The tank level has continued to decrease and has reached the LOW level generating a MAJOR alarm&quot;</details>
                     </display>
                     <display>
                         <title>Archived Tank Level Plot</title>
