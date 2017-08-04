@@ -105,7 +105,7 @@
       <foreground_color>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
-      <height>570</height>
+      <height>450</height>
       <max_number_of_alarms>20</max_number_of_alarms>
       <name>Full Alarm Table</name>
       <rules />
@@ -130,6 +130,7 @@
       <writable>true</writable>
       <wuid>7769493c:155a056b0e9:-7b3d</wuid>
       <x>50</x>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <y>1180</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.VTableDisplay" version="1.0.0">
@@ -270,6 +271,9 @@
       <wuid>7769493c:155a056b0e9:-79cf</wuid>
       <x>50</x>
       <y>3</y>
+=======
+      <y>1300</y>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
       <actions hook="true" hook_all="true">
@@ -327,8 +331,8 @@
       <width>146</width>
       <wrap_words>false</wrap_words>
       <wuid>7769493c:155a056b0e9:-7832</wuid>
-      <x>868</x>
-      <y>696</y>
+      <x>550</x>
+      <y>70</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
       <actions hook="true" hook_all="true">
@@ -410,7 +414,7 @@
       <widget_type>Boolean Symbol Image Monitor</widget_type>
       <width>132</width>
       <wuid>7769493c:155a056b0e9:-76ff</wuid>
-      <x>1299</x>
+      <x>1250</x>
       <y>216</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
@@ -451,7 +455,7 @@
       <width>176</width>
       <wrap_words>true</wrap_words>
       <wuid>7769493c:155a056b0e9:-76f9</wuid>
-      <x>1299</x>
+      <x>1250</x>
       <y>178</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -473,7 +477,7 @@
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
       <height>200</height>
-      <lock_children>true</lock_children>
+      <lock_children>false</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
@@ -534,6 +538,73 @@
         <wuid>7769493c:155a056b0e9:-75f1</wuid>
         <x>0</x>
         <y>0</y>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
+        <actions hook="false" hook_all="false" />
+        <alarm_pulsing>false</alarm_pulsing>
+        <alpha>255</alpha>
+        <anti_alias>true</anti_alias>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <bg_gradient_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </bg_gradient_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <border_style>0</border_style>
+        <border_width>2</border_width>
+        <enabled>true</enabled>
+        <fg_gradient_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </fg_gradient_color>
+        <fill_level>100.0</fill_level>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+        </font>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <foreground_color>
+          <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+        </foreground_color>
+        <gradient>false</gradient>
+        <height>40</height>
+        <horizontal_fill>true</horizontal_fill>
+        <line_color>
+          <color name="IO Line" red="0" green="0" blue="0" />
+        </line_color>
+        <line_style>0</line_style>
+        <line_width>0</line_width>
+        <name>CTRL-SUP-BEAS:HIGH-SWITCH</name>
+        <pv_name>CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
+        <pv_value />
+        <rules>
+          <rule name="NoAlarmLED" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0 == 0 &amp;&amp; !pv1 &amp;&amp; pvStr2 == &quot;OK&quot;">
+              <value>true</value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+            <pv trig="true">beast:///$(pv_name).Acknowledge</pv>
+            <pv trig="true">beast:///$(pv_name).AlarmSeverity</pv>
+          </rule>
+        </rules>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts />
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <transparent>false</transparent>
+        <visible>false</visible>
+        <widget_type>Ellipse</widget_type>
+        <width>40</width>
+        <wuid>-5dd0a518:15d84963889:5060</wuid>
+        <x>10</x>
+        <y>10</y>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -638,7 +709,7 @@ $(pv_value)</tooltip>
         <actions hook="false" hook_all="false" />
         <auto_size>false</auto_size>
         <background_color>
-          <color name="IO Background" red="235" green="235" blue="235" />
+          <color name="Major" red="250" green="12" blue="14" />
         </background_color>
         <border_color>
           <color name="IO Border" red="0" green="0" blue="0" />
@@ -650,7 +721,7 @@ $(pv_value)</tooltip>
           <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
         </font>
         <foreground_color>
-          <color name="IO Text Fg" red="0" green="0" blue="0" />
+          <color name="IO Stopped Symbol Fill" red="255" green="255" blue="255" />
         </foreground_color>
         <height>192</height>
         <horizontal_alignment>1</horizontal_alignment>
@@ -665,7 +736,7 @@ $(pv_value)</tooltip>
         <show_scrollbar>false</show_scrollbar>
         <text>$(name)</text>
         <tooltip></tooltip>
-        <transparent>true</transparent>
+        <transparent>false</transparent>
         <vertical_alignment>1</vertical_alignment>
         <visible>true</visible>
         <widget_type>Label</widget_type>
@@ -674,6 +745,72 @@ $(pv_value)</tooltip>
         <wuid>7769493c:155a056b0e9:-7540</wuid>
         <x>0</x>
         <y>0</y>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
+        <actions hook="false" hook_all="false" />
+        <alarm_pulsing>false</alarm_pulsing>
+        <alpha>255</alpha>
+        <anti_alias>true</anti_alias>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <bg_gradient_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </bg_gradient_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <border_style>0</border_style>
+        <border_width>2</border_width>
+        <enabled>true</enabled>
+        <fg_gradient_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </fg_gradient_color>
+        <fill_level>100.0</fill_level>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+        </font>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <foreground_color>
+          <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+        </foreground_color>
+        <gradient>false</gradient>
+        <height>40</height>
+        <horizontal_fill>true</horizontal_fill>
+        <line_color>
+          <color name="IO Line" red="0" green="0" blue="0" />
+        </line_color>
+        <line_style>0</line_style>
+        <line_width>0</line_width>
+        <name>CTRL-SUP-BEAS:HIGH-SWITCH</name>
+        <pv_name>CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
+        <pv_value />
+        <rules>
+          <rule name="Un-acknowledgedAlarmLED" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0 != 0 &amp;&amp; !pv1">
+              <value>true</value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+            <pv trig="true">beast:///$(pv_name).Acknowledge</pv>
+          </rule>
+        </rules>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts />
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <transparent>false</transparent>
+        <visible>false</visible>
+        <widget_type>Ellipse</widget_type>
+        <width>40</width>
+        <wuid>-5dd0a518:15d84963889:55c1</wuid>
+        <x>10</x>
+        <y>10</y>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -732,7 +869,7 @@ $(pv_value)</tooltip>
           <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
         </font>
         <foreground_color>
-          <color name="IO Text Fg" red="0" green="0" blue="0" />
+          <color name="Major" red="250" green="12" blue="14" />
         </foreground_color>
         <height>192</height>
         <horizontal_alignment>1</horizontal_alignment>
@@ -756,6 +893,73 @@ $(pv_value)</tooltip>
         <wuid>7769493c:155a056b0e9:-753a</wuid>
         <x>0</x>
         <y>0</y>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
+        <actions hook="false" hook_all="false" />
+        <alarm_pulsing>false</alarm_pulsing>
+        <alpha>255</alpha>
+        <anti_alias>true</anti_alias>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <bg_gradient_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </bg_gradient_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <border_style>0</border_style>
+        <border_width>2</border_width>
+        <enabled>true</enabled>
+        <fg_gradient_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </fg_gradient_color>
+        <fill_level>100.0</fill_level>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+        </font>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <foreground_color>
+          <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+        </foreground_color>
+        <gradient>false</gradient>
+        <height>40</height>
+        <horizontal_fill>true</horizontal_fill>
+        <line_color>
+          <color name="IO Line" red="0" green="0" blue="0" />
+        </line_color>
+        <line_style>0</line_style>
+        <line_width>0</line_width>
+        <name>CTRL-SUP-BEAS:HIGH-SWITCH</name>
+        <pv_name>CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
+        <pv_value />
+        <rules>
+          <rule name="ClearedUn-acknowledgedAlarmLED" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0 == 0 &amp;&amp; !pv1 &amp;&amp; pvStr2 != &quot;OK&quot;">
+              <value>true</value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+            <pv trig="true">beast:///$(pv_name).Acknowledge</pv>
+            <pv trig="true">beast:///$(pv_name).AlarmSeverity</pv>
+          </rule>
+        </rules>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts />
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <transparent>false</transparent>
+        <visible>false</visible>
+        <widget_type>Ellipse</widget_type>
+        <width>40</width>
+        <wuid>-5dd0a518:15d84963889:5a0f</wuid>
+        <x>19</x>
+        <y>16</y>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -884,7 +1088,7 @@ $(pv_value)</tooltip>
         <actions hook="false" hook_all="false" />
         <auto_size>false</auto_size>
         <background_color>
-          <color name="IO Background" red="235" green="235" blue="235" />
+          <color name="Major" red="250" green="12" blue="14" />
         </background_color>
         <border_color>
           <color name="IO Border" red="0" green="0" blue="0" />
@@ -896,7 +1100,7 @@ $(pv_value)</tooltip>
           <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
         </font>
         <foreground_color>
-          <color name="IO Text Fg" red="0" green="0" blue="0" />
+          <color name="IO Stopped Symbol Fill" red="255" green="255" blue="255" />
         </foreground_color>
         <height>192</height>
         <horizontal_alignment>1</horizontal_alignment>
@@ -911,7 +1115,7 @@ $(pv_value)</tooltip>
         <show_scrollbar>false</show_scrollbar>
         <text>$(name)</text>
         <tooltip></tooltip>
-        <transparent>true</transparent>
+        <transparent>false</transparent>
         <vertical_alignment>1</vertical_alignment>
         <visible>true</visible>
         <widget_type>Label</widget_type>
@@ -920,6 +1124,72 @@ $(pv_value)</tooltip>
         <wuid>7769493c:155a056b0e9:-752e</wuid>
         <x>0</x>
         <y>0</y>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
+        <actions hook="false" hook_all="false" />
+        <alarm_pulsing>false</alarm_pulsing>
+        <alpha>255</alpha>
+        <anti_alias>true</anti_alias>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <bg_gradient_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </bg_gradient_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <border_style>0</border_style>
+        <border_width>2</border_width>
+        <enabled>true</enabled>
+        <fg_gradient_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </fg_gradient_color>
+        <fill_level>100.0</fill_level>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+        </font>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <foreground_color>
+          <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+        </foreground_color>
+        <gradient>false</gradient>
+        <height>40</height>
+        <horizontal_fill>true</horizontal_fill>
+        <line_color>
+          <color name="IO Line" red="0" green="0" blue="0" />
+        </line_color>
+        <line_style>0</line_style>
+        <line_width>0</line_width>
+        <name>CTRL-SUP-BEAS:HIGH-SWITCH</name>
+        <pv_name>CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
+        <pv_value />
+        <rules>
+          <rule name="AcknowledgedAlarmLED" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0 != 0 &amp;&amp; pv1">
+              <value>true</value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+            <pv trig="true">beast:///$(pv_name).Acknowledge</pv>
+          </rule>
+        </rules>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts />
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <transparent>false</transparent>
+        <visible>false</visible>
+        <widget_type>Ellipse</widget_type>
+        <width>40</width>
+        <wuid>-5dd0a518:15d84963889:5c3d</wuid>
+        <x>10</x>
+        <y>10</y>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
@@ -1063,8 +1333,8 @@ $(pv_value)</tooltip>
       <widget_type>Action Button</widget_type>
       <width>165</width>
       <wuid>1b489e7a:155a117a509:-7d31</wuid>
-      <x>2583</x>
-      <y>480</y>
+      <x>2661</x>
+      <y>481</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
       <actions hook="false" hook_all="false">
@@ -1112,7 +1382,7 @@ $(pv_value)</tooltip>
       <width>165</width>
       <wuid>1b489e7a:155a117a509:-7d2b</wuid>
       <x>2497</x>
-      <y>86</y>
+      <y>67</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
       <actions hook="false" hook_all="false">
@@ -1235,7 +1505,11 @@ $(pv_value)</tooltip>
       <foreground_color>
         <color name="IO InputPV Fg" red="0" green="0" blue="0" />
       </foreground_color>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <height>421</height>
+=======
+      <height>1200</height>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <name>Tank Level</name>
       <plot_area_background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
@@ -1253,14 +1527,22 @@ $(pv_value)</tooltip>
       <show_legend>false</show_legend>
       <show_plot_area_border>true</show_plot_area_border>
       <show_toolbar>false</show_toolbar>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <time_span>0</time_span>
+=======
+      <time_span>120</time_span>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <title>Tank Level</title>
       <title_font>
         <opifont.name fontName="DejaVu Sans Mono" height="32" style="0" pixels="false">IO SubTitle</opifont.name>
       </title_font>
       <tooltip>Click on the component $(name) for more details</tooltip>
       <trace_0_anti_alias>true</trace_0_anti_alias>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <trace_0_buffer_size>1024</trace_0_buffer_size>
+=======
+      <trace_0_buffer_size>240</trace_0_buffer_size>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <trace_0_concatenate_data>true</trace_0_concatenate_data>
       <trace_0_line_width>3</trace_0_line_width>
       <trace_0_name>$(trace_0_y_pv)</trace_0_name>
@@ -1272,7 +1554,11 @@ $(pv_value)</tooltip>
       </trace_0_trace_color>
       <trace_0_trace_type>0</trace_0_trace_type>
       <trace_0_update_delay>100</trace_0_update_delay>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <trace_0_update_mode>0</trace_0_update_mode>
+=======
+      <trace_0_update_mode>4</trace_0_update_mode>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <trace_0_visible>true</trace_0_visible>
       <trace_0_x_axis_index>0</trace_0_x_axis_index>
       <trace_0_x_pv></trace_0_x_pv>
@@ -1281,7 +1567,11 @@ $(pv_value)</tooltip>
       <trace_0_y_pv>CTRL-SUP-BEAS:TANK-LEVEL</trace_0_y_pv>
       <trace_0_y_pv_value />
       <trace_1_anti_alias>true</trace_1_anti_alias>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <trace_1_buffer_size>100</trace_1_buffer_size>
+=======
+      <trace_1_buffer_size>240</trace_1_buffer_size>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <trace_1_concatenate_data>true</trace_1_concatenate_data>
       <trace_1_line_width>3</trace_1_line_width>
       <trace_1_name>$(trace_1_y_pv)</trace_1_name>
@@ -1293,7 +1583,11 @@ $(pv_value)</tooltip>
       </trace_1_trace_color>
       <trace_1_trace_type>0</trace_1_trace_type>
       <trace_1_update_delay>100</trace_1_update_delay>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <trace_1_update_mode>0</trace_1_update_mode>
+=======
+      <trace_1_update_mode>4</trace_1_update_mode>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <trace_1_visible>true</trace_1_visible>
       <trace_1_x_axis_index>0</trace_1_x_axis_index>
       <trace_1_x_pv></trace_1_x_pv>
@@ -1302,7 +1596,11 @@ $(pv_value)</tooltip>
       <trace_1_y_pv>CTRL-SUP-BEAS:TANK-LEVEL.LOW</trace_1_y_pv>
       <trace_1_y_pv_value />
       <trace_2_anti_alias>true</trace_2_anti_alias>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <trace_2_buffer_size>100</trace_2_buffer_size>
+=======
+      <trace_2_buffer_size>240</trace_2_buffer_size>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <trace_2_concatenate_data>true</trace_2_concatenate_data>
       <trace_2_line_width>3</trace_2_line_width>
       <trace_2_name>$(trace_2_y_pv)</trace_2_name>
@@ -1314,7 +1612,11 @@ $(pv_value)</tooltip>
       </trace_2_trace_color>
       <trace_2_trace_type>0</trace_2_trace_type>
       <trace_2_update_delay>100</trace_2_update_delay>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <trace_2_update_mode>0</trace_2_update_mode>
+=======
+      <trace_2_update_mode>4</trace_2_update_mode>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <trace_2_visible>true</trace_2_visible>
       <trace_2_x_axis_index>0</trace_2_x_axis_index>
       <trace_2_x_pv></trace_2_x_pv>
@@ -1324,14 +1626,18 @@ $(pv_value)</tooltip>
       <trace_2_y_pv_value />
       <trace_count>3</trace_count>
       <transparent>true</transparent>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <trigger_pv></trigger_pv>
+      <trigger_pv_value />
+=======
+      <trigger_pv>sim://flipflop(0.5)</trigger_pv>
       <trigger_pv_value />
       <visible>true</visible>
       <widget_type>XY Graph</widget_type>
-      <width>1244</width>
+      <width>1200</width>
       <wuid>1b489e7a:155a117a509:-6f56</wuid>
-      <x>56</x>
-      <y>696</y>
+      <x>10</x>
+      <y>10</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
       <actions hook="true" hook_all="true">
@@ -1413,7 +1719,7 @@ $(pv_value)</tooltip>
       <widget_type>Boolean Symbol Image Monitor</widget_type>
       <width>132</width>
       <wuid>1b489e7a:155a117a509:-67d1</wuid>
-      <x>1299</x>
+      <x>1250</x>
       <y>997</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
@@ -1454,7 +1760,7 @@ $(pv_value)</tooltip>
       <width>160</width>
       <wrap_words>true</wrap_words>
       <wuid>1b489e7a:155a117a509:-67d0</wuid>
-      <x>1299</x>
+      <x>1250</x>
       <y>959</y>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -1476,7 +1782,7 @@ $(pv_value)</tooltip>
         <color name="IO Foreground" red="0" green="0" blue="0" />
       </foreground_color>
       <height>200</height>
-      <lock_children>true</lock_children>
+      <lock_children>false</lock_children>
       <macros>
         <include_parent_macros>true</include_parent_macros>
       </macros>
@@ -1538,6 +1844,73 @@ $(pv_value)</tooltip>
         <x>0</x>
         <y>0</y>
       </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
+        <actions hook="false" hook_all="false" />
+        <alarm_pulsing>false</alarm_pulsing>
+        <alpha>255</alpha>
+        <anti_alias>true</anti_alias>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <bg_gradient_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </bg_gradient_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <border_style>0</border_style>
+        <border_width>2</border_width>
+        <enabled>true</enabled>
+        <fg_gradient_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </fg_gradient_color>
+        <fill_level>100.0</fill_level>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+        </font>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <foreground_color>
+          <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+        </foreground_color>
+        <gradient>false</gradient>
+        <height>40</height>
+        <horizontal_fill>true</horizontal_fill>
+        <line_color>
+          <color name="IO Line" red="0" green="0" blue="0" />
+        </line_color>
+        <line_style>0</line_style>
+        <line_width>0</line_width>
+        <name>CTRL-SUP-BEAS:LOW-SWITCH</name>
+        <pv_name>CTRL-SUP-BEAS:LOW-SWITCH</pv_name>
+        <pv_value />
+        <rules>
+          <rule name="NoAlarmLED" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0 == 0 &amp;&amp; !pv1 &amp;&amp; pvStr2 == &quot;OK&quot;">
+              <value>true</value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+            <pv trig="true">beast:///$(pv_name).Acknowledge</pv>
+            <pv trig="true">beast:///$(pv_name).AlarmSeverity</pv>
+          </rule>
+        </rules>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts />
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <transparent>false</transparent>
+        <visible>false</visible>
+        <widget_type>Ellipse</widget_type>
+        <width>40</width>
+        <wuid>-5dd0a518:15d84963889:527e</wuid>
+        <x>10</x>
+        <y>10</y>
+      </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
       <actions hook="false" hook_all="false" />
@@ -1574,6 +1947,592 @@ $(pv_value)</tooltip>
       <tooltip></tooltip>
       <transparent>true</transparent>
       <visible>true</visible>
+      <widget_type>Grouping Container</widget_type>
+      <width>200</width>
+      <wuid>1b489e7a:155a117a509:-65a0</wuid>
+      <x>1941</x>
+      <y>931</y>
+      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+        <actions hook="false" hook_all="false" />
+        <auto_size>false</auto_size>
+        <background_color>
+          <color name="Major" red="250" green="12" blue="14" />
+        </background_color>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <border_style>0</border_style>
+        <border_width>2</border_width>
+        <enabled>false</enabled>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+        </font>
+        <foreground_color>
+          <color name="IO Stopped Symbol Fill" red="255" green="255" blue="255" />
+        </foreground_color>
+        <height>192</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <name>Un-ack'ed alarm</name>
+        <rules />
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts />
+        <show_scrollbar>false</show_scrollbar>
+        <text>$(name)</text>
+        <tooltip></tooltip>
+        <transparent>false</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <visible>true</visible>
+        <widget_type>Label</widget_type>
+        <width>192</width>
+        <wrap_words>true</wrap_words>
+        <wuid>1b489e7a:155a117a509:-659f</wuid>
+        <x>0</x>
+        <y>0</y>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
+        <actions hook="false" hook_all="false" />
+        <alarm_pulsing>false</alarm_pulsing>
+        <alpha>255</alpha>
+        <anti_alias>true</anti_alias>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <bg_gradient_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </bg_gradient_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <border_style>0</border_style>
+        <border_width>2</border_width>
+        <enabled>true</enabled>
+        <fg_gradient_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </fg_gradient_color>
+        <fill_level>100.0</fill_level>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+        </font>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <foreground_color>
+          <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+        </foreground_color>
+        <gradient>false</gradient>
+        <height>40</height>
+        <horizontal_fill>true</horizontal_fill>
+        <line_color>
+          <color name="IO Line" red="0" green="0" blue="0" />
+        </line_color>
+        <line_style>0</line_style>
+        <line_width>0</line_width>
+        <name>CTRL-SUP-BEAS:LOW-SWITCH</name>
+        <pv_name>CTRL-SUP-BEAS:LOW-SWITCH</pv_name>
+        <pv_value />
+        <rules>
+          <rule name="Un-acknowledgedAlarmLED" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0 != 0 &amp;&amp; !pv1">
+              <value>true</value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+            <pv trig="true">beast:///$(pv_name).Acknowledge</pv>
+          </rule>
+        </rules>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts />
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <transparent>false</transparent>
+        <visible>false</visible>
+        <widget_type>Ellipse</widget_type>
+        <width>40</width>
+        <wuid>-5dd0a518:15d84963889:6cbf</wuid>
+        <x>10</x>
+        <y>10</y>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <actions hook="false" hook_all="false" />
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <border_style>14</border_style>
+      <border_width>2</border_width>
+      <enabled>true</enabled>
+      <fc>false</fc>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
+      </font>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <height>200</height>
+      <lock_children>false</lock_children>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <name>Cleared un-ack'ed alarm</name>
+      <rules />
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <show_scrollbar>false</show_scrollbar>
+      <tooltip></tooltip>
+      <transparent>true</transparent>
+      <visible>true</visible>
+      <widget_type>Grouping Container</widget_type>
+      <width>200</width>
+      <wuid>1b489e7a:155a117a509:-659e</wuid>
+      <x>2377</x>
+      <y>931</y>
+      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+        <actions hook="false" hook_all="false" />
+        <auto_size>false</auto_size>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <border_style>0</border_style>
+        <border_width>2</border_width>
+        <enabled>false</enabled>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+        </font>
+        <foreground_color>
+          <color name="Major" red="250" green="12" blue="14" />
+        </foreground_color>
+        <height>192</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <name>Cleared un-ack'ed alarm</name>
+        <rules />
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts />
+        <show_scrollbar>false</show_scrollbar>
+        <text>$(name)</text>
+        <tooltip></tooltip>
+        <transparent>true</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <visible>true</visible>
+        <widget_type>Label</widget_type>
+        <width>192</width>
+        <wrap_words>true</wrap_words>
+        <wuid>1b489e7a:155a117a509:-659d</wuid>
+        <x>0</x>
+        <y>0</y>
+      </widget>
+      <widget typeId="org.csstudio.opibuilder.widgets.Ellipse" version="1.0.0">
+        <actions hook="false" hook_all="false" />
+        <alarm_pulsing>false</alarm_pulsing>
+        <alpha>255</alpha>
+        <anti_alias>true</anti_alias>
+        <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+        <background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </background_color>
+        <bg_gradient_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </bg_gradient_color>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+        <border_color>
+          <color name="IO Border" red="0" green="0" blue="0" />
+        </border_color>
+        <border_style>0</border_style>
+        <border_width>2</border_width>
+        <enabled>true</enabled>
+        <fg_gradient_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </fg_gradient_color>
+        <fill_level>100.0</fill_level>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+        </font>
+        <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+        <foreground_color>
+          <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+        </foreground_color>
+        <gradient>false</gradient>
+        <height>40</height>
+        <horizontal_fill>true</horizontal_fill>
+        <line_color>
+          <color name="IO Line" red="0" green="0" blue="0" />
+        </line_color>
+        <line_style>0</line_style>
+        <line_width>0</line_width>
+        <name>CTRL-SUP-BEAS:LOW-SWITCH</name>
+        <pv_name>CTRL-SUP-BEAS:LOW-SWITCH</pv_name>
+        <pv_value />
+        <rules>
+          <rule name="ClearedUn-acknowledgedAlarmLED" prop_id="visible" out_exp="false">
+            <exp bool_exp="pv0 == 0 &amp;&amp; !pv1 &amp;&amp; pvStr2 != &quot;OK&quot;">
+              <value>true</value>
+            </exp>
+            <pv trig="true">$(pv_name).SEVR</pv>
+            <pv trig="true">beast:///$(pv_name).Acknowledge</pv>
+            <pv trig="true">beast:///$(pv_name).AlarmSeverity</pv>
+          </rule>
+        </rules>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts />
+        <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+        <transparent>false</transparent>
+        <visible>false</visible>
+        <widget_type>Ellipse</widget_type>
+        <width>40</width>
+        <wuid>-5dd0a518:15d84963889:6de0</wuid>
+        <x>10</x>
+        <y>10</y>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+      <actions hook="false" hook_all="false">
+        <action type="WRITE_PV">
+          <pv_name>${pv_name}</pv_name>
+          <value>13</value>
+          <timeout>10</timeout>
+          <confirm_message></confirm_message>
+          <description>New alarm initiates</description>
+        </action>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <border_style>6</border_style>
+      <border_width>2</border_width>
+      <enabled>true</enabled>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <height>50</height>
+      <image></image>
+      <name>NEW</name>
+      <push_action_index>0</push_action_index>
+      <pv_name>CTRL-SUP-BEAS:TANK-LEVEL</pv_name>
+      <pv_value />
+      <rules />
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <style>1</style>
+      <text>$(name)</text>
+      <toggle_button>false</toggle_button>
+      <tooltip>Click to initiate a new LOW alarm</tooltip>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
+      <visible>true</visible>
+      <widget_type>Action Button</widget_type>
+      <width>165</width>
+      <wuid>1b489e7a:155a117a509:-6590</wuid>
+      <x>1711</x>
+      <y>952</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+      <actions hook="false" hook_all="false">
+        <action type="WRITE_PV">
+          <pv_name>${pv_name}</pv_name>
+          <value>41</value>
+          <timeout>10</timeout>
+          <confirm_message></confirm_message>
+          <description>Alarm clears</description>
+        </action>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <border_style>6</border_style>
+      <border_width>2</border_width>
+      <enabled>true</enabled>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <height>50</height>
+      <image></image>
+      <name>CLEAR</name>
+      <push_action_index>0</push_action_index>
+      <pv_name>CTRL-SUP-BEAS:TANK-LEVEL</pv_name>
+      <pv_value />
+      <rules />
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <style>1</style>
+      <text>$(name)</text>
+      <toggle_button>false</toggle_button>
+      <tooltip>Click to clear the alarm</tooltip>
+      <visible>true</visible>
+      <widget_type>Action Button</widget_type>
+      <width>165</width>
+      <wuid>-2954307f:155b4bb6330:-7ec8</wuid>
+      <x>2175</x>
+      <y>951</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+      <actions hook="false" hook_all="true">
+        <action type="WRITE_PV">
+          <pv_name>$(pv_name)</pv_name>
+          <value>unack</value>
+          <timeout>10</timeout>
+          <confirm_message></confirm_message>
+          <description>unAck</description>
+        </action>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <border_style>6</border_style>
+      <border_width>2</border_width>
+      <enabled>true</enabled>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
+      <height>68</height>
+      <image_file>SymbolLibrary/SVG/Electrical/Protection_and_Cut-Shut_Off-On/JA Withdrawable Circuit Breaker On.svg</image_file>
+      <name>CTRL-SUP-BEAS:LOW-SWITCH</name>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color name="IO PV OFF" red="149" green="125" blue="71" />
+      </off_color>
+      <off_label>DRY</off_label>
+      <on_color>
+        <color name="IO PV ON" red="0" green="0" blue="255" />
+      </on_color>
+      <on_label>WET</on_label>
+      <permutation_matrix>
+        <row>
+          <col>0.0</col>
+          <col>-1.0</col>
+        </row>
+        <row>
+          <col>1.0</col>
+          <col>0.0</col>
+        </row>
+      </permutation_matrix>
+      <pv_name>CTRL-SUP-BEAS:LOW-SWITCH</pv_name>
+=======
+      <height>52</height>
+      <image></image>
+      <name>un-Ack</name>
+      <push_action_index>0</push_action_index>
+      <pv_name>beast:///CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
+      <pv_value />
+      <rules />
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <style>1</style>
+      <text>$(actions)</text>
+      <toggle_button>false</toggle_button>
+      <tooltip>Click to acknowledge the HIGH alarm</tooltip>
+      <visible>true</visible>
+      <widget_type>Action Button</widget_type>
+      <width>105</width>
+      <wuid>-5dd0a518:15d84963889:-52d6</wuid>
+      <x>1813</x>
+      <y>479</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+      <actions hook="false" hook_all="true">
+        <action type="WRITE_PV">
+          <pv_name>$(pv_name)</pv_name>
+          <value>ack</value>
+          <timeout>10</timeout>
+          <confirm_message></confirm_message>
+          <description>Ack</description>
+        </action>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <border_style>6</border_style>
+      <border_width>2</border_width>
+      <enabled>true</enabled>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
+      <height>30</height>
+      <horizontal_alignment>0</horizontal_alignment>
+      <name>CTRL-SUP-BEAS:LOW-SWITCH Label</name>
+=======
+      <height>52</height>
+      <image></image>
+      <name>Ack</name>
+      <push_action_index>0</push_action_index>
+      <pv_name>beast:///CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
+      <pv_value />
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
+      <rules />
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <style>1</style>
+      <text>$(actions)</text>
+      <toggle_button>false</toggle_button>
+      <tooltip>Click to acknowledge the HIGH alarm</tooltip>
+      <visible>true</visible>
+      <widget_type>Action Button</widget_type>
+      <width>75</width>
+      <wuid>-5dd0a518:15d84963889:-54ab</wuid>
+      <x>2066</x>
+      <y>368</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
+      <actions hook="false" hook_all="true">
+        <action type="WRITE_PV">
+          <pv_name>$(pv_name)</pv_name>
+          <value>ack</value>
+          <timeout>10</timeout>
+          <confirm_message></confirm_message>
+          <description>Ack</description>
+        </action>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <border_style>6</border_style>
+      <border_width>2</border_width>
+      <enabled>true</enabled>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <height>52</height>
+      <image></image>
+      <name>Ack</name>
+      <push_action_index>0</push_action_index>
+      <pv_name>beast:///CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
+      <pv_value />
+      <rules />
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <style>1</style>
+      <text>$(actions)</text>
+      <toggle_button>false</toggle_button>
+      <tooltip>Click to acknowledge the HIGH alarm</tooltip>
+      <visible>true</visible>
+      <widget_type>Action Button</widget_type>
+      <width>75</width>
+      <wuid>-5dd0a518:15d84963889:-53c5</wuid>
+      <x>2497</x>
+      <y>368</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.checkbox" version="1.0.0">
+      <actions hook="false" hook_all="false" />
+      <alarm_pulsing>false</alarm_pulsing>
+      <auto_size>true</auto_size>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <bit>0</bit>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <border_style>0</border_style>
+      <border_width>2</border_width>
+      <enabled>true</enabled>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color name="IO Text Fg" red="0" green="0" blue="0" />
+      </foreground_color>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
+      <height>200</height>
+      <lock_children>false</lock_children>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <name>Un-ack'ed alarm</name>
+=======
+      <height>41</height>
+      <label>Acknowledged</label>
+      <name>Ack</name>
+      <pv_name>beast:///CTRL-SUP-BEAS:LOW-SWITCH.Acknowledge</pv_name>
+      <pv_value />
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
+      <rules />
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <selected_color>
+        <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+      </selected_color>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <visible>true</visible>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <widget_type>Grouping Container</widget_type>
       <width>200</width>
       <wuid>1b489e7a:155a117a509:-65a0</wuid>
@@ -1678,31 +2637,42 @@ $(pv_value)</tooltip>
         <x>0</x>
         <y>0</y>
       </widget>
+=======
+      <widget_type>Check Box</widget_type>
+      <width>282</width>
+      <wuid>-5dd0a518:15d84963889:-31ab</wuid>
+      <x>1250</x>
+      <y>1135</y>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
     </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <widget typeId="org.csstudio.opibuilder.widgets.checkbox" version="1.0.0">
       <actions hook="false" hook_all="false" />
+      <alarm_pulsing>false</alarm_pulsing>
+      <auto_size>true</auto_size>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
       <background_color>
         <color name="IO Background" red="235" green="235" blue="235" />
       </background_color>
+      <bit>0</bit>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
       <border_color>
         <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
-      <border_style>14</border_style>
+      <border_style>0</border_style>
       <border_width>2</border_width>
       <enabled>true</enabled>
-      <fc>false</fc>
       <font>
         <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
       </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
       <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
+        <color name="IO Text Fg" red="0" green="0" blue="0" />
       </foreground_color>
-      <height>200</height>
-      <lock_children>true</lock_children>
-      <macros>
-        <include_parent_macros>true</include_parent_macros>
-      </macros>
-      <name>Cleared un-ack'ed alarm</name>
+      <height>41</height>
+      <label>Enabled</label>
+      <name>Enable</name>
+      <pv_name>beast:///CTRL-SUP-BEAS:LOW-SWITCH.Enable</pv_name>
+      <pv_value />
       <rules />
       <scale_options>
         <width_scalable>false</width_scalable>
@@ -1710,57 +2680,19 @@ $(pv_value)</tooltip>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <scripts />
-      <show_scrollbar>false</show_scrollbar>
-      <tooltip></tooltip>
-      <transparent>true</transparent>
+      <selected_color>
+        <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+      </selected_color>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
       <visible>true</visible>
-      <widget_type>Grouping Container</widget_type>
-      <width>200</width>
-      <wuid>1b489e7a:155a117a509:-659e</wuid>
-      <x>2377</x>
-      <y>931</y>
-      <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-        <actions hook="false" hook_all="false" />
-        <auto_size>false</auto_size>
-        <background_color>
-          <color name="IO Background" red="235" green="235" blue="235" />
-        </background_color>
-        <border_color>
-          <color name="IO Border" red="0" green="0" blue="0" />
-        </border_color>
-        <border_style>0</border_style>
-        <border_width>2</border_width>
-        <enabled>false</enabled>
-        <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
-        </font>
-        <foreground_color>
-          <color name="IO Text Fg" red="0" green="0" blue="0" />
-        </foreground_color>
-        <height>192</height>
-        <horizontal_alignment>1</horizontal_alignment>
-        <name>Cleared un-ack'ed alarm</name>
-        <rules />
-        <scale_options>
-          <width_scalable>false</width_scalable>
-          <height_scalable>false</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <scripts />
-        <show_scrollbar>false</show_scrollbar>
-        <text>$(name)</text>
-        <tooltip></tooltip>
-        <transparent>true</transparent>
-        <vertical_alignment>1</vertical_alignment>
-        <visible>true</visible>
-        <widget_type>Label</widget_type>
-        <width>192</width>
-        <wrap_words>true</wrap_words>
-        <wuid>1b489e7a:155a117a509:-659d</wuid>
-        <x>0</x>
-        <y>0</y>
-      </widget>
+      <widget_type>Check Box</widget_type>
+      <width>172</width>
+      <wuid>-5dd0a518:15d84963889:-2e88</wuid>
+      <x>1250</x>
+      <y>1200</y>
     </widget>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
     <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
       <actions hook="false" hook_all="false">
         <action type="WRITE_PV">
@@ -1915,25 +2847,43 @@ $(pv_value)</tooltip>
           <description>Ack</description>
         </action>
       </actions>
+=======
+    <widget typeId="org.csstudio.opibuilder.widgets.checkbox" version="1.0.0">
+      <actions hook="false" hook_all="false" />
+      <alarm_pulsing>false</alarm_pulsing>
+      <auto_size>true</auto_size>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <bit>0</bit>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <border_alarm_sensitive>false</border_alarm_sensitive>
       <border_color>
         <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
-      <border_style>6</border_style>
+      <border_style>0</border_style>
       <border_width>2</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
       </font>
       <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
       <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
+        <color name="IO Text Fg" red="0" green="0" blue="0" />
       </foreground_color>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <height>52</height>
       <image></image>
       <name>Ack</name>
       <push_action_index>0</push_action_index>
       <pv_name>beast:///CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
+=======
+      <height>41</height>
+      <label>Acknowledged</label>
+      <name>Ack</name>
+      <pv_name>beast:///CTRL-SUP-BEAS:HIGH-SWITCH.Acknowledge</pv_name>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <pv_value />
       <rules />
       <scale_options>
@@ -1942,6 +2892,7 @@ $(pv_value)</tooltip>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <scripts />
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <style>1</style>
       <text>$(actions)</text>
       <toggle_button>false</toggle_button>
@@ -1963,25 +2914,55 @@ $(pv_value)</tooltip>
           <description>Ack</description>
         </action>
       </actions>
+=======
+      <selected_color>
+        <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+      </selected_color>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <visible>true</visible>
+      <widget_type>Check Box</widget_type>
+      <width>282</width>
+      <wuid>-5dd0a518:15d84963889:3021</wuid>
+      <x>1250</x>
+      <y>354</y>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.checkbox" version="1.0.0">
+      <actions hook="false" hook_all="false" />
+      <alarm_pulsing>false</alarm_pulsing>
+      <auto_size>true</auto_size>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <bit>0</bit>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <border_alarm_sensitive>false</border_alarm_sensitive>
       <border_color>
         <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
-      <border_style>6</border_style>
+      <border_style>0</border_style>
       <border_width>2</border_width>
       <enabled>true</enabled>
       <font>
-        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+        <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
       </font>
       <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
       <foreground_color>
-        <color name="IO Foreground" red="0" green="0" blue="0" />
+        <color name="IO Text Fg" red="0" green="0" blue="0" />
       </foreground_color>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <height>52</height>
       <image></image>
       <name>Ack</name>
       <push_action_index>0</push_action_index>
       <pv_name>beast:///CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
+=======
+      <height>41</height>
+      <label>Enabled</label>
+      <name>Enable</name>
+      <pv_name>beast:///CTRL-SUP-BEAS:HIGH-SWITCH.Enable</pv_name>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <pv_value />
       <rules />
       <scale_options>
@@ -1990,6 +2971,7 @@ $(pv_value)</tooltip>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
       <scripts />
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
       <style>1</style>
       <text>$(actions)</text>
       <toggle_button>false</toggle_button>
@@ -2094,87 +3076,25 @@ $(pv_value)</tooltip>
       <wuid>-5dd0a518:15d84963889:-2e88</wuid>
       <x>2608</x>
       <y>1090</y>
+=======
+      <selected_color>
+        <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
+      </selected_color>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+      <visible>true</visible>
+      <widget_type>Check Box</widget_type>
+      <width>172</width>
+      <wuid>-5dd0a518:15d84963889:3022</wuid>
+      <x>1250</x>
+      <y>419</y>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
     </widget>
   </widget>
   <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
     <anti_alias>true</anti_alias>
-    <arrow_length>30</arrow_length>
-    <arrows>2</arrows>
-    <fill_arrow>true</fill_arrow>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-    <line_jump_add>1</line_jump_add>
-    <line_jump_size>10</line_jump_size>
-    <line_jump_style>1</line_jump_style>
-    <line_style>0</line_style>
-    <line_width>4</line_width>
-    <name>Connection Template</name>
-    <points />
-    <router>0</router>
-    <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
-    <src_term>BOTTOM</src_term>
-    <src_wuid>7769493c:155a056b0e9:-753b</src_wuid>
-    <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-7535</tgt_path>
-    <tgt_term>TOP</tgt_term>
-    <tgt_wuid>7769493c:155a056b0e9:-7534</tgt_wuid>
-    <widget_type>connection</widget_type>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <anti_alias>true</anti_alias>
-    <arrow_length>30</arrow_length>
-    <arrows>2</arrows>
-    <fill_arrow>true</fill_arrow>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-    <line_jump_add>1</line_jump_add>
-    <line_jump_size>10</line_jump_size>
-    <line_jump_style>1</line_jump_style>
-    <line_style>0</line_style>
-    <line_width>4</line_width>
-    <name>Connection Template</name>
-    <points />
-    <router>0</router>
-    <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
-    <src_term>RIGHT</src_term>
-    <src_wuid>7769493c:155a056b0e9:-752f</src_wuid>
-    <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-7535</tgt_path>
-    <tgt_term>LEFT</tgt_term>
-    <tgt_wuid>7769493c:155a056b0e9:-7534</tgt_wuid>
-    <widget_type>connection</widget_type>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <anti_alias>true</anti_alias>
-    <arrow_length>30</arrow_length>
-    <arrows>2</arrows>
-    <fill_arrow>true</fill_arrow>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-    <line_jump_add>1</line_jump_add>
-    <line_jump_size>10</line_jump_size>
-    <line_jump_style>1</line_jump_style>
-    <line_style>0</line_style>
-    <line_width>4</line_width>
-    <name>Connection Template</name>
-    <points />
-    <router>0</router>
-    <src_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-75f7</src_path>
-    <src_term>RIGHT</src_term>
-    <src_wuid>7769493c:155a056b0e9:-75f1</src_wuid>
-    <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-7541</tgt_path>
-    <tgt_term>LEFT</tgt_term>
-    <tgt_wuid>7769493c:155a056b0e9:-7540</tgt_wuid>
-    <widget_type>connection</widget_type>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <anti_alias>true</anti_alias>
-    <arrow_length>30</arrow_length>
-    <arrows>2</arrows>
+    <arrow_length>15</arrow_length>
+    <arrows>0</arrows>
     <fill_arrow>true</fill_arrow>
     <line_color>
       <color name="IO Link" red="0" green="0" blue="0" />
@@ -2186,6 +3106,105 @@ $(pv_value)</tooltip>
     <line_width>4</line_width>
     <name>Connection Template</name>
     <points>
+      <point x="2477" y="735" />
+      <point x="1575" y="735" />
+    </points>
+    <router>0</router>
+    <src_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-7535</src_path>
+    <src_term>BOTTOM</src_term>
+    <src_wuid>7769493c:155a056b0e9:-7534</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-75f7</tgt_path>
+    <tgt_term>BOTTOM</tgt_term>
+    <tgt_wuid>7769493c:155a056b0e9:-75f1</tgt_wuid>
+    <widget_type>connection</widget_type>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <anti_alias>true</anti_alias>
+    <arrow_length>15</arrow_length>
+    <arrows>0</arrows>
+    <fill_arrow>true</fill_arrow>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+    <line_jump_add>1</line_jump_add>
+    <line_jump_size>10</line_jump_size>
+    <line_jump_style>1</line_jump_style>
+    <line_style>0</line_style>
+    <line_width>4</line_width>
+    <name>Connection Template</name>
+    <points>
+      <point x="1774" y="551" />
+      <point x="1774" y="250" />
+    </points>
+    <router>0</router>
+    <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
+    <src_term>RIGHT</src_term>
+    <src_wuid>7769493c:155a056b0e9:-752f</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-7535</tgt_path>
+    <tgt_term>LEFT</tgt_term>
+    <tgt_wuid>7769493c:155a056b0e9:-7534</tgt_wuid>
+=======
+    <src_term>LEFT</src_term>
+    <src_wuid>7769493c:155a056b0e9:-752f</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-7541</tgt_path>
+    <tgt_term>LEFT</tgt_term>
+    <tgt_wuid>7769493c:155a056b0e9:-7540</tgt_wuid>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
+    <widget_type>connection</widget_type>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <anti_alias>true</anti_alias>
+    <arrow_length>30</arrow_length>
+    <arrows>2</arrows>
+    <fill_arrow>true</fill_arrow>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+    <line_jump_add>1</line_jump_add>
+    <line_jump_size>10</line_jump_size>
+    <line_jump_style>1</line_jump_style>
+    <line_style>0</line_style>
+    <line_width>4</line_width>
+    <name>Connection Template</name>
+    <points />
+    <router>0</router>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
+    <src_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-75f7</src_path>
+    <src_term>RIGHT</src_term>
+    <src_wuid>7769493c:155a056b0e9:-75f1</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-7541</tgt_path>
+    <tgt_term>LEFT</tgt_term>
+    <tgt_wuid>7769493c:155a056b0e9:-7540</tgt_wuid>
+=======
+    <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
+    <src_term>BOTTOM</src_term>
+    <src_wuid>7769493c:155a056b0e9:-7541</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-752f</tgt_path>
+    <tgt_term>TOP</tgt_term>
+    <tgt_wuid>7769493c:155a056b0e9:-752e</tgt_wuid>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
+    <widget_type>connection</widget_type>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <anti_alias>true</anti_alias>
+    <arrow_length>30</arrow_length>
+    <arrows>2</arrows>
+    <fill_arrow>true</fill_arrow>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+    <line_jump_add>1</line_jump_add>
+    <line_jump_size>10</line_jump_size>
+    <line_jump_style>1</line_jump_style>
+    <line_style>0</line_style>
+    <line_width>4</line_width>
+    <name>Connection Template</name>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
+    <points>
       <point x="2477" y="66" />
       <point x="2041" y="66" />
     </points>
@@ -2195,6 +3214,15 @@ $(pv_value)</tooltip>
     <src_wuid>7769493c:155a056b0e9:-753a</src_wuid>
     <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-7541</tgt_path>
     <tgt_term>TOP</tgt_term>
+=======
+    <points />
+    <router>0</router>
+    <src_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-75f7</src_path>
+    <src_term>RIGHT</src_term>
+    <src_wuid>7769493c:155a056b0e9:-75f1</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-7541</tgt_path>
+    <tgt_term>LEFT</tgt_term>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
     <tgt_wuid>7769493c:155a056b0e9:-7540</tgt_wuid>
     <widget_type>connection</widget_type>
     <wuid>-19d36239:134b27295e1:-7d63</wuid>
@@ -2219,6 +3247,7 @@ $(pv_value)</tooltip>
       <point x="2041" y="66" />
     </points>
     <router>0</router>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
     <src_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-7535</src_path>
     <src_term>RIGHT</src_term>
     <src_wuid>7769493c:155a056b0e9:-7534</src_wuid>
@@ -2251,8 +3280,14 @@ $(pv_value)</tooltip>
     <src_term>LEFT</src_term>
     <src_wuid>7769493c:155a056b0e9:-752f</src_wuid>
     <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-7541</tgt_path>
+=======
+    <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
+    <src_term>RIGHT</src_term>
+    <src_wuid>7769493c:155a056b0e9:-7541</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-753b</tgt_path>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
     <tgt_term>LEFT</tgt_term>
-    <tgt_wuid>7769493c:155a056b0e9:-7540</tgt_wuid>
+    <tgt_wuid>7769493c:155a056b0e9:-753a</tgt_wuid>
     <widget_type>connection</widget_type>
     <wuid>-19d36239:134b27295e1:-7d63</wuid>
   </connection>
@@ -2274,10 +3309,10 @@ $(pv_value)</tooltip>
     <router>0</router>
     <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
     <src_term>RIGHT</src_term>
-    <src_wuid>7769493c:155a056b0e9:-7541</src_wuid>
-    <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-753b</tgt_path>
+    <src_wuid>7769493c:155a056b0e9:-752f</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-7535</tgt_path>
     <tgt_term>LEFT</tgt_term>
-    <tgt_wuid>7769493c:155a056b0e9:-753a</tgt_wuid>
+    <tgt_wuid>7769493c:155a056b0e9:-7534</tgt_wuid>
     <widget_type>connection</widget_type>
     <wuid>-19d36239:134b27295e1:-7d63</wuid>
   </connection>
@@ -2295,7 +3330,14 @@ $(pv_value)</tooltip>
     <line_style>0</line_style>
     <line_width>4</line_width>
     <name>Connection Template</name>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
     <points />
+=======
+    <points>
+      <point x="2477" y="32" />
+      <point x="2041" y="32" />
+    </points>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
     <router>0</router>
     <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
     <src_term>BOTTOM</src_term>
@@ -2321,6 +3363,38 @@ $(pv_value)</tooltip>
     <line_width>4</line_width>
     <name>Connection Template</name>
     <points />
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
+=======
+    <router>0</router>
+    <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
+    <src_term>BOTTOM</src_term>
+    <src_wuid>7769493c:155a056b0e9:-753b</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-7535</tgt_path>
+    <tgt_term>TOP</tgt_term>
+    <tgt_wuid>7769493c:155a056b0e9:-7534</tgt_wuid>
+    <widget_type>connection</widget_type>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <anti_alias>true</anti_alias>
+    <arrow_length>30</arrow_length>
+    <arrows>2</arrows>
+    <fill_arrow>true</fill_arrow>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+    <line_jump_add>1</line_jump_add>
+    <line_jump_size>10</line_jump_size>
+    <line_jump_style>1</line_jump_style>
+    <line_style>0</line_style>
+    <line_width>4</line_width>
+    <name>Connection Template</name>
+    <points>
+      <point x="2917" y="551" />
+      <point x="2917" y="32" />
+      <point x="2041" y="32" />
+    </points>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
     <router>0</router>
     <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
     <src_term>RIGHT</src_term>
@@ -2349,10 +3423,17 @@ $(pv_value)</tooltip>
     <router>0</router>
     <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
     <src_term>RIGHT</src_term>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
     <src_wuid>1b489e7a:155a117a509:-65a0</src_wuid>
     <tgt_path>-28c93393:14b0cb4ebee:-6a50_1b489e7a:155a117a509:-659e</tgt_path>
     <tgt_term>LEFT</tgt_term>
     <tgt_wuid>1b489e7a:155a117a509:-659d</tgt_wuid>
+=======
+    <src_wuid>1b489e7a:155a117a509:-65a2</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50</tgt_path>
+    <tgt_term>LEFT</tgt_term>
+    <tgt_wuid>1b489e7a:155a117a509:-65a0</tgt_wuid>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
     <widget_type>connection</widget_type>
     <wuid>-19d36239:134b27295e1:-7d63</wuid>
   </connection>
@@ -2375,12 +3456,21 @@ $(pv_value)</tooltip>
       <point x="1575" y="735" />
     </points>
     <router>0</router>
+<<<<<<< HEAD:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
     <src_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-7535</src_path>
     <src_term>BOTTOM</src_term>
     <src_wuid>7769493c:155a056b0e9:-7534</src_wuid>
     <tgt_path>-28c93393:14b0cb4ebee:-6a50_7769493c:155a056b0e9:-75f7</tgt_path>
     <tgt_term>BOTTOM</tgt_term>
     <tgt_wuid>7769493c:155a056b0e9:-75f1</tgt_wuid>
+=======
+    <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
+    <src_term>RIGHT</src_term>
+    <src_wuid>1b489e7a:155a117a509:-65a0</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50_1b489e7a:155a117a509:-659e</tgt_path>
+    <tgt_term>LEFT</tgt_term>
+    <tgt_wuid>1b489e7a:155a117a509:-659d</tgt_wuid>
+>>>>>>> New test case for alarm ACK/ENABLE via BOY widgets:products/org.csstudio.iter.css.product/demo/m-TEST/src/main/boy/ITER-CTRL-SUP-BEAS-ACK_Mimic.opi
     <widget_type>connection</widget_type>
     <wuid>-19d36239:134b27295e1:-7d63</wuid>
   </connection>
