@@ -56,18 +56,23 @@ function listCBS(current, depth, max_depth){
 			    	addUpButton(elt);
 			    }
 			    
-		    	if (depth == max_depth) {
-		    		// adding mimic specific levels for the last level
+		    	if (depth == max_depth && elt.getChildren().size()) {
+		    		// adding Mimic buttons
 				    addMimicButtons(elt);
+		    	} else {
+			    	listCBS(elt, depth+1, max_depth);
+			    	depth = max_depth + 1;
+			    	if (!elt.getChildren().size()) {
+			    		// repeat parent Mimic buttons
+			    		addMimicButtons(current);
+			    	}
 		    	}
-		    	listCBS(elt, depth+1, max_depth);
-		    	depth = max_depth + 1;
 	    	}
 		}
 	}
 }
 
-function getLevelDepth() {
+function getLevelDepth(current_level) {
 	if (current_level == "" || !current_level) {
 		// CBS 0 is not specified or empty name
 		return 0;
@@ -79,7 +84,7 @@ function getLevelDepth() {
 }
 
 function isEltCurrentCBS(elt) {
-	if (getLevelDepth() == 0) {
+	if (getLevelDepth(current_level) == 0) {
 		return true;
 	}
 	
@@ -149,8 +154,8 @@ function addHomeButton(elt) {
 }
 
 function createHomeButtonContainer() {
-	height = getGeneralNavigationContainerHeight();
-	width = getGeneralNavigationContainerWidth()/3;
+	var height = getGeneralNavigationContainerHeight();
+	var width = getGeneralNavigationContainerWidth()/3;
 	return createButtonContainer("NavigationHomeButton.opi", width, height);
 }
 
@@ -180,9 +185,9 @@ function addUpButton(elt) {
 }
 
 function createUpButtonContainer() {
-	height = getGeneralNavigationContainerHeight();
-	width = getGeneralNavigationContainerWidth();
-	home = getGeneralNavigationContainerWidth()/3;
+	var height = getGeneralNavigationContainerHeight();
+	var width = getGeneralNavigationContainerWidth();
+	var home = getGeneralNavigationContainerWidth()/3;
 	return createButtonContainer("NavigationUpButton.opi", (width - home)/5, height);
 }
 
@@ -195,8 +200,8 @@ function addMimicButtons(root) {
 	var nbButtonsPerLine = 10;
 			
 	// default button size for maximum 10 buttons on one line
-	height = getMimicNavigationContainerHeight();
-	width = (getMimicNavigationContainerWidth()/nbButtonsPerLine)-1;
+	var height = getMimicNavigationContainerHeight();
+	var width = (getMimicNavigationContainerWidth()/nbButtonsPerLine)-1;
 	
 	// if more than 10 buttons required, 2 lines of buttons are needed
 	if (nbButtons > nbButtonsPerLine) {
