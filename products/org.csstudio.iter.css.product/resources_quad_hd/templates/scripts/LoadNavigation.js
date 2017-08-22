@@ -313,7 +313,7 @@ function setButton(button, elt) {
  	button.setPropertyValue("tooltip", elt.getAttributeValue("description") + " ($(number_alarms) alarm(s))");
  	button.setPropertyValue("enabled", elt.getAttributeValue("enabled"));
  	if (elt.getAttributeValue("deprecated") && elt.getAttributeValue("deprecated").search("true") >= 0) {
- 		button.setPropertyValue("foreground_color", "Invalid");
+ 		button.setPropertyValue("border_style", 9);
 	 	button.setPropertyValue("tooltip", elt.getAttributeValue("description") + " (deprecated)");
 	}	
 }
