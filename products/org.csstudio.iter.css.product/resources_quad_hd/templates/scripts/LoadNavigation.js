@@ -15,7 +15,7 @@ importPackage(Packages.java.lang)
 
 	// getting the current cbs level for this screen
 	var current_level = widget.getMacroValue("LEVEL");
-	var depth = getLevelDepth(current_level);
+	var depth = getNavigationDepth(current_level);
 	var level = "";
 
 	// getting the type of OPI: USER or ALARM
@@ -41,38 +41,25 @@ importPackage(Packages.java.lang)
 // ---
 
 // recursive list function on CBS tree
-function listCBS(current, depth, max_depth){
+function listCBS(current, level, depth){
 	var cbs = current.getChildren();
 	if (cbs) {
 		var itr = cbs.iterator();
-		while (itr.hasNext() && depth <= max_depth) {
+		while (itr.hasNext() && level <= depth) {
 		    var elt = itr.next();
-		    if (isEltCurrentCBS(elt)) {
-			    if (depth == 0){
-				    // adding the Home button for level 0 - ITER overview
-			    	addHomeButton(elt);
-			    } else {
-			    	// adding an Up button for intermediate levels
-			    	addUpButton(elt);
+		    if (currentCBS(elt)) {
+			    updateGlobalNavigationButtons(elt, level);
+			    // continue the parsing of the CBS navigation tree
+				listCBS(elt, level + 1, depth);			    	
+			    if (lastNavigationLevel(level, depth)) {
+			    	updateMimicNavigationButtons(current, elt);
 			    }
-			    
-		    	if (depth == max_depth && elt.getChildren().size()) {
-		    		// adding Mimic buttons
-				    addMimicButtons(elt);
-		    	} else {
-			    	listCBS(elt, depth+1, max_depth);
-			    	depth = max_depth + 1;
-			    	if (!elt.getChildren().size()) {
-			    		// repeat parent Mimic buttons
-			    		addMimicButtons(current);
-			    	}
-		    	}
-	    	}
+		    }
 		}
 	}
 }
 
-function getLevelDepth(current_level) {
+function getNavigationDepth(current_level) {
 	if (current_level == "" || !current_level) {
 		// CBS 0 is not specified or empty name
 		return 0;
@@ -83,8 +70,8 @@ function getLevelDepth(current_level) {
 	return words.length - 1;
 }
 
-function isEltCurrentCBS(elt) {
-	if (getLevelDepth(current_level) == 0) {
+function currentCBS(elt) {
+	if (getNavigationDepth(current_level) == 0) {
 		return true;
 	}
 	
@@ -94,6 +81,30 @@ function isEltCurrentCBS(elt) {
 	  	return true;
 	 }
 	 return false;
+}
+
+function lastNavigationLevel(currentLevel, lastLevel){
+	return (currentLevel == lastLevel)
+}
+
+function updateGlobalNavigationButtons(thisCBS, level){
+	if (level == 0){
+	    // adding the Home button for level 0 - ITER overview
+		addHomeButton(thisCBS);
+	} else {
+		// adding an Up button for intermediate levels
+		addUpButton(thisCBS);
+	}
+}
+
+function updateMimicNavigationButtons(parentCBS, thisCBS){
+	if (thisCBS.getChildren().size()) {
+		// adding Mimic buttons
+	    addMimicButtons(thisCBS);
+	} else {
+		// repeat parent Mimic buttons
+		addMimicButtons(parentCBS);
+	}
 }
 
 function getGeneralNavigationContainer() {
