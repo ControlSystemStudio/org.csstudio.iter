@@ -104,6 +104,7 @@ function updateMimicNavigationButtons(parentCBS, thisCBS){
 	} else {
 		// repeat parent Mimic buttons
 		addMimicButtons(parentCBS);
+		disableMimicButton(thisCBS.getAttributeValue("name"));
 	}
 }
 
@@ -262,6 +263,11 @@ function addMimicButtons(root) {
 		 	i+=1;
 		 }
 	}
+}
+
+function disableMimicButton(CBS) {
+ 	var button = getMimicNavigationContainer().getWidget(CBS);	
+ 	button.setPropertyValue("enabled", "false");	
 }
 
 function getOPI_FILE(elt) {
