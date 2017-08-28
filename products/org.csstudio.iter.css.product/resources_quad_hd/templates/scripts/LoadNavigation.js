@@ -43,7 +43,7 @@ importPackage(Packages.java.lang)
 	// the result is a JDOM Element
 	var root = FileUtil.loadXMLFile(xml_input, widget);
 	if (root) {
-		// browsing the CBS tree structure starting from 0 to max depth
+		// browsing the CBS tree structure starting from 0 to depth
 		listCBS(root, 0, depth);
 	}
 
@@ -51,7 +51,6 @@ importPackage(Packages.java.lang)
 
 // recursive list function on CBS tree
 function listCBS(current, iLevel, depth){
-	System.out.println(" >>> listCBS(current, iLevel, depth, path): "+ current + " " + iLevel + " " + depth + " " + path);
 	var cbs = current.getChildren();
 	if (cbs) {
 		var itr = cbs.iterator();
@@ -60,7 +59,6 @@ function listCBS(current, iLevel, depth){
 		    if (currentCBS(elt)) {
 			    updateGlobalNavigationButtons(elt, iLevel);
 			    // continue the parsing of the CBS navigation tree
-				System.out.println(" >>> listCBS(elt, iLevel + 1, depth, path): "+ elt + " " + (iLevel+1) + " " + depth + " " + path);
 				listCBS(elt, iLevel + 1, depth);			    	
 			    if (lastNavigationLevel(iLevel, depth)) {
 			    	updateMimicNavigationButtons(current, elt);
@@ -88,13 +86,10 @@ function currentCBS(elt) {
 	
 	var cbs = elt.getAttributeValue("name").toUpperCase();
 	var cbs_path = (path == "" ? cbs : path + "-" + cbs);
-	System.out.println(" >>> currentCBS(elt, path): "+ elt + " " + path + "/" + cbs + "/" + cbs_path + "/" + current_level);
 	if (cbs_path && current_level.startsWith(cbs_path)) {
 		path = cbs_path;
-		System.out.println(" >>> currentCBS(elt, path): "+ elt + " " + path);
 	  	return true;
 	 }
-	 System.out.println(" >>> currentCBS(elt, path): "+ elt + " " + path);
 	 return false;
 }
 
