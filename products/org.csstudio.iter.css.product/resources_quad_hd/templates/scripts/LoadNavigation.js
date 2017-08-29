@@ -13,14 +13,22 @@ of the distribution package.
 importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
 importPackage(Packages.java.lang)
 
-	// getting the current cbs level for this screen
-	var current_level = widget.getMacroValue("LEVEL");
+	// getting the current cbs level for this screen ITER-CBS1-CBS2-CBS3
+	var current_level = (widget.getMacroValue("LEVEL") == null ? "" : widget.getMacroValue("LEVEL").toUpperCase());
 	var depth = getNavigationDepth(current_level);
-	var level = "";
+	var path = "";
 
-	// getting the type of OPI: USER or ALARM
+	// getting if a canvas (frame) OPI is used to load mimics OPI
+	var canvas_opi = widget.getMacroValue("CANVAS_OPI");
+	var opi_macro = "MIMIC_FILE";
+	if (canvas_opi == null || canvas_opi.toUpperCase() != "TRUE") {
+		canvas_opi = "FALSE";
+		opi_macro = "OPI_FILE";
+	}
+
+	// getting the type of OPI: USER or ALARMS LIST
 	var opi_type = widget.getMacroValue("OPI_TYPE");
-	if (opi_type == null || opi_type != "ALARM") {
+	if (opi_type == null || opi_type.toUpperCase() != "ALARM") {
 		opi_type = "USER";
 	}
 	
@@ -30,28 +38,29 @@ importPackage(Packages.java.lang)
 	if (xml_input == null) {
 		xml_input = "../navigation/Navigation.xml";
 	}
+	
 	// loading XML document and getting the root element
 	// the result is a JDOM Element
 	var root = FileUtil.loadXMLFile(xml_input, widget);
 	if (root) {
-		// browsing the CBS tree structure starting from 0 to max depth
+		// browsing the CBS tree structure starting from 0 to depth
 		listCBS(root, 0, depth);
 	}
 
 // ---
 
 // recursive list function on CBS tree
-function listCBS(current, level, depth){
+function listCBS(current, iLevel, depth){
 	var cbs = current.getChildren();
 	if (cbs) {
 		var itr = cbs.iterator();
-		while (itr.hasNext() && level <= depth) {
+		while (itr.hasNext() && iLevel <= depth) {
 		    var elt = itr.next();
 		    if (currentCBS(elt)) {
-			    updateGlobalNavigationButtons(elt, level);
+			    updateGlobalNavigationButtons(elt, iLevel);
 			    // continue the parsing of the CBS navigation tree
-				listCBS(elt, level + 1, depth);			    	
-			    if (lastNavigationLevel(level, depth)) {
+				listCBS(elt, iLevel + 1, depth);			    	
+			    if (lastNavigationLevel(iLevel, depth)) {
 			    	updateMimicNavigationButtons(current, elt);
 			    }
 		    }
@@ -64,7 +73,7 @@ function getNavigationDepth(current_level) {
 		// CBS 0 is not specified or empty name
 		return 0;
 	}
-	// getting the number of levels 
+	// getting the number of levels
 	// for instance UTIL-S15-AG07 has 3 CBS levels - ITER is CBS0
 	var words = current_level.split("-");
 	return words.length - 1;
@@ -75,9 +84,10 @@ function currentCBS(elt) {
 		return true;
 	}
 	
-	var iLevel = level + elt.getAttributeValue("name");
-	if (iLevel && current_level.startsWith(iLevel)) {
-	  	level = iLevel + "-";
+	var cbs = elt.getAttributeValue("name").toUpperCase();
+	var cbs_path = (path == "" ? cbs : path + "-" + cbs);
+	if (cbs_path && current_level.startsWith(cbs_path)) {
+		path = cbs_path;
 	  	return true;
 	 }
 	 return false;
@@ -141,16 +151,18 @@ function getLineTwoNavigationContainer() {
 }
 
 function addHomeButton(elt) {
-	//if no name defined, ITER is the default cbs name
-	var cbs_name = !elt.getAttributeValue("name") ? "ITER" : elt.getAttributeValue("name");
+	// if no name defined, ITER is the default cbs name
+	var cbs_name = (!elt.getAttributeValue("name") ? "ITER" : elt.getAttributeValue("name")).toUpperCase();
 	
-	//creating the linking container that display the HOME button
+	// creating the linking container that display the HOME button
 	var linkingContainer = createHomeButtonContainer();
 	if (linkingContainer) {
 	    // reading attribute from element using JDOM
-	    // adding macros CBS and OPI_FILE to the container
-		linkingContainer.addMacro("CBS", cbs_name);	
-		linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));	
+	    // adding macros to the container
+		linkingContainer.addMacro("CBS", cbs_name.toUpperCase());	
+		linkingContainer.addMacro("CBS_PATH", path.toUpperCase());	
+		linkingContainer.addMacro("TITLE", getDescription(elt).toUpperCase());	
+		linkingContainer.addMacro(opi_macro, getOPI_FILE(elt));	
 		linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
 		addOPImacros(linkingContainer, elt);	
 	
@@ -172,16 +184,15 @@ function createHomeButtonContainer() {
 }
 
 function addUpButton(elt) {
-	var iLevel = level.substr(0, level.length-1);
-	
-	//creating the linking container that display the Up button
+	// creating the linking container that display the Up button
 	var linkingContainer = createUpButtonContainer();
 	if (linkingContainer) {			
 	    // reading attribute from element using JDOM
-	    // adding macros CBS and OPI_FILE to the container
-		linkingContainer.addMacro("CBS", elt.getAttributeValue("name"));	
-		linkingContainer.addMacro("CBS_PATH", iLevel);	
-		linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));	
+	    // adding macros to the container
+		linkingContainer.addMacro("CBS", elt.getAttributeValue("name").toUpperCase());	
+		linkingContainer.addMacro("CBS_PATH", path.toUpperCase());	
+		linkingContainer.addMacro("TITLE", getDescription(elt).toUpperCase());	
+		linkingContainer.addMacro(opi_macro, getOPI_FILE(elt));	
 		linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
 		addOPImacros(linkingContainer, elt);	
 	
@@ -189,7 +200,7 @@ function addUpButton(elt) {
 		getGeneralNavigationContainer().addChildToRight(linkingContainer);
 	
 		// setting the navigation button properties
-	 	var button = getGeneralNavigationContainer().getWidget(iLevel);	
+	 	var button = getGeneralNavigationContainer().getWidget(path.toUpperCase());	
 	 	button.setPropertyValue("height", getGeneralNavigationContainerHeight());
 	 	button.setPropertyValue("width", (getGeneralNavigationContainerWidth()*2/3)/5);
 		setButton(button, elt);
@@ -225,7 +236,8 @@ function addMimicButtons(root) {
 			width = getMimicNavigationContainerWidth()/nbButtonsPerLine - 1;
 		}
 	} else {
-		// cleaning the one and two line child containers are they are not needed
+		// cleaning the one and two line child containers are they are not
+		// needed
 		container.removeAllChildren();
 	}
 
@@ -236,7 +248,8 @@ function addMimicButtons(root) {
 	    var elt = itr.next();
 	    
 	    if (elt.getAttributeValue("name")) {
-			//creating the linking container that display the mimic specific buttons
+			// creating the linking container that display the mimic specific
+			// buttons
 			var linkingContainer = createButtonContainer("NavigationMimicButton.opi", width, height);
 			
 			if (i == nbButtonsPerLine) {
@@ -244,9 +257,11 @@ function addMimicButtons(root) {
 			}
 			
 		    // reading attribute from element using JDOM
-		    // adding macros CBS and OPI_FILE to the container
-			linkingContainer.addMacro("CBS", elt.getAttributeValue("name"));	
-			linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));
+		    // adding macros to the container
+			linkingContainer.addMacro("CBS", elt.getAttributeValue("name").toUpperCase());	
+			linkingContainer.addMacro("CBS_PATH", path.toUpperCase());	
+			linkingContainer.addMacro("TITLE", getDescription(elt).toUpperCase());	
+			linkingContainer.addMacro(opi_macro, getOPI_FILE(elt));
 			linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
 			addOPImacros(linkingContainer, elt);	
 		
@@ -254,8 +269,8 @@ function addMimicButtons(root) {
 			container.addChildToRight(linkingContainer);
 		
 		    // reading value of children in XML using JDOM
-			// setting navigation button properties 
-		 	var button = container.getWidget(elt.getAttributeValue("name"));	
+			// setting navigation button properties
+		 	var button = container.getWidget(elt.getAttributeValue("name").toUpperCase());	
 		 	button.setPropertyValue("height", height);
 		 	button.setPropertyValue("width", width);
 			setButton(button, elt);
@@ -292,8 +307,13 @@ function getALARM_ROOT(elt) {
     return elt.getAttributeValue("alarm_root");
 }
 
+function getDescription(elt) {
+    return elt.getAttributeValue("description");
+}
+
 function addOPImacros(container, elt) {
-	// getting the opi file from the navigation xml configuration file (even for alarms list)
+	// getting the opi file from the navigation xml configuration file (even for
+	// alarms list)
 	var attribute = elt.getAttributeValue("opi_file");
 	
 	if (attribute) {
@@ -326,7 +346,7 @@ function createButtonContainer(opi_container, width, height) {
 
 function setButton(button, elt) {
     // reading value of children in XML using JDOM
-	// setting navigation button properties 
+	// setting navigation button properties
  	button.setPropertyValue("tooltip", elt.getAttributeValue("description") + " ($(number_alarms) alarm(s))");
  	button.setPropertyValue("enabled", elt.getAttributeValue("enabled"));
  	if (elt.getAttributeValue("deprecated") && elt.getAttributeValue("deprecated").search("true") >= 0) {

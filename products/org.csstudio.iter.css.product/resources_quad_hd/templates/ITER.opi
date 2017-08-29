@@ -18,9 +18,10 @@
   <height>2080</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
-    <TITLE>OPIs Map</TITLE>
+    <OPI_FILE>../ITER</OPI_FILE>
+    <CANVAS_OPI>TRUE</CANVAS_OPI>
   </macros>
-  <name>OPIs Map</name>
+  <name>${MIMIC_FILE}</name>
   <rules />
   <scripts />
   <show_close_button>true</show_close_button>
@@ -65,7 +66,7 @@
     </scale_options>
     <scripts />
     <show_scrollbar>false</show_scrollbar>
-    <tooltip></tooltip>
+    <tooltip>$(name)</tooltip>
     <transparent>true</transparent>
     <visible>true</visible>
     <widget_type>Grouping Container</widget_type>
@@ -105,7 +106,7 @@
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip></tooltip>
+      <tooltip>$(name)</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -145,7 +146,7 @@
         </scale_options>
         <scripts />
         <show_scrollbar>false</show_scrollbar>
-        <tooltip></tooltip>
+        <tooltip>$(name)</tooltip>
         <transparent>false</transparent>
         <visible>true</visible>
         <widget_type>Grouping Container</widget_type>
@@ -176,7 +177,7 @@
             <include_parent_macros>true</include_parent_macros>
           </macros>
           <name>GlobalStatuses</name>
-          <opi_file>GlobalStatuses.opi</opi_file>
+          <opi_file>templates/GlobalStatuses.opi</opi_file>
           <resize_behaviour>2</resize_behaviour>
           <rules />
           <scale_options>
@@ -185,7 +186,7 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <tooltip></tooltip>
+          <tooltip>$(name)</tooltip>
           <visible>true</visible>
           <widget_type>Linking Container</widget_type>
           <width>1138</width>
@@ -226,7 +227,7 @@
         </scale_options>
         <scripts />
         <show_scrollbar>false</show_scrollbar>
-        <tooltip></tooltip>
+        <tooltip>$(name)</tooltip>
         <transparent>false</transparent>
         <visible>true</visible>
         <widget_type>Grouping Container</widget_type>
@@ -254,7 +255,7 @@
           </foreground_color>
           <height>98</height>
           <horizontal_alignment>1</horizontal_alignment>
-          <name>Comment</name>
+          <name>MIMIC TITLE</name>
           <rules />
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -263,7 +264,7 @@
           </scale_options>
           <scripts />
           <text>${TITLE}</text>
-          <tooltip>MIMIC TITLE</tooltip>
+          <tooltip>$(name)</tooltip>
           <transparent>true</transparent>
           <vertical_alignment>1</vertical_alignment>
           <visible>true</visible>
@@ -307,7 +308,7 @@
         </scale_options>
         <scripts />
         <show_scrollbar>false</show_scrollbar>
-        <tooltip></tooltip>
+        <tooltip>$(name)</tooltip>
         <transparent>false</transparent>
         <visible>true</visible>
         <widget_type>Grouping Container</widget_type>
@@ -338,7 +339,7 @@
             <include_parent_macros>true</include_parent_macros>
           </macros>
           <name>UTC TIme</name>
-          <opi_file>UTC_Time.opi</opi_file>
+          <opi_file>templates/UTC_Time.opi</opi_file>
           <resize_behaviour>2</resize_behaviour>
           <rules />
           <scale_options>
@@ -347,7 +348,7 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <tooltip></tooltip>
+          <tooltip>$(name)</tooltip>
           <visible>true</visible>
           <widget_type>Linking Container</widget_type>
           <width>573</width>
@@ -389,7 +390,7 @@
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip></tooltip>
+      <tooltip>$(name)</tooltip>
       <transparent>true</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -397,7 +398,7 @@
       <wuid>-ae3bbd7:148fa0f526e:-7efd</wuid>
       <x>0</x>
       <y>104</y>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
         <actions hook="false" hook_all="false" />
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
@@ -408,19 +409,20 @@
         <border_style>0</border_style>
         <border_width>2</border_width>
         <enabled>true</enabled>
-        <fc>false</fc>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
         </font>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>1760</height>
-        <lock_children>true</lock_children>
+        <group_name></group_name>
+        <height>1761</height>
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
-        <name>Information Layer</name>
+        <name>Mimic</name>
+        <opi_file>${MIMIC_FILE}.opi</opi_file>
+        <resize_behaviour>2</resize_behaviour>
         <rules />
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -428,99 +430,11 @@
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
-        <show_scrollbar>false</show_scrollbar>
         <tooltip></tooltip>
-        <transparent>true</transparent>
         <visible>true</visible>
-        <widget_type>Grouping Container</widget_type>
-        <width>3236</width>
-        <wuid>-1e0f3b69:149c8d6d12f:-432f</wuid>
-        <x>0</x>
-        <y>0</y>
-      </widget>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-        <actions hook="false" hook_all="false" />
-        <background_color>
-          <color name="IO Background" red="235" green="235" blue="235" />
-        </background_color>
-        <border_color>
-          <color name="IO Border" red="0" green="0" blue="0" />
-        </border_color>
-        <border_style>0</border_style>
-        <border_width>2</border_width>
-        <enabled>true</enabled>
-        <fc>false</fc>
-        <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
-        </font>
-        <foreground_color>
-          <color name="IO Foreground" red="0" green="0" blue="0" />
-        </foreground_color>
-        <height>1760</height>
-        <lock_children>true</lock_children>
-        <macros>
-          <include_parent_macros>true</include_parent_macros>
-        </macros>
-        <name>Priority Layer</name>
-        <rules />
-        <scale_options>
-          <width_scalable>false</width_scalable>
-          <height_scalable>false</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <scripts />
-        <show_scrollbar>false</show_scrollbar>
-        <tooltip></tooltip>
-        <transparent>true</transparent>
-        <visible>true</visible>
-        <widget_type>Grouping Container</widget_type>
-        <width>3236</width>
-        <wuid>-1e0f3b69:149c8d6d12f:-4312</wuid>
-        <x>0</x>
-        <y>0</y>
-      </widget>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-        <actions hook="false" hook_all="false" />
-        <background_color>
-          <color name="IO Background" red="235" green="235" blue="235" />
-        </background_color>
-        <border_color>
-          <color name="IO Border" red="0" green="0" blue="0" />
-        </border_color>
-        <border_style>0</border_style>
-        <border_width>2</border_width>
-        <enabled>true</enabled>
-        <fc>false</fc>
-        <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
-        </font>
-        <foreground_color>
-          <color name="IO Foreground" red="0" green="0" blue="0" />
-        </foreground_color>
-        <height>1760</height>
-        <lock_children>false</lock_children>
-        <macros>
-          <include_parent_macros>true</include_parent_macros>
-        </macros>
-        <name>Static Data Layer</name>
-        <rules />
-        <scale_options>
-          <width_scalable>false</width_scalable>
-          <height_scalable>false</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <scripts>
-          <path pathString="scripts/expandable_tree.js" checkConnect="true" sfe="false" seoe="false">
-            <pv trig="true">loc://$(DID)_loadMap(1)</pv>
-          </path>
-        </scripts>
-        <show_scrollbar>true</show_scrollbar>
-        <tooltip>Click directly on the OPIs map buttons to open the related screen</tooltip>
-        <transparent>true</transparent>
-        <visible>true</visible>
-        <widget_type>Grouping Container</widget_type>
-        <width>3236</width>
-        <wuid>-1e0f3b69:149c8d6d12f:-4384</wuid>
+        <widget_type>Linking Container</widget_type>
+        <width>3237</width>
+        <wuid>3d76fbac:15461ea55d0:-43be</wuid>
         <x>0</x>
         <y>0</y>
       </widget>
@@ -557,7 +471,7 @@
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip>ACTIVE ALARM BUTTONS</tooltip>
+      <tooltip>$(name)</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -588,7 +502,7 @@
           <include_parent_macros>true</include_parent_macros>
         </macros>
         <name>Alarm Pane</name>
-        <opi_file>AlarmPane.opi</opi_file>
+        <opi_file>templates/AlarmPane.opi</opi_file>
         <resize_behaviour>2</resize_behaviour>
         <rules />
         <scale_options>
@@ -601,7 +515,7 @@
         <visible>true</visible>
         <widget_type>Linking Container</widget_type>
         <width>576</width>
-        <wuid>-29204d8b:152781f0007:-3c81</wuid>
+        <wuid>-77568aca:14ee42ff2b8:-7d06</wuid>
         <x>0</x>
         <y>0</y>
       </widget>
@@ -638,7 +552,7 @@
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip></tooltip>
+      <tooltip>$(name)</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -669,7 +583,7 @@
           <include_parent_macros>true</include_parent_macros>
         </macros>
         <name>Faceplate</name>
-        <opi_file>ControlPane.opi</opi_file>
+        <opi_file>templates/ControlPane.opi</opi_file>
         <resize_behaviour>2</resize_behaviour>
         <rules />
         <scale_options>
@@ -682,9 +596,9 @@
         <visible>true</visible>
         <widget_type>Linking Container</widget_type>
         <width>575</width>
-        <wuid>-29204d8b:152781f0007:-3b5d</wuid>
-        <x>0</x>
-        <y>0</y>
+        <wuid>-45a5416a:14dddc61744:-6d89</wuid>
+        <x>4</x>
+        <y>14</y>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -719,7 +633,7 @@
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip></tooltip>
+      <tooltip>$(name)</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -750,7 +664,7 @@
           <include_parent_macros>true</include_parent_macros>
         </macros>
         <name>Navigation Pane</name>
-        <opi_file>NavigationPane.opi</opi_file>
+        <opi_file>templates/NavigationPane.opi</opi_file>
         <resize_behaviour>2</resize_behaviour>
         <rules />
         <scale_options>
@@ -759,7 +673,7 @@
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
-        <tooltip></tooltip>
+        <tooltip>$(name)</tooltip>
         <visible>true</visible>
         <widget_type>Linking Container</widget_type>
         <width>3241</width>
