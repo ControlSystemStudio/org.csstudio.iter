@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.1.0.201707271421</boy_version>
+  <boy_version>5.1.0.201708220714</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -1865,8 +1865,10 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_1_visible>true</trace_1_visible>
             <trace_1_x_axis_index>0</trace_1_x_axis_index>
             <trace_1_x_pv></trace_1_x_pv>
+            <trace_1_x_pv_value />
             <trace_1_y_axis_index>1</trace_1_y_axis_index>
             <trace_1_y_pv>${COMPONENT}-CO</trace_1_y_pv>
+            <trace_1_y_pv_value />
             <trace_2_anti_alias>true</trace_2_anti_alias>
             <trace_2_buffer_size>1024</trace_2_buffer_size>
             <trace_2_concatenate_data>true</trace_2_concatenate_data>
@@ -1884,8 +1886,10 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_2_visible>true</trace_2_visible>
             <trace_2_x_axis_index>0</trace_2_x_axis_index>
             <trace_2_x_pv></trace_2_x_pv>
+            <trace_2_x_pv_value />
             <trace_2_y_axis_index>1</trace_2_y_axis_index>
             <trace_2_y_pv>${COMPONENT}-COH</trace_2_y_pv>
+            <trace_2_y_pv_value />
             <trace_3_anti_alias>true</trace_3_anti_alias>
             <trace_3_buffer_size>1024</trace_3_buffer_size>
             <trace_3_concatenate_data>true</trace_3_concatenate_data>
@@ -1903,8 +1907,10 @@ $(trace_0_y_pv_value)</tooltip>
             <trace_3_visible>true</trace_3_visible>
             <trace_3_x_axis_index>0</trace_3_x_axis_index>
             <trace_3_x_pv></trace_3_x_pv>
+            <trace_3_x_pv_value />
             <trace_3_y_axis_index>1</trace_3_y_axis_index>
             <trace_3_y_pv>${COMPONENT}-COL</trace_3_y_pv>
+            <trace_3_y_pv_value />
             <trace_count>4</trace_count>
             <transparent>false</transparent>
             <trigger_pv>sim://flipflop(1)</trigger_pv>
@@ -2461,7 +2467,7 @@ $(trace_0_y_pv_value)</tooltip>
             <actions hook="true" hook_all="true">
               <action type="WRITE_PV">
                 <pv_name>loc://$(DID)_FACEPLATE("")</pv_name>
-                <value>../industrial-control/Field/Faceplates/VLV_CTRL.opi COMPONENT=${COMPONENT}</value>
+                <value>../mimics/industrial-control/Field/Faceplates/VLV_CTRL.opi COMPONENT=${COMPONENT}</value>
                 <timeout>10</timeout>
                 <confirm_message></confirm_message>
                 <description>Load the component faceplate</description>
