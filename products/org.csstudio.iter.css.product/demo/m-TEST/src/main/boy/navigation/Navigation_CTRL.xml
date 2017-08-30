@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
 
- <CBS name="CTRL" description="CODAC, PBS{45,46,47}" enabled="true" opi_file="./../ITER-CTRL.opi LEVEL=ITER-CTRL" deprecated="false" alarm_root="/demo/CTRL" xmlns:xi="http://www.w3.org/2001/XInclude" >
-     <xi:include href="Navigation_CTRL-SUP.xml" >
-         <xi:fallback ></xi:fallback>
-</xi:include>
+<CBS name="CTRL" description="CODAC, PBS{45,46,47}" enabled="true"
+	opi_file="./mimics/ITER-CTRL_Mimic.opi LEVEL=ITER-CTRL" deprecated="false"
+	alarm_root="/demo/CTRL" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<xi:include href="Navigation_CTRL-SUP.xml">
+		<xi:fallback />
+	</xi:include>
 </CBS>

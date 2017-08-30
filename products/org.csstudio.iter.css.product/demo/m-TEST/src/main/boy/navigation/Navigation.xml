@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
 
- <navigation xmlns:xi="http://www.w3.org/2001/XInclude" >
-     <CBS name="ITER" description="ITER Global Supervision" enabled="true" opi_file="./../ITER.opi LEVEL=ITER" deprecated="false" alarm_root="/demo" xmlns:xi="http://www.w3.org/2001/XInclude" >
-         <xi:include href="Navigation_CTRL.xml" >
-             <xi:fallback ></xi:fallback>
-</xi:include>
-</CBS>
+<navigation xmlns:xi="http://www.w3.org/2001/XInclude">
+	<CBS name="ITER" description="ITER Global Supervision" enabled="true"
+		opi_file="./templates/ITER_Mimic.opi LEVEL=ITER" deprecated="false" alarm_root="/demo"
+		xmlns:xi="http://www.w3.org/2001/XInclude">
+		<xi:include href="Navigation_CTRL.xml">
+			<xi:fallback />
+		</xi:include>
+	</CBS>
 </navigation>
