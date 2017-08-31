@@ -290,17 +290,16 @@ function getOPI_FILE(elt) {
 	if (opi_type == "USER") {
 		// getting the opi file from the navigation xml configuration file
 		attribute = elt.getAttributeValue("opi_file");
-	
-		if (attribute && attribute.search(".opi") > 0) {
-	    	// suppressing the extension .opi
-	    	return attribute.substring(0, attribute.search(".opi"));
-	    }
-	    return attribute;
     } else {
     	// getting the opi file from a macro
 		attribute = widget.getMacroValue("OPI_FILE");
-	    return attribute;
     }
+	
+	if (attribute && attribute.search(".opi") > 0) {
+    	// suppressing the extension .opi and all other macro values
+    	return attribute.substring(0, attribute.search(".opi"));
+    }
+    return attribute;
 }
 
 function getALARM_ROOT(elt) {
