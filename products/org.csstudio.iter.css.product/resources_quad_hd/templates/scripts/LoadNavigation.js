@@ -159,7 +159,7 @@ function addHomeButton(elt) {
 	if (linkingContainer) {
 	    // reading attribute from element using JDOM
 	    // adding macros to the container
-		linkingContainer.addMacro("CBS", cbs_name.toUpperCase());	
+		linkingContainer.addMacro("CBS", cbs_name);	
 		linkingContainer.addMacro("CBS_PATH", path.toUpperCase());	
 		linkingContainer.addMacro("TITLE", getDescription(elt).toUpperCase());	
 		linkingContainer.addMacro(opi_macro, getOPI_FILE(elt));	
@@ -281,7 +281,7 @@ function addMimicButtons(root) {
 }
 
 function disableMimicButton(CBS) {
- 	var button = getMimicNavigationContainer().getWidget(CBS);	
+ 	var button = getMimicNavigationContainer().getWidget(CBS.toUpperCase());	
  	button.setPropertyValue("enabled", "false");	
 }
 
