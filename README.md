@@ -7,14 +7,14 @@ between different laboratories and universities.
 
 In order to build these sources the following repositories are required:
 				   
-org.csstudio.iter: 2eaa135f76d
-<https://github.com/css-iter/org.csstudio.iter/tree/2eaa135f76d>  
-cs-studio: 4e3b2608b1b  
-<https://github.com/css-iter/cs-studio/tree/4e3b2608b1b>  
+org.csstudio.iter: 0a8a822448c
+<https://github.com/css-iter/org.csstudio.iter/tree/0a8a822448c>  
+cs-studio: 97f96d722e3  
+<https://github.com/css-iter/cs-studio/tree/97f96d722e3>  
 maven-osgi-bundles:37f8b1227f3  
 <https://github.com/css-iter/maven-osgi-bundles/tree/37f8b1227f3>  
 cs-studio-thirdparty: 3383be3a915  
 <https://github.com/css-iter/cs-studio-thirdparty/tree/3383be3a915>  
-diirt: 1a20d63b787
-<https://github.com/css-iter/diirt/tree/1a20d63b787>  
+diirt: 2e1c804de74
+<https://github.com/css-iter/diirt/tree/2e1c804de74>  
 
