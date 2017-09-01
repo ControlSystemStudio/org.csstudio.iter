@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.1.0.201704201523</boy_version>
+  <boy_version>5.1.0.201708220714</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -18,9 +18,10 @@
   <height>2080</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
-    <ALARM_ROOT>/CODAC_AlarmHandler</ALARM_ROOT>
+    <OPI_FILE>../ITER</OPI_FILE>
+    <CANVAS_OPI>TRUE</CANVAS_OPI>
   </macros>
-  <name>VDU Display Requirements</name>
+  <name>${MIMIC_FILE}</name>
   <rules />
   <scripts />
   <show_close_button>true</show_close_button>
@@ -34,7 +35,7 @@
   <x>0</x>
   <y>0</y>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-    <actions hook="false" hook_all="false" />
+    <actions hook="true" hook_all="false" />
     <background_color>
       <color name="IO Background" red="235" green="235" blue="235" />
     </background_color>
@@ -65,7 +66,7 @@
     </scale_options>
     <scripts />
     <show_scrollbar>false</show_scrollbar>
-    <tooltip>Use the navigation area of this mockup to display the HMI Design Guide for ITER</tooltip>
+    <tooltip>$(name)</tooltip>
     <transparent>true</transparent>
     <visible>true</visible>
     <widget_type>Grouping Container</widget_type>
@@ -105,7 +106,7 @@
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip></tooltip>
+      <tooltip>$(name)</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -145,7 +146,7 @@
         </scale_options>
         <scripts />
         <show_scrollbar>false</show_scrollbar>
-        <tooltip></tooltip>
+        <tooltip>$(name)</tooltip>
         <transparent>false</transparent>
         <visible>true</visible>
         <widget_type>Grouping Container</widget_type>
@@ -153,47 +154,6 @@
         <wuid>-2d92a996:148f9384590:-7f7d</wuid>
         <x>0</x>
         <y>0</y>
-        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <auto_size>false</auto_size>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>true</enabled>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Text Fg" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>98</height>
-          <horizontal_alignment>1</horizontal_alignment>
-          <name>Comment</name>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <text>GLOBAL STATUSES</text>
-          <tooltip>GLOBAL STATUSES</tooltip>
-          <transparent>true</transparent>
-          <vertical_alignment>1</vertical_alignment>
-          <visible>true</visible>
-          <widget_type>Label</widget_type>
-          <width>1138</width>
-          <wrap_words>false</wrap_words>
-          <wuid>3b161333:14909e4682c:-7f26</wuid>
-          <x>0</x>
-          <y>0</y>
-        </widget>
         <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
           <actions hook="false" hook_all="false" />
           <background_color>
@@ -216,8 +176,8 @@
           <macros>
             <include_parent_macros>true</include_parent_macros>
           </macros>
-          <name>Linking Container Template</name>
-          <opi_file>../templates/GlobalStatuses.opi</opi_file>
+          <name>GlobalStatuses</name>
+          <opi_file>templates/GlobalStatuses.opi</opi_file>
           <resize_behaviour>2</resize_behaviour>
           <rules />
           <scale_options>
@@ -226,11 +186,11 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <tooltip></tooltip>
+          <tooltip>$(name)</tooltip>
           <visible>true</visible>
           <widget_type>Linking Container</widget_type>
           <width>1138</width>
-          <wuid>-57352fd0:149859b9257:-3092</wuid>
+          <wuid>-6949cace:14c9978aa31:-7822</wuid>
           <x>0</x>
           <y>0</y>
         </widget>
@@ -267,7 +227,7 @@
         </scale_options>
         <scripts />
         <show_scrollbar>false</show_scrollbar>
-        <tooltip></tooltip>
+        <tooltip>$(name)</tooltip>
         <transparent>false</transparent>
         <visible>true</visible>
         <widget_type>Grouping Container</widget_type>
@@ -295,7 +255,7 @@
           </foreground_color>
           <height>98</height>
           <horizontal_alignment>1</horizontal_alignment>
-          <name>Comment</name>
+          <name>MIMIC TITLE</name>
           <rules />
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -303,16 +263,15 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <text>VDU DISPLAY REQUIREMENTS</text>
-          <tooltip>MIMIC TITLE</tooltip>
+          <text>${TITLE}</text>
+          <tooltip>$(name)</tooltip>
           <transparent>true</transparent>
           <vertical_alignment>1</vertical_alignment>
           <visible>true</visible>
           <widget_type>Label</widget_type>
           <width>2093</width>
           <wrap_words>false</wrap_words>
-          <wuid>-ae3bbd7:148fa0f526e:-7f3f</wuid>
+          <wuid>-6949cace:14c9978aa31:-761d</wuid>
           <x>0</x>
           <y>0</y>
         </widget>
@@ -349,7 +308,7 @@
         </scale_options>
         <scripts />
         <show_scrollbar>false</show_scrollbar>
-        <tooltip></tooltip>
+        <tooltip>$(name)</tooltip>
         <transparent>false</transparent>
         <visible>true</visible>
         <widget_type>Grouping Container</widget_type>
@@ -357,47 +316,6 @@
         <wuid>-2d92a996:148f9384590:-7f6e</wuid>
         <x>3239</x>
         <y>0</y>
-        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <auto_size>false</auto_size>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>true</enabled>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Text Fg" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>98</height>
-          <horizontal_alignment>1</horizontal_alignment>
-          <name>Comment</name>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <text>UTC - TIME</text>
-          <tooltip>UTC - TIME</tooltip>
-          <transparent>true</transparent>
-          <vertical_alignment>1</vertical_alignment>
-          <visible>true</visible>
-          <widget_type>Label</widget_type>
-          <width>573</width>
-          <wrap_words>false</wrap_words>
-          <wuid>56bdcf55:1490ddf160e:-7e1d</wuid>
-          <x>0</x>
-          <y>0</y>
-        </widget>
         <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
           <actions hook="false" hook_all="false" />
           <background_color>
@@ -420,8 +338,8 @@
           <macros>
             <include_parent_macros>true</include_parent_macros>
           </macros>
-          <name>Linking Container Template</name>
-          <opi_file>../templates/UTC_Time.opi</opi_file>
+          <name>UTC TIme</name>
+          <opi_file>templates/UTC_Time.opi</opi_file>
           <resize_behaviour>2</resize_behaviour>
           <rules />
           <scale_options>
@@ -430,11 +348,11 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <tooltip></tooltip>
+          <tooltip>$(name)</tooltip>
           <visible>true</visible>
           <widget_type>Linking Container</widget_type>
           <width>573</width>
-          <wuid>-57352fd0:149859b9257:-309c</wuid>
+          <wuid>-6949cace:14c9978aa31:-76d4</wuid>
           <x>0</x>
           <y>0</y>
         </widget>
@@ -472,7 +390,7 @@
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip></tooltip>
+      <tooltip>$(name)</tooltip>
       <transparent>true</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -480,7 +398,7 @@
       <wuid>-ae3bbd7:148fa0f526e:-7efd</wuid>
       <x>0</x>
       <y>104</y>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
         <actions hook="false" hook_all="false" />
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
@@ -491,19 +409,20 @@
         <border_style>0</border_style>
         <border_width>2</border_width>
         <enabled>true</enabled>
-        <fc>false</fc>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
         </font>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>1760</height>
-        <lock_children>true</lock_children>
+        <group_name></group_name>
+        <height>1761</height>
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
-        <name>Information Layer</name>
+        <name>Mimic</name>
+        <opi_file>${MIMIC_FILE}.opi</opi_file>
+        <resize_behaviour>2</resize_behaviour>
         <rules />
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -511,191 +430,17 @@
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
-        <show_scrollbar>false</show_scrollbar>
         <tooltip></tooltip>
-        <transparent>true</transparent>
         <visible>true</visible>
-        <widget_type>Grouping Container</widget_type>
-        <width>3236</width>
-        <wuid>107a734f:149e1662949:-533f</wuid>
+        <widget_type>Linking Container</widget_type>
+        <width>3237</width>
+        <wuid>3d76fbac:15461ea55d0:-43be</wuid>
         <x>0</x>
         <y>0</y>
-      </widget>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-        <actions hook="false" hook_all="false" />
-        <background_color>
-          <color name="IO Background" red="235" green="235" blue="235" />
-        </background_color>
-        <border_color>
-          <color name="IO Border" red="0" green="0" blue="0" />
-        </border_color>
-        <border_style>0</border_style>
-        <border_width>2</border_width>
-        <enabled>true</enabled>
-        <fc>false</fc>
-        <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
-        </font>
-        <foreground_color>
-          <color name="IO Foreground" red="0" green="0" blue="0" />
-        </foreground_color>
-        <height>1760</height>
-        <lock_children>true</lock_children>
-        <macros>
-          <include_parent_macros>true</include_parent_macros>
-        </macros>
-        <name>Priority Layer</name>
-        <rules />
-        <scale_options>
-          <width_scalable>false</width_scalable>
-          <height_scalable>false</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <scripts />
-        <show_scrollbar>false</show_scrollbar>
-        <tooltip></tooltip>
-        <transparent>true</transparent>
-        <visible>true</visible>
-        <widget_type>Grouping Container</widget_type>
-        <width>3236</width>
-        <wuid>107a734f:149e1662949:-533e</wuid>
-        <x>0</x>
-        <y>0</y>
-      </widget>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-        <actions hook="false" hook_all="false" />
-        <background_color>
-          <color name="IO Background" red="235" green="235" blue="235" />
-        </background_color>
-        <border_color>
-          <color name="IO Border" red="0" green="0" blue="0" />
-        </border_color>
-        <border_style>0</border_style>
-        <border_width>2</border_width>
-        <enabled>true</enabled>
-        <fc>false</fc>
-        <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
-        </font>
-        <foreground_color>
-          <color name="IO Foreground" red="0" green="0" blue="0" />
-        </foreground_color>
-        <height>1760</height>
-        <lock_children>false</lock_children>
-        <macros>
-          <include_parent_macros>true</include_parent_macros>
-        </macros>
-        <name>Static Data Layer</name>
-        <rules />
-        <scale_options>
-          <width_scalable>false</width_scalable>
-          <height_scalable>false</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <scripts />
-        <show_scrollbar>false</show_scrollbar>
-        <tooltip></tooltip>
-        <transparent>true</transparent>
-        <visible>true</visible>
-        <widget_type>Grouping Container</widget_type>
-        <width>3236</width>
-        <wuid>107a734f:149e1662949:-5341</wuid>
-        <x>0</x>
-        <y>0</y>
-        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <auto_size>false</auto_size>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>false</enabled>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="32" style="0" pixels="false">IO SubTitle</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Text Fg" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>1760</height>
-          <horizontal_alignment>0</horizontal_alignment>
-          <name>Comment</name>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <text>The layout of VDU display canvas with its specific zones: status bar, auxiliaries statuses, mimic, alarm pane, control area and navigation pane have been presented.
-
-You can now explore the HMI Desing Guide using the navigation bar of this mockup to display the different requirements:
-
-1. General
-
-2. Mimics
-
-3. Faceplates</text>
-          <tooltip>MAIN DISPLAY AREA - MIMIC</tooltip>
-          <transparent>true</transparent>
-          <vertical_alignment>1</vertical_alignment>
-          <visible>true</visible>
-          <widget_type>Label</widget_type>
-          <width>3236</width>
-          <wrap_words>true</wrap_words>
-          <wuid>107a734f:149e1662949:-532a</wuid>
-          <x>0</x>
-          <y>0</y>
-        </widget>
-        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <auto_size>true</auto_size>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>false</enabled>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Text Fg" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>33</height>
-          <horizontal_alignment>0</horizontal_alignment>
-          <name>Label Template</name>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <text>* $(CBS) $(TOPIC) $(CONTACT)</text>
-          <tooltip></tooltip>
-          <transparent>true</transparent>
-          <vertical_alignment>1</vertical_alignment>
-          <visible>true</visible>
-          <widget_type>Label</widget_type>
-          <width>448</width>
-          <wrap_words>true</wrap_words>
-          <wuid>-441babce:15089d22b05:-69a2</wuid>
-          <x>1990</x>
-          <y>1710</y>
-        </widget>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-      <actions hook="true" hook_all="false" />
+      <actions hook="false" hook_all="false" />
       <background_color>
         <color name="IO Area Background" red="221" green="223" blue="229" />
       </background_color>
@@ -726,7 +471,7 @@ You can now explore the HMI Desing Guide using the navigation bar of this mockup
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip>ACTIVE ALARM BUTTONS</tooltip>
+      <tooltip>$(name)</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -757,7 +502,7 @@ You can now explore the HMI Desing Guide using the navigation bar of this mockup
           <include_parent_macros>true</include_parent_macros>
         </macros>
         <name>Alarm Pane</name>
-        <opi_file>../templates/AlarmPane.opi</opi_file>
+        <opi_file>templates/AlarmPane.opi</opi_file>
         <resize_behaviour>2</resize_behaviour>
         <rules />
         <scale_options>
@@ -766,11 +511,11 @@ You can now explore the HMI Desing Guide using the navigation bar of this mockup
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
-        <tooltip></tooltip>
+        <tooltip>$(name)</tooltip>
         <visible>true</visible>
         <widget_type>Linking Container</widget_type>
         <width>576</width>
-        <wuid>-4dd0cfa9:150a847eb4f:-7d8d</wuid>
+        <wuid>-77568aca:14ee42ff2b8:-7d06</wuid>
         <x>0</x>
         <y>0</y>
       </widget>
@@ -807,7 +552,7 @@ You can now explore the HMI Desing Guide using the navigation bar of this mockup
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip></tooltip>
+      <tooltip>$(name)</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -838,7 +583,7 @@ You can now explore the HMI Desing Guide using the navigation bar of this mockup
           <include_parent_macros>true</include_parent_macros>
         </macros>
         <name>Faceplate</name>
-        <opi_file>../templates/ControlPane.opi</opi_file>
+        <opi_file>templates/ControlPane.opi</opi_file>
         <resize_behaviour>2</resize_behaviour>
         <rules />
         <scale_options>
@@ -847,13 +592,13 @@ You can now explore the HMI Desing Guide using the navigation bar of this mockup
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
-        <tooltip></tooltip>
+        <tooltip>$(name)</tooltip>
         <visible>true</visible>
         <widget_type>Linking Container</widget_type>
         <width>575</width>
-        <wuid>-57352fd0:149859b9257:-18dd</wuid>
-        <x>0</x>
-        <y>0</y>
+        <wuid>-45a5416a:14dddc61744:-6d89</wuid>
+        <x>4</x>
+        <y>14</y>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -864,7 +609,7 @@ You can now explore the HMI Desing Guide using the navigation bar of this mockup
       <border_color>
         <color name="IO Border" red="0" green="0" blue="0" />
       </border_color>
-      <border_style>5</border_style>
+      <border_style>0</border_style>
       <border_width>1</border_width>
       <enabled>true</enabled>
       <fc>false</fc>
@@ -888,7 +633,7 @@ You can now explore the HMI Desing Guide using the navigation bar of this mockup
       </scale_options>
       <scripts />
       <show_scrollbar>false</show_scrollbar>
-      <tooltip></tooltip>
+      <tooltip>$(name)</tooltip>
       <transparent>false</transparent>
       <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
@@ -917,10 +662,9 @@ You can now explore the HMI Desing Guide using the navigation bar of this mockup
         <height>189</height>
         <macros>
           <include_parent_macros>true</include_parent_macros>
-          <INPUT>../Design_Guide/navigation/Design_Guide.xml</INPUT>
         </macros>
         <name>Navigation Pane</name>
-        <opi_file>../templates/NavigationPane.opi</opi_file>
+        <opi_file>templates/NavigationPane.opi</opi_file>
         <resize_behaviour>2</resize_behaviour>
         <rules />
         <scale_options>
@@ -929,11 +673,11 @@ You can now explore the HMI Desing Guide using the navigation bar of this mockup
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
-        <tooltip></tooltip>
+        <tooltip>$(name)</tooltip>
         <visible>true</visible>
         <widget_type>Linking Container</widget_type>
         <width>3241</width>
-        <wuid>-35becc36:14c7416f51c:-66fa</wuid>
+        <wuid>-6949cace:14c9978aa31:-7ce3</wuid>
         <x>0</x>
         <y>0</y>
       </widget>
