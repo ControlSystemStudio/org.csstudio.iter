@@ -1,4 +1,4 @@
-ITER Control System Studio version ITER-CODAC-CORE-6.0.0-a2-4.5.1-20170829
+ITER Control System Studio version ITER-CODAC-CORE-6.0.0-a3-4.5.1
 
 Control System Studio is an Eclipse-based collection of tools
 to monitor and operate large scale control systems, such as the
