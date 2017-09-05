@@ -10,6 +10,16 @@ refer to the file ITER-LICENSE.TXT located in the top level directory
 of the distribution package.
 */
 
+/*
+V2.0 Feb 2017 - support of only one OPI frame (canvas)
+INPUT			: macro defining the navigation xml configuration file
+LEVEL			: macro defining which is the current level in the navigation
+CANVAS_OPI		: macro defining that only one frame is used
+MIMIC_FILE		: macro defining which mimics has to be linked to the main canvas
+OPI_FILE		: macro defining which OPI to open (CANVAS_OPI = false)
+OPI_TYPE		: macro defining if it is a USER opi or the ALARMS LIST
+*/
+
 importPackage(Packages.org.csstudio.opibuilder.scriptUtil);
 importPackage(Packages.java.lang)
 
