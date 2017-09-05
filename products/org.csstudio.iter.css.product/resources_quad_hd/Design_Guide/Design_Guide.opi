@@ -18,8 +18,10 @@
   <height>2080</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
-    <OPI_FILE>../ITER</OPI_FILE>
-    <CANVAS_OPI>TRUE</CANVAS_OPI>
+    <CANVAS_OPI>FALSE</CANVAS_OPI>
+    <OPI_FILE>Design_Guide</OPI_FILE>
+    <MIMIC_FILE>mimics/Design_Guide_Mimic</MIMIC_FILE>
+    <TITLE>HMI Design Guide</TITLE>
   </macros>
   <name>${MIMIC_FILE}</name>
   <rules />
@@ -177,7 +179,7 @@
             <include_parent_macros>true</include_parent_macros>
           </macros>
           <name>GlobalStatuses</name>
-          <opi_file>templates/GlobalStatuses.opi</opi_file>
+          <opi_file>../templates/GlobalStatuses.opi</opi_file>
           <resize_behaviour>2</resize_behaviour>
           <rules />
           <scale_options>
@@ -339,7 +341,7 @@
             <include_parent_macros>true</include_parent_macros>
           </macros>
           <name>UTC TIme</name>
-          <opi_file>templates/UTC_Time.opi</opi_file>
+          <opi_file>../templates/UTC_Time.opi</opi_file>
           <resize_behaviour>2</resize_behaviour>
           <rules />
           <scale_options>
@@ -421,7 +423,7 @@
           <include_parent_macros>true</include_parent_macros>
         </macros>
         <name>Mimic</name>
-        <opi_file>${MIMIC_FILE}.opi</opi_file>
+        <opi_file>mimics/Design_Guide_Mimic.opi</opi_file>
         <resize_behaviour>2</resize_behaviour>
         <rules />
         <scale_options>
@@ -502,7 +504,7 @@
           <include_parent_macros>true</include_parent_macros>
         </macros>
         <name>Alarm Pane</name>
-        <opi_file>templates/AlarmPane.opi</opi_file>
+        <opi_file>../templates/AlarmPane.opi</opi_file>
         <resize_behaviour>2</resize_behaviour>
         <rules />
         <scale_options>
@@ -583,7 +585,7 @@
           <include_parent_macros>true</include_parent_macros>
         </macros>
         <name>Faceplate</name>
-        <opi_file>templates/ControlPane.opi</opi_file>
+        <opi_file>../templates/ControlPane.opi</opi_file>
         <resize_behaviour>2</resize_behaviour>
         <rules />
         <scale_options>
@@ -662,9 +664,10 @@
         <height>189</height>
         <macros>
           <include_parent_macros>true</include_parent_macros>
+          <INPUT>../Design_Guide/navigation/Design_Guide.xml</INPUT>
         </macros>
         <name>Navigation Pane</name>
-        <opi_file>templates/NavigationPane.opi</opi_file>
+        <opi_file>../templates/NavigationPane.opi</opi_file>
         <resize_behaviour>2</resize_behaviour>
         <rules />
         <scale_options>

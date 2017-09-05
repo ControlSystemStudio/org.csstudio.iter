@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.1.0.201704201523</boy_version>
+  <boy_version>5.1.0.201708220714</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -180,7 +180,6 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <show_scrollbar>false</show_scrollbar>
           <text>GLOBAL STATUSES</text>
           <tooltip>GLOBAL STATUSES</tooltip>
           <transparent>true</transparent>
@@ -302,7 +301,6 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <show_scrollbar>false</show_scrollbar>
           <text>NAVIGATION CONFIGURATION</text>
           <tooltip>MIMIC TITLE</tooltip>
           <transparent>true</transparent>
@@ -384,7 +382,6 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts />
-          <show_scrollbar>false</show_scrollbar>
           <text>UTC - TIME</text>
           <tooltip>UTC - TIME</tooltip>
           <transparent>true</transparent>
@@ -479,7 +476,7 @@
       <wuid>-ae3bbd7:148fa0f526e:-7efd</wuid>
       <x>0</x>
       <y>104</y>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
         <actions hook="false" hook_all="false" />
         <background_color>
           <color name="IO Background" red="235" green="235" blue="235" />
@@ -490,19 +487,20 @@
         <border_style>0</border_style>
         <border_width>2</border_width>
         <enabled>true</enabled>
-        <fc>false</fc>
         <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
         </font>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
+        <group_name></group_name>
         <height>1760</height>
-        <lock_children>true</lock_children>
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
-        <name>Information Layer</name>
+        <name>Mimic</name>
+        <opi_file>mimics/Design_Guide_1_1_1_Mimic.opi</opi_file>
+        <resize_behaviour>2</resize_behaviour>
         <rules />
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -510,169 +508,13 @@
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
-        <show_scrollbar>false</show_scrollbar>
         <tooltip></tooltip>
-        <transparent>true</transparent>
         <visible>true</visible>
-        <widget_type>Grouping Container</widget_type>
+        <widget_type>Linking Container</widget_type>
         <width>3236</width>
-        <wuid>107a734f:149e1662949:-533f</wuid>
+        <wuid>-1f8d4ba9:15e3dfc6995:-5907</wuid>
         <x>0</x>
         <y>0</y>
-      </widget>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-        <actions hook="false" hook_all="false" />
-        <background_color>
-          <color name="IO Background" red="235" green="235" blue="235" />
-        </background_color>
-        <border_color>
-          <color name="IO Border" red="0" green="0" blue="0" />
-        </border_color>
-        <border_style>0</border_style>
-        <border_width>2</border_width>
-        <enabled>true</enabled>
-        <fc>false</fc>
-        <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
-        </font>
-        <foreground_color>
-          <color name="IO Foreground" red="0" green="0" blue="0" />
-        </foreground_color>
-        <height>1760</height>
-        <lock_children>false</lock_children>
-        <macros>
-          <include_parent_macros>true</include_parent_macros>
-        </macros>
-        <name>Priority Layer</name>
-        <rules />
-        <scale_options>
-          <width_scalable>false</width_scalable>
-          <height_scalable>false</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <scripts />
-        <show_scrollbar>false</show_scrollbar>
-        <tooltip></tooltip>
-        <transparent>true</transparent>
-        <visible>true</visible>
-        <widget_type>Grouping Container</widget_type>
-        <width>3236</width>
-        <wuid>107a734f:149e1662949:-533e</wuid>
-        <x>0</x>
-        <y>0</y>
-      </widget>
-      <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-        <actions hook="false" hook_all="false" />
-        <background_color>
-          <color name="IO Background" red="235" green="235" blue="235" />
-        </background_color>
-        <border_color>
-          <color name="IO Border" red="0" green="0" blue="0" />
-        </border_color>
-        <border_style>0</border_style>
-        <border_width>2</border_width>
-        <enabled>true</enabled>
-        <fc>false</fc>
-        <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="36" style="0" pixels="false">IO Title</opifont.name>
-        </font>
-        <foreground_color>
-          <color name="IO Foreground" red="0" green="0" blue="0" />
-        </foreground_color>
-        <height>1760</height>
-        <lock_children>false</lock_children>
-        <macros>
-          <include_parent_macros>true</include_parent_macros>
-        </macros>
-        <name>Static Data Layer</name>
-        <rules />
-        <scale_options>
-          <width_scalable>false</width_scalable>
-          <height_scalable>false</height_scalable>
-          <keep_wh_ratio>false</keep_wh_ratio>
-        </scale_options>
-        <scripts />
-        <show_scrollbar>false</show_scrollbar>
-        <tooltip></tooltip>
-        <transparent>true</transparent>
-        <visible>true</visible>
-        <widget_type>Grouping Container</widget_type>
-        <width>3236</width>
-        <wuid>107a734f:149e1662949:-5341</wuid>
-        <x>0</x>
-        <y>0</y>
-        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-          <actions hook="false" hook_all="false" />
-          <auto_size>false</auto_size>
-          <background_color>
-            <color name="IO Background" red="235" green="235" blue="235" />
-          </background_color>
-          <border_color>
-            <color name="IO Border" red="0" green="0" blue="0" />
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>false</enabled>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="32" style="0" pixels="false">IO SubTitle</opifont.name>
-          </font>
-          <foreground_color>
-            <color name="IO Text Fg" red="0" green="0" blue="0" />
-          </foreground_color>
-          <height>1760</height>
-          <horizontal_alignment>0</horizontal_alignment>
-          <name>Comment</name>
-          <rules />
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts />
-          <show_scrollbar>false</show_scrollbar>
-          <text>The navigation configuration xml file is provided in standard until CBS-3 level under the navigation folder of the I&amp;C project.
-
-For instance, from the main ITER level, the user can navigate to the &lt;CBS&gt; name UTIL, then to the &lt;CBS&gt; name S15 and finally to &lt;CBS&gt; name AG07.
-
-For each &lt;CBS&gt; tag, opi_file attribute specifies the relative path of the OPI file to open. This path includes the specification of the mandatory macro LEVEL that gives the full breakdown from the main OPI: ITER[-{CBS1}][-{CBS2}][-{CBS3}]. The naming convention for OPI files follows also the breakdown: ITER[-{CBS1}][-{CBS2}][-{CBS3}].opi.
-
-From CBS-3, the navigation configuration can be extended using external xml files: &lt;xi:include href="UTIL-S15-AG07.xml"&gt;. The included navigation xml file follows the same syntax.
-
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;navigation xmlns:xi="http://www.w3.org/2001/XInclude"&gt;
-	&lt;CBS name="ITER" description="ITER Global Supervision" enabled="true" opi_file="../ITER.opi LEVEL=ITER" alarm_root="" deprecated="false" &gt;
-		&lt;CBS name="UTIL" description="Utilities" enabled="true" opi_file="../IER-UTIL.opi LEVEL=ITER-UTIL" alarm_root="" deprecated="false" &gt;
-			&lt;CBS name="S15" description="15kV work site power" enabled="true" opi_file="../ITER-UTIL-S15.opi LEVEL=ITER-UTIL-S15" alarm_root=""  deprecated="false" &gt;
-				&lt;xi:include href="UTIL-S15-AG07.xml"&gt; &lt;xi:fallback /&gt; &lt;/xi:include&gt;
-			&lt;/CBS&gt;
-		&lt;/CBS&gt;	
-	&lt;/CBS&gt;
-&lt;/navigation&gt;
-
-Additionnal attributes:
-- description: tooltip when hovering the navigation button
-- enabled (true/false): navigation button enabled or disabled
-- alarm_root: alarm path on beast (will be used in future version by the alarm pane)
-- deprecated (true/false): the navigation button is active but marked as Invalid
-
-Exemple of included configuration file:
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;CBS name="AG07" description="SSEN High Voltage" enabled="true" opi_file="../ITER-UTIL-S15-AG07.opi LEVEL=ITER-UTIL-S15-AG07" alarm_root="" deprecated="false" &gt;
-	&lt;CBS name="dummy" description="dummy" enabled="false" opi_file="" alarm_root="" deprecated="false" &gt;
-	&lt;/CBS&gt;
-&lt;/CBS&gt;
-</text>
-          <tooltip>MAIN DISPLAY AREA - MIMIC</tooltip>
-          <transparent>true</transparent>
-          <vertical_alignment>1</vertical_alignment>
-          <visible>true</visible>
-          <widget_type>Label</widget_type>
-          <width>3236</width>
-          <wrap_words>true</wrap_words>
-          <wuid>107a734f:149e1662949:-532a</wuid>
-          <x>0</x>
-          <y>0</y>
-        </widget>
       </widget>
     </widget>
     <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
@@ -824,7 +666,6 @@ Exemple of included configuration file:
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
-        <show_scrollbar>false</show_scrollbar>
         <text></text>
         <tooltip>CONTROL AREA - FACEPLATES</tooltip>
         <transparent>true</transparent>
