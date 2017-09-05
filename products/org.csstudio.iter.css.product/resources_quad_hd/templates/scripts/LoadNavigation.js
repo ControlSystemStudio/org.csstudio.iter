@@ -101,8 +101,8 @@ function updateGlobalNavigationButtons(thisCBS, level){
 	if (level == 0){
 	    // adding the Home button for level 0 - ITER overview
 		addHomeButton(thisCBS);
-	} else {
-		// adding an Up button for intermediate levels
+	} else if (level <= 5) {
+		// adding an Up button for intermediate levels - maximum 5 levels
 		addUpButton(thisCBS);
 	}
 }
