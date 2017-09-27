@@ -48,6 +48,22 @@
                             <goal>run</goal>
                         </goals>
                     </execution>
+                    <!-- Used patched jface for @2x icons -->
+                   <execution>
+                        <id>org.eclipse.jface</id>
+                        <phase>process-resources</phase>
+                        <configuration>
+                          <failOnError>false</failOnError>
+                          <target>
+                            <echo message="Copying patched org.eclipse.jface plugin to ${project.build.directory}" />
+                            <copy verbose="true" file="${project.build.directory}/../../plugins/org.eclipse.jface/target/org.eclipse.jface-3.12.2.v20170113-2113.jar" 
+                                            tofile="${project.build.directory}/products/org.csstudio.iter.product.css.product/org.eclipse.jface_3.12.2.v20170113-2113.jar"/>
+                          </target>
+                        </configuration>
+                        <goals>
+                          <goal>run</goal>
+                        </goals>
+                      </execution>
                     <execution>
                         <id>configuration</id>
                         <phase>process-resources</phase>

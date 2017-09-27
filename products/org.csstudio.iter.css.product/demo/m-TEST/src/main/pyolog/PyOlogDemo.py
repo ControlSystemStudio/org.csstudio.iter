@@ -2,6 +2,9 @@
 Created on Nov 18, 2014
 
 @author: bobnarj
+
+13.9.2017 - Borut Terpinc
+Added the text update test 
 '''
 
 from pyOlog import Logbook, LogEntry, OlogClient, Attachment
@@ -53,7 +56,7 @@ if __name__ == '__main__':
     def createEntryWithAttachment():
         lb = Logbook(name='CODAC')
         print('Creating a text entry with an attached image in the logbook ' + lb.getName())     
-        text = 'This is a demo python log entry created on ' + datetime.now().isoformat(' ')
+        text = 'This is a demo python log entry  wtih image attachment created on ' + datetime.now().isoformat(' ')
         pp = os.path.dirname(os.path.abspath(__file__))
         path = os.path.relpath('Desert.png', pp)
         image = Attachment(open(path,'rb'))
@@ -73,17 +76,33 @@ if __name__ == '__main__':
         logs = client.find(search='*demo*',start=startTime, end=endTime, tag='Design')
         for s in logs:
             print(s.getText())
-    
-    '''
-    listLogbooks()    
-    print('')
-    createTextEntry()
-    print('')
-    createTextEntryMultipleLogbooks()
-    print('')
-    createEntryWithTags()
-    print('')
-    createEntryWithAttachment()
-    print('')
-    '''
-    searchForLastHourEntries()
+
+    '''Update log entry with image attachment '''        
+    def updateLogEntry():
+        lb = Logbook(name='CODAC')
+        print('Creating a log entry which will be updated in logbook ' + lb.getName())         
+        text = 'This is a demo python log entry which will be updated, created on ' + datetime.now().isoformat(' ')
+        testLog = LogEntry(text=text, owner='owner', logbooks=[lb]) 
+        log = client.log(logEntry=testLog)
+
+        textupdate = '<br>And this is update text to python log entry ' + datetime.now().isoformat(' ')
+        updatedLogEntry = LogEntry(text=text + textupdate, owner='owner', logbooks=[lb]) 
+        updatedLog = client.update(log.getId(), updatedLogEntry)
+        logEntries = client.find(search=text)
+        
+'''Here update methods are called. You can commnet out the desired methods '''
+'''
+listLogbooks()    
+print('')
+createTextEntry()
+print('')
+createTextEntryMultipleLogbooks()
+print('')
+createEntryWithTags()
+print('')
+createEntryWithAttachment()
+print('')
+updateLogEntry()
+'''
+print('')
+searchForLastHourEntries()

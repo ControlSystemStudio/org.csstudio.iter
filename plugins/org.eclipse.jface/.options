@@ -1,0 +1,41 @@
+# Debugging options for the org.eclipse.jface plugin.
+
+# Turn on debugging for the org.eclipse.jface plugin.
+org.eclipse.jface/debug=true
+
+# Colorize bidi-processed fields and add tooltips/messages that show the configured handlingType for text widgets
+org.eclipse.jface/debug/bidiUtils=false
+
+# Trace time spent creating URLImageDescriptor images
+org.eclipse.jface/debug/trace/URLImageDescriptor=false
+
+# Log cases where an "@2x" image could not be found.
+org.eclipse.jface/debug/logURLImageDescriptorMissing2x=false
+
+# Switch URLImageDescriptor to load images directly via URL#openStream() (instead of FileLocator#toFileURL(URL))
+org.eclipse.jface/debug/loadURLImageDescriptorDirectly=false
+
+# Switch URLImageDescriptor to load images using the "@2x" convention for high-dpi
+org.eclipse.jface/debug/loadURLImageDescriptor2x=true
+
+# Always load the .png image of the "@2x" version, even if the original image was a .gif.
+org.eclipse.jface/debug/loadURLImageDescriptor2xPngForGif=false
+
+# Log a message if a dialog is opened without a parent
+org.eclipse.jface/debug/dialog/noparent=false
+
+# Always log reentrant calls to viewers (if set to false, it just logs the first reentrant call)
+org.eclipse.jface/debug/viewers/reentrantViewerCalls=false
+
+# Log illegal equal elements in a viewer
+org.eclipse.jface/debug/viewers/equalElements=false
+
+# Show the jface new look for the preferences dialog
+org.eclipse.jface/newlook/preferences/showNewLook=false
+
+# Report when a tool bar contribution item is asked its visibility after being
+# disposed.  TODO Remove this option?  Bug 51000
+org.eclipse.jface/trace/toolbarDisposal=false
+
+# Reports the time to run an action
+org.eclipse.jface/trace/actions=false
