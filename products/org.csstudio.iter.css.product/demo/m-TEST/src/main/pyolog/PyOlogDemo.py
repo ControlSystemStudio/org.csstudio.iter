@@ -73,7 +73,7 @@ if __name__ == '__main__':
             print(s.getText())
             
         print('Entries created in the last hour with tag \'Design\'')
-        logs = client.find(search='*demo*',start=startTime, end=endTime, tag='Design')
+        logs = client.find(search='*',start=startTime, end=endTime, tag='Design')
         for s in logs:
             print(s.getText())
 
