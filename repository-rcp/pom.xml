@@ -64,6 +64,21 @@
                           <goal>run</goal>
                         </goals>
                       </execution>
+ 					<!-- Copy the older verison of draw2d in realtion with https://github.com/ControlSystemStudio/cs-studio/issues/1818-->
+                    <execution>
+                        <id>draw2d-bug-fix</id>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <failOnError>false</failOnError>
+                            <target>
+                                <echo message="Copying ported org.eclipse.draw2d_3.9.101.201408150207.jar to ${project.build.directory}"/>
+                                <copy file="${project.build.directory}/../../plugins/org.eclipse.draw2d_3.9.101.201408150207.jar" tofile="${project.build.directory}/products/org.csstudio.iter.product.css.product/org.eclipse.draw2d_3.9.101.201408150207.jar" verbose="true"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
                     <execution>
                         <id>configuration</id>
                         <phase>process-resources</phase>
