@@ -13,13 +13,11 @@ url=http://localhost:8000/Olog
 def __loadConfig():
     import os.path
     import ConfigParser
-    dflt={'url':'http://localhost:8000/Olog'}
+    dflt={'url':'http://localhost:8082/Olog'}
     cf=ConfigParser.SafeConfigParser(defaults=dflt)
     cf.read([
-        '/etc/pyOlog.conf',
-        os.path.expanduser('~/pyOlog.conf'),
-        'pyOlog.conf', 
-        '/opt/codac/lib/python/site-packages/pyOlog.conf'
+        '/opt/codac/lib/python/site-packages/pyOlog.conf',
+        os.path.expanduser('~/pyOlog.conf')
     ])
     return cf
 

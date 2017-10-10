@@ -18,12 +18,12 @@ if __name__ == '__main__':
         if _conf.has_option('DEFAULT', arg):
             return _conf.get('DEFAULT', arg)
         else:
-            print('No python configuration for ' + arg + ' found. Please create ~/pyOlog.conf or /etc/pyOlog.conf. \n Exiting demo!')
+            print('No python configuration for ' + arg + ' found.\n Exiting demo!')
             sys.exit();
     
-    ologurl = getDefaultConfig('ologurl')
+    ologurl = getDefaultConfig('url')
 
-    client = OlogClient(url = ologurl ,username=getDefaultConfig('ologUsername'),password=getDefaultConfig('ologPassword'))
+    client = OlogClient(url = ologurl ,username=getDefaultConfig('username'),password=getDefaultConfig('password'))
 
     ''' List all logbooks that currently exist in elog '''
     def listLogbooks():
