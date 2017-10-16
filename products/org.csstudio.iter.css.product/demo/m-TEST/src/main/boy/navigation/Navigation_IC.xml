@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- BOY Files Navigation -->
+
+<CBS name="IC" description="Ion Cyclotron Heating and CD, PBS{51}"
+	enabled="false" opi_file="./mimics/ITER-IC.opi LEVEL=ITER-IC" deprecated="false"
+	alarm_root="/demo/IC" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<xi:include href="Navigation_IC-ICH1.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+
+	<xi:include href="Navigation_IC-ICH2.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+
+	<xi:include href="Navigation_IC-ICMN.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+</CBS>

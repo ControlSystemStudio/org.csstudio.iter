@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- BOY Files Navigation -->
+
+<CBS name="CRST" description="Cryostat, PBS{24,27}" enabled="false"
+	opi_file="./mimics/ITER-CRST.opi LEVEL=ITER-CRST" deprecated="false"
+	alarm_root="/demo/CRST" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<xi:include href="Navigation_CRST-CYSI.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+
+	<xi:include href="Navigation_CRST-TSMD.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+</CBS>

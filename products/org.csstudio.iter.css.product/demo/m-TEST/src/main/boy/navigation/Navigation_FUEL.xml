@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- BOY Files Navigation -->
+
+<CBS name="FUEL" description="Fuelling and Glow Discharges, PBS{18}"
+	enabled="false" opi_file="./mimics/ITER-FUEL.opi LEVEL=ITER-FUEL"
+	deprecated="false" alarm_root="/demo/FUEL" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<xi:include href="Navigation_FUEL-DMS.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+
+	<xi:include href="Navigation_FUEL-FIG.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+
+	<xi:include href="Navigation_FUEL-FIP.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+
+	<xi:include href="Navigation_FUEL-GDC.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+</CBS>
