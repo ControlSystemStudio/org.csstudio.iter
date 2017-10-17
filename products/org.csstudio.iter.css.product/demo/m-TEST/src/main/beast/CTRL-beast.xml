@@ -39431,6 +39431,11 @@
                         <details>mailto:someone@iter.org,someone_else@iter.org?subject=*MID Switch fails to maintain the tank level&amp;body=*{0} alarm - Tank Switch is {1}</details>
                         <delay>5</delay>
                     </automated_action>
+                    <automated_action>
+                        <title>Create a Logbook entry</title>
+                        <details>log:CODAC&amp;body={0} Alarm raised - MID Switch fails to maintain the tank level - Tank HIGH Switch is {1}</details>
+                        <delay>0</delay>
+                    </automated_action>
                 </pv>
                 <pv name="CTRL-SUP-BEAS:LOW-SWITCH">
                     <description>Tank level LOW</description>
@@ -39467,6 +39472,11 @@
                     <automated_action>
                         <title>Contact Maintenance Service</title>
                         <details>mailto:someone@iter.org</details>
+                        <delay>0</delay>
+                    </automated_action>
+                    <automated_action>
+                        <title>Create a Logbook entry</title>
+                        <details>log:CODAC&amp;body={0} Alarm raised - MID Switch fails to maintain the tank level - Tank LOW Switch is {1}</details>
                         <delay>0</delay>
                     </automated_action>
                 </pv>

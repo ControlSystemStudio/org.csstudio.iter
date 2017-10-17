@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- Alarm configuration Root: UTIL -->
+
+<config name="UTIL">
+	<component name="UTIL">
+		<component name="UTIL-S15">
+			<component name="UTIL-S15-0000">
+				<pv name="UTIL-S15-0000:15KV_ACT_POWER">
+					<description>Site Power Fault</description>
+
+					<latching>true</latching>
+
+					<delay>0</delay>
+
+					<guidance>
+						<title>Guidance</title>
+
+						<details>Purpose of alarm : Increase in Winding temperature.
+							Alarm response action: Check connected load and shed non essential
+							load.
+							Failure Consequence: Transformer will trip on overload
+							conditions and will cause total power failure.
+							Operator response time: Before permissible overload period and limit of
+							Transformer.
+						</details>
+					</guidance>
+				</pv>
+			</component>
+		</component>
+	</component>
+</config>
