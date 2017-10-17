@@ -37,7 +37,9 @@ function alarm {
     
     cmds[1]="bash -c 'alarm-configtool -root demo -import -file ./beast/CTRL-beast.xml ; alarm-server -root demo'"
     
-    for i in {1..1}; do
+    cmds[2]="bash -c 'alarm-configtool -root UTIL -import -file ./beast/UTIL-beast.xml ; alarm-server -root UTIL'"
+    
+    for i in {1..2}; do
         options+=($tab -e "\"${cmds[i]}\"")
     done
 }
