@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- BOY Files Navigation -->
+
+<CBS name="RH" description="Remote Handling, PBS{23,58}" enabled="false"
+	opi_file="./mimics/ITER-RH.opi LEVEL=ITER-RH" deprecated="false"
+	alarm_root="/demo/RH" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<xi:include href="Navigation_RH-PPT1.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+
+	<xi:include href="Navigation_RH-PPT2.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+
+	<xi:include href="Navigation_RH-RHCS.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+</CBS>

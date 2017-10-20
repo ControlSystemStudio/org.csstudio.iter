@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- BOY Files Navigation -->
+
+<CBS name="NB" description="Neutral Beam Heating and CD, PBS{53}"
+	enabled="false" opi_file="./mimics/ITER-NB.opi LEVEL=ITER-NB" deprecated="false"
+	alarm_root="/demo/NB" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<xi:include href="Navigation_NB-DNBC.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+
+	<xi:include href="Navigation_NB-NB1C.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+
+	<xi:include href="Navigation_NB-NB2C.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+</CBS>

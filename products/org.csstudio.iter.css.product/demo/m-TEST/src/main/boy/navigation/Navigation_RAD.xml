@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- BOY Files Navigation -->
+
+<CBS name="RAD" description="Radioactive Material Treatment, PBS{64,66}"
+	enabled="false" opi_file="./mimics/ITER-RAD.opi LEVEL=ITER-RAD" deprecated="false"
+	alarm_root="/demo/RAD" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<xi:include href="Navigation_RAD-REMS.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+
+	<xi:include href="Navigation_RAD-RWTX.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+</CBS>
