@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+     Alarm configuration snapshot Tue Oct 17 15:05:39 UTC 2017
+     URL : jdbc:postgresql://localhost/css_alarm_3_0_0
+     Root: demo
+  -->
+<config name="demo">
+    <component name="CTRL">
+        <component name="CTRL-SUP">
+            <component name="CTRL-SUP-BOY">
+                <pv name="CTRL-SUP-BOY:AI1">
+                    <description>AI1 Analog value {1} out of range</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>AI1 signal reset within alarm limits</title>
+                        <details>Shall be Warnings: 20 - 80 - Alarms : 10 - 90</details>
+                    </guidance>
+                </pv>
+                <pv name="CTRL-SUP-BOY:BI">
+                    <description>BI shall never be {1}</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>BI shall be set ON</title>
+                        <details>Switch ON the actuator</details>
+                    </guidance>
+                </pv>
+                <pv name="CTRL-SUP-BOY:BO">
+                    <description>BO shall never be {0}</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>Switch ON BO</title>
+                        <details>Switch BO ON</details>
+                    </guidance>
+                    <command>
+                        <title>Switch ON Command</title>
+                        <details>caput CTRL-SUP-BOY:BO 1</details>
+                    </command>
+                </pv>
+                <pv name="CTRL-SUP-BOY:COMPONENT0">
+                    <description>COMPONENT0 {1} invalid state</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>Switch COMPONENT0 in a valid state</title>
+                        <details>The component shall not be closed or in transient states</details>
+                    </guidance>
+                </pv>
+                <pv name="CTRL-SUP-BOY:COMPONENT1">
+                    <description>COMPONENT1 {1} invalid state</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>Switch COMPONENT1 in a valid state</title>
+                        <details>The component shall not be closed or in transient states</details>
+                    </guidance>
+                </pv>
+                <pv name="CTRL-SUP-BOY:COMPONENT2">
+                    <description>COMPONENT2 {1} invalid state</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>Switch COMPONENT2 in a valid state</title>
+                        <details>The component shall not be stopped or in transient states</details>
+                    </guidance>
+                </pv>
+                <pv name="CTRL-SUP-BOY:COMPONENT3">
+                    <description>COMPONENT3 {1} invalid state</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>Switch COMPONENT3 in a valid state</title>
+                        <details>The component shall not be stopped or in transient states</details>
+                    </guidance>
+                </pv>
+                <pv name="CTRL-SUP-BOY:COMPONENT4">
+                    <description>COMPONENT4 {1} invalid state</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>Switch COMPONENT4 in a valid state</title>
+                        <details>The component shall not be closed or in transient states</details>
+                    </guidance>
+                </pv>
+                <pv name="CTRL-SUP-BOY:MBBI">
+                    <description>MBBI {1} wrong state</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>Switch MBBI in a valid state</title>
+                        <details>Switch MBBI to READY state</details>
+                    </guidance>
+                </pv>
+                <pv name="CTRL-SUP-BOY:RAMP1">
+                    <description>Ramp value {1} out of range</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>RAMP1 signal reset within alarm limits</title>
+                        <details>Warnings: 20 - 80 - Alarms : 10 - 90</details>
+                    </guidance>
+                </pv>
+                <pv name="CTRL-SUP-BOY:VC001-YENUM">
+                    <description>VC001 {1} alarm</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>Control Valve in alarm condition</title>
+                        <details>Check the alarm and data quality indicators</details>
+                    </guidance>
+                </pv>
+                <pv name="CTRL-SUP-BOY:VC001-ALRM">
+                    <description>VC001 {1} alarm</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>Force the interlock</title>
+                        <details>Force the setpoint of the device in presence of conventional control interlock</details>
+                    </guidance>
+                </pv>
+                <pv name="CTRL-SUP-BOY:VC001-DQ">
+                    <description>VC001 {1} data quality</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>Force the I/O</title>
+                        <details>Put the I/O in simulation mode - the hardware I/Os measured values are substituted with simulated values</details>
+                    </guidance>
+                </pv>
+                <pv name="CTRL-SUP-BOY:VC002-YENUM">
+                    <description>VC002 {1} alarm</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>Control Valve in alarm condition</title>
+                        <details>Check the alarm and data quality indicators</details>
+                    </guidance>
+                </pv>
+                <pv name="CTRL-SUP-BOY:VC002-ALRM">
+                    <description>VC002 {1} alarm</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>Force the interlock</title>
+                        <details>Force the setpoint of the device in presence of conventional control interlock</details>
+                    </guidance>
+                </pv>
+                <pv name="CTRL-SUP-BOY:VC002-DQ">
+                    <description>VC002 {1} data quality</description>
+                    <latching>true</latching>
+                    <guidance>
+                        <title>Force I/O</title>
+                        <details>Put the I/O in simulation mode - the hardware I/Os measured values are substitued with simulated values</details>
+                    </guidance>
+                </pv>
+            </component>
+            <component name="CTRL-SUP-BEAS">
+                <pv name="CTRL-SUP-BEAS:HIGH-SWITCH">
+                    <description>Tank level HIGH</description>
+                    <latching>true</latching>
+                    <annunciating>true</annunciating>
+                    <guidance>
+                        <title>In the event that the MID switch has failed</title>
+                        <details>The tank level has continued to increase and has reached the HIGH level generating a MAJOR alarm</details>
+                    </guidance>
+                    <guidance>
+                        <title>Consequence of deviation</title>
+                        <details>The MID switch fails to operate: defective switch, blocked switch or damaged wiring.&#10;As a consequence the pump remaining dormant, the tank will overflow, causing inconvenience and damage to property.</details>
+                    </guidance>
+                    <guidance>
+                        <title>Corrective action</title>
+                        <details>Reset the MID Switch (if needed)</details>
+                    </guidance>
+                    <guidance>
+                        <title>Time for response</title>
+                        <details>The tank will overflow if the pump fails to be forced ON in 10 minutes</details>
+                    </guidance>
+                    <display>
+                        <title>Alarm Page</title>
+                        <details>/m-TEST/boy/ITERAlarm.opi &quot;MIMIC_FILE=alarmpages/ITER-CTR-SUP-BEAS-HIGH-SWITCH_AlarmPage,LEVEL=ITER-CTRL-SUP-BEAS-ACK, ALARM_PV=CTRL-SUP-BEAS:HIGH-SWITCH, ALARM_PATH=/demo/CTRL/CTRL-SUP/CTRL-SUP-BEAS, ALARM_GUIDANCE1_TITLE=In the event that the MID switch has failed, ALARM_GUIDANCE1_DETAILS=The tank level has continued to increase and has reached the HIGH level generating a MAJOR alarm&quot;</details>
+                    </display>
+                    <display>
+                        <title>Archived Tank Level Plot</title>
+                        <details>file:/m-TEST/databrowser/tank-level.plt</details>
+                    </display>
+                    <command>
+                        <title>Reset the MID Switch</title>
+                        <details>caput CTRL-SUP-BEAS:MID-SWITCH-FAIL OFF</details>
+                    </command>
+                    <automated_action>
+                        <title>Contact Maintenance Service</title>
+                        <details>mailto:someone@iter.org,someone_else@iter.org?subject=*MID Switch fails to maintain the tank level&amp;body=*{0} alarm - Tank Switch is {1}</details>
+                        <delay>5</delay>
+                    </automated_action>
+                    <automated_action>
+                        <title>Create a Logbook entry</title>
+                        <details>log:CODAC&amp;body={0} Alarm raised - MID Switch fails to maintain the tank level - Tank HIGH Switch is {1}</details>
+                        <delay>0</delay>
+                    </automated_action>
+                </pv>
+                <pv name="CTRL-SUP-BEAS:LOW-SWITCH">
+                    <description>Tank level LOW</description>
+                    <latching>true</latching>
+                    <annunciating>true</annunciating>
+                    <guidance>
+                        <title>In the event that the MID switch has failed</title>
+                        <details>The tank level has continued to decrease and has reached the LOW level generating a MAJOR alarm</details>
+                    </guidance>
+                    <guidance>
+                        <title>Consequence of deviation</title>
+                        <details>The MID switch fails. The outcome is simple, the pump will drain the tank until it is empty, whereupon it will try to pump air indefinitely and burn out.&#10;Unfortunately, every time a MID switch fails for too long, a new pump may have to be installed</details>
+                    </guidance>
+                    <guidance>
+                        <title>Corrective action</title>
+                        <details>Change the MID Switch and check if the pump has already burned out</details>
+                    </guidance>
+                    <guidance>
+                        <title>Time for response</title>
+                        <details>The pump will burn out in 30 minutes</details>
+                    </guidance>
+                    <display>
+                        <title>Alarm Page</title>
+                        <details>/m-TEST/boy/ITERAlarm.opi &quot;MIMIC_FILE=alarmpages/ITER-CTR-SUP-BEAS-LOW-SWITCH_AlarmPage,LEVEL=ITER-CTRL-SUP-BEAS-ACK, ALARM_PV=CTRL-SUP-BEAS:LOW-SWITCH, ALARM_PATH=/demo/CTRL/CTRL-SUP/CTRL-SUP-BEAS, ALARM_GUIDANCE1_TITLE=In the event that the MID switch has failed, ALARM_GUIDANCE1_DETAILS=The tank level has continued to decrease and has reached the LOW level generating a MAJOR alarm&quot;</details>
+                    </display>
+                    <display>
+                        <title>Archived Tank Level Plot</title>
+                        <details>file:/m-TEST/databrowser/tank-level.plt</details>
+                    </display>
+                    <command>
+                        <title>Reset the MID Switch</title>
+                        <details>caput CTRL-SUP-BEAS:MID-SWITCH-FAIL OFF</details>
+                    </command>
+                    <automated_action>
+                        <title>Contact Maintenance Service</title>
+                        <details>mailto:someone@iter.org</details>
+                        <delay>0</delay>
+                    </automated_action>
+                    <automated_action>
+                        <title>Create a Logbook entry</title>
+                        <details>log:CODAC&amp;body={0} Alarm raised - MID Switch fails to maintain the tank level - Tank LOW Switch is {1}</details>
+                        <delay>0</delay>
+                    </automated_action>
+                </pv>
+            </component>
+            <component name="CTRL-SUP-BEAU">
+                <pv name="CTRL-SUP-BEAU:AI1">
+                    <description>Analog Alarm Limits</description>
+                    <latching>true</latching>
+                </pv>
+                <pv name="CTRL-SUP-BEAU:AI2">
+                    <description>Analog Alarm Limits</description>
+                    <latching>true</latching>
+                </pv>
+                <pv name="CTRL-SUP-BEAU:AI3">
+                    <description>Analog Alarm Limits</description>
+                    <latching>true</latching>
+                </pv>
+                <pv name="CTRL-SUP-BEAU:ARCHIVE">
+                    <description>Archive Event</description>
+                    <latching>true</latching>
+                </pv>
+                <pv name="CTRL-SUP-BEAU:BI">
+                    <description>Alarm State BI</description>
+                    <latching>true</latching>
+                </pv>
+                <pv name="CTRL-SUP-BEAU:LONGIN">
+                    <description>Longin Alarm Limits</description>
+                    <latching>true</latching>
+                </pv>
+                <pv name="CTRL-SUP-BEAU:MBBI">
+                    <description>MBBI Alarm State</description>
+                    <latching>true</latching>
+                </pv>
+                <pv name="CTRL-SUP-BEAU:RAMP1">
+                    <description>RAMP Alarm Limits</description>
+                    <latching>true</latching>
+                </pv>
+                <pv name="CTRL-SUP-BEAU:RAMP2">
+                    <description>RAMP Alarm Limits</description>
+                    <latching>true</latching>
+                </pv>
+                <pv name="CTRL-SUP-BEAU:WAVEFORM">
+                    <description>Waveform Alarm Limits</description>
+                    <latching>true</latching>
+                </pv>
+            </component>
+            <component name="CTRL-SUP-CSS">
+                <pv name="CTRL-SUP-CSS:ACQ-STATE">
+                    <description>Acquisition not started</description>
+                    <latching>true</latching>
+                    <command>
+                        <title>Switch On</title>
+                        <details>caput CTRL-SUP-CSS:START-ACQ 1</details>
+                    </command>
+                </pv>
+                <pv name="CTRL-SUP-CSS:TEMP">
+                    <description>Temperature problem</description>
+                    <latching>true</latching>
+                    <delay>5.0</delay>
+                    <count>3</count>
+                    <guidance>
+                        <title>Temperature problem</title>
+                        <details>Temperature outside the limits;&#10;Purpose of alarm: The controlled temperature is outside the limits;&#10;Alarm response action: Try to switch off the equipment;&#10;Failure consequence: If the alarm does not recover within 15 minutes,&#10;the system will be stopped;&#10;Operator response time available: 10 minutes;&#10;Alarm limits: HIHI=9 MAJOR, HIGH=8 MINOR, LOW=-8 MINOR, LOLO=-9 MAJOR;&#10;Engineer to contact: operator in duty;&#10;Alternate help:&#10;https://localhost:8080/doc/html/relnotes-css.html</details>
+                    </guidance>
+                    <display>
+                        <title>More Information</title>
+                        <details>http://localhost:8080/doc/html/relnotes-css.html</details>
+                    </display>
+                    <command>
+                        <title>Switch Off the acquistion</title>
+                        <details>caput CTRL-SUP-CSS:START-ACQ 0</details>
+                    </command>
+                </pv>
+            </component>
+        </component>
+    </component>
+</config>
