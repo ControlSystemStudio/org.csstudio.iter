@@ -10,7 +10,6 @@ package org.csstudio.iter.css.product;
 import java.util.Map;
 
 import org.csstudio.iter.css.product.util.WorkbenchUtil;
-import org.csstudio.startup.application.OpenDocumentEventProcessor;
 import org.csstudio.utility.product.Workbench;
 import org.eclipse.equinox.app.IApplicationContext;
 import org.eclipse.swt.widgets.Display;
@@ -34,7 +33,6 @@ public class ITERWorkbench extends Workbench {
             IApplicationContext context, Map<String, Object> parameters) {
         WorkbenchUtil.removeUnWantedLog();
         WorkbenchUtil.setupSystemFonts();
-//        WorkbenchUtil.initDefaultDatasource();
         return super.beforeWorkbenchCreation(display, context, parameters);
     }
 
@@ -45,9 +43,7 @@ public class ITERWorkbench extends Workbench {
     @Override
     protected WorkbenchAdvisor createWorkbenchAdvisor(
             Map<String, Object> parameters) {
-        OpenDocumentEventProcessor openDocProcessor = (OpenDocumentEventProcessor) parameters.get(
-                OpenDocumentEventProcessor.OPEN_DOC_PROCESSOR);
-        return new ITERWorkbenchAdvisor(openDocProcessor);
+        return new ITERWorkbenchAdvisor();
     }
 
 }

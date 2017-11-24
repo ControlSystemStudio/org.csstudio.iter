@@ -8,7 +8,6 @@
 package org.csstudio.iter.css.product;
 
 import org.csstudio.iter.css.product.util.WorkbenchUtil;
-import org.csstudio.startup.application.OpenDocumentEventProcessor;
 import org.csstudio.utility.product.ApplicationWorkbenchAdvisor;
 import org.eclipse.ui.application.IWorkbenchConfigurer;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
@@ -24,8 +23,8 @@ import org.eclipse.ui.application.WorkbenchWindowAdvisor;
  */
 public class ITERWorkbenchAdvisor extends ApplicationWorkbenchAdvisor {
 
-    public ITERWorkbenchAdvisor(OpenDocumentEventProcessor openDocProcessor) {
-        super(openDocProcessor);
+    public ITERWorkbenchAdvisor() {
+        super();
     }
 
     /*
