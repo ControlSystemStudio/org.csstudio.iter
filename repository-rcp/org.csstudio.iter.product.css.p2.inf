@@ -1,8 +1,10 @@
 instructions.configure=\
   org.eclipse.equinox.p2.touchpoint.natives.copy(source:${installFolder}/../../../../../../rootfiles,target:${installFolder});\
   org.eclipse.equinox.p2.touchpoint.natives.remove(path:${installFolder}/plugins/org.w3c.dom.smil_1.0.0.v200806040011.jar);\
+  org.eclipse.equinox.p2.touchpoint.natives.copy(source:${installFolder}/../../../../org.eclipse.jface_3.12.2.v20170113-2113.jar,target:${installFolder}/plugins/org.eclipse.jface_3.12.2.v20170113-2113.jar,overwrite:true);\
   org.eclipse.equinox.p2.touchpoint.natives.copy(source:${installFolder}/../../../../org.eclipse.swt.gtk.linux.x86_64_3.105.3.v20170228-0512.jar,target:${installFolder}/plugins/org.eclipse.swt.gtk.linux.x86_64_3.105.3.v20170228-0512.jar,overwrite:true);\
+  org.eclipse.equinox.p2.touchpoint.natives.copy(source:${installFolder}/../../../../org.eclipse.draw2d_3.9.101.201408150207.jar,target:${installFolder}/plugins/org.eclipse.draw2d_3.10.100.201606061308.jar,overwrite:true);\
   org.eclipse.equinox.p2.touchpoint.natives.remove(path:${installFolder}/plugins/org.w3c.dom.events_3.0.0.draft20060413_v201105210656.jar);
 
-instructions.install = \
+instructions.install =\
   setProgramProperty(propName:osgi.instance.area.default,propValue:@user.home/CSS-Workspaces/Default); 

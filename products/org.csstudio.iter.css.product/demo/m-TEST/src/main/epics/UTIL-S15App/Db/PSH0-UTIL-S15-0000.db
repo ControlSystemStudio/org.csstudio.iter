@@ -1,0 +1,24 @@
+record(calc,"UTIL-S15-0000:count") {
+        field(SCAN,".1 second")	  
+        field(INPA, "UTIL-S15-0000:count.VAL")       
+        field(CALC, "A+1")
+}
+
+record(calc,"UTIL-S15-0000:15KV_ACT_POWER") {
+	    field(DESC, "Total active power from Tore522")
+	    field(EGU, "KW")
+	    field(PREC, "2")
+	    field(SCAN,".1 second")
+        field(INPA, "UTIL-S15-0000:count.VAL")       
+        field(CALC, "100*sin(A/10)")
+        field(HIHI, "80")
+        field(HHSV, "MAJOR")
+        field(HIGH, "60")
+        field(HSV, "MINOR")
+        field(LOW, "-60")
+        field(LSV, "MINOR")
+        field(LOLO, "-80")
+        field(LLSV, "MAJOR")
+        field(HOPR,"125")       
+	    field(LOPR,"-125")  
+}

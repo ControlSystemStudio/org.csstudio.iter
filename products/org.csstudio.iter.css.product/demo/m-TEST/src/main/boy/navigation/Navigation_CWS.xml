@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- BOY Files Navigation -->
+
+<CBS name="CWS" description="Water Cooling, PBS{26}" enabled="false"
+	opi_file="./mimics/ITER-CWS.opi LEVEL=ITER-CWS" deprecated="false"
+	alarm_root="/demo/CWS" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<xi:include href="Navigation_CWS-SCSU.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+
+	<xi:include href="Navigation_CWS-TCWS.xml">
+		<xi:fallback></xi:fallback>
+	</xi:include>
+</CBS>
