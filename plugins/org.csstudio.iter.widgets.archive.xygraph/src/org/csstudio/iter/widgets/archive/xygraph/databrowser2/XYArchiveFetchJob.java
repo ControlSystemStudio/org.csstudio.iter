@@ -88,7 +88,7 @@ public class XYArchiveFetchJob extends ArchiveFetchJob {
             @Override
             public void fetchCompleted(ArchiveFetchJob job) {
                 PVSamples pvSamples = job.getPVItem().getSamples();
-                LOGGER.log(Level.INFO, "Completed for " + job.getPVItem().getName() + " - size : " + pvSamples.size());
+                LOGGER.log(Level.FINE, "Completed for " + job.getPVItem().getName() + " - size : " + pvSamples.size());
                 if (pvSamples.size() <= 0 || completeListener == null) {
                     return;
                 }
