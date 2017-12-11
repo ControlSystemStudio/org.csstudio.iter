@@ -38,7 +38,7 @@
                         <id>swt-gtk-port</id>
                         <phase>process-resources</phase>
                         <configuration>
-                            <failOnError>false</failOnError>
+                            <failOnError>true</failOnError>
                             <target>
                                 <echo message="Copying ported org.eclipse.swt.gtk.linux.x86_64_3.105.3.v20170228-0512.jar to ${project.build.directory}"/>
                                 <copy file="${project.build.directory}/../../plugins/org.eclipse.swt.gtk.linux.x86_64_3.105.3.v20170228-0512.jar" tofile="${project.build.directory}/products/org.csstudio.iter.product.css.product/org.eclipse.swt.gtk.linux.x86_64_3.105.3.v20170228-0512.jar" verbose="true"/>
@@ -53,7 +53,7 @@
                         <id>org.eclipse.jface</id>
                         <phase>process-resources</phase>
                         <configuration>
-                          <failOnError>false</failOnError>
+                          <failOnError>true</failOnError>
                           <target>
                             <echo message="Copying patched org.eclipse.jface plugin to ${project.build.directory}" />
                             <copy verbose="true" file="${project.build.directory}/../../plugins/org.eclipse.jface/target/org.eclipse.jface-3.12.2.v20170113-2113.jar" 
@@ -69,7 +69,7 @@
                         <id>draw2d-bug-fix</id>
                         <phase>process-resources</phase>
                         <configuration>
-                            <failOnError>false</failOnError>
+                            <failOnError>true</failOnError>
                             <target>
                                 <echo message="Copying ported org.eclipse.draw2d_3.9.101.201408150207.jar to ${project.build.directory}"/>
                                 <copy file="${project.build.directory}/../../plugins/org.eclipse.draw2d_3.9.101.201408150207.jar" tofile="${project.build.directory}/products/org.csstudio.iter.product.css.product/org.eclipse.draw2d_3.9.101.201408150207.jar" verbose="true"/>
