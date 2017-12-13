@@ -127,7 +127,7 @@
       <show_scrollbar>false</show_scrollbar>
       <tooltip></tooltip>
       <transparent>true</transparent>
-      <visible>true</visible>
+      <visible>false</visible>
       <widget_type>Grouping Container</widget_type>
       <width>569</width>
       <wuid>42b3d6a:1604b5dbfc7:-6eda</wuid>
@@ -228,7 +228,7 @@
       <show_scrollbar>false</show_scrollbar>
       <tooltip></tooltip>
       <transparent>true</transparent>
-      <visible>false</visible>
+      <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
       <width>569</width>
       <wuid>42b3d6a:1604b5dbfc7:-6ed9</wuid>
@@ -248,7 +248,7 @@
         <columns>
           <column name="TIME" weight="10" width="140" visible="true" />
           <column name="TEXT" weight="400" width="100" visible="true" />
-          <column name="STATUS" weight="80" width="170" visible="true" />
+          <column name="STATUS" weight="80" width="150" visible="true" />
           <column name="SEVERITY" weight="80" width="170" visible="true" />
           <column name="DELTA" weight="1" width="150" visible="false" />
           <column name="TYPE" weight="5" width="120" visible="false" />
@@ -264,7 +264,7 @@
           <column name="VALUE" weight="50" width="300" visible="false" />
         </columns>
         <enabled>true</enabled>
-        <filter>START_TIME=-1 day AND END_TIME=now AND NAME = ${ALARM_ROOT}</filter>
+        <filter>START_TIME=-1 day AND END_TIME=now AND NAME = ${ALARM_FILTER}%</filter>
         <font>
           <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
         </font>
@@ -272,7 +272,7 @@
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <height>953</height>
-        <max_messages>10000</max_messages>
+        <max_messages>50</max_messages>
         <name>Message History</name>
         <rules />
         <scale_options>

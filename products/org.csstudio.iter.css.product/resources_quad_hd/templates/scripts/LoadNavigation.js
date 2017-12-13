@@ -174,6 +174,7 @@ function addHomeButton(elt) {
 		linkingContainer.addMacro("TITLE", getDescription(elt).toUpperCase());	
 		linkingContainer.addMacro(opi_macro, getOPI_FILE(elt));	
 		linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
+		linkingContainer.addMacro("ALARM_FILTER", getALARM_FILTER(elt));	
 		addOPImacros(linkingContainer, elt);	
 	
 		// adding the linking container to the navigation widget
@@ -204,6 +205,7 @@ function addUpButton(elt) {
 		linkingContainer.addMacro("TITLE", getDescription(elt).toUpperCase());	
 		linkingContainer.addMacro(opi_macro, getOPI_FILE(elt));	
 		linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
+		linkingContainer.addMacro("ALARM_FILTER", getALARM_FILTER(elt));	
 		addOPImacros(linkingContainer, elt);	
 	
 		// adding the linking container to the navigation widget
@@ -273,6 +275,7 @@ function addMimicButtons(root) {
 			linkingContainer.addMacro("TITLE", getDescription(elt).toUpperCase());	
 			linkingContainer.addMacro(opi_macro, getOPI_FILE(elt));
 			linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
+			linkingContainer.addMacro("ALARM_FILTER", getALARM_FILTER(elt));	
 			addOPImacros(linkingContainer, elt);	
 		
 			// adding the linking container to the navigation widget
@@ -314,6 +317,16 @@ function getOPI_FILE(elt) {
 
 function getALARM_ROOT(elt) {
     return elt.getAttributeValue("alarm_root");
+}
+
+function getALARM_FILTER(elt) {
+	var filter = ""
+    var branches = elt.getAttributeValue("alarm_root").split("/");
+	var depth = branches.length;
+	if (depth > 2) {
+		filter = branches[depth-1];
+	}
+    return filter;
 }
 
 function getDescription(elt) {
