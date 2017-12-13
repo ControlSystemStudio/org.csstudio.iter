@@ -112,42 +112,28 @@
       <wuid>14e9e75e:15331210859:-5d89</wuid>
       <x>0</x>
       <y>0</y>
-      <widget typeId="org.csstudio.alarm.beast.ui.alarmtable" version="1.0.0">
+      <widget typeId="org.csstudio.opibuilder.widgets.tab" version="1.0.0">
         <actions hook="false" hook_all="false" />
+        <active_tab>0</active_tab>
         <background_color>
-          <color name="IO Area Background" red="221" green="223" blue="229" />
+          <color name="IO Background" red="235" green="235" blue="235" />
         </background_color>
         <border_color>
           <color name="IO Border" red="0" green="0" blue="0" />
         </border_color>
-        <border_style>0</border_style>
-        <border_width>1</border_width>
-        <columns>
-          <column id="ACK" weight="0" width="40" visible="true" />
-          <column id="ICON" weight="0" width="40" visible="true" />
-          <column id="DESCRIPTION" weight="100" width="143" visible="true" />
-          <column id="TIME" weight="40" width="240" visible="true" />
-          <column id="CURRENT_SEVERITY" weight="30" width="50" visible="true" />
-          <column id="CURRENT_STATUS" weight="30" width="45" visible="true" />
-          <column id="PV" weight="50" width="80" visible="true" />
-          <column id="VALUE" weight="30" width="45" visible="true" />
-          <column id="ID" weight="100" width="80" visible="true" />
-          <column id="SEVERITY" weight="30" width="50" visible="false" />
-          <column id="STATUS" weight="30" width="45" visible="false" />
-          <column id="ACTION" weight="100" width="80" visible="false" />
-        </columns>
-        <columns_headers_visible>true</columns_headers_visible>
+        <border_style>6</border_style>
+        <border_width>2</border_width>
         <enabled>true</enabled>
-        <filter_item>${ALARM_ROOT}</filter_item>
-        <font>
-          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
-        </font>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
         <height>1760</height>
-        <max_number_of_alarms>1024</max_number_of_alarms>
-        <name>Alarms List</name>
+        <horizontal_tabs>true</horizontal_tabs>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <minimum_tab_height>10</minimum_tab_height>
+        <name>ALARMS LIST AND HISTORY</name>
         <rules />
         <scale_options>
           <width_scalable>false</width_scalable>
@@ -155,22 +141,454 @@
           <keep_wh_ratio>false</keep_wh_ratio>
         </scale_options>
         <scripts />
-        <separate_tables>false</separate_tables>
-        <sort_ascending>false</sort_ascending>
-        <sorting_column>4</sorting_column>
-        <table_header_visible>true</table_header_visible>
-        <table_weight_acknowledge>80</table_weight_acknowledge>
-        <table_weight_unacknowledge>20</table_weight_unacknowledge>
-        <time_format></time_format>
-        <tooltip>List of active alarms on ${ALARM_ROOT}</tooltip>
-        <unacknowledged_blinking>true</unacknowledged_blinking>
+        <tab_0_background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </tab_0_background_color>
+        <tab_0_enabled>true</tab_0_enabled>
+        <tab_0_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+        </tab_0_font>
+        <tab_0_foreground_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </tab_0_foreground_color>
+        <tab_0_icon_path></tab_0_icon_path>
+        <tab_0_title>ALARMS</tab_0_title>
+        <tab_10_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_10_background_color>
+        <tab_10_enabled>true</tab_10_enabled>
+        <tab_10_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_10_font>
+        <tab_10_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_10_foreground_color>
+        <tab_10_icon_path></tab_10_icon_path>
+        <tab_10_title>Tab 10</tab_10_title>
+        <tab_11_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_11_background_color>
+        <tab_11_enabled>true</tab_11_enabled>
+        <tab_11_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_11_font>
+        <tab_11_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_11_foreground_color>
+        <tab_11_icon_path></tab_11_icon_path>
+        <tab_11_title>Tab 11</tab_11_title>
+        <tab_12_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_12_background_color>
+        <tab_12_enabled>true</tab_12_enabled>
+        <tab_12_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_12_font>
+        <tab_12_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_12_foreground_color>
+        <tab_12_icon_path></tab_12_icon_path>
+        <tab_12_title>Tab 12</tab_12_title>
+        <tab_13_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_13_background_color>
+        <tab_13_enabled>true</tab_13_enabled>
+        <tab_13_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_13_font>
+        <tab_13_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_13_foreground_color>
+        <tab_13_icon_path></tab_13_icon_path>
+        <tab_13_title>Tab 13</tab_13_title>
+        <tab_14_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_14_background_color>
+        <tab_14_enabled>true</tab_14_enabled>
+        <tab_14_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_14_font>
+        <tab_14_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_14_foreground_color>
+        <tab_14_icon_path></tab_14_icon_path>
+        <tab_14_title>Tab 14</tab_14_title>
+        <tab_15_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_15_background_color>
+        <tab_15_enabled>true</tab_15_enabled>
+        <tab_15_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_15_font>
+        <tab_15_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_15_foreground_color>
+        <tab_15_icon_path></tab_15_icon_path>
+        <tab_15_title>Tab 15</tab_15_title>
+        <tab_16_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_16_background_color>
+        <tab_16_enabled>true</tab_16_enabled>
+        <tab_16_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_16_font>
+        <tab_16_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_16_foreground_color>
+        <tab_16_icon_path></tab_16_icon_path>
+        <tab_16_title>Tab 16</tab_16_title>
+        <tab_17_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_17_background_color>
+        <tab_17_enabled>true</tab_17_enabled>
+        <tab_17_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_17_font>
+        <tab_17_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_17_foreground_color>
+        <tab_17_icon_path></tab_17_icon_path>
+        <tab_17_title>Tab 17</tab_17_title>
+        <tab_18_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_18_background_color>
+        <tab_18_enabled>true</tab_18_enabled>
+        <tab_18_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_18_font>
+        <tab_18_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_18_foreground_color>
+        <tab_18_icon_path></tab_18_icon_path>
+        <tab_18_title>Tab 18</tab_18_title>
+        <tab_19_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_19_background_color>
+        <tab_19_enabled>true</tab_19_enabled>
+        <tab_19_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_19_font>
+        <tab_19_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_19_foreground_color>
+        <tab_19_icon_path></tab_19_icon_path>
+        <tab_19_title>Tab 19</tab_19_title>
+        <tab_1_background_color>
+          <color name="IO Background" red="235" green="235" blue="235" />
+        </tab_1_background_color>
+        <tab_1_enabled>true</tab_1_enabled>
+        <tab_1_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+        </tab_1_font>
+        <tab_1_foreground_color>
+          <color name="IO Foreground" red="0" green="0" blue="0" />
+        </tab_1_foreground_color>
+        <tab_1_icon_path></tab_1_icon_path>
+        <tab_1_title>HISTORY</tab_1_title>
+        <tab_2_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_2_background_color>
+        <tab_2_enabled>true</tab_2_enabled>
+        <tab_2_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_2_font>
+        <tab_2_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_2_foreground_color>
+        <tab_2_icon_path></tab_2_icon_path>
+        <tab_2_title>Tab 2</tab_2_title>
+        <tab_3_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_3_background_color>
+        <tab_3_enabled>true</tab_3_enabled>
+        <tab_3_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_3_font>
+        <tab_3_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_3_foreground_color>
+        <tab_3_icon_path></tab_3_icon_path>
+        <tab_3_title>Tab 3</tab_3_title>
+        <tab_4_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_4_background_color>
+        <tab_4_enabled>true</tab_4_enabled>
+        <tab_4_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_4_font>
+        <tab_4_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_4_foreground_color>
+        <tab_4_icon_path></tab_4_icon_path>
+        <tab_4_title>Tab 4</tab_4_title>
+        <tab_5_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_5_background_color>
+        <tab_5_enabled>true</tab_5_enabled>
+        <tab_5_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_5_font>
+        <tab_5_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_5_foreground_color>
+        <tab_5_icon_path></tab_5_icon_path>
+        <tab_5_title>Tab 5</tab_5_title>
+        <tab_6_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_6_background_color>
+        <tab_6_enabled>true</tab_6_enabled>
+        <tab_6_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_6_font>
+        <tab_6_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_6_foreground_color>
+        <tab_6_icon_path></tab_6_icon_path>
+        <tab_6_title>Tab 6</tab_6_title>
+        <tab_7_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_7_background_color>
+        <tab_7_enabled>true</tab_7_enabled>
+        <tab_7_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_7_font>
+        <tab_7_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_7_foreground_color>
+        <tab_7_icon_path></tab_7_icon_path>
+        <tab_7_title>Tab 7</tab_7_title>
+        <tab_8_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_8_background_color>
+        <tab_8_enabled>true</tab_8_enabled>
+        <tab_8_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_8_font>
+        <tab_8_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_8_foreground_color>
+        <tab_8_icon_path></tab_8_icon_path>
+        <tab_8_title>Tab 8</tab_8_title>
+        <tab_9_background_color>
+          <color red="255" green="255" blue="255" />
+        </tab_9_background_color>
+        <tab_9_enabled>true</tab_9_enabled>
+        <tab_9_font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+        </tab_9_font>
+        <tab_9_foreground_color>
+          <color red="0" green="0" blue="0" />
+        </tab_9_foreground_color>
+        <tab_9_icon_path></tab_9_icon_path>
+        <tab_9_title>Tab 9</tab_9_title>
+        <tab_count>2</tab_count>
+        <tooltip></tooltip>
         <visible>true</visible>
-        <widget_type>Alarm Table</widget_type>
+        <widget_type>Tabbed Container</widget_type>
         <width>3816</width>
-        <writable>true</writable>
-        <wuid>f036186:1533843e7b9:-5455</wuid>
+        <wuid>1e1f3736:1604f961e11:-74dd</wuid>
         <x>0</x>
         <y>0</y>
+        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+          <actions hook="false" hook_all="false" />
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>0</border_style>
+          <border_width>1</border_width>
+          <enabled>true</enabled>
+          <fc>false</fc>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+          </font>
+          <foreground_color>
+            <color name="IO Foreground" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>1712</height>
+          <lock_children>false</lock_children>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+          </macros>
+          <name>ALARMS</name>
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts />
+          <show_scrollbar>false</show_scrollbar>
+          <tooltip></tooltip>
+          <transparent>true</transparent>
+          <visible>false</visible>
+          <widget_type>Grouping Container</widget_type>
+          <width>3810</width>
+          <wuid>1e1f3736:1604f961e11:-74dc</wuid>
+          <x>1</x>
+          <y>1</y>
+          <widget typeId="org.csstudio.alarm.beast.ui.alarmtable" version="1.0.0">
+            <actions hook="false" hook_all="false" />
+            <background_color>
+              <color name="IO Area Background" red="221" green="223" blue="229" />
+            </background_color>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <border_style>0</border_style>
+            <border_width>1</border_width>
+            <columns>
+              <column id="ACK" weight="0" width="40" visible="true" />
+              <column id="ICON" weight="0" width="40" visible="true" />
+              <column id="DESCRIPTION" weight="100" width="143" visible="true" />
+              <column id="TIME" weight="40" width="240" visible="true" />
+              <column id="CURRENT_SEVERITY" weight="30" width="50" visible="true" />
+              <column id="CURRENT_STATUS" weight="30" width="45" visible="true" />
+              <column id="PV" weight="50" width="80" visible="true" />
+              <column id="VALUE" weight="30" width="45" visible="true" />
+              <column id="ID" weight="100" width="80" visible="true" />
+              <column id="SEVERITY" weight="30" width="50" visible="false" />
+              <column id="STATUS" weight="30" width="45" visible="false" />
+              <column id="ACTION" weight="100" width="80" visible="false" />
+            </columns>
+            <columns_headers_visible>true</columns_headers_visible>
+            <enabled>true</enabled>
+            <filter_item>${ALARM_ROOT}</filter_item>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+            </font>
+            <foreground_color>
+              <color name="IO Foreground" red="0" green="0" blue="0" />
+            </foreground_color>
+            <height>1760</height>
+            <max_number_of_alarms>1024</max_number_of_alarms>
+            <name>ALARMS LIST</name>
+            <rules />
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <scripts />
+            <separate_tables>false</separate_tables>
+            <sort_ascending>false</sort_ascending>
+            <sorting_column>1</sorting_column>
+            <table_header_visible>true</table_header_visible>
+            <table_weight_acknowledge>80</table_weight_acknowledge>
+            <table_weight_unacknowledge>20</table_weight_unacknowledge>
+            <time_format>yyyy-MM-dd'T'HH:mmX</time_format>
+            <tooltip>List of active alarms on ${ALARM_ROOT}</tooltip>
+            <unacknowledged_blinking>true</unacknowledged_blinking>
+            <visible>true</visible>
+            <widget_type>Alarm Table</widget_type>
+            <width>3816</width>
+            <writable>true</writable>
+            <wuid>1e1f3736:1604f961e11:-749e</wuid>
+            <x>0</x>
+            <y>0</y>
+          </widget>
+        </widget>
+        <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+          <actions hook="false" hook_all="false" />
+          <background_color>
+            <color name="IO Background" red="235" green="235" blue="235" />
+          </background_color>
+          <border_color>
+            <color name="IO Border" red="0" green="0" blue="0" />
+          </border_color>
+          <border_style>0</border_style>
+          <border_width>1</border_width>
+          <enabled>true</enabled>
+          <fc>false</fc>
+          <font>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">Default</opifont.name>
+          </font>
+          <foreground_color>
+            <color name="IO Foreground" red="0" green="0" blue="0" />
+          </foreground_color>
+          <height>1712</height>
+          <lock_children>false</lock_children>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+          </macros>
+          <name>HISTORY</name>
+          <rules />
+          <scale_options>
+            <width_scalable>false</width_scalable>
+            <height_scalable>false</height_scalable>
+            <keep_wh_ratio>false</keep_wh_ratio>
+          </scale_options>
+          <scripts />
+          <show_scrollbar>false</show_scrollbar>
+          <tooltip></tooltip>
+          <transparent>true</transparent>
+          <visible>true</visible>
+          <widget_type>Grouping Container</widget_type>
+          <width>3810</width>
+          <wuid>1e1f3736:1604f961e11:-74db</wuid>
+          <x>1</x>
+          <y>1</y>
+          <widget typeId="org.csstudio.alarm.beast.msghist" version="1.0.0">
+            <actions hook="false" hook_all="false" />
+            <background_color>
+              <color name="IO Background" red="235" green="235" blue="235" />
+            </background_color>
+            <border_color>
+              <color name="IO Border" red="0" green="0" blue="0" />
+            </border_color>
+            <border_style>0</border_style>
+            <border_width>1</border_width>
+            <column_headers>true</column_headers>
+            <columns>
+              <column name="SEQ" weight="5" width="120" visible="true" />
+              <column name="TIME" weight="10" width="350" visible="true" />
+              <column name="DELTA" weight="1" width="250" visible="true" />
+              <column name="TEXT" weight="400" width="100" visible="true" />
+              <column name="STATUS" weight="80" width="300" visible="true" />
+              <column name="SEVERITY" weight="80" width="300" visible="true" />
+              <column name="TYPE" weight="5" width="200" visible="true" />
+              <column name="NAME" weight="100" width="500" visible="true" />
+              <column name="VALUE" weight="50" width="300" visible="true" />
+              <column name="CURRENT_SEVERITY" weight="80" width="300" visible="true" />
+              <column name="HOST" weight="40" width="500" visible="true" />
+              <column name="USER" weight="10" width="120" visible="true" />
+              <column name="FILENAME" weight="10" width="50" visible="false" />
+              <column name="CLASS" weight="10" width="50" visible="false" />
+              <column name="APPLICATION-ID" weight="10" width="220" visible="false" />
+              <column name="CREATETIME" weight="50" width="300" visible="false" />
+            </columns>
+            <enabled>true</enabled>
+            <filter>START_TIME=-1 day AND END_TIME=now</filter>
+            <font>
+              <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+            </font>
+            <foreground_color>
+              <color name="IO Foreground" red="0" green="0" blue="0" />
+            </foreground_color>
+            <height>1712</height>
+            <max_messages>10000</max_messages>
+            <name>Message History Template</name>
+            <rules />
+            <scale_options>
+              <width_scalable>false</width_scalable>
+              <height_scalable>false</height_scalable>
+              <keep_wh_ratio>false</keep_wh_ratio>
+            </scale_options>
+            <scripts />
+            <sort_ascending>true</sort_ascending>
+            <sorting_column>1</sorting_column>
+            <time_format>yyyy-MM-dd'T'HH:mmX</time_format>
+            <tooltip>List of messages from history</tooltip>
+            <visible>true</visible>
+            <widget_type>Message history</widget_type>
+            <width>3810</width>
+            <wuid>448f7b7b:1604fa9ed9b:-7e60</wuid>
+            <x>0</x>
+            <y>0</y>
+          </widget>
+        </widget>
       </widget>
     </widget>
   </widget>
