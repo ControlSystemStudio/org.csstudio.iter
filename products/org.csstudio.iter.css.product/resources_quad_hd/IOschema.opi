@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.1.0.201704201523</boy_version>
+  <boy_version>5.1.0.201712070847</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -434,7 +434,7 @@ $(pv_value)</tooltip>
       <foreground_color>
         <color name="IO Text Fg" red="0" green="0" blue="0" />
       </foreground_color>
-      <height>66</height>
+      <height>60</height>
       <horizontal_alignment>0</horizontal_alignment>
       <name>Label Template</name>
       <rules />
@@ -1744,6 +1744,64 @@ $(pv_value)</tooltip>
       <x>3576</x>
       <y>0</y>
     </widget>
+    <widget typeId="org.csstudio.alarm.beast.msghist" version="1.0.0">
+      <actions hook="false" hook_all="false" />
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <border_style>0</border_style>
+      <border_width>1</border_width>
+      <column_headers>true</column_headers>
+      <columns>
+        <column name="TIME" weight="10" width="140" visible="true" />
+        <column name="TEXT" weight="400" width="100" visible="true" />
+        <column name="STATUS" weight="80" width="170" visible="true" />
+        <column name="SEVERITY" weight="80" width="170" visible="true" />
+        <column name="DELTA" weight="1" width="150" visible="false" />
+        <column name="TYPE" weight="5" width="120" visible="false" />
+        <column name="FILENAME" weight="10" width="50" visible="false" />
+        <column name="CLASS" weight="10" width="50" visible="false" />
+        <column name="APPLICATION-ID" weight="10" width="220" visible="false" />
+        <column name="HOST" weight="40" width="280" visible="false" />
+        <column name="USER" weight="10" width="120" visible="false" />
+        <column name="CREATETIME" weight="50" width="300" visible="false" />
+        <column name="SEQ" weight="5" width="60" visible="false" />
+        <column name="NAME" weight="100" width="500" visible="false" />
+        <column name="CURRENT_SEVERITY" weight="80" width="300" visible="false" />
+        <column name="VALUE" weight="50" width="300" visible="false" />
+      </columns>
+      <enabled>true</enabled>
+      <filter>START_TIME=-1 hour AND END_TIME=now</filter>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+      </font>
+      <foreground_color>
+        <color name="IO Foreground" red="0" green="0" blue="0" />
+      </foreground_color>
+      <height>1001</height>
+      <max_messages>10000</max_messages>
+      <name>Message History Template</name>
+      <rules />
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <sort_ascending>true</sort_ascending>
+      <sorting_column>1</sorting_column>
+      <time_format>HH:mm:ss</time_format>
+      <tooltip>List of messages from history</tooltip>
+      <visible>true</visible>
+      <widget_type>Message history</widget_type>
+      <width>575</width>
+      <wuid>42b3d6a:1604b5dbfc7:-7f79</wuid>
+      <x>3576</x>
+      <y>1001</y>
+    </widget>
   </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
     <actions hook="false" hook_all="false" />
@@ -2350,7 +2408,7 @@ $(pv_value)</tooltip>
       <foreground_color>
         <color name="IO InputPV Fg" red="0" green="0" blue="0" />
       </foreground_color>
-      <height>64</height>
+      <height>63</height>
       <name>Image Boolean Button Template</name>
       <no_animation>false</no_animation>
       <off_image>SymbolLibrary/PNG/Fluid/Valves/VG On-Off 2-way Angle Valve 0.png</off_image>
@@ -2378,7 +2436,7 @@ $(pv_value)</tooltip>
       <transparency>false</transparency>
       <visible>true</visible>
       <widget_type>Image Boolean Button</widget_type>
-      <width>64</width>
+      <width>63</width>
       <wuid>-14a921ec:134b2495e46:-7f3d</wuid>
       <x>1332</x>
       <y>363</y>
@@ -2543,7 +2601,7 @@ $(pv_value)</tooltip>
       <foreground_color>
         <color name="IO OutputPV Fg" red="0" green="0" blue="0" />
       </foreground_color>
-      <height>45</height>
+      <height>46</height>
       <items_from_pv>true</items_from_pv>
       <name>Combo Template</name>
       <pv_name></pv_name>
@@ -2756,8 +2814,8 @@ $(pv_value)</tooltip>
       <foreground_color>
         <color name="IO InputPV Fg" red="0" green="0" blue="0" />
       </foreground_color>
-      <graph_area_height>617</graph_area_height>
-      <graph_area_width>731</graph_area_width>
+      <graph_area_height>622</graph_area_height>
+      <graph_area_width>737</graph_area_width>
       <height>700</height>
       <horizon_profile_x_pv_name></horizon_profile_x_pv_name>
       <horizon_profile_x_pv_value />
@@ -3179,7 +3237,7 @@ $(pv_value)</tooltip>
         <foreground_color>
           <color name="IO Foreground" red="0" green="0" blue="0" />
         </foreground_color>
-        <height>399</height>
+        <height>402</height>
         <lock_children>false</lock_children>
         <macros>
           <include_parent_macros>true</include_parent_macros>
