@@ -127,7 +127,7 @@
       <show_scrollbar>false</show_scrollbar>
       <tooltip></tooltip>
       <transparent>true</transparent>
-      <visible>false</visible>
+      <visible>true</visible>
       <widget_type>Grouping Container</widget_type>
       <width>569</width>
       <wuid>42b3d6a:1604b5dbfc7:-7f21</wuid>
@@ -296,7 +296,17 @@
           <y>626</y>
         </widget>
         <widget typeId="org.csstudio.opibuilder.widgets.BoolButton" version="1.0.0">
-          <actions hook="false" hook_all="false" />
+          <actions hook="false" hook_all="false">
+            <action type="OPEN_DISPLAY">
+              <path>AlarmsHistory.opi</path>
+              <macros>
+                <include_parent_macros>true</include_parent_macros>
+                <ALARM_FILTER>${ALARM_PV}</ALARM_FILTER>
+              </macros>
+              <mode>1</mode>
+              <description></description>
+            </action>
+          </actions>
           <alarm_pulsing>false</alarm_pulsing>
           <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
           <background_color>
@@ -309,10 +319,10 @@
           </border_color>
           <border_style>0</border_style>
           <border_width>2</border_width>
-          <confirm_message>Are your sure you want to do this?</confirm_message>
+          <confirm_message></confirm_message>
           <data_type>0</data_type>
           <effect_3d>true</effect_3d>
-          <enabled>false</enabled>
+          <enabled>true</enabled>
           <font>
             <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
           </font>
@@ -333,7 +343,7 @@
           <on_label>HISTORY</on_label>
           <password></password>
           <push_action_index>0</push_action_index>
-          <pv_name>beast://${ALARM_PATH}/${ALARM_PV}</pv_name>
+          <pv_name></pv_name>
           <pv_value />
           <released_action_index>0</released_action_index>
           <rules />
@@ -344,11 +354,11 @@
           </scale_options>
           <scripts />
           <show_boolean_label>true</show_boolean_label>
-          <show_confirm_dialog>1</show_confirm_dialog>
+          <show_confirm_dialog>0</show_confirm_dialog>
           <show_led>false</show_led>
           <square_button>true</square_button>
-          <toggle_button>true</toggle_button>
-          <tooltip>History</tooltip>
+          <toggle_button>false</toggle_button>
+          <tooltip>History of ${ALARM_PV}</tooltip>
           <visible>true</visible>
           <widget_type>Boolean Button</widget_type>
           <width>300</width>
@@ -394,7 +404,7 @@
           <on_label>OVERVIEW</on_label>
           <password></password>
           <push_action_index>0</push_action_index>
-          <pv_name>beast://${ALARM_PATH}/${ALARM_PV}</pv_name>
+          <pv_name></pv_name>
           <pv_value />
           <released_action_index>0</released_action_index>
           <rules />
@@ -455,7 +465,7 @@
           <on_label>ALARMS</on_label>
           <password></password>
           <push_action_index>0</push_action_index>
-          <pv_name>beast://${ALARM_PATH}/${ALARM_PV}</pv_name>
+          <pv_name></pv_name>
           <pv_value />
           <released_action_index>0</released_action_index>
           <rules />
@@ -551,7 +561,7 @@
       <show_scrollbar>false</show_scrollbar>
       <tooltip></tooltip>
       <transparent>true</transparent>
-      <visible>true</visible>
+      <visible>false</visible>
       <widget_type>Grouping Container</widget_type>
       <width>569</width>
       <wuid>42b3d6a:1604b5dbfc7:-7f19</wuid>
