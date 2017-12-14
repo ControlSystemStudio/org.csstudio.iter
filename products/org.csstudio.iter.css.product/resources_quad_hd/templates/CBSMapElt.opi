@@ -10,12 +10,12 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.1.0.201708220714</boy_version>
+  <boy_version>5.1.0.201712131659</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
   <grid_space>1</grid_space>
-  <height>46</height>
+  <height>36</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
@@ -39,7 +39,7 @@
         <macros>
           <include_parent_macros>true</include_parent_macros>
         </macros>
-        <mode>0</mode>
+        <mode>1</mode>
         <description>Go to ${tooltip}</description>
       </action>
       <action type="OPEN_DISPLAY">
@@ -58,6 +58,14 @@
         <mode>8</mode>
         <description>Open in a new window the Alarms List</description>
       </action>
+      <action type="OPEN_DISPLAY">
+        <path>AlarmsHistory.opi</path>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <mode>8</mode>
+        <description>Open in a new tab the Messages History</description>
+      </action>
     </actions>
     <actions_from_pv>false</actions_from_pv>
     <alarm_pulsing>false</alarm_pulsing>
@@ -73,13 +81,13 @@
     <border_width>2</border_width>
     <enabled>false</enabled>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="32" style="0" pixels="false">IO SubTitle</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
       <color name="IO Foreground" red="0" green="0" blue="0" />
     </foreground_color>
-    <height>45</height>
+    <height>35</height>
     <label>${CBS}</label>
     <name>${CBS_PATH}</name>
     <pv_name>beast://${ALARM_ROOT}</pv_name>

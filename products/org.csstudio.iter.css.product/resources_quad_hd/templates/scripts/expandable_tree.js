@@ -15,7 +15,7 @@ importPackage(Packages.java.lang)
 
 	var resolution_4k = widget.getPropertyValue("width") > 3000;
 	var INDENT_WIDTH = resolution_4k ? 100 : 50;
-	var HEIGHT = resolution_4k ? 46 : 23;
+	var HEIGHT = resolution_4k ? 36 : 18;
 
 	// getting the current cbs level for this screen
 	var current_level = (widget.getMacroValue("LEVEL") == null ? "" : widget.getMacroValue("LEVEL").toUpperCase());
