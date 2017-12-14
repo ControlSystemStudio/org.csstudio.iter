@@ -20,12 +20,17 @@ of the distribution package.
    </license>
 
    <includes
-         id="org.eclipse.core.feature"
+         id="org.csstudio.jms.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.csstudio.jms.feature"
+         id="org.eclipse.core.feature"
          version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.hamcrest.core"/>
+      <import plugin="org.junit"/>
+   </requires>
 
    <plugin
          id="org.csstudio.alarm.beast.annunciator"
@@ -78,19 +83,6 @@ of the distribution package.
 
    <plugin
          id="org.csstudio.autocomplete.ui.rcp"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.junit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="org.hamcrest.core"
          download-size="0"
          install-size="0"
          version="0.0.0"

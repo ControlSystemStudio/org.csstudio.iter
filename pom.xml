@@ -20,7 +20,7 @@
         <replacer-version>1.4.1</replacer-version>
         <diirt.version>3.1.6</diirt.version>
         <cs-studio.version>4.5</cs-studio.version>
-        <tycho.version>0.22.0</tycho.version>
+        <tycho.version>1.0.0</tycho.version>
         <tycho-extras.version>${tycho.version}</tycho-extras.version>
         <tycho-groupid>org.eclipse.tycho</tycho-groupid>
         <!-- pydev version 5.2.0 is last version supporting eclipse mars -->
@@ -270,6 +270,22 @@
           </dependency-resolution>
 
           <filters>
+<!--
+            <filter>
+              <type>eclipse-plugin</type>
+              <id>org.eclipse.jdt.core</id>
+              <restrictTo>
+                <version>3.12.3.v20170228-1205</version>
+              </restrictTo>
+            </filter>
+            <filter>
+              <type>eclipse-plugin</type>
+              <id>org.eclipse.osgi</id>
+              <restrictTo>
+                <version>3.12.0.v20170118-2208</version>
+              </restrictTo>
+            </filter>
+-->
           </filters>
 
           <environments>
