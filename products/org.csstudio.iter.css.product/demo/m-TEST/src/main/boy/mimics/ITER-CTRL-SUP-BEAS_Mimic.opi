@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.1.0.201707110820</boy_version>
+  <boy_version>5.1.0.201712181111</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -1951,82 +1951,93 @@ $(pv_value)</tooltip>
         <y>80</y>
       </widget>
     </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.symbol.bool.BoolMonitorWidget" version="1.0.0">
+      <actions hook="false" hook_all="true">
+        <action type="OPEN_DISPLAY">
+          <path>../ITER.opi</path>
+          <macros>
+            <include_parent_macros>true</include_parent_macros>
+            <MIMIC_FILE>mimics/ITER-CTRL-SUP-BEAS-ACK_Mimic</MIMIC_FILE>
+            <LEVEL>ITER-CTRL-SUP-BEAS-ACK</LEVEL>
+          </macros>
+          <mode>1</mode>
+          <description>Open a mimic OPI file</description>
+        </action>
+      </actions>
+      <alarm_pulsing>false</alarm_pulsing>
+      <align_to_nearest_second>true</align_to_nearest_second>
+      <auto_size>true</auto_size>
+      <backcolor_alarm_sensitive>true</backcolor_alarm_sensitive>
+      <background_color>
+        <color name="IO Background" red="235" green="235" blue="235" />
+      </background_color>
+      <bit>0</bit>
+      <boolean_label_position>5</boolean_label_position>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color name="IO Border" red="0" green="0" blue="0" />
+      </border_color>
+      <border_style>0</border_style>
+      <border_width>2</border_width>
+      <crop_bottom>0</crop_bottom>
+      <crop_left>0</crop_left>
+      <crop_right>0</crop_right>
+      <crop_top>0</crop_top>
+      <data_type>0</data_type>
+      <degree>270</degree>
+      <enabled>true</enabled>
+      <flip_horizontal>false</flip_horizontal>
+      <flip_vertical>false</flip_vertical>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+      </font>
+      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+      <foreground_color>
+        <color name="IO InputPV Fg" red="0" green="0" blue="0" />
+      </foreground_color>
+      <height>68</height>
+      <image_file>SymbolLibrary/SVG/Fluid/Separators/DS Separator General.svg</image_file>
+      <name>Open New OPI</name>
+      <no_animation>false</no_animation>
+      <off_color>
+        <color name="IO PV OFF" red="149" green="125" blue="71" />
+      </off_color>
+      <off_label>OFF</off_label>
+      <on_color>
+        <color name="IO PV ON" red="0" green="0" blue="255" />
+      </on_color>
+      <on_label>ON</on_label>
+      <permutation_matrix>
+        <row>
+          <col>0.0</col>
+          <col>1.0</col>
+        </row>
+        <row>
+          <col>-1.0</col>
+          <col>0.0</col>
+        </row>
+      </permutation_matrix>
+      <pv_name></pv_name>
+      <pv_value />
+      <rules />
+      <scale_options>
+        <width_scalable>false</width_scalable>
+        <height_scalable>false</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts />
+      <show_boolean_label>false</show_boolean_label>
+      <stretch_to_fit>false</stretch_to_fit>
+      <tooltip>Click to open ACK opi</tooltip>
+      <transparency>false</transparency>
+      <visible>true</visible>
+      <widget_type>Boolean Symbol Image Monitor</widget_type>
+      <width>109</width>
+      <wuid>-6c9962ba:16069f28bac:-7d2a</wuid>
+      <x>3100</x>
+      <y>10</y>
+    </widget>
   </widget>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <anti_alias>true</anti_alias>
-    <arrow_length>15</arrow_length>
-    <arrows>0</arrows>
-    <fill_arrow>true</fill_arrow>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-    <line_jump_add>1</line_jump_add>
-    <line_jump_size>10</line_jump_size>
-    <line_jump_style>1</line_jump_style>
-    <line_style>0</line_style>
-    <line_width>4</line_width>
-    <name>Connection Template</name>
-    <points />
-    <router>0</router>
-    <src_path>-28c93393:14b0cb4ebee:-6a50_9e5edf4:153adc83df4:-7dc3</src_path>
-    <src_term>RIGHT</src_term>
-    <src_wuid>9e5edf4:153adc83df4:-7dc2</src_wuid>
-    <tgt_path>-28c93393:14b0cb4ebee:-6a50</tgt_path>
-    <tgt_term>TOP</tgt_term>
-    <tgt_wuid>-190a6b8f:1557c3cec99:-3a38</tgt_wuid>
-    <widget_type>connection</widget_type>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <anti_alias>true</anti_alias>
-    <arrow_length>15</arrow_length>
-    <arrows>0</arrows>
-    <fill_arrow>true</fill_arrow>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-    <line_jump_add>1</line_jump_add>
-    <line_jump_size>10</line_jump_size>
-    <line_jump_style>1</line_jump_style>
-    <line_style>0</line_style>
-    <line_width>4</line_width>
-    <name>Connection Template</name>
-    <points />
-    <router>0</router>
-    <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
-    <src_term>LEFT</src_term>
-    <src_wuid>-190a6b8f:1557c3cec99:-36d8</src_wuid>
-    <tgt_path>-28c93393:14b0cb4ebee:-6a50</tgt_path>
-    <tgt_term>RIGHT</tgt_term>
-    <tgt_wuid>-190a6b8f:1557c3cec99:-36e7</tgt_wuid>
-    <widget_type>connection</widget_type>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-  </connection>
-  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
-    <anti_alias>true</anti_alias>
-    <arrow_length>15</arrow_length>
-    <arrows>0</arrows>
-    <fill_arrow>true</fill_arrow>
-    <line_color>
-      <color name="IO Link" red="0" green="0" blue="0" />
-    </line_color>
-    <line_jump_add>1</line_jump_add>
-    <line_jump_size>10</line_jump_size>
-    <line_jump_style>1</line_jump_style>
-    <line_style>0</line_style>
-    <line_width>4</line_width>
-    <name>Connection Template</name>
-    <points />
-    <router>0</router>
-    <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
-    <src_term>BOTTOM</src_term>
-    <src_wuid>-190a6b8f:1557c3cec99:-3a38</src_wuid>
-    <tgt_path>-28c93393:14b0cb4ebee:-6a50_9e5edf4:153adc83df4:-7dbe</tgt_path>
-    <tgt_term>RIGHT</tgt_term>
-    <tgt_wuid>9e5edf4:153adc83df4:-7dbd</tgt_wuid>
-    <widget_type>connection</widget_type>
-    <wuid>-19d36239:134b27295e1:-7d63</wuid>
-  </connection>
   <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
     <anti_alias>true</anti_alias>
     <arrow_length>15</arrow_length>
@@ -2069,6 +2080,31 @@ $(pv_value)</tooltip>
     <line_style>0</line_style>
     <line_width>4</line_width>
     <name>Connection Template</name>
+    <points />
+    <router>0</router>
+    <src_path>-28c93393:14b0cb4ebee:-6a50_9e5edf4:153adc83df4:-7dc3</src_path>
+    <src_term>RIGHT</src_term>
+    <src_wuid>9e5edf4:153adc83df4:-7dc2</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50</tgt_path>
+    <tgt_term>TOP</tgt_term>
+    <tgt_wuid>-190a6b8f:1557c3cec99:-3a38</tgt_wuid>
+    <widget_type>connection</widget_type>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <anti_alias>true</anti_alias>
+    <arrow_length>15</arrow_length>
+    <arrows>0</arrows>
+    <fill_arrow>true</fill_arrow>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+    <line_jump_add>1</line_jump_add>
+    <line_jump_size>10</line_jump_size>
+    <line_jump_style>1</line_jump_style>
+    <line_style>0</line_style>
+    <line_width>4</line_width>
+    <name>Connection Template</name>
     <points>
       <point x="674" y="901" />
       <point x="674" y="1254" />
@@ -2080,6 +2116,56 @@ $(pv_value)</tooltip>
     <tgt_path>-28c93393:14b0cb4ebee:-6a50</tgt_path>
     <tgt_term>LEFT</tgt_term>
     <tgt_wuid>9e5edf4:153adc83df4:-7db2</tgt_wuid>
+    <widget_type>connection</widget_type>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <anti_alias>true</anti_alias>
+    <arrow_length>15</arrow_length>
+    <arrows>0</arrows>
+    <fill_arrow>true</fill_arrow>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+    <line_jump_add>1</line_jump_add>
+    <line_jump_size>10</line_jump_size>
+    <line_jump_style>1</line_jump_style>
+    <line_style>0</line_style>
+    <line_width>4</line_width>
+    <name>Connection Template</name>
+    <points />
+    <router>0</router>
+    <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
+    <src_term>BOTTOM</src_term>
+    <src_wuid>-190a6b8f:1557c3cec99:-3a38</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50_9e5edf4:153adc83df4:-7dbe</tgt_path>
+    <tgt_term>RIGHT</tgt_term>
+    <tgt_wuid>9e5edf4:153adc83df4:-7dbd</tgt_wuid>
+    <widget_type>connection</widget_type>
+    <wuid>-19d36239:134b27295e1:-7d63</wuid>
+  </connection>
+  <connection typeId="org.csstudio.opibuilder.connection" version="1.0.0">
+    <anti_alias>true</anti_alias>
+    <arrow_length>15</arrow_length>
+    <arrows>0</arrows>
+    <fill_arrow>true</fill_arrow>
+    <line_color>
+      <color name="IO Link" red="0" green="0" blue="0" />
+    </line_color>
+    <line_jump_add>1</line_jump_add>
+    <line_jump_size>10</line_jump_size>
+    <line_jump_style>1</line_jump_style>
+    <line_style>0</line_style>
+    <line_width>4</line_width>
+    <name>Connection Template</name>
+    <points />
+    <router>0</router>
+    <src_path>-28c93393:14b0cb4ebee:-6a50</src_path>
+    <src_term>LEFT</src_term>
+    <src_wuid>-190a6b8f:1557c3cec99:-36d8</src_wuid>
+    <tgt_path>-28c93393:14b0cb4ebee:-6a50</tgt_path>
+    <tgt_term>RIGHT</tgt_term>
+    <tgt_wuid>-190a6b8f:1557c3cec99:-36e7</tgt_wuid>
     <widget_type>connection</widget_type>
     <wuid>-19d36239:134b27295e1:-7d63</wuid>
   </connection>
