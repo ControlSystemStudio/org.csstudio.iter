@@ -19,10 +19,33 @@ refer to the file ITER-LICENSE.TXT located in the top level directory
 of the distribution package.
    </license>
 
-   <requires>
-      <import plugin="org.eclipse.equinox.security.source"/>
-      <import plugin="org.eclipse.core.resources.source"/>
-      <import plugin="org.eclipse.core.filesystem.source"/>
-   </requires>
+   <includes
+         id="org.eclipse.ecf.core.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.ecf.filetransfer.feature"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.core.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.filesystem"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.security"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>

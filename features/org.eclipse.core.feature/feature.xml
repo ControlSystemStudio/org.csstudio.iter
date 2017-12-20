@@ -6,6 +6,7 @@
       provider-name="ITER">
 
    <copyright>
+   
       Copyright (c) : 2010-2016 ITER Organization,
 CS 90 046
 13067 St. Paul-lez-Durance Cedex
@@ -19,10 +20,16 @@ refer to the file ITER-LICENSE.TXT located in the top level directory
 of the distribution package.
    </license>
 
-   <requires>
-      <import feature="org.eclipse.rcp" version="4.6.3.v20170301-0400"/>
-      <import feature="org.eclipse.emf.ecore" version="2.12.0.v20160420-0247"/>
-      <import feature="org.eclipse.emf.common" version="2.12.0.v20160420-0247"/>
-   </requires>
+    <includes
+         id="org.eclipse.emf.common"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.emf.ecore"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.rcp"
+         version="0.0.0"/>
 
 </feature>
