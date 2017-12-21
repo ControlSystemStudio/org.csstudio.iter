@@ -36,18 +36,21 @@ import org.csstudio.swt.xygraph.dataprovider.ISample;
 import org.csstudio.swt.xygraph.dataprovider.Sample;
 import org.csstudio.swt.xygraph.figures.ToolbarArmedXYGraph;
 import org.csstudio.swt.xygraph.figures.Trace;
-import org.csstudio.swt.xygraph.util.EventManager;
-import org.csstudio.swt.xygraph.util.IEventManagerListener;
+import org.csstudio.swt.xygraph.figures.XYGraph;
+import org.csstudio.swt.xygraph.undo.ZoomType;
 import org.csstudio.trends.databrowser2.model.PVSamples;
 import org.csstudio.ui.util.thread.UIBundlingThread;
 import org.diirt.vtype.VType;
 import org.eclipse.draw2d.IFigure;
-import java.time.Instant;
+import org.eclipse.draw2d.MouseEvent;
+import org.eclipse.draw2d.MouseListener;
+import org.eclipse.draw2d.MouseMotionListener;
 
 /**
  * The Archive XYGraph editpart
  *
  * @author lamberm (Sopra)
+ * @author borut.terpinc@cosylab.com
  *
  */
 public class ArchiveXYGraphEditPart extends XYGraphEditPart {
@@ -55,6 +58,7 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
     private Map<Integer, List<VType>> cacheDuringLoad = new HashMap<>();
 
     private boolean isTriggerMode = false;
+    private XYGraph xyGraph;
 
     private static final Long DEFAULT_MAX;
     static {
@@ -64,7 +68,7 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
             f.setAccessible(true);
             Object obj = f.get(null);
             if (obj instanceof Number) {
-               v = ((Number)obj).longValue();
+                v = ((Number) obj).longValue();
             }
         } catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
             Activator.getLogger().log(Level.WARNING, "Error while setting default value");
@@ -80,25 +84,79 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
 
     @Override
     protected IFigure doCreateFigure() {
-        IFigure xyGraphFigure = super.doCreateFigure();
+        final IFigure xyGraphFigure = super.doCreateFigure();
 
         // add values from datasource if the execution is in run mode
         if (getExecutionMode() == ExecutionMode.RUN_MODE) {
             cacheDuringLoad = new HashMap<>();
             addValuesFromDatasource();
 
-            if(xyGraphFigure instanceof ToolbarArmedXYGraph) {
-                ToolbarArmedXYGraph armedXYGraph = (ToolbarArmedXYGraph) xyGraphFigure;
-                armedXYGraph.getXYGraph().getEventManager().addListener(new IEventManagerListener() {
+            // add listeners to the graph with Toolbar.
+            if (xyGraphFigure instanceof ToolbarArmedXYGraph) {
+                final ToolbarArmedXYGraph armedXYGraph = (ToolbarArmedXYGraph) xyGraphFigure;
+                xyGraph = armedXYGraph.getXYGraph();
+
+                // if the scrolling is changed
+                xyGraph.addPropertyChangeListener(XYGraph.SCROLLING_PROPERTY, new PropertyChangeListener() {
                     @Override
-                    public void setFixedRange(double t1, double t2) {
-                        addValuesFromDatasource(t1, t2);
+                    public void propertyChange(PropertyChangeEvent evt) {
+                        if (evt.getPropertyName().equals(XYGraph.SCROLLING_PROPERTY) && evt.getNewValue().equals(false))
+                            handleScrollingEnabled();
                     }
                 });
+
+                // add mouse listener to catch the events on zoom and panning
+                final ArchiveGraphMouseListener mouseListener = new ArchiveGraphMouseListener();
+                xyGraph.getPlotArea().addMouseListener(mouseListener);
+                xyGraph.getPlotArea().addMouseMotionListener(mouseListener);
+
+            }
+        }
+        return xyGraphFigure;
+    }
+
+    private void handleScrollingEnabled() {
+        xyGraph.setZoomType(ZoomType.NONE);
+        addValuesFromDatasource();
+    }
+
+    /**
+     * Listener to mouse events, performs data update on zoom and panning events.
+     */
+    class ArchiveGraphMouseListener extends MouseMotionListener.Stub implements MouseListener {
+
+        @Override
+        public void mouseDragged(final MouseEvent me) {
+            final ZoomType zoomType = xyGraph.getZoomType();
+            if (zoomType == ZoomType.PANNING || zoomType == ZoomType.ZOOM_IN || zoomType == ZoomType.ZOOM_OUT
+                    || zoomType == ZoomType.ZOOM_IN_HORIZONTALLY || zoomType == ZoomType.RUBBERBAND_ZOOM) {
+                addValuesFromDatasource(xyGraph.primaryXAxis.getRange().getLower(),
+                        xyGraph.primaryXAxis.getRange().getUpper());
             }
         }
 
-        return xyGraphFigure;
+        @Override
+        public void mouseReleased(MouseEvent me) {
+            final ZoomType zoomType = xyGraph.getZoomType();
+            if (zoomType == ZoomType.PANNING || zoomType == ZoomType.ZOOM_IN || zoomType == ZoomType.ZOOM_OUT
+                    || zoomType == ZoomType.ZOOM_IN_HORIZONTALLY || zoomType == ZoomType.RUBBERBAND_ZOOM) {
+                addValuesFromDatasource(xyGraph.primaryXAxis.getRange().getLower(),
+                        xyGraph.primaryXAxis.getRange().getUpper());
+            }
+        }
+
+        @Override
+        public void mousePressed(final MouseEvent me) {
+        } // don't do anything on mousePressed event
+
+        @Override
+        public void mouseDoubleClicked(final MouseEvent me) {
+        } // don't do anything on doubleclick event
+
+        @Override
+        public void mouseExited(final MouseEvent me) {
+        } // don't do anything on doubleclick event
+
     }
 
     /**
@@ -132,12 +190,11 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
                 Instant ts = Instant.EPOCH;
                 Integer tSp = 0;
                 if (t1 == 0 && t2 == 0) {
-                    tSp = (Integer) getWidgetModel().getProperty(ArchiveXYGraphModel.PROP_TIME_SPAN)
-                            .getPropertyValue();
+                    tSp = (Integer) getWidgetModel().getProperty(ArchiveXYGraphModel.PROP_TIME_SPAN).getPropertyValue();
                     te = Instant.now();
                     ts = te.minusSeconds(tSp);
                 } else {
-                    tSp = (int) (t2-t1);
+                    tSp = (int) (t2 - t1);
                     te = Instant.ofEpochMilli((long) t2);
                     ts = Instant.ofEpochMilli((long) t1);
                 }
@@ -178,12 +235,12 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
                                 // call ui thread for the graph updating
                                 UIBundlingThread.getInstance().addRunnable(getViewer().getControl().getDisplay(),
                                         new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        updateGraph(samples, dataProvider, traceIndex, pvOnXBln, trace, start, end,
-                                                timeSpan);
-                                    }
-                                });
+                                            @Override
+                                            public void run() {
+                                                updateGraph(samples, dataProvider, traceIndex, pvOnXBln, trace, start,
+                                                        end, timeSpan);
+                                            }
+                                        });
                             }
                         });
                 job.schedule();
@@ -196,11 +253,16 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
     /**
      * update the graph with data from DB and loading cache
      *
-     * @param pvSamples data from db to plot
-     * @param dataProvider to set data in datapprovider
-     * @param traceIndex index of the trace
-     * @param pvOnXBln boolean to indicate if the value is on X or Y
-     * @param trace the trace
+     * @param pvSamples
+     *            data from db to plot
+     * @param dataProvider
+     *            to set data in datapprovider
+     * @param traceIndex
+     *            index of the trace
+     * @param pvOnXBln
+     *            boolean to indicate if the value is on X or Y
+     * @param trace
+     *            the trace
      */
     private void updateGraph(PVSamples pvSamples, CircularBufferDataProvider dataProvider, Integer traceIndex,
             Boolean pvOnXBln, Trace trace, Instant start, Instant end, int timeSpan) {
@@ -226,7 +288,7 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
                 }
             }
 
-            if(dataProvider.getUpdateMode() == UpdateMode.TRIGGER)
+            if (dataProvider.getUpdateMode() == UpdateMode.TRIGGER)
                 isTriggerMode = true;
             // set the data on the graph
             for (VType vtype : listFinal) {
@@ -283,12 +345,12 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
                         public void propertyChange(final PropertyChangeEvent evt) {
                             UIBundlingThread.getInstance().addRunnable(getViewer().getControl().getDisplay(),
                                     new Runnable() {
-                                @Override
-                                public void run() {
-                                    if (isActive())
-                                        handler.handleChange(evt.getOldValue(), evt.getNewValue(), getFigure());
-                                }
-                            });
+                                        @Override
+                                        public void run() {
+                                            if (isActive())
+                                                handler.handleChange(evt.getOldValue(), evt.getNewValue(), getFigure());
+                                        }
+                                    });
                         }
                     });
                 } else
@@ -298,14 +360,14 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
     }
 
     private void setXValue(CircularBufferDataProvider dataProvider, VType value) {
-        if(VTypeHelper.getSize(value) > 1){
+        if (VTypeHelper.getSize(value) > 1) {
             dataProvider.setCurrentXDataArray(VTypeHelper.getDoubleArray(value));
-            if(isTriggerMode) {
+            if (isTriggerMode) {
                 dataProvider.addDataArray();
             }
-        }else {
+        } else {
             dataProvider.setCurrentXData(VTypeHelper.getDouble(value));
-            if(isTriggerMode) {
+            if (isTriggerMode) {
                 long time = yValueTimeStampToLong(value);
                 dataProvider.addDataPoint(time);
             }
@@ -324,18 +386,18 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
                 }
             }
             dataProvider.setCurrentYData(VTypeHelper.getDouble(y_value), time);
-            if(isTriggerMode) {
+            if (isTriggerMode) {
                 dataProvider.addDataPoint(time);
             }
         } else {
             if (VTypeHelper.getSize(y_value) > 1) {
                 dataProvider.setCurrentYDataArray(VTypeHelper.getDoubleArray(y_value));
-                if(isTriggerMode) {
+                if (isTriggerMode) {
                     dataProvider.addDataArray();
                 }
             } else {
                 dataProvider.setCurrentYData(VTypeHelper.getDouble(y_value));
-                if(isTriggerMode) {
+                if (isTriggerMode) {
                     dataProvider.addDataPoint(time);
                 }
             }
@@ -377,7 +439,7 @@ public class ArchiveXYGraphEditPart extends XYGraphEditPart {
             // loop on trace to draw curve with 2 points with the begin point and end point
             ToolbarArmedXYGraph figure = ((ToolbarArmedXYGraph) ArchiveXYGraphEditPart.this.getFigure());
             long timeRangeUpper = (long) figure.getXYGraph().getXAxisList().get(0).getRange().getUpper();
-            //FIXME Is this correct? The if clause seems a bit odd...
+            // FIXME Is this correct? The if clause seems a bit odd...
             if (DEFAULT_MAX.compareTo(timeRangeUpper) != 0) {
                 for (Trace traceTmp : traceList) {
                     int countPoint = traceTmp.getDataProvider().getSize();
