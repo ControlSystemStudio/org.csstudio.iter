@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension-point id="liclipse_formatter" name="LiClipse Formatter" schema="schema/liclipse_formatter.exsd"/>
+   <extension-point id="liclipse_error_collector" name="LiClipse Error Collector" schema="schema/liclipse_error_collector.exsd"/>
+   <extension-point id="liclipse_color_cache_provider" name="LiClipse Color Cache Provider" schema="schema/liclipse_color_cache_provider.exsd"/>
+   <extension-point id="liclipse_editor_customizer" name="LiClipse Editor Customizer" schema="schema/liclipse_editor_customizer.exsd"/>
+
+    <extension
+          point="org.eclipse.core.contenttype.contentTypes">
+       <content-type
+             base-type="org.eclipse.core.runtime.text"
+             id="org.brainwy.liclipsetext.contentType"
+             name="Supported by Liclipse"
+             priority="normal">
+       </content-type>
+    </extension>
+
+
+
+    <extension
+         id="com.brainwy.liclipse.editor.popupContribution"
+         point="org.eclipse.ui.popupMenus">
+      <viewerContribution
+            targetID="#LiClipseRulerContext"
+            id="com.brainwy.liclipse.ruler.context.actions">
+         <action
+               label="%AddTask.label"
+               helpContextId="org.eclipse.ui.AddTask_action_context"
+               class="org.eclipse.ui.texteditor.TaskRulerAction"
+               tooltip="%AddTask.tooltip"
+               menubarPath="additions"
+               id="org.eclipse.ui.texteditor.TaskRulerAction">
+         </action>
+         <action
+               label="%AddBookmark.label"
+               helpContextId="org.eclipse.ui.bookmark_action_context"
+               class="org.eclipse.ui.texteditor.BookmarkRulerAction"
+               tooltip="%AddBookmark.tooltip"
+               menubarPath="additions"
+               id="org.eclipse.ui.texteditor.BookmarkRulerAction">
+         </action>
+      </viewerContribution>
+   </extension>
+
+
+
+<!-- occurrences annotation-->
+<extension point="org.eclipse.ui.editors.annotationTypes">
+    <type name="com.brainwy.liclipse.occurrences"/>
+</extension>
+
+<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+      <specification
+            annotationType="com.brainwy.liclipse.occurrences"
+            label="Occurrences (Javascript)"
+            icon="icons/searchm_obj.gif"
+            textPreferenceKey="liclipseOccurrenceIndication"
+            textPreferenceValue="false"
+            textStylePreferenceKey="liclipseOccurrenceIndicationTextStyle"
+            textStylePreferenceValue="NONE"
+            highlightPreferenceKey="liclipseOccurrenceHighlighting"
+            highlightPreferenceValue="true"
+            contributesToHeader="false"
+            overviewRulerPreferenceKey="liclipseOccurrenceIndicationInOverviewRuler"
+            overviewRulerPreferenceValue="true"
+            verticalRulerPreferenceKey="liclipseOccurrenceIndicationInVerticalRuler"
+            verticalRulerPreferenceValue="false"
+            colorPreferenceKey="liclipseOccurrenceIndicationColor"
+            colorPreferenceValue="212,212,212"
+            presentationLayer="4"
+            showInNextPrevDropdownToolbarActionKey="liclipseShowOccurrenceInNextPrevDropdownToolbarAction"
+            showInNextPrevDropdownToolbarAction="true"
+            isGoToNextNavigationTargetKey="liclipseIsOccurrenceGoToNextNavigationTarget"
+            isGoToNextNavigationTarget="true"
+            isGoToPreviousNavigationTargetKey="liclipseIsOccurrenceGoToPreviousNavigationTarget"
+            isGoToPreviousNavigationTarget="true">
+      </specification>
+</extension>
+
+ 
+    <extension point="org.eclipse.core.contenttype.contentTypes">
+        <content-type base-type="org.brainwy.liclipsetext.contentType"
+            file-extensions="js" file-names=""
+            id="com.brainwy.liclipse.javascript" name="Javascript File" priority="normal"/>
+    </extension>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+    <extension point="org.eclipse.ui.editors">
+        <editor
+            class="org.brainwy.liclipsetext.editor.common.LiClipseEditor:javascript"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="false" extensions="js" icon="icons/javascript_editor.png"
+            id="com.brainwy.liclipse.editor.common.LiClipseEditor.javascript" name="Liclipse Javascript Editor">
+            <contentTypeBinding contentTypeId="com.brainwy.liclipse.javascript"/>
+        </editor>
+    </extension>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+    <extension
+         point="org.eclipse.compare.contentViewers">
+      <viewer
+            extensions="js"
+            class="org.brainwy.liclipsetext.editor.compare.JavascriptContentViewerCreator"
+            id="com.brainwy.liclipse.editor.compare.JavascriptContentViewerCreator">
+      </viewer>
+        <contentTypeBinding
+            contentTypeId="com.brainwy.liclipse.javascript"
+            contentViewerId="com.brainwy.liclipse.editor.compare.JavascriptContentViewerCreator">
+        </contentTypeBinding>
+    </extension>
+
+    <extension
+        point="org.eclipse.compare.contentMergeViewers">
+        <viewer
+            extensions="js"
+            class="org.brainwy.liclipsetext.editor.compare.JavascriptMergeViewerCreator"
+            id="com.brainwy.liclipse.editor.compare.JavascriptMergeViewerCreator">
+        </viewer>
+        <contentTypeBinding
+            contentTypeId="com.brainwy.liclipse.javascript"
+            contentMergeViewerId="com.brainwy.liclipse.editor.compare.JavascriptMergeViewerCreator">
+        </contentTypeBinding>
+    </extension>
+
+
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+    <extension point="org.eclipse.core.contenttype.contentTypes">
+        <content-type base-type="org.brainwy.liclipsetext.contentType"
+            file-extensions="liclipse" file-names=""
+            id="com.brainwy.liclipse.liclipse" name="Liclipse File" priority="normal"/>
+    </extension>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+    <extension point="org.eclipse.ui.editors">
+        <editor
+            class="org.brainwy.liclipsetext.editor.common.LiClipseEditor:liclipse"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="false" extensions="liclipse" icon="icons/liclipse_editor.png"
+            id="com.brainwy.liclipse.editor.common.LiClipseEditor.liclipse" name="Liclipse Liclipse Editor">
+            <contentTypeBinding contentTypeId="com.brainwy.liclipse.liclipse"/>
+        </editor>
+    </extension>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+    <extension
+         point="org.eclipse.compare.contentViewers">
+      <viewer
+            extensions="liclipse"
+            class="org.brainwy.liclipsetext.editor.compare.LiclipseContentViewerCreator"
+            id="com.brainwy.liclipse.editor.compare.LiclipseContentViewerCreator">
+      </viewer>
+        <contentTypeBinding
+            contentTypeId="com.brainwy.liclipse.liclipse"
+            contentViewerId="com.brainwy.liclipse.editor.compare.LiclipseContentViewerCreator">
+        </contentTypeBinding>
+    </extension>
+
+    <extension
+        point="org.eclipse.compare.contentMergeViewers">
+        <viewer
+            extensions="liclipse"
+            class="org.brainwy.liclipsetext.editor.compare.LiclipseMergeViewerCreator"
+            id="com.brainwy.liclipse.editor.compare.LiclipseMergeViewerCreator">
+        </viewer>
+        <contentTypeBinding
+            contentTypeId="com.brainwy.liclipse.liclipse"
+            contentMergeViewerId="com.brainwy.liclipse.editor.compare.LiclipseMergeViewerCreator">
+        </contentTypeBinding>
+    </extension>
+
+
+    <extension
+          point="org.eclipse.compare.contentMergeViewers">
+       <viewer
+             class="org.brainwy.liclipsetext.editor.compare.SourceCacheCmakeMergeViewerCreator"
+             extensions="cmakecache"
+             id="com.brainwy.liclipse.editor.compare.SourceCacheCmakeMergeViewerCreator">
+       </viewer>
+       <contentTypeBinding
+             contentMergeViewerId="com.brainwy.liclipse.editor.compare.SourceCacheCmakeMergeViewerCreator"
+             contentTypeId="com.brainwy.liclipse.source.cache.cmake">
+       </contentTypeBinding>
+    </extension>
+
+
+   <!-- preferences -->
+   <extension point="org.eclipse.core.runtime.preferences">
+      <initializer class="org.brainwy.liclipsetext.editor.preferences.LiClipseTextPreferencesInitializer"/>
+   </extension>
+
+   <!-- context for keybinding (see: LiClipseEditor.initializeKeyBindingScopes) -->
+   <extension point="org.eclipse.ui.contexts">
+      <context
+            name="LiClipse editor"
+            parentId="org.eclipse.ui.textEditorScope"
+            description="LiClipse commands"
+            id="org.brainwy.liclipsetext.editor.context">
+      </context>
+    </extension>
+
+    <extension point="org.eclipse.ui.bindings">
+
+    <!-- see: IWorkbenchCommandConstants -->
+    <key commandId="org.eclipse.ui.window.nextEditor"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+Tab"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+    <key commandId="org.eclipse.ui.window.previousEditor"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+M2+Tab"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+
+    </extension>
+
+
+
+    <extension point="org.eclipse.ui.commands">
+    <category name="LiClipse Actions" id="com.brainwy.liclipse.handlers.category"/>
+
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+        <command categoryId="com.brainwy.liclipse.handlers.category"
+        defaultHandler="org.brainwy.liclipsetext.editor.handlers.NextElement"
+        id="org.brainwy.liclipsetext.editor.handlers.NextElement"
+        name="Next Element">
+    </command>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+        <command categoryId="com.brainwy.liclipse.handlers.category"
+        defaultHandler="org.brainwy.liclipsetext.editor.handlers.PrevElement"
+        id="org.brainwy.liclipsetext.editor.handlers.PrevElement"
+        name="Previous Element">
+    </command>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+        <command categoryId="com.brainwy.liclipse.handlers.category"
+        defaultHandler="org.brainwy.liclipsetext.editor.handlers.ToggleComment"
+        id="org.brainwy.liclipsetext.editor.handlers.ToggleComment"
+        name="Toggle Comment">
+    </command>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+        <command categoryId="com.brainwy.liclipse.handlers.category"
+        defaultHandler="org.brainwy.liclipsetext.editor.handlers.GoToMatchingBracket"
+        id="org.brainwy.liclipsetext.editor.handlers.GoToMatchingBracket"
+        name="Go to Matching Bracket">
+    </command>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+        <command categoryId="com.brainwy.liclipse.handlers.category"
+        defaultHandler="org.brainwy.liclipsetext.editor.handlers.Rename"
+        id="org.brainwy.liclipsetext.editor.handlers.Rename"
+        name="Rename">
+    </command>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+        <command categoryId="com.brainwy.liclipse.handlers.category"
+        defaultHandler="org.brainwy.liclipsetext.editor.handlers.QuickOutline"
+        id="org.brainwy.liclipsetext.editor.handlers.QuickOutline"
+        name="Quick Outline">
+    </command>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+        <command categoryId="com.brainwy.liclipse.handlers.category"
+        defaultHandler="org.brainwy.liclipsetext.editor.handlers.Formatter"
+        id="org.brainwy.liclipsetext.editor.handlers.Formatter"
+        name="Code Format">
+    </command>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+        <command categoryId="com.brainwy.liclipse.handlers.category"
+        defaultHandler="org.brainwy.liclipsetext.editor.handlers.SelectEnclosingScope"
+        id="org.brainwy.liclipsetext.editor.handlers.SelectEnclosingScope"
+        name="Select Enclosing Scope">
+    </command>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+        <command categoryId="com.brainwy.liclipse.handlers.category"
+        defaultHandler="org.brainwy.liclipsetext.editor.handlers.DeselectEnclosingScope"
+        id="org.brainwy.liclipsetext.editor.handlers.DeselectEnclosingScope"
+        name="Deselect Enclosing Scope">
+    </command>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+        <command categoryId="com.brainwy.liclipse.handlers.category"
+        defaultHandler="org.brainwy.liclipsetext.editor.handlers.ToggleMarkOccurrences"
+        id="org.brainwy.liclipsetext.editor.handlers.ToggleMarkOccurrences"
+        name="Toggle Mark Occurrences">
+    </command>
+
+    </extension>
+
+
+    <extension point="org.eclipse.ui.bindings">
+
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+            <key commandId="org.brainwy.liclipsetext.editor.handlers.NextElement"
+            contextId="org.brainwy.liclipsetext.editor.context"
+            sequence="M1+M2+Arrow_Down"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+            <key commandId="org.brainwy.liclipsetext.editor.handlers.PrevElement"
+            contextId="org.brainwy.liclipsetext.editor.context"
+            sequence="M1+M2+Arrow_Up"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+            <key commandId="org.brainwy.liclipsetext.editor.handlers.ToggleComment"
+            contextId="org.brainwy.liclipsetext.editor.context"
+            sequence="M1+/"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+            <key commandId="org.brainwy.liclipsetext.editor.handlers.GoToMatchingBracket"
+            contextId="org.brainwy.liclipsetext.editor.context"
+            sequence="M1+M2+P"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+            <key commandId="org.brainwy.liclipsetext.editor.handlers.Rename"
+            contextId="org.brainwy.liclipsetext.editor.context"
+            sequence="M3+M2+R"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+            <key commandId="org.brainwy.liclipsetext.editor.handlers.Rename"
+            contextId="org.brainwy.liclipsetext.editor.context"
+            sequence="M1+2 R"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+            <key commandId="org.brainwy.liclipsetext.editor.handlers.QuickOutline"
+            contextId="org.brainwy.liclipsetext.editor.context"
+            sequence="M1+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+            <key commandId="org.brainwy.liclipsetext.editor.handlers.Formatter"
+            contextId="org.brainwy.liclipsetext.editor.context"
+            sequence="M1+M2+F"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+            <key commandId="org.brainwy.liclipsetext.editor.handlers.SelectEnclosingScope"
+            contextId="org.brainwy.liclipsetext.editor.context"
+            sequence="M2+M3+Arrow_Up"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+            <key commandId="org.brainwy.liclipsetext.editor.handlers.DeselectEnclosingScope"
+            contextId="org.brainwy.liclipsetext.editor.context"
+            sequence="M2+M3+Arrow_Down"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+    <!-- Note: run the install.py to regenerate the actions contents! -->
+            <key commandId="org.brainwy.liclipsetext.editor.handlers.ToggleMarkOccurrences"
+            contextId="org.brainwy.liclipsetext.editor.context"
+            sequence="M2+M3+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+    </key>
+
+    </extension>
+
+    <!--[[[end]]]-->
+
+
+
+   <!-- languages menu -->
+
+   <!-- Preferences page -->
+   <extension point="org.eclipse.ui.preferencePages">
+      <page class="org.brainwy.liclipsetext.editor.preferences.RootPreferencesPage"
+            id="liclipse" name="Javascript"/>
+   </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+      <page class="org.brainwy.liclipsetext.editor.preferences.LiClipseCodeCompletionPreferencesPage"
+            id="liclipse.code_completion" name="Code Completion" category="liclipse"/>
+
+      <page class="org.brainwy.liclipsetext.editor.common.mark_occurrences.LiClipseMarkOccurrencesPreferencesPage"
+            id="liclipse.mark_occurrences" name="Mark Occurrences" category="liclipse" />
+
+      <page class="org.brainwy.liclipsetext.editor.preferences.LiClipseColorsPreferencesPage"
+            id="liclipse.colors" name="Colors" category="liclipse" />
+      <page class="org.brainwy.liclipsetext.editor.preferences.LiClipseWordNavigationPreferencesPage"
+            id="liclipse.word_navigation" name="Word Navigation" category="liclipse" />
+   </extension>
+
+   <extension point="org.eclipse.ui.ide.editorAssociationOverride">
+     <editorAssociationOverride id="com.brainwy.liclipse.editor.LiClipseEditorOverride" class="org.brainwy.liclipsetext.editor.LiClipseEditorOverride">
+     </editorAssociationOverride>
+   </extension>
+
+   <extension
+         point="org.eclipse.e4.ui.css.swt.theme">
+      <stylesheet
+            uri="css/dark/dark_theme.css">
+         <themeid
+               refid="org.eclipse.e4.ui.css.theme.e4_dark">
+         </themeid>
+      </stylesheet>
+   </extension>
+
+    <extension point="org.brainwy.liclipsetext.editor.liclipse_error_collector">
+        <error_collector_participant class="org.brainwy.liclipsetext.editor.error_handling.LiClipseLanguageErrorCollector"/>
+    </extension>
+
+
+</plugin>

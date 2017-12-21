@@ -25,9 +25,11 @@
         <tycho-groupid>org.eclipse.tycho</tycho-groupid>
         <!-- pydev version 5.2.0 is last version supporting eclipse mars -->
         <pydev.version>5.7.0</pydev.version>
+        <liclipsetext.version>2.1.1</liclipsetext.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <baselineMode>fail</baselineMode>
         <pydev-site>https://dl.bintray.com/fabioz/pydev/${pydev.version}</pydev-site>
+        <liclipsetext-site>https://dl.bintray.com/fabioz/liclipsetext/${liclipsetext.version}</liclipsetext-site>
         <svn-site>https://dl.bintray.com/subclipse/releases/subclipse/latest</svn-site>
         <orbit-site>http://download.eclipse.org/tools/orbit/R-builds/R20170307180635/repository</orbit-site>
         <efx-site>http://download.eclipse.org/efxclipse/runtime-released/2.4.0/site</efx-site>
@@ -213,6 +215,11 @@
         <repository>
             <id>pydev</id>
             <url>${pydev-site}</url>
+            <layout>p2</layout>
+        </repository>
+        <repository>
+            <id>liclipsetext</id>
+            <url>${liclipsetext-site}</url>
             <layout>p2</layout>
         </repository>
         <repository>

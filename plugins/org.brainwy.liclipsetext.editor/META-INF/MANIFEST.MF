@@ -1,0 +1,2474 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.brainwy.liclipsetext.editor;singleton:=true
+Archiver-Version: Plexus Archiver
+Built-By: fabio
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors,
+ org.junit;bundle-version="4.0";resolution:=optional,
+ org.brainwy.liclipsetext.shared_core;bundle-version="[2.1.1,2.1.2)",
+ org.brainwy.liclipsetext.shared_ui,
+ org.eclipse.core.resources,
+ org.eclipse.ui.workbench.texteditor,
+ org.eclipse.ui.views,
+ org.eclipse.e4.ui.services,
+ org.eclipse.e4.ui.css.swt.theme,
+ org.eclipse.ui.ide,
+ org.eclipse.compare,
+ org.eclipse.debug.core,
+ org.eclipse.debug.ui,
+ org.eclipse.core.variables,
+ org.eclipse.ui.console,
+ org.eclipse.core.filesystem,
+ org.eclipse.e4.core.commands;resolution:=optional,
+ com.ibm.icu,
+ org.eclipse.core.expressions;bundle-version="3.5.100",
+ com.google.gson;bundle-version="2.2.4",
+ org.jcodings;bundle-version="1.0.18",
+ org.joni;bundle-version="2.1.11"
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: com.eclipsesource.json,
+ org.brainwy.liclipsetext.editor,
+ org.brainwy.liclipsetext.editor.autoedit,
+ org.brainwy.liclipsetext.editor.common,
+ org.brainwy.liclipsetext.editor.common.completions,
+ org.brainwy.liclipsetext.editor.common.mark_occurrences,
+ org.brainwy.liclipsetext.editor.common.partitioning,
+ org.brainwy.liclipsetext.editor.common.partitioning.reader,
+ org.brainwy.liclipsetext.editor.common.partitioning.rules,
+ org.brainwy.liclipsetext.editor.common.partitioning.tokens,
+ org.brainwy.liclipsetext.editor.compare,
+ org.brainwy.liclipsetext.editor.config,
+ org.brainwy.liclipsetext.editor.content_assist,
+ org.brainwy.liclipsetext.editor.error_handling,
+ org.brainwy.liclipsetext.editor.handlers,
+ org.brainwy.liclipsetext.editor.handlers.comment,
+ org.brainwy.liclipsetext.editor.handlers.extensions,
+ org.brainwy.liclipsetext.editor.images,
+ org.brainwy.liclipsetext.editor.languages,
+ org.brainwy.liclipsetext.editor.languages.auto_edit,
+ org.brainwy.liclipsetext.editor.languages.comment,
+ org.brainwy.liclipsetext.editor.languages.indent,
+ org.brainwy.liclipsetext.editor.languages.outline,
+ org.brainwy.liclipsetext.editor.languages.tmbundle,
+ org.brainwy.liclipsetext.editor.languages.tmbundle.parsing,
+ org.brainwy.liclipsetext.editor.markers,
+ org.brainwy.liclipsetext.editor.menu,
+ org.brainwy.liclipsetext.editor.outline,
+ org.brainwy.liclipsetext.editor.parsing,
+ org.brainwy.liclipsetext.editor.partitioning,
+ org.brainwy.liclipsetext.editor.preferences,
+ org.brainwy.liclipsetext.editor.quick_outline,
+ org.brainwy.liclipsetext.editor.regexp,
+ org.brainwy.liclipsetext.editor.rules,
+ org.brainwy.liclipsetext.editor.scopes,
+ org.brainwy.liclipsetext.editor.spelling,
+ org.brainwy.liclipsetext.editor.templates,
+ org.brainwy.liclipsetext.editor.templates.resolvers,
+ org.brainwy.liclipsetext.editor.views.languages,
+ org.brainwy.liclipsetext.editor.views.partitioning
+Bundle-Name: LiClipseText Editor
+Bundle-Version: 2.1.1.20171221
+Bundle-ClassPath: .
+Bundle-Activator: org.brainwy.liclipsetext.editor.LiClipseTextEditorPl
+ ugin
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_77
+
+Name: org/brainwy/liclipsetext/editor/common/DialogNotifier$2.class
+SHA-256-Digest: z83+5/bvCcAuqOjAbmEFKZlLZdVEuCbKQoM+3N+K2SA=
+
+Name: org/brainwy/liclipsetext/editor/languages/LiClipseLanguage.class
+SHA-256-Digest: W8bAg5KwYRiktlrt5K1/k3OK0ae2k8cu32boFLFNBss=
+
+Name: org/eclipse/tm4e/core/internal/grammar/reader/SyncGrammarReader.
+ class
+SHA-256-Digest: 8AtxktUM0AwAeO7inTroheagT3XhMVbYm8N9+FcydG0=
+
+Name: icons/nim_editor.png
+SHA-256-Digest: WpecGPMMILw4X2+eHFe1tIIRUb0dCbemuJGUcSRKkjU=
+
+Name: org/brainwy/liclipsetext/editor/languages/auto_edit/AutoClosePar
+ ensAutoEditRule.class
+SHA-256-Digest: TjTxy+fPz5nZJtOi9vhLx3zYGSsVKxVuroiId9p4HeQ=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceCacheCmakeContentV
+ iewerCreator.class
+SHA-256-Digest: KSnnJovqgrbpfmlvS8ixfzvm0LsncKZJ7rwtfY4rM3w=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Debug.
+ class
+SHA-256-Digest: J/djMTKD2Ed4hzTOpfHZMXGhfdwGmaU5zOl7DQsg8+k=
+
+Name: org/brainwy/liclipsetext/editor/compare/TextHtmlErbContentViewer
+ Creator.class
+SHA-256-Digest: Csg091a4q0XgWc5JrSnfOX/Sl3kqebTa2uQP2yZreGU=
+
+Name: org/brainwy/liclipsetext/editor/languages/LiClipseLanguageIO.cla
+ ss
+SHA-256-Digest: FVu5jlNJw7UA0jn90GL9C8w/WmWvams9Mn0sbln4jJk=
+
+Name: languages/coffeescript.liclipse
+SHA-256-Digest: 0sKwHQ0VUY00uvHPqO53qXfs461VtKo0oeKFVIb89Ic=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipseDocu
+ mentPartitioner.class
+SHA-256-Digest: ju5XXpSqo6gtgSm8OK8kmamZKvHkfbKbUDfo2zEm75g=
+
+Name: org/brainwy/liclipsetext/editor/common/BaseLiClipseEditor.class
+SHA-256-Digest: Qb9054MBHEnDd/qUh1pJOhskibzMvvlAj0HPNs93wnY=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Indent
+ edBlockRule.class
+SHA-256-Digest: Qo9OsesvJfk+dlTHED2oXs0VoJillRaZ63IGGFUZA04=
+
+Name: org/brainwy/liclipsetext/editor/languages/navigation/ScopeNaviga
+ tionMatch.class
+SHA-256-Digest: vmIRUD/Rb99sR3qx9cMYRu2iQ4soDWcjReQ8x6hoRxQ=
+
+Name: org/brainwy/liclipsetext/editor/templates/resolvers/PreviousWord
+ Resolver.class
+SHA-256-Digest: r9Bb85dTIw9rnRcXa3M6Cfmgo9s5xC+Bev+U3zo8ssI=
+
+Name: org/eclipse/tm4e/core/internal/rule/RegExpSource.class
+SHA-256-Digest: gH2CiIEzrb4AzZ2VQPeaVN8Gsof0k8MZ/sOkLlCrDs0=
+
+Name: com/eclipsesource/json/JsonObject.class
+SHA-256-Digest: PZBq8sdBw8Yu/K2NgF4OA95idLb2Bbg2tSkbMxzg2Ak=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/Snipp
+ etToTemplateCtx.class
+SHA-256-Digest: TyzhFjUpjnZJFhyfMDUnCJCcSu7eDkyDpb1jboDDQts=
+
+Name: schema/liclipse_formatter.exsd
+SHA-256-Digest: 4FRtMMMexru2jwug219k88QsROK2VGus5toVzd6+tiQ=
+
+Name: languages/ruby.tmbundle
+SHA-256-Digest: 9S6w5ckTbJg6BznkXYYZqVLXMCP3H8LXSLzA0jxNd5s=
+
+Name: org/eclipse/tm4e/core/internal/types/IRawGrammar.class
+SHA-256-Digest: tZAsdJIirYLrBaxIs2XZ2wPzPO5SyaGcStqMJgbUzDg=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceCmakeContentViewer
+ Creator.class
+SHA-256-Digest: y/fa0Tzjg7YBYqfV8nX5BeF/3RJgnmljxtKnuFNS1S0=
+
+Name: languages/xml.liclipse
+SHA-256-Digest: IkrAbua7qdloeOjDxpgBd1PM5UUbaieLICH/gWRIN38=
+
+Name: org/eclipse/tm4e/core/internal/rule/CaptureRule.class
+SHA-256-Digest: rotTs+SSMwgV5Z+P9I3xiYVtZoWHVmRtOreSue5Gomg=
+
+Name: icons/html_editor.png
+SHA-256-Digest: j8SZfsjTz57tXFP/rYvqezBuK17VHpC72ZbuR+Kl70U=
+
+Name: icons/go_editor.png
+SHA-256-Digest: p0rZX+obUM4AUhhJwj4UywI40lQmB8dqGFdzFTFpxWA=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/RootN
+ ode.class
+SHA-256-Digest: cNuzJ9Ghi6m8K5M9e+ZBI3BFLBHXPd6IxXvtgxt6//I=
+
+Name: icons/scss_editor.png
+SHA-256-Digest: Oa7okv6WseNakqOlPqyTbGgp97Ge/J94Tm0XMAqVRug=
+
+Name: languages/go.liclipse
+SHA-256-Digest: jg/hGJp2q27sQRFByFisEkPQ3d1mLtahYoi81kmCtRc=
+
+Name: org/eclipse/tm4e/core/internal/rule/MatchRule.class
+SHA-256-Digest: NhGYX84/7KONmjABZbLMQccBY5o9lrNhtoeiXtsUmsA=
+
+Name: org/brainwy/liclipsetext/editor/rules/SwitchLanguageToken.class
+SHA-256-Digest: /Ua+6A7MPH+ja4SiJMPXtVd6izXR008miTatbh/M0XY=
+
+Name: languages/raml.tmbundle
+SHA-256-Digest: rFY6j0ADHpAri5SI+/MtXwF9j7svMqtweBq+Et54syw=
+
+Name: org/brainwy/liclipsetext/editor/handlers/extensions/ILiClipseHan
+ dler.class
+SHA-256-Digest: SE4cvjGKY63OK+EM+/dcmMzbxFCWay93nd9VWICqTe4=
+
+Name: org/eclipse/tm4e/core/theme/IThemeProvider.class
+SHA-256-Digest: yNSRT/xE4uEdoguz6Xd4lohOrBbzsUFPiXQS4TdZ8/0=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/TmCommentPart
+ .class
+SHA-256-Digest: jxdH1R7ZgVjcsvF8rSKdCmcQcPHxUWmqpAWPiAh7XfE=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/tokens/Targe
+ tLanguageToken.class
+SHA-256-Digest: 56KXHG6carDipX80GeUfZbgJMsrvTAyBWA5EDJ9B4Tw=
+
+Name: org/eclipse/tm4e/core/grammar/IToken.class
+SHA-256-Digest: FvTvELobzo+JtPvLjZV3MgPoRPKw6Rkh++xfCyEHxOw=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseEditor$CollectErr
+ orsJob$1.class
+SHA-256-Digest: V6p8fRzbeFdrTrOoI0frAGjpaTFlHJJtwec/RjYgKmA=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/DummyColorCa
+ che.class
+SHA-256-Digest: GamCr6EcTf5Du7B3DWTku/o07S97sg1Bh0rM21QSlZQ=
+
+Name: org/eclipse/tm4e/core/internal/grammar/parser/Raw.class
+SHA-256-Digest: 8sBkat/dUransC5EV9H5yXMRypiA7dDrsYp/q5st/hs=
+
+Name: com/eclipsesource/json/ParseException.class
+SHA-256-Digest: QLqkItDajXXvxuJG8exw6wZCcELOWjMUzcs7+BxfkhI=
+
+Name: org/brainwy/liclipsetext/editor/preferences/LiClipseTextPreferen
+ ces.class
+SHA-256-Digest: kp1DFC/lx4W6u9X7YytiqKOgByo/kgAmqCPF1xCG9a8=
+
+Name: org/eclipse/tm4e/core/internal/matcher/Matcher$1.class
+SHA-256-Digest: ML2GnjtAuN/ZHTgffCnLU6V9dl1pWLgy/BH7+bOKmFU=
+
+Name: org/brainwy/liclipsetext/editor/languages/outline/LanguageOutlin
+ e$OutlineData.class
+SHA-256-Digest: kBFhNBNxNFDRt0loOV1xYHeVfWvxAuKlukh0FJH3cyM=
+
+Name: org/eclipse/tm4e/core/model/TMModel$TokenizerThread.class
+SHA-256-Digest: 3DnDjEYujdytgIbxIKzrtgNcY5khACOaBdcKQYHRKEE=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/JSRege
+ xRule.class
+SHA-256-Digest: 64OyfA1uZDR9TVyBWY0wvU4dB0zTMW7lVMWRFXcTguo=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/WordSe
+ paratorRule.class
+SHA-256-Digest: fQZH9n7g9B0egRmaz+Zaz8ImIJEC8OqB4ALK0nSMtJY=
+
+Name: org/brainwy/liclipsetext/editor/views/partitioning/LiClipseParti
+ tioningOutlineLabelProvider.class
+SHA-256-Digest: pigYCzgIEV/8DVSrD5bDvBECTvz2VcN6jMYj2g5+qto=
+
+Name: org/brainwy/liclipsetext/editor/handlers/Formatter.class
+SHA-256-Digest: LdjO3unbsx6xO4QAN1Sr06A2tHo7O6+LNNMmn/ut9Og=
+
+Name: com/eclipsesource/json/JsonValue.class
+SHA-256-Digest: /Kv7AWqHXz42in+Exf2ioSJid9RbvQlWWDOrhq7AYpc=
+
+Name: languages/html.tmbundle
+SHA-256-Digest: VkUaOyzgEmof4tO9imvu2BXv1UCDpSFntFkcWlmXC98=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/NodeW
+ ithRegexp.class
+SHA-256-Digest: d5Z8UWbctyfPXvD1btqQ3fC/+DMwjm35WYR3YIixxWc=
+
+Name: org/brainwy/liclipsetext/editor/languages/auto_edit/AutoCloseSco
+ pesAutoEditRule.class
+SHA-256-Digest: Eu9oIfcFrOixOhpMTMBu2p3tBvfU/T/A016OF/5Vbyg=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseContentAssistProc
+ essor2.class
+SHA-256-Digest: w5efa9RIe1nN85JuzIOLtc5vaEqTTBJuLPrq3UlXRC8=
+
+Name: org/brainwy/liclipsetext/editor/compare/JavaContentViewerCreator
+ .class
+SHA-256-Digest: j7ySBoyt2kRAeZFgdpG5MCTqajM52oDuG3/Y0G9bAxs=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceScssMergeViewerCre
+ ator.class
+SHA-256-Digest: ZR0C1vBXPRQtAU6/Hvuv19Yu23QIBAeFai1NMHt/y+c=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguageLoaderUew.clas
+ s
+SHA-256-Digest: ie/Y7N08cqVrus06MAQLFnbBDk/HIkMW9Bq5Tucw8YU=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/TmGrammarPart
+ .class
+SHA-256-Digest: QHSSKczOpwid+oiX2VeML9EQXSjArneEwg6MJuq73wY=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Repeat
+ CharToEolRule.class
+SHA-256-Digest: 6tEyjLuWbCl30SEb96JuArxVHmJRv46anlToopx4ADs=
+
+Name: org/eclipse/tm4e/core/internal/rule/ICompilePatternsResult.class
+SHA-256-Digest: 8FlzWq+dqHWg0PyISAkFdBgCT7ALfX24CCO0ahSkIO0=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseSourceViewer.clas
+ s
+SHA-256-Digest: YJ6pjA5jW9ExSotEUinYXo8kfB/mQmJJvlDilzSreGw=
+
+Name: org/eclipse/tm4e/registry/IGrammarRegistryManager.class
+SHA-256-Digest: NM+rexp3zGy9pmW1AUiI6jBtF5gkPg687KBW1pMg8ps=
+
+Name: org/brainwy/liclipsetext/editor/preferences/RootPreferencesPage$
+ 3.class
+SHA-256-Digest: UrRLlB2kgL7mHgabzFqybpjA4KpuGvNPDerXOJ+HuNo=
+
+Name: org/eclipse/tm4e/registry/EclipseSystemLogger.class
+SHA-256-Digest: QyBjlkyCon26n+O99ZoXIOKquL62B9EdAvMRyLkzcsE=
+
+Name: org/brainwy/liclipsetext/editor/handlers/comment/ToggleBlockComm
+ entAction$2.class
+SHA-256-Digest: KXxPZAHFSAWRLau9KE0Nvmo7+fyGEPJO8IPzDTLA+3Q=
+
+Name: languages/rst.liclipse
+SHA-256-Digest: YkhB8bl2zQCm045/iGZkUN8Wggsj6ZqPAGQC+vQUJsg=
+
+Name: languages/base.liclipse
+SHA-256-Digest: kB+w4z/XzVtMemnBb487svo/Y8Lz+EfkX/+P61p7yRs=
+
+Name: org/eclipse/tm4e/core/internal/oniguruma/IOnigNextMatchResult.cl
+ ass
+SHA-256-Digest: cq2rIufzd/w9fSGWWrvDbtM+kAzGexvoHeOKwhbegGk=
+
+Name: languages/kivy.liclipse
+SHA-256-Digest: vGCY54bLg4mrCYZgv6PzeowuoTI4a+/88Y/Ml2PvdPc=
+
+Name: org/eclipse/tm4e/registry/internal/GrammarRegistryManager.class
+SHA-256-Digest: TDCumhPAY0JmUQio1xYzLOXheeGWpT3TVQJyYa1RsKA=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseContentAssistProc
+ essor.class
+SHA-256-Digest: 4Lh67etbCZEDluYmweD+p13qbWc1pQ7NxYyfj+gnTV4=
+
+Name: languages/python.liclipse
+SHA-256-Digest: iaJkiBr6jZK2VVTtaq2ZhfJOXlZHQox6VFimlIKpUdU=
+
+Name: languages/perl.tmbundle
+SHA-256-Digest: VGojxR7/fjo7k7nlVR+zKw+o98nvE4/v1FYPN5Z9Uo8=
+
+Name: org/brainwy/liclipsetext/editor/views/languages/LiClipseLanguage
+ sView$DoubleClickTreeItemMouseListener.class
+SHA-256-Digest: 8H0bOsAUaD7K+FptwOUccuyQV5RKZ5jxl43dMPfg8o4=
+
+Name: org/brainwy/liclipsetext/editor/compare/LiclipseContentViewerCre
+ ator.class
+SHA-256-Digest: E+Z0lxkAQr4e9JlaOXQ2sIavpfm814p7Ft2F5yp1fWo=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/ParseH
+ tmlTagHelper.class
+SHA-256-Digest: lKQ9egHxhGMW9h6VuXmR5dzCdauRkymNu1QBMg7nlwI=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceSwiftMergeViewerCr
+ eator.class
+SHA-256-Digest: 8T7+T0Ap41WJFoF46nm4nqG4UL/X32LXkvhDALCB6N0=
+
+Name: org/brainwy/liclipsetext/editor/preferences/RootPreferencesPage$
+ 3$1.class
+SHA-256-Digest: HpaG/AR72xHstriI9+gTB0WoqZ7nIzoK0EqAnHZOwqE=
+
+Name: org/brainwy/liclipsetext/editor/rules/package.txt
+SHA-256-Digest: XSJKy6TRESzrfuzwL4F8qun7r/dcYAXghQ2CPJiwuBg=
+
+Name: icons/dart_editor.png
+SHA-256-Digest: xp6P/1/glH4rT72ygvZWDDDS9IIZoCAdU3CHMvHnfxo=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/Tm4eScopeCol
+ orScanning.class
+SHA-256-Digest: My0r4axF6XgIWjjsSQnrzGk62w66zhAHOQyHNU23yYQ=
+
+Name: org/eclipse/tm4e/core/model/IModelTokensChangedListener.class
+SHA-256-Digest: EwqAXZSN2u4ak4B7BxDETVXIuUk72fhu9eUhbJNush4=
+
+Name: org/brainwy/liclipsetext/editor/compare/TextHtmlMarkdownContentV
+ iewerCreator.class
+SHA-256-Digest: 63bBIMklGNPlYuH/2dOyFC/DAqv2CAOraVQ11oELxR8=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseEditor$1.class
+SHA-256-Digest: N+G6AL/9aXP996gvoT4ZuEI7bqhXjrdMo9wir5IBxYI=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguagesManager$3.cla
+ ss
+SHA-256-Digest: GaeAXzhMdqMhml48Y+mGtENhOtmuQUnAMR4E+qWuQ1A=
+
+Name: org/brainwy/liclipsetext/editor/languages/comment/LanguageCommen
+ t$CommentType.class
+SHA-256-Digest: 3KLWPIrLdafs3uP4v5KE/rsqNsQrsKx3Mj+PFp7merU=
+
+Name: META-INF/maven/org.brainwy.liclipsetext/org.brainwy.liclipsetext
+ .editor/pom.properties
+SHA-256-Digest: z4fJ3o0nlXcwFAME9Sll0osQSs8eK6U2wJbuzj8gtWM=
+
+Name: languages/stringtemplate.liclipse
+SHA-256-Digest: rkBLdetHjQsquUlJFeG8MykEBK3dCedugbXuJX71QBA=
+
+Name: org/brainwy/liclipsetext/editor/languages/indent/LanguageIndent.
+ class
+SHA-256-Digest: 9coMDKTpXecwZk0nzUwsAqjwvZQoif4b4UtxpBJ3mZg=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipsePres
+ entationReconciler$TextPresentationStoreRanges.class
+SHA-256-Digest: eqW91hKvcUc0BLmZfku8j8qevv5zPQe0jy8YtYDX5WA=
+
+Name: languages/scss.tmbundle
+SHA-256-Digest: 1nc2rnNZl6d1TD4kTEJuR0LpIUrkViYA16wzHfuOz3g=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/TmSnippetPart
+ .class
+SHA-256-Digest: SdRxjB77Cv03eSvK3Q6YmYDXeH9pnN6ScujjKsaxOrQ=
+
+Name: org/brainwy/liclipsetext/editor/views/partitioning/LiClipseParti
+ tioningView$2.class
+SHA-256-Digest: sSrhIOMpP7b/l6u6C20FVMnXL5tSIiLtlinUkweRwJ8=
+
+Name: org/brainwy/liclipsetext/editor/languages/IStreamProvider.class
+SHA-256-Digest: Vz/mCKcoOgn6e9d8nbJrxPNV+BVl9Wzx3F0m01d1X50=
+
+Name: org/brainwy/liclipsetext/editor/handlers/NextElement.class
+SHA-256-Digest: DQgpTMlPu8gZ+tgkldY+5U6mPmX3AXQg7ZhRNP9Ub4I=
+
+Name: org/brainwy/liclipsetext/editor/languages/comment/LanguageCommen
+ t.class
+SHA-256-Digest: ujvKgRne00LVQ4tgZd4MnwG5kLiiibBQFJ8u16N9tvU=
+
+Name: org/brainwy/liclipsetext/editor/preferences/RootPreferencesPage$
+ 1.class
+SHA-256-Digest: b9itRWK83neNhCXXvdUV5svFJ/7DYU95Fx/Dq+RjO/0=
+
+Name: org/brainwy/liclipsetext/editor/views/languages/LiClipseLanguage
+ sView.class
+SHA-256-Digest: uX+z9cYAS8E2xoSMcpjYL/KRQ6gGaNYH3ey8oyJZEPs=
+
+Name: icons/source.dosbatch_editor.png
+SHA-256-Digest: jd5S79/ZQjXkTygABDxPAprXa3EQhuF12O9BmyVkPUc=
+
+Name: org/eclipse/tm4e/core/internal/grammar/MetadataConsts.class
+SHA-256-Digest: 8b+xXxWMSQFnogQzIvSsZpRA3hGHV1BzULNPnWIG/gQ=
+
+Name: org/eclipse/tm4e/core/grammar/ITokenizeLineResult.class
+SHA-256-Digest: HJQXj748Mf/9fRExSeStRgEjgij0Zkr4JorRQ5h/I0c=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipsePres
+ entationReconciler$RepairListEntry.class
+SHA-256-Digest: uGT0bQ6WWVSrm9BL025EkumubWWedbM0Z2yfhci3w6k=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/ITextM
+ ateRule.class
+SHA-256-Digest: qVOeNqhWMdNru8jRLQJIo1QEkkMA/Ie34wxe4Zy/q8s=
+
+Name: org/eclipse/tm4e/core/theme/IThemeSetting.class
+SHA-256-Digest: GJgzbqAMiTeSkbU858CXKeXrOyI/1aQwWEDolggywew=
+
+Name: org/brainwy/liclipsetext/editor/compare/CppMergeViewerCreator.cl
+ ass
+SHA-256-Digest: PpLXPdRJfCVgYUeM87p36FU70A8EHFCUPkdNLvGGjaM=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/tokens/IToke
+ nWithReplaceOperation.class
+SHA-256-Digest: lWorFq/GeCu7UjBFoFQfcyyW7H5St2pFeCWZQbe8If4=
+
+Name: languages/README_TM_BUNDLES.txt
+SHA-256-Digest: 3c74g7+1UChOF+rlAv5so9deXmaWVoXFvo+9/NpbIPI=
+
+Name: README.txt
+SHA-256-Digest: V0jmQm6JYH8sx3LxyBk2KWBIdNzMUj0GC1bceyjLZw0=
+
+Name: org/eclipse/tm4e/core/internal/grammar/LineTokenizer$WhileStack.
+ class
+SHA-256-Digest: n2byRE8FffoVvLDCH3iuzfCumqdca7Fo2gjyu5wQPgM=
+
+Name: org/eclipse/tm4e/core/internal/oniguruma/OnigResult.class
+SHA-256-Digest: tVMKF/CKC41o/RFV9JUKopSC1hYhtYAYBzIxcM8vGvw=
+
+Name: org/eclipse/tm4e/core/grammar/StackElement.class
+SHA-256-Digest: N85YflEiD5sYfYB6wysjUB7FYo0/8Tf5IaE2eRm0WxA=
+
+Name: com/eclipsesource/json/JsonLiteral.class
+SHA-256-Digest: 9hPsLLNogamiFeJ+y1f+hjUGH/LniMG5LGfhLq6b62M=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/TmLanguageHan
+ dler$TrueBuffer.class
+SHA-256-Digest: f/v/exbNEiW2GqnucF17wRtMKzW5WtjtXhhGh8ibwTY=
+
+Name: org/brainwy/liclipsetext/editor/views/languages/LiClipseLanguage
+ sViewOutlineLabelProvider.class
+SHA-256-Digest: GMVW40v5V0grwQycqz9PK7xH1qqzmgjc7pzfnUP9Q/8=
+
+Name: libs/ctags.exe
+SHA-256-Digest: xJjKPS6NXqDaWkn9rS8n3CyDtKAJDa1ksI3XzBczhLs=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/AnyWor
+ dRule.class
+SHA-256-Digest: j2LG/TWAtkdLTW6YZZqlGa4tM7DR+qES1/a5iPo9gCo=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/reader/SubPa
+ rtitionCodeReader$2.class
+SHA-256-Digest: mMpKw/rBnaeHq9JKAjDcp5X/VFKlxOh8z1nBxbeH3Oc=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourcePerl6MergeViewerCr
+ eator.class
+SHA-256-Digest: FBOa/3RUn0HdUICvBhMpA2dxyaSYP9QliqJELm0a/bM=
+
+Name: org/brainwy/liclipsetext/editor/rules/EndOfLineRule.class
+SHA-256-Digest: 9SrwF5/C3WAwjLHQB6UflJwseiUEJC0edF13LJ3sPY8=
+
+Name: org/brainwy/liclipsetext/editor/preferences/LiClipseTextPreferen
+ cesInitializer.class
+SHA-256-Digest: ubCOghYIGHMhtWy87QxlVQnnzabxI69s6syGW4mbBdE=
+
+Name: org/brainwy/liclipsetext/editor/rules/SubLanguageToken$1.class
+SHA-256-Digest: 5/6oQtvEUU9mUvYbD4ekWxIdA7l8h3bTbsyYWgi9nHQ=
+
+Name: org/eclipse/tm4e/core/internal/oniguruma/OnigCaptureIndex.class
+SHA-256-Digest: gSTpGpMB/921LthJHc1yhYNwbdNY1Tmv9Nc1yMZw+w4=
+
+Name: org/brainwy/liclipsetext/editor/handlers/ToggleMarkOccurrences.c
+ lass
+SHA-256-Digest: 1JriWAd07TtrgwATfFIxS8XM27S1PKXeuiCZ3djzkXY=
+
+Name: org/brainwy/liclipsetext/editor/compare/MakoContentViewerCreator
+ .class
+SHA-256-Digest: F9CnEQGausMbbNGeR6t+y5oASjZif/817X8zQkiDSP0=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/ITokenCreato
+ r.class
+SHA-256-Digest: WvyJ8Kb4t49UIbwClvFqrrvNrCur78WEmAHgIv6ZoaA=
+
+Name: org/eclipse/tm4e/core/grammar/IGrammar.class
+SHA-256-Digest: 8Ozc0u7TmoOfd3yeTEdhhgY6JjPMM0D/QxHtWO9zal0=
+
+Name: org/eclipse/tm4e/registry/internal/AbstractGrammarRegistryManage
+ r$EclipseRegistryOptions.class
+SHA-256-Digest: 9LisVaZT4ohabCH2pibuQmR2limrPOM5MgwByD4Psao=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/TmLanguageHan
+ dler$1.class
+SHA-256-Digest: j8w2Uihm9Vo92jXRAi0YC7WUMMQ1EqESQrbOv3zggdg=
+
+Name: languages/javascript.liclipse
+SHA-256-Digest: fHtZwMls+U/pgYW9JbVNihJtHBfjfvURtvdOnbGl49Q=
+
+Name: org/brainwy/liclipsetext/editor/menu/LanguagesMenu$1$2.class
+SHA-256-Digest: Ot8PGYHjKA1it5i1v9TYU5e6NldJbdfki4v3fY2pTww=
+
+Name: languages/textmate.tmbundle
+SHA-256-Digest: Wlcu+x0CNRU6iGtThqZoWTmTwq3bnEbT2kb6EpPqLBk=
+
+Name: org/eclipse/tm4e/core/model/TMModel.class
+SHA-256-Digest: tTA06od4uw9MkG7CWH16rgaoJZOacjX7Kkrw5BR+YZY=
+
+Name: org/eclipse/tm4e/registry/internal/preferences/PreferenceConstan
+ ts.class
+SHA-256-Digest: CSG/USR4sEOfw1HRM0Yi1y0lRlia8iUUhecirmoD8pg=
+
+Name: com/eclipsesource/json/JsonWriter.class
+SHA-256-Digest: fgtBHYn5Lu9y03W9mEQARQ4M8gjfCrTlQ8AOZC76B1M=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceCacheCmakeMergeVie
+ werCreator.class
+SHA-256-Digest: SWZhX8jXun8smCcV6briXAKbia/yWG/e59Tv/uzkVCc=
+
+Name: org/brainwy/liclipsetext/editor/views/partitioning/LiClipseParti
+ tioningView.class
+SHA-256-Digest: q//3mwbeokm2SAbiTt29u0WTDKAvh2JevjhNrAAHq8M=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceCssContentViewerCr
+ eator.class
+SHA-256-Digest: 8J7rDyMhtNA6bjlz2+tbp3hznjSarHxR+i5zx28YrmQ=
+
+Name: org/brainwy/liclipsetext/editor/partitioning/ScannerRange$EndRul
+ eMatchFromStack.class
+SHA-256-Digest: y0nmZDLqNJDJ9CbxopQkCXltCT104OsUU8Iqupmr7PM=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguagesManager$1.cla
+ ss
+SHA-256-Digest: YJ/xsGhqPwZKIQBqmhOqWm1xqZfRcpt/BuQ6OUZ4LQY=
+
+Name: org/eclipse/tm4e/core/internal/parser/xml/XMLPListParser$1.class
+SHA-256-Digest: Scv1DTYj0FPJ6Zj+V6b8Ramq9+wFRyBFTv5b1zgho4I=
+
+Name: org/eclipse/tm4e/core/internal/theme/ThemeRaw.class
+SHA-256-Digest: 5+xbAnh4D+NRHAtPaFdEHXehYfv19KAzvYpFxqZghUI=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguageMetadataTmBund
+ leZipFileInfo$1.class
+SHA-256-Digest: PbLYY24r/SyO8q3gPT28s/+fWoDrHpy4UoNYgo0Tt5w=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Switch
+ LanguageHtmlRule.class
+SHA-256-Digest: tcm9SRp25Py4UeTiL8ZjCBBc5VRyIZefrZ7VTvX0uDg=
+
+Name: icons/source.swift_editor.png
+SHA-256-Digest: YrSWvWXY+n2EDQH+io2gR62wtaQ5Orci2XmiBlDwXpw=
+
+Name: icons/source.perl.6_editor.png
+SHA-256-Digest: t0R6Lfeq5GVMWPe0QxJ35fzsp4c7oUMB/5eUjfH8E8s=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguageMetadataFileIn
+ fo$1.class
+SHA-256-Digest: CWY4qwE8jr2KGvdFwgKbxaVeE93BS4qmBBdAEBil3wo=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipsePres
+ entationReconciler.class
+SHA-256-Digest: 858263ck6ELON5Vnvnak+8EuH1IYMYfHusAJ/deQBjk=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguageMetadataFileIn
+ fo.class
+SHA-256-Digest: WWpOBH8EKwBJYXKGrdxEHptJEiRWd2ATlJNPvHEermk=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseSourceViewerConfi
+ guration$LiClipseSimpleAssistProcessor.class
+SHA-256-Digest: rUIItix2FsIb0GrCSxjTguKDX7G/wNO3duDbzpE7ux8=
+
+Name: org/brainwy/liclipsetext/editor/compare/YamlMergeViewerCreator.c
+ lass
+SHA-256-Digest: 2zJccyS0NUSaT/Bo/7+UdhRJLeRrz0ensem68DuycCo=
+
+Name: languages/xgui20.liclipse
+SHA-256-Digest: a2aOC4JOhoFFFkBhilwS2C8Cn3m66y8nYQrISOWNm/U=
+
+Name: org/eclipse/tm4e/core/theme/ColorMap.class
+SHA-256-Digest: XA6/X1roy7pXnQmMP1coX0xWcXxPBN9QEMNz95f2vBY=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/AnyOfC
+ harsRule.class
+SHA-256-Digest: HvZZhLTN/Lr9nByZBqc4Ux4/ZvRmWlH3R79GQPQCZN8=
+
+Name: org/brainwy/liclipsetext/editor/content_assist/BaseSimpleAssistP
+ rocessor$1.class
+SHA-256-Digest: oNhfNZrM55PRg5cEzAwEd5dXRMn/EIofMP0pPqWfugU=
+
+Name: org/eclipse/tm4e/registry/internal/preferences/PreferenceHelper.
+ class
+SHA-256-Digest: /ZDYL9hODbcf4M/IbMJjNuxuI5nxoi/hBuUXilMIDTI=
+
+Name: org/brainwy/liclipsetext/editor/languages/navigation/CtagsNaviga
+ tionMatch$1.class
+SHA-256-Digest: qjnQYgZ2Jf3hh3LHMkKPJk1P82BrH6R60nnZwdNclMI=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/ParseH
+ tmlTagHelper$HtmlAttribute.class
+SHA-256-Digest: PGc66uuehM2dVTFchPCXZdMh1SU4SChbI+KytN8Hha4=
+
+Name: org/eclipse/tm4e/core/TMException.class
+SHA-256-Digest: OmWGg8vIi3KN26AAfRJ/kneNUyx6DoIl6IsvI8/liH4=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Sequen
+ cesRule.class
+SHA-256-Digest: w1luQzYlYxPbRRax4clNqgU37sHrbdl+ITsNPOkLFKU=
+
+Name: org/brainwy/liclipsetext/editor/compare/TextHtmlPhpMergeViewerCr
+ eator.class
+SHA-256-Digest: Gpm2EecS90cFM30CgHdLa/1YmZsHDXlDCTOCfCll+ys=
+
+Name: org/eclipse/tm4e/core/internal/rule/IRuleFactory.class
+SHA-256-Digest: HslSXJOvEQKUAsgyBVYHlIP90wLV6sIVIBNrAOaue3Q=
+
+Name: org/brainwy/liclipsetext/editor/common/ILiClipseEditorCustomizer
+ .class
+SHA-256-Digest: pZkGc5kL8Ro+v5QiiRAFZeHn8pCYksxPoxAWYLdEN7g=
+
+Name: org/eclipse/tm4e/core/model/Tokenizer.class
+SHA-256-Digest: 2L5hvr9iiU3q91bhifyd41+Y3GsRAsH/EoyGnnKGeUY=
+
+Name: org/brainwy/liclipsetext/editor/rules/SubLanguageToken.class
+SHA-256-Digest: aD2KqQrqlujejG9qk1qMSnudFZciQT20oa9G7HWzYh4=
+
+Name: languages/cmake.tmbundle
+SHA-256-Digest: AbM49UyXifyFlVSWif72IR/7GzgEfkGt2IVMO+Yp8Lk=
+
+Name: org/eclipse/tm4e/core/internal/rule/IRegExpSourceAnchorCache.cla
+ ss
+SHA-256-Digest: /b3S6k62dpx+WeBPgaUxcuowX4z74clIHF3gYMh8rm0=
+
+Name: org/eclipse/tm4e/core/internal/types/IRawCaptures.class
+SHA-256-Digest: K4suudZsjedWJvfOip2yhUJyMFkz/lEthHwNGChrAvs=
+
+Name: org/eclipse/tm4e/core/internal/matcher/Matcher$4.class
+SHA-256-Digest: slC8oXn9KcpLo/H4rCqB/x9fJMWt5Ww5oi1yIwnY5j0=
+
+Name: org/brainwy/liclipsetext/editor/menu/LanguagesMenu.class
+SHA-256-Digest: aA+aExFJOrImBbn549kJfZ+9kOxU/48/xe+F7nldz8c=
+
+Name: org/brainwy/liclipsetext/editor/templates/LiClipseTemplateComple
+ tionProcessor$ProposalComparator.class
+SHA-256-Digest: EYvC11jHGAhBwTspZJfSzzajh0wF1nM49zMrN9kbkYw=
+
+Name: languages/shellscript.tmbundle
+SHA-256-Digest: PxtZU3XSVmyQ16n+P9cK/WIaH0X+O4Yfpx41Z2/Fip4=
+
+Name: org/brainwy/liclipsetext/editor/languages/ScopeSelector.class
+SHA-256-Digest: 3qOdidPKy461hvSUBnMabWqDXXnxMbKuH0ZJyNWPi1Y=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceCssMergeViewerCrea
+ tor.class
+SHA-256-Digest: 3hSN6nuP4T/w9/UE8paNKh0jfQs1bBfVFpbTMfiFL0Q=
+
+Name: org/eclipse/tm4e/core/logger/ILogger$1.class
+SHA-256-Digest: j69Kwpttiae+3DvqjSsdqy8Zvdmhln+rEw8ltzvWc+g=
+
+Name: org/eclipse/tm4e/core/internal/oniguruma/OnigString.class
+SHA-256-Digest: 8rJh1dpHZTOVOi+n5z2e8VCtp4XcFWVK3UTlY+rbWHU=
+
+Name: org/brainwy/liclipsetext/editor/scopes/ScopesParser.class
+SHA-256-Digest: Yi41BRM/J00xvK5GywvY6/0UnjWmJK46YWzz16W/xYA=
+
+Name: icons/editor.pdn
+SHA-256-Digest: 8tuBoYLjsOkrRMvkHU97PcJ0Xuc7RoxcOm6RtGMysNY=
+
+Name: org/brainwy/liclipsetext/editor/compare/CppContentViewerCreator.
+ class
+SHA-256-Digest: bbJomoQTnvZfAn+xrD0+YqU6uqHfiTcUsg7ICBJQzA8=
+
+Name: org/eclipse/tm4e/core/internal/grammar/LineTokens.class
+SHA-256-Digest: Axmsz/S+G1r8O8NAvmqcI/VfkTdsDoJuigSrtlzkQPg=
+
+Name: org/brainwy/liclipsetext/editor/partitioning/Utf8WithCharLen.cla
+ ss
+SHA-256-Digest: 9BRvP2ejGFJP8OwocmfjWTI+6Rw2sGChG6EqI4/tyBQ=
+
+Name: org/brainwy/liclipsetext/editor/parsing/LiClipseParser.class
+SHA-256-Digest: h4MDHccrDiawJy8N6USwvUF9pPIYD2O/wUA63O4I2qM=
+
+Name: org/eclipse/tm4e/core/internal/grammar/LineTokenizer.class
+SHA-256-Digest: fAh5/WdPyvbGowKesunA+UUE4CIdIcJvDNz4vEvqqkk=
+
+Name: org/eclipse/tm4e/core/internal/matcher/IMatcher.class
+SHA-256-Digest: pS2vM/v8LOOu/O11YvwWIz2Be2By/malI3eMkB9zcFY=
+
+Name: org/eclipse/tm4e/core/internal/grammar/ScopeListElement.class
+SHA-256-Digest: ZqZXzeaxfoPQaTXHQcxCpx5Z/AVr8c2wu+sHSZ7LXI4=
+
+Name: org/brainwy/liclipsetext/editor/languages/navigation/NotifyCtags
+ ErrorDialog$1.class
+SHA-256-Digest: TO64RpoXKBLmMgIzAQ7jRB41Jgk5vrysihUEikanHRo=
+
+Name: org/brainwy/liclipsetext/editor/common/BaseLiClipseEditor$1.clas
+ s
+SHA-256-Digest: MSADrHW9UmGzuYYj8jlQQKgpXMneLH9d51c5V9Pi3zI=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguageMetadata.class
+SHA-256-Digest: bvSqc01eMqT7QJs6lrF11c/s8zAS8H4qD/H6Obq5yQk=
+
+Name: org/brainwy/liclipsetext/editor/content_assist/BaseSimpleAssistP
+ rocessor.class
+SHA-256-Digest: B98+DBIKFB9mhaY/9ObVijQMtdgpZkLLDacD1HqOaik=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/ITmLanguagePa
+ rt.class
+SHA-256-Digest: SlFjZcrZ+zuuNBhL682HpJXABYvk5gtLPZcaXK/V7Fk=
+
+Name: org/brainwy/liclipsetext/editor/common/mark_occurrences/Liclipse
+ MarkOccurrencesDispatcher.class
+SHA-256-Digest: 2uOdLFzZtv7UOqxHTSPH4KrDcp8hdRGVdaJfLe/llNY=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Option
+ alMultiLineRule.class
+SHA-256-Digest: kQPd9VnFfCl03PheeNvN0vgXdWFHRJJowM4zElolioY=
+
+Name: org/brainwy/liclipsetext/editor/languages/navigation/INavigation
+ Match.class
+SHA-256-Digest: TJdjSTWOVth1wIAL7+DtBabpqFK/DFhWZ9Hw8e7jxss=
+
+Name: languages/markdown.tmbundle
+SHA-256-Digest: E+k81pVWqMPStQMnByrceTUPya2BSZwAnXE8JW1PQMo=
+
+Name: languages/django.liclipse
+SHA-256-Digest: pB9LM/d8KVsd1RhwjvkoQs4HjqLcsk2LUasC+tr0jag=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/tokens/Conte
+ ntTypeToken.class
+SHA-256-Digest: 2rzuLefVuFeBFpPc9SLSF2PyKcatUW3gI+lWRBK6NF0=
+
+Name: org/eclipse/tm4e/core/internal/grammar/LocalStackElement.class
+SHA-256-Digest: LoIr5ADQgSYvefZXRuKl0t0ibLZD2XELk3nRaOviGpI=
+
+Name: org/brainwy/liclipsetext/editor/compare/CoffeescriptContentViewe
+ rCreator.class
+SHA-256-Digest: pQh584VntgbJHuRReRmIFTAP9WzYWTFYaFke42fJg64=
+
+Name: org/brainwy/liclipsetext/editor/partitioning/PartitionCodeReader
+ InScannerHelper.class
+SHA-256-Digest: lXmI5Xqe0shaEk29Jn94UmPk/MHk6hQnuOiLhjAIybw=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseTextShowBrowserMe
+ ssage$1.class
+SHA-256-Digest: o9YoEpXKZbTr+fuGttcQNMa2fbtxNDyABTENKbo4/Fg=
+
+Name: org/eclipse/tm4e/core/internal/oniguruma/OnigRegExp.class
+SHA-256-Digest: HlDchCXzVawEb90hPV8yzxFihVH6RwdlWiX4vv367qQ=
+
+Name: org/brainwy/liclipsetext/editor/common/DialogNotifier.class
+SHA-256-Digest: N5VPF5K2/87qwpqKIez9W4LKRqipVW40AQtuLR7gJWM=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguagesManager$5.cla
+ ss
+SHA-256-Digest: 1meemZguaMlx11jgadbg9SGRNzu+6hWrHH0XXjZLZtM=
+
+Name: org/brainwy/liclipsetext/editor/common/mark_occurrences/LiClipse
+ MarkOccurrencesJob.class
+SHA-256-Digest: ys2LgKD4z19ca7fQuy1dr5IHYwoaZF70gDczZX2Y/5Y=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourcePerl6ContentViewer
+ Creator.class
+SHA-256-Digest: ErQw5kK8eL1nxM6JO3LhatDE5FMledIDHTj76i/biRY=
+
+Name: org/eclipse/tm4e/core/internal/oniguruma/OnigSearcher.class
+SHA-256-Digest: K4ZHzf4ixY5yyLE/bSHaehCsDPQWvpoukZCX+1+K9Qs=
+
+Name: org/eclipse/tm4e/core/internal/parser/PList.class
+SHA-256-Digest: oYpQTHhWrxrkwlT/XVmUYP8IbuHvucjMUJ5m0Z6rOYk=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipseColo
+ rCache.class
+SHA-256-Digest: felc0V+/FOvQ3Ay8BvHdLKDHxsTxQie6W0DjQ0hos8o=
+
+Name: org/eclipse/tm4e/core/model/TMState.class
+SHA-256-Digest: DQywV4Prgdlo37/QhJPqjju7Y1IcaQLSy2Drh0Zxzq4=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/MatchW
+ hileAnySubRuleMatches.class
+SHA-256-Digest: WitRbsfZ4MgCzXidxDLJ3EQ6MNswxVNjcjGGCEj/fS4=
+
+Name: org/brainwy/liclipsetext/editor/rules/IRuleWithSubRules.class
+SHA-256-Digest: HO/JT/Pw4PXNy2egF7TmAat2j0J19wCEA4yka11STBA=
+
+Name: icons/julia_editor.png
+SHA-256-Digest: G1HFMb73PGRfIH8P3DBqNJZ8dNyImCFR3yMKXqohOpQ=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/tokens/IText
+ AttributeProviderToken.class
+SHA-256-Digest: utC9re+/pTjhc4qI3kWNGc2/jELNmXU3Q4tNeSdFYTA=
+
+Name: org/eclipse/tm4e/core/internal/grammar/StackElementMetadata.clas
+ s
+SHA-256-Digest: 8czC74Nvsw+AW+n0hMkoaZmnQC5sIaOe9MPZEnp6fG8=
+
+Name: org/brainwy/liclipsetext/editor/rules/PatternRule$DecreasingChar
+ ArrayLengthComparator.class
+SHA-256-Digest: BK4VXG/T+6atBWQLL1iGWiq51BaFh4yGmIjiTc3o21A=
+
+Name: org/brainwy/liclipsetext/editor/common/ILiClipseSourceViewer.cla
+ ss
+SHA-256-Digest: G1ev3vB0ChJSh81UtkFEeUKWzVka5WLxolhjxcsNyaA=
+
+Name: org/brainwy/liclipsetext/editor/handlers/Rename.class
+SHA-256-Digest: QDn1YFLClXXApgfQ+Q48QObWXIsNfCrfIwDAaRZ9ifs=
+
+Name: org/eclipse/tm4e/core/internal/utils/RegexSource.class
+SHA-256-Digest: 92mopcFwOTNeHBJ8zSRxY4LzjH0w8QNchCtr7dAtEj4=
+
+Name: org/brainwy/liclipsetext/editor/preferences/RootPreferencesPage$
+ SelectPageSelectionAdapter.class
+SHA-256-Digest: yCAF+iYNhqDWOkMqV7poeOpfo5W9JelIivIb4Ix5F2k=
+
+Name: org/brainwy/liclipsetext/editor/handlers/extensions/ILiClipseErr
+ orCollector.class
+SHA-256-Digest: oGiKYV/s5zAzyCtinR8Sc0fWU5waETkyKm9qfWFsbEw=
+
+Name: org/eclipse/tm4e/core/internal/matcher/IMatchResult.class
+SHA-256-Digest: cg+AgMnw123nA2kdDUfU/JwCrOCCX4icOthd5Uf9SDc=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/IEmpty
+ MatchRule.class
+SHA-256-Digest: T+ZFTlNZyGj5kTKKqXQl2/lylJk4RYyUtOXkpG0HIaI=
+
+Name: org/brainwy/liclipsetext/editor/views/languages/LiClipseLanguage
+ sView$OpenListener.class
+SHA-256-Digest: qE71mzuQlDvylmSPNL0yDxJ4Yj+fHfPtgLDe8EBmUjU=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Digits
+ Rule.class
+SHA-256-Digest: HMYzZcnLXc8D5Ht7GGe2f/kGi3vZAIHaTZchUnnbmSE=
+
+Name: org/brainwy/liclipsetext/editor/common/DialogNotifier$4.class
+SHA-256-Digest: fRSK0QoF29ROeytXI36Nron8m7rO1kArrVthf+VzUps=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/TmMatc
+ hRule.class
+SHA-256-Digest: +MPOHv28ZZMq3ZYubAuvumdy0fTv19H/hALZaBiMPLA=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/reader/SubPa
+ rtitionCodeReader$TypedPart.class
+SHA-256-Digest: UtQUMB+AtC0OPva9Lq8pnRs9v+DrbOi5q9+ZufveTVc=
+
+Name: org/brainwy/liclipsetext/editor/templates/LiClipseTemplate.class
+SHA-256-Digest: YZER1kO1Jh6jXVwKXyXgacIFFGvkwfjs45jJcf85eD0=
+
+Name: icons/searchm_obj.gif
+SHA-256-Digest: KtCs3/NoOfMMJoHbDoWa8UysYpNiZ6lxDiV3ckMk5VE=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Single
+ LineRuleWithSkip.class
+SHA-256-Digest: RfwSpQKMCeA46MjWo9SyEq8/4fMU+HbCQsUVuYBqHWE=
+
+Name: org/brainwy/liclipsetext/editor/compare/NimMergeViewerCreator.cl
+ ass
+SHA-256-Digest: ioFWcIEGRTvU8hqdHX7Z34KpAcD4WbYZp/gm5AHnISk=
+
+Name: org/brainwy/liclipsetext/editor/languages/indent/LanguageIndent$
+ IndentType.class
+SHA-256-Digest: UWKEqLQrGLemXY5eNvx/Gim3jViLyXHXzydu/V2yfoo=
+
+Name: org/brainwy/liclipsetext/editor/languages/navigation/RegexpNavig
+ ationMatch.class
+SHA-256-Digest: Xc5WGtc9rt1EMOj6uXiDoHjYUquCZCi2e7V9J6sx1Rc=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Sequen
+ ceRule.class
+SHA-256-Digest: iHZuvR9ID4hycqRnnTiwOi2q5Ot1zN6dkSIIfn0B5EA=
+
+Name: org/eclipse/tm4e/registry/internal/GrammarCache.class
+SHA-256-Digest: MTQrKNR6a5PX4bjr1sAQan6T2a2o45KxarRLcpcbtm8=
+
+Name: org/eclipse/tm4e/core/internal/matcher/Matcher$3.class
+SHA-256-Digest: xjpG6k2RWCE69PDSAe4Lpo8QF04gUzLldPma1DowtLY=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/tokens/Token
+ Factory.class
+SHA-256-Digest: jD83NkI9bR28W58cNxuaBZTlfzI5woO/pGdaqsdqjEU=
+
+Name: org/brainwy/liclipsetext/editor/compare/AbstractContentViewerCre
+ ator$ContentViewer.class
+SHA-256-Digest: JMJeIAXJNnSkJgir571aFKk5YCEGtIuPzDSbl38q0Xc=
+
+Name: org/brainwy/liclipsetext/editor/languages/auto_edit/AutoSkipPare
+ nsAutoEditRule.class
+SHA-256-Digest: qQ+09jFwZencsw5g082AoiTR4ijXNjGVUUfQdrk3PtQ=
+
+Name: org/eclipse/tm4e/core/theme/FontStyle.class
+SHA-256-Digest: EDxZeqqoKk4ZvRT24kp4+XgWzZ2qhpYeaHid9otBCrA=
+
+Name: org/brainwy/liclipsetext/editor/common/DialogNotifier$5.class
+SHA-256-Digest: p/1i+e2uD36/uHI1MO93haZOy25zX6iRMCk35RH5myE=
+
+Name: org/brainwy/liclipsetext/editor/compare/HtmlContentViewerCreator
+ .class
+SHA-256-Digest: PzOzIIDc1vCdFzDGes5diZz8phPRpQaHdr+PqEeLC/o=
+
+Name: org/brainwy/liclipsetext/editor/compare/JuliaContentViewerCreato
+ r.class
+SHA-256-Digest: zAtQIeqGLqpFLax/ctu2+jN8vV0IAlUbKmlfoOgprqc=
+
+Name: org/eclipse/tm4e/registry/internal/preferences/PreferenceHelper$
+ 1.class
+SHA-256-Digest: UpFvhbaQ2uLVp7sYd1/uZmm/6fdDp2HGsNjZ4yU6nTI=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/TmBegi
+ nEndRule.class
+SHA-256-Digest: rBTeqcBDPfBf5/jSB9xJkFHM37OwTvTvlySRbIYvT30=
+
+Name: org/brainwy/liclipsetext/editor/compare/Xgui20ContentViewerCreat
+ or.class
+SHA-256-Digest: +iKIpKPqA/1OJuHhwx1DsUr4zH78rUWl47KwgBb5UtQ=
+
+Name: icons/javascript_editor.png
+SHA-256-Digest: YIz/zMtXJWAqDPtQ/Cz26siGNigIw3wWSdB+U4WE/Q0=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/Repla
+ ceContext.class
+SHA-256-Digest: RIKz7S+cWSPcSuT6QTObIqEL+dUWmJdh4c7J/YImdvY=
+
+Name: org/brainwy/liclipsetext/editor/spelling/LiClipseSpellCheckerRec
+ onciler$LiClipseSpellingProblemCollector.class
+SHA-256-Digest: n6AGRGasmyNPsmsjMUsuK7g4NuZSZdbUoW95Rhw8qrQ=
+
+Name: org/eclipse/tm4e/registry/ITMResource.class
+SHA-256-Digest: kKx3/uCTIfgRpJ6RFkV5fVudA5sEElXIjuuVELtNSUY=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipsePart
+ itionScanner.class
+SHA-256-Digest: HO70sBSyN7s6boBzJHARhTQpnmt63ZA5AOTcSC1qPKo=
+
+Name: org/brainwy/liclipsetext/editor/templates/LiClipseDocumentTempla
+ teContext.class
+SHA-256-Digest: 0WZlEzgG5FoUVh2lFC1Zq8Alv4kjJT1FSPSz3TLMsgk=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/TmSni
+ ppetParserV2$Parsing.class
+SHA-256-Digest: 1f7WzQhKhPiQCpuY+Z1lWTJyO4NN95V6CU3i2ZPd1ZE=
+
+Name: org/brainwy/liclipsetext/editor/common/mark_occurrences/LiClipse
+ MarkOccurrencesPreferencesPage$1.class
+SHA-256-Digest: BsBM1LIxLIi61NhdoGrr++Zs2xfkbDsSA4yfj0Zsuy8=
+
+Name: org/brainwy/liclipsetext/editor/handlers/SelectEnclosingScope.cl
+ ass
+SHA-256-Digest: O0+rpyKB8vtRXVw5DEU0JsFiDozoEjohQ8OAHgdFJ84=
+
+Name: org/eclipse/tm4e/core/internal/grammar/parser/PListGrammar.class
+SHA-256-Digest: kVcBBOtB5T07/3L4uVuU6Jz+dpHI8QUtGf8yxRKZSIo=
+
+Name: org/brainwy/liclipsetext/editor/common/BaseLiClipseEditor$2.clas
+ s
+SHA-256-Digest: qvVsYbBegxztDVac5dAq1NnAVKPuCQ7aKUcDK2VdouQ=
+
+Name: org/eclipse/tm4e/core/model/Range.class
+SHA-256-Digest: ViT+MUfz+onN57yHJmGuKc/OC976tQwL7ToNmkUQLyk=
+
+Name: org/eclipse/tm4e/core/theme/ParsedThemeRule.class
+SHA-256-Digest: RwhSyvTzMbVHgkIe1961Ib+8+S9h9ZZi18I834N2anY=
+
+Name: org/brainwy/liclipsetext/editor/menu/LanguagesMenu$1.class
+SHA-256-Digest: /0/2COOa2rQg9UcGJCLacy8T1yHiPJET7WU3l91/aJk=
+
+Name: org/eclipse/tm4e/core/internal/rule/RuleFactory$2.class
+SHA-256-Digest: CFMP+UqZeUyHBZbQky1hmOQ9VsIKEuTBnVzjR02KBGU=
+
+Name: org/eclipse/tm4e/core/internal/grammar/reader/GrammarReader$2.cl
+ ass
+SHA-256-Digest: BMNQza+IZl0S7d2MYycCU9J0Fa4hLU9J7Ve9l8LHt6g=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/Choic
+ eNode.class
+SHA-256-Digest: 3rLAHD+jgIp4rlSfGOZ5MrFc2B1kJ4mBAGMTk3jIyGg=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/JSRege
+ xRule$1.class
+SHA-256-Digest: 5dZuhDdEz4EctEL4maEDpJ95nzST7R/+hT+b3N0feYU=
+
+Name: org/eclipse/tm4e/core/internal/parser/PListObject.class
+SHA-256-Digest: tSaeDvXK+C0yyO71mLDyht6cFLT6HeJv65sZNGUn+Do=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguagesManager$7.cla
+ ss
+SHA-256-Digest: tgyRiydpoZdxrKXhP0c5ByBm55RJy2ACcrmCom/hOkE=
+
+Name: languages/nim.liclipse
+SHA-256-Digest: owb3BCqNbWs+1pZybmV8gf0ieAljLzozw6CkbBXRQ8M=
+
+Name: org/brainwy/liclipsetext/editor/LiClipseEditorOverride.class
+SHA-256-Digest: 9x8lb7LAsYo4zCdsfR6HhzPMEayrX46CuJ5deS/LbaM=
+
+Name: icons/text.html.erb_editor.png
+SHA-256-Digest: +/Q6qFkYptBR4Hh5jTxC6/ME1xMA1JrNvX8uEGZweXM=
+
+Name: org/eclipse/tm4e/core/internal/types/IRawRule.class
+SHA-256-Digest: OGrmhYw3o3T17p+L+fC78XFhhZvN6AKaunGXM1lFaKc=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/CustomTextAt
+ tributeTokenCreator.class
+SHA-256-Digest: syIJRACld8rUOjqloJW4Zzp3/5ZGDHbAjlfOccRFHWg=
+
+Name: org/eclipse/tm4e/core/internal/rule/BeginWhileRule.class
+SHA-256-Digest: 7DcuGbz4/i8t8QoKyI6ewqq18n+Q7DK0UD60dgGSdXw=
+
+Name: org/eclipse/tm4e/core/internal/rule/ICompiledRule.class
+SHA-256-Digest: egVa8Hnjflc+qHOb53rrIBs5Pr5No8+5TeOuTYRyav0=
+
+Name: org/brainwy/liclipsetext/editor/compare/AbstractContentViewerCre
+ ator.class
+SHA-256-Digest: s2BKf/4CIWWB9xsNCxO4qewJYkAImVRIOrYMd3okHJM=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguagesManager$4.cla
+ ss
+SHA-256-Digest: noQWgA1WnswpHDgP5Kka3GbOPyc183Mcrp5iKjqM4is=
+
+Name: org/brainwy/liclipsetext/editor/handlers/comment/ToggleBlockComm
+ entAction.class
+SHA-256-Digest: SQxJ+oc1/eZgtlYHFwvCXTumuWK5NGeHcGlcxeL1SiU=
+
+Name: icons/kivy_editor.png
+SHA-256-Digest: 8raokKRRz0RE/cOY+gu4sspf50OTUFu5pMkN93p0JlA=
+
+Name: org/brainwy/liclipsetext/editor/compare/JavaMergeViewerCreator.c
+ lass
+SHA-256-Digest: cQmJmsfXPWqMKsjzBJ6LJsNKjMSWaU1WBODA3dv1/dU=
+
+Name: org/brainwy/liclipsetext/editor/compare/JavascriptMergeViewerCre
+ ator.class
+SHA-256-Digest: 2+csp116uGkbmgu+2Ds1qI/VQwFIsf4gRFfRcSZv2po=
+
+Name: languages/liclipse_example.liclipse
+SHA-256-Digest: BYFxWRY679B/PCd3BZwp3/eMpKsKJh/g9lHwKv1DA6g=
+
+Name: org/eclipse/tm4e/core/internal/grammar/TokenizeLineResult.class
+SHA-256-Digest: JBOB1HR6bPQXzXaaQBDcVs4T9B+V2Mz1BxYPQMDAeso=
+
+Name: org/eclipse/tm4e/core/model/ModelLine.class
+SHA-256-Digest: 7JfnNiB0DRdClhZO7is9+L2veBps9872wGWDAHJarWw=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/ILangu
+ ageDependentRule.class
+SHA-256-Digest: DWKodRCwdHu+wyy0od8rZNxLtrxs8O9tGnEDS2H93Ds=
+
+Name: org/eclipse/tm4e/core/internal/matcher/Matcher.class
+SHA-256-Digest: BWfMB9+9RvCj7EmSiNs0mKvP1pyfJJBjTBZaWYI4ff0=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/ScopeStack.c
+ lass
+SHA-256-Digest: BvRc1jtzT2/Jq5f1jSlcuZh69GyJBEZxg+S9/bzzToU=
+
+Name: org/brainwy/liclipsetext/editor/regexp/CharsRegion.class
+SHA-256-Digest: hJ0In+7NXfB3BYAwjJv37LgGr+3gGlaUhxUHQGHcfJk=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/AnyExc
+ eptCharsRule.class
+SHA-256-Digest: PnXenmQ2lbU8SAVTohE1eb1F+RkR4VzyOc1y28d0MTI=
+
+Name: org/brainwy/liclipsetext/editor/common/DialogNotifier$6.class
+SHA-256-Digest: QqK4n1Zf+xAXj45kHgW++tKiaAYcs/j1gWYL4CASzAU=
+
+Name: org/eclipse/tm4e/core/internal/rule/IRuleFactoryHelper.class
+SHA-256-Digest: //3sk/L+FOu5YHirRbWXtC2flKZDA45d0S//dEmUE20=
+
+Name: icons/source.swift_editor.pdn
+SHA-256-Digest: S5kILEaUOjUGY++vXr7b8YIJV9rOIGET7pDfjFTlHIc=
+
+Name: icons/css_editor.png
+SHA-256-Digest: 7y76gwtf22BErpZVEmnst4TvfbHtxPxodQtW48TZ4hg=
+
+Name: org/eclipse/tm4e/core/internal/matcher/IMatchInjectionsResult.cl
+ ass
+SHA-256-Digest: Fq4T9x0BK1m0r8Nm4bURN/DCVIJWSUMeA0+5BselNzM=
+
+Name: com/eclipsesource/json/JsonArray.class
+SHA-256-Digest: cLEkQ/5qmEblAZly/2vhrWbHmPPbcmzKASbO6MKE5e8=
+
+Name: org/eclipse/tm4e/core/internal/theme/PListTheme.class
+SHA-256-Digest: wZuTRYT+XSxs1+Ilm16adMimY5ePSmh+P7O5vKCwZKw=
+
+Name: org/brainwy/liclipsetext/editor/outline/LiClipseParsedItem.class
+SHA-256-Digest: 4MVo7HlJybgP9c/YuMTc3od8VoLbAQTh10kkzxTTwt4=
+
+Name: org/eclipse/tm4e/core/theme/IRawTheme.class
+SHA-256-Digest: 2NYHCNtRj++Z+C1DP2mWe2Tf/iNzcSN5AXeZoDL9NIc=
+
+Name: languages/mako.liclipse
+SHA-256-Digest: ddnpTI7fyr8YyRGFNrjtcx+rZ0xlyKS6s1qN+jt3daU=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/Node.
+ class
+SHA-256-Digest: DdWPguNhZzCJploJpuNT3q+q/1oNw9fCJvk1sZJkHQk=
+
+Name: org/eclipse/tm4e/core/model/DecodeMap.class
+SHA-256-Digest: IQj0lcEMgPBXxGoJ/SCJsdr06Cw0RMxMHEvRoLmo3QQ=
+
+Name: org/brainwy/liclipsetext/editor/languages/launch/IExternalToolCo
+ nstants.class
+SHA-256-Digest: Nz+ooHPn6QdC+mIZXSwfqys/F2OxIG0uuPIzNd7WRQQ=
+
+Name: org/brainwy/liclipsetext/editor/preferences/RootPreferencesPage.
+ class
+SHA-256-Digest: iqAIFyFYEvqzIK7ILkqEaXzAgOV5ULWD6paafCGYT2Y=
+
+Name: org/eclipse/tm4e/registry/GrammarDefinition.class
+SHA-256-Digest: 4/hPFIfXnJA9k87EYjsEA4LIlmSLpTt4bBpcq9dDrCU=
+
+Name: org/eclipse/tm4e/registry/WorkingCopyGrammarRegistryManager.clas
+ s
+SHA-256-Digest: 8oMpZEaMqzVXeWoRnFPxRHAQXj4XVfwzj93uPxb9tD0=
+
+Name: org/brainwy/liclipsetext/editor/views/languages/LiClipseLanguage
+ sView$ZipRootTreeNode.class
+SHA-256-Digest: ciUjeTnOXky/CKzUiR4msOeLYwmUr06dS9z+TTi7zo8=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseSourceViewer$Styl
+ edTextImproved$RangesInfo.class
+SHA-256-Digest: Y3jZ5CEyTigA7Tkz3WfelmbQ9w1yeT4iENytgL/cG4g=
+
+Name: org/brainwy/liclipsetext/editor/languages/navigation/LanguageNav
+ igation$MatcherAndRegions.class
+SHA-256-Digest: 8HWIy2uR8Q/YqyME3eUXkn9z90cMXZaNn5NNbUqv2YA=
+
+Name: org/brainwy/liclipsetext/editor/LiClipseTextEditorPlugin$1.class
+SHA-256-Digest: +GdMo7ANg2pmBQQAxBQXLrMDAbNbZBzMTQCHWGYC8MU=
+
+Name: org/eclipse/tm4e/core/logger/ILogger$LogLevel.class
+SHA-256-Digest: SgeqHo+XvGvMixWhFRY6QE01qBFuALBjKxPvmtZkzx0=
+
+Name: org/eclipse/tm4e/core/internal/grammar/LineTokenizer$WhileCheckR
+ esult.class
+SHA-256-Digest: toivVQjDBQ5dZwzyczPKSQBz/2MD2EjD+2xL5efrco8=
+
+Name: org/eclipse/tm4e/core/internal/rule/IncludeOnlyRule.class
+SHA-256-Digest: ZMcPoqywVgDAkctWIJ2dv/mceynzhHYbg2Oxv2iQ7w4=
+
+Name: org/brainwy/liclipsetext/editor/common/mark_occurrences/LiClipse
+ MarkOccurrencesPreferencesPage.class
+SHA-256-Digest: mLP0IdsYLUCCllNMRkzbLGL8YVNpTTy/mYPYjASTalE=
+
+Name: icons/jinja2_editor.png
+SHA-256-Digest: EPpVTRdevRMhFQMvgHLr4xBF3c7IJlRNQYrBaahpYa0=
+
+Name: org/brainwy/liclipsetext/editor/common/DialogNotifier$7.class
+SHA-256-Digest: ZAqdzEzVjkWUjtUChBLHOBSp2kOFCTH7ARH0nab+aM0=
+
+Name: org/brainwy/liclipsetext/editor/common/DefaultScopeCreatingChars
+ Provider.class
+SHA-256-Digest: lSw/s4ynCaKInv7rUpOeDsvod/GUI3AaxMh39odNHgU=
+
+Name: org/brainwy/liclipsetext/editor/languages/navigation/CtagsNaviga
+ tionMatch.class
+SHA-256-Digest: +VGVBTRRYdFWj8O/A7KvHQdzwoII3tz/Puv1qwz/Pp0=
+
+Name: org/brainwy/liclipsetext/editor/rules/PatternRule.class
+SHA-256-Digest: 0sBMmovYQgChZWSqMLS5j4t8P0aV51EAiu/aANzJY0g=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipseDocu
+ mentPartitionerTokensCache$TokensCache.class
+SHA-256-Digest: TMQqKJOXGseiILRDuogPT9ccQIbfNn3PxVkXe40O9g4=
+
+Name: org/brainwy/liclipsetext/editor/common/ILiClipseLanguageProvider
+ .class
+SHA-256-Digest: srf3Q4xO+N1x/aQ7uP4mzG0FMiE+X9fVrdy7n4IISNQ=
+
+Name: org/brainwy/liclipsetext/editor/compare/TextHtmlPhpContentViewer
+ Creator.class
+SHA-256-Digest: V7IItQ2rJ7k7V5MrTspQMQUZovpaeS4U+qcR+I8lvbY=
+
+Name: org/eclipse/tm4e/core/model/ITokenizationSupport.class
+SHA-256-Digest: BBcPKiNXyHT63EW07GU45CXVswwPgMxB0l8OilRs/ZQ=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/reader/SubPa
+ rtitionCodeReader$IAcceptPartition.class
+SHA-256-Digest: AU9xXzxfU/oOVArn+bVq0UPGPj7Qvugtbp2qCuHWfQE=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/RulesF
+ actory.class
+SHA-256-Digest: 1KfG/WE8Y/3GRCucoGNm6XO0/WHSohXfnvV63tBBtgM=
+
+Name: org/brainwy/liclipsetext/editor/views/languages/LiClipseLanguage
+ sView$1.class
+SHA-256-Digest: 1dIgMNT5S4f/JxPdFjtFtDiCKOsR0DlvqDSrSrOhfBc=
+
+Name: org/eclipse/tm4e/registry/TMEclipseRegistryPlugin.class
+SHA-256-Digest: lHVp15ooNz5TjHxV0n85R8K535Wlwh4v3dVzX68yqhg=
+
+Name: org/eclipse/tm4e/core/internal/types/IBaseRaw.class
+SHA-256-Digest: NihMkbZdF5sgQOa6hoir8u6Xwlw5/9gIxz2CSLDbmoM=
+
+Name: org/eclipse/tm4e/core/internal/rule/RuleFactory$1.class
+SHA-256-Digest: uoDl1PmuI/1C2kFmqzW9wSjMZkrrpDYYvuHBYyYRFe8=
+
+Name: icons/source.cache.cmake_editor.png
+SHA-256-Digest: PUvdd8UQ7K9v7b2y2+U898ZONXFNjztg58Z/tAnu0tg=
+
+Name: org/eclipse/tm4e/core/model/TMToken.class
+SHA-256-Digest: 9/oOQZ9cZ/MltvvnBCTo5qBh9crSaB9YZojwaH2Ni4Q=
+
+Name: org/brainwy/liclipsetext/editor/preferences/LiClipseCodeCompleti
+ onPreferencesPage.class
+SHA-256-Digest: 2VOBS8sRy/uiVPfUEWgpXnteld/eXlld7pg8YDJkUZU=
+
+Name: org/brainwy/liclipsetext/editor/menu/LanguagesMenu$1$3$1.class
+SHA-256-Digest: TdP2jz1nGB/gp3lA5+YW4RcpYaGDgo8z0ap36aGAWPY=
+
+Name: org/eclipse/tm4e/core/internal/matcher/IMatchesName.class
+SHA-256-Digest: MaH0XR6JIHvjajzyu20Dht23u8XyKA9CLVJkt+ac0/M=
+
+Name: org/eclipse/tm4e/core/logger/ILogger.class
+SHA-256-Digest: guPk29Dz6Xknb/kAZEJjh5RARafKHgh9gTlUlMaqrJQ=
+
+Name: org/brainwy/liclipsetext/editor/common/AbstractLiClipseEditor.cl
+ ass
+SHA-256-Digest: 5812kbaBTztVnzypusdUfs1C46W5ipvciig+VZgLSGo=
+
+Name: org/brainwy/liclipsetext/editor/partitioning/ICustomPartitionTok
+ enScanner.class
+SHA-256-Digest: 14AWh0BXYyh7fk2s4r6eXprQdxfYW3KrSWVS6TaqPD0=
+
+Name: org/brainwy/liclipsetext/editor/common/ILiClipseEditor.class
+SHA-256-Digest: AlBZqCa92kYR3lzGCinyKMTdH8jZJUuAZR80vJ1spzo=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceSwiftContentViewer
+ Creator.class
+SHA-256-Digest: VJWgqs9YgXzGSXCp42VcFO5JR2UO3GX3AHbW3iFAWfg=
+
+Name: org/brainwy/liclipsetext/editor/languages/auto_edit/LanguageAuto
+ Edit.class
+SHA-256-Digest: sMbSdSlq3zn3InE6KyjwMdjgM8B7SO6+dx7JNnXPwMI=
+
+Name: org/eclipse/tm4e/core/internal/grammar/reader/GrammarReader$1.cl
+ ass
+SHA-256-Digest: Jm32jwNT+Ld0d2IpziSKQOUvYcTJCEiP+TBn30f1d1w=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/NodeW
+ ithContents.class
+SHA-256-Digest: u/Ud05oljCu8GgJRmsgr1p79RZP3FCVmdlJvbkOhrr4=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceDosbatchMergeViewe
+ rCreator.class
+SHA-256-Digest: rt1ZXvJOKfNw1LKldE/akWH3sWUkQFbLVOzYodVqEQY=
+
+Name: org/eclipse/tm4e/core/theme/Theme.class
+SHA-256-Digest: Mme3bW6fJpC2/Wbj57+2xAOjeeDS6QOlcPQ28i+qHWg=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguagesManager$6.cla
+ ss
+SHA-256-Digest: iwBBm8rKMNtEdG00/WrUqsvCkCOwoliTmG+/O+hK5CM=
+
+Name: org/eclipse/tm4e/core/theme/plist/TMTheme.class
+SHA-256-Digest: Ti63ZgO/nvTWRCoFWCVe1xFIysDnlqBWAMqQbFroXaE=
+
+Name: com/eclipsesource/json/JsonString.class
+SHA-256-Digest: YHzoO8vEXq2sfiLXVI0SmXFkNjAO6C29dza4YqU/0U8=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipseText
+ Attribute.class
+SHA-256-Digest: ym2ovgxokizpOXlu2pwIdrwOPkunPup7PAOT129FBK8=
+
+Name: org/eclipse/tm4e/core/internal/grammar/reader/GrammarReader.clas
+ s
+SHA-256-Digest: w13bFAptHvccsi650p+3ty+ctghvuvZMspGC73QbQx4=
+
+Name: icons/xml_editor.png
+SHA-256-Digest: bhq7sZEd3317s8LrYUYJ9oFZDV5OMBPvhLBvmlbWeo0=
+
+Name: org/brainwy/liclipsetext/editor/compare/GoContentViewerCreator.c
+ lass
+SHA-256-Digest: /DB6TA5OmtAtjzRZQuslMem7t8ELErON0+MOSu0JyOQ=
+
+Name: icons/text.html.markdown_editor.png
+SHA-256-Digest: 5+Uc6tw5/vdi1g/HWVbXl5/EqXQmGiEQqnZztowUZ+c=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/SkipLi
+ neRule.class
+SHA-256-Digest: 2WgPKMds3lBXZZ11/fezDDx9a+NHN/X1v56hI2LYrXI=
+
+Name: org/brainwy/liclipsetext/editor/languages/outline/LanguageOutlin
+ e.class
+SHA-256-Digest: E1GkaIacLe3u92v/qEq+q33r/lBmmAy1B5pi+3QG8e8=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceDosbatchContentVie
+ werCreator.class
+SHA-256-Digest: +ZQmzdCk2h7uzYf5CUo8it70n1YVFB9Kw6UnJ89TKvY=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/MultiL
+ ineRuleWithSkip.class
+SHA-256-Digest: ySRDTNqE4pkTA4YP7KR87QnLKUtxLUCh9xKlpqvb1lc=
+
+Name: org/eclipse/tm4e/core/internal/grammar/StandardTokenType.class
+SHA-256-Digest: VI50hVVVZaD2FLVuwzTUtO57EcRxYgQ2VTuqBg+0HWo=
+
+Name: languages/xgui20.py
+SHA-256-Digest: E1DiDLVXcInqo0UfWjkyLVzZ7rHX69y9N+Od5R9ZmJY=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguageTemplates.clas
+ s
+SHA-256-Digest: d1q5M6NoD+3i3hBQezjWBBkKxXHTUlnwjlUHK5nO60I=
+
+Name: org/eclipse/tm4e/core/internal/rule/RegExpSourceList$RegExpSourc
+ eListAnchorCache.class
+SHA-256-Digest: 3MQocwxNJ3uUMMr1F5IPGJL7xsHlQH2h221HpBqC5Z4=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Option
+ alSequenceRule.class
+SHA-256-Digest: eEFtPnmD3qhN3FT99O4zvQRVB6lPPX872/rwX44n01Y=
+
+Name: org/brainwy/liclipsetext/editor/handlers/PrevElement.class
+SHA-256-Digest: MBDTQvKLzUcBqxyQt4VWwGvL6fuOanXs/PUZaPx/jWU=
+
+Name: org/brainwy/liclipsetext/editor/compare/AbstractMergeViewerCreat
+ or$MergeViewer$1.class
+SHA-256-Digest: jRFcnQoS/kKLxiScdTmNfFNP1sCMhhiw7cxrKVjCgz8=
+
+Name: plugin.xml
+SHA-256-Digest: Q34488C3kNFm4XN6p/qwrrGUHrP2xYyy6Co8SumoIYs=
+
+Name: org/eclipse/tm4e/core/internal/utils/CloneUtils.class
+SHA-256-Digest: A+Zjf6uUV5KvCzkzI14p1kahLqPJSoLga/Sb4UqYQgw=
+
+Name: org/brainwy/liclipsetext/editor/regexp/RegexpHelper.class
+SHA-256-Digest: ATPEglULosPORgBtymWTShWKGVgTC7wua9HUYU2Gzf4=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/ScannerHelpe
+ r.class
+SHA-256-Digest: Us7JaIYYJahvCfpQdwJ79Fg/EXeL4lGDlJmYZQwgGgs=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/IfNod
+ e.class
+SHA-256-Digest: nq0o+XpdNHe8PUxTchxHmvrd8hUtGFLUDHCGyzGPmX4=
+
+Name: languages/php.tmbundle
+SHA-256-Digest: 3/VHMnPbmsL02omk2zfwdoYX8nQkbA7az3Wg3XzkgeA=
+
+Name: org/brainwy/liclipsetext/editor/languages/auto_edit/AutoCloseSco
+ pesAutoEditRule$1.class
+SHA-256-Digest: NjJktgQNPrNq1bGS5zuWTww82RktttUWiRCYJDwE/H4=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/TmLanguageHan
+ dler.class
+SHA-256-Digest: Pc2T/FLwwcysItVajfVtYcT9iyvHJtv+N0qIH8y/OwY=
+
+Name: icons/coffee_editor.png
+SHA-256-Digest: TVuisWvCSKNeqNz9XK88EMGHvD2Q5ho4INUUqEP1Q0Y=
+
+Name: org/brainwy/liclipsetext/editor/common/completions/LiClipseCompl
+ etionProposal.class
+SHA-256-Digest: ohkI+SHyXs9574S3bcN4cZMJJMHmp5YNzUUk8W1NwH4=
+
+Name: org/brainwy/liclipsetext/editor/config/ConfigFile.class
+SHA-256-Digest: kXvaW0qtwRLhWlHraMgN7pC9l4u1/pKi0+il1urAFeo=
+
+Name: org/eclipse/tm4e/core/internal/types/IRawRepository.class
+SHA-256-Digest: 8exQWiuU5wA/KpIdAKnCKZH2ZmF2AEMKxr3fMeLTjMo=
+
+Name: css/dark/dark_theme.css
+SHA-256-Digest: UPgjXWKWBAB2ry58n9cJGtfGJZfk8UVMQNa6HVXGET8=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceRubyContentViewerC
+ reator.class
+SHA-256-Digest: iRRox+txnjuWWGGpYErpThbxJz9a7Ae3SYqAtA8qjCo=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/Place
+ holderNode.class
+SHA-256-Digest: 9AQJx6wRRNIe9QVnTswMjNWuXhyXG8wHAhfZQU7JEIg=
+
+Name: org/eclipse/tm4e/core/internal/rule/RegExpSourceList.class
+SHA-256-Digest: 6X+yIt8Y3qB0G++E8Ef3AI5AU0GwtSssZLzqktMstmU=
+
+Name: org/eclipse/tm4e/core/model/LineTokens.class
+SHA-256-Digest: uskhJt7nCte0TELjfZ5rJWdFHpgBVwjqwwzxs9WQ4Bg=
+
+Name: org/brainwy/liclipsetext/editor/partitioning/ScannerRange$TempSt
+ acked.class
+SHA-256-Digest: azzCzI46gpuNTjXfPKailmlz6FOHnCmGU2LmG3U353g=
+
+Name: icons/editor.png
+SHA-256-Digest: 3UeSPsVjkDg/d2nOHl+cDY0n4E/lswDfc8nuNPxzrRA=
+
+Name: org/brainwy/liclipsetext/editor/languages/navigation/INavigation
+ Match2.class
+SHA-256-Digest: ENj4ItpPjZUXmS8pnwujE+X3lhFPJ9gYn+q40o6hwsM=
+
+Name: org/brainwy/liclipsetext/editor/regexp/QuoteRegexp.class
+SHA-256-Digest: K8kQ7koDlp2yrul0DYkEIsPjKG07m4AkXGVJ35EyKe8=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Number
+ Rule.class
+SHA-256-Digest: IYeZDoEv2IQT+FjLcmIco9JvwPV2MNZqrgD5ZlZjTxc=
+
+Name: org/eclipse/tm4e/core/internal/grammar/Grammar.class
+SHA-256-Digest: wOHcyfv6rvQVl/27Pk79n+N5dibLikIqellraN+j91M=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/SingleTokenS
+ canner.class
+SHA-256-Digest: 3QEtlI2+x/3QAzr2RBkqt75cSZlU2Bl+RrRJachhtbk=
+
+Name: org/brainwy/liclipsetext/editor/common/mark_occurrences/LiClipse
+ MarkOccurrencesJob$LiClipseMarkOccurrencesRequest.class
+SHA-256-Digest: 88gXjw78GCsOP6GtTsRCiXaMEu6fiCHkiY6MGKlHFqg=
+
+Name: org/brainwy/liclipsetext/editor/LiClipseTextEditorPlugin.class
+SHA-256-Digest: jJTYnTu1JHseJN9g/KNc20o81sqIckviTxAez8dckso=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipseDocu
+ mentPartitionerTmCache.class
+SHA-256-Digest: ZUmd6pEL8KEZYKskMPfHB82lCQbo2adHm4ybG404hO4=
+
+Name: org/eclipse/tm4e/core/registry/Registry.class
+SHA-256-Digest: 2/yNS9HW5tI9Zue3AFVuJXGf5c2M7uSeEl+cWy2jgjA=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/OneOrM
+ oreSpacesRule.class
+SHA-256-Digest: NLsT8DqX2zbelm7FaqDtiV76l4SXAs5xD9iHg9G/UJ8=
+
+Name: org/brainwy/liclipsetext/editor/views/languages/LiClipseLanguage
+ sView$2.class
+SHA-256-Digest: hKGPAyf3424GHwyzTixdqbQcaD2/O2kMkqP2cNi9XcA=
+
+Name: org/brainwy/liclipsetext/editor/rules/FastPartitioner.class
+SHA-256-Digest: o3+AHWMOMmEyhtgvD2FSCnjq0nYGgVET5SSgmvDVED8=
+
+Name: icons/julia.png
+SHA-256-Digest: G1HFMb73PGRfIH8P3DBqNJZ8dNyImCFR3yMKXqohOpQ=
+
+Name: org/brainwy/liclipsetext/editor/handlers/ToggleComment.class
+SHA-256-Digest: bM318B8byHWL3+nGS5rpLVTSTOibR6mtU6FIKJ6Irhc=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/IColorCache.
+ class
+SHA-256-Digest: mwbkIDEdCC2ggDhkP444N6ykLE5oy4OGG/xqFuO6FRg=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/TmLanguageHan
+ dler$IntegerBuffer.class
+SHA-256-Digest: szu1IDVQuhL+YP8YhmZHzMFPgUxI01SUc8poiqwif1g=
+
+Name: org/brainwy/liclipsetext/editor/preferences/RootPreferencesPage$
+ 3$2.class
+SHA-256-Digest: 4uvWYwAE9J4UzvmyLXCQF7I+RE3iQUu/GZZs4AIJiYI=
+
+Name: org/eclipse/tm4e/registry/internal/AbstractGrammarRegistryManage
+ r.class
+SHA-256-Digest: 04LKS3XveEvQEHZGGmtBFgtx8uYUCtBPBLfN1BkrJ2I=
+
+Name: org/brainwy/liclipsetext/editor/handlers/GoToMatchingBracket.cla
+ ss
+SHA-256-Digest: CS7OXwiHnft040ZU3hiOVaIT2FsqCP7UL03UZjIB1Ck=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/FmtNo
+ de.class
+SHA-256-Digest: Spf+rmhV9QZv7629qOFeGFKxWtfKhUQ3Nkuwa9nhjL4=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/NimNum
+ berRule.class
+SHA-256-Digest: 2sXhRGYOdxM0l9A23bcykC/myMhmO63sTCnGg0uAkKY=
+
+Name: org/brainwy/liclipsetext/editor/handlers/NextPrevElement.class
+SHA-256-Digest: Djw2mEQYHu25eTq0kNMlGY8cLAsnK7fNIzjma66O7FI=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/TmMatc
+ hRule$SubRuleEvalCaptures.class
+SHA-256-Digest: ecEO3S/q04CjBQ+ISZHGLZ9rkqbcRnzPYusJ8tWnhnA=
+
+Name: org/brainwy/liclipsetext/editor/compare/NimContentViewerCreator.
+ class
+SHA-256-Digest: MVp+VGfNeECWD08iMLSn6z/lTF1N1GxFZsu1r3vg0aM=
+
+Name: org/brainwy/liclipsetext/editor/compare/DjangoContentViewerCreat
+ or.class
+SHA-256-Digest: fsKba5Fv5r/1JAKzeJBlC47DiHRSyNPGI9+2GfUT58k=
+
+Name: org/eclipse/tm4e/core/internal/theme/reader/IThemeParser.class
+SHA-256-Digest: HYigIUq0QcpqN7OFLYu306M8HRtYAhM7q9M+J5HjC4g=
+
+Name: org/eclipse/tm4e/core/model/ModelTokensChangedEvent.class
+SHA-256-Digest: dGqkM9nnh9YnmMMoj6+RqX88l2pqYvEDc/sBVhEIebo=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguageMetadataInMemo
+ ryFileInfo.class
+SHA-256-Digest: 45Yj614N6pJOW/1TQ7XgP37tvZaN7c+1MtFqhNB0/dw=
+
+Name: org/eclipse/tm4e/core/internal/oniguruma/IOnigCaptureIndex.class
+SHA-256-Digest: rxElOt69sBc5lojNvR6TK8GN2nry9icQE6nPSbqMhVk=
+
+Name: org/eclipse/tm4e/core/internal/matcher/Matcher$2.class
+SHA-256-Digest: hIj6kt5WZC7sXyqvjw5OFkBIAzogXpTzOWEQ34e2oxE=
+
+Name: schema/liclipse_color_cache_provider.exsd
+SHA-256-Digest: i6w4/udLIxcGw0jVB8aurHT1G2jShGCbHLqKVu24fD8=
+
+Name: org/eclipse/tm4e/core/registry/IRegistryOptions.class
+SHA-256-Digest: ySFSCGx/woCUfBjgLJJCNe6WmA2h41pUSPSb0RnWTj0=
+
+Name: com/eclipsesource/json/README.txt
+SHA-256-Digest: YYlAJFCV5+sSzioF+JVgKvrHwgHdiMGij+UKcLH10Qs=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguageMetadata$Langu
+ ageType.class
+SHA-256-Digest: etaWthv+Q+Ff5xNvhnlmKBvQKyQlnFXrnSp2buUeLH4=
+
+Name: org/brainwy/liclipsetext/editor/partitioning/IPartitionCodeReade
+ rInScannerHelper$LineInfo.class
+SHA-256-Digest: DPxDwaeL0/MziO+xpQxMVgFVyzIhQOS5vaQbddSt2z0=
+
+Name: org/brainwy/liclipsetext/editor/handlers/extensions/ILiClipseFor
+ matHandler.class
+SHA-256-Digest: OUbIy0e8i4CwbSoyGCvS76zTUW01gF6acsOUD0+nE3c=
+
+Name: org/eclipse/tm4e/core/internal/theme/reader/ThemeReader$2.class
+SHA-256-Digest: 05wJv3zVYl7pwh/PptxPoJRPXKgkH6EhcWpTr5NcJlE=
+
+Name: org/eclipse/tm4e/core/model/ModelTokensChangedEventBuilder.class
+SHA-256-Digest: 90nlkH6uXvmvRyaDFB7neOsdry1WbxTLujKQkHk3USQ=
+
+Name: org/brainwy/liclipsetext/editor/languages/outline/LanguageOutlin
+ e$LiClipseNode.class
+SHA-256-Digest: Guf1WVA/XPoLCsXooAp4S1USZqZZYQcB6NKQejXglHM=
+
+Name: org/brainwy/liclipsetext/editor/languages/indent/LanguageIndent$
+ 1.class
+SHA-256-Digest: N3wqNt5tdQywV/TgFhwE5mm4i0FIulIsqG5HkwLf+Mc=
+
+Name: languages/dosbatch.tmbundle
+SHA-256-Digest: 09XKi3Z/D56BmS/5p7KBCNzSj498tQzzSuqNUqFZUQM=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/tm_injections
+ .txt
+SHA-256-Digest: RVQOl3eAzrpzhGaQy4WWRl49PrSNSjHH75026lRrsgU=
+
+Name: org/brainwy/liclipsetext/editor/preferences/RootPreferencesPage$
+ 2.class
+SHA-256-Digest: hME09Vvgka9KqCMSlXQkahXYPMrCV/dhroEw/KQw3Ss=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseSourceViewer$Styl
+ edTextImproved.class
+SHA-256-Digest: E2zAbmLVRXLqYsRxIlccKyh8ZhNxYYL8BK5HEKKVBTk=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipsePres
+ entationReconciler$ProcessRepairListJob$1.class
+SHA-256-Digest: pk5QvekrdvArg6xcNTHMuSCwYxx02l9uCVrF8E7dFrw=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceScssContentViewerC
+ reator.class
+SHA-256-Digest: 5YO1uOlQ1dh2r8sWfKzDCrIgkzuKtXPZG3znsT7ZpPg=
+
+Name: icons/preview.png
+SHA-256-Digest: j8ZvnKdhAXu2RFm2u4tXq8H4UBfemq1OYPFBpjbmgpA=
+
+Name: org/brainwy/liclipsetext/editor/partitioning/ScannerRange.class
+SHA-256-Digest: j95NJSJ6HQgwB63AMoIsRDo+sR3Oxuwshkm+UqGU8vQ=
+
+Name: org/brainwy/liclipsetext/editor/rules/TypedRegionWithSubTokens.c
+ lass
+SHA-256-Digest: oDhMcBX/55+hR9zDSAeYqXUwC4jHSirc4Z7h8vXb6gg=
+
+Name: org/eclipse/tm4e/core/internal/grammars/SyncRegistry.class
+SHA-256-Digest: L7PFqWTJ2ivQTPgL+JfJzwHtfZPjDvmGKB2fEPyY+vo=
+
+Name: icons/python_editor.png
+SHA-256-Digest: acZkIotOlvupBwipBvLF4m97PkYeaDo89xghJCefejw=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/ColorKeys.cl
+ ass
+SHA-256-Digest: 75VrE4N8u/hUeIrdqgDg3esnPU5axJ60VzjkyGKG66Y=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceRamlMergeViewerCre
+ ator.class
+SHA-256-Digest: Bxpxl5fIbo1opuysEVAf1k4pg3JuVtzsod8Bb5CcEsI=
+
+Name: org/brainwy/liclipsetext/editor/compare/RestructuredTextContentV
+ iewerCreator.class
+SHA-256-Digest: zcRZ4kVyBSS+pcfCnMtyMW+IkIpvxkVkzu56EsOLVX4=
+
+Name: org/brainwy/liclipsetext/editor/compare/TextHtmlErbMergeViewerCr
+ eator.class
+SHA-256-Digest: 4lIGO66jqpiJAOI0DJWVDWmXeAeLAeFKNTcchNeowDU=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/IColorCacheP
+ rovider.class
+SHA-256-Digest: cQt2ZcjXh8YBlR+YGlZxDKNqnAeNb6HTJHfxKZ1QqKc=
+
+Name: org/brainwy/liclipsetext/editor/compare/XmlMergeViewerCreator.cl
+ ass
+SHA-256-Digest: 5CqzCAiFh4dBrmHw/ph4xsgTOTiXkEYYPu0sCL+PImQ=
+
+Name: org/brainwy/liclipsetext/editor/compare/Xgui20MergeViewerCreator
+ .class
+SHA-256-Digest: 5Pra+4k4K2YCxsYqQOLPqmn25gR19/ARDTw9ON16YNQ=
+
+Name: org/brainwy/liclipsetext/editor/handlers/DeselectEnclosingScope.
+ class
+SHA-256-Digest: EzSTMiYQV5UfZP7abttErUd4+/vrBZlAfscAory2mfE=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceRamlContentViewerC
+ reator.class
+SHA-256-Digest: sHhc3tiUtoS69pI4XBs1SS5DMmj6nSmgKZZQ5oEhZEw=
+
+Name: org/eclipse/tm4e/core/grammar/Injection.class
+SHA-256-Digest: I72pf4hcb2VzDXlA3/Hs8iCWJFnnD5+fgQtx6Kv2Wl0=
+
+Name: icons/stringtemplate_editor.png
+SHA-256-Digest: GAkFtCut1fsQKHeBTM1OjfyRV6ERFvLfg5itW/HMUpw=
+
+Name: icons/kivy.png
+SHA-256-Digest: ukO9F1gN8C+4uLe+nCzwuLE6zGS6ByVigStlwkGELHA=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipseDama
+ gerRepairer.class
+SHA-256-Digest: PFRNLqiGVMISUz5/PRxO1otJLOYJ1KNWb/v22I7BrAQ=
+
+Name: org/eclipse/tm4e/core/internal/theme/reader/ThemeReader.class
+SHA-256-Digest: HZWF0obTj5H2KCGJKWyYDlMabYxGS1RQa47fDYQVrSM=
+
+Name: org/eclipse/tm4e/core/internal/theme/reader/SyncThemeReader.clas
+ s
+SHA-256-Digest: kAgA1jDThOPdOSx8aJlPbwTl7+KAz5XIPZxi+90/Wtk=
+
+Name: org/brainwy/liclipsetext/editor/templates/LiClipseTemplatePropos
+ al.class
+SHA-256-Digest: H13qTY50ZSOn+txTRS1Fq3bQzWW00+ilLcE6dmauuB0=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/IPrint
+ ableRule.class
+SHA-256-Digest: E8qz/55r9FhZdPF/0bsGdLP/87Sv0Fu4qedR+U1AzaE=
+
+Name: org/brainwy/liclipsetext/editor/preferences/LiClipseWordNavigati
+ onPreferencesPage.class
+SHA-256-Digest: Nh2BXAfHz6+v0OIKj6aoI3ca6A6nSC+J2e+wv3xv/c8=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Switch
+ LanguageRule.class
+SHA-256-Digest: pWd4RrqBT7ulxa9nila5xp4bW+xoUWniBbI6qisK+Qg=
+
+Name: org/brainwy/liclipsetext/editor/outline/LiClipseOutlinePage.clas
+ s
+SHA-256-Digest: YURE8MED7mYamz348LxhTLEHh738od9YNQ+DCIcgLWg=
+
+Name: icons/text.html.php_editor.png
+SHA-256-Digest: XohrYq+NR/Boel7ER9L6iXlq00kAAt4+DW9oqLyHJ/s=
+
+Name: org/eclipse/tm4e/core/model/ITMModel.class
+SHA-256-Digest: DslN6HVOyvEdP9qYYLc+fwFNd7A9vCeszyFeiNmxTgA=
+
+Name: org/brainwy/liclipsetext/editor/languages/GlobalLanguageTemplate
+ s.class
+SHA-256-Digest: jZ02WWoVZFwjdfu80hpxmFAsDTqOTTR6aZ/Jx0murP4=
+
+Name: org/brainwy/liclipsetext/editor/common/DialogNotifier$3.class
+SHA-256-Digest: BWQMChogqcE5kRdhYa5M1A8XzpdiqakYainMNmv7do4=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Regexp
+ Rule.class
+SHA-256-Digest: nojvuhMLuMLeHeGfJw3Vk6NG49xkN70CjMQnnRoeVh4=
+
+Name: org/brainwy/liclipsetext/editor/spelling/LiClipseSpellCheckerRec
+ onciler.class
+SHA-256-Digest: XMc2F0J70yOFK08m+GikNP3s9F6itATHa+OXOwyw4Ig=
+
+Name: org/brainwy/liclipsetext/editor/partitioning/LiClipseRuleBasedPa
+ rtitionScanner.class
+SHA-256-Digest: RoCbz8ZCGlh7SaKa15IakPS2glycz/Ip2rkwC/VdVTI=
+
+Name: icons/source.perl_editor.png
+SHA-256-Digest: EaUoDYR53Eqp5YdTnFBPiAKLyaZCfGokpYCnClSjXlg=
+
+Name: org/brainwy/liclipsetext/editor/common/BaseLiClipseEditor$Action
+ sResourceBundle.class
+SHA-256-Digest: URtMP0pGIJk8WJ0grjwNqfsaOvDgOwAoqSdrLcXILug=
+
+Name: icons/source.shell_editor.png
+SHA-256-Digest: jd5S79/ZQjXkTygABDxPAprXa3EQhuF12O9BmyVkPUc=
+
+Name: languages/swift.tmbundle
+SHA-256-Digest: 3XM1ufTajRR1s5oouxA+jLlKUYL1BNMoryxC0k97nAA=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguageMetadataTmBund
+ leZipFileInfo.class
+SHA-256-Digest: 3vkWzbzxmUVgSuSkEQmRk2DCGJG+3gyxxoY2mDB1kfk=
+
+Name: org/brainwy/liclipsetext/editor/languages/launch/LanguageLaunch$
+ HyperlinkInfo.class
+SHA-256-Digest: w9jBz8cPhP78pRJHmc7GH9Y9R6Mnhbto/H7VGsx7vUo=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguagesManager$2.cla
+ ss
+SHA-256-Digest: u9HmMwIDATXGNzrjoInOktWVJALpWaUIEi6KE+KlGHg=
+
+Name: org/brainwy/liclipsetext/editor/compare/HtmlMergeViewerCreator.c
+ lass
+SHA-256-Digest: Bwr12A2lUtMWpLo+YqHIyqpnmMQsRherScPuoSGolr0=
+
+Name: org/brainwy/liclipsetext/editor/handlers/QuickOutline.class
+SHA-256-Digest: fzGMU7OWrJwK3bEHJ5i0Tp44NDdwKFeUWfGFmOodqrM=
+
+Name: org/brainwy/liclipsetext/editor/preferences/LiClipseColorsPrefer
+ encesPage.class
+SHA-256-Digest: jGDelGrR1EZ+xQls35+2X6ME3WwYz3Q/sGCS7pCWt+I=
+
+Name: schema/liclipse_error_collector.exsd
+SHA-256-Digest: T4kSC/HAgB2GUVGY4RoLLBz1HaoADBmuYVN6zk47O0I=
+
+Name: com/eclipsesource/json/JsonNumber.class
+SHA-256-Digest: Z6rdimGlldZxPbx1bvlSjFmM3mudFmI06KdEY16RJv0=
+
+Name: org/eclipse/tm4e/core/logger/AbstractLogger.class
+SHA-256-Digest: RCsHkEyl2sWV3G1JdDZVzANLw9PdZ5G3H/pn4hK7qLc=
+
+Name: org/brainwy/liclipsetext/editor/partitioning/IPartitionCodeReade
+ rInScannerHelper.class
+SHA-256-Digest: EMc7eyyY3sxIwYjwFUvGg56PYpL8x+35D3qVfLEgWkA=
+
+Name: org/eclipse/tm4e/core/internal/parser/json/JSONPListParser.class
+SHA-256-Digest: UgCgZD68BkQ4zvaK+W5W+i02nqlp3SSJNIUuiAppbS8=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguageMetadataFileIn
+ fo$2.class
+SHA-256-Digest: OaBc3CC3VUV1OuvcufIcjIhvsF90vrXPHlZF+y8Fwr0=
+
+Name: languages/liclipse.liclipse
+SHA-256-Digest: 81G7AfajiZnE3Olcpg1Vw5zd19W4IP4NoOeZAsHZGcQ=
+
+Name: org/eclipse/tm4e/core/internal/matcher/IMatchesName$1.class
+SHA-256-Digest: +o2Y+Dc7P4/NJe40ES53AERMHQaYEROsTVwNP/K2eno=
+
+Name: org/brainwy/liclipsetext/editor/languages/navigation/NotifyCtags
+ ErrorDialog.class
+SHA-256-Digest: n4K549EnbBFY442ynwP1VWClswgwybGlrUqxV+zOaRo=
+
+Name: org/eclipse/tm4e/core/internal/rule/IRuleRegistry.class
+SHA-256-Digest: 5yxhkJGdE2F+T8oejkOfdnNfkd++uvhlAg//+fKCsDY=
+
+Name: org/eclipse/tm4e/core/model/IModelLines.class
+SHA-256-Digest: Zhpa/ZEh8lATIQu9eTa69u6rsookpj4U3PpFfOAa/1U=
+
+Name: org/brainwy/liclipsetext/editor/compare/YamlContentViewerCreator
+ .class
+SHA-256-Digest: 5rNiHbKpHYKO+1c6SapWb5f1BsqllTqM6p/DoP2NTOA=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/TmLanguageHan
+ dler$Entry.class
+SHA-256-Digest: jHGeUxbwCY7DFhvTy6RgHGffWCxjZgIFmPkxX9FL0j8=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/reader/SubPa
+ rtitionCodeReader.class
+SHA-256-Digest: 4Cxuqp1E+ozpU/aLHrQB6nd8YUsWayyumV4LGyfCdGU=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceShellContentViewer
+ Creator.class
+SHA-256-Digest: GYYL9bHQ7vD9iHTRK9e380a7k+cRGDEkmnzLRCqvKlM=
+
+Name: icons/source.raml_editor.pdn
+SHA-256-Digest: Y4WWHHjFwqLyS25jGmkl1ZFK7tdIsRMvDLOfuymtQyE=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipseCont
+ entTypeDefinitionScanner.class
+SHA-256-Digest: 2RjGWxFWi51OzZRuVU4jh3F2sIcRjv4weX5apHsfaCc=
+
+Name: languages/dart.liclipse
+SHA-256-Digest: SC79X06uH7aq5Eyw8cXsdLkEvWy1w/DJg/B7b7nMQds=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/Condi
+ tionNode.class
+SHA-256-Digest: 4ie+gauatw7McXvCdzAOWrMhvyMobojHlbxsWwz55qw=
+
+Name: languages/javascript.tmbundle
+SHA-256-Digest: 2xf0WkhGiFIC7bbkeFIbrLSl27TnT15NpIxfPrPKkOg=
+
+Name: org/eclipse/tm4e/core/internal/grammar/reader/IGrammarParser.cla
+ ss
+SHA-256-Digest: eF+gs9kc9D8alAEcSxkbj66OjSsl6SgBiscYzkZ8+y8=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/TmSni
+ ppetParserV2.class
+SHA-256-Digest: Qxp060HqKCLXhJqBEQe3ghe1fFUG5yWHt8bpC4n/1Ro=
+
+Name: org/eclipse/tm4e/core/registry/IRegistryOptions$1.class
+SHA-256-Digest: r4KxdmLQ5VXHovNBuTG6mo9na7ml4T0f4G15OTAsr44=
+
+Name: org/eclipse/tm4e/core/theme/ThemeTrieElement.class
+SHA-256-Digest: AXhOoap5Jz5S63CgNnSBtht2/6ynDvFbKgLw/RI0u/s=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/reader/SubPa
+ rtitionCodeReader$1.class
+SHA-256-Digest: A8XqsV5FnVhZsbmlGUj3fnsWqO2MOAcnz03GIPJopS4=
+
+Name: org/brainwy/liclipsetext/editor/views/languages/LiClipseLanguage
+ sView$FileTreeNode.class
+SHA-256-Digest: mlVt863TNprflFYmnQUcAQrdFhiqZwC0KE8iIW+qZ/Y=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceCmakeMergeViewerCr
+ eator.class
+SHA-256-Digest: KzgxvvtzgPUYQgsVTs8jbrI65pdpNEGLTzWGDTVWZSc=
+
+Name: org/brainwy/liclipsetext/editor/menu/LanguagesMenu$1$1.class
+SHA-256-Digest: 7TGaIbvesSutxT4TRvjY7N+NMYBCnny+A9yJRuBUBFc=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Compos
+ iteRule.class
+SHA-256-Digest: xGTXC+ERAI4rpOgPksXB8NRtyIsciemwcWcO7bfjFYI=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/TmBegi
+ nWhileRule.class
+SHA-256-Digest: Vsyl1Azttzl2AJdJ8Ji0h7f65YInftJO9MTrPZkdxoo=
+
+Name: icons/django_editor.png
+SHA-256-Digest: 7TI/tYQ6X/16EiTKsl3SNb7qKkfIXMN3G62486VtIeQ=
+
+Name: com/eclipsesource/json/JsonParser.class
+SHA-256-Digest: fbstN4kF1FUUmVxtDvx/WCcD+yE+74Nx+YVsfOX5asw=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/ElseN
+ ode.class
+SHA-256-Digest: ytKleuxDSo3IPqLW+0imDk3P49YO35T5v2FWoGwSYUo=
+
+Name: org/brainwy/liclipsetext/editor/languages/auto_edit/IndentAutoEd
+ itRule.class
+SHA-256-Digest: aQc5mPNldd1wXGmOLDSJSg+Z7qIZPB5sjR1ssiUIsBk=
+
+Name: META-INF/maven/org.brainwy.liclipsetext/org.brainwy.liclipsetext
+ .editor/pom.xml
+SHA-256-Digest: oVyL6Dq8/6oA+ISrDtlIfZ5VllHs0ssOMGzinhtcu4o=
+
+Name: org/brainwy/liclipsetext/editor/autoedit/BaseAutoEditStrategy.cl
+ ass
+SHA-256-Digest: Mu1aQskZWWvrPdQXguhZZtzRDAYrJdMxe7+irrOYgRo=
+
+Name: org/brainwy/liclipsetext/editor/compare/Jinja2MergeViewerCreator
+ .class
+SHA-256-Digest: y/BfGA9IyPgeOH8fMnapyndvgsv/aAv2eDoZBKXzbsg=
+
+Name: languages/python.extend.liclipse
+SHA-256-Digest: QlSc1yTkfoVGnQHDC5Lt0v3HLq3VtofRsusuWkoOZ44=
+
+Name: org/brainwy/liclipsetext/editor/common/DialogNotifier$1.class
+SHA-256-Digest: YAeHRZLqn5k/B+i/xCEi+g9zQmdQF6mljLl8hlez5rg=
+
+Name: languages/java.liclipse
+SHA-256-Digest: V15QL7a34uYFYz2XBsFxqE7OsbNb6yfNAvZxkH+3FGs=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipseDocu
+ mentPartitionerTmCache$Tm4eScannerCache.class
+SHA-256-Digest: Pby3ZA/xvd1QRP1VFPNVegk34KxCK2bR1nOkbBHc/wA=
+
+Name: org/brainwy/liclipsetext/editor/languages/auto_edit/AbstractScop
+ edAutoEditRule.class
+SHA-256-Digest: J7/dI6t4E0RuHRJhVrparx1dW8pOCts4poGUedwsXLQ=
+
+Name: org/brainwy/liclipsetext/editor/views/partitioning/LiClipseParti
+ tioningView$1.class
+SHA-256-Digest: 7ckzI8eZ8U/8UV2aGWXTQ6LIZ26OZSFBEup9mIeyNDw=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/TmMatc
+ hRule$SimpleEvalCaptures.class
+SHA-256-Digest: OAvftRzhddiXiYKumORzyT0q3TfHTQZisHjbRMNwYnY=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseTextShowBrowserMe
+ ssage.class
+SHA-256-Digest: 6gZWYDDuMInVRG2xISo97WHxF55dcixbMKV5r7lH+VA=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/CodeN
+ ode.class
+SHA-256-Digest: eLGW+aSHVfxCKivRaZ80DVFhu1xCGufwsebXw3fjDiU=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceRubyMergeViewerCre
+ ator.class
+SHA-256-Digest: r6zg/llVkZIdlx/4beYN1BEIUuMgidjZFYxVXZ0IKGs=
+
+Name: languages/yaml.liclipse
+SHA-256-Digest: ZufSwwe+MUCFIooMwZ+eERNNdvLwUnEMUcU3FegrDlA=
+
+Name: schema/liclipse_editor_customizer.exsd
+SHA-256-Digest: jv64k/4piW8+FP0HNuQ8+wLvHUJkJeqCb9iKZFWzEm4=
+
+Name: org/eclipse/tm4e/registry/XMLConstants.class
+SHA-256-Digest: gmw3iEZg5TfHBR1JiltVJFzJ0OHQfdzsGldvEubi//4=
+
+Name: org/brainwy/liclipsetext/editor/templates/LiClipseTemplateComple
+ tionProcessor.class
+SHA-256-Digest: m57+Ib8fagTSvNJ6Zt2RANzMHJF9qPl/5ROrw3kL6TE=
+
+Name: org/eclipse/tm4e/core/internal/rule/Rule.class
+SHA-256-Digest: gpvdipIUv4Yr7GLKrOkvIv/FUy6eTG4N54VL4Ekmg4E=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipsePres
+ entationReconciler$InternalListener.class
+SHA-256-Digest: A7hnIYYD8OkKU31qzlEKKf9byJSrLLI3BaPuIy1pqwE=
+
+Name: org/brainwy/liclipsetext/editor/regexp/RegexpHelper$ReplaceInfo.
+ class
+SHA-256-Digest: WNkVUOfPTnsNXl79bW9QZFGzwGCsB8Vl+N06UjFQ7nQ=
+
+Name: org/brainwy/liclipsetext/editor/languages/navigation/LanguageNav
+ igation.class
+SHA-256-Digest: UfW6WWFXLbZugsRNLj4RTW2Rdw9aUL2G3jqS9X3isEc=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Switch
+ LanguageHtmlRule$CharWrapper.class
+SHA-256-Digest: oDAXQ32LlLwVZXV84KfvfHRTBiSVeU74EWx7+L6iLhw=
+
+Name: org/brainwy/liclipsetext/editor/languages/auto_edit/DefaultAutoE
+ ditRule.class
+SHA-256-Digest: L5jocBvMVkSet/0YPx2LKRh6ZfYHyHuZC9XX8ad5sa4=
+
+Name: org/eclipse/tm4e/core/theme/RGB.class
+SHA-256-Digest: C9g44Anf9OHeqV+r2eG4+UCoMbFKcwLfF6RvL1XWzx4=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/reader/SubPa
+ rtitionCodeReader$SubPartitionInfo.class
+SHA-256-Digest: r01VV+2nmJc+kJ4oU7BXm8AdL83iPRqlsitytdhrQ6c=
+
+Name: org/brainwy/liclipsetext/editor/partitioning/AbstractLiClipseRul
+ eBasedScanner.class
+SHA-256-Digest: dYtRtXBnGLQg9D+L45wslKhaSlZCSVCafp+EiPwdvA0=
+
+Name: org/brainwy/liclipsetext/editor/spelling/SpellingReconcileStrate
+ gy$SpellingProblemCollector.class
+SHA-256-Digest: 8iedxTPDyf/FtBoQ98wscB5uiGose67ChuzNMjrOlUc=
+
+Name: org/brainwy/liclipsetext/editor/templates/LiClipseTemplateContex
+ tType.class
+SHA-256-Digest: 6OB0kNIoXOEpctAQ4OpLnsXvfOaGVNZddxyumYUbZsU=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguagesManager$Langu
+ ageOrBinary.class
+SHA-256-Digest: kk/1oqmkKuFiFyKrRP40hMGeNb2vGAF+xEFttyYZOCw=
+
+Name: org/eclipse/tm4e/core/theme/IStyle.class
+SHA-256-Digest: orVjd2WmQYx9PxtND3llty4g89KSya+JOv7ZDugpEWg=
+
+Name: org/eclipse/tm4e/core/internal/rule/BeginEndRule.class
+SHA-256-Digest: C09dam4c15OtlzzRs1A6Jza9xxFFXSNKQ2arzNS4uuw=
+
+Name: org/brainwy/liclipsetext/editor/compare/DjangoMergeViewerCreator
+ .class
+SHA-256-Digest: X93xLs66Tq/R2V4I2zq9khNvzVk6ySHIQ+dY2fDxXZw=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiclipsePres
+ entationReconcilierExt.class
+SHA-256-Digest: zFPT7xMu6NPtMiSiAvFmQRE2+xFebpGXgXkmqNIl7NI=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/TmRulesConver
+ ter.class
+SHA-256-Digest: i/Ip7B6uNyCIF4uuksy1QDTZWBP56IctNlb4V6vb//o=
+
+Name: org/brainwy/liclipsetext/editor/handlers/extensions/BaseLiClipse
+ Handler.class
+SHA-256-Digest: Bm3IbBGp4YXWybbc04XAMLpB2zpe6rtHOdRFG1AEh8o=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/TmIndentPart.
+ class
+SHA-256-Digest: nNRtKzB9t39DoCziklMI4AGz+DAxZMuOxsTd89DPGEM=
+
+Name: org/brainwy/liclipsetext/editor/compare/RestructuredTextMergeVie
+ werCreator.class
+SHA-256-Digest: Ns+6FOYtrE5Pj3qcYNY5Ofs55TXDaIvsPKfMLQwaQB8=
+
+Name: org/eclipse/tm4e/registry/TMResource.class
+SHA-256-Digest: QF8lgDm1C6Z66CG6f90AlXC9pLqgpPJ4BLFXKI4fz/0=
+
+Name: languages/css.tmbundle
+SHA-256-Digest: w653hb7hIUXsW+d6CsCspP1PiF3Stq9G0yG+SequHV4=
+
+Name: org/eclipse/tm4e/core/internal/grammar/LineTokenizer$1.class
+SHA-256-Digest: /GG50ERqmLBrchdhPSVmPnst2JwQQLl5szrZ6+UJBNc=
+
+Name: icons/langs.png
+SHA-256-Digest: hhG4RJeg8KjID3ZiQ2fBOLI7XaRND+gNi6E5CEAPYQo=
+
+Name: org/brainwy/liclipsetext/editor/languages/navigation/LanguageNav
+ igation$1.class
+SHA-256-Digest: OP1/cdG7qMK+NFcPjzUVLFMQXTGPqBmxHoaGcPJ3dKk=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/IRuleWithSub
+ Rules2.class
+SHA-256-Digest: YhFVL9ggZr7ohuEWsvTDAqJMDjWnjPqPS4HIniR4jL8=
+
+Name: org/brainwy/liclipsetext/editor/menu/LanguagesMenu$1$3.class
+SHA-256-Digest: T9gDWNKv2zARx3ZOKP3nRpwSlqm25L54NOmNh1dvxGc=
+
+Name: org/brainwy/liclipsetext/editor/preferences/LiClipseColorsPrefer
+ encesPage$1.class
+SHA-256-Digest: bbMuyMX72mQijRSPu/ECNYzWMJXkf0R4+FvfOXlGPDg=
+
+Name: org/brainwy/liclipsetext/editor/markers/InMemoryMarker.class
+SHA-256-Digest: 80iIlC68phdGjVmQgYlQCspHpOh32h8BgEzaAXqu4bs=
+
+Name: org/brainwy/liclipsetext/editor/quick_outline/LiClipseOutlineLab
+ elProvider.class
+SHA-256-Digest: tCZ+qknmthdsGR7D/LonQG03TcNbKjca9vtvdcrtE+Q=
+
+Name: icons/partitions.png
+SHA-256-Digest: 7OEx9Ok1VyIQHpctSu9pM4lQ5qtd/P3LY4MmLmlFEtE=
+
+Name: org/brainwy/liclipsetext/editor/compare/DartContentViewerCreator
+ .class
+SHA-256-Digest: Seg6ylSgoRAx166aMuXDG9ekfUaG51WRIXhmqnEPphI=
+
+Name: icons/text.html.markdown_editor.pdn
+SHA-256-Digest: FSlTVVh5OGZiyjdqSyLLqQS6CS7BMTBa4xLMuq4redk=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourceShellMergeViewerCr
+ eator.class
+SHA-256-Digest: 0fOOeug2ecUanhP4l1TM3jrqMQ4ipxdcAlz6undLYsA=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguagesManager.class
+SHA-256-Digest: mdpdLjxi2itTuKzNZXmH0IzJ2N+M7hPEilIZuXnpehk=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/MultiL
+ ineRule.class
+SHA-256-Digest: YbfYQ3oegW49eQzrYaz+MR4xmDVkLujB/2EEhxMjo10=
+
+Name: org/brainwy/liclipsetext/editor/templates/resolvers/SelectionRes
+ olver.class
+SHA-256-Digest: Yviwa+isiK2yjV2+GXJHA7ggdHc16HO+2WXqYUMJ75Y=
+
+Name: org/brainwy/liclipsetext/editor/compare/KivyMergeViewerCreator.c
+ lass
+SHA-256-Digest: Rdoyl6ZNFqJ4OXyTWNdsKTcpbDyFSJgEUtA2LV+XYGE=
+
+Name: org/eclipse/tm4e/core/internal/grammar/TokenizeLineResult2.class
+SHA-256-Digest: li+oBn5Qn3ZiJpcX3j9qwsVtLzWOu0ZBHkmtzhzoQyI=
+
+Name: org/brainwy/liclipsetext/editor/quick_outline/LiClipseQuickOutli
+ neDialog.class
+SHA-256-Digest: fth5wofXVTWeZqqfG+Z59Y8x28zNQI3ONhL88wSZz04=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/MultiL
+ ineRuleRecursive.class
+SHA-256-Digest: SwEG4r5wf1Ki5yKXfv0PsrY2TO51kCU9jr4DJA5S8EQ=
+
+Name: org/brainwy/liclipsetext/editor/languages/outline/LanguageOutlin
+ e$1.class
+SHA-256-Digest: 7eElZARnSUflBFHtpsSwk9OC2hAiOKqUBT/8yidHcEM=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/ScopeColorSc
+ anning.class
+SHA-256-Digest: 8INoKxRqZbNmJdo2cmvT74dl2lKe1/7vV2pxLx3tJhc=
+
+Name: org/eclipse/tm4e/core/internal/theme/reader/ThemeReader$1.class
+SHA-256-Digest: E2jWmSSd9NOK5KggvC4pgVtEVW68kOOuIdReqUDeGbw=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/Conve
+ rtNode.class
+SHA-256-Digest: /Y/FUhEii3ajbpSbfzxAGQHoG9Qq6s5iE9fswCcgjNM=
+
+Name: org/brainwy/liclipsetext/editor/compare/JavascriptContentViewerC
+ reator.class
+SHA-256-Digest: 97GxP1XOW8nJA2p/YIwC8b0TI2VjELPXnBBgWCAow1I=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourcePerlContentViewerC
+ reator.class
+SHA-256-Digest: C1do9N/fvRkr+wKmQRid6CnNX6uJD9jqRx04n1NeDT4=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseDocumentProvider.
+ class
+SHA-256-Digest: oxngZYYg8/KTwc2NMJr8A66EjWp1mlt0W/PIVFvREOo=
+
+Name: org/brainwy/liclipsetext/editor/languages/navigation/RegionAndTe
+ xt.class
+SHA-256-Digest: LKvpMuvxLLizLliCiOpKOW/XYhk4Pn5gpuM2WF2Wnis=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/Strin
+ gScanner.class
+SHA-256-Digest: L2wDLoWEhcW23Fyb5OUvIN9kJBxPZbdSaBDQh5KQKys=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/TmLanguagePar
+ t.class
+SHA-256-Digest: mJX0vyS3wXElU50M/pHLMDrStHGidJ/ALRko4xJ14hU=
+
+Name: icons/rst_editor.png
+SHA-256-Digest: waP+A1lwsUWImnYTR9daM7dcjvlZ3M2rG18hJyhS0X4=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipseDocu
+ mentPartitionerTmCache$Tm4eDocCache.class
+SHA-256-Digest: uCo//4dvaT1iJlUMDX47wDbJ8XTK4wLJy2iwJS5CgHQ=
+
+Name: icons/liclipse_editor.png
+SHA-256-Digest: 3UeSPsVjkDg/d2nOHl+cDY0n4E/lswDfc8nuNPxzrRA=
+
+Name: languages/jinja2.liclipse
+SHA-256-Digest: t+vrun8Q0DM+ZHJBGXFaqsW1RVmgnC+HPUzldjufUdo=
+
+Name: org/eclipse/tm4e/core/internal/rule/RuleFactory.class
+SHA-256-Digest: O1t9GfLHUR6SdFDnabCg2tWQFYt/J9RMR1u021kolGo=
+
+Name: org/eclipse/tm4e/core/internal/oniguruma/OnigScanner.class
+SHA-256-Digest: vB5OAHC+hLUzoyFGrYisrLUusR0OB+SsZOJqM0DzXRE=
+
+Name: org/brainwy/liclipsetext/editor/views/languages/LiClipseLanguage
+ sView$ZipPathTreeNode.class
+SHA-256-Digest: iD3sBIp74zjUW0DgcL09JLkQoeirv7XT9x11v7nn4KI=
+
+Name: org/eclipse/tm4e/core/theme/ThemeTrieElementRule.class
+SHA-256-Digest: O99otyAHAluB3o3bR9tby9cLm+MqerrJ9RZO4g2NH4k=
+
+Name: languages/julia.liclipse
+SHA-256-Digest: QHCISwpo4HukUcBI54hYknkWpNicrQtenDZzrcQbZmo=
+
+Name: org/brainwy/liclipsetext/editor/content_assist/BaseSimpleAssistP
+ rocessor$ContextInformationDelegator.class
+SHA-256-Digest: CngY6Bum2XMmlanyQjRDbLLKgeHh+Gqvgvp489FJWM0=
+
+Name: org/brainwy/liclipsetext/editor/languages/ILanguageMetadataFileI
+ nfo.class
+SHA-256-Digest: Khz0QZI3c6q9RssDW+6qZlyUCbRnEPaL1s9VPSfhefo=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/MatchL
+ ineStartRule.class
+SHA-256-Digest: 2YXU2MFg2EET/NyMZHXPT/kambhaIguIZWmxyiU6hrs=
+
+Name: org/brainwy/liclipsetext/editor/compare/AbstractMergeViewerCreat
+ or.class
+SHA-256-Digest: FQ9M+/dapXulTj2iTuIlznRGrVPseucFEKgdomTUiHM=
+
+Name: org/brainwy/liclipsetext/editor/compare/DartMergeViewerCreator.c
+ lass
+SHA-256-Digest: Dg3X9ET0P2f2Gn5PFIxGl9MDVaQ7YLAfFAUQuhc8qeI=
+
+Name: org/brainwy/liclipsetext/editor/compare/GoMergeViewerCreator.cla
+ ss
+SHA-256-Digest: W0K+omOQTMSI+j6Q0NgoiXqz4Bp+ddTUuyhQBf5jGPY=
+
+Name: org/eclipse/tm4e/core/internal/grammar/ScopeMetadata.class
+SHA-256-Digest: /o1CDIKSKHGQd2+55vA/rPZd3uw7o1px8vg6B7HojBc=
+
+Name: org/brainwy/liclipsetext/editor/compare/MakoMergeViewerCreator.c
+ lass
+SHA-256-Digest: st1TuVCndMMBGL3w0CMZWQlAX/C0kBg57PwrksuVm6s=
+
+Name: languages/gen_kivy.py
+SHA-256-Digest: MM0BGStxTq8ZflZRTnlcQRsJnnQAvdd2m81BDJZW/O0=
+
+Name: org/eclipse/tm4e/core/internal/rule/IGrammarRegistry.class
+SHA-256-Digest: YsyL9S9c8YOo4ptsCF89tiNPuATtxIiA3m1VU0vsjKI=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/TmLanguageHan
+ dler$FalseBuffer.class
+SHA-256-Digest: PVr4NMwbrp9XuLQ9UILsm7tfRE191qoB12X3zruGAks=
+
+Name: org/brainwy/liclipsetext/editor/compare/AbstractMergeViewerCreat
+ or$MergeViewer.class
+SHA-256-Digest: SNTdwVKTzvyPDs/EE5B3DhcwmY0lrL6G8XIbBZevv8M=
+
+Name: org/brainwy/liclipsetext/editor/rules/FastPartitioner$2.class
+SHA-256-Digest: k6um5ZXekJQgcjMQfnGnjZR/FZrYhz6LZWHuSmQqPT8=
+
+Name: org/eclipse/tm4e/core/model/AbstractLineList.class
+SHA-256-Digest: gitCS+d8//4oU9aW0sdiX61VTiLuKsOKm9+WmaMEIbc=
+
+Name: org/brainwy/liclipsetext/editor/images/LiClipseImageProvider.cla
+ ss
+SHA-256-Digest: EAbE6u6r/fQ+YhKJZ7WMWyIZcRBiqHfR/1yUvjp0lbc=
+
+Name: org/brainwy/liclipsetext/editor/compare/CoffeescriptMergeViewerC
+ reator.class
+SHA-256-Digest: Ce5WTa1h3DDvUqxhIFSt1iNrVBYYhoWxq3paHv8hkK4=
+
+Name: org/brainwy/liclipsetext/editor/compare/PythonContentViewerCreat
+ or.class
+SHA-256-Digest: WubFTr89sz3doC/94Kw8djV8VwPhlAkmunG84el+XrQ=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/IFullScanner
+ 2.class
+SHA-256-Digest: 53T5Xe70p15UyfC4Qb2gGQvAyemXzHcjVWtFrHuQ1cI=
+
+Name: org/brainwy/liclipsetext/editor/compare/XmlContentViewerCreator.
+ class
+SHA-256-Digest: aFUiJzfiiUjM+fFSGg6HapZT+1oBz64NepFU8+ui50w=
+
+Name: org/brainwy/liclipsetext/editor/compare/SourcePerlMergeViewerCre
+ ator.class
+SHA-256-Digest: buPa0wtKvRDIxVj1UG0Znpq4IR0GqxcBQz8nUD1JB6U=
+
+Name: org/brainwy/liclipsetext/editor/parsing/LiClipseParserManager.cl
+ ass
+SHA-256-Digest: u2Pz6NSOHMyxyfkC2qbMrv+IM5/zK0XPm1hvAiL2ljg=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/TmLanguageHan
+ dler$Handler.class
+SHA-256-Digest: LkhKfpSRY1UF/vLROqqDhnnIYJAGw7kT7Z6hl4sfimU=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/ZeroOr
+ MoreSpacesRule.class
+SHA-256-Digest: sfZpjkDbLkZZVf6Ji/u3lVVtsqsMpe/fQUZgJ6QntGk=
+
+Name: org/brainwy/liclipsetext/editor/handlers/extensions/LiClipseActi
+ onContext.class
+SHA-256-Digest: q3U3551E9959mn/4GTKHENUizll70Lus+uuGVuzM+Cs=
+
+Name: org/brainwy/liclipsetext/editor/partitioning/LiClipseTm4ePartiti
+ onScanner.class
+SHA-256-Digest: JEuPLAYvPkgGWNh/j2r21Zix3D1TkImbcBnNAQgCaE8=
+
+Name: org/eclipse/tm4e/core/grammar/IGrammarRepository.class
+SHA-256-Digest: SNTvgRumQfTfCXO5w5jY0PDKqA2QqUprpVkbx+EjpT0=
+
+Name: org/brainwy/liclipsetext/editor/languages/launch/LanguageLaunch.
+ class
+SHA-256-Digest: Pm2wnJ8fpKrhREUMbV+7LR0CSg5CZ+tY0O1t9bxuUBY=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/TmIncl
+ udeRule.class
+SHA-256-Digest: Iok+CA2I7toRxq7QCCiWgsA0yj0jRPXqHGGi/OrB+10=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguageMetadataInMemo
+ ryFileInfo$1.class
+SHA-256-Digest: LDorPryu0M5wLFldLUAHYTC9V9wURmCbEW09DvhdzoM=
+
+Name: org/eclipse/tm4e/core/internal/parser/xml/XMLPListParser.class
+SHA-256-Digest: NoWPWKMBFTbtEKO65KhApf4n2AhfO3kZXNUk6YoHnmc=
+
+Name: org/brainwy/liclipsetext/editor/compare/PythonMergeViewerCreator
+ .class
+SHA-256-Digest: onZRIS/J/5+yTwA+fGwJuMqqYnzTrNRVF0rpuTIG7+A=
+
+Name: icons/source.ruby_editor.png
+SHA-256-Digest: yKA2kPm7ogd+yENd0KBviH3yXNE0yGbuZuGENOayATk=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiclipsePres
+ entationReconcilierExt$LiclipseDelegatePresentationDamager.class
+SHA-256-Digest: PKf1YqVJxJoj5aQaCinODKGLhF23bMv2Ya4ft/0QgZQ=
+
+Name: org/brainwy/liclipsetext/editor/compare/StringtemplateMergeViewe
+ rCreator.class
+SHA-256-Digest: 93AVmuyHaAh1eHdF1bstxaehChwgfqanXLXD2JztLIY=
+
+Name: icons/mako_editor.png
+SHA-256-Digest: E05QzW6V4//hSEildepaRpV+cpL2n+7UrEFRO6vVsZI=
+
+Name: org/brainwy/liclipsetext/editor/templates/resolvers/IndentedBloc
+ kResolver.class
+SHA-256-Digest: Phg0/RLgnzstghgcBPwNWb3hz19uqLnJtBqqdEetz5s=
+
+Name: org/eclipse/tm4e/core/internal/utils/CompareUtils.class
+SHA-256-Digest: 01BzK2bic0OpHiquaWOBTwB6zSd1zZinE+EbALsAXVQ=
+
+Name: org/brainwy/liclipsetext/editor/languages/outline/LanguageOutlin
+ e$LiClipseNode$1.class
+SHA-256-Digest: y9uTWsmD7pxp268BvcQ373M3Vj/QNn2vsRWNcAkgyCY=
+
+Name: languages/cpp.liclipse
+SHA-256-Digest: Xyn58V0qg7GtfQ1hC+tImZk0MmE+YhCVjWHnVPnVQ50=
+
+Name: org/brainwy/liclipsetext/editor/rules/FastPartitioner$1.class
+SHA-256-Digest: SgojURbr5YP+PmP5xGD/C0vZoOfdSe5iGniIn1g774w=
+
+Name: org/brainwy/liclipsetext/editor/compare/JuliaMergeViewerCreator.
+ class
+SHA-256-Digest: ZFnGJ6s9q/VTFC2sM38UGSMvRg0MyTs4rUK18e8yZbo=
+
+Name: org/brainwy/liclipsetext/editor/languages/auto_edit/ILanguageAut
+ oEditRule.class
+SHA-256-Digest: mVWDOy39xiczwKA913YqQNMchS/WhLsMIg5tObhkqaA=
+
+Name: org/brainwy/liclipsetext/editor/languages/CreateNewLanguageHelpe
+ r.class
+SHA-256-Digest: hswNA1Ff7yCp0C0GTSr1vRIEat5fj2lsHFVGV7jwS1w=
+
+Name: org/eclipse/tm4e/core/internal/matcher/Matcher$Tokenizer.class
+SHA-256-Digest: Zz7h1Gl6jcVLxoqHtBnqOs9L6ii9gcs41aZ0q/w8jOY=
+
+Name: org/brainwy/liclipsetext/editor/content_assist/CompletionError.c
+ lass
+SHA-256-Digest: Mb5S+yvO6UqXyP/UCMIvbtkdp2FtmGzDY416O8cc/kE=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/reader/SubTo
+ kensTokensProvider.class
+SHA-256-Digest: seZ3AReTYksDMLZusyai5NAoSBXPOz7PHOzRpmYHe60=
+
+Name: org/brainwy/liclipsetext/editor/compare/Jinja2ContentViewerCreat
+ or.class
+SHA-256-Digest: wYJy/ehR12hU3IbDwsNI+UDxyKdnrGaZFXCZzYQUCOY=
+
+Name: org/brainwy/liclipsetext/editor/languages/launch/ConsoleLink.cla
+ ss
+SHA-256-Digest: nWoXYnfXtjdHqmeUCT4Lxk6fVKb9GxQWRLJmp4qy7kE=
+
+Name: icons/yaml_editor.png
+SHA-256-Digest: GC2CtMIjFJWTUcMI84My7lJcPdEW6QhybXmNoxBg+6M=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipseDocu
+ mentPartitionerTokensCache.class
+SHA-256-Digest: hzWcVGDSzJdQAUS1a71r7ScWpnih/ZhXKwNZSPnHUk4=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/ISwitc
+ hLanguageRule.class
+SHA-256-Digest: vh7wD2/iO/JKjv8s3/UQ776G7iZFhMNVJ+X0oYMci4Q=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguageConfig.class
+SHA-256-Digest: ReB4HvRslrVQAoLLN0gGiMU1N52CYgi1YP2I/u1fKh0=
+
+Name: org/eclipse/tm4e/core/model/TMTokenDecodeData.class
+SHA-256-Digest: WuFuXoFYG6RDTjMmcDDNcW1wxqx1OCur7WWZ5zOMXX0=
+
+Name: org/eclipse/tm4e/core/logger/SystemLogger.class
+SHA-256-Digest: RVCvhDPWHAY47wO8kOh2oo3834drik/0jHCU5O5Kuxo=
+
+Name: org/brainwy/liclipsetext/editor/spelling/SpellingReconcileStrate
+ gy.class
+SHA-256-Digest: fivcwhqpRh5I1LNMzEEdHplXYZ1g0QT4nJCVdrenQWM=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/IEvalC
+ aptures.class
+SHA-256-Digest: IG61abg7UgAHjbsbvs3qIZClahD0TlGU5+DAZXEVQDg=
+
+Name: org/brainwy/liclipsetext/editor/outline/LiClipseOutlineCreator.c
+ lass
+SHA-256-Digest: WJFzH6gdIjcYQBHG1Yy17CnZb+mdfG5KyjBjf/YraI4=
+
+Name: org/eclipse/tm4e/core/internal/grammar/LineTokenizer$2.class
+SHA-256-Digest: dQvYnj/XEFOwyJwzLZ5W+9HZJHO86XGFIDeeeliBU0U=
+
+Name: icons/source.cmake_editor.png
+SHA-256-Digest: /yvm8qJzpDAYGJ1dys5Bn2SFQ1dRHsDc1q4lVSNMFiE=
+
+Name: org/brainwy/liclipsetext/editor/languages/LanguageTemplates$LiCl
+ ipseVariableResolver.class
+SHA-256-Digest: tKi70lsI4qa0FE3i1Q+v49/jyGZympeDGxDmcN3mzE4=
+
+Name: org/brainwy/liclipsetext/editor/error_handling/GenerateMarkersEr
+ rorHandler.class
+SHA-256-Digest: fxE28yXlFz+gFJbx4XuR76LMleXBDB674PyDAgFsUBI=
+
+Name: org/brainwy/liclipsetext/editor/compare/TextHtmlMarkdownMergeVie
+ werCreator.class
+SHA-256-Digest: kNZUliDRZJKzWyxCrmbrsIAT15yzUWDxurB67B3niaI=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseEditor.class
+SHA-256-Digest: Nq2Nc/tto1IUkzQOGDA+AcMu3tcPQUM38RGF5rMxG30=
+
+Name: org/brainwy/liclipsetext/editor/languages/launch/ILinkCreator.cl
+ ass
+SHA-256-Digest: k8bGELndqzu8bEBBG2ukxAV4nBwACb0qpCO8f4i9/us=
+
+Name: org/brainwy/liclipsetext/editor/compare/KivyContentViewerCreator
+ .class
+SHA-256-Digest: SUtNzWAU65jNFo6N/D5fimbzIino23xM0++7HEqFl78=
+
+Name: org/brainwy/liclipsetext/editor/common/BaseLiClipseEditor$Invali
+ dateTextPresentation.class
+SHA-256-Digest: 1/1+nzSuYIHIn0mGsAC6XxllZR7INMEHD8K2ZKGSx2U=
+
+Name: org/brainwy/liclipsetext/editor/languages/navigation/LanguageNav
+ igation$2.class
+SHA-256-Digest: vs0n1DVvAG5QWeR0fr2rS9LZLZYfC0tIHJeUajpIjSw=
+
+Name: org/eclipse/tm4e/core/internal/grammar/ScopeMetadataProvider.cla
+ ss
+SHA-256-Digest: 4kZEH0UOD1cdimUovKhCH45SpxpHitaYkIuWIQ3Par0=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/Varia
+ bleNode.class
+SHA-256-Digest: VcWkKaiEcYE8v2zIVrK+kNbSF1zbalkLLDegA9uz2es=
+
+Name: org/eclipse/tm4e/registry/IGrammarDefinition.class
+SHA-256-Digest: xIgHScJk1sV8L1p5P1sq4zwmlQQJQePw/a8zAunj8mI=
+
+Name: org/eclipse/tm4e/core/internal/grammar/Token.class
+SHA-256-Digest: z14gLtwqN3LxZ2FyLv3WgJTmm9zZtSXmtGagGMcsCpA=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/LiClipsePres
+ entationReconciler$ProcessRepairListJob.class
+SHA-256-Digest: OOjP2XqTDMX5HHNIcD090ucIvrYvRR8Much6aIEe/A0=
+
+Name: org/brainwy/liclipsetext/editor/compare/LiclipseMergeViewerCreat
+ or.class
+SHA-256-Digest: 4oSmO/0AvDRK72LkGxY9sdzsKa4ULnMcmJ3r6GpcQ/4=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/TextN
+ ode.class
+SHA-256-Digest: QVX7UJeqPXl8I+ifjR3byQV6S4QmSFxsj+LsjwcBIQc=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/Single
+ LineRule.class
+SHA-256-Digest: WJ7sRRytbB30/h6cCFDX6xkeZJ0dhvjFlQD8DtFr+o4=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseContentAssistProc
+ essor$1.class
+SHA-256-Digest: PjhTEWOtlCXIPbf9XFyV0NUFPpMd6wByOnZztNxLh7g=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseEditor$CollectErr
+ orsJob.class
+SHA-256-Digest: XTQhLxEcTkbQ9tl3RAfkJB3zaqvTRTmPzSjdoG/kMs8=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/tm4e/Tm4ePar
+ titionScanner.class
+SHA-256-Digest: UU19NQS/9RIzZ89BnzcucTflGcT8BqcIts7fNJl3mcw=
+
+Name: icons/java_editor.png
+SHA-256-Digest: u5dSK0C5r5njpC9/jldpGVmvrmEV+5Gy1xzPnCNvFxw=
+
+Name: languages/html.liclipse
+SHA-256-Digest: zOwPXt2Ty9ASZpN9uqhNQP0oXnotu470zlvsyvv4aV0=
+
+Name: org/brainwy/liclipsetext/editor/outline/LiClipseParsedModel.clas
+ s
+SHA-256-Digest: HuMmmjbOC8i+VURMUPZ4OJWf6q2x399TeBjFzK/lEbI=
+
+Name: org/brainwy/liclipsetext/editor/compare/StringtemplateContentVie
+ werCreator.class
+SHA-256-Digest: 6tZPrcGQzVFheKNxo35GEQOeBgEOoAvWHs/7YBUCmUo=
+
+Name: org/brainwy/liclipsetext/editor/error_handling/LiClipseLanguageE
+ rrorCollector.class
+SHA-256-Digest: ps3l/eHiWrWx5oK8javgRjeK0F8T4IQ0FCkRZKM78v0=
+
+Name: org/brainwy/liclipsetext/editor/common/LiClipseSourceViewerConfi
+ guration.class
+SHA-256-Digest: S6jw03MC64IGJwH0FaCSMMI51Sv3wFa0YyBjOx37nvo=
+
+Name: icons/cpp_editor.png
+SHA-256-Digest: E3uNwNAFrl0at9JMHlA9cOlnP0Dzw8T+KXCHXGYCZJE=
+
+Name: org/brainwy/liclipsetext/editor/languages/tmbundle/parsing/TmSni
+ ppetParser.class
+SHA-256-Digest: p7Z561aQMUKCj+TXOfk45CKtLRiTd62QCLW9ud1iQ/w=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/MultiL
+ ineRuleWithSkipAndStartRules.class
+SHA-256-Digest: 2gegPxuWB/f/06BtmX5objVZyvk0pDDCplVME8SqH24=
+
+Name: org/eclipse/tm4e/core/theme/IRawThemeSetting.class
+SHA-256-Digest: siKKZ0EELCONyvGTIh3TBBb59gmdwl+cZw6pt2YTORk=
+
+Name: icons/source.raml_editor.png
+SHA-256-Digest: VRDJ1Ulf5pL5ilYWn75yEXs4I/EtTYuCGn4/C/nXVwM=
+
+Name: org/eclipse/tm4e/core/grammar/GrammarHelper.class
+SHA-256-Digest: ArhcLMYyM9ZAENa0zcsClHnIldbj0d5YFp+KvjzaOmw=
+
+Name: org/eclipse/tm4e/core/grammar/ITokenizeLineResult2.class
+SHA-256-Digest: 59re7vjlorX71XIhK7AtQKvnhRBd9zQwLz1a5Uza6jQ=
+
+Name: org/brainwy/liclipsetext/editor/common/partitioning/rules/PrevCh
+ arNotIn.class
+SHA-256-Digest: +Xi9Kc/lj3n+/gwtBU9eXQfhZHUV0nP8OyvL2b0qYvw=
+
