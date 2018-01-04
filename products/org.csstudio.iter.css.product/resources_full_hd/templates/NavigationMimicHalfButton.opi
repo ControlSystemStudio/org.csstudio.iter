@@ -9,7 +9,7 @@
   <background_color>
     <color blue="235" green="235" name="IO Background" red="235"/>
   </background_color>
-  <boy_version>5.0.0</boy_version>
+  <boy_version>5.1.0.201712131659</boy_version>
   <foreground_color>
     <color blue="215" green="215" name="IO Grid" red="215"/>
   </foreground_color>
@@ -57,6 +57,14 @@
         <mode>8</mode>
         <description>Open in a new window the Alarms List</description>
       </action>
+      <action type="OPEN_DISPLAY">
+        <path>AlarmsHistory.opi</path>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+        </macros>
+        <mode>8</mode>
+        <description>Open in a new tab the Messages History</description>
+      </action>
     </actions>
     <border_alarm_sensitive>false</border_alarm_sensitive>
     <border_color>
@@ -66,7 +74,7 @@
     <border_width>2</border_width>
     <enabled>false</enabled>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="32" style="0">IO SubTitle</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="32" pixels="false" style="0">IO SubTitle</opifont.name>
     </font>
     <forecolor_alarm_sensitive>true</forecolor_alarm_sensitive>
     <foreground_color>

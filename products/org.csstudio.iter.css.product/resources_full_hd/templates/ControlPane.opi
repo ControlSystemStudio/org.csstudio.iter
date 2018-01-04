@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
-  <actions hook="false" hook_all="false" />
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <actions hook="false" hook_all="false"/>
   <auto_scale_widgets>
     <auto_scale_widgets>false</auto_scale_widgets>
     <min_width>-1</min_width>
@@ -8,11 +7,11 @@
   </auto_scale_widgets>
   <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
   <background_color>
-    <color name="IO Background" red="235" green="235" blue="235" />
+    <color blue="235" green="235" name="IO Background" red="235"/>
   </background_color>
   <boy_version>5.1.0.201704201523</boy_version>
   <foreground_color>
-    <color name="IO Grid" red="215" green="215" blue="215" />
+    <color blue="215" green="215" name="IO Grid" red="215"/>
   </foreground_color>
   <grid_space>1</grid_space>
   <height>471</height>
@@ -20,8 +19,8 @@
     <include_parent_macros>true</include_parent_macros>
   </macros>
   <name>Legend Faceplate</name>
-  <rules />
-  <scripts />
+  <rules/>
+  <scripts/>
   <show_close_button>true</show_close_button>
   <show_edit_range>true</show_edit_range>
   <show_grid>true</show_grid>
@@ -33,38 +32,38 @@
   <x>0</x>
   <y>0</y>
   <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
-    <actions hook="false" hook_all="false" />
+    <actions hook="false" hook_all="false"/>
     <background_color>
-      <color name="IO Background" red="235" green="235" blue="235" />
+      <color blue="235" green="235" name="IO Background" red="235"/>
     </background_color>
     <border_color>
-      <color name="IO Border" red="0" green="0" blue="0" />
+      <color blue="0" green="0" name="IO Border" red="0"/>
     </border_color>
     <border_style>0</border_style>
     <border_width>2</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="DejaVu Sans Mono" height="26" style="0" pixels="false">IO Label</opifont.name>
+      <opifont.name fontName="DejaVu Sans Mono" height="26" pixels="false" style="0">IO Label</opifont.name>
     </font>
     <foreground_color>
-      <color name="IO Foreground" red="0" green="0" blue="0" />
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
     </foreground_color>
-    <group_name></group_name>
+    <group_name/>
     <height>471</height>
     <macros>
       <include_parent_macros>true</include_parent_macros>
     </macros>
-    <name></name>
+    <name/>
     <opi_file>Legend.opi</opi_file>
     <resize_behaviour>2</resize_behaviour>
-    <rules />
+    <rules/>
     <scale_options>
       <width_scalable>false</width_scalable>
       <height_scalable>false</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
     <scripts>
-      <path pathString="scripts/LoadFaceplate.js" checkConnect="true" sfe="false" seoe="false">
+      <path checkConnect="true" pathString="scripts/LoadFaceplate.js" seoe="false" sfe="false">
         <pv trig="true">loc://$(DID)_FACEPLATE("")</pv>
         <pv trig="false">loc://$(DID)_OLD_COMPONENT("")</pv>
       </path>

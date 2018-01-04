@@ -17,7 +17,6 @@
   <height>880</height>
   <macros>
     <include_parent_macros>true</include_parent_macros>
-    <TITLE>Emtpy Canvas</TITLE>
   </macros>
   <name>${TITLE}</name>
   <rules/>
@@ -233,8 +232,9 @@
         <wuid>-1e0f3b69:149c8d6d12f:-4384</wuid>
         <x>0</x>
         <y>0</y>
-        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-          <actions hook="false" hook_all="false"/>
+        <widget typeId="org.csstudio.opibuilder.widgets.Image" version="1.0.0">
+          <actions hook="true" hook_all="true"/>
+          <align_to_nearest_second>true</align_to_nearest_second>
           <auto_size>false</auto_size>
           <background_color>
             <color blue="235" green="235" name="IO Background" red="235"/>
@@ -244,16 +244,34 @@
           </border_color>
           <border_style>0</border_style>
           <border_width>2</border_width>
-          <enabled>false</enabled>
+          <crop_bottom>0</crop_bottom>
+          <crop_left>0</crop_left>
+          <crop_right>0</crop_right>
+          <crop_top>0</crop_top>
+          <degree>0</degree>
+          <enabled>true</enabled>
+          <flip_horizontal>false</flip_horizontal>
+          <flip_vertical>false</flip_vertical>
           <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" pixels="false" style="0">IO Title</opifont.name>
+            <opifont.name fontName="DejaVu Sans Mono" height="26" pixels="false" style="0">IO Label</opifont.name>
           </font>
           <foreground_color>
             <color blue="0" green="0" name="IO Foreground" red="0"/>
           </foreground_color>
           <height>880</height>
-          <horizontal_alignment>1</horizontal_alignment>
-          <name>Static Data Layer</name>
+          <image_file>../templates/IterTokamak.png</image_file>
+          <name>Iter Tokamak</name>
+          <no_animation>false</no_animation>
+          <permutation_matrix>
+            <row>
+              <col>1.0</col>
+              <col>0.0</col>
+            </row>
+            <row>
+              <col>0.0</col>
+              <col>1.0</col>
+            </row>
+          </permutation_matrix>
           <rules/>
           <scale_options>
             <width_scalable>false</width_scalable>
@@ -261,17 +279,14 @@
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
           <scripts/>
-          <text>MAIN DISPLAY AREA - MIMIC
-Click on the "Show Info" tick box for more information</text>
-          <tooltip>$(name)</tooltip>
-          <transparent>true</transparent>
-          <vertical_alignment>1</vertical_alignment>
+          <stretch_to_fit>true</stretch_to_fit>
+          <tooltip/>
+          <transparency>false</transparency>
           <visible>true</visible>
-          <widget_type>Label</widget_type>
-          <width>1618</width>
-          <wrap_words>false</wrap_words>
-          <wuid>-1e0f3b69:149c8d6d12f:-4360</wuid>
-          <x>0</x>
+          <widget_type>Image</widget_type>
+          <width>999</width>
+          <wuid>678111d0:15e0ea5edb6:-7e7d</wuid>
+          <x>300</x>
           <y>0</y>
         </widget>
       </widget>
@@ -363,46 +378,6 @@ Click on the "Show Info" tick box for more information</text>
         <wuid>-1e0f3b69:149c8d6d12f:-432f</wuid>
         <x>0</x>
         <y>0</y>
-        <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-          <actions hook="false" hook_all="false"/>
-          <auto_size>true</auto_size>
-          <background_color>
-            <color blue="235" green="235" name="IO Background" red="235"/>
-          </background_color>
-          <border_color>
-            <color blue="0" green="0" name="IO Border" red="0"/>
-          </border_color>
-          <border_style>0</border_style>
-          <border_width>2</border_width>
-          <enabled>false</enabled>
-          <font>
-            <opifont.name fontName="DejaVu Sans Mono" height="36" pixels="false" style="0">IO Title</opifont.name>
-          </font>
-          <foreground_color>
-            <color blue="0" green="0" name="IO Foreground" red="0"/>
-          </foreground_color>
-          <height>20</height>
-          <horizontal_alignment>1</horizontal_alignment>
-          <name>Show/Hide Comment</name>
-          <rules/>
-          <scale_options>
-            <width_scalable>false</width_scalable>
-            <height_scalable>false</height_scalable>
-            <keep_wh_ratio>false</keep_wh_ratio>
-          </scale_options>
-          <scripts/>
-          <text>The information layer shall have a show/hide rule</text>
-          <tooltip>$(name)</tooltip>
-          <transparent>true</transparent>
-          <vertical_alignment>1</vertical_alignment>
-          <visible>true</visible>
-          <widget_type>Label</widget_type>
-          <width>539</width>
-          <wrap_words>false</wrap_words>
-          <wuid>-17ac9c77:14e0084b99a:2177</wuid>
-          <x>492</x>
-          <y>567</y>
-        </widget>
       </widget>
       <widget typeId="org.csstudio.opibuilder.widgets.checkbox" version="1.0.0">
         <actions hook="false" hook_all="false"/>
