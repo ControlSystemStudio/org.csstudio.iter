@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psic:template xmlns:psic="http://www.iter.org/CODAC/PlantSystemIandC/2015"
+               xmlns:units="urn:oasis:names:tc:unitsml:schema:xsd:UnitsMLSchema-1.0"
+               xmlns:epics="http://www.iter.org/CODAC/EPICS/2015"
+               xmlns:beast="http://www.iter.org/CODAC/BEAST/2012"
+               xmlns:ps="http://www.iter.org/CODAC/PlantSystem/2014"
+               xmlns:linux="http://www.iter.org/CODAC/Linux/2013"
+               xmlns:codac="http://www.iter.org/CODAC/CODACSystem/2013"
+               xmlns:beauty="http://www.iter.org/CODAC/BEAUTY/2012"
+               xmlns:boy="http://www.iter.org/CODAC/BOY/2012"
+               xmlns:pbs="http://www.iter.org/CODAC/PBS/2012"
+               xmlns:adm="http://www.iter.org/CODAC/Admin/2012"
+               xmlns:icp="http://www.iter.org/CODAC/ICP/2012"
+               xmlns:cat="http://www.iter.org/CODAC/Catalog/2010"
+               xmlns:hw="http://www.iter.org/CODAC/Hardware/2013"
+               xmlns:ns15="http://www.iter.org/CODAC/CLM/2014"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               CODACVersion="5.2.0"
+               XMLFormatVersion="5.2.0"
+               version="1"
+               createdAt="2016-01-28T11:52:51.132Z"
+               modifiedAt="2016-01-28T11:52:51.132Z"
+               savedAt="2016-01-28T11:52:51.132Z"
+               createdBy="utzeln"
+               modifiedBy="utzeln"
+               name="VLV_CTRL"
+               description="Control Valve Symbol"
+               userDefined="true"
+               system="false"
+               usesSubstitutionFiles="true"
+               xsi:schemaLocation="http://www.iter.org/CODAC/PlantSystemIandC/2015 ../xsd/PlantSystemIandC.xsd">
+   <psic:BOYLocation type="OPI_OBJECT">/opt/codac/opi/boy/industrial-control/Field/Objects/VLV_CTRL.opi</psic:BOYLocation>
+   <psic:variableTemplate name="$(COMPONENT)-ALRM" description="ALARM INDICATION"
+                          createdAt="2016-01-19T10:07:53.347Z"
+                          modifiedAt="2016-01-28T11:42:01.492Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>discrete multi-state</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="true">
+         <psic:samplingMode>monitor</psic:samplingMode>
+         <psic:samplingFrequency>1.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:controlsArchivingGroup>false</psic:controlsArchivingGroup>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-ALRM" type="mbbi" createdAt="2016-01-19T10:07:53.347Z"
+                           modifiedAt="2016-01-28T11:42:01.492Z">
+            <psic:EPICSField name="DESC" value="ALARM INDICATION"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-YENUMc"/>
+            <psic:EPICSField name="INP" value="0"/>
+            <psic:EPICSField name="ONST" value="T"/>
+            <psic:EPICSField name="ONSV" value="MAJOR"/>
+            <psic:EPICSField name="ONVL" value="1"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="TWST" value="I"/>
+            <psic:EPICSField name="TWSV" value="MAJOR"/>
+            <psic:EPICSField name="TWVL" value="2"/>
+            <psic:EPICSField name="ZRSV" value="NO_ALARM"/>
+            <psic:EPICSField name="ZRVL" value="0"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:BEASTAttributes>
+         <beast:pv name="$(COMPONENT)-ALRM">
+            <beast:description>$(TAG) {1} alarm</beast:description>
+            <beast:enabled>false</beast:enabled>
+            <beast:latching>true</beast:latching>
+            <beast:annunciating>false</beast:annunciating>
+            <beast:guidance>
+               <beast:title>Force the interlock</beast:title>
+               <beast:details>Force $(TAG) position in presence of interlock</beast:details>
+            </beast:guidance>
+         </beast:pv>
+      </psic:BEASTAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-ALRMc" description="ALARM INDICATION CALC"
+                          createdAt="2016-01-19T10:07:53.374Z"
+                          modifiedAt="2016-01-19T10:07:53.374Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>continuous</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-ALRMc" type="calcout" createdAt="2016-01-19T10:07:53.374Z"
+                           modifiedAt="2016-01-19T10:07:53.374Z">
+            <psic:EPICSField name="CALC" value="A?1:(B?2:0)"/>
+            <psic:EPICSField name="DESC" value="ALARM INDICATION CALC"/>
+            <psic:EPICSField name="INPA" value="$(COMPONENT)-TRIP MS"/>
+            <psic:EPICSField name="INPB" value="$(COMPONENT)-INTLK MS"/>
+            <psic:EPICSField name="OOPT" value="Every Time"/>
+            <psic:EPICSField name="OUT" value="$(COMPONENT)-ALRM PP MS"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-AUMD" description="AUTO MODE"
+                          createdAt="2016-01-19T10:07:53.525Z"
+                          modifiedAt="2016-01-19T10:07:53.525Z">
+      <psic:direction>configuration</psic:direction>
+      <psic:kind>discrete two-state</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>persistent</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-AUMD" type="bo" createdAt="2016-01-19T10:07:53.525Z"
+                           modifiedAt="2016-01-19T10:07:53.525Z">
+            <psic:EPICSField name="DESC" value="AUTO MODE"/>
+            <psic:EPICSField name="DOL" value="1"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-CTRLMDc"/>
+            <psic:EPICSField name="ONAM" value="ON"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="ZNAM" value="OFF"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-CO" description="OUTPUT VALUE"
+                          createdAt="2016-01-19T10:07:53.540Z"
+                          modifiedAt="2016-01-19T10:07:53.540Z">
+      <psic:direction>configuration</psic:direction>
+      <psic:kind>continuous</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>persistent</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-CO" type="ao" createdAt="2016-01-19T10:07:53.540Z"
+                           modifiedAt="2016-01-19T10:07:53.540Z">
+            <psic:EPICSField name="DESC" value="OUTPUT VALUE"/>
+            <psic:EPICSField name="DOL" value="40"/>
+            <psic:EPICSField name="DRVH" value="100"/>
+            <psic:EPICSField name="DRVL" value="0"/>
+            <psic:EPICSField name="EGU" value="%"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-YENUMc"/>
+            <psic:EPICSField name="HOPR" value="100"/>
+            <psic:EPICSField name="LOPR" value="0"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="PREC" value="2"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-COH" description="OPEN THRESHOLD"
+                          createdAt="2016-01-19T10:07:53.396Z"
+                          modifiedAt="2016-01-19T10:07:53.396Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>continuous</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-COH" type="ai" createdAt="2016-01-19T10:07:53.396Z"
+                           modifiedAt="2016-01-19T10:07:53.396Z">
+            <psic:EPICSField name="DESC" value="OPEN THRESHOLD"/>
+            <psic:EPICSField name="EGU" value="%"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-YENUMc"/>
+            <psic:EPICSField name="HOPR" value="100"/>
+            <psic:EPICSField name="INP" value="75"/>
+            <psic:EPICSField name="LOPR" value="0"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="PREC" value="2"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-COL" description="CLOSE THRESHOLD"
+                          createdAt="2016-01-19T10:07:53.407Z"
+                          modifiedAt="2016-01-19T10:07:53.407Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>continuous</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-COL" type="ai" createdAt="2016-01-19T10:07:53.407Z"
+                           modifiedAt="2016-01-19T10:07:53.407Z">
+            <psic:EPICSField name="DESC" value="CLOSE THRESHOLD"/>
+            <psic:EPICSField name="EGU" value="%"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-YENUMc"/>
+            <psic:EPICSField name="HOPR" value="100"/>
+            <psic:EPICSField name="INP" value="25"/>
+            <psic:EPICSField name="LOPR" value="0"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="PREC" value="2"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-CTRLMD" description="CONTROL MODE"
+                          createdAt="2016-01-19T10:07:53.409Z"
+                          modifiedAt="2016-01-19T10:07:53.409Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>discrete multi-state</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-CTRLMD" type="mbbi" createdAt="2016-01-19T10:07:53.409Z"
+                           modifiedAt="2016-01-19T10:07:53.409Z">
+            <psic:EPICSField name="DESC" value="CONTROL MODE"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-YENUMc"/>
+            <psic:EPICSField name="INP" value="0"/>
+            <psic:EPICSField name="ONST" value="F"/>
+            <psic:EPICSField name="ONVL" value="1"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="THST" value="M"/>
+            <psic:EPICSField name="THVL" value="3"/>
+            <psic:EPICSField name="TWST" value="L"/>
+            <psic:EPICSField name="TWVL" value="2"/>
+            <psic:EPICSField name="ZRVL" value="0"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-CTRLMDc" description="ALARM INDICATION CALC"
+                          createdAt="2016-01-19T10:07:53.428Z"
+                          modifiedAt="2016-01-19T10:07:53.428Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>continuous</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-CTRLMDc" type="calcout" createdAt="2016-01-19T10:07:53.428Z"
+                           modifiedAt="2016-01-19T10:07:53.428Z">
+            <psic:EPICSField name="CALC" value="A?1:(B?2:(C?3)):0"/>
+            <psic:EPICSField name="DESC" value="ALARM INDICATION CALC"/>
+            <psic:EPICSField name="INPA" value="$(COMPONENT)-FOMD MS"/>
+            <psic:EPICSField name="INPB" value="$(COMPONENT)-LOMD MS"/>
+            <psic:EPICSField name="INPC" value="$(COMPONENT)-MAMD MS"/>
+            <psic:EPICSField name="INPD" value="$(COMPONENT)-AUMD MS"/>
+            <psic:EPICSField name="OOPT" value="Every Time"/>
+            <psic:EPICSField name="OUT" value="$(COMPONENT)-CTRLMD PP MS"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-DQ" description="DATA QUALITY"
+                          createdAt="2016-01-19T10:07:53.443Z"
+                          modifiedAt="2016-01-28T11:45:36.163Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>discrete multi-state</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="true">
+         <psic:samplingMode>monitor</psic:samplingMode>
+         <psic:samplingFrequency>1.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:controlsArchivingGroup>false</psic:controlsArchivingGroup>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-DQ" type="mbbi" createdAt="2016-01-19T10:07:53.443Z"
+                           modifiedAt="2016-01-28T11:45:36.163Z">
+            <psic:EPICSField name="DESC" value="DATA QUALITY"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-YENUMc"/>
+            <psic:EPICSField name="INP" value="0"/>
+            <psic:EPICSField name="ONST" value="E"/>
+            <psic:EPICSField name="ONSV" value="INVALID"/>
+            <psic:EPICSField name="ONVL" value="1"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="TWST" value="S"/>
+            <psic:EPICSField name="TWSV" value="MINOR"/>
+            <psic:EPICSField name="TWVL" value="2"/>
+            <psic:EPICSField name="ZRSV" value="NO_ALARM"/>
+            <psic:EPICSField name="ZRVL" value="0"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:BEASTAttributes>
+         <beast:pv name="$(COMPONENT)-DQ">
+            <beast:description>$(TAG) {1} data quality</beast:description>
+            <beast:enabled>false</beast:enabled>
+            <beast:latching>true</beast:latching>
+            <beast:annunciating>false</beast:annunciating>
+            <beast:guidance>
+               <beast:title>Force the I/O</beast:title>
+               <beast:details>Put the I/O of $(TAG) in simulation mode - the hardware I/Os measured values will be substituted with simulated values</beast:details>
+            </beast:guidance>
+         </beast:pv>
+      </psic:BEASTAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-DQc" description="DATA QUALITY CALC"
+                          createdAt="2016-01-19T10:07:53.453Z"
+                          modifiedAt="2016-01-19T10:07:53.453Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>continuous</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-DQc" type="calcout" createdAt="2016-01-19T10:07:53.453Z"
+                           modifiedAt="2016-01-19T10:07:53.453Z">
+            <psic:EPICSField name="CALC" value="A?1:(B?2:0)"/>
+            <psic:EPICSField name="DESC" value="DATA QUALITY CALC"/>
+            <psic:EPICSField name="INPA" value="$(COMPONENT)-IOERR MS"/>
+            <psic:EPICSField name="INPB" value="$(COMPONENT)-IOSIM MS"/>
+            <psic:EPICSField name="OOPT" value="Every Time"/>
+            <psic:EPICSField name="OUT" value="$(COMPONENT)-DQ PP MS"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-FB" description="FEEDBACK"
+                          createdAt="2016-01-19T10:07:53.463Z"
+                          modifiedAt="2016-01-19T10:07:53.463Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>continuous</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-FB" type="ai" createdAt="2016-01-19T10:07:53.463Z"
+                           modifiedAt="2016-01-19T10:07:53.463Z">
+            <psic:EPICSField name="DESC" value="FEEDBACK"/>
+            <psic:EPICSField name="EGU" value="%"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-YENUMc"/>
+            <psic:EPICSField name="HOPR" value="100"/>
+            <psic:EPICSField name="INP" value="40"/>
+            <psic:EPICSField name="LOPR" value="0"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="PREC" value="2"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-FOMD" description="FORCE MODE"
+                          createdAt="2016-01-19T10:07:53.558Z"
+                          modifiedAt="2016-01-19T10:07:53.558Z">
+      <psic:direction>configuration</psic:direction>
+      <psic:kind>discrete two-state</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>persistent</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-FOMD" type="bo" createdAt="2016-01-19T10:07:53.558Z"
+                           modifiedAt="2016-01-19T10:07:53.558Z">
+            <psic:EPICSField name="DESC" value="FORCE MODE"/>
+            <psic:EPICSField name="DOL" value="0"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-CTRLMDc"/>
+            <psic:EPICSField name="ONAM" value="ON"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="ZNAM" value="OFF"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-INTLK" description="CONVENTIONAL INTERLOCK"
+                          createdAt="2016-01-19T10:07:53.465Z"
+                          modifiedAt="2016-01-19T10:07:53.465Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>discrete two-state</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-INTLK" type="bi" createdAt="2016-01-19T10:07:53.465Z"
+                           modifiedAt="2016-01-19T10:07:53.465Z">
+            <psic:EPICSField name="DESC" value="CONVENTIONAL INTERLOCK"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-ALRMc"/>
+            <psic:EPICSField name="INP" value="0"/>
+            <psic:EPICSField name="ONAM" value="INTERLOCK"/>
+            <psic:EPICSField name="OSV" value="MAJOR"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="SCAN" value="1 second"/>
+            <psic:EPICSField name="ZNAM" value="NO INTERLOCK"/>
+            <psic:EPICSField name="ZSV" value="NO_ALARM"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-IOERR" description="IO ERROR"
+                          createdAt="2016-01-19T10:07:53.481Z"
+                          modifiedAt="2016-01-19T10:07:53.481Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>discrete two-state</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-IOERR" type="bi" createdAt="2016-01-19T10:07:53.481Z"
+                           modifiedAt="2016-01-19T10:07:53.481Z">
+            <psic:EPICSField name="DESC" value="IO ERROR"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-DQc"/>
+            <psic:EPICSField name="INP" value="0"/>
+            <psic:EPICSField name="ONAM" value="IO ERROR"/>
+            <psic:EPICSField name="OSV" value="INVALID"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="SCAN" value="1 second"/>
+            <psic:EPICSField name="ZNAM" value="IO OK"/>
+            <psic:EPICSField name="ZSV" value="NO_ALARM"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-IOSIM" description="IO SIMULATED"
+                          createdAt="2016-01-19T10:07:53.489Z"
+                          modifiedAt="2016-01-19T10:07:53.489Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>discrete two-state</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-IOSIM" type="bi" createdAt="2016-01-19T10:07:53.489Z"
+                           modifiedAt="2016-01-19T10:07:53.489Z">
+            <psic:EPICSField name="DESC" value="IO SIMULATED"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-DQc"/>
+            <psic:EPICSField name="INP" value="0"/>
+            <psic:EPICSField name="ONAM" value="IO SIMULATED"/>
+            <psic:EPICSField name="OSV" value="MINOR"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="SCAN" value="1 second"/>
+            <psic:EPICSField name="ZNAM" value="IO CONNECTED"/>
+            <psic:EPICSField name="ZSV" value="NO_ALARM"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-LOMD" description="LOCAL MODE"
+                          createdAt="2016-01-19T10:07:53.574Z"
+                          modifiedAt="2016-01-19T10:07:53.574Z">
+      <psic:direction>configuration</psic:direction>
+      <psic:kind>discrete two-state</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>persistent</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-LOMD" type="bo" createdAt="2016-01-19T10:07:53.574Z"
+                           modifiedAt="2016-01-19T10:07:53.574Z">
+            <psic:EPICSField name="DESC" value="LOCAL MODE"/>
+            <psic:EPICSField name="DOL" value="0"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-CTRLMDc"/>
+            <psic:EPICSField name="ONAM" value="ON"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="ZNAM" value="OFF"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-MAMD" description="MANUAL MODE"
+                          createdAt="2016-01-19T10:07:53.585Z"
+                          modifiedAt="2016-01-19T10:07:53.585Z">
+      <psic:direction>configuration</psic:direction>
+      <psic:kind>discrete two-state</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>persistent</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-MAMD" type="bo" createdAt="2016-01-19T10:07:53.585Z"
+                           modifiedAt="2016-01-19T10:07:53.585Z">
+            <psic:EPICSField name="DESC" value="MANUAL MODE"/>
+            <psic:EPICSField name="DOL" value="0"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-CTRLMDc"/>
+            <psic:EPICSField name="ONAM" value="ON"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="ZNAM" value="OFF"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-TRIP" description="PIS INTERLOCK"
+                          createdAt="2016-01-19T10:07:53.497Z"
+                          modifiedAt="2016-01-19T10:07:53.497Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>discrete two-state</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-TRIP" type="bi" createdAt="2016-01-19T10:07:53.497Z"
+                           modifiedAt="2016-01-19T10:07:53.497Z">
+            <psic:EPICSField name="DESC" value="PIS INTERLOCK"/>
+            <psic:EPICSField name="FLNK" value="$(COMPONENT)-ALRMc"/>
+            <psic:EPICSField name="INP" value="0"/>
+            <psic:EPICSField name="ONAM" value="TRIPPED"/>
+            <psic:EPICSField name="OSV" value="MAJOR"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="SCAN" value="1 second"/>
+            <psic:EPICSField name="ZNAM" value="NON TRIPPED"/>
+            <psic:EPICSField name="ZSV" value="NO_ALARM"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-YENUM" description="$(TAG)"
+                          createdAt="2016-01-19T10:07:53.506Z"
+                          modifiedAt="2016-01-19T10:07:53.506Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>discrete multi-state</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-YENUM" type="mbbi" createdAt="2016-01-19T10:07:53.506Z"
+                           modifiedAt="2016-01-19T10:07:53.506Z">
+            <psic:EPICSField name="DESC" value="$(TAG)"/>
+            <psic:EPICSField name="FRST" value="HALF-OPEN"/>
+            <psic:EPICSField name="FRVL" value="4"/>
+            <psic:EPICSField name="INP" value="1"/>
+            <psic:EPICSField name="ONST" value="OPEN"/>
+            <psic:EPICSField name="ONVL" value="1"/>
+            <psic:EPICSField name="PINI" value="YES"/>
+            <psic:EPICSField name="THST" value="CLOSING"/>
+            <psic:EPICSField name="THVL" value="3"/>
+            <psic:EPICSField name="TWST" value="OPENING"/>
+            <psic:EPICSField name="TWVL" value="2"/>
+            <psic:EPICSField name="ZRST" value="CLOSED"/>
+            <psic:EPICSField name="ZRVL" value="0"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:variableTemplate name="$(COMPONENT)-YENUMc" description="DATA QUALITY CALC"
+                          createdAt="2016-01-19T10:07:53.515Z"
+                          modifiedAt="2016-01-19T10:07:53.515Z">
+      <psic:direction>state</psic:direction>
+      <psic:kind>continuous</psic:kind>
+      <psic:external>true</psic:external>
+      <psic:raisesAlarm>false</psic:raisesAlarm>
+      <psic:archivingInfo enabled="false">
+         <psic:samplingFrequency>0.0</psic:samplingFrequency>
+      </psic:archivingInfo>
+      <psic:storage>volatile</psic:storage>
+      <psic:presentOnScreens>true</psic:presentOnScreens>
+      <psic:displayIndex>0</psic:displayIndex>
+      <psic:EPICSAttributes>
+         <psic:EPICSRecord name="$(COMPONENT)-YENUMc" type="calcout" createdAt="2016-01-19T10:07:53.515Z"
+                           modifiedAt="2016-01-19T10:07:53.515Z">
+            <psic:EPICSField name="CALC" value="A&gt;B?1:(A&lt;C?0:(D&gt;B?2:(D&lt;C?3))):4"/>
+            <psic:EPICSField name="DESC" value="DATA QUALITY CALC"/>
+            <psic:EPICSField name="INPA" value="$(COMPONENT)-FB MS"/>
+            <psic:EPICSField name="INPB" value="$(COMPONENT)-COH MS"/>
+            <psic:EPICSField name="INPC" value="$(COMPONENT)-COL MS"/>
+            <psic:EPICSField name="INPD" value="$(COMPONENT)-CO MS"/>
+            <psic:EPICSField name="INPE" value="$(COMPONENT)-DQ MS"/>
+            <psic:EPICSField name="INPF" value="$(COMPONENT)-ALRM MS"/>
+            <psic:EPICSField name="OOPT" value="Every Time"/>
+            <psic:EPICSField name="OUT" value="$(COMPONENT)-YENUM PP MS"/>
+         </psic:EPICSRecord>
+      </psic:EPICSAttributes>
+      <psic:PULSEAttributes>
+         <psic:attribute name="isConfiguredByPulseScheduling">
+            <psic:value>false</psic:value>
+         </psic:attribute>
+      </psic:PULSEAttributes>
+   </psic:variableTemplate>
+   <psic:macroGroup ID="USER">
+      <psic:macro name="COMPONENT" description=" obejct instance name" value="N.P"/>
+   </psic:macroGroup>
+</psic:template>
