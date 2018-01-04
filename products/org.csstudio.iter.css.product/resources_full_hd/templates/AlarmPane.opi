@@ -9,7 +9,7 @@
   <background_color>
     <color blue="235" green="235" name="IO Background" red="235"/>
   </background_color>
-  <boy_version>5.1.0.201712131659</boy_version>
+  <boy_version>5.1.0.201801030834</boy_version>
   <foreground_color>
     <color blue="215" green="215" name="IO Grid" red="215"/>
   </foreground_color>
@@ -84,7 +84,19 @@
     </tab_1_foreground_color>
     <tab_1_icon_path/>
     <tab_1_title>HISTORY</tab_1_title>
-    <tab_count>2</tab_count>
+    <tab_2_background_color>
+      <color blue="235" green="235" name="IO Background" red="235"/>
+    </tab_2_background_color>
+    <tab_2_enabled>true</tab_2_enabled>
+    <tab_2_font>
+      <opifont.name fontName="DejaVu Sans Mono" height="26" pixels="false" style="0">IO Label</opifont.name>
+    </tab_2_font>
+    <tab_2_foreground_color>
+      <color blue="0" green="0" name="IO Foreground" red="0"/>
+    </tab_2_foreground_color>
+    <tab_2_icon_path/>
+    <tab_2_title>PV WRITE</tab_2_title>
+    <tab_count>3</tab_count>
     <tooltip>20 first active alarms on ${ALARM_ROOT}</tooltip>
     <visible>true</visible>
     <widget_type>Tabbed Container</widget_type>
@@ -227,7 +239,7 @@
       <show_scrollbar>false</show_scrollbar>
       <tooltip/>
       <transparent>true</transparent>
-      <visible>true</visible>
+      <visible>false</visible>
       <widget_type>Grouping Container</widget_type>
       <width>284</width>
       <wuid>42b3d6a:1604b5dbfc7:-6ed9</wuid>
@@ -288,6 +300,105 @@
         <widget_type>Message history</widget_type>
         <width>284</width>
         <wuid>42b3d6a:1604b5dbfc7:-6ea9</wuid>
+        <x>0</x>
+        <y>0</y>
+      </widget>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+      <actions hook="false" hook_all="false"/>
+      <background_color>
+        <color blue="240" green="240" red="240"/>
+      </background_color>
+      <border_color>
+        <color blue="255" green="128" red="0"/>
+      </border_color>
+      <border_style>0</border_style>
+      <border_width>1</border_width>
+      <enabled>true</enabled>
+      <fc>false</fc>
+      <font>
+        <opifont.name fontName="DejaVu Sans Mono" height="26" pixels="false" style="0">Default</opifont.name>
+      </font>
+      <foreground_color>
+        <color blue="192" green="192" red="192"/>
+      </foreground_color>
+      <height>476</height>
+      <lock_children>false</lock_children>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+      </macros>
+      <name>PV WRITE</name>
+      <rules/>
+      <scale_options>
+        <width_scalable>true</width_scalable>
+        <height_scalable>true</height_scalable>
+        <keep_wh_ratio>false</keep_wh_ratio>
+      </scale_options>
+      <scripts/>
+      <show_scrollbar>true</show_scrollbar>
+      <tooltip/>
+      <transparent>true</transparent>
+      <visible>true</visible>
+      <widget_type>Grouping Container</widget_type>
+      <width>284</width>
+      <wuid>-7215b3dc:160c164d544:-5f5a</wuid>
+      <x>0</x>
+      <y>0</y>
+      <widget typeId="org.csstudio.alarm.beast.msghist" version="1.0.0">
+        <actions hook="false" hook_all="false"/>
+        <background_color>
+          <color blue="235" green="235" name="IO Background" red="235"/>
+        </background_color>
+        <border_color>
+          <color blue="0" green="0" name="IO Border" red="0"/>
+        </border_color>
+        <border_style>0</border_style>
+        <border_width>1</border_width>
+        <column_headers>true</column_headers>
+        <columns>
+          <column name="TIME" visible="true" weight="10" width="140"/>
+          <column name="TEXT" visible="true" weight="400" width="1600"/>
+          <column name="DELTA" visible="false" weight="1" width="150"/>
+          <column name="TYPE" visible="false" weight="5" width="120"/>
+          <column name="FILENAME" visible="false" weight="10" width="50"/>
+          <column name="CLASS" visible="false" weight="10" width="50"/>
+          <column name="APPLICATION-ID" visible="false" weight="10" width="220"/>
+          <column name="HOST" visible="false" weight="40" width="280"/>
+          <column name="USER" visible="false" weight="10" width="120"/>
+          <column name="CREATETIME" visible="false" weight="50" width="300"/>
+          <column name="SEQ" visible="false" weight="5" width="60"/>
+          <column name="NAME" visible="false" weight="100" width="500"/>
+          <column name="CURRENT_SEVERITY" visible="false" weight="80" width="300"/>
+          <column name="VALUE" visible="false" weight="50" width="300"/>
+          <column name="STATUS" visible="false" weight="80" width="170"/>
+          <column name="SEVERITY" visible="false" weight="80" width="170"/>
+        </columns>
+        <enabled>true</enabled>
+        <filter>START_TIME=-1 day AND END_TIME=now AND TEXT = %${ALARM_FILTER}%</filter>
+        <font>
+          <opifont.name fontName="DejaVu Sans Mono" height="26" pixels="false" style="0">IO Label</opifont.name>
+        </font>
+        <foreground_color>
+          <color blue="0" green="0" name="IO Foreground" red="0"/>
+        </foreground_color>
+        <height>447</height>
+        <max_messages>10000</max_messages>
+        <name>Message History PV Write</name>
+        <rules/>
+        <scale_options>
+          <width_scalable>false</width_scalable>
+          <height_scalable>false</height_scalable>
+          <keep_wh_ratio>false</keep_wh_ratio>
+        </scale_options>
+        <scripts/>
+        <sort_ascending>true</sort_ascending>
+        <sorting_column>0</sorting_column>
+        <time_format>HH:mm:ss</time_format>
+        <tooltip>List of messages from history</tooltip>
+        <visible>true</visible>
+        <widget_type>Message history</widget_type>
+        <width>284</width>
+        <wuid>-7215b3dc:160c164d544:-6091</wuid>
         <x>0</x>
         <y>0</y>
       </widget>
