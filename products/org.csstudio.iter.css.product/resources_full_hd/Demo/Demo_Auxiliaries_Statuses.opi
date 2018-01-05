@@ -10,7 +10,7 @@
   <background_color>
     <color name="IO Background" red="235" green="235" blue="235" />
   </background_color>
-  <boy_version>5.1.0.201704201523</boy_version>
+  <boy_version>5.1.0.201801030834</boy_version>
   <foreground_color>
     <color name="IO Grid" red="215" green="215" blue="215" />
   </foreground_color>
@@ -650,7 +650,39 @@
               <on_state></on_state>
               <pv_name>sim://const(1)</pv_name>
               <pv_value />
-              <rules />
+              <rules>
+                <rule name="Alarm LED ON State Color" prop_id="on_color" out_exp="false">
+                  <exp bool_exp="pv0== 0">
+                    <value>
+                      <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv0== 1">
+                    <value>
+                      <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv0== 2">
+                    <value>
+                      <color name="IO High Level Alarm" red="250" green="12" blue="14" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv0== 3">
+                    <value>
+                      <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+                    </value>
+                  </exp>
+                  <pv trig="true">$(pv_name).SEVR</pv>
+                </rule>
+                <rule name="Alarm LED OFF State Color" prop_id="off_color" out_exp="false">
+                  <exp bool_exp="pv0== 3">
+                    <value>
+                      <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+                    </value>
+                  </exp>
+                  <pv trig="true">$(pv_name).SEVR</pv>
+                </rule>
+              </rules>
               <scale_options>
                 <width_scalable>false</width_scalable>
                 <height_scalable>false</height_scalable>
@@ -792,7 +824,39 @@ $(pv_value)</tooltip>
               <on_state></on_state>
               <pv_name>sim://const(0)</pv_name>
               <pv_value />
-              <rules />
+              <rules>
+                <rule name="Alarm LED ON State Color" prop_id="on_color" out_exp="false">
+                  <exp bool_exp="pv0== 0">
+                    <value>
+                      <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv0== 1">
+                    <value>
+                      <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv0== 2">
+                    <value>
+                      <color name="IO High Level Alarm" red="250" green="12" blue="14" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv0== 3">
+                    <value>
+                      <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+                    </value>
+                  </exp>
+                  <pv trig="true">$(pv_name).SEVR</pv>
+                </rule>
+                <rule name="Alarm LED OFF State Color" prop_id="off_color" out_exp="false">
+                  <exp bool_exp="pv0== 3">
+                    <value>
+                      <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+                    </value>
+                  </exp>
+                  <pv trig="true">$(pv_name).SEVR</pv>
+                </rule>
+              </rules>
               <scale_options>
                 <width_scalable>false</width_scalable>
                 <height_scalable>false</height_scalable>
@@ -934,7 +998,39 @@ $(pv_value)</tooltip>
               <on_state></on_state>
               <pv_name>sim://const(1)</pv_name>
               <pv_value />
-              <rules />
+              <rules>
+                <rule name="Alarm LED ON State Color" prop_id="on_color" out_exp="false">
+                  <exp bool_exp="pv0== 0">
+                    <value>
+                      <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv0== 1">
+                    <value>
+                      <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv0== 2">
+                    <value>
+                      <color name="IO High Level Alarm" red="250" green="12" blue="14" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv0== 3">
+                    <value>
+                      <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+                    </value>
+                  </exp>
+                  <pv trig="true">$(pv_name).SEVR</pv>
+                </rule>
+                <rule name="Alarm LED OFF State Color" prop_id="off_color" out_exp="false">
+                  <exp bool_exp="pv0== 3">
+                    <value>
+                      <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+                    </value>
+                  </exp>
+                  <pv trig="true">$(pv_name).SEVR</pv>
+                </rule>
+              </rules>
               <scale_options>
                 <width_scalable>false</width_scalable>
                 <height_scalable>false</height_scalable>
@@ -1076,7 +1172,39 @@ $(pv_value)</tooltip>
               <on_state></on_state>
               <pv_name>sim://const(0)</pv_name>
               <pv_value />
-              <rules />
+              <rules>
+                <rule name="Alarm LED ON State Color" prop_id="on_color" out_exp="false">
+                  <exp bool_exp="pv0== 0">
+                    <value>
+                      <color name="IO Normal Level Alarm" red="0" green="255" blue="0" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv0== 1">
+                    <value>
+                      <color name="IO Medium Level Alarm" red="255" green="255" blue="0" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv0== 2">
+                    <value>
+                      <color name="IO High Level Alarm" red="250" green="12" blue="14" />
+                    </value>
+                  </exp>
+                  <exp bool_exp="pv0== 3">
+                    <value>
+                      <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+                    </value>
+                  </exp>
+                  <pv trig="true">$(pv_name).SEVR</pv>
+                </rule>
+                <rule name="Alarm LED OFF State Color" prop_id="off_color" out_exp="false">
+                  <exp bool_exp="pv0== 3">
+                    <value>
+                      <color name="IO Invalid Level Alarm" red="255" green="0" blue="255" />
+                    </value>
+                  </exp>
+                  <pv trig="true">$(pv_name).SEVR</pv>
+                </rule>
+              </rules>
               <scale_options>
                 <width_scalable>false</width_scalable>
                 <height_scalable>false</height_scalable>
