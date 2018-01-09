@@ -15,44 +15,50 @@ importPackage(Packages.org.csstudio.opibuilder.persistence);
 importPackage(Packages.java.lang)
 
 // getting the input xml file path
-var widgets_xml = widget.getMacroValue("INPUT");
-
-// loading XML document and getting the root element
-// the result is a JDOM Element
-var root = FileUtil.loadXMLFile(widgets_xml, widget);
-
-var boolSymbolModel = widget.getWidget("BoolSymbolModel");
-var multiSymbolModel = widget.getWidget("MultiSymbolModel");
-var labelModel = widget.getWidget("LabelModel");
-var boolSymbolWidgetXML = XMLUtil.widgetToXMLString(boolSymbolModel.getWidgetModel(), false);
-var multiSymbolWidgetXML = XMLUtil.widgetToXMLString(multiSymbolModel.getWidgetModel(), false);
-var labelWidgetXML = XMLUtil.widgetToXMLString(labelModel.getWidgetModel(), false);
-
-var widgetsList = root.getChildren();
-
-// iterating over all children in XML
-var itr = widgetsList.iterator();
-var currentSymbol = null;
-var currentLabel = null;
-while (itr.hasNext()) 
-{
-	var elt = itr.next();
-	var statesCount = elt.getAttributeValue("statesCount");
-	if(statesCount <= 2) {
-		currentSymbol = XMLUtil.fillWidgetsFromXMLString(boolSymbolWidgetXML, null);
-	} else {
-		currentSymbol = XMLUtil.fillWidgetsFromXMLString(multiSymbolWidgetXML, null);
+var widgets_xml = widget.getMacroValue("SYMBOLS_XML");
+if (widgets_xml != "NONE") {
+	
+	// loading XML document and getting the root element
+	// the result is a JDOM Element
+	var root = FileUtil.loadXMLFile(widgets_xml, widget);
+	
+	var boolSymbolModel = widget.getWidget("BoolSymbolModel");
+	var multiSymbolModel = widget.getWidget("MultiSymbolModel");
+	var labelModel = widget.getWidget("LabelModel");
+	var boolSymbolWidgetXML = XMLUtil.widgetToXMLString(boolSymbolModel.getWidgetModel(), false);
+	var multiSymbolWidgetXML = XMLUtil.widgetToXMLString(multiSymbolModel.getWidgetModel(), false);
+	var labelWidgetXML = XMLUtil.widgetToXMLString(labelModel.getWidgetModel(), false);
+	
+	var widgetsList = root.getChildren();
+	
+	// iterating over all children in XML
+	var itr = widgetsList.iterator();
+	var currentSymbol = null;
+	var currentLabel = null;
+	while (itr.hasNext()) 
+	{
+		var elt = itr.next();
+		var statesCount = elt.getAttributeValue("statesCount");
+		if(statesCount <= 2) {
+			currentSymbol = XMLUtil.fillWidgetsFromXMLString(boolSymbolWidgetXML, null);
+		} else {
+			currentSymbol = XMLUtil.fillWidgetsFromXMLString(multiSymbolWidgetXML, null);
+		}
+		currentLabel = XMLUtil.fillWidgetsFromXMLString(labelWidgetXML, null);
+	
+		setSymbol(currentSymbol, elt);
+		setLabel(currentLabel, elt.getChildren().get(0));
+	
+		widget.addChild(currentSymbol);
+		widget.addChild(currentLabel);
 	}
-	currentLabel = XMLUtil.fillWidgetsFromXMLString(labelWidgetXML, null);
-
-	setSymbol(currentSymbol, elt);
-	setLabel(currentLabel, elt.getChildren().get(0));
-
-	widget.addChild(currentSymbol);
-	widget.addChild(currentLabel);
+	
+	widget.setPropertyValue("show_scrollbar", "true");
+	widget.removeChildByName("DefaultComment");
+} else {
+	widget.getWidget("DefaultComment").setPropertyValue("visible", "true");
 }
 
-widget.setPropertyValue("show_scrollbar", "true");
 
 function setSymbol(symbol, elt) {
 	symbol.setPropertyValue("name", elt.getAttributeValue("name"));
@@ -64,6 +70,8 @@ function setSymbol(symbol, elt) {
 	if(statesCount > 2) {
 		symbol.setPropertyValue("pv_name", "sim://ramp(0," + (statesCount-1) + ",1,5)");
 	}
+	symbol.setPropertyValue("tooltip", "$(pv_name) $(pv_value)");
+	symbol.setPropertyValue("visible", "true");
 }
 
 function setLabel(label, elt) {
@@ -73,4 +81,5 @@ function setLabel(label, elt) {
 	label.setPropertyValue("width", elt.getAttributeValue("width"));
 	label.setPropertyValue("x", elt.getAttributeValue("x"));
 	label.setPropertyValue("y", elt.getAttributeValue("y"));
+	label.setPropertyValue("visible", "true");
 }

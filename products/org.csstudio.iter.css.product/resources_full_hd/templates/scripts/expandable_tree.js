@@ -15,10 +15,19 @@ importPackage(Packages.java.lang)
 
 	var resolution_4k = widget.getPropertyValue("width") > 3000;
 	var INDENT_WIDTH = resolution_4k ? 100 : 50;
+	var HEIGHT = resolution_4k ? 36 : 18;
 
 	// getting the current cbs level for this screen
-	var current_level = widget.getMacroValue("LEVEL");
-	var level = "";
+	var current_level = (widget.getMacroValue("LEVEL") == null ? "" : widget.getMacroValue("LEVEL").toUpperCase());
+	var path = "";
+
+	// getting if a canvas (frame) OPI is used to load mimics OPI
+	var canvas_opi = widget.getMacroValue("CANVAS_OPI");
+	var opi_macro = "MIMIC_FILE";
+	if (canvas_opi == null || canvas_opi.toUpperCase() != "TRUE") {
+		canvas_opi = "FALSE";
+		opi_macro = "OPI_FILE";
+	}
 
 	// getting the input xml file path
 	var xml_input = widget.getMacroValue("INPUT");
@@ -26,6 +35,7 @@ importPackage(Packages.java.lang)
 	if (xml_input == null) {
 		xml_input = "../navigation/Navigation.xml";
 	}
+	
 	// loading XML document and getting the root element
 	// the result is a JDOM Element
 	var root = FileUtil.loadXMLFile(xml_input, widget);
@@ -38,63 +48,57 @@ importPackage(Packages.java.lang)
 
 // recursive list function on CBS tree
 function buildCBSMap(root, indent){
-
+	var WIDTH = resolution_4k ? 3200 - indent * INDENT_WIDTH : 1600 - indent * INDENT_WIDTH;
 	var upLevel = "";
+	var cbs = root.getChildren();
+	if (cbs) {
+		var itr = cbs.iterator();	
+		while (itr.hasNext()) {
+		    var elt = itr.next();
+		        
+		    // creating the container for the node 
+			var linkingContainer = WidgetUtil.createWidgetModel("org.csstudio.opibuilder.widgets.linkingContainer");
+				
+			linkingContainer.setPropertyValue("opi_file", "CBSMapElt.opi");
+			linkingContainer.setPropertyValue("border_style", 0);
 	
-	var cbs = root.getChildren();	
-	
-	var itr = cbs.iterator();
-	
-	while (itr.hasNext()) {
-	    var elt = itr.next();
-	        
-	    // creating the container for the node 
-		var linkingContainer = WidgetUtil.createWidgetModel("org.csstudio.opibuilder.widgets.linkingContainer");
-			
-		linkingContainer.setPropertyValue("opi_file", "CBSMapElt.opi");
-		linkingContainer.setPropertyValue("border_style", 0);
-
-		linkingContainer.setPropertyValue("height", resolution_4k ? 92 : 46);
-		linkingContainer.setPropertyValue("width", resolution_4k ? 3200 - indent * INDENT_WIDTH : 1600 - indent * INDENT_WIDTH);
-	    
-	    // no indent needed for root 
-	    if (indent > 0) {
+			linkingContainer.setPropertyValue("height", HEIGHT);
+			linkingContainer.setPropertyValue("width", WIDTH);    
 			linkingContainer.setPropertyValue("x", indent * INDENT_WIDTH);
-	    }
-	    
-	    if (isEltCurrentCBS(elt)) {
-			linkingContainer.setPropertyValue("background_color", "IO Grid");
-	    } else {
-			linkingContainer.setPropertyValue("background_color", "IO Background");
-	    }
-		
-		linkingContainer.setPropertyValue("tooltip", "Click on the OPIs map menu button and select which OPI to open");
-		
-	    // adding macros CBS and OPI_FILE to the container
-		linkingContainer.addMacro("CBS", elt.getAttributeValue("name"));
-
-		upLevel = level;
-		level += elt.getAttributeValue("name");
-		linkingContainer.addMacro("CBS_PATH", level);	
-
-		linkingContainer.addMacro("OPI_FILE", getOPI_FILE(elt));	
-		linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
-		addOPImacros(linkingContainer, elt);	
-
-	    // adding the container to the parent widget 
-	    widget.addChildToBottom(linkingContainer);
+		    
+		    if (currentCBS(elt)) {
+				linkingContainer.setPropertyValue("background_color", "IO Grid");
+		    }
+			
+			linkingContainer.setPropertyValue("tooltip", "Click on the OPIs map menu button and select which OPI to open");
+			
+		    // adding macros CBS and OPI_FILE to the container
+			var cbs_name = elt.getAttributeValue("name").toUpperCase();
+			linkingContainer.addMacro("CBS", cbs_name);
+			
+			upLevel = path;
+			path = (path == "" ? cbs_name : path + "-" + cbs_name);
+			linkingContainer.addMacro("CBS_PATH", path);	
 	
-		// setting the CBS label properties
-	 	var button = widget.getWidget(level);
-	 	button.setPropertyValue("enabled", elt.getAttributeValue("enabled"));
-	 	button.setPropertyValue("tooltip", elt.getAttributeValue("description") + " ($(number_alarms) alarm(s))");
-
-		buildCBSMap(elt, indent+1);
-		level = upLevel;
- 	}
+			linkingContainer.addMacro(opi_macro, getOPI_FILE(elt));	
+			linkingContainer.addMacro("ALARM_ROOT", getALARM_ROOT(elt));	
+			addOPImacros(linkingContainer, elt);	
+	
+		    // adding the container to the parent widget 
+		    widget.addChildToBottom(linkingContainer);
+		
+			// setting the CBS label properties
+		 	var button = widget.getWidget(path);
+		 	button.setPropertyValue("enabled", elt.getAttributeValue("enabled"));
+		 	button.setPropertyValue("tooltip", elt.getAttributeValue("description") + " ($(number_alarms) alarm(s))");
+	
+			buildCBSMap(elt, indent+1);
+			path = upLevel;
+	 	}
+	}
 }
 
-function isEltCurrentCBS(elt) {
+function currentCBS(elt) {
 	var attribute = elt.getAttributeValue("opi_file");
 	if (attribute) {
 		var words = attribute.split(" ");
@@ -126,9 +130,7 @@ function getOPI_FILE(elt) {
 }
 
 function getALARM_ROOT(elt) {
-	var attribute = elt.getAttributeValue("alarm_root");
-
-    return attribute;
+	return elt.getAttributeValue("alarm_root");
 }
 
 function addOPImacros(container, elt) {
