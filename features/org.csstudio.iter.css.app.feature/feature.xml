@@ -60,16 +60,20 @@ of the distribution package.
          version="0.0.0"/>
 
    <includes
-         id="org.apache.aries.spifly"
-         version="0.0.0"/>
-
-   <includes
          id="org.eclipse.equinox.p2.extras.feature"
          version="0.0.0"/>
 
    <includes
          id="org.brainwy.liclipsetext.feature"
          version="0.0.0"/>
+
+   <includes
+         id="org.apache.aries.spifly.feature"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.postgresql.jdbc42"/>
+   </requires>
 
    <plugin
          id="org.csstudio.iter.authorizationprovider"

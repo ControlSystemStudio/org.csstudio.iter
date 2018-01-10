@@ -8,6 +8,8 @@
 
 package org.csstudio.iter.css.product;
 
+import java.util.logging.Logger;
+
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -20,6 +22,12 @@ public class Activator extends AbstractUIPlugin {
     public static final String PLUGIN_ID = "org.csstudio.iter.css.product";
 
     private static Activator plugin;
+
+
+    public static Logger getLogger()
+    {
+        return Logger.getLogger(PLUGIN_ID);
+    }
 
     @Override
     public void start(BundleContext context) throws Exception {

@@ -11,7 +11,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.management.ManagementFactory;
 import java.net.URL;
+import java.util.logging.Level;
 
 import org.csstudio.startup.application.Application;
 import org.eclipse.core.runtime.Platform;
@@ -48,7 +50,25 @@ public class ITERApplication extends Application {
 
         }
         cleanAlarmTable(loc);
+        loadJDBCdriver();
         return obj;
+    }
+
+    /***
+     * This method is a fix for loading JDBC drivers with parameter -Djdbc.drivers=
+     */
+    private void loadJDBCdriver() {
+        ManagementFactory.getRuntimeMXBean().getInputArguments().stream().forEach(item -> {
+            if (item.contains("-Djdbc.drivers=")) {
+                final String driver = item.substring(item.indexOf("=")+1, item.length());
+                try {
+                    Class.forName(driver);
+                    Activator.getLogger().log(Level.INFO, () -> String.format("Loaded driver class: %s", driver));
+                } catch (ClassNotFoundException e) {
+                    Activator.getLogger().log(Level.WARNING, () -> String.format("Could not load jdbc driver class: %s", driver));
+                }
+            }
+        });
     }
 
     private void cleanAlarmTable(Location loc) throws IOException {
