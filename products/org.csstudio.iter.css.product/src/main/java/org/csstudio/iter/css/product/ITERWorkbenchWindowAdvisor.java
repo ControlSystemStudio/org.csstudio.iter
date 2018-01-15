@@ -7,8 +7,6 @@
  ******************************************************************************/
 package org.csstudio.iter.css.product;
 import org.csstudio.iter.css.product.util.WorkbenchUtil;
-import org.csstudio.opibuilder.actions.CompactModeAction;
-import org.csstudio.opibuilder.util.WorkbenchWindowService;
 import org.csstudio.utility.product.ApplicationWorkbenchWindowAdvisor;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
@@ -57,9 +55,11 @@ public class ITERWorkbenchWindowAdvisor extends ApplicationWorkbenchWindowAdviso
             window.getShell().getDisplay().asyncExec(() ->
             {
                 window.getShell().setMenuBar(null);
-                CompactModeAction action = WorkbenchWindowService.getInstance().getCompactModeAction(window);
+             /* This is commented out as it was causing to force compact mode in case there was a window opened in full screen mode and Cs-studio restarted.
+              *
+              *  CompactModeAction action = WorkbenchWindowService.getInstance().getCompactModeAction(window);
                 if (action != null && !action.isInCompactMode())
-                    action.run();
+                    action.run(); */
             });
         }
     }
