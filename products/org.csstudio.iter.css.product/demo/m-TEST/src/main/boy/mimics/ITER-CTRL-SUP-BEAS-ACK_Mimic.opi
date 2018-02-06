@@ -443,8 +443,8 @@
               <value>true</value>
             </exp>
             <pv trig="true">$(pv_name).SEVR</pv>
-            <pv trig="true">beast:///$(pv_name).Acknowledge</pv>
-            <pv trig="true">beast:///$(pv_name).AlarmSeverity</pv>
+            <pv trig="true">beast://$(pv_name).Acknowledge</pv>
+            <pv trig="true">beast://$(pv_name).AlarmSeverity</pv>
           </rule>
         </rules>
         <scale_options>
@@ -592,7 +592,7 @@ $(pv_value)</tooltip>
               <value>true</value>
             </exp>
             <pv trig="true">$(pv_name).SEVR</pv>
-            <pv trig="true">beast:///$(pv_name).Acknowledge</pv>
+            <pv trig="true">beast://$(pv_name).Acknowledge</pv>
           </rule>
         </rules>
         <scale_options>
@@ -740,8 +740,8 @@ $(pv_value)</tooltip>
               <value>true</value>
             </exp>
             <pv trig="true">$(pv_name).SEVR</pv>
-            <pv trig="true">beast:///$(pv_name).Acknowledge</pv>
-            <pv trig="true">beast:///$(pv_name).AlarmSeverity</pv>
+            <pv trig="true">beast://$(pv_name).Acknowledge</pv>
+            <pv trig="true">beast://$(pv_name).AlarmSeverity</pv>
           </rule>
         </rules>
         <scale_options>
@@ -971,7 +971,7 @@ $(pv_value)</tooltip>
               <value>true</value>
             </exp>
             <pv trig="true">$(pv_name).SEVR</pv>
-            <pv trig="true">beast:///$(pv_name).Acknowledge</pv>
+            <pv trig="true">beast://$(pv_name).Acknowledge</pv>
           </rule>
         </rules>
         <scale_options>
@@ -1654,8 +1654,8 @@ $(pv_value)</tooltip>
               <value>true</value>
             </exp>
             <pv trig="true">$(pv_name).SEVR</pv>
-            <pv trig="true">beast:///$(pv_name).Acknowledge</pv>
-            <pv trig="true">beast:///$(pv_name).AlarmSeverity</pv>
+            <pv trig="true">beast://$(pv_name).Acknowledge</pv>
+            <pv trig="true">beast://$(pv_name).AlarmSeverity</pv>
           </rule>
         </rules>
         <scale_options>
@@ -1803,7 +1803,7 @@ $(pv_value)</tooltip>
               <value>true</value>
             </exp>
             <pv trig="true">$(pv_name).SEVR</pv>
-            <pv trig="true">beast:///$(pv_name).Acknowledge</pv>
+            <pv trig="true">beast://$(pv_name).Acknowledge</pv>
           </rule>
         </rules>
         <scale_options>
@@ -1951,8 +1951,8 @@ $(pv_value)</tooltip>
               <value>true</value>
             </exp>
             <pv trig="true">$(pv_name).SEVR</pv>
-            <pv trig="true">beast:///$(pv_name).Acknowledge</pv>
-            <pv trig="true">beast:///$(pv_name).AlarmSeverity</pv>
+            <pv trig="true">beast://$(pv_name).Acknowledge</pv>
+            <pv trig="true">beast://$(pv_name).AlarmSeverity</pv>
           </rule>
         </rules>
         <scale_options>
@@ -2096,7 +2096,7 @@ $(pv_value)</tooltip>
       <image></image>
       <name>un-Ack</name>
       <push_action_index>0</push_action_index>
-      <pv_name>beast:///CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
+      <pv_name>beast://CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
       <pv_value />
       <rules />
       <scale_options>
@@ -2144,7 +2144,7 @@ $(pv_value)</tooltip>
       <image></image>
       <name>Ack</name>
       <push_action_index>0</push_action_index>
-      <pv_name>beast:///CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
+      <pv_name>beast://CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
       <pv_value />
       <rules />
       <scale_options>
@@ -2192,7 +2192,7 @@ $(pv_value)</tooltip>
       <image></image>
       <name>Ack</name>
       <push_action_index>0</push_action_index>
-      <pv_name>beast:///CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
+      <pv_name>beast://CTRL-SUP-BEAS:HIGH-SWITCH</pv_name>
       <pv_value />
       <rules />
       <scale_options>
@@ -2238,7 +2238,7 @@ $(pv_value)</tooltip>
       <height>41</height>
       <label>Acknowledged</label>
       <name>Ack</name>
-      <pv_name>beast:///CTRL-SUP-BEAS:LOW-SWITCH.Acknowledge</pv_name>
+      <pv_name>beast://CTRL-SUP-BEAS:LOW-SWITCH.Acknowledge</pv_name>
       <pv_value />
       <rules />
       <scale_options>
@@ -2285,7 +2285,7 @@ $(pv_value)</tooltip>
       <height>41</height>
       <label>Enabled</label>
       <name>Enable</name>
-      <pv_name>beast:///CTRL-SUP-BEAS:LOW-SWITCH.Enable</pv_name>
+      <pv_name>beast://CTRL-SUP-BEAS:LOW-SWITCH.Enable</pv_name>
       <pv_value />
       <rules />
       <scale_options>
@@ -2332,7 +2332,7 @@ $(pv_value)</tooltip>
       <height>41</height>
       <label>Acknowledged</label>
       <name>Ack</name>
-      <pv_name>beast:///CTRL-SUP-BEAS:HIGH-SWITCH.Acknowledge</pv_name>
+      <pv_name>beast://CTRL-SUP-BEAS:HIGH-SWITCH.Acknowledge</pv_name>
       <pv_value />
       <rules />
       <scale_options>
@@ -2379,7 +2379,7 @@ $(pv_value)</tooltip>
       <height>41</height>
       <label>Enabled</label>
       <name>Enable</name>
-      <pv_name>beast:///CTRL-SUP-BEAS:HIGH-SWITCH.Enable</pv_name>
+      <pv_name>beast://CTRL-SUP-BEAS:HIGH-SWITCH.Enable</pv_name>
       <pv_value />
       <rules />
       <scale_options>

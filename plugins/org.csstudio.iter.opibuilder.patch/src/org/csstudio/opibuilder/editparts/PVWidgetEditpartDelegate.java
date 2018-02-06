@@ -18,7 +18,6 @@ import java.util.logging.Logger;
 
 import org.csstudio.java.thread.ExecutionService;
 import org.csstudio.opibuilder.OPIBuilderPlugin;
-import org.csstudio.opibuilder.model.AbstractPVWidgetModel;
 import org.csstudio.opibuilder.model.AbstractWidgetModel;
 import org.csstudio.opibuilder.model.IPVWidgetModel;
 import org.csstudio.opibuilder.preferences.BeastPreferencesHelper;
@@ -136,9 +135,9 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
     private boolean isForeColorAlarmSensitive;
     private AlarmSeverity alarmSeverity = AlarmSeverity.NONE;
 
-    private Map<String, IPVListener> pvListenerMap = new HashMap<String, IPVListener>();
+    private Map<String, IPVListener> pvListenerMap = new HashMap<>();
 
-    private Map<String, IPV> pvMap = new HashMap<String, IPV>();
+    private Map<String, IPV> pvMap = new HashMap<>();
     private PropertyChangeListener[] pvValueListeners;
     private AbstractBaseEditPart editpart;
     private volatile AtomicBoolean lastWriteAccess;
@@ -382,7 +381,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                 return true;
             }
         };
-        editpart.setPropertyChangeHandler(AbstractPVWidgetModel.PROP_PVVALUE, valueHandler);
+        editpart.setPropertyChangeHandler(IPVWidgetModel.PROP_PVVALUE, valueHandler);
 
         // Border Alarm Sensitive
         addAlarmSeverityListener(new AlarmSeverityListener() {
@@ -523,7 +522,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                 return true;
             }
         };
-        editpart.setPropertyChangeHandler(AbstractPVWidgetModel.PROP_BACKCOLOR_ALARMSENSITIVE, backColorAlarmSensitiveHandler);
+        editpart.setPropertyChangeHandler(IPVWidgetModel.PROP_BACKCOLOR_ALARMSENSITIVE, backColorAlarmSensitiveHandler);
 
         IWidgetPropertyChangeHandler foreColorAlarmSensitiveHandler = new IWidgetPropertyChangeHandler() {
 
@@ -535,7 +534,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
             }
         };
 
-        editpart.setPropertyChangeHandler(AbstractPVWidgetModel.PROP_FORECOLOR_ALARMSENSITIVE, foreColorAlarmSensitiveHandler);
+        editpart.setPropertyChangeHandler(IPVWidgetModel.PROP_FORECOLOR_ALARMSENSITIVE, foreColorAlarmSensitiveHandler);
 
         IWidgetPropertyChangeHandler alarmPulsingHandler = new IWidgetPropertyChangeHandler() {
 
@@ -548,7 +547,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
             }
         };
 
-        editpart.setPropertyChangeHandler(AbstractPVWidgetModel.PROP_ALARM_PULSING, alarmPulsingHandler);
+        editpart.setPropertyChangeHandler(IPVWidgetModel.PROP_ALARM_PULSING, alarmPulsingHandler);
     }
 
     public synchronized void stopPulsing() {
@@ -740,7 +739,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
     public String[] getAllPVNames() {
         if(editpart.getWidgetModel().getPVMap().isEmpty())
              return new String[]{""}; //$NON-NLS-1$
-        Set<String> result = new HashSet<String>();
+        Set<String> result = new HashSet<>();
 
         for(StringProperty sp : editpart.getWidgetModel().getPVMap().keySet()){
             if(sp.isVisibleInPropSheet() && !((String)sp.getPropertyValue()).trim().isEmpty())
@@ -1097,6 +1096,15 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                     .readListener(new PVReaderListener<Object>() {
                         private boolean isFirstValueEvent = true;
                         private int latchedSeverityIdx = -1, currentSeverityIdx = -1, alarmsCountIdx = -1;
+                        private String pvType = null;
+
+                        private String getPVType(String pvName) {
+                            final int dotIndex = pvName.lastIndexOf('.');
+                            if (dotIndex < 0) return "Default";
+                            final int slashIndex = pvName.lastIndexOf('/');
+                            if (slashIndex > dotIndex) return "Default";
+                            return pvName.substring(dotIndex + 1);
+                        }
 
                         @SuppressWarnings("unchecked")
                         @Override
@@ -1105,6 +1113,7 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                             BeastAlarmInfo beast = pvWidget.getBeastAlarmInfo();
                             boolean wasChannelConnected, channelConnected;
 
+                            if (pvType == null) pvType = getPVType(pvName);
                             synchronized (beast) {
                                 wasChannelConnected = beast.isBeastChannelConnected();
                             }
@@ -1133,6 +1142,10 @@ public class PVWidgetEditpartDelegate implements IPVWidgetEditpart {
                                 return;
                             }
 
+                            if (!pvType.equals("Default")) {
+                                log.finest(() -> pvName + " BEAST PV Type " + event.getPvReader().getValue().getClass().getName());
+                                return;
+                            }
                             if (isFirstValueEvent) {
                                 // We will only check 'format' of incoming message and find the columns we need
                                 // the first time we receive a ValueChanged event
