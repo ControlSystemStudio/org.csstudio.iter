@@ -161,7 +161,7 @@ effect_3D=RW
 toggle_button=RW
 push_action_index=RW
 release_action_index=RW
-show_confirm_dialog=RO
+show_confirm_dialog=RW
 confirm_message=RW
 password=RO
 
@@ -225,7 +225,7 @@ ramp_gradient=RO
 needle_color=RO
 
 #! PROGRESS BAR
-fill_color=RO
+fill_color=WRITE [IO PV ON; IO Trace 1; IO Trace 2; IO Trace 3; IO Trace 4; IO Trace 5; IO Trace 6; IO Trace 7; IO Trace 8]
 color_fillbackground=RO
 horizontal=RW
 show_label=RW
@@ -284,7 +284,7 @@ trace_[0-9]+_name=RW
 trace_[0-9]+_plot_mode=RW
 trace_[0-9]+_point_size=RO
 trace_[0-9]+_point_style=RW
-trace_[0-9]+_trace_color=RO
+trace_[0-9]+_trace_color=WRITE [IO Trace 1; IO Trace 2; IO Trace 3; IO Trace 4; IO Trace 5; IO Trace 6; IO Trace 7; IO Trace 8]
 trace_[0-9]+_trace_type=RW
 trace_[0-9]+_update_delay=RW
 trace_[0-9]+_update_mode=RW
