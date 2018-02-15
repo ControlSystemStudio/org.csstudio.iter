@@ -7,6 +7,61 @@
 <body>
     <h1>ITER CSS Changelog</h1>
     <p>Version numbers in here refer to CODAC Core System.</p>
+    <h2>Version 5.4.2 - 2018-02-15</h2>
+    <ul>
+        <li>
+            CSS enhancements:
+            <ul>
+                <li>Date &amp; Time ISO Format
+                <ul>
+                <li>
+                Complete syntax of UTC date plus hours, minutes, seconds and a decimal fraction of a second: YYYY-MM-DDThh:mm:ss.ssZ<br/>
+                eg. 2018-02-12T12:35:39.45Z<br> 
+                where:
+                <ul>
+                <li>YYYY = four-digit year</li>
+                <li>MM = two-digit month (01=January, etc.)</li>
+                <li>DD = two-digit day of month (01 through 31)</li>
+                <li>hh = two digits of hour (00 through 23) (am/pm NOT allowed)</li>
+                <li>mm = two digits of minute (00 through 59)</li>
+                <li>ss = two digits of second (00 through 59)</li>
+                <li>s = one or more digits representing a decimal fraction of a second</li>
+                <li>Z = UTC time zone designator</li>
+                </ul>
+                </li>
+                </ul>
+                </li>
+            </ul>
+            <ul>
+            <li>Linking Container resize behaviour defaulted to "Don't resize anything"</li>
+        <li>The navigation pane repeats the last level of mimic buttons</li>
+        <li>Alarm acknowledge button action<br/>Syntax used:<br/>
+            <ul>
+                <li>beast:///&lt;full_path_to_alarm_pv&gt;.Acknowledge</li>
+                <li>beast://&lt;alarm_pv&gt;.Acknowledge</li>
+            </ul>
+        </li>
+        <li>BOY folders reorganisation in order to use only 1 canvas</li>
+        <li>A new fast Javascript LiClipse editor has been integrated in cs-studio with syntax highlighting and autocompletion.</li>
+        <li>CS-Studio online Help is now opened in default web browser</li>
+        <li>Operator PV Write from BOY are logged</li>
+        <li>css-dbmanager utility improvement - during init and restore phases, previously used disk space is reclaimed immediately</li>
+        <li>Symbols Library Updates - Valves, motors, pumps, fans, heaters and dampers symbols states have been standardised</li>
+        <li>Bigger icons on 4k operator terminal</li>
+        
+        </ul>
+        </li>
+        <li>
+            CSS fixes:
+            <ul>
+                <li>css-dbmanager save/restore issue with logbook entry attachments</li>
+                <li>Create Log Entry &gt;&gt; Details bar was too small on 4k configuration</li>
+                <li>OPI Editor zoom issue on connector</li>
+                <li>Connectors issues - Many issues have been fixed regarding BOY connectors</li>
+                <li>Clicking on empty space in a faceplate will select another object from the mimic - fixed</li>
+            </ul>
+        </li>
+    </ul>
     <h2>Version 5.4.0 - 2017-02-15</h2>
     <ul>
         <li>
